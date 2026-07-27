@@ -71,14 +71,15 @@ description: 抓取上次运行以来 AI 生态的重要更新，按日生成 do
 3. **归档**：文件超过约 500 行时，Timeline 只保留最近 3 个月，更早的条目压缩成一段"历史演进摘要"放在 Timeline 小节之前。
 4. 保持模板的小节结构，不要自创章节。
 
-## 第六步：Commit
+## 第六步：Commit & Push
 
 ```
 git add docs/
 git commit -m "update: YYYY-MM-DD ~ YYYY-MM-DD"
+git push
 ```
 
-（单日则只写一个日期。）**只 commit，不 push**，除非用户明确要求。
+（单日则只写一个日期。）commit 后直接 push 到远程；push 失败（如网络问题）不影响本次结果，告知用户稍后手动 push 即可。
 
 ## 最后：向用户汇报
 
