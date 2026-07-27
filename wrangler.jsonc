@@ -1,0 +1,10 @@
+{
+  // Cloudflare Workers 静态站点配置：构建产物即整个站点，无服务端代码
+  "name": "aicompass",
+  "compatibility_date": "2026-07-28",
+  "assets": {
+    "directory": "docs/.vitepress/dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
