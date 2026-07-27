@@ -14,6 +14,18 @@
 
 想回顾时直接对 Claude Code 说"总结一下最近两周的 daily"，不需要专门的 weekly 功能。
 
+## 网站
+
+站点用 [VitePress](https://vitepress.dev/) 构建，Cloudflare Pages 绑定本仓库，每次 push 自动构建部署——`/update` 跑完，网站几分钟后就是最新的。
+
+本地预览：
+
+```
+npm install
+npm run docs:dev      # 开发预览
+npm run docs:build    # 构建（Cloudflare 用的命令）
+```
+
 ## 目录结构
 
 ```

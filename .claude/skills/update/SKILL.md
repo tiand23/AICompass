@@ -56,7 +56,8 @@ description: 抓取上次运行以来 AI 生态的重要更新，按日生成 do
 - 每个自然日一个文件：`docs/today/YYYY-MM-DD.md`，条目归到**事件实际发生的日期**。
 - 当天没有值得记录的内容就**不生成文件**，不写空文件。
 - 格式严格遵循同目录下的 `daily-template.md`。
-- `关联 Topic` 使用 `[[topic-name]]` 形式，名称与 `docs/topics/` 下的文件名（去掉 .md）一致，kebab-case。
+- `关联 Topic` 使用标准 Markdown 链接 `[topic-name](/topics/topic-name)`，名称与 `docs/topics/` 下的文件名（去掉 .md）一致，kebab-case。（站点用 VitePress 构建，不支持 `[[双链]]` 语法。）
+- 写完所有 Daily 后，把 `docs/index.md` 首页 hero 中"最新日报"按钮的 link 更新为最新一天的 `/today/YYYY-MM-DD`。
 
 ## 第五步：更新 Topic
 

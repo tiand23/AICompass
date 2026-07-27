@@ -20,7 +20,7 @@
 | 砍掉的功能 | 原因 | 替代方案 |
 |---|---|---|
 | Weekly / Monthly 定期文件 | 自用不需要预先固化 | 想回顾时让 Claude Code 现场读 `docs/today/` 即时生成 |
-| GitHub Pages | 自己在编辑器 / GitHub 里看 Markdown 就够了 | 无 |
+| ~~GitHub Pages~~ | ~~自己在编辑器 / GitHub 里看 Markdown 就够了~~ **2026-07-28 变更：改为 VitePress + Cloudflare Pages，push 后自动构建部署** | 见下方"发布"一节 |
 | 预设知识树 | 拍脑袋的分类没有意义 | 跑一两个月后从 `topics/` 的实际内容里归纳 |
 | 推荐指数 / 是否值得学习 | 值不值得学得自己判断，AI 打分没有参考价值 | Daily 里只写客观信息（是什么、为什么重要），判断留给自己 |
 | 自动化（GitHub Actions 等） | 手动执行足够，且避免 API key / 成本 / 重试等一堆工程问题 | 每天（或想起来时）手动跑 `/update` |
@@ -50,12 +50,21 @@
 ``` text
 AICompass/
 ├── docs/
+│   ├── .vitepress/     # VitePress 站点配置（侧边栏自动生成）
+│   ├── index.md        # 站点首页
 │   ├── today/          # YYYY-MM-DD.md，每日更新
 │   └── topics/         # 每个知识点一个文件
 ├── profile.md          # （可选）我的方向和关注点，用于过滤无关信息
 ├── .claude/skills/     # /update /topic /cleanup
+├── package.json        # VitePress 依赖
 └── README.md
 ```
+
+## 发布（2026-07-28 新增）
+
+- 站点用 **VitePress** 构建（`npm run docs:build`），**Cloudflare Pages** 绑定 GitHub 仓库，每次 push 自动构建部署。
+- `/update` 跑完自动 commit + push，所以网站每天自动更新，无需额外操作。
+- Topic 间引用与 Daily 的关联 Topic 一律用标准 Markdown 链接 `[name](/topics/name)`，不用 `[[双链]]`。
 
 比原 PRD 少了 weekly/、monthly/、assets/、prompts/、scripts/、.github/workflows/ —— 需要时再加，先不建空目录。
 
@@ -95,7 +104,7 @@ AICompass/
 - **一句话总结**：
 - **为什么重要**：
 - **分类**：Models / Agent / Coding / RAG / ...
-- **关联 Topic**：[[mcp]] [[claude-code]]
+- **关联 Topic**：[mcp](/topics/mcp) [claude-code](/topics/claude-code)
 - **来源**：<链接>
 ```
 
