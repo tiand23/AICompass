@@ -1,6 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import MarkdownIt from 'markdown-it'
+
+const md = new MarkdownIt()
 
 // 构建时扫描三个语言的 map.md（领域归属）与 topics/*.md（节点与互链），
 // 生成图谱数据。内容变化时自动重建，无需人工维护。
@@ -45,34 +48,25 @@ function buildLocale(prefix: string) {
     activity: number
     latest: string
     title: string
-    intro: string
-    timeline: { date: string; text: string }[]
+    html: string
   }[] = []
   const links: { source: string; target: string }[] = []
   const seen = new Set<string>()
-  const stripLinks = (s: string) => s.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/\*\*/g, '')
   if (fs.existsSync(topicsDir)) {
     for (const f of fs.readdirSync(topicsDir).filter((f) => f.endsWith('.md'))) {
       const slug = f.replace(/\.md$/, '')
       const src = fs.readFileSync(path.join(topicsDir, f), 'utf8')
       const dates = [...src.matchAll(/^### \[?(\d{4}-\d{2}-\d{2})/gm)].map((m) => m[1]).sort()
-      // 浮层内容：标题、首节（简介）第一段、最近两条 Timeline
+      // 抽屉内容：去掉 H1 后整篇渲染为 HTML（构建时完成，前端零请求）
       const title = (src.match(/^# (.+)$/m) || [, slug])[1]!.trim()
-      const firstSection = src.split(/^## /m)[1] ?? ''
-      const intro = stripLinks(
-        firstSection.split('\n').slice(1).join('\n').trim().split(/\n\n/)[0] ?? ''
-      ).trim()
-      const timeline = [...src.matchAll(/^### \[?(\d{4}-\d{2}-\d{2})\]?[^\n]*\n\n([^\n]+)/gm)]
-        .slice(0, 2)
-        .map((m) => ({ date: m[1], text: stripLinks(m[2]).trim() }))
+      const body = src.replace(/^# .+$/m, '').trim()
       nodes.push({
         id: slug,
         domain: homeDomain[slug] ?? domains.length,
         activity: dates.length,
         latest: dates[dates.length - 1] ?? '',
         title,
-        intro,
-        timeline,
+        html: md.render(body),
       })
       for (const lm of src.matchAll(TOPIC_LINK)) {
         const target = lm[1]

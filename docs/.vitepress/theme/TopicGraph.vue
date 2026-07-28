@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 interface GNode {
   id: string
@@ -7,8 +7,7 @@ interface GNode {
   activity: number
   latest: string
   title: string
-  intro: string
-  timeline: { date: string; text: string }[]
+  html: string
 }
 interface GLink { source: string; target: string }
 
@@ -16,7 +15,6 @@ const props = defineProps<{
   graph: { domains: string[]; nodes: GNode[]; links: GLink[] }
   prefix?: string
   rootLabel: string
-  moreLabel: string
   emptyLabel: string
 }>()
 
@@ -54,6 +52,8 @@ const layout = computed(() => {
   return { domains, topics, pos, H, rootY: H / 2 }
 })
 
+const byId = computed(() => Object.fromEntries(props.graph.nodes.map((n) => [n.id, n])))
+
 const neighbors = computed(() => {
   const m: Record<string, Set<string>> = {}
   for (const n of props.graph.nodes) m[n.id] = new Set([n.id])
@@ -70,21 +70,16 @@ function radius(n: GNode) {
 function color(i: number) {
   return PALETTE[i % PALETTE.length]
 }
-function pageHref(id: string) {
-  return `${props.prefix ? '/' + props.prefix : ''}/topics/${id}`
-}
 function dimmed(id: string) {
   return hovered.value && !neighbors.value[hovered.value]?.has(id)
 }
 function crossActive(l: GLink) {
   return hovered.value && (l.source === hovered.value || l.target === hovered.value)
 }
-// 根→领域、领域→Topic：水平三次贝塞尔
 function hCurve(x1: number, y1: number, x2: number, y2: number) {
   const mx = (x1 + x2) / 2
   return `M ${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`
 }
-// Topic 间引用：从 Topic 列向右侧弯出的虚线弧
 function xrefCurve(l: GLink) {
   const s = layout.value.pos[l.source]
   const t = layout.value.pos[l.target]
@@ -92,12 +87,28 @@ function xrefCurve(l: GLink) {
   const bulge = 90 + Math.abs(s.y - t.y) * 0.25
   return `M ${X_TOPIC} ${s.y} C ${X_TOPIC + bulge} ${s.y}, ${X_TOPIC + bulge} ${t.y}, ${X_TOPIC} ${t.y}`
 }
+
+// 抽屉内点到其他 Topic 的链接 → 就地切换，不离开图谱页
+function onDrawerClick(e: MouseEvent) {
+  const a = (e.target as HTMLElement).closest('a')
+  if (!a) return
+  const m = a.getAttribute('href')?.match(/\/topics\/([a-z0-9-]+)\/?$/)
+  if (m && byId.value[m[1]]) {
+    e.preventDefault()
+    selected.value = byId.value[m[1]]
+  }
+}
+
+function onKey(e: KeyboardEvent) {
+  if (e.key === 'Escape') selected.value = null
+}
+onMounted(() => window.addEventListener('keydown', onKey))
+onUnmounted(() => window.removeEventListener('keydown', onKey))
 </script>
 
 <template>
   <div class="topic-graph">
     <svg :viewBox="`0 0 ${W} ${layout.H}`" role="img">
-      <!-- 根→领域 -->
       <path
         v-for="d in layout.domains"
         :key="'rd' + d.i"
@@ -105,7 +116,6 @@ function xrefCurve(l: GLink) {
         class="spoke"
         :opacity="d.empty ? 0.35 : 0.8"
       />
-      <!-- 领域→Topic -->
       <path
         v-for="n in layout.topics"
         :key="'dt' + n.id"
@@ -114,7 +124,6 @@ function xrefCurve(l: GLink) {
         :style="{ stroke: color(n.domain) }"
         :opacity="dimmed(n.id) ? 0.12 : 0.55"
       />
-      <!-- Topic 间引用 -->
       <path
         v-for="l in graph.links"
         :key="l.source + l.target"
@@ -122,12 +131,10 @@ function xrefCurve(l: GLink) {
         class="xref"
         :class="{ active: crossActive(l), dim: hovered && !crossActive(l) }"
       />
-      <!-- 根节点 -->
       <g class="root">
         <circle :cx="X_ROOT" :cy="layout.rootY" r="8" />
         <text :x="X_ROOT" :y="layout.rootY - 16" text-anchor="middle">{{ rootLabel }}</text>
       </g>
-      <!-- 领域节点 -->
       <g v-for="d in layout.domains" :key="'d' + d.i" :opacity="d.empty ? 0.5 : 1">
         <circle
           :cx="X_DOMAIN"
@@ -141,11 +148,11 @@ function xrefCurve(l: GLink) {
           {{ d.name }}<tspan v-if="d.empty" class="empty-hint">（{{ emptyLabel }}）</tspan>
         </text>
       </g>
-      <!-- Topic 节点：点击弹浮层 -->
       <g
         v-for="n in layout.topics"
         :key="n.id"
         class="topic"
+        :class="{ current: selected?.id === n.id }"
         :opacity="dimmed(n.id) ? 0.2 : 1"
         @mouseenter="hovered = n.id"
         @mouseleave="hovered = ''"
@@ -156,24 +163,22 @@ function xrefCurve(l: GLink) {
       </g>
     </svg>
 
-    <!-- 浮层：不跳转，就地查看 -->
+    <!-- 右侧抽屉：显示完整 Topic 内容 -->
     <Teleport to="body">
-      <div v-if="selected" class="tg-overlay" @click.self="selected = null" @keydown.esc="selected = null">
-        <div class="tg-card">
-          <button class="tg-close" @click="selected = null">×</button>
-          <p class="tg-domain" :style="{ color: color(selected.domain) }">
-            ● {{ graph.domains[selected.domain] }}
-          </p>
-          <h3>{{ selected.title }}</h3>
-          <p class="tg-intro">{{ selected.intro }}</p>
-          <ul v-if="selected.timeline.length" class="tg-timeline">
-            <li v-for="t in selected.timeline" :key="t.date">
-              <strong>{{ t.date }}</strong> — {{ t.text }}
-            </li>
-          </ul>
-          <a class="tg-more" :href="pageHref(selected.id)">{{ moreLabel }} →</a>
+      <Transition name="tg">
+        <div v-if="selected" class="tg-overlay" @click.self="selected = null">
+          <aside class="tg-drawer">
+            <header>
+              <p class="tg-domain" :style="{ color: color(selected.domain) }">
+                ● {{ graph.domains[selected.domain] }}
+              </p>
+              <h2>{{ selected.title }}</h2>
+              <button class="tg-close" @click="selected = null">×</button>
+            </header>
+            <div class="tg-content" v-html="selected.html" @click="onDrawerClick" />
+          </aside>
         </div>
-      </div>
+      </Transition>
     </Teleport>
   </div>
 </template>
@@ -243,6 +248,10 @@ svg {
   stroke: var(--vp-c-bg);
   stroke-width: 1.5;
 }
+.topic.current circle {
+  stroke: var(--vp-c-text-1);
+  stroke-width: 2.5;
+}
 .topic-label {
   font-size: 12.5px;
   fill: var(--vp-c-text-1);
@@ -250,34 +259,46 @@ svg {
 </style>
 
 <style>
-/* 浮层通过 Teleport 挂到 body，样式不能 scoped */
+/* 抽屉通过 Teleport 挂到 body，样式不能 scoped */
 .tg-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
   z-index: 200;
-  padding: 1rem;
 }
-.tg-card {
-  position: relative;
-  max-width: 520px;
-  width: 100%;
-  max-height: 80vh;
-  overflow-y: auto;
+.tg-drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(560px, 94vw);
   background: var(--vp-c-bg);
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 12px;
-  padding: 1.5rem 1.75rem;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  border-left: 1px solid var(--vp-c-divider);
+  box-shadow: -12px 0 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+.tg-drawer header {
+  position: relative;
+  padding: 1.25rem 3rem 0.9rem 1.5rem;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+.tg-domain {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0 0 0.2rem;
+}
+.tg-drawer h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  border: none;
+  padding: 0;
 }
 .tg-close {
   position: absolute;
-  top: 0.6rem;
-  right: 0.9rem;
-  font-size: 1.4rem;
+  top: 0.9rem;
+  right: 1rem;
+  font-size: 1.5rem;
   line-height: 1;
   color: var(--vp-c-text-3);
   background: none;
@@ -287,42 +308,60 @@ svg {
 .tg-close:hover {
   color: var(--vp-c-text-1);
 }
-.tg-domain {
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin: 0 0 0.25rem;
-}
-.tg-card h3 {
-  margin: 0 0 0.6rem;
-  font-size: 1.25rem;
-}
-.tg-intro {
-  margin: 0 0 0.9rem;
+.tg-content {
+  overflow-y: auto;
+  padding: 1rem 1.5rem 2rem;
   font-size: 0.92rem;
-  line-height: 1.65;
+  line-height: 1.7;
+}
+.tg-content h2 {
+  font-size: 1.05rem;
+  margin: 1.4rem 0 0.6rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--vp-c-divider);
+}
+.tg-content h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+.tg-content h3 {
+  font-size: 0.95rem;
+  margin: 1rem 0 0.4rem;
   color: var(--vp-c-text-1);
 }
-.tg-timeline {
-  margin: 0 0 1rem;
-  padding: 0.6rem 0.9rem;
-  list-style: none;
-  background: var(--vp-c-bg-soft);
-  border-radius: 8px;
-  font-size: 0.85rem;
-  line-height: 1.6;
-  color: var(--vp-c-text-2);
+.tg-content ul {
+  padding-left: 1.3rem;
+  margin: 0.5rem 0;
 }
-.tg-timeline li + li {
-  margin-top: 0.5rem;
+.tg-content li {
+  margin: 0.3rem 0;
 }
-.tg-more {
-  display: inline-block;
-  font-size: 0.9rem;
-  font-weight: 600;
+.tg-content a {
   color: var(--vp-c-brand-1);
   text-decoration: none;
 }
-.tg-more:hover {
+.tg-content a:hover {
   text-decoration: underline;
+}
+.tg-content p {
+  margin: 0.5rem 0;
+}
+/* 滑入动画 */
+.tg-enter-active,
+.tg-leave-active {
+  transition: opacity 0.2s;
+}
+.tg-enter-active .tg-drawer,
+.tg-leave-active .tg-drawer {
+  transition: transform 0.25s ease;
+}
+.tg-enter-from,
+.tg-leave-to {
+  opacity: 0;
+}
+.tg-enter-from .tg-drawer,
+.tg-leave-to .tg-drawer {
+  transform: translateX(100%);
 }
 </style>
