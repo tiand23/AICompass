@@ -22,7 +22,7 @@ function listMd(dir: string, { newestFirst = false, limit = 0 } = {}) {
 
 // 每个语言一套 nav + sidebar，构建时扫描各自目录生成；
 // Today 侧边栏只列最近 30 天，更早的日报仍会构建、可搜索、可直链
-function localeThemeConfig(prefix: string, t: { home: string; map: string }) {
+function localeThemeConfig(prefix: string, t: { home: string; map: string; graph: string }) {
   const todayDir = prefix ? `${prefix}/today` : 'today'
   const topicsDir = prefix ? `${prefix}/topics` : 'topics'
   const home = prefix ? `/${prefix}/` : '/'
@@ -31,6 +31,7 @@ function localeThemeConfig(prefix: string, t: { home: string; map: string }) {
     nav: [
       { text: t.home, link: home },
       { text: t.map, link: prefix ? `/${prefix}/map` : '/map' },
+      { text: t.graph, link: prefix ? `/${prefix}/graph` : '/graph' },
       { text: 'Today', link: latestDaily },
     ],
     sidebar: [
@@ -51,7 +52,7 @@ export default defineConfig({
       lang: 'zh-CN',
       description: 'Living AI Developer Handbook —— 持续演进的 AI 开发知识库',
       themeConfig: {
-        ...localeThemeConfig('', { home: '首页', map: '知识地图' }),
+        ...localeThemeConfig('', { home: '首页', map: '知识地图', graph: '图谱' }),
         outline: { label: '本页目录' },
         docFooter: { prev: '上一篇', next: '下一篇' },
         lastUpdatedText: '最后更新',
@@ -62,7 +63,7 @@ export default defineConfig({
       lang: 'en-US',
       description: 'Living AI Developer Handbook — a continuously evolving knowledge base for AI developers',
       themeConfig: {
-        ...localeThemeConfig('en', { home: 'Home', map: 'Knowledge Map' }),
+        ...localeThemeConfig('en', { home: 'Home', map: 'Knowledge Map', graph: 'Graph' }),
         outline: { label: 'On this page' },
         lastUpdatedText: 'Last updated',
       },
@@ -72,7 +73,7 @@ export default defineConfig({
       lang: 'ja-JP',
       description: 'Living AI Developer Handbook —— 進化し続ける AI 開発ナレッジベース',
       themeConfig: {
-        ...localeThemeConfig('ja', { home: 'ホーム', map: 'ナレッジマップ' }),
+        ...localeThemeConfig('ja', { home: 'ホーム', map: 'ナレッジマップ', graph: 'グラフ' }),
         outline: { label: '目次' },
         docFooter: { prev: '前へ', next: '次へ' },
         lastUpdatedText: '最終更新',

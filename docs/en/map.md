@@ -26,7 +26,11 @@
 
 ## 2. Knowledge & Retrieval
 
-*Accumulating. Watching: knowledge bases, RAG, vector databases, knowledge graphs.*
+| Topic | What it is | Problem it solves | Status | Last activity |
+|---|---|---|---|---|
+| [rag](/en/topics/rag) | Retrieval-augmented generation (mainstream: Agentic RAG) | Connecting private knowledge to LLMs; factuality and traceability | 🔥 | 2026-07-28 |
+
+*Also watching: vector databases, knowledge graphs (accumulating).*
 
 ## 3. Agent Development
 
