@@ -1,5 +1,6 @@
 ---
 outline: false
+aside: false
 ---
 
 <script setup>

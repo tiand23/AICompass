@@ -20,15 +20,15 @@ const props = defineProps<{
 }>()
 
 const X_ROOT = 90
-const X_DOMAIN = 320
-const X_TOPIC = 600
+const X_DOMAIN = 330
+const X_TOPIC = 610
 // 活动轨道：固定 14 天滑动窗口，宽度恒定不随时间增长
 const DAYS = 14
-const DAY_W = 14
-const X_STRIP = 790
-const W = X_STRIP + DAYS * DAY_W + 16
-const ROW = 46
-const GAP = 20
+const DAY_W = 15
+const X_STRIP = 810
+const W = X_STRIP + DAYS * DAY_W + 18
+const ROW = 54
+const GAP = 24
 const PALETTE = ['#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4']
 
 const hovered = ref('')
@@ -84,7 +84,7 @@ const neighbors = computed(() => {
 })
 
 function radius(n: GNode) {
-  return 7 + Math.min(n.activity * 2, 9)
+  return 8 + Math.min(n.activity * 2, 10)
 }
 function color(i: number) {
   return PALETTE[i % PALETTE.length]
@@ -244,6 +244,16 @@ onUnmounted(() => window.removeEventListener('keydown', onKey))
 <style scoped>
 .topic-graph {
   margin: 1.5rem 0;
+  /* 突破文档版心：最宽 1060px，大屏时避开左侧边栏，小屏回落到视口宽 */
+  width: min(1060px, calc(100vw - var(--vp-sidebar-width, 272px) - 5rem));
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (max-width: 959px) {
+  .topic-graph {
+    width: min(1060px, calc(100vw - 3rem));
+  }
 }
 svg {
   width: 100%;
@@ -285,19 +295,19 @@ svg {
   stroke-width: 2;
 }
 .root text {
-  font-size: 13px;
+  font-size: 14.5px;
   font-weight: 600;
   fill: var(--vp-c-text-1);
 }
 .domain-label {
-  font-size: 12.5px;
+  font-size: 14px;
   font-weight: 600;
   fill: var(--vp-c-text-1);
 }
 .empty-hint {
   font-weight: 400;
   fill: var(--vp-c-text-3);
-  font-size: 11px;
+  font-size: 12px;
 }
 .topic {
   cursor: pointer;
@@ -311,7 +321,7 @@ svg {
   stroke-width: 2.5;
 }
 .topic-label {
-  font-size: 12.5px;
+  font-size: 14px;
   fill: var(--vp-c-text-1);
 }
 .halo {
@@ -332,7 +342,7 @@ svg {
   fill: var(--vp-c-brand-soft, rgba(100, 108, 255, 0.14));
 }
 .axis {
-  font-size: 10px;
+  font-size: 11px;
   fill: var(--vp-c-text-3);
 }
 .today-label {
