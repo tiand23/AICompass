@@ -40,6 +40,8 @@ description: 抓取上次运行以来 AI 生态的重要更新，按日生成 do
 
 入口页面结构可能变化，打不开时用 WebSearch 搜"<来源名> announcements <月份 年份>"兜底，不要静默跳过官方渠道。
 
+**专项监测**：GitHub Trending 上出现 skill / Agent 工具类仓库时，除正常的日报收录判断外，同步更新 `docs/topics/agent-skills.md` 的"生态热度"排行表（及 en/ja 译文）。
+
 ## 第三步：筛选
 
 收录标准（满足其一）：
