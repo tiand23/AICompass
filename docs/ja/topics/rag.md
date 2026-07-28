@@ -17,7 +17,8 @@ RAG（Retrieval-Augmented Generation、検索拡張生成）：LLM が生成の�
 
 ## 関連技術
 
-- ベクトルデータベース、Knowledge Graph（このスロットの今後の Topic）
+- [vector-databases](/ja/topics/vector-databases)（保存・検索層）
+- [document-parsing](/ja/topics/document-parsing)（上流の文書構造化）
 - [deep-agents](/ja/topics/deep-agents)（Agentic RAG は長期エージェントとオーケストレーションパターンを共有）
 - [enterprise-ai-agents](/ja/topics/enterprise-ai-agents)（企業エージェントの知識アクセス層が RAG）
 

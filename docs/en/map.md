@@ -29,8 +29,10 @@
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
 | [rag](/en/topics/rag) | Retrieval-augmented generation (mainstream: Agentic RAG) | Connecting private knowledge to LLMs; factuality and traceability | 🔥 | 2026-07-28 |
+| [document-parsing](/en/topics/document-parsing) | Document parsing & structuring (VLM + semantic reconstruction) | The first mile of unstructured documents into knowledge bases | 🔥 | 2026-07-28 |
+| [vector-databases](/en/topics/vector-databases) | Vector DB selection & hybrid search | The storage/retrieval layer for RAG and memory | 🔥 | 2026-07-28 |
 
-*Also watching: vector databases, knowledge graphs (accumulating).*
+*Also watching: knowledge graphs / GraphRAG (accumulating).*
 
 ## 3. Agent Development
 
@@ -39,16 +41,25 @@
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
 | [deep-agents](/en/topics/deep-agents) | Long-horizon autonomous agents (LangChain) | Planning, recovery and evaluation of multi-step tasks | 🔥 | 2026-07-23 |
+| [agent-frameworks](/en/topics/agent-frameworks) | Framework landscape: LangGraph/CrewAI/ADK/Agents SDK… | Framework selection and long-term safety | 🔥 | 2026-07-28 |
+| [agent-workflow](/en/topics/agent-workflow) | Workflow paradigms: orchestration vs autonomy, HITL, durable execution | Getting agents reliably into business processes | 🔥 | 2026-07-28 |
+| [agent-skills](/en/topics/agent-skills) | Reusable capability packages (incl. GitHub heat rankings) | Distribution and reuse of agent capabilities | 🔥 | 2026-07-28 |
 
 ### Runtime & Cloud (Hosted Runtimes ・ Agent Platforms ・ Foundry)
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
 | [enterprise-ai-agents](/en/topics/enterprise-ai-agents) | Enterprise agent platforms & delivery models | Reliably connecting agents to enterprise systems and operating them | 🔥 | 2026-07-25 |
+| [cloud-agent-platforms](/en/topics/cloud-agent-platforms) | The hyperscaler platform landscape (AgentCore/Foundry/GEAP/Managed Agents) | Platform selection and lock-in trade-offs | 🔥 | 2026-07-28 |
 
 ### Protocols & Interoperability (MCP ・ A2A ・ AG-UI)
 
-*Accumulating.*
+| Topic | What it is | Problem it solves | Status | Last activity |
+|---|---|---|---|---|
+| [mcp](/en/topics/mcp) | Tool-integration protocol (de facto standard) | The M×N glue-code problem of connecting AI to tools | 🔥 | 2026-07-28 |
+| [a2a](/en/topics/a2a) | Agent collaboration protocol (Google-led, 50+ vendors) | Discovery and task delegation across vendors | 🔥 | 2026-07-28 |
+
+*Also watching: AG-UI (accumulating).*
 
 ## 4. Inference & Deployment
 

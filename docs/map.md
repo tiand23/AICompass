@@ -29,8 +29,10 @@
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
 | [rag](/topics/rag) | 检索增强生成（当前主流：Agentic RAG） | 私有知识接入 LLM、事实性与可溯源 | 🔥 | 2026-07-28 |
+| [document-parsing](/topics/document-parsing) | 文档解析与结构化（VLM + 语义重建） | 非结构化文档进知识库的第一道工序 | 🔥 | 2026-07-28 |
+| [vector-databases](/topics/vector-databases) | 向量数据库选型与混合检索 | RAG/记忆的存储检索层 | 🔥 | 2026-07-28 |
 
-*另关注：向量数据库、Knowledge Graph（待积累）。*
+*另关注：Knowledge Graph / GraphRAG（待积累）。*
 
 ## 3. Agent 开发
 
@@ -39,16 +41,25 @@
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
 | [deep-agents](/topics/deep-agents) | 长时程自主任务 Agent（LangChain） | 多步骤任务的规划、恢复与评估 | 🔥 | 2026-07-23 |
+| [agent-frameworks](/topics/agent-frameworks) | 框架版图：LangGraph/CrewAI/ADK/Agents SDK… | 框架选型与长期安全性 | 🔥 | 2026-07-28 |
+| [agent-workflow](/topics/agent-workflow) | 工作流范式：编排 vs 自主、HITL、持久化执行 | 让 Agent 可靠地跑进业务流程 | 🔥 | 2026-07-28 |
+| [agent-skills](/topics/agent-skills) | 可复用能力包生态（含 GitHub 热度排行） | Agent 能力的分发与复用 | 🔥 | 2026-07-28 |
 
 ### 运行时与云（托管运行时 ・ Agent 平台 ・ Foundry）
 
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
 | [enterprise-ai-agents](/topics/enterprise-ai-agents) | 企业 Agent 平台与交付模式 | Agent 如何可靠接入企业系统并被运维 | 🔥 | 2026-07-25 |
+| [cloud-agent-platforms](/topics/cloud-agent-platforms) | 四大云托管 Agent 平台版图（AgentCore/Foundry/GEAP/Managed Agents） | 平台选型与锁定权衡 | 🔥 | 2026-07-28 |
 
 ### 协议与互操作（MCP ・ A2A ・ AG-UI）
 
-*待积累。*
+| Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
+|---|---|---|---|---|
+| [mcp](/topics/mcp) | 工具接入协议（事实标准） | AI 接工具的 M×N 胶水代码问题 | 🔥 | 2026-07-28 |
+| [a2a](/topics/a2a) | Agent 间协作协议（Google 主导，50+ 厂商） | 跨厂商 Agent 的发现与任务委托 | 🔥 | 2026-07-28 |
+
+*另关注：AG-UI（待积累）。*
 
 ## 4. 推理与部署
 

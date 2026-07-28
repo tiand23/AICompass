@@ -17,7 +17,8 @@ RAG（Retrieval-Augmented Generation，检索增强生成）：让 LLM 在生成
 
 ## 相关技术
 
-- 向量数据库、Knowledge Graph（本格子后续 Topic）
+- [vector-databases](/topics/vector-databases)（存储检索层）
+- [document-parsing](/topics/document-parsing)（上游文档结构化）
 - [deep-agents](/topics/deep-agents)（Agentic RAG 与长时程 Agent 共享编排模式）
 - [enterprise-ai-agents](/topics/enterprise-ai-agents)（企业 Agent 的知识接入层就是 RAG）
 

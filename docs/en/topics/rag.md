@@ -17,7 +17,8 @@ Model parameters can't hold private knowledge or keep up with knowledge updates 
 
 ## Related Technologies
 
-- Vector databases, Knowledge Graphs (future topics in this slot)
+- [vector-databases](/en/topics/vector-databases) (the storage/retrieval layer)
+- [document-parsing](/en/topics/document-parsing) (upstream document structuring)
 - [deep-agents](/en/topics/deep-agents) (Agentic RAG shares orchestration patterns with long-horizon agents)
 - [enterprise-ai-agents](/en/topics/enterprise-ai-agents) (RAG is the knowledge access layer of enterprise agents)
 

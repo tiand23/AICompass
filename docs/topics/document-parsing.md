@@ -1,0 +1,41 @@
+# Document Parsing
+
+## 简介
+
+文档解析与结构化：把 PDF、扫描件、表格、图表变成 LLM 可用的结构化数据（Markdown/JSON）。2026 年的主流是 **VLM（视觉语言模型）+ 语义重建的 Agentic 解析**，正在取代模板 OCR 和传统 IDP。代表工具：LlamaParse/LlamaExtract、Docling、Reducto、Unstructured。
+
+## 为什么重要
+
+企业知识 80% 躺在非结构化文档里，解析质量是整个 RAG/知识库管线的天花板——垃圾进垃圾出，解析错了后面全白搭。这一层的技术换代（模板 → 语义理解）正在发生，直接决定文档类应用的可行边界。
+
+## 核心概念
+
+- **Agentic 解析 vs 模板 OCR**：模板按固定版式抽取，遇到新版式就崩；agentic 解析像人一样理解结构（章节层级、表格、图注），对版式变化免疫。
+- **语义重建**：不止抽文字，还原文档的逻辑结构——这是 RAG 分块质量的前提。
+- **结构化抽取（schema-based）**：定义目标字段 schema，直接产出类型化 JSON（如 LlamaExtract），是拿干净结构化数据最可靠的路径。
+- **选型要点**：LlamaParse 对 RAG 栈生产就绪度最高；Docling 适合隐私敏感的自托管（技术/科学文档尤强）；Reducto 在 LongExtractBench 精确率/召回率 99.6% 居首。
+
+## 相关技术
+
+- [rag](/topics/rag)（解析是 RAG 的第一道工序）
+- [vector-databases](/topics/vector-databases)（解析产物的存储与检索层）
+
+## 最佳实践
+
+- 先用自己最难的 20 份文档做解析评测再选型——厂商 demo 都很美，你的表格和扫描件才是真考题。
+- 复杂表格多的场景优先看结构化抽取（schema-based）路线，别在通用解析结果上二次擦屁股。
+
+## 推荐学习资料
+
+- [Docling vs LlamaParse vs Unstructured vs Reducto 对比](https://llms.reducto.ai/document-parser-comparison)
+- [2026 文档解析 API 排行（LlamaIndex）](https://www.llamaindex.ai/insights/top-document-parsing-apis)
+
+## Timeline
+
+### 2026-07-28
+
+建档。现状：VLM + 语义重建成为主流范式，Agentic Document Processing 取代传统 IDP；LlamaParse/Docling/Reducto/Unstructured 构成第一梯队，schema-based 结构化抽取独立成产品线。
+
+### [2026-07-21](/today/2026-07-21)
+
+LlamaIndex 发文论证模板 OCR 的真正替代品是 agentic 解析而非更好的模板——版式自适应是代际差异。
