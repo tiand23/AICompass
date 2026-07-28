@@ -34,10 +34,10 @@ Claude はエージェントとコーディング用途における主流のモ�
 
 ## Timeline
 
-### 2026-07-24
+### [2026-07-24](/ja/today/2026-07-24)
 
 Claude Opus 5 リリース：1M コンテキスト（デフォルト＝最大）、128k 出力、thinking デフォルト有効、価格は Opus 4.8 と同じ $5/$25。5 段階の effort が主要制御手段に。破壊的変更——高 effort での thinking 無効化不可、Opus 4.7 fast mode 廃止。同日、mid-conversation tool changes が beta に（prompt cache を維持したままターン間でツール変更）、`fallbacks` に `"default"` モード追加。
 
-### 2026-07-22
+### [2026-07-22](/ja/today/2026-07-22)
 
 Claude Managed Agents 更新：モデル設定での effort 指定、environment / memory store ライフサイクルの webhook、`initial_events` によるセッション初期化と同時起動、更新時 `version` のオプション化（楽観的並行性制御）、スレッド単位イベントストリームの event deltas 対応。

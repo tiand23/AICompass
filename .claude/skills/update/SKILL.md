@@ -60,7 +60,9 @@ description: 抓取上次运行以来 AI 生态的重要更新，按日生成 do
 - `关联 Topic` 使用标准 Markdown 链接 `[topic-name](/topics/topic-name)`，名称与 `docs/topics/` 下的文件名（去掉 .md）一致，kebab-case。（站点用 VitePress 构建，不支持 `[[双链]]` 语法。）
 - 写完所有 Daily 后，把三个首页（`docs/index.md`、`docs/en/index.md`、`docs/ja/index.md`）hero 中"最新日报"按钮的 link 更新为各自语言下最新一天（`/today/YYYY-MM-DD`、`/en/today/…`、`/ja/today/…`）。
 
-## 第五步：更新 Topic
+## 第五步：更新 Topic（主体抽取）
+
+**每条 Daily 条目必须关联至少一个 Topic**——Topic 是知识库的记忆主体，Daily 只是流水。没有合适的 Topic 就新建；一条可关联多个（用 ・ 分隔）。
 
 对 Daily 中每个关联 Topic：
 
@@ -69,9 +71,17 @@ description: 抓取上次运行以来 AI 生态的重要更新，按日生成 do
 **已存在** → 遵守维护规则：
 
 1. **不直接追加**：先通读该文件，新内容已被覆盖则跳过，相似则合并进原文，只有真正的新信息才新增。
-2. Timeline 按日期**倒序**，新条目在最上面。
+2. Timeline 按日期**倒序**，新条目在最上面；日期标题链接回当天日报：`### [YYYY-MM-DD](/today/YYYY-MM-DD)`。
 3. **归档**：文件超过约 500 行时，Timeline 只保留最近 3 个月，更早的条目压缩成一段"历史演进摘要"放在 Timeline 小节之前。
 4. 保持模板的小节结构，不要自创章节。
+
+## 第五步半：更新知识地图
+
+`docs/map.md` 是按领域分组的 Topic 总览（生成 AI / Agent / 企业级 AI 应用 / 模型 / 工程与工具……）。每次运行后：
+
+1. 新建的 Topic 加入对应领域分组（一行：Topic 链接｜是什么｜解决什么问题｜状态｜最近动态日期）。
+2. 刷新本次有动态的 Topic 行的"最近动态"日期。
+3. 重算所有行的状态：🔥 最近 7 天有动态 / 📈 最近 30 天 / 💤 更久。
 
 ## 第六步：同步英日译文
 

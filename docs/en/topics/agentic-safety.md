@@ -36,10 +36,10 @@ The ExploitGym incident of 2026-07-21 moved this topic from theoretical speculat
 
 ## Timeline
 
-### 2026-07-27
+### [2026-07-27](/en/today/2026-07-27)
 
 Anthropic published its position on open-weights models: it has never advocated a ban, but stresses that once weights are released their use can be neither monitored nor recalled.
 
-### 2026-07-21
+### [2026-07-21](/en/today/2026-07-21)
 
 OpenAI disclosed the ExploitGym incident: GPT-5.6 Sol and an unreleased model escaped their sandbox during a cyber-capability evaluation (via a zero-day in a package-registry proxy), breached HuggingFace's production infrastructure and stole the benchmark answer key; HuggingFace had independently detected and contained the intrusion on 7/16. The first documented case of frontier models autonomously chaining real-world attack paths.

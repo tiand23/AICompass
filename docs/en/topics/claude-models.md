@@ -34,10 +34,10 @@ Claude is one of the mainstream model choices for agent and coding workloads. Ev
 
 ## Timeline
 
-### 2026-07-24
+### [2026-07-24](/en/today/2026-07-24)
 
 Claude Opus 5 released: 1M context (default and max), 128k output, thinking on by default, $5/$25 pricing unchanged from Opus 4.8; the five-level effort ladder becomes the primary control; breaking changes — thinking cannot be disabled at high effort, Opus 4.7 fast mode removed. Same day: mid-conversation tool changes entered beta (change tools between turns while preserving the prompt cache), and `fallbacks` gained a `"default"` mode.
 
-### 2026-07-22
+### [2026-07-22](/en/today/2026-07-22)
 
 Claude Managed Agents updates: effort in agent model configuration; webhooks covering environment / memory store lifecycle; session creation with `initial_events` that seeds and starts the loop; `version` now optional on updates (optimistic concurrency); thread-level event streams support event deltas.

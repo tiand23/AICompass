@@ -34,10 +34,10 @@ Claude 是 Agent 与编码场景的主流模型选择之一。其模型线的每
 
 ## Timeline
 
-### 2026-07-24
+### [2026-07-24](/today/2026-07-24)
 
 Claude Opus 5 发布：1M 上下文（默认即最大）、128k 输出、thinking 默认开启、$5/$25 定价与 Opus 4.8 持平；effort 五档成为主要调控手段；破坏性变更——高 effort 下不可禁用 thinking、Opus 4.7 fast mode 移除。同日：mid-conversation tool changes 进入 beta（多轮间增删工具且保留 prompt cache）、`fallbacks` 新增 `"default"` 模式。
 
-### 2026-07-22
+### [2026-07-22](/today/2026-07-22)
 
 Claude Managed Agents 更新：agent 模型配置支持 effort；webhook 覆盖 environment / memory store 生命周期；session 创建支持 `initial_events` 预置并直接启动；`version` 字段改为可选（乐观并发）；线程级事件流支持 event deltas。
