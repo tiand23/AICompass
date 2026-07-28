@@ -9,6 +9,6 @@ import { data } from './.vitepress/graph.data'
 
 # 知识图谱
 
-> 节点 = Topic（颜色按领域，大小按 Timeline 活跃度）；连线 = Topic 之间的引用关系。悬停高亮关联，点击进入 Topic。图谱在每次构建时从文档互链自动生成。
+> 放射状结构：中心 → 七个领域 → Topic。实线是归属关系，**虚线弧是 Topic 之间的引用**；节点大小 = Timeline 活跃度，空心领域 = 待积累。悬停 Topic 高亮它的关联，点击进入详情。图谱每次构建时从文档互链自动生成。
 
-<TopicGraph :graph="data.root" prefix="" />
+<TopicGraph :graph="data.root" prefix="" root-label="AI 开发栈" />
