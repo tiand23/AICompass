@@ -47,6 +47,7 @@ function buildLocale(prefix: string) {
     domain: number
     activity: number
     latest: string
+    dates: string[]
     title: string
     html: string
   }[] = []
@@ -65,6 +66,7 @@ function buildLocale(prefix: string) {
         domain: homeDomain[slug] ?? domains.length,
         activity: dates.length,
         latest: dates[dates.length - 1] ?? '',
+        dates: dates.slice(-40), // 活动轨道只需要近期日期，防止数据无限增长
         title,
         html: md.render(body),
       })

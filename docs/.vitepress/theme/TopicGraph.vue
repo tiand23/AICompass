@@ -6,6 +6,7 @@ interface GNode {
   domain: number
   activity: number
   latest: string
+  dates: string[]
   title: string
   html: string
 }
@@ -18,16 +19,34 @@ const props = defineProps<{
   emptyLabel: string
 }>()
 
-const W = 880
 const X_ROOT = 90
 const X_DOMAIN = 320
 const X_TOPIC = 600
+// 活动轨道：固定 14 天滑动窗口，宽度恒定不随时间增长
+const DAYS = 14
+const DAY_W = 14
+const X_STRIP = 790
+const W = X_STRIP + DAYS * DAY_W + 16
 const ROW = 46
 const GAP = 20
 const PALETTE = ['#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272', '#fc8452', '#9a60b4']
 
 const hovered = ref('')
 const selected = ref<GNode | null>(null)
+
+// 最近 14 天的日期轴。在客户端挂载后计算，避免 SSR 与浏览器日期不一致
+const days = ref<string[]>([])
+function fmt(d: Date) {
+  const p = (x: number) => String(x).padStart(2, '0')
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`
+}
+const today = computed(() => days.value[days.value.length - 1] ?? '')
+function dayX(i: number) {
+  return X_STRIP + i * DAY_W + DAY_W / 2
+}
+function isFresh(n: GNode) {
+  return today.value !== '' && n.dates.includes(today.value)
+}
 
 // 从左到右的树状布局：根 → 领域列 → Topic 列（按领域分块纵向排列）。
 // 确定性布局，内容增长时向下扩展。
@@ -102,7 +121,16 @@ function onDrawerClick(e: MouseEvent) {
 function onKey(e: KeyboardEvent) {
   if (e.key === 'Escape') selected.value = null
 }
-onMounted(() => window.addEventListener('keydown', onKey))
+onMounted(() => {
+  window.addEventListener('keydown', onKey)
+  const list: string[] = []
+  for (let i = DAYS - 1; i >= 0; i--) {
+    const d = new Date()
+    d.setDate(d.getDate() - i)
+    list.push(fmt(d))
+  }
+  days.value = list
+})
 onUnmounted(() => window.removeEventListener('keydown', onKey))
 </script>
 
@@ -158,8 +186,38 @@ onUnmounted(() => window.removeEventListener('keydown', onKey))
         @mouseleave="hovered = ''"
         @click="selected = n"
       >
+        <circle v-if="isFresh(n)" :cx="X_TOPIC" :cy="n.y" :r="radius(n) + 5" class="halo" :stroke="color(n.domain)" />
         <circle :cx="X_TOPIC" :cy="n.y" :r="radius(n)" :fill="color(n.domain)" />
         <text :x="X_TOPIC + radius(n) + 8" :y="n.y + 4" class="topic-label">{{ n.id }}</text>
+      </g>
+      <!-- 活动轨道：最近 14 天，固定宽度滑动窗口 -->
+      <g v-if="days.length" class="strip">
+        <rect
+          :x="dayX(DAYS - 1) - DAY_W / 2"
+          y="22"
+          :width="DAY_W"
+          :height="layout.H - 32"
+          class="today-col"
+        />
+        <text :x="dayX(0)" y="14" text-anchor="middle" class="axis">{{ days[0].slice(5) }}</text>
+        <text :x="dayX(7)" y="14" text-anchor="middle" class="axis">{{ days[7].slice(5) }}</text>
+        <text :x="dayX(DAYS - 1)" y="14" text-anchor="middle" class="axis today-label">
+          {{ days[DAYS - 1].slice(5) }}
+        </text>
+        <g v-for="n in layout.topics" :key="'st' + n.id" :opacity="dimmed(n.id) ? 0.15 : 1">
+          <line :x1="X_STRIP" :y1="n.y" :x2="X_STRIP + DAYS * DAY_W" :y2="n.y" class="track" />
+          <circle
+            v-for="(d, i) in days"
+            v-show="n.dates.includes(d)"
+            :key="d"
+            :cx="dayX(i)"
+            :cy="n.y"
+            r="4.5"
+            :fill="color(n.domain)"
+          >
+            <title>{{ d }}</title>
+          </circle>
+        </g>
       </g>
     </svg>
 
@@ -255,6 +313,31 @@ svg {
 .topic-label {
   font-size: 12.5px;
   fill: var(--vp-c-text-1);
+}
+.halo {
+  fill: none;
+  stroke-width: 2;
+  animation: tg-pulse 2s ease-in-out infinite;
+}
+@keyframes tg-pulse {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.3; }
+}
+.track {
+  stroke: var(--vp-c-divider);
+  stroke-width: 1;
+  opacity: 0.6;
+}
+.today-col {
+  fill: var(--vp-c-brand-soft, rgba(100, 108, 255, 0.14));
+}
+.axis {
+  font-size: 10px;
+  fill: var(--vp-c-text-3);
+}
+.today-label {
+  fill: var(--vp-c-brand-1);
+  font-weight: 600;
 }
 </style>
 
