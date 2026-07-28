@@ -9,6 +9,6 @@ import { data } from '../.vitepress/graph.data'
 
 # Knowledge Graph
 
-> Radial structure: center → seven domains → topics. Solid lines show membership; **dashed arcs are cross-references between topics**. Node size = timeline activity; hollow domains = accumulating. Hover a topic to highlight its connections, click to open it. Generated automatically from document cross-links at build time.
+> Left to right: AI stack → domains → topics. Colored solid lines show membership; **dashed arcs on the right are cross-references between topics**; node size = timeline activity. Hover to highlight connections, **click a node for a summary overlay** (overview + latest activity) — "Read more" only when you want to go deeper. Generated automatically from document cross-links at build time.
 
-<TopicGraph :graph="data.en" prefix="en" root-label="AI Stack" />
+<TopicGraph :graph="data.en" prefix="en" root-label="AI Stack" more-label="Read more" empty-label="accumulating" />

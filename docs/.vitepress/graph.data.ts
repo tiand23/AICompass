@@ -39,19 +39,40 @@ function buildLocale(prefix: string) {
     }
   }
 
-  const nodes: { id: string; domain: number; activity: number; latest: string }[] = []
+  const nodes: {
+    id: string
+    domain: number
+    activity: number
+    latest: string
+    title: string
+    intro: string
+    timeline: { date: string; text: string }[]
+  }[] = []
   const links: { source: string; target: string }[] = []
   const seen = new Set<string>()
+  const stripLinks = (s: string) => s.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/\*\*/g, '')
   if (fs.existsSync(topicsDir)) {
     for (const f of fs.readdirSync(topicsDir).filter((f) => f.endsWith('.md'))) {
       const slug = f.replace(/\.md$/, '')
       const src = fs.readFileSync(path.join(topicsDir, f), 'utf8')
       const dates = [...src.matchAll(/^### \[?(\d{4}-\d{2}-\d{2})/gm)].map((m) => m[1]).sort()
+      // 浮层内容：标题、首节（简介）第一段、最近两条 Timeline
+      const title = (src.match(/^# (.+)$/m) || [, slug])[1]!.trim()
+      const firstSection = src.split(/^## /m)[1] ?? ''
+      const intro = stripLinks(
+        firstSection.split('\n').slice(1).join('\n').trim().split(/\n\n/)[0] ?? ''
+      ).trim()
+      const timeline = [...src.matchAll(/^### \[?(\d{4}-\d{2}-\d{2})\]?[^\n]*\n\n([^\n]+)/gm)]
+        .slice(0, 2)
+        .map((m) => ({ date: m[1], text: stripLinks(m[2]).trim() }))
       nodes.push({
         id: slug,
         domain: homeDomain[slug] ?? domains.length,
         activity: dates.length,
         latest: dates[dates.length - 1] ?? '',
+        title,
+        intro,
+        timeline,
       })
       for (const lm of src.matchAll(TOPIC_LINK)) {
         const target = lm[1]
