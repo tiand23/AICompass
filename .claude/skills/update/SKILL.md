@@ -12,6 +12,7 @@ description: 抓取上次运行以来 AI 生态的重要更新，按日生成 do
 1. 查看 `docs/today/` 下所有 `YYYY-MM-DD.md` 文件，找到最新日期。
 2. 起始日期 = 最新日期的**次日**；如果目录为空（首次运行），起始日期 = 今天。
 3. 结束日期 = 今天。向用户报告本次覆盖的日期范围再继续。
+4. **边界补漏**：官方渠道可能在"最新日期"当天晚些时候（上次运行之后）发文。抓取时把最新日期当天也看一遍，发现遗漏就**合并进当天已有的 Daily 文件**（注意与已有条目去重），不要另建文件。
 4. 如果区间超过 14 天，提醒用户内容可能较多，但照常执行。
 
 ## 第二步：抓取数据源
@@ -57,7 +58,7 @@ description: 抓取上次运行以来 AI 生态的重要更新，按日生成 do
 - 当天没有值得记录的内容就**不生成文件**，不写空文件。
 - 格式严格遵循同目录下的 `daily-template.md`。
 - `关联 Topic` 使用标准 Markdown 链接 `[topic-name](/topics/topic-name)`，名称与 `docs/topics/` 下的文件名（去掉 .md）一致，kebab-case。（站点用 VitePress 构建，不支持 `[[双链]]` 语法。）
-- 写完所有 Daily 后，把 `docs/index.md` 首页 hero 中"最新日报"按钮的 link 更新为最新一天的 `/today/YYYY-MM-DD`。
+- 写完所有 Daily 后，把三个首页（`docs/index.md`、`docs/en/index.md`、`docs/ja/index.md`）hero 中"最新日报"按钮的 link 更新为各自语言下最新一天（`/today/YYYY-MM-DD`、`/en/today/…`、`/ja/today/…`）。
 
 ## 第五步：更新 Topic
 
@@ -72,7 +73,17 @@ description: 抓取上次运行以来 AI 生态的重要更新，按日生成 do
 3. **归档**：文件超过约 500 行时，Timeline 只保留最近 3 个月，更早的条目压缩成一段"历史演进摘要"放在 Timeline 小节之前。
 4. 保持模板的小节结构，不要自创章节。
 
-## 第六步：Commit & Push
+## 第六步：同步英日译文
+
+**中文是唯一源，`docs/en/` 和 `docs/ja/` 是生成物，永远不要单独编辑它们。**
+
+本次运行中新建或修改过的每个 `docs/today/*.md` 与 `docs/topics/*.md`：
+
+1. 整篇翻译成英文，写入 `docs/en/<相同相对路径>`，直接覆盖旧译文；日文同理写入 `docs/ja/<相同相对路径>`。
+2. 字段名一并翻译（一句话总结 → Summary / 概要；为什么重要 → Why it matters / なぜ重要か；分类 → Category / 分類；关联 Topic → Related Topic / 関連 Topic；来源 → Source / 出典）。
+3. 译文中的 Topic 链接加语言前缀：`/en/topics/<name>`、`/ja/topics/<name>`。
+
+## 第七步：Commit & Push
 
 ```
 git add docs/

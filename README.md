@@ -16,7 +16,9 @@
 
 ## 网站
 
-站点用 [VitePress](https://vitepress.dev/) 构建，Cloudflare Pages 绑定本仓库，每次 push 自动构建部署——`/update` 跑完，网站几分钟后就是最新的。
+站点用 [VitePress](https://vitepress.dev/) 构建，Cloudflare 绑定本仓库，每次 push 自动构建部署——`/update` 跑完，网站几分钟后就是最新的。
+
+站点为中 / 英 / 日三语：中文（`docs/`）是唯一手工维护的源，`docs/en/` 与 `docs/ja/` 由 `/update` 自动整篇重翻生成，**不要手工编辑译文**。
 
 本地预览：
 

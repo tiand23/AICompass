@@ -20,29 +20,66 @@ function listMd(dir: string, { newestFirst = false, limit = 0 } = {}) {
   })
 }
 
-// 构建时计算最新一篇日报，nav 上的 Today 永远指向它
-const latestDaily = listMd('today', { newestFirst: true, limit: 1 })[0]?.link ?? '/'
-
-export default defineConfig({
-  lang: 'zh-CN',
-  title: 'AI Compass',
-  description: 'Living AI Developer Handbook —— 持续演进的 AI 开发知识库',
-  cleanUrls: true,
-  lastUpdated: true,
-  themeConfig: {
+// 每个语言一套 nav + sidebar，构建时扫描各自目录生成；
+// Today 侧边栏只列最近 30 天，更早的日报仍会构建、可搜索、可直链
+function localeThemeConfig(prefix: string, t: { home: string }) {
+  const todayDir = prefix ? `${prefix}/today` : 'today'
+  const topicsDir = prefix ? `${prefix}/topics` : 'topics'
+  const home = prefix ? `/${prefix}/` : '/'
+  const latestDaily = listMd(todayDir, { newestFirst: true, limit: 1 })[0]?.link ?? home
+  return {
     nav: [
-      { text: '首页', link: '/' },
+      { text: t.home, link: home },
       { text: 'Today', link: latestDaily },
     ],
-    // Today 侧边栏只列最近 30 天，更早的日报仍会构建、可搜索、可直链
     sidebar: [
-      { text: 'Today', collapsed: false, items: listMd('today', { newestFirst: true, limit: 30 }) },
-      { text: 'Topics', collapsed: false, items: listMd('topics') },
+      { text: 'Today', collapsed: false, items: listMd(todayDir, { newestFirst: true, limit: 30 }) },
+      { text: 'Topics', collapsed: false, items: listMd(topicsDir) },
     ],
+  }
+}
+
+export default defineConfig({
+  title: 'AI Compass',
+  description: 'Living AI Developer Handbook',
+  cleanUrls: true,
+  lastUpdated: true,
+  locales: {
+    root: {
+      label: '简体中文',
+      lang: 'zh-CN',
+      description: 'Living AI Developer Handbook —— 持续演进的 AI 开发知识库',
+      themeConfig: {
+        ...localeThemeConfig('', { home: '首页' }),
+        outline: { label: '本页目录' },
+        docFooter: { prev: '上一篇', next: '下一篇' },
+        lastUpdatedText: '最后更新',
+      },
+    },
+    en: {
+      label: 'English',
+      lang: 'en-US',
+      description: 'Living AI Developer Handbook — a continuously evolving knowledge base for AI developers',
+      themeConfig: {
+        ...localeThemeConfig('en', { home: 'Home' }),
+        outline: { label: 'On this page' },
+        lastUpdatedText: 'Last updated',
+      },
+    },
+    ja: {
+      label: '日本語',
+      lang: 'ja-JP',
+      description: 'Living AI Developer Handbook —— 進化し続ける AI 開発ナレッジベース',
+      themeConfig: {
+        ...localeThemeConfig('ja', { home: 'ホーム' }),
+        outline: { label: '目次' },
+        docFooter: { prev: '前へ', next: '次へ' },
+        lastUpdatedText: '最終更新',
+      },
+    },
+  },
+  themeConfig: {
     search: { provider: 'local' },
     socialLinks: [{ icon: 'github', link: 'https://github.com/tiand23/AICompass' }],
-    outline: { label: '本页目录' },
-    docFooter: { prev: '上一篇', next: '下一篇' },
-    lastUpdatedText: '最后更新',
   },
 })

@@ -65,6 +65,7 @@ AICompass/
 - 站点用 **VitePress** 构建（`npm run docs:build`），**Cloudflare Pages** 绑定 GitHub 仓库，每次 push 自动构建部署。
 - `/update` 跑完自动 commit + push，所以网站每天自动更新，无需额外操作。
 - Topic 间引用与 Daily 的关联 Topic 一律用标准 Markdown 链接 `[name](/topics/name)`，不用 `[[双链]]`。
+- **三语站点（2026-07-28 新增）**：中文（`docs/`）是唯一手工维护的源；英文（`docs/en/`）和日文（`docs/ja/`）由 `/update` 在每次运行时对本次改动的文件整篇重翻生成，不存在人工维护、不会漂移。代价是每次运行的生成 token 约为原来的 3 倍。
 
 比原 PRD 少了 weekly/、monthly/、assets/、prompts/、scripts/、.github/workflows/ —— 需要时再加，先不建空目录。
 
