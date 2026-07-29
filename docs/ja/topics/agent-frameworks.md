@@ -37,3 +37,7 @@
 ### 2026-07-28
 
 Topic 作成。現状：LangGraph が企業採用とスターの両方でリード、AutoGen はメンテナンスモード入り、Google ADK 2.0 リリース（3 言語・グラフワークフロー）、OpenAI Agents SDK と Microsoft Agent Framework は安定的に更新中。
+
+### [2026-07-27](/ja/today/2026-07-27)
+
+LangChain が「How we built LangChain's agent-first data stack」を公開——エージェント駆動のデータ消費に合わせてデータ基盤を再設計した自社実践。

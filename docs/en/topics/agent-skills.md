@@ -25,6 +25,7 @@ High-star representative repos at topic creation (2026-07):
 | cc-switch | ~113k | Claude Code config switching |
 | ui-ux-pro-max-skill | ~101k | UI/UX specialist skill |
 | awesome-claude-skills | ~67k | Curated list (50+ skills) |
+| book-to-skill | New (hit Trending 2026-07-29) | Automatic PDF → Claude Code skill conversion |
 
 > This ranking is refreshed by `/update` whenever skill-related repos hit GitHub Trending.
 
@@ -45,6 +46,10 @@ High-star representative repos at topic creation (2026-07):
 - [Claude Code repos star leaderboard](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-07-29](/en/today/2026-07-29)
+
+book-to-skill hit Trending (+423 stars in a day): compiling PDFs into skill packages automatically — a signal of the "knowledge → skill" toolchain emerging.
 
 ### 2026-07-28
 

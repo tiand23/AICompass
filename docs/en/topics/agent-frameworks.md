@@ -37,3 +37,7 @@ The framework determines how agent logic is expressed and how portable it is —
 ### 2026-07-28
 
 Topic created. Current standings: LangGraph leads both enterprise adoption and stars; AutoGen entered maintenance mode; Google ADK shipped 2.0 (three languages, graph workflows); OpenAI Agents SDK and Microsoft Agent Framework iterate steadily.
+
+### [2026-07-27](/en/today/2026-07-27)
+
+LangChain published "How we built LangChain's agent-first data stack" — a dogfooding account of redesigning data infrastructure for agent-driven consumption.

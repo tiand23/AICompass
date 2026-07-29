@@ -25,6 +25,7 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 | cc-switch | ~113k | Claude Code 配置切换 |
 | ui-ux-pro-max-skill | ~101k | UI/UX 专项 skill |
 | awesome-claude-skills | ~67k | 精选清单（50+ skills） |
+| book-to-skill | 新晋（2026-07-29 上榜 Trending） | PDF → Claude Code skill 自动转换 |
 
 > 此排行由 `/update` 在 skill 类仓库登上 GitHub Trending 时自动更新。
 
@@ -45,6 +46,10 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 - [Claude Code 高星仓库排行](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-07-29](/today/2026-07-29)
+
+book-to-skill 登上 Trending（单日 +423 star）：把 PDF 自动编译成 skill 包——"知识 → skill"工具链化的信号。
 
 ### 2026-07-28
 

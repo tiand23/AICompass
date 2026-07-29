@@ -11,7 +11,7 @@
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
 | [claude-models](/topics/claude-models) | Anthropic Claude 模型线 | Agent/编码场景的模型选型与迁移 | 🔥 | 2026-07-24 |
-| [gemini-models](/topics/gemini-models) | Google Gemini 模型线 | 成本敏感场景的高性价比选型 | 🔥 | 2026-07-21 |
+| [gemini-models](/topics/gemini-models) | Google Gemini 模型线 | 成本敏感场景的高性价比选型 | 📈 | 2026-07-21 |
 
 ### 多模态生成
 
@@ -22,7 +22,9 @@
 
 ### 效率与小型化（SLM ・ 蒸馏 ・ 量化）
 
-*待积累。关注：小语言模型、知识蒸馏、低比特量化、端侧部署。（量化推理暂参见 [diffusion-models](/topics/diffusion-models)）*
+| Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
+|---|---|---|---|---|
+| [model-efficiency](/topics/model-efficiency) | SLM、蒸馏、量化、高效架构、CPU/端侧推理 | 用更少算力跑出够用的智能 | 🔥 | 2026-07-28 |
 
 ## 2. 知识与检索
 
@@ -43,7 +45,7 @@
 | [deep-agents](/topics/deep-agents) | 长时程自主任务 Agent（LangChain） | 多步骤任务的规划、恢复与评估 | 🔥 | 2026-07-23 |
 | [agent-frameworks](/topics/agent-frameworks) | 框架版图：LangGraph/CrewAI/ADK/Agents SDK… | 框架选型与长期安全性 | 🔥 | 2026-07-28 |
 | [agent-workflow](/topics/agent-workflow) | 工作流范式：编排 vs 自主、HITL、持久化执行 | 让 Agent 可靠地跑进业务流程 | 🔥 | 2026-07-28 |
-| [agent-skills](/topics/agent-skills) | 可复用能力包生态（含 GitHub 热度排行） | Agent 能力的分发与复用 | 🔥 | 2026-07-28 |
+| [agent-skills](/topics/agent-skills) | 可复用能力包生态（含 GitHub 热度排行） | Agent 能力的分发与复用 | 🔥 | 2026-07-29 |
 
 ### 运行时与云（托管运行时 ・ Agent 平台 ・ Foundry）
 
@@ -73,7 +75,7 @@
 
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
-| [agentic-safety](/topics/agentic-safety) | Agent 行为安全 | 自主模型越权、逃逸带来的真实风险 | 🔥 | 2026-07-27 |
+| [agentic-safety](/topics/agentic-safety) | Agent 行为安全 | 自主模型越权、逃逸带来的真实风险 | 🔥 | 2026-07-29 |
 
 ## 7. 编码工具
 

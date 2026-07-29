@@ -25,6 +25,7 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 | cc-switch | ~113k | Claude Code 設定切替 |
 | ui-ux-pro-max-skill | ~101k | UI/UX 専門 skill |
 | awesome-claude-skills | ~67k | 精選リスト（50+ skills） |
+| book-to-skill | 新登場（2026-07-29 Trending 入り） | PDF → Claude Code skill 自動変換 |
 
 > このランキングは skill 系リポジトリが GitHub Trending に登場した際に `/update` が自動更新する。
 
@@ -45,6 +46,10 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 - [Claude Code リポジトリのスターランキング](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-07-29](/ja/today/2026-07-29)
+
+book-to-skill が Trending 入り（1 日 +423 スター）：PDF を skill パッケージへ自動コンパイル——「知識 → skill」ツールチェーン化のシグナル。
 
 ### 2026-07-28
 

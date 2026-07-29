@@ -37,3 +37,7 @@ Agent 开发框架版图：LangGraph（LangChain 系，图编排）、CrewAI（�
 ### 2026-07-28
 
 建档。当前格局：LangGraph 双料领先（企业采用 + star），AutoGen 进入维护模式，Google ADK 发布 2.0（三语言、图工作流），OpenAI Agents SDK 与 Microsoft Agent Framework 稳定迭代。
+
+### [2026-07-27](/today/2026-07-27)
+
+LangChain 发文《How we built LangChain's agent-first data stack》——为 Agent 驱动的数据消费重新设计数据基础设施的自用实践。

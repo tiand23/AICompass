@@ -11,7 +11,7 @@
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
 | [claude-models](/en/topics/claude-models) | Anthropic's Claude model line | Model selection and migration for agent/coding workloads | 🔥 | 2026-07-24 |
-| [gemini-models](/en/topics/gemini-models) | Google's Gemini model line | Cost-effective selection for price-sensitive workloads | 🔥 | 2026-07-21 |
+| [gemini-models](/en/topics/gemini-models) | Google's Gemini model line | Cost-effective selection for price-sensitive workloads | 📈 | 2026-07-21 |
 
 ### Multimodal Generation
 
@@ -22,7 +22,9 @@
 
 ### Efficiency & Miniaturization (SLM ・ Distillation ・ Quantization)
 
-*Accumulating. Watching: small language models, knowledge distillation, low-bit quantization, edge deployment. (For quantized inference, see [diffusion-models](/en/topics/diffusion-models) for now.)*
+| Topic | What it is | Problem it solves | Status | Last activity |
+|---|---|---|---|---|
+| [model-efficiency](/en/topics/model-efficiency) | SLMs, distillation, quantization, efficient architectures, CPU/edge inference | Usable intelligence from less compute | 🔥 | 2026-07-28 |
 
 ## 2. Knowledge & Retrieval
 
@@ -43,7 +45,7 @@
 | [deep-agents](/en/topics/deep-agents) | Long-horizon autonomous agents (LangChain) | Planning, recovery and evaluation of multi-step tasks | 🔥 | 2026-07-23 |
 | [agent-frameworks](/en/topics/agent-frameworks) | Framework landscape: LangGraph/CrewAI/ADK/Agents SDK… | Framework selection and long-term safety | 🔥 | 2026-07-28 |
 | [agent-workflow](/en/topics/agent-workflow) | Workflow paradigms: orchestration vs autonomy, HITL, durable execution | Getting agents reliably into business processes | 🔥 | 2026-07-28 |
-| [agent-skills](/en/topics/agent-skills) | Reusable capability packages (incl. GitHub heat rankings) | Distribution and reuse of agent capabilities | 🔥 | 2026-07-28 |
+| [agent-skills](/en/topics/agent-skills) | Reusable capability packages (incl. GitHub heat rankings) | Distribution and reuse of agent capabilities | 🔥 | 2026-07-29 |
 
 ### Runtime & Cloud (Hosted Runtimes ・ Agent Platforms ・ Foundry)
 
@@ -73,7 +75,7 @@
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [agentic-safety](/en/topics/agentic-safety) | Agent behavioral safety | Real risks of autonomous models overstepping and escaping | 🔥 | 2026-07-27 |
+| [agentic-safety](/en/topics/agentic-safety) | Agent behavioral safety | Real risks of autonomous models overstepping and escaping | 🔥 | 2026-07-29 |
 
 ## 7. Coding Tools
 

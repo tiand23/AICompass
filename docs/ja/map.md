@@ -11,7 +11,7 @@
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
 | [claude-models](/ja/topics/claude-models) | Anthropic Claude モデルライン | エージェント/コーディング用途の選定と移行 | 🔥 | 2026-07-24 |
-| [gemini-models](/ja/topics/gemini-models) | Google Gemini モデルライン | コスト重視ワークロードの高コスパ選定 | 🔥 | 2026-07-21 |
+| [gemini-models](/ja/topics/gemini-models) | Google Gemini モデルライン | コスト重視ワークロードの高コスパ選定 | 📈 | 2026-07-21 |
 
 ### マルチモーダル生成
 
@@ -22,7 +22,9 @@
 
 ### 効率化と小型化（SLM ・ 蒸留 ・ 量子化）
 
-*蓄積中。注目：小規模言語モデル、知識蒸留、低ビット量子化、エッジデプロイ。（量子化推論は当面 [diffusion-models](/ja/topics/diffusion-models) を参照）*
+| Topic | 何か | 解決する問題 | 状態 | 最終更新 |
+|---|---|---|---|---|
+| [model-efficiency](/ja/topics/model-efficiency) | SLM、蒸留、量子化、効率アーキテクチャ、CPU/エッジ推論 | より少ない計算資源で十分な知能を | 🔥 | 2026-07-28 |
 
 ## 2. ナレッジと検索
 
@@ -43,7 +45,7 @@
 | [deep-agents](/ja/topics/deep-agents) | 長期自律タスクエージェント（LangChain） | 多段階タスクの計画・回復・評価 | 🔥 | 2026-07-23 |
 | [agent-frameworks](/ja/topics/agent-frameworks) | フレームワーク版図：LangGraph/CrewAI/ADK/Agents SDK… | フレームワーク選定と長期的安全性 | 🔥 | 2026-07-28 |
 | [agent-workflow](/ja/topics/agent-workflow) | ワークフローパラダイム：編成 vs 自律、HITL、永続実行 | エージェントを業務プロセスに確実に組み込む | 🔥 | 2026-07-28 |
-| [agent-skills](/ja/topics/agent-skills) | 再利用可能な能力パッケージ（GitHub 熱度ランキング付き） | エージェント能力の配布と再利用 | 🔥 | 2026-07-28 |
+| [agent-skills](/ja/topics/agent-skills) | 再利用可能な能力パッケージ（GitHub 熱度ランキング付き） | エージェント能力の配布と再利用 | 🔥 | 2026-07-29 |
 
 ### ランタイムとクラウド（ホスト型ランタイム ・ エージェントプラットフォーム ・ Foundry）
 
@@ -73,7 +75,7 @@
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [agentic-safety](/ja/topics/agentic-safety) | エージェントの行動安全性 | 自律モデルの越権・脱出という現実リスク | 🔥 | 2026-07-27 |
+| [agentic-safety](/ja/topics/agentic-safety) | エージェントの行動安全性 | 自律モデルの越権・脱出という現実リスク | 🔥 | 2026-07-29 |
 
 ## 7. コーディングツール
 
