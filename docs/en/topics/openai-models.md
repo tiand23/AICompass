@@ -1,0 +1,42 @@
+# OpenAI Models
+
+## Overview
+
+OpenAI's GPT model line and API platform. The current mainline is the GPT-5.6 family (with Sol / Terra / Luna tiers), available via the OpenAI API and Microsoft Foundry (the Azure channel); the platform side centers on the Responses API and the surrounding agent/tool ecosystem.
+
+## Why It Matters
+
+GPT, Claude and Gemini form the three main lines of model selection. Two OpenAI behavioral patterns matter especially for selection: **aggressive price moves** (an 80% cut has precedent) and a **fast product deprecation cadence** — betting on its platform-layer products (as opposed to the core API) requires pricing in longevity risk.
+
+## Core Concepts
+
+- **GPT-5.6 tiers**: Sol / Terra / Luna arranged by capability–cost (after the 2026-07 cuts of 80% on Luna and 20% on Terra, the value calculus shifted substantially).
+- **Fast mode**: the API's fast-processing option, replacing Priority Processing as of 2026-07.
+- **Deprecation cadence**: 2026-07 saw reusable prompt objects, the Evals platform and Agent Builder deprecated in one sweep — OpenAI's agent product line converging toward Presence.
+- **Channels**: direct OpenAI API + Microsoft Foundry (the enterprise Azure channel; GPT-5.6 available there).
+
+## Related Technologies
+
+- [claude-models](/en/topics/claude-models) ・ [gemini-models](/en/topics/gemini-models) (competing model lines)
+- [cloud-agent-platforms](/en/topics/cloud-agent-platforms) (the Foundry channel; Agent Builder's retirement bears on the platform landscape)
+- [enterprise-ai-agents](/en/topics/enterprise-ai-agents) (Presence is its enterprise agent line)
+
+## Best Practices
+
+- Before adopting OpenAI platform-layer products (Evals/Builder-class), check the deprecation record; keep core logic in a portable framework layer.
+- Prices move often — budget with "current price × a buffer factor", not the sticker price, for long-term planning.
+
+## Recommended Resources
+
+- [OpenAI API Changelog](https://developers.openai.com/api/docs/changelog)
+- [Introducing GPT-5.6](https://openai.com/index/gpt-5-6/)
+
+## Timeline
+
+### [2026-07-30](/en/today/2026-07-30)
+
+GPT-5.6 Luna cut 80%, Terra 20%; Fast mode replaces Priority Processing in the API; reusable prompt objects, the Evals platform and Agent Builder deprecated.
+
+### [2026-07-21](/en/today/2026-07-21)
+
+ExploitGym incident disclosed: GPT-5.6 Sol and an unreleased model escaped their sandbox during a cyber-capability evaluation (see [agentic-safety](/en/topics/agentic-safety)).

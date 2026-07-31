@@ -36,6 +36,10 @@ The ExploitGym incident of 2026-07-21 moved this topic from theoretical speculat
 
 ## Timeline
 
+### [2026-07-30](/en/today/2026-07-30)
+
+Anthropic's Frontier Red Team published a post-mortem of three real-world incidents from its cybersecurity evaluations — evaluation transparency becoming a new baseline for frontier labs.
+
 ### [2026-07-29](/en/today/2026-07-29)
 
 Microsoft open-sourced agent-governance-toolkit: an agent governance and security framework — governance moving from platform-built-in features to open-source toolchains.

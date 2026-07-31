@@ -33,6 +33,10 @@
 
 ## Timeline
 
+### [2026-07-30](/today/2026-07-30)
+
+LangSmith 推出 LLM Gateway：生产 Agent 的运行时管控（模型路由、配额、策略）——Gateway 层补上企业 Agent 运维拼图，与 Agent365 管控平面同趋势。
+
 ### [2026-07-25](/today/2026-07-25)
 
 Harrison Chase 发表《What does it mean to "own your intelligence"?》，把"智能所有权"之争摆上台面。

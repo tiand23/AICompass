@@ -32,6 +32,10 @@ Document parsing and structuring: turning PDFs, scans, tables and charts into LL
 
 ## Timeline
 
+### [2026-07-30](/en/today/2026-07-30)
+
+LlamaIndex released Parse Gateway: routing each document page to the best-suited parser by content characteristics — acknowledging "no single parser suffices" and engineering around it.
+
 ### 2026-07-28
 
 Topic created. Status: VLM + semantic reconstruction is the mainstream paradigm; Agentic Document Processing is displacing traditional IDP; LlamaParse/Docling/Reducto/Unstructured form the first tier; schema-based extraction has split into its own product line.

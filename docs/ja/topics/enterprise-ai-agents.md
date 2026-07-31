@@ -33,6 +33,10 @@
 
 ## Timeline
 
+### [2026-07-30](/ja/today/2026-07-30)
+
+LangSmith が LLM Gateway を発表：本番エージェントのランタイム管理（モデルルーティング、クォータ、ポリシー）——Gateway 層が企業エージェント運用パズルを埋める。Agent365 系コントロールプレーンと同じ潮流。
+
 ### [2026-07-25](/ja/today/2026-07-25)
 
 Harrison Chase が「What does it mean to 'own your intelligence'?」を公開し、インテリジェンス所有権の論争を提起。

@@ -27,6 +27,7 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 | awesome-claude-skills | ~67k | 精選リスト（50+ skills） |
 | book-to-skill | 新登場（2026-07-29 Trending 入り） | PDF → Claude Code skill 自動変換 |
 | superpowers | 新登場（2026-07-30 Trending 入り、日次 +616） | Agentic skills フレームワーク + 開発方法論 |
+| last30days-skill | 新登場（2026-07-31 Trending 入り、日次 +378） | クロスプラットフォーム「直近 30 日」調査 skill |
 
 > このランキングは skill 系リポジトリが GitHub Trending に登場した際に `/update` が自動更新する。
 
@@ -47,6 +48,10 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 - [Claude Code リポジトリのスターランキング](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-07-31](/ja/today/2026-07-31)
+
+last30days-skill が Trending 入り（日次 +378）：クロスプラットフォーム調査の skill 化——1 週間で 3 件目。「定期調査と総括」が標準化された能力に。
 
 ### [2026-07-30](/ja/today/2026-07-30)
 

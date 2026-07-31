@@ -33,6 +33,10 @@ This is the main battleground for generative AI in the enterprise. As model capa
 
 ## Timeline
 
+### [2026-07-30](/en/today/2026-07-30)
+
+LangSmith shipped LLM Gateway: runtime controls for production agents (model routing, quotas, policy) — the gateway layer completing the enterprise agent ops puzzle, same trend as Agent365-style control planes.
+
 ### [2026-07-25](/en/today/2026-07-25)
 
 Harrison Chase published "What does it mean to 'own your intelligence'?", putting the intelligence-ownership debate on the table.

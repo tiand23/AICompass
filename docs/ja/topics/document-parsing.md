@@ -32,6 +32,10 @@
 
 ## Timeline
 
+### [2026-07-30](/ja/today/2026-07-30)
+
+LlamaIndex が Parse Gateway を発表：ページの内容特性に応じて最適なパーサーへルーティング——「単一パーサーでは足りない」を認めた工学的解。
+
 ### 2026-07-28
 
 Topic 作成。現状：VLM + 意味再構築が主流パラダイムとなり、Agentic Document Processing が従来型 IDP を置換中；LlamaParse/Docling/Reducto/Unstructured が第一梯団、スキーマベース抽出は独立した製品ラインに。

@@ -36,6 +36,10 @@ Agentic Safety（Agent 安全）关注具备自主行动能力的 AI 系统带�
 
 ## Timeline
 
+### [2026-07-30](/today/2026-07-30)
+
+Anthropic Frontier Red Team 复盘网络安全评估中的三起真实事件——评估透明度成为头部实验室的新基线。
+
 ### [2026-07-29](/today/2026-07-29)
 
 微软开源 agent-governance-toolkit：Agent 治理与安全框架——治理从平台内置能力走向开源工具链。

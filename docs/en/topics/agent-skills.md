@@ -27,6 +27,7 @@ High-star representative repos at topic creation (2026-07):
 | awesome-claude-skills | ~67k | Curated list (50+ skills) |
 | book-to-skill | New (hit Trending 2026-07-29) | Automatic PDF → Claude Code skill conversion |
 | superpowers | New (hit Trending 2026-07-30, +616/day) | Agentic skills framework + development methodology |
+| last30days-skill | New (hit Trending 2026-07-31, +378/day) | Cross-platform "last 30 days" research skill |
 
 > This ranking is refreshed by `/update` whenever skill-related repos hit GitHub Trending.
 
@@ -47,6 +48,10 @@ High-star representative repos at topic creation (2026-07):
 - [Claude Code repos star leaderboard](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-07-31](/en/today/2026-07-31)
+
+last30days-skill hit Trending (+378/day): cross-platform research packaged as a skill — the third in a week; "periodic research and synthesis" is becoming a standardized capability.
 
 ### [2026-07-30](/en/today/2026-07-30)
 

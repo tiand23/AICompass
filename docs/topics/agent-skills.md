@@ -27,6 +27,7 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 | awesome-claude-skills | ~67k | 精选清单（50+ skills） |
 | book-to-skill | 新晋（2026-07-29 上榜 Trending） | PDF → Claude Code skill 自动转换 |
 | superpowers | 新晋（2026-07-30 上榜 Trending，单日 +616） | Agentic skills 框架 + 开发方法论 |
+| last30days-skill | 新晋（2026-07-31 上榜 Trending，单日 +378） | 跨平台"最近 30 天"调研 skill |
 
 > 此排行由 `/update` 在 skill 类仓库登上 GitHub Trending 时自动更新。
 
@@ -47,6 +48,10 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 - [Claude Code 高星仓库排行](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-07-31](/today/2026-07-31)
+
+last30days-skill 上榜（单日 +378）：跨 Reddit/X/YouTube/HN 的调研能力封装为 skill——一周内第三个，"定期调研综述"成为标准化能力。
 
 ### [2026-07-30](/today/2026-07-30)
 

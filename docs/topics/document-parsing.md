@@ -32,6 +32,10 @@
 
 ## Timeline
 
+### [2026-07-30](/today/2026-07-30)
+
+LlamaIndex 发布 Parse Gateway：按页面内容特征把文档页路由到最合适的解析器——承认"单解析器不够"并给出工程化方案。
+
 ### 2026-07-28
 
 建档。现状：VLM + 语义重建成为主流范式，Agentic Document Processing 取代传统 IDP；LlamaParse/Docling/Reducto/Unstructured 构成第一梯队，schema-based 结构化抽取独立成产品线。
