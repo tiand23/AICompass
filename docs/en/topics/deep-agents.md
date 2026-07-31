@@ -28,6 +28,10 @@ Long-horizon autonomy is the current frontier of agent capability competition, a
 
 ## Timeline
 
+### [2026-07-29](/en/today/2026-07-29)
+
+Deep Agents v0.7 released: 65% fewer base input tokens, filesystem tool overhaul, DeltaChannel incremental checkpoints, experimental QuickJS code execution; TodoListMiddleware now opt-in (breaking change).
+
 ### [2026-07-23](/en/today/2026-07-23)
 
 LangChain published "How We Benchmark Deep Agents", opening up its long-horizon agent evaluation methodology.

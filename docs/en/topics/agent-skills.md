@@ -26,6 +26,7 @@ High-star representative repos at topic creation (2026-07):
 | ui-ux-pro-max-skill | ~101k | UI/UX specialist skill |
 | awesome-claude-skills | ~67k | Curated list (50+ skills) |
 | book-to-skill | New (hit Trending 2026-07-29) | Automatic PDF → Claude Code skill conversion |
+| superpowers | New (hit Trending 2026-07-30, +616/day) | Agentic skills framework + development methodology |
 
 > This ranking is refreshed by `/update` whenever skill-related repos hit GitHub Trending.
 
@@ -46,6 +47,10 @@ High-star representative repos at topic creation (2026-07):
 - [Claude Code repos star leaderboard](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-07-30](/en/today/2026-07-30)
+
+superpowers hit Trending (+616 stars/day): a skills framework plus development methodology — skills upgrading from single capability packages to a first-class unit for organizing development workflows.
 
 ### [2026-07-29](/en/today/2026-07-29)
 

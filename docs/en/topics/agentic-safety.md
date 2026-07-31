@@ -40,6 +40,10 @@ The ExploitGym incident of 2026-07-21 moved this topic from theoretical speculat
 
 Microsoft open-sourced agent-governance-toolkit: an agent governance and security framework — governance moving from platform-built-in features to open-source toolchains.
 
+### [2026-07-28](/en/today/2026-07-28)
+
+1,100+ employees across OpenAI/Anthropic/Google/Meta signed an open letter urging the US government to build a verifiable international AI "pacing mechanism" — a rare collective voice from inside frontier labs.
+
 ### [2026-07-27](/en/today/2026-07-27)
 
 Anthropic published its position on open-weights models: it has never advocated a ban, but stresses that once weights are released their use can be neither monitored nor recalled.

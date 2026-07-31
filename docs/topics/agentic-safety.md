@@ -40,6 +40,10 @@ Agentic Safety（Agent 安全）关注具备自主行动能力的 AI 系统带�
 
 微软开源 agent-governance-toolkit：Agent 治理与安全框架——治理从平台内置能力走向开源工具链。
 
+### [2026-07-28](/today/2026-07-28)
+
+OpenAI/Anthropic/Google/Meta 的 1100 余名员工联署公开信，呼吁美国政府牵头建立可验证的国际 AI"步调机制"——前沿实验室内部的罕见集体发声。
+
 ### [2026-07-27](/today/2026-07-27)
 
 Anthropic 发表 open-weights 模型立场声明：从未主张禁止，但强调权重释出后不可监控、不可召回的风险。

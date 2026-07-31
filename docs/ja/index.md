@@ -11,7 +11,7 @@ hero:
       link: /ja/graph
     - theme: alt
       text: 最新デイリー
-      link: /ja/today/2026-07-29
+      link: /ja/today/2026-07-30
     - theme: alt
       text: GitHub
       link: https://github.com/tiand23/AICompass

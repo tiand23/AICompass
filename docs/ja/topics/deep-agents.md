@@ -28,6 +28,10 @@ Deep Agents は LangChain が提唱するコンセプトとプロダクトの方
 
 ## Timeline
 
+### [2026-07-29](/ja/today/2026-07-29)
+
+Deep Agents v0.7 リリース：ベース入力トークン 65% 削減、ファイルツール全面改善、DeltaChannel 増分チェックポイント、実験的 QuickJS コード実行；TodoListMiddleware がオプトイン化（破壊的変更）。
+
 ### [2026-07-23](/ja/today/2026-07-23)
 
 LangChain が「How We Benchmark Deep Agents」を公開し、長期タスクエージェントの評価手法を公開。

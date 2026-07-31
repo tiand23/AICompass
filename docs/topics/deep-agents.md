@@ -28,6 +28,10 @@ Deep Agents 是 LangChain 提出的概念与产品方向：能执行长时程、
 
 ## Timeline
 
+### [2026-07-29](/today/2026-07-29)
+
+Deep Agents v0.7 发布：基础 harness 输入 token 减 65%、文件工具优化、DeltaChannel 增量 checkpoint、实验性 QuickJS 代码执行；TodoListMiddleware 改手动开启（破坏性变更）。
+
 ### [2026-07-23](/today/2026-07-23)
 
 LangChain 发布《How We Benchmark Deep Agents》，公开其长时程 Agent 评估方法论。
