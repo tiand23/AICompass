@@ -12,6 +12,7 @@ LLM / エージェントによるコードレビューのツールとアーキ�
 
 - **ハイブリッドアーキテクチャ**：決定論的チェック（lint、ルール）と LLM 意味レビューの分担とオーケストレーション。
 - **誤検知の制御**：レビューツールの有用性は S/N 比で決まる。複数検証者による投票、再現性チェックが常套手段。
+- **能力ベースライン**：ReviewBench（実 PR レビューコメント由来のベンチマーク）によれば、現在のモデルは基本プロンプトで人間ベースラインの約 30% しか回収できない。構造化レビュープロンプトでスコアは顕著に向上——戦略はモデルと同じくらい重要。
 
 ## 関連技術
 
@@ -25,8 +26,13 @@ LLM / エージェントによるコードレビューのツールとアーキ�
 ## 推奨学習リソース
 
 - [alibaba/open-code-review](https://github.com/alibaba/open-code-review)
+- [Evaluating code review agents with ReviewBench](https://www.langchain.com/blog/evaluating-code-review-agents-with-reviewbench)
 
 ## Timeline
+
+### [2026-07-31](/ja/today/2026-07-31)
+
+LangChain が ReviewBench を公開：実 PR レビューコメント由来の 59 タスクでコードレビューエージェントを評価、F1 採点。基本プロンプトではベースラインの約 30% しか回収できない（詳細は [agent-evaluation](/ja/topics/agent-evaluation)）。
 
 ### [2026-07-27](/ja/today/2026-07-27)
 

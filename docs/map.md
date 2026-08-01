@@ -10,8 +10,8 @@
 
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
-| [claude-models](/topics/claude-models) | Anthropic Claude 模型线 | Agent/编码场景的模型选型与迁移 | 🔥 | 2026-07-24 |
-| [openai-models](/topics/openai-models) | OpenAI GPT 模型线与 API 平台 | 选型、成本波动与产品弃用风险 | 🔥 | 2026-07-30 |
+| [claude-models](/topics/claude-models) | Anthropic Claude 模型线 | Agent/编码场景的模型选型与迁移 | 📈 | 2026-07-24 |
+| [openai-models](/topics/openai-models) | OpenAI GPT 模型线与 API 平台 | 选型、成本波动与产品弃用风险 | 🔥 | 2026-07-31 |
 | [gemini-models](/topics/gemini-models) | Google Gemini 模型线 | 成本敏感场景的高性价比选型 | 📈 | 2026-07-21 |
 
 ### 多模态生成
@@ -46,7 +46,7 @@
 | [deep-agents](/topics/deep-agents) | 长时程自主任务 Agent（LangChain） | 多步骤任务的规划、恢复与评估 | 🔥 | 2026-07-29 |
 | [agent-frameworks](/topics/agent-frameworks) | 框架版图：LangGraph/CrewAI/ADK/Agents SDK… | 框架选型与长期安全性 | 🔥 | 2026-07-28 |
 | [agent-workflow](/topics/agent-workflow) | 工作流范式：编排 vs 自主、HITL、持久化执行 | 让 Agent 可靠地跑进业务流程 | 🔥 | 2026-07-28 |
-| [agent-skills](/topics/agent-skills) | 可复用能力包生态（含 GitHub 热度排行） | Agent 能力的分发与复用 | 🔥 | 2026-07-31 |
+| [agent-skills](/topics/agent-skills) | 可复用能力包生态（含 GitHub 热度排行） | Agent 能力的分发与复用 | 🔥 | 2026-08-01 |
 
 ### 运行时与云（托管运行时 ・ Agent 平台 ・ Foundry）
 
@@ -54,6 +54,7 @@
 |---|---|---|---|---|
 | [enterprise-ai-agents](/topics/enterprise-ai-agents) | 企业 Agent 平台与交付模式 | Agent 如何可靠接入企业系统并被运维 | 🔥 | 2026-07-30 |
 | [cloud-agent-platforms](/topics/cloud-agent-platforms) | 四大云托管 Agent 平台版图（AgentCore/Foundry/GEAP/Managed Agents） | 平台选型与锁定权衡 | 🔥 | 2026-07-28 |
+| [agent-workspaces](/topics/agent-workspaces) | 桌面 Agent 工作台（Cowork/openwork/Codex app） | 派任务收成果的交互形态；能力配置跨工具移植 | 🔥 | 2026-08-01 |
 
 ### 协议与互操作（MCP ・ A2A ・ AG-UI）
 
@@ -70,18 +71,23 @@
 
 ## 5. 评估
 
-*待积累。关注：Agent 评估、模型基准、LLM-as-judge。（长时程 Agent 评估参见 [deep-agents](/topics/deep-agents)）*
+| Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
+|---|---|---|---|---|
+| [agent-evaluation](/topics/agent-evaluation) | Agent 评估方法与基准（真实任务派生 + LLM-as-judge） | Agent 上生产前的可复现度量 | 🔥 | 2026-07-31 |
+
+*另关注：模型基准。（长时程 Agent 评估参见 [deep-agents](/topics/deep-agents)）*
 
 ## 6. 安全
 
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
 | [agentic-safety](/topics/agentic-safety) | Agent 行为安全 | 自主模型越权、逃逸带来的真实风险 | 🔥 | 2026-07-30 |
+| [content-provenance](/topics/content-provenance) | AI 内容水印与验证（SynthID/C2PA） | 生成内容的可识别与合规核查 | 🔥 | 2026-07-31 |
 
 ## 7. 编码工具
 
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
-| [ai-code-review](/topics/ai-code-review) | AI 代码评审工具与架构 | 评审的规模化与信噪比 | 🔥 | 2026-07-27 |
+| [ai-code-review](/topics/ai-code-review) | AI 代码评审工具与架构 | 评审的规模化与信噪比 | 🔥 | 2026-07-31 |
 
 *另关注：Claude Code、Codex、Cursor 等 AI 编码工具（待积累）。*

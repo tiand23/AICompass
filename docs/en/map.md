@@ -10,8 +10,8 @@
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [claude-models](/en/topics/claude-models) | Anthropic's Claude model line | Model selection and migration for agent/coding workloads | 🔥 | 2026-07-24 |
-| [openai-models](/en/topics/openai-models) | OpenAI's GPT model line & API platform | Selection, price volatility and deprecation risk | 🔥 | 2026-07-30 |
+| [claude-models](/en/topics/claude-models) | Anthropic's Claude model line | Model selection and migration for agent/coding workloads | 📈 | 2026-07-24 |
+| [openai-models](/en/topics/openai-models) | OpenAI's GPT model line & API platform | Selection, price volatility and deprecation risk | 🔥 | 2026-07-31 |
 | [gemini-models](/en/topics/gemini-models) | Google's Gemini model line | Cost-effective selection for price-sensitive workloads | 📈 | 2026-07-21 |
 
 ### Multimodal Generation
@@ -46,7 +46,7 @@
 | [deep-agents](/en/topics/deep-agents) | Long-horizon autonomous agents (LangChain) | Planning, recovery and evaluation of multi-step tasks | 🔥 | 2026-07-29 |
 | [agent-frameworks](/en/topics/agent-frameworks) | Framework landscape: LangGraph/CrewAI/ADK/Agents SDK… | Framework selection and long-term safety | 🔥 | 2026-07-28 |
 | [agent-workflow](/en/topics/agent-workflow) | Workflow paradigms: orchestration vs autonomy, HITL, durable execution | Getting agents reliably into business processes | 🔥 | 2026-07-28 |
-| [agent-skills](/en/topics/agent-skills) | Reusable capability packages (incl. GitHub heat rankings) | Distribution and reuse of agent capabilities | 🔥 | 2026-07-31 |
+| [agent-skills](/en/topics/agent-skills) | Reusable capability packages (incl. GitHub heat rankings) | Distribution and reuse of agent capabilities | 🔥 | 2026-08-01 |
 
 ### Runtime & Cloud (Hosted Runtimes ・ Agent Platforms ・ Foundry)
 
@@ -54,6 +54,7 @@
 |---|---|---|---|---|
 | [enterprise-ai-agents](/en/topics/enterprise-ai-agents) | Enterprise agent platforms & delivery models | Reliably connecting agents to enterprise systems and operating them | 🔥 | 2026-07-30 |
 | [cloud-agent-platforms](/en/topics/cloud-agent-platforms) | The hyperscaler platform landscape (AgentCore/Foundry/GEAP/Managed Agents) | Platform selection and lock-in trade-offs | 🔥 | 2026-07-28 |
+| [agent-workspaces](/en/topics/agent-workspaces) | Desktop agent workspaces (Cowork/openwork/Codex app) | The assign-work-accept-results interaction form; portable capability config | 🔥 | 2026-08-01 |
 
 ### Protocols & Interoperability (MCP ・ A2A ・ AG-UI)
 
@@ -70,18 +71,23 @@
 
 ## 5. Evaluation
 
-*Accumulating. Watching: agent evaluation, model benchmarks, LLM-as-judge. (For long-horizon agent evaluation, see [deep-agents](/en/topics/deep-agents).)*
+| Topic | What it is | Problem it solves | Status | Last activity |
+|---|---|---|---|---|
+| [agent-evaluation](/en/topics/agent-evaluation) | Agent evaluation methods & benchmarks (real-task-derived + LLM-as-judge) | Reproducible measurement before agents go to production | 🔥 | 2026-07-31 |
+
+*Also watching: model benchmarks. (For long-horizon agent evaluation, see [deep-agents](/en/topics/deep-agents).)*
 
 ## 6. Safety
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
 | [agentic-safety](/en/topics/agentic-safety) | Agent behavioral safety | Real risks of autonomous models overstepping and escaping | 🔥 | 2026-07-30 |
+| [content-provenance](/en/topics/content-provenance) | AI content watermarking & verification (SynthID/C2PA) | Identifiability and compliance checking of generated content | 🔥 | 2026-07-31 |
 
 ## 7. Coding Tools
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [ai-code-review](/en/topics/ai-code-review) | AI code review tools & architecture | Scaling review while keeping signal-to-noise | 🔥 | 2026-07-27 |
+| [ai-code-review](/en/topics/ai-code-review) | AI code review tools & architecture | Scaling review while keeping signal-to-noise | 🔥 | 2026-07-31 |
 
 *Also watching: Claude Code, Codex, Cursor and other AI coding tools (accumulating).*

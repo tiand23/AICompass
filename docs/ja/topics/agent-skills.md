@@ -27,7 +27,8 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 | awesome-claude-skills | ~67k | 精選リスト（50+ skills） |
 | book-to-skill | 新登場（2026-07-29 Trending 入り） | PDF → Claude Code skill 自動変換 |
 | superpowers | 新登場（2026-07-30 Trending 入り、日次 +616） | Agentic skills フレームワーク + 開発方法論 |
-| last30days-skill | 新登場（2026-07-31 Trending 入り、日次 +378） | クロスプラットフォーム「直近 30 日」調査 skill |
+| last30days-skill | 新登場（2026-07-31 Trending 入り、2026-08-01 も日次 +660 で継続） | クロスプラットフォーム「直近 30 日」調査 skill |
+| reverse-skill | 新登場（2026-08-01 Trending 入り、日次 +612） | リバース/ペンテスト/セキュリティ研究 skill ルーターパック |
 
 > このランキングは skill 系リポジトリが GitHub Trending に登場した際に `/update` が自動更新する。
 
@@ -48,6 +49,10 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 - [Claude Code リポジトリのスターランキング](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-01](/ja/today/2026-08-01)
+
+reverse-skill が Trending 入り（日次 +612）：初の「skill router」形態——ルーティング + オンデマンドツールチェーン + 自動進化する経験ベース。単一領域の skill ライブラリが内部構造を持ち始めた。openwork（日次 +796）は skills/MCP 設定をツール横断の可搬資産にする（詳細は [agent-workspaces](/ja/topics/agent-workspaces)）。
 
 ### [2026-07-31](/ja/today/2026-07-31)
 

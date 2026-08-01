@@ -27,7 +27,8 @@ High-star representative repos at topic creation (2026-07):
 | awesome-claude-skills | ~67k | Curated list (50+ skills) |
 | book-to-skill | New (hit Trending 2026-07-29) | Automatic PDF → Claude Code skill conversion |
 | superpowers | New (hit Trending 2026-07-30, +616/day) | Agentic skills framework + development methodology |
-| last30days-skill | New (hit Trending 2026-07-31, +378/day) | Cross-platform "last 30 days" research skill |
+| last30days-skill | New (hit Trending 2026-07-31; still on 2026-08-01 at +660/day) | Cross-platform "last 30 days" research skill |
+| reverse-skill | New (hit Trending 2026-08-01, +612/day) | Reverse engineering / pentest / security research skill router pack |
 
 > This ranking is refreshed by `/update` whenever skill-related repos hit GitHub Trending.
 
@@ -48,6 +49,10 @@ High-star representative repos at topic creation (2026-07):
 - [Claude Code repos star leaderboard](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-01](/en/today/2026-08-01)
+
+reverse-skill hits Trending (+612/day): the first "skill router" form — routing + on-demand toolchain + self-evolving experience base; a single domain's skill library gaining internal structure. openwork (+796/day) makes skills/MCP config a portable cross-tool asset (see [agent-workspaces](/en/topics/agent-workspaces)).
 
 ### [2026-07-31](/en/today/2026-07-31)
 

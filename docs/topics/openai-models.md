@@ -20,6 +20,7 @@ GPT 系与 Claude、Gemini 构成模型选型的三大主线。OpenAI 的两个�
 - [claude-models](/topics/claude-models) ・ [gemini-models](/topics/gemini-models)（竞品模型线）
 - [cloud-agent-platforms](/topics/cloud-agent-platforms)（Foundry 渠道；Agent Builder 弃用与平台格局相关）
 - [enterprise-ai-agents](/topics/enterprise-ai-agents)（Presence 属其企业 Agent 线）
+- [content-provenance](/topics/content-provenance)（GPT-Live 音频 SynthID 水印与验证 API）
 
 ## 最佳实践
 
@@ -32,6 +33,10 @@ GPT 系与 Claude、Gemini 构成模型选型的三大主线。OpenAI 的两个�
 - [GPT-5.6 介绍](https://openai.com/index/gpt-5-6/)
 
 ## Timeline
+
+### [2026-07-31](/today/2026-07-31)
+
+GPT-Live（语音模型线，2026-07-08 发布）生成的音频加入 SynthID 水印；公开验证工具支持音频，并开放验证 API（详见 [content-provenance](/topics/content-provenance)）。
 
 ### [2026-07-30](/today/2026-07-30)
 

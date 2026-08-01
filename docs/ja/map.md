@@ -10,8 +10,8 @@
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [claude-models](/ja/topics/claude-models) | Anthropic Claude モデルライン | エージェント/コーディング用途の選定と移行 | 🔥 | 2026-07-24 |
-| [openai-models](/ja/topics/openai-models) | OpenAI GPT モデルラインと API プラットフォーム | 選定、価格変動、廃止リスク | 🔥 | 2026-07-30 |
+| [claude-models](/ja/topics/claude-models) | Anthropic Claude モデルライン | エージェント/コーディング用途の選定と移行 | 📈 | 2026-07-24 |
+| [openai-models](/ja/topics/openai-models) | OpenAI GPT モデルラインと API プラットフォーム | 選定、価格変動、廃止リスク | 🔥 | 2026-07-31 |
 | [gemini-models](/ja/topics/gemini-models) | Google Gemini モデルライン | コスト重視ワークロードの高コスパ選定 | 📈 | 2026-07-21 |
 
 ### マルチモーダル生成
@@ -46,7 +46,7 @@
 | [deep-agents](/ja/topics/deep-agents) | 長期自律タスクエージェント（LangChain） | 多段階タスクの計画・回復・評価 | 🔥 | 2026-07-29 |
 | [agent-frameworks](/ja/topics/agent-frameworks) | フレームワーク版図：LangGraph/CrewAI/ADK/Agents SDK… | フレームワーク選定と長期的安全性 | 🔥 | 2026-07-28 |
 | [agent-workflow](/ja/topics/agent-workflow) | ワークフローパラダイム：編成 vs 自律、HITL、永続実行 | エージェントを業務プロセスに確実に組み込む | 🔥 | 2026-07-28 |
-| [agent-skills](/ja/topics/agent-skills) | 再利用可能な能力パッケージ（GitHub 熱度ランキング付き） | エージェント能力の配布と再利用 | 🔥 | 2026-07-31 |
+| [agent-skills](/ja/topics/agent-skills) | 再利用可能な能力パッケージ（GitHub 熱度ランキング付き） | エージェント能力の配布と再利用 | 🔥 | 2026-08-01 |
 
 ### ランタイムとクラウド（ホスト型ランタイム ・ エージェントプラットフォーム ・ Foundry）
 
@@ -54,6 +54,7 @@
 |---|---|---|---|---|
 | [enterprise-ai-agents](/ja/topics/enterprise-ai-agents) | 企業向けエージェントプラットフォームとデリバリー | エージェントを企業システムへ確実に接続し運用する | 🔥 | 2026-07-30 |
 | [cloud-agent-platforms](/ja/topics/cloud-agent-platforms) | 4 大クラウドのプラットフォーム版図（AgentCore/Foundry/GEAP/Managed Agents） | プラットフォーム選定とロックインの権衡 | 🔥 | 2026-07-28 |
+| [agent-workspaces](/ja/topics/agent-workspaces) | デスクトップ型エージェントワークスペース（Cowork/openwork/Codex アプリ） | 仕事を任せ成果物を受け取る対話形態；能力設定の可搬性 | 🔥 | 2026-08-01 |
 
 ### プロトコルと相互運用性（MCP ・ A2A ・ AG-UI）
 
@@ -70,18 +71,23 @@
 
 ## 5. 評価
 
-*蓄積中。注目：エージェント評価、モデルベンチマーク、LLM-as-judge。（長期エージェント評価は [deep-agents](/ja/topics/deep-agents) を参照）*
+| Topic | 何か | 解決する問題 | 状態 | 最終更新 |
+|---|---|---|---|---|
+| [agent-evaluation](/ja/topics/agent-evaluation) | エージェント評価の方法とベンチマーク（実タスク由来 + LLM-as-judge） | エージェント本番投入前の再現可能な測定 | 🔥 | 2026-07-31 |
+
+*ほかに注目：モデルベンチマーク。（長期エージェント評価は [deep-agents](/ja/topics/deep-agents) を参照）*
 
 ## 6. セーフティ
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
 | [agentic-safety](/ja/topics/agentic-safety) | エージェントの行動安全性 | 自律モデルの越権・脱出という現実リスク | 🔥 | 2026-07-30 |
+| [content-provenance](/ja/topics/content-provenance) | AI コンテンツの透かしと検証（SynthID/C2PA） | 生成コンテンツの識別可能性とコンプライアンス確認 | 🔥 | 2026-07-31 |
 
 ## 7. コーディングツール
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [ai-code-review](/ja/topics/ai-code-review) | AI コードレビューのツールと設計 | レビューのスケールと S/N 比の両立 | 🔥 | 2026-07-27 |
+| [ai-code-review](/ja/topics/ai-code-review) | AI コードレビューのツールと設計 | レビューのスケールと S/N 比の両立 | 🔥 | 2026-07-31 |
 
 *ほかに注目：Claude Code、Codex、Cursor などの AI コーディングツール（蓄積中）。*

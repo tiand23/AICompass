@@ -20,6 +20,7 @@ GPT は Claude、Gemini と並ぶモデル選定の三大主流。OpenAI の 2 �
 - [claude-models](/ja/topics/claude-models) ・ [gemini-models](/ja/topics/gemini-models)（競合モデルライン）
 - [cloud-agent-platforms](/ja/topics/cloud-agent-platforms)（Foundry チャネル；Agent Builder 廃止はプラットフォーム勢力図に関係）
 - [enterprise-ai-agents](/ja/topics/enterprise-ai-agents)（Presence は同社のエンタープライズエージェントライン）
+- [content-provenance](/ja/topics/content-provenance)（GPT-Live 音声の SynthID 透かしと検証 API）
 
 ## ベストプラクティス
 
@@ -32,6 +33,10 @@ GPT は Claude、Gemini と並ぶモデル選定の三大主流。OpenAI の 2 �
 - [GPT-5.6 の紹介](https://openai.com/index/gpt-5-6/)
 
 ## Timeline
+
+### [2026-07-31](/ja/today/2026-07-31)
+
+GPT-Live（音声モデルライン、2026-07-08 公開）の生成音声に SynthID 透かしを導入。公開検証ツールが音声に対応し、検証 API も公開（詳細は [content-provenance](/ja/topics/content-provenance)）。
 
 ### [2026-07-30](/ja/today/2026-07-30)
 

@@ -20,6 +20,7 @@ GPT, Claude and Gemini form the three main lines of model selection. Two OpenAI 
 - [claude-models](/en/topics/claude-models) ・ [gemini-models](/en/topics/gemini-models) (competing model lines)
 - [cloud-agent-platforms](/en/topics/cloud-agent-platforms) (the Foundry channel; Agent Builder's retirement bears on the platform landscape)
 - [enterprise-ai-agents](/en/topics/enterprise-ai-agents) (Presence is its enterprise agent line)
+- [content-provenance](/en/topics/content-provenance) (SynthID watermarking of GPT-Live audio and the verification API)
 
 ## Best Practices
 
@@ -32,6 +33,10 @@ GPT, Claude and Gemini form the three main lines of model selection. Two OpenAI 
 - [Introducing GPT-5.6](https://openai.com/index/gpt-5-6/)
 
 ## Timeline
+
+### [2026-07-31](/en/today/2026-07-31)
+
+Audio generated with GPT-Live (the voice model line, launched 2026-07-08) gains SynthID watermarks; the public verifier supports audio and a verification API opens (see [content-provenance](/en/topics/content-provenance)).
 
 ### [2026-07-30](/en/today/2026-07-30)
 

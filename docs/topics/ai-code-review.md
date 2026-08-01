@@ -12,6 +12,7 @@
 
 - **混合架构**：确定性检查（lint、规则）与 LLM 语义评审的分工与编排。
 - **误报控制**：评审工具的可用性取决于信噪比，常见手段是多验证器投票、可复现性检查。
+- **能力基线**：ReviewBench（真实 PR 评审意见派生的基准）显示当前模型基础 prompt 下只找回约 30% 人工基线问题；结构化评审 prompt 可显著提分——策略与模型同样重要。
 
 ## 相关技术
 
@@ -25,8 +26,13 @@
 ## 推荐学习资料
 
 - [alibaba/open-code-review](https://github.com/alibaba/open-code-review)
+- [Evaluating code review agents with ReviewBench](https://www.langchain.com/blog/evaluating-code-review-agents-with-reviewbench)
 
 ## Timeline
+
+### [2026-07-31](/today/2026-07-31)
+
+LangChain 发布 ReviewBench：59 个真实 PR 评审意见派生任务评测代码评审 Agent，F1 计分。基础 prompt 只找回约 30% 基线问题（详见 [agent-evaluation](/topics/agent-evaluation)）。
 
 ### [2026-07-27](/today/2026-07-27)
 
