@@ -15,6 +15,7 @@
 - **低比特量化**：4-bit 等精度压缩，显存与延迟大幅下降（参见扩散模型侧的 Nunchaku）。
 - **高效架构**：Liquid AI 的 LFM 等非 Transformer 路线，目标是同等质量下数量级更低的推理成本。
 - **CPU/端侧推理**：不依赖 GPU 的部署形态——embedding、编码器类负载已经实用化。
+- **分层加载推理**：逐层加载权重用时间换显存（airllm：4GB GPU 跑 70B），不损质量但牺牲速度——适合低频离线任务，与量化/蒸馏互补。
 
 ## 相关技术
 
@@ -32,6 +33,10 @@
 - [LFM2.5-Encoders: Fast Long-Context Inference on CPU（HuggingFace Blog）](https://huggingface.co/blog)
 
 ## Timeline
+
+### [2026-08-03](/today/2026-08-03)
+
+airllm 重回 Trending（单日 +819）：逐层加载让 70B 模型跑在单张 4GB GPU 上——低配硬件跑大模型的需求持续升温。
 
 ### [2026-07-28](/today/2026-07-28)
 

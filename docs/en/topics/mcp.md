@@ -34,6 +34,10 @@ Before MCP, every AI app × every tool needed its own glue code (the M×N proble
 
 ## Timeline
 
+### [2026-08-03](/en/today/2026-08-03)
+
+Agent-Reach hits Trending (+659/day, 64.7k total): a "CLI capability layer" route complementary to MCP's protocol approach — reusing existing CLI tools with primary-method/fallback-list routing to keep tools usable under anti-scraping measures and API churn.
+
 ### 2026-07-28
 
 Topic created. Status: MCP is the de facto tool-integration standard, supported across major clients (Claude/ChatGPT/Cursor) and frameworks; the MCP+A2A two-layer stack is the enterprise architectural default.

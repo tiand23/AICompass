@@ -1,0 +1,40 @@
+# Agent Memory
+
+## Overview
+
+Agent memory: the infrastructure layer that lets agents retain and reuse information across sessions and tasks — from in-session context management, to long-term memory (user preferences, decision history), to team-level shared memory assets. Representative projects/products: Mem0, Zep, LangMem (LangChain), and TencentDB-Agent-Memory, which builds memory into a team asset hub.
+
+## Why It Matters
+
+However large the context window, it is only "working memory" — an agent serving a user or team long-term needs a memory layer independent of any single session. Memory quality directly determines an agent's "proficiency": an assistant that forgets preferences starts from zero every time; an agent that forgets decision history repeats mistakes. Team-level memory (like Tencent's four-asset architecture) goes further, turning individual experience into organizational assets — a key piece of enterprise agent adoption.
+
+## Core Concepts
+
+- **Layered memory architecture**: progressive distillation from raw conversations (L0) up to summaries, facts, personas/preferences (L3) — a layered trade-off between storage granularity and retrieval cost (TencentDB-Agent-Memory's Chat Memory layers are a typical implementation).
+- **Memory asset types**: beyond conversation memory — skills (executable procedures), knowledge (wiki/documents) and code graphs (symbols and call relationships) can all be turned into assets, each with its own extraction and retrieval method.
+- **Write policy**: what deserves remembering (explicit instruction vs automatic extraction), when to update, when to forget/expire — managing memory signal-to-noise is the hard engineering problem.
+- **Permissions and scope**: team-level memory needs RBAC (private/team/restricted) and per-agent binding (loadouts) rather than global injection — memory overreach is a new security surface.
+- **Relation to RAG**: heavily overlapping stacks (vector retrieval, structured storage); the difference is data source and lifecycle — RAG retrieves a static knowledge base, memory grows continuously from interactions.
+
+## Related Technologies
+
+- [vector-databases](/en/topics/vector-databases) (memory's storage/retrieval layer)
+- [rag](/en/topics/rag) (same stack, different source: static knowledge vs interaction-grown)
+- [agent-skills](/en/topics/agent-skills) (skills can be a product of memory distillation)
+- [enterprise-ai-agents](/en/topics/enterprise-ai-agents) (team memory is part of enterprise agent operations)
+
+## Best Practices
+
+- Decide "what to remember" before picking a solution: preference-class memory is small and structured; experience-class memory is large and messy and needs an extraction pipeline. Don't dump raw conversation logs into a vector store and call it memory.
+- Gate memory writes for signal-to-noise (review, confidence thresholds) — dirty memory is worse than no memory.
+
+## Recommended Resources
+
+- [TencentCloud/TencentDB-Agent-Memory](https://github.com/TencentCloud/TencentDB-Agent-Memory)
+- [Mem0](https://github.com/mem0ai/mem0)
+
+## Timeline
+
+### [2026-08-03](/en/today/2026-08-03)
+
+Tencent Cloud's TencentDB-Agent-Memory hits Trending (+602/day, 11k total): a team-level memory hub — four asset types (layered chat memory/skills/wiki/code graph) + RBAC + per-agent loadouts. Memory upgrades from session context to a team asset layer.

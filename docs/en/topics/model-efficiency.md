@@ -15,6 +15,7 @@ Frontier models keep growing, but most production workloads (classification, emb
 - **Low-bit quantization**: 4-bit and similar precision compression, cutting VRAM and latency substantially (see Nunchaku on the diffusion side).
 - **Efficient architectures**: non-Transformer lines like Liquid AI's LFM, targeting order-of-magnitude lower inference cost at comparable quality.
 - **CPU/edge inference**: GPU-free deployment — already practical for embedding and encoder workloads.
+- **Layer-wise inference**: loading weights layer by layer trades time for VRAM (airllm: 70B on a 4GB GPU) — no quality loss but slower; suited to low-frequency offline tasks, complementary to quantization/distillation.
 
 ## Related Technologies
 
@@ -32,6 +33,10 @@ Frontier models keep growing, but most production workloads (classification, emb
 - [LFM2.5-Encoders: Fast Long-Context Inference on CPU (HuggingFace Blog)](https://huggingface.co/blog)
 
 ## Timeline
+
+### [2026-08-03](/en/today/2026-08-03)
+
+airllm returns to Trending (+819/day): layer-wise loading runs 70B models on a single 4GB GPU — sustained demand for large models on modest hardware.
 
 ### [2026-07-28](/en/today/2026-07-28)
 

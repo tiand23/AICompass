@@ -27,8 +27,8 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 | awesome-claude-skills | ~67k | 精選リスト（50+ skills） |
 | book-to-skill | 新登場（2026-07-29 Trending 入り） | PDF → Claude Code skill 自動変換 |
 | superpowers | 新登場（2026-07-30 Trending 入り、日次 +616） | Agentic skills フレームワーク + 開発方法論 |
-| last30days-skill | 新登場（2026-07-31 Trending 入り、2026-08-01 も日次 +660 で継続） | クロスプラットフォーム「直近 30 日」調査 skill |
-| reverse-skill | 新登場（2026-08-01 Trending 入り、日次 +612） | リバース/ペンテスト/セキュリティ研究 skill ルーターパック |
+| last30days-skill | 新登場（2026-07-31 Trending 入り、08-03 まで継続在榜） | クロスプラットフォーム「直近 30 日」調査 skill |
+| reverse-skill | 新登場（2026-08-01 Trending 入り、08-03 は日次 +1,141 と加速中） | リバース/ペンテスト/セキュリティ研究 skill ルーターパック |
 
 > このランキングは skill 系リポジトリが GitHub Trending に登場した際に `/update` が自動更新する。
 
@@ -49,6 +49,10 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 - [Claude Code リポジトリのスターランキング](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-03](/ja/today/2026-08-03)
+
+テンセントクラウドの TencentDB-Agent-Memory が「エージェントの対話から skill を抽出しレビュー後にチーム共有」を記憶パイプラインに組み込む（詳細は [agent-memory](/ja/topics/agent-memory)）——skill の生産がインフラ化され始めた。reverse-skill は加速継続（日次 +1,141）。
 
 ### [2026-08-01](/ja/today/2026-08-01)
 

@@ -34,6 +34,10 @@ GPT は Claude、Gemini と並ぶモデル選定の三大主流。OpenAI の 2 �
 
 ## Timeline
 
+### [2026-08-02](/ja/today/2026-08-02)
+
+「Sign in with ChatGPT」beta 開始：第一陣は Airtable、GitLab、HubSpot、Notion、Supabase、Vercel——OpenAI がアイデンティティレイヤーへ拡張。プラットフォーム依存の評価にはアカウント体系も含めるべき段階に。
+
 ### [2026-07-31](/ja/today/2026-07-31)
 
 GPT-Live（音声モデルライン、2026-07-08 公開）の生成音声に SynthID 透かしを導入。公開検証ツールが音声に対応し、検証 API も公開（詳細は [content-provenance](/ja/topics/content-provenance)）。

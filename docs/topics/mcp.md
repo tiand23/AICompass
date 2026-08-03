@@ -34,6 +34,10 @@ MCP（Model Context Protocol）：Anthropic 提出的开放协议，标准化 AI
 
 ## Timeline
 
+### [2026-08-03](/today/2026-08-03)
+
+Agent-Reach 登上 Trending（单日 +659，累计 64.7k）：与 MCP 协议化互补的"CLI 能力层"路线——复用现成 CLI 工具 + 主方法/降级列表路由，解决平台反爬与接口变动下的工具可用性运维。
+
 ### 2026-07-28
 
 建档。现状：MCP 已成工具接入的事实标准，主流客户端（Claude/ChatGPT/Cursor）与主流框架全面支持；"MCP+A2A 双层栈"成为企业 Agent 架构默认。

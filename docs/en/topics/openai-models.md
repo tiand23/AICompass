@@ -34,6 +34,10 @@ GPT, Claude and Gemini form the three main lines of model selection. Two OpenAI 
 
 ## Timeline
 
+### [2026-08-02](/en/today/2026-08-02)
+
+"Sign in with ChatGPT" launches in beta: Airtable, GitLab, HubSpot, Notion, Supabase and Vercel first — OpenAI expanding into the identity layer; platform-dependency assessments should now include the account system.
+
 ### [2026-07-31](/en/today/2026-07-31)
 
 Audio generated with GPT-Live (the voice model line, launched 2026-07-08) gains SynthID watermarks; the public verifier supports audio and a verification API opens (see [content-provenance](/en/topics/content-provenance)).

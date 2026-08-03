@@ -27,8 +27,8 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 | awesome-claude-skills | ~67k | 精选清单（50+ skills） |
 | book-to-skill | 新晋（2026-07-29 上榜 Trending） | PDF → Claude Code skill 自动转换 |
 | superpowers | 新晋（2026-07-30 上榜 Trending，单日 +616） | Agentic skills 框架 + 开发方法论 |
-| last30days-skill | 新晋（2026-07-31 上榜，2026-08-01 续榜单日 +660） | 跨平台"最近 30 天"调研 skill |
-| reverse-skill | 新晋（2026-08-01 上榜 Trending，单日 +612） | 逆向/渗透/安全研究 skill 路由包 |
+| last30days-skill | 新晋（2026-07-31 上榜，连续在榜至 08-03） | 跨平台"最近 30 天"调研 skill |
+| reverse-skill | 新晋（2026-08-01 上榜，08-03 单日 +1,141 加速中） | 逆向/渗透/安全研究 skill 路由包 |
 
 > 此排行由 `/update` 在 skill 类仓库登上 GitHub Trending 时自动更新。
 
@@ -49,6 +49,10 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 - [Claude Code 高星仓库排行](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-03](/today/2026-08-03)
+
+腾讯云 TencentDB-Agent-Memory 把"从 Agent 交互中提炼 skill、评审后团队共享"做进记忆管线（详见 [agent-memory](/topics/agent-memory)）——skill 的生产开始被基础设施化。reverse-skill 持续加速（单日 +1,141）。
 
 ### [2026-08-01](/today/2026-08-01)
 

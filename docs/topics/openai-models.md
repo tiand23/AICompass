@@ -34,6 +34,10 @@ GPT 系与 Claude、Gemini 构成模型选型的三大主线。OpenAI 的两个�
 
 ## Timeline
 
+### [2026-08-02](/today/2026-08-02)
+
+"Sign in with ChatGPT" beta 上线：首批 Airtable、GitLab、HubSpot、Notion、Supabase、Vercel——OpenAI 向身份层扩展，平台依赖评估需把账号体系算进去。
+
 ### [2026-07-31](/today/2026-07-31)
 
 GPT-Live（语音模型线，2026-07-08 发布）生成的音频加入 SynthID 水印；公开验证工具支持音频，并开放验证 API（详见 [content-provenance](/topics/content-provenance)）。

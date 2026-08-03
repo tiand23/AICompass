@@ -15,6 +15,7 @@
 - **低ビット量子化**：4-bit などの精度圧縮で VRAM とレイテンシを大幅削減（拡散モデル側の Nunchaku を参照）。
 - **効率的アーキテクチャ**：Liquid AI の LFM など非 Transformer 路線。同等品質で桁違いに低い推論コストを狙う。
 - **CPU/エッジ推論**：GPU に依存しないデプロイ形態——embedding・エンコーダ系負荷では既に実用段階。
+- **階層ロード推論**：重みをレイヤーごとにロードし時間で VRAM を買う（airllm：4GB GPU で 70B）。品質は落ちないが速度を犠牲に——低頻度オフラインタスク向け、量子化/蒸留と相互補完。
 
 ## 関連技術
 
@@ -32,6 +33,10 @@
 - [LFM2.5-Encoders: Fast Long-Context Inference on CPU（HuggingFace Blog）](https://huggingface.co/blog)
 
 ## Timeline
+
+### [2026-08-03](/ja/today/2026-08-03)
+
+airllm が Trending 再登場（日次 +819）：階層ロードで 70B モデルを 1 枚の 4GB GPU で実行——ローエンドハードウェアで大型モデルを動かす需要が継続。
 
 ### [2026-07-28](/ja/today/2026-07-28)
 

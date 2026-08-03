@@ -27,8 +27,8 @@ High-star representative repos at topic creation (2026-07):
 | awesome-claude-skills | ~67k | Curated list (50+ skills) |
 | book-to-skill | New (hit Trending 2026-07-29) | Automatic PDF → Claude Code skill conversion |
 | superpowers | New (hit Trending 2026-07-30, +616/day) | Agentic skills framework + development methodology |
-| last30days-skill | New (hit Trending 2026-07-31; still on 2026-08-01 at +660/day) | Cross-platform "last 30 days" research skill |
-| reverse-skill | New (hit Trending 2026-08-01, +612/day) | Reverse engineering / pentest / security research skill router pack |
+| last30days-skill | New (hit Trending 2026-07-31; still on through 08-03) | Cross-platform "last 30 days" research skill |
+| reverse-skill | New (hit Trending 2026-08-01; accelerating at +1,141/day on 08-03) | Reverse engineering / pentest / security research skill router pack |
 
 > This ranking is refreshed by `/update` whenever skill-related repos hit GitHub Trending.
 
@@ -49,6 +49,10 @@ High-star representative repos at topic creation (2026-07):
 - [Claude Code repos star leaderboard](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-03](/en/today/2026-08-03)
+
+Tencent Cloud's TencentDB-Agent-Memory builds "extract skills from agent interactions, share after team review" into its memory pipeline (see [agent-memory](/en/topics/agent-memory)) — skill production is getting infrastructure. reverse-skill keeps accelerating (+1,141/day).
 
 ### [2026-08-01](/en/today/2026-08-01)
 
