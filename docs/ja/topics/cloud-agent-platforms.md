@@ -11,7 +11,7 @@
 ## コアコンセプト
 
 - **選定の第一法則は既存クラウドに従う**：Azure → AI Foundry、AWS → Bedrock AgentCore、GCP → Gemini Enterprise Agent Platform。クロスクラウド中立が必要な場合のみ Anthropic/OpenAI 直結を検討。
-- **各社の強み**：AgentCore はモデルの幅が最大（30+ モデルを統一 API で、Claude/Llama/Mistral）；Foundry は GPT 系と M365/Copilot Studio に最深；Google は ML 集約ワークロード・ネイティブマルチモーダル・A2A プロトコル；Managed Agents は Claude エコシステムと API エンジニアリング（effort、webhook、イベントストリーム）。
+- **各社の強み**：AgentCore はモデルの幅が最大（30+ モデルを統一 API で、Claude/Llama/Mistral）；Foundry は GPT 系と M365/Copilot Studio に最深；Google は ML 集約ワークロード・ネイティブマルチモーダル・A2A プロトコル（Gemini API Managed Agents は hooks/予算ガードレール/定期トリガーの本番化能力も装備済み）；Managed Agents は Claude エコシステムと API エンジニアリング（effort、webhook、イベントストリーム）。
 - **コントロールプレーン**：Agent365 のような「エージェントの MDM」は 2026 年に現れた新しい層——数百のエージェントの ID・権限・監査を統一管理する必要がある。
 - **現実の主流は「人が承認してから実行」**：多くの企業は assisted workflow の段階にあり、完全自律の本番パイプラインは少数派。
 
@@ -34,6 +34,12 @@
 
 ## Timeline
 
-### 2026-07-28
+### [2026-08-01](/ja/today/2026-08-01)
 
-Topic 作成。現状：4 大クラウドのプラットフォームがすべて本番利用可能になり市場は統合期——Google は Vertex AI を Gemini Enterprise Agent Platform に再編（2026 年 4 月）、マイクロソフトは Agent365 を投入、AWS AgentCore は大規模本番化、Salesforce は Agent Fabric を再始動。
+Claude Managed Agents：Dreams（research preview）が Opus 5 に対応——新モデルがリリース 1 週間でホスト型製品ラインに浸透。
+
+### [2026-07-28](/ja/today/2026-07-28)
+
+Google が Gemini API Managed Agents を拡張：デフォルトモデルを Gemini 3.6 Flash に；サンドボックス内 pre/post 実行 hooks（ツール呼び出しのブロック/lint/監査）；`max_total_tokens` 予算ガードレール、cron 定期トリガー、Environments API、無料枠——本番化能力が Claude Managed Agents に並んだ。
+
+同日 Topic 作成。現状：4 大クラウドのプラットフォームがすべて本番利用可能になり市場は統合期——Google は Vertex AI を Gemini Enterprise Agent Platform に再編（2026 年 4 月）、マイクロソフトは Agent365 を投入、AWS AgentCore は大規模本番化、Salesforce は Agent Fabric を再始動。

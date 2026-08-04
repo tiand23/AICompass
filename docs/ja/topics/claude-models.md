@@ -34,6 +34,10 @@ Claude はエージェントとコーディング用途における主流のモ�
 
 ## Timeline
 
+### [2026-08-01](/ja/today/2026-08-01)
+
+Managed Agents の Dreams（research preview）が Opus 5 に対応（詳細は [cloud-agent-platforms](/ja/topics/cloud-agent-platforms)）。
+
 ### [2026-07-24](/ja/today/2026-07-24)
 
 Claude Opus 5 リリース：1M コンテキスト（デフォルト＝最大）、128k 出力、thinking デフォルト有効、価格は Opus 4.8 と同じ $5/$25。5 段階の effort が主要制御手段に。破壊的変更——高 effort での thinking 無効化不可、Opus 4.7 fast mode 廃止。同日、mid-conversation tool changes が beta に（prompt cache を維持したままターン間でツール変更）、`fallbacks` に `"default"` モード追加。

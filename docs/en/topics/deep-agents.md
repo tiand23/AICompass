@@ -12,6 +12,8 @@ Long-horizon autonomy is the current frontier of agent capability competition, a
 
 - **Long-horizon tasks**: goal completion across many steps, tools and extended time.
 - **The evaluation problem**: process correctness vs. outcome correctness; measuring mid-task recovery.
+- **Middleware combo**: filesystem (persistent cross-turn references), sandboxed execution (isolated code runs), context summarization (long-session cost control) — the standard trio for long-session agents, validated by the Stripe Kai case.
+- **Layered architecture**: open-source harness (Deep Agents) → company-specific harness → configuration layer (custom agent instances) — the division of labor between a general base and enterprise customization.
 
 ## Related Technologies
 
@@ -27,6 +29,10 @@ Long-horizon autonomy is the current frontier of agent capability competition, a
 - [How We Benchmark Deep Agents (LangChain Blog)](https://www.langchain.com/blog/)
 
 ## Timeline
+
+### [2026-08-03](/en/today/2026-08-03)
+
+Stripe case study published: company-wide agent "Kai" built on Deep Agents — first version by one engineer in one week, the middleware trio (filesystem/sandbox/summarization) plus 1,000+ federated skills; 5,000+ users within four weeks, 83% of employees weekly.
 
 ### [2026-07-29](/en/today/2026-07-29)
 

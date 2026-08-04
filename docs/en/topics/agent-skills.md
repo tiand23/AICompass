@@ -28,7 +28,7 @@ High-star representative repos at topic creation (2026-07):
 | book-to-skill | New (hit Trending 2026-07-29) | Automatic PDF → Claude Code skill conversion |
 | superpowers | New (hit Trending 2026-07-30, +616/day) | Agentic skills framework + development methodology |
 | last30days-skill | New (hit Trending 2026-07-31; still on through 08-03) | Cross-platform "last 30 days" research skill |
-| reverse-skill | New (hit Trending 2026-08-01; accelerating at +1,141/day on 08-03) | Reverse engineering / pentest / security research skill router pack |
+| reverse-skill | New (hit Trending 2026-08-01; still accelerating at +2,446/day on 08-04) | Reverse engineering / pentest / security research skill router pack |
 
 > This ranking is refreshed by `/update` whenever skill-related repos hit GitHub Trending.
 
@@ -52,7 +52,7 @@ High-star representative repos at topic creation (2026-07):
 
 ### [2026-08-03](/en/today/2026-08-03)
 
-Tencent Cloud's TencentDB-Agent-Memory builds "extract skills from agent interactions, share after team review" into its memory pipeline (see [agent-memory](/en/topics/agent-memory)) — skill production is getting infrastructure. reverse-skill keeps accelerating (+1,141/day).
+Tencent Cloud's TencentDB-Agent-Memory builds "extract skills from agent interactions, share after team review" into its memory pipeline (see [agent-memory](/en/topics/agent-memory)) — skill production is getting infrastructure. Same day, the Stripe Kai case supplies the enterprise-side sample: 1,000+ skills produced federally by business teams and dynamically loaded, covering 500+ internal tools — central platform plus federated production is the workable division of labor for scaling skills. reverse-skill keeps accelerating (+1,141/day).
 
 ### [2026-08-01](/en/today/2026-08-01)
 

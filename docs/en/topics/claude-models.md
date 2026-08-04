@@ -34,6 +34,10 @@ Claude is one of the mainstream model choices for agent and coding workloads. Ev
 
 ## Timeline
 
+### [2026-08-01](/en/today/2026-08-01)
+
+Dreams (research preview) in Managed Agents now supports Opus 5 (see [cloud-agent-platforms](/en/topics/cloud-agent-platforms)).
+
 ### [2026-07-24](/en/today/2026-07-24)
 
 Claude Opus 5 released: 1M context (default and max), 128k output, thinking on by default, $5/$25 pricing unchanged from Opus 4.8; the five-level effort ladder becomes the primary control; breaking changes — thinking cannot be disabled at high effort, Opus 4.7 fast mode removed. Same day: mid-conversation tool changes entered beta (change tools between turns while preserving the prompt cache), and `fallbacks` gained a `"default"` mode.

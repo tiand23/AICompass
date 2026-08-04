@@ -11,7 +11,7 @@
 ## 核心概念
 
 - **选型的第一定律是跟着现有云走**：Azure 用户 → AI Foundry；AWS → Bedrock AgentCore；GCP → Gemini Enterprise Agent Platform。跨云中立需求才考虑 Anthropic/OpenAI 直连。
-- **各家长板**：AgentCore 模型面最广（30+ 模型统一 API，Claude/Llama/Mistral）；Foundry 深绑 GPT 家族与 M365/Copilot Studio；Google 强在 ML 密集负载、原生多模态与 A2A 协议；Managed Agents 强在 Claude 生态与 API 工程化（effort、webhook、事件流）。
+- **各家长板**：AgentCore 模型面最广（30+ 模型统一 API，Claude/Llama/Mistral）；Foundry 深绑 GPT 家族与 M365/Copilot Studio；Google 强在 ML 密集负载、原生多模态与 A2A 协议（Gemini API Managed Agents 已补齐 hooks/预算护栏/定时触发的生产化能力）；Managed Agents 强在 Claude 生态与 API 工程化（effort、webhook、事件流）。
 - **管控平面**：Agent365 这类"Agent 的 MDM"是 2026 年新出现的层——企业要统一管理成百上千个 Agent 的身份、权限与审计。
 - **现实主流是"人审后执行"**：多数企业仍在 assisted workflow 阶段，全自主生产管线是少数。
 
@@ -34,6 +34,12 @@
 
 ## Timeline
 
-### 2026-07-28
+### [2026-08-01](/today/2026-08-01)
 
-建档。当前格局：四大云平台均已生产可用，市场进入整合期——Google 把 Vertex AI 改组为 Gemini Enterprise Agent Platform（2026 年 4 月），微软推出 Agent365 管控平面，AWS AgentCore 大规模生产化，Salesforce 重启 Agent Fabric。
+Claude Managed Agents：Dreams（research preview）支持 Opus 5——新模型发布一周后渗透到托管产品线。
+
+### [2026-07-28](/today/2026-07-28)
+
+Google 扩展 Gemini API Managed Agents：默认模型升至 Gemini 3.6 Flash；沙箱内 pre/post 执行 hooks（拦截/lint/审计工具调用）；`max_total_tokens` 预算护栏、cron 定时触发、Environments API 与免费层——生产化能力对齐 Claude Managed Agents。
+
+同日建档。当前格局：四大云平台均已生产可用，市场进入整合期——Google 把 Vertex AI 改组为 Gemini Enterprise Agent Platform（2026 年 4 月），微软推出 Agent365 管控平面，AWS AgentCore 大规模生产化，Salesforce 重启 Agent Fabric。

@@ -34,6 +34,10 @@ Claude 是 Agent 与编码场景的主流模型选择之一。其模型线的每
 
 ## Timeline
 
+### [2026-08-01](/today/2026-08-01)
+
+Managed Agents 的 Dreams（research preview）支持 Opus 5（详见 [cloud-agent-platforms](/topics/cloud-agent-platforms)）。
+
 ### [2026-07-24](/today/2026-07-24)
 
 Claude Opus 5 发布：1M 上下文（默认即最大）、128k 输出、thinking 默认开启、$5/$25 定价与 Opus 4.8 持平；effort 五档成为主要调控手段；破坏性变更——高 effort 下不可禁用 thinking、Opus 4.7 fast mode 移除。同日：mid-conversation tool changes 进入 beta（多轮间增删工具且保留 prompt cache）、`fallbacks` 新增 `"default"` 模式。

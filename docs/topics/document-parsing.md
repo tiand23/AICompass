@@ -32,6 +32,10 @@
 
 ## Timeline
 
+### [2026-08-04](/today/2026-08-04)
+
+Firecrawl 开源 pdf-inspector（Rust，累计 8.2k star）：10-50ms 免 OCR 分类 PDF 类型（文本/扫描/图像/混合）并做位置感知抽取转 Markdown，支持 WASM 端侧运行——解析管线的"第一道分诊"组件化，与 Parse Gateway 的页面级路由同趋势。
+
 ### [2026-07-30](/today/2026-07-30)
 
 LlamaIndex 发布 Parse Gateway：按页面内容特征把文档页路由到最合适的解析器——承认"单解析器不够"并给出工程化方案。

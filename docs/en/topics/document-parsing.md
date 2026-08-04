@@ -32,6 +32,10 @@ Document parsing and structuring: turning PDFs, scans, tables and charts into LL
 
 ## Timeline
 
+### [2026-08-04](/en/today/2026-08-04)
+
+Firecrawl open-sources pdf-inspector (Rust, 8.2k stars): OCR-free PDF classification (text/scanned/image/mixed) in 10-50ms plus position-aware extraction to Markdown, with WASM on-device support — the pipeline's "first triage" as a component, same trend as Parse Gateway's page-level routing.
+
 ### [2026-07-30](/en/today/2026-07-30)
 
 LlamaIndex released Parse Gateway: routing each document page to the best-suited parser by content characteristics — acknowledging "no single parser suffices" and engineering around it.

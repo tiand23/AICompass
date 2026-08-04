@@ -33,6 +33,10 @@ This is the main battleground for generative AI in the enterprise. As model capa
 
 ## Timeline
 
+### [2026-08-03](/en/today/2026-08-03)
+
+The Stripe Kai case study (published by LangChain): a complete production reference for company-wide agents — open-source harness + company harness + configuration layering, federated skills produced autonomously by business teams covering 500+ internal tools, 83% weekly employee adoption. "Platform provides the base, business provides the capabilities" validated at scale.
+
 ### [2026-07-30](/en/today/2026-07-30)
 
 LangSmith shipped LLM Gateway: runtime controls for production agents (model routing, quotas, policy) — the gateway layer completing the enterprise agent ops puzzle, same trend as Agent365-style control planes.

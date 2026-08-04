@@ -33,6 +33,10 @@
 
 ## Timeline
 
+### [2026-08-03](/today/2026-08-03)
+
+Stripe Kai 案例（LangChain 发布）：公司级 Agent 的完整生产参考——开源 harness + 企业 harness + 配置层的分层，联邦 skills 由业务团队自治生产覆盖 500+ 内部工具，83% 员工周活。"平台供底座、业务供能力"的分工模式得到大规模验证。
+
 ### [2026-07-30](/today/2026-07-30)
 
 LangSmith 推出 LLM Gateway：生产 Agent 的运行时管控（模型路由、配额、策略）——Gateway 层补上企业 Agent 运维拼图，与 Agent365 管控平面同趋势。

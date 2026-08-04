@@ -10,7 +10,7 @@
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [claude-models](/ja/topics/claude-models) | Anthropic Claude モデルライン | エージェント/コーディング用途の選定と移行 | 📈 | 2026-07-24 |
+| [claude-models](/ja/topics/claude-models) | Anthropic Claude モデルライン | エージェント/コーディング用途の選定と移行 | 🔥 | 2026-08-01 |
 | [openai-models](/ja/topics/openai-models) | OpenAI GPT モデルラインと API プラットフォーム | 選定、価格変動、廃止リスク | 🔥 | 2026-08-02 |
 | [gemini-models](/ja/topics/gemini-models) | Google Gemini モデルライン | コスト重視ワークロードの高コスパ選定 | 📈 | 2026-07-21 |
 
@@ -19,7 +19,7 @@
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
 | [diffusion-models](/ja/topics/diffusion-models) | 拡散モデルと推論最適化 | 画像/動画生成のコストと VRAM の壁 | 📈 | 2026-07-23 |
-| [world-models](/ja/topics/world-models) | ワールドモデル / 生成シミュレーション | ロボット学習データの高コスト・高リスク | 🔥 | 2026-07-27 |
+| [world-models](/ja/topics/world-models) | ワールドモデル / 生成シミュレーション | ロボット学習データの高コスト・高リスク | 📈 | 2026-07-27 |
 
 ### 効率化と小型化（SLM ・ 蒸留 ・ 量子化）
 
@@ -32,7 +32,7 @@
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
 | [rag](/ja/topics/rag) | 検索拡張生成（主流は Agentic RAG） | 私有知識の LLM 接続、事実性と追跡可能性 | 🔥 | 2026-07-28 |
-| [document-parsing](/ja/topics/document-parsing) | ドキュメント解析と構造化（VLM + 意味再構築） | 非構造化文書をナレッジベースに入れる最初の工程 | 🔥 | 2026-07-30 |
+| [document-parsing](/ja/topics/document-parsing) | ドキュメント解析と構造化（VLM + 意味再構築） | 非構造化文書をナレッジベースに入れる最初の工程 | 🔥 | 2026-08-04 |
 | [vector-databases](/ja/topics/vector-databases) | ベクトル DB 選定とハイブリッド検索 | RAG/メモリの保存・検索層 | 🔥 | 2026-07-28 |
 | [agent-memory](/ja/topics/agent-memory) | エージェント記憶インフラ（セッション/長期/チーム資産） | セッション横断の経験保持とチームの組織資産化 | 🔥 | 2026-08-03 |
 
@@ -44,17 +44,17 @@
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [deep-agents](/ja/topics/deep-agents) | 長期自律タスクエージェント（LangChain） | 多段階タスクの計画・回復・評価 | 🔥 | 2026-07-29 |
+| [deep-agents](/ja/topics/deep-agents) | 長期自律タスクエージェント（LangChain） | 多段階タスクの計画・回復・評価 | 🔥 | 2026-08-03 |
 | [agent-frameworks](/ja/topics/agent-frameworks) | フレームワーク版図：LangGraph/CrewAI/ADK/Agents SDK… | フレームワーク選定と長期的安全性 | 🔥 | 2026-07-28 |
 | [agent-workflow](/ja/topics/agent-workflow) | ワークフローパラダイム：編成 vs 自律、HITL、永続実行 | エージェントを業務プロセスに確実に組み込む | 🔥 | 2026-07-28 |
-| [agent-skills](/ja/topics/agent-skills) | 再利用可能な能力パッケージ（GitHub 熱度ランキング付き） | エージェント能力の配布と再利用 | 🔥 | 2026-08-03 |
+| [agent-skills](/ja/topics/agent-skills) | 再利用可能な能力パッケージ（GitHub 熱度ランキング付き） | エージェント能力の配布と再利用 | 🔥 | 2026-08-04 |
 
 ### ランタイムとクラウド（ホスト型ランタイム ・ エージェントプラットフォーム ・ Foundry）
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [enterprise-ai-agents](/ja/topics/enterprise-ai-agents) | 企業向けエージェントプラットフォームとデリバリー | エージェントを企業システムへ確実に接続し運用する | 🔥 | 2026-07-30 |
-| [cloud-agent-platforms](/ja/topics/cloud-agent-platforms) | 4 大クラウドのプラットフォーム版図（AgentCore/Foundry/GEAP/Managed Agents） | プラットフォーム選定とロックインの権衡 | 🔥 | 2026-07-28 |
+| [enterprise-ai-agents](/ja/topics/enterprise-ai-agents) | 企業向けエージェントプラットフォームとデリバリー | エージェントを企業システムへ確実に接続し運用する | 🔥 | 2026-08-03 |
+| [cloud-agent-platforms](/ja/topics/cloud-agent-platforms) | 4 大クラウドのプラットフォーム版図（AgentCore/Foundry/GEAP/Managed Agents） | プラットフォーム選定とロックインの権衡 | 🔥 | 2026-08-01 |
 | [agent-workspaces](/ja/topics/agent-workspaces) | デスクトップ型エージェントワークスペース（Cowork/openwork/Codex アプリ） | 仕事を任せ成果物を受け取る対話形態；能力設定の可搬性 | 🔥 | 2026-08-01 |
 
 ### プロトコルと相互運用性（MCP ・ A2A ・ AG-UI）
@@ -90,5 +90,4 @@
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
 | [ai-code-review](/ja/topics/ai-code-review) | AI コードレビューのツールと設計 | レビューのスケールと S/N 比の両立 | 🔥 | 2026-07-31 |
-
-*ほかに注目：Claude Code、Codex、Cursor などの AI コーディングツール（蓄積中）。*
+| [coding-agents](/ja/topics/coding-agents) | ターミナル/CLI コーディングエージェント（Claude Code/Codex CLI/Reasonix…） | カテゴリ選定；harness 工学とモデル生態系の結合 | 🔥 | 2026-08-04 |

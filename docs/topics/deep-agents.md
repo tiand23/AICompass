@@ -12,6 +12,8 @@ Deep Agents 是 LangChain 提出的概念与产品方向：能执行长时程、
 
 - **长时程（long-horizon）任务**：跨多步骤、多工具、长时间的目标达成。
 - **评估难题**：过程正确性 vs 结果正确性、中途恢复能力的度量。
+- **Middleware 组合**：文件系统（跨轮持久引用）、沙箱执行（隔离跑代码）、上下文摘要（长会话控成本）——Stripe Kai 案例验证的长会话 Agent 标配三件套。
+- **分层架构**：开源 harness（Deep Agents）→ 企业专属 harness → 配置层（定制 Agent 实例）——通用底座与企业定制的分工模式。
 
 ## 相关技术
 
@@ -27,6 +29,10 @@ Deep Agents 是 LangChain 提出的概念与产品方向：能执行长时程、
 - [How We Benchmark Deep Agents（LangChain Blog）](https://www.langchain.com/blog/)
 
 ## Timeline
+
+### [2026-08-03](/today/2026-08-03)
+
+Stripe 案例发布：全公司级 Agent "Kai" 基于 Deep Agents——一人一周首版，middleware 三件套（文件系统/沙箱/摘要）+ 联邦 skills（1,000+），四周涨到 5,000+ 用户，83% 员工每周使用。
 
 ### [2026-07-29](/today/2026-07-29)
 
