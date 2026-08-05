@@ -15,6 +15,8 @@
 - **上下文与成本管理**：长会话的 token 成本靠缓存稳定性（避免破坏 prefix cache 的上下文变动）与过期内容修剪控制。
 - **扩展机制**：MCP（接工具）、skills（装流程）、hooks（拦截审计）、插件/子进程——各家扩展模型趋同，正在形成品类级的事实约定。
 - **架构取向**：从功能全家桶（Claude Code）到单二进制配置驱动的极简路线（DeepSeek-Reasonix 的 `reasonix.toml` 声明式配置）。
+- **跨领域应用扩展**：编码 Agent 的"读改文件+跑命令+验证"这套通用能力正被复用到编码之外——video-use 用同一套 harness 剪视频，靠"先转写成低维代理表示、按需才升维到像素级"控制 token 成本，是多模态省 token 的通用模式。
+- **跨平台 skill 分发**：compound-engineering-plugin 等方法论类 skill 包同时上架 Claude Code/Cursor/Codex/Cline 等多个市场，"一次编写、多工具复用"正成为 skill 分发的新常态。
 
 ## 相关技术
 
@@ -34,6 +36,10 @@
 - [esengine/DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix)
 
 ## Timeline
+
+### [2026-08-05](/today/2026-08-05)
+
+video-use 登上 Trending（累计 19.5k）：用编码 Agent 剪视频，靠"转写代理视觉信息、按需才升维"控制 token 成本——编码 Agent 的通用能力向视频等非编码领域扩展。compound-engineering-plugin 同日登榜（累计 23.9k），方法论类 skill 跨平台分发成为新常态。
 
 ### [2026-08-04](/today/2026-08-04)
 

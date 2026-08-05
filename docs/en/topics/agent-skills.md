@@ -50,6 +50,10 @@ High-star representative repos at topic creation (2026-07):
 
 ## Timeline
 
+### [2026-08-05](/en/today/2026-08-05)
+
+compound-engineering-plugin hits Trending (23.9k total, +40/day): another methodology-class skill pack, and a genuinely cross-platform one (listed in Claude Code/Cursor/Codex/Cline/Devin CLI marketplaces at once) — distribution moving from "single-tool-exclusive" to "write once, reuse across tools".
+
 ### [2026-08-03](/en/today/2026-08-03)
 
 Tencent Cloud's TencentDB-Agent-Memory builds "extract skills from agent interactions, share after team review" into its memory pipeline (see [agent-memory](/en/topics/agent-memory)) — skill production is getting infrastructure. Same day, the Stripe Kai case supplies the enterprise-side sample: 1,000+ skills produced federally by business teams and dynamically loaded, covering 500+ internal tools — central platform plus federated production is the workable division of labor for scaling skills. reverse-skill keeps accelerating (+1,141/day).

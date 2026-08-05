@@ -50,6 +50,10 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 
 ## Timeline
 
+### [2026-08-05](/today/2026-08-05)
+
+compound-engineering-plugin 登上 Trending（累计 23.9k，单日 +40）：又一个方法论类 skill 包，且做到跨平台分发（Claude Code/Cursor/Codex/Cline/Devin CLI 同步上架）——分发正从"单工具专属"走向"一次编写、多工具复用"。
+
 ### [2026-08-03](/today/2026-08-03)
 
 腾讯云 TencentDB-Agent-Memory 把"从 Agent 交互中提炼 skill、评审后团队共享"做进记忆管线（详见 [agent-memory](/topics/agent-memory)）——skill 的生产开始被基础设施化。同日 Stripe Kai 案例给出企业侧样本：1,000+ skills 由各业务团队联邦自治生产、动态加载，覆盖 500+ 内部工具——集中平台 + 联邦生产是 skill 规模化的可行分工。reverse-skill 持续加速（单日 +1,141）。

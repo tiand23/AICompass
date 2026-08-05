@@ -15,6 +15,8 @@ Terminal coding agents are the main arena of AI coding tool competition, and the
 - **Context & cost management**: long-session token costs are controlled through cache stability (avoiding context changes that break the prefix cache) and pruning of stale content.
 - **Extension mechanisms**: MCP (tools), skills (procedures), hooks (interception/audit), plugins/subprocesses — extension models are converging into de facto category-level conventions.
 - **Architectural poles**: from full-featured suites (Claude Code) to the single-binary, config-driven minimalist route (DeepSeek-Reasonix's declarative `reasonix.toml`).
+- **Extending into non-coding domains**: the coding agent's generic "read/edit files, run commands, verify" capability is being reused beyond code — video-use applies the same harness to video editing, controlling token cost by "transcribe to a low-dimensional proxy first, upgrade to pixels only when needed", a general multimodal token-saving pattern.
+- **Cross-platform skill distribution**: methodology-class skill packs like compound-engineering-plugin now list simultaneously across Claude Code/Cursor/Codex/Cline marketplaces — "write once, reuse across tools" is becoming the new norm for skill distribution.
 
 ## Related Technologies
 
@@ -34,6 +36,10 @@ Terminal coding agents are the main arena of AI coding tool competition, and the
 - [esengine/DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix)
 
 ## Timeline
+
+### [2026-08-05](/en/today/2026-08-05)
+
+video-use hits Trending (19.5k total): editing video with coding agents by "transcribing to a proxy representation, upgrading to vision only when needed" to control token cost — the coding agent's generic capability extending into non-coding domains like video. compound-engineering-plugin also trends the same day (23.9k total): cross-platform distribution becomes the norm for methodology-class skills.
 
 ### [2026-08-04](/en/today/2026-08-04)
 

@@ -50,6 +50,10 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 
 ## Timeline
 
+### [2026-08-05](/ja/today/2026-08-05)
+
+compound-engineering-plugin が Trending 入り（累計 23.9k、日次 +40）：また 1 つの方法論系 skill パックで、しかも真のクロスプラットフォーム配布（Claude Code/Cursor/Codex/Cline/Devin CLI に同時掲載）——配布が「単一ツール専用」から「一度書けば複数ツールで再利用」へ移行。
+
 ### [2026-08-03](/ja/today/2026-08-03)
 
 テンセントクラウドの TencentDB-Agent-Memory が「エージェントの対話から skill を抽出しレビュー後にチーム共有」を記憶パイプラインに組み込む（詳細は [agent-memory](/ja/topics/agent-memory)）——skill の生産がインフラ化され始めた。同日の Stripe Kai 事例はエンタープライズ側のサンプル：1,000+ の skills を各事業チームが連邦自治で生産し動的ロード、500+ の社内ツールをカバー——中央プラットフォーム + 連邦生産が skill スケール化の現実的分業。reverse-skill は加速継続（日次 +1,141）。
