@@ -32,6 +32,10 @@ Whether an agent can go to production is ultimately decided by evaluation — wi
 
 ## Timeline
 
+### [2026-08-04](/en/today/2026-08-04)
+
+LangChain proposes a three-axis framework for voice agents: execution (tool-call/process correctness), outcomes (business attainment), experience (latency/interruptions/naturalness) — voice turns "experience" from a soft impression into an evaluation axis of its own (see [voice-agents](/en/topics/voice-agents)).
+
 ### [2026-07-31](/en/today/2026-07-31)
 
 LangChain ships ReviewBench: 59 tasks derived from real LangSmith PR review comments, LLM-as-judge against baseline, F1 scoring. Models recover only ~30% of baseline issues with basic prompting; a structured review prompt lifts scores markedly.

@@ -26,9 +26,9 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 | ui-ux-pro-max-skill | ~101k | UI/UX 专项 skill |
 | awesome-claude-skills | ~67k | 精选清单（50+ skills） |
 | book-to-skill | 新晋（2026-07-29 上榜 Trending） | PDF → Claude Code skill 自动转换 |
-| superpowers | 新晋（2026-07-30 上榜 Trending，单日 +616） | Agentic skills 框架 + 开发方法论 |
+| superpowers | 新晋（2026-07-30 上榜，08-05 回榜 +653） | Agentic skills 框架 + 开发方法论 |
 | last30days-skill | 新晋（2026-07-31 上榜，连续在榜至 08-03） | 跨平台"最近 30 天"调研 skill |
-| reverse-skill | 新晋（2026-08-01 上榜，08-04 单日 +2,446 持续加速） | 逆向/渗透/安全研究 skill 路由包 |
+| reverse-skill | 新晋（2026-08-01 上榜，08-04/05 连续两日 +2,300 上下高热） | 逆向/渗透/安全研究 skill 路由包 |
 
 > 此排行由 `/update` 在 skill 类仓库登上 GitHub Trending 时自动更新。
 

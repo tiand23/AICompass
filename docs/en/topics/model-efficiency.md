@@ -34,6 +34,10 @@ Frontier models keep growing, but most production workloads (classification, emb
 
 ## Timeline
 
+### [2026-08-04](/en/today/2026-08-04)
+
+Liquid AI releases LFM2.5-2.6B ("Deploy local agents everywhere"): SLMs start carrying the core reasoning of local edge agents rather than just classification/extraction supporting roles — the non-Transformer efficiency route keeps landing.
+
 ### [2026-08-03](/en/today/2026-08-03)
 
 airllm returns to Trending (+819/day): layer-wise loading runs 70B models on a single 4GB GPU — sustained demand for large models on modest hardware.

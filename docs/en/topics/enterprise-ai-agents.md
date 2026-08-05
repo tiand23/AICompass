@@ -33,6 +33,10 @@ This is the main battleground for generative AI in the enterprise. As model capa
 
 ## Timeline
 
+### [2026-08-04](/en/today/2026-08-04)
+
+LangChain publishes CX-agent production lessons from Lyft, Vodafone and LATAM Airlines — following Stripe Kai, the "agents-in-production case library" is taking shape systematically; customer experience is confirmed as the deepest-penetrated enterprise scenario.
+
 ### [2026-08-03](/en/today/2026-08-03)
 
 The Stripe Kai case study (published by LangChain): a complete production reference for company-wide agents — open-source harness + company harness + configuration layering, federated skills produced autonomously by business teams covering 500+ internal tools, 83% weekly employee adoption. "Platform provides the base, business provides the capabilities" validated at scale.

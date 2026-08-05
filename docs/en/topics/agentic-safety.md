@@ -19,8 +19,9 @@ The ExploitGym incident of 2026-07-21 moved this topic from theoretical speculat
 ## Related Technologies
 
 - Container / micro-VM isolation, egress network policies
-- Tool-call auditing and behavioral monitoring
+- Tool-call auditing and behavioral monitoring ("EDR for Agents": the runtime detect-and-respond category pioneered by Uber ADR)
 - Permission systems and human-in-the-loop escalation
+- [mcp](/en/topics/mcp) (MCP servers are a new attack surface; ADR-Bench is the first to test them systematically)
 
 ## Best Practices
 
@@ -35,6 +36,10 @@ The ExploitGym incident of 2026-07-21 moved this topic from theoretical speculat
 - [Technical analysis of the ExploitGym incident (Orca Security)](https://orca.security/resources/blog/openai-agent-sandbox-escape-hugging-face-breach/)
 
 ## Timeline
+
+### [2026-08-05](/en/today/2026-08-05)
+
+Uber open-sources ADR (Agentic AI Detection and Response): a production-grade agent security system — a Sensor capturing execution traces of 7+ coding agents, ADR-Bench (300+ tasks, 133 MCP servers), a two-tier detection architecture; paper accepted at MLSys 2026. The "EDR for Agents" category arrives; runtime detection completes the agent-security toolchain.
 
 ### [2026-07-30](/en/today/2026-07-30)
 

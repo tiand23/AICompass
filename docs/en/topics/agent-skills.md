@@ -26,9 +26,9 @@ High-star representative repos at topic creation (2026-07):
 | ui-ux-pro-max-skill | ~101k | UI/UX specialist skill |
 | awesome-claude-skills | ~67k | Curated list (50+ skills) |
 | book-to-skill | New (hit Trending 2026-07-29) | Automatic PDF → Claude Code skill conversion |
-| superpowers | New (hit Trending 2026-07-30, +616/day) | Agentic skills framework + development methodology |
+| superpowers | New (hit Trending 2026-07-30; back on 08-05 at +653) | Agentic skills framework + development methodology |
 | last30days-skill | New (hit Trending 2026-07-31; still on through 08-03) | Cross-platform "last 30 days" research skill |
-| reverse-skill | New (hit Trending 2026-08-01; still accelerating at +2,446/day on 08-04) | Reverse engineering / pentest / security research skill router pack |
+| reverse-skill | New (hit Trending 2026-08-01; ~+2,300/day two days running on 08-04/05) | Reverse engineering / pentest / security research skill router pack |
 
 > This ranking is refreshed by `/update` whenever skill-related repos hit GitHub Trending.
 

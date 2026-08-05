@@ -34,6 +34,10 @@
 
 ## Timeline
 
+### [2026-08-04](/today/2026-08-04)
+
+Liquid AI 发布 LFM2.5-2.6B（《Deploy local agents everywhere》）：SLM 开始承担端侧本地 Agent 的推理主体，而不只是分类/抽取配角——非 Transformer 高效架构路线持续落地。
+
 ### [2026-08-03](/today/2026-08-03)
 
 airllm 重回 Trending（单日 +819）：逐层加载让 70B 模型跑在单张 4GB GPU 上——低配硬件跑大模型的需求持续升温。

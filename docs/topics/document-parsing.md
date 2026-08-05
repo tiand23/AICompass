@@ -14,6 +14,7 @@
 - **语义重建**：不止抽文字，还原文档的逻辑结构——这是 RAG 分块质量的前提。
 - **结构化抽取（schema-based）**：定义目标字段 schema，直接产出类型化 JSON（如 LlamaExtract），是拿干净结构化数据最可靠的路径。
 - **选型要点**：LlamaParse 对 RAG 栈生产就绪度最高；Docling 适合隐私敏感的自托管（技术/科学文档尤强）；Reducto 在 LongExtractBench 精确率/召回率 99.6% 居首。
+- **空间定位（spatial grounding）**：专用解析器与通用大模型的结构性差距——前沿模型在 ParseBench 上的视觉定位仅约 8%，专用引擎 55-80%；Agent 的证据链需要"数据出自哪页哪个位置"，这是"OCR 不会被前沿模型商品化"论点的核心依据。
 
 ## 相关技术
 
@@ -31,6 +32,10 @@
 - [2026 文档解析 API 排行（LlamaIndex）](https://www.llamaindex.ai/insights/top-document-parsing-apis)
 
 ## Timeline
+
+### [2026-08-05](/today/2026-08-05)
+
+LlamaIndex 发文论证"文档 OCR 不会被前沿模型商品化"：ParseBench 上专用引擎领先 GPT-5.5 约 20 分且更便宜，视觉定位差距（8% vs 55-80%）是结构性的；实验室后训练算力不投文档阅读。带立场（自家基准）但论据值得纳入长期选型判断。
 
 ### [2026-08-04](/today/2026-08-04)
 

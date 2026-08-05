@@ -26,9 +26,9 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 | ui-ux-pro-max-skill | ~101k | UI/UX 専門 skill |
 | awesome-claude-skills | ~67k | 精選リスト（50+ skills） |
 | book-to-skill | 新登場（2026-07-29 Trending 入り） | PDF → Claude Code skill 自動変換 |
-| superpowers | 新登場（2026-07-30 Trending 入り、日次 +616） | Agentic skills フレームワーク + 開発方法論 |
+| superpowers | 新登場（2026-07-30 Trending 入り、08-05 再登場 +653） | Agentic skills フレームワーク + 開発方法論 |
 | last30days-skill | 新登場（2026-07-31 Trending 入り、08-03 まで継続在榜） | クロスプラットフォーム「直近 30 日」調査 skill |
-| reverse-skill | 新登場（2026-08-01 Trending 入り、08-04 は日次 +2,446 と加速継続） | リバース/ペンテスト/セキュリティ研究 skill ルーターパック |
+| reverse-skill | 新登場（2026-08-01 Trending 入り、08-04/05 は 2 日連続で日次 +2,300 前後の高熱） | リバース/ペンテスト/セキュリティ研究 skill ルーターパック |
 
 > このランキングは skill 系リポジトリが GitHub Trending に登場した際に `/update` が自動更新する。
 

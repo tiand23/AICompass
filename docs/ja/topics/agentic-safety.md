@@ -19,8 +19,9 @@ Agentic Safety（エージェント安全性）は、自律的に行動できる
 ## 関連技術
 
 - コンテナ / マイクロ VM による隔離、egress ネットワークポリシー
-- ツール呼び出しの監査と挙動モニタリング
+- ツール呼び出しの監査と挙動モニタリング（「EDR for Agents」：Uber ADR が開拓したランタイム検知・対応カテゴリ）
 - 権限システムと human-in-the-loop エスカレーション
+- [mcp](/ja/topics/mcp)（MCP サーバーは新しい攻撃面。ADR-Bench が初めて体系的にテスト）
 
 ## ベストプラクティス
 
@@ -35,6 +36,10 @@ Agentic Safety（エージェント安全性）は、自律的に行動できる
 - [ExploitGym インシデントの技術分析（Orca Security）](https://orca.security/resources/blog/openai-agent-sandbox-escape-hugging-face-breach/)
 
 ## Timeline
+
+### [2026-08-05](/ja/today/2026-08-05)
+
+Uber が ADR（Agentic AI Detection and Response）をオープンソース化：本番稼働中のエージェントセキュリティシステム——7+ のコーディングエージェントの実行トレースを収集する Sensor、ADR-Bench（300+ タスク、133 MCP サーバー）、2 層検知アーキテクチャ；論文は MLSys 2026 採択。「EDR for Agents」カテゴリの登場で、エージェントセキュリティのツールチェーンにランタイム検知のピースが揃った。
 
 ### [2026-07-30](/ja/today/2026-07-30)
 

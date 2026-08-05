@@ -32,6 +32,10 @@ Agent 能不能上生产，最终由评估说了算——没有可复现的评�
 
 ## Timeline
 
+### [2026-08-04](/today/2026-08-04)
+
+LangChain 提出语音 Agent 三轴评测框架：执行（工具调用/流程正确性）、结果（业务达成）、体验（延迟/打断/自然度）——语音场景把"体验"从软性感受变成了独立评测轴（详见 [voice-agents](/topics/voice-agents)）。
+
 ### [2026-07-31](/today/2026-07-31)
 
 LangChain 发布 ReviewBench：59 个由 LangSmith 真实 PR 评审意见派生的任务，LLM-as-judge 比对基线，F1 计分。基础 prompt 下模型只找回约 30% 基线问题；结构化评审 prompt 显著提分。

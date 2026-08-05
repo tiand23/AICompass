@@ -14,6 +14,7 @@ Document parsing and structuring: turning PDFs, scans, tables and charts into LL
 - **Semantic reconstruction**: recovering the document's logical structure, not just its text — the prerequisite for good RAG chunking.
 - **Schema-based structured extraction**: define target fields and get typed JSON back (e.g. LlamaExtract) — the most reliable path to clean structured data.
 - **Selection notes**: LlamaParse is the most production-ready for RAG stacks; Docling fits privacy-sensitive self-hosting (unusually strong on technical/scientific content); Reducto ranked #1 on LongExtractBench with 99.6% precision/recall.
+- **Spatial grounding**: the structural gap between specialized parsers and general frontier models — frontier models score ~8% on ParseBench visual grounding versus 55-80% for specialized engines; agent evidence chains need "which page, which location", which anchors the "OCR won't be commoditized" argument.
 
 ## Related Technologies
 
@@ -31,6 +32,10 @@ Document parsing and structuring: turning PDFs, scans, tables and charts into LL
 - [Top document parsing APIs for 2026 (LlamaIndex)](https://www.llamaindex.ai/insights/top-document-parsing-apis)
 
 ## Timeline
+
+### [2026-08-05](/en/today/2026-08-05)
+
+LlamaIndex argues "document OCR is not getting commoditized": on ParseBench, specialized engines lead GPT-5.5 by ~20 points at lower cost; the visual-grounding gap (8% vs 55-80%) is structural; labs' post-training compute doesn't go to document reading. Positioned (their own benchmark), but the evidence belongs in long-term selection judgment.
 
 ### [2026-08-04](/en/today/2026-08-04)
 

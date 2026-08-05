@@ -33,6 +33,10 @@
 
 ## Timeline
 
+### [2026-08-04](/today/2026-08-04)
+
+LangChain 发布 Lyft・Vodafone・LATAM 航空的 CX Agent 生产经验——继 Stripe Kai 之后，"Agent 生产化案例库"在系统性成形，客服（CX）确认为渗透最深的企业场景。
+
 ### [2026-08-03](/today/2026-08-03)
 
 Stripe Kai 案例（LangChain 发布）：公司级 Agent 的完整生产参考——开源 harness + 企业 harness + 配置层的分层，联邦 skills 由业务团队自治生产覆盖 500+ 内部工具，83% 员工周活。"平台供底座、业务供能力"的分工模式得到大规模验证。
