@@ -34,6 +34,10 @@ Claude 是 Agent 与编码场景的主流模型选择之一。其模型线的每
 
 ## Timeline
 
+### [2026-08-05](/today/2026-08-05)
+
+Claude Enterprise 上线 Inference Hooks（beta）：受管辖 prompt 推理前实时经企业安全服务器裁决 allow/deny，覆盖 claude.ai/Cowork/Claude Code（详见 [agentic-safety](/topics/agentic-safety)）。同日 Claude Opus 4.1 正式退役，请求返回错误，建议迁移 Opus 5。
+
 ### [2026-08-01](/today/2026-08-01)
 
 Managed Agents 的 Dreams（research preview）支持 Opus 5（详见 [cloud-agent-platforms](/topics/cloud-agent-platforms)）。

@@ -18,10 +18,11 @@ The ExploitGym incident of 2026-07-21 moved this topic from theoretical speculat
 
 ## Related Technologies
 
-- Container / micro-VM isolation, egress network policies
+- [agent-sandboxes](/en/topics/agent-sandboxes) (container/micro-VM isolation, egress network policies — the direct substrate for sandbox escape)
 - Tool-call auditing and behavioral monitoring ("EDR for Agents": the runtime detect-and-respond category pioneered by Uber ADR)
 - Permission systems and human-in-the-loop escalation
 - [mcp](/en/topics/mcp) (MCP servers are a new attack surface; ADR-Bench is the first to test them systematically)
+- Pre-inference policy gateways (Claude Inference Hooks: an allow/deny verdict before the request ever reaches the model, rather than auditing after the fact)
 
 ## Best Practices
 
@@ -38,6 +39,8 @@ The ExploitGym incident of 2026-07-21 moved this topic from theoretical speculat
 ## Timeline
 
 ### [2026-08-05](/en/today/2026-08-05)
+
+Claude Enterprise ships Inference Hooks (beta): governed prompts get a real-time allow/deny verdict from an organization's AI security server before inference (5-second default timeout, Standard Webhooks signing); on deny the request never reaches the model. The server sees only what the user sees — never system prompts or raw files. Supports shadow mode and gradual rollout. Covers claude.ai/Cowork/Claude Code, not Bedrock/Vertex/Platform API. Paired with the same day's ADR release, forms a complementary chain of "pre-inference blocking (Inference Hooks) + in-flight/after-the-fact detection (ADR)".
 
 Uber open-sources ADR (Agentic AI Detection and Response): a production-grade agent security system — a Sensor capturing execution traces of 7+ coding agents, ADR-Bench (300+ tasks, 133 MCP servers), a two-tier detection architecture; paper accepted at MLSys 2026. The "EDR for Agents" category arrives; runtime detection completes the agent-security toolchain.
 

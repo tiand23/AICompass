@@ -33,6 +33,10 @@ This is the main battleground for generative AI in the enterprise. As model capa
 
 ## Timeline
 
+### [2026-08-05](/en/today/2026-08-05)
+
+Claude Enterprise ships Inference Hooks (beta): governed prompts get a real-time allow/deny verdict from an organization's own security server before inference, across claude.ai/Cowork/Claude Code. Enterprise agent governance opens up inference itself as a step a policy gateway can plug into, rather than only auditable after the fact (see [agentic-safety](/en/topics/agentic-safety)).
+
 ### [2026-08-04](/en/today/2026-08-04)
 
 LangChain publishes CX-agent production lessons from Lyft, Vodafone and LATAM Airlines — following Stripe Kai, the "agents-in-production case library" is taking shape systematically; customer experience is confirmed as the deepest-penetrated enterprise scenario.

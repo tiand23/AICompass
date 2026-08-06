@@ -34,6 +34,10 @@ Claude はエージェントとコーディング用途における主流のモ�
 
 ## Timeline
 
+### [2026-08-05](/ja/today/2026-08-05)
+
+Claude Enterprise が Inference Hooks（beta）を導入：管理対象 prompt が推論前に組織のセキュリティサーバーからリアルタイムで allow/deny 裁定を受ける。claude.ai/Cowork/Claude Code 対象（詳細は [agentic-safety](/ja/topics/agentic-safety)）。同日、Claude Opus 4.1 が正式に廃止——リクエストはエラーを返すようになり、Opus 5 への移行が推奨される。
+
 ### [2026-08-01](/ja/today/2026-08-01)
 
 Managed Agents の Dreams（research preview）が Opus 5 に対応（詳細は [cloud-agent-platforms](/ja/topics/cloud-agent-platforms)）。

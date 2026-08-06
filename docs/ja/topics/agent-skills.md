@@ -29,6 +29,7 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 | superpowers | 新登場（2026-07-30 Trending 入り、08-05 再登場 +653） | Agentic skills フレームワーク + 開発方法論 |
 | last30days-skill | 新登場（2026-07-31 Trending 入り、08-03 まで継続在榜） | クロスプラットフォーム「直近 30 日」調査 skill |
 | reverse-skill | 新登場（2026-08-01 Trending 入り、08-04/05 は 2 日連続で日次 +2,300 前後の高熱） | リバース/ペンテスト/セキュリティ研究 skill ルーターパック |
+| addyosmani/agent-skills | 新登場（2026-08-06 Trending 入り、累計 8.2 万スター——現時点で skill エコシステム単体最高熱） | 開発ライフサイクル全体をカバーする 24 のプロフェッショナル工学 skill |
 
 > このランキングは skill 系リポジトリが GitHub Trending に登場した際に `/update` が自動更新する。
 
@@ -49,6 +50,10 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 - [Claude Code リポジトリのスターランキング](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-06](/ja/today/2026-08-06)
+
+Addy Osmani が agent-skills を公開（累計 8.2 万スター——現時点でエコシステム単体最高熱）：開発ライフサイクル全体（Define/Plan/Build/Verify/Review/Ship）をカバーする 24 のプロフェッショナル工学 skill。「Agent が手順を飛ばすために使いそうな言い訳」を明示的に列挙し反論——skill の書き方が「Agent に何をすべきか教える」から「Agent の手抜きを防ぐ」へ深化した、コンテンツ品質の顕著な成熟。
 
 ### [2026-08-05](/ja/today/2026-08-05)
 

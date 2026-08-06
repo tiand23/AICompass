@@ -34,6 +34,10 @@ Claude is one of the mainstream model choices for agent and coding workloads. Ev
 
 ## Timeline
 
+### [2026-08-05](/en/today/2026-08-05)
+
+Claude Enterprise ships Inference Hooks (beta): a real-time allow/deny verdict from an organization's security server before governed prompts run, across claude.ai/Cowork/Claude Code (see [agentic-safety](/en/topics/agentic-safety)). Same day, Claude Opus 4.1 is formally retired — requests now return an error; migrate to Opus 5.
+
 ### [2026-08-01](/en/today/2026-08-01)
 
 Dreams (research preview) in Managed Agents now supports Opus 5 (see [cloud-agent-platforms](/en/topics/cloud-agent-platforms)).

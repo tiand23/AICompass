@@ -29,6 +29,7 @@ High-star representative repos at topic creation (2026-07):
 | superpowers | New (hit Trending 2026-07-30; back on 08-05 at +653) | Agentic skills framework + development methodology |
 | last30days-skill | New (hit Trending 2026-07-31; still on through 08-03) | Cross-platform "last 30 days" research skill |
 | reverse-skill | New (hit Trending 2026-08-01; ~+2,300/day two days running on 08-04/05) | Reverse engineering / pentest / security research skill router pack |
+| addyosmani/agent-skills | New (hit Trending 2026-08-06, 82k stars total — currently the single hottest point in the skill ecosystem) | 24 professional engineering skills spanning the full development lifecycle |
 
 > This ranking is refreshed by `/update` whenever skill-related repos hit GitHub Trending.
 
@@ -49,6 +50,10 @@ High-star representative repos at topic creation (2026-07):
 - [Claude Code repos star leaderboard](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-06](/en/today/2026-08-06)
+
+Addy Osmani releases agent-skills (82k stars total — currently the ecosystem's single hottest point): 24 professional engineering skills spanning the full development lifecycle (Define/Plan/Build/Verify/Review/Ship), explicitly listing and rebutting the excuses an agent might use to skip steps — skill-writing craft maturing from "teach the agent what to do" to "prevent the agent from cutting corners", a notable step up in content quality.
 
 ### [2026-08-05](/en/today/2026-08-05)
 

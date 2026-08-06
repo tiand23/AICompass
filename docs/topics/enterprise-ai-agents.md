@@ -33,6 +33,10 @@
 
 ## Timeline
 
+### [2026-08-05](/today/2026-08-05)
+
+Claude Enterprise 上线 Inference Hooks（beta）：受管辖 prompt 在推理前实时 POST 给企业自建安全服务器等待 allow/deny，覆盖 claude.ai/Cowork/Claude Code。企业 Agent 治理第一次把"推理"本身开放成策略网关可插入的环节，而非只能事后审计（详见 [agentic-safety](/topics/agentic-safety)）。
+
 ### [2026-08-04](/today/2026-08-04)
 
 LangChain 发布 Lyft・Vodafone・LATAM 航空的 CX Agent 生产经验——继 Stripe Kai 之后，"Agent 生产化案例库"在系统性成形，客服（CX）确认为渗透最深的企业场景。

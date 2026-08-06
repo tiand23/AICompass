@@ -33,6 +33,10 @@
 
 ## Timeline
 
+### [2026-08-05](/ja/today/2026-08-05)
+
+Claude Enterprise が Inference Hooks（beta）を導入：管理対象 prompt が推論前に組織自前のセキュリティサーバーからリアルタイムで allow/deny 裁定を受ける。claude.ai/Cowork/Claude Code を横断。企業向けエージェントガバナンスが「推論」そのものをポリシーゲートウェイが差し込める工程として初めて開放し、事後監査だけに頼らなくなった（詳細は [agentic-safety](/ja/topics/agentic-safety)）。
+
 ### [2026-08-04](/ja/today/2026-08-04)
 
 LangChain が Lyft・Vodafone・LATAM 航空の CX エージェント本番教訓を公開——Stripe Kai に続き「エージェント本番化事例ライブラリ」が体系的に形成中。カスタマーサポート（CX）が最も浸透したエンタープライズシナリオであることが確認された。

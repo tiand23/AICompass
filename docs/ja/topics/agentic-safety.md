@@ -18,10 +18,11 @@ Agentic Safety（エージェント安全性）は、自律的に行動できる
 
 ## 関連技術
 
-- コンテナ / マイクロ VM による隔離、egress ネットワークポリシー
+- [agent-sandboxes](/ja/topics/agent-sandboxes)（コンテナ / マイクロ VM による隔離、egress ネットワークポリシー——サンドボックス脱出の直接の受け皿）
 - ツール呼び出しの監査と挙動モニタリング（「EDR for Agents」：Uber ADR が開拓したランタイム検知・対応カテゴリ）
 - 権限システムと human-in-the-loop エスカレーション
 - [mcp](/ja/topics/mcp)（MCP サーバーは新しい攻撃面。ADR-Bench が初めて体系的にテスト）
+- 推論前ポリシーゲートウェイ（Claude Inference Hooks：リクエストがモデルに届く前に allow/deny を裁定。事後監査ではない）
 
 ## ベストプラクティス
 
@@ -38,6 +39,8 @@ Agentic Safety（エージェント安全性）は、自律的に行動できる
 ## Timeline
 
 ### [2026-08-05](/ja/today/2026-08-05)
+
+Claude Enterprise が Inference Hooks（beta）を導入：管理対象 prompt が推論前に組織の AI セキュリティサーバーからリアルタイムで allow/deny 裁定を受ける（デフォルトタイムアウト 5 秒、Standard Webhooks 署名）。deny の場合リクエストはモデルに届かない。サーバーが見るのはユーザーが見ている内容のみ——システムプロンプトや生ファイルは渡されない。シャドーモードと段階的ロールアウトに対応。claude.ai/Cowork/Claude Code が対象で、Bedrock/Vertex/Platform API は対象外。同日の ADR 公開と合わせ、「事前ブロック（Inference Hooks）+ 事中/事後検知（ADR）」の相補的な鎖を形成。
 
 Uber が ADR（Agentic AI Detection and Response）をオープンソース化：本番稼働中のエージェントセキュリティシステム——7+ のコーディングエージェントの実行トレースを収集する Sensor、ADR-Bench（300+ タスク、133 MCP サーバー）、2 層検知アーキテクチャ；論文は MLSys 2026 採択。「EDR for Agents」カテゴリの登場で、エージェントセキュリティのツールチェーンにランタイム検知のピースが揃った。
 

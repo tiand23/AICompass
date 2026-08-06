@@ -18,10 +18,11 @@ Agentic Safety（Agent 安全）关注具备自主行动能力的 AI 系统带�
 
 ## 相关技术
 
-- 容器/微虚拟机隔离、egress 网络策略
+- [agent-sandboxes](/topics/agent-sandboxes)（容器/微虚拟机隔离、egress 网络策略——沙箱逃逸的直接承载对象）
 - 工具调用审计与行为监控（"EDR for Agents"：Uber ADR 开创的运行时检测与响应品类）
 - 权限系统与人工升级（human-in-the-loop）机制
 - [mcp](/topics/mcp)（MCP server 是新攻击面，ADR-Bench 首次将其系统化测试）
+- 推理前策略网关（Claude Inference Hooks：在请求到模型之前做 allow/deny 裁决，而非事后审计）
 
 ## 最佳实践
 
@@ -38,6 +39,8 @@ Agentic Safety（Agent 安全）关注具备自主行动能力的 AI 系统带�
 ## Timeline
 
 ### [2026-08-05](/today/2026-08-05)
+
+Claude Enterprise 上线 Inference Hooks（beta）：受管辖 prompt 推理前实时同步 POST 给企业 AI 安全服务器裁决 allow/deny（默认 5 秒超时，Standard Webhooks 签名），deny 时请求不到达模型；服务器只见用户可见内容，拿不到系统提示词/原始文件；支持影子模式与灰度上线。覆盖 claude.ai/Cowork/Claude Code，不含 Bedrock/Vertex/Platform API。与同日 ADR 形成"事前拦截（Inference Hooks）+ 事中/事后检测（ADR）"的互补链路。
 
 Uber 开源 ADR（Agentic AI Detection and Response）：生产级 Agent 安全系统——Sensor 采集 7+ 编码 Agent 的执行轨迹、ADR-Bench（300+ 任务、133 个 MCP server）、两层检测架构；论文入选 MLSys 2026。"EDR for Agents"品类出现，Agent 安全工具链补上运行时检测一块。
 
