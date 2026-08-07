@@ -13,6 +13,7 @@ Code review is one of the most directly cost-effective links in the AI coding to
 - **Hybrid architecture**: division and orchestration between deterministic checks (lint, rules) and LLM semantic review.
 - **False-positive control**: a review tool's usefulness hinges on signal-to-noise; common techniques include multi-verifier voting and reproducibility checks.
 - **Capability baseline**: ReviewBench (a benchmark derived from real PR review comments) shows current models recover only ~30% of the human baseline with basic prompting; a structured review prompt lifts scores markedly — strategy matters as much as the model.
+- **Code graphs instead of full-text reads**: parse the codebase with Tree-sitter into a structured graph of functions/classes/call relationships, and query it by blast-radius during review instead of reading the whole file tree — measured at roughly 65x fewer tokens than naive full-text reads (the code-review-graph case), a key cost lever for scaling review.
 
 ## Related Technologies
 
@@ -29,6 +30,10 @@ Code review is one of the most directly cost-effective links in the AI coding to
 - [Evaluating code review agents with ReviewBench](https://www.langchain.com/blog/evaluating-code-review-agents-with-reviewbench)
 
 ## Timeline
+
+### [2026-08-07](/en/today/2026-08-07)
+
+code-review-graph arrives (29k stars total): a Tree-sitter code graph + local SQLite + 30 MCP query tools, replacing full-text reads with blast-radius analysis — token cost for reviewing the Flask codebase drops from 143,594 to 2,196 (71x), median ~65x across six repos. The third recurrence of the same "compress into a low-dimensional structured proxy" pattern seen in document parsing's spatial grounding and video editing's transcription proxy.
 
 ### [2026-07-31](/en/today/2026-07-31)
 

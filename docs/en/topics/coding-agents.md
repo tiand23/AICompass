@@ -17,6 +17,7 @@ Terminal coding agents are the main arena of AI coding tool competition, and the
 - **Architectural poles**: from full-featured suites (Claude Code) to the single-binary, config-driven minimalist route (DeepSeek-Reasonix's declarative `reasonix.toml`).
 - **Extending into non-coding domains**: the coding agent's generic "read/edit files, run commands, verify" capability is being reused beyond code — video-use applies the same harness to video editing, controlling token cost by "transcribe to a low-dimensional proxy first, upgrade to pixels only when needed", a general multimodal token-saving pattern.
 - **Cross-platform skill distribution**: methodology-class skill packs like compound-engineering-plugin now list simultaneously across Claude Code/Cursor/Codex/Cline marketplaces — "write once, reuse across tools" is becoming the new norm for skill distribution.
+- **Code graphs as a context-optimization layer**: instead of having the agent read the whole file tree, build a Tree-sitter code graph (functions/classes/call relationships) first and let the agent query it by blast-radius over MCP — a concrete solution to the "context management" core problem in the coding-agent category (see [ai-code-review](/en/topics/ai-code-review)).
 
 ## Related Technologies
 
@@ -36,6 +37,10 @@ Terminal coding agents are the main arena of AI coding tool competition, and the
 - [esengine/DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix)
 
 ## Timeline
+
+### [2026-08-07](/en/today/2026-08-07)
+
+code-review-graph hits Trending (29k stars total): a Tree-sitter code graph plus an MCP query interface, replacing "read the whole file tree" with "query a structured graph by blast-radius" — measured at roughly 65x fewer tokens. Another concrete solution to context management, the coding agent category's core problem (see [ai-code-review](/en/topics/ai-code-review)).
 
 ### [2026-08-05](/en/today/2026-08-05)
 

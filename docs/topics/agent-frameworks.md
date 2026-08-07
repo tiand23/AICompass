@@ -14,6 +14,7 @@ Agent 开发框架版图：LangGraph（LangChain 系，图编排）、CrewAI（�
 - **AutoGen 维护模式**：在产的两条路——维持现状或迁移，架构最接近的迁移目标是 LangGraph。
 - **选型跟栈走**：M365/Azure → Copilot Studio + Semantic Kernel；AWS → AgentCore + LangGraph；GCP → ADK；纯代码自建 → LangGraph 或 Claude Agent SDK。
 - **抽象风格差异**：图（LangGraph/ADK）、角色（CrewAI）、handoff（OpenAI Agents SDK）——决定了心智模型和调试方式。
+- **能动性 vs 确定性光谱**（LangChain 官方定位）：Deep Agents（开箱即用最佳实践的"有主见" harness）→ LangChain（"LLM 在循环里调用工具"的极简框架 + middleware 定制）→ LangGraph（图拓扑直接编码领域知识，最大确定性）——三者同栈可组合，按任务对"灵活 vs 可靠"的要求选择刻度。
 
 ## 相关技术
 
@@ -33,6 +34,10 @@ Agent 开发框架版图：LangGraph（LangChain 系，图编排）、CrewAI（�
 - [开源 Agent 框架横评（Firecrawl）](https://www.firecrawl.dev/blog/best-open-source-agent-frameworks)
 
 ## Timeline
+
+### [2026-08-06](/today/2026-08-06)
+
+LangChain 发文厘清 Deep Agents / LangChain / LangGraph 三者定位：复杂长任务要开箱即用上下文管理选 Deep Agents；需精确控制每步喂给模型什么选 LangChain；流程非标准循环、需混合确定性与自主步骤选 LangGraph（详见 [deep-agents](/topics/deep-agents)）。
 
 ### 2026-07-28
 

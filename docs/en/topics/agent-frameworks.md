@@ -14,6 +14,7 @@ The framework determines how agent logic is expressed and how portable it is —
 - **AutoGen maintenance mode**: two options if you run it in production — live with the feature set, or migrate; LangGraph is the closest architectural fit.
 - **Pick by stack**: M365/Azure → Copilot Studio + Semantic Kernel; AWS → AgentCore + LangGraph; GCP → ADK; custom code → LangGraph or the Claude Agent SDK.
 - **Abstraction styles differ**: graphs (LangGraph/ADK), roles (CrewAI), handoffs (OpenAI Agents SDK) — they define your mental model and debugging experience.
+- **The agency vs determinism spectrum** (LangChain's official positioning): Deep Agents (an "opinionated" harness with best practices out of the box) → LangChain (the minimal "LLM in a loop calling tools" framework, customized via middleware) → LangGraph (domain knowledge encoded directly into graph topology, maximum determinism) — all three are composable on the same stack; pick the point on the spectrum by how much flexibility vs reliability the task needs.
 
 ## Related Technologies
 
@@ -33,6 +34,10 @@ The framework determines how agent logic is expressed and how portable it is —
 - [Best open-source agent frameworks (Firecrawl)](https://www.firecrawl.dev/blog/best-open-source-agent-frameworks)
 
 ## Timeline
+
+### [2026-08-06](/en/today/2026-08-06)
+
+LangChain publishes a post clarifying Deep Agents / LangChain / LangGraph positioning: pick Deep Agents for complex long-running tasks needing out-of-the-box context management; LangChain for fine-grained control over what reaches the model each step; LangGraph when the workflow isn't a standard loop and needs a mix of deterministic and agentic steps (see [deep-agents](/en/topics/deep-agents)).
 
 ### 2026-07-28
 

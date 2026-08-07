@@ -45,9 +45,9 @@
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
 | [deep-agents](/en/topics/deep-agents) | Long-horizon autonomous agents (LangChain) | Planning, recovery and evaluation of multi-step tasks | 🔥 | 2026-08-06 |
-| [agent-frameworks](/en/topics/agent-frameworks) | Framework landscape: LangGraph/CrewAI/ADK/Agents SDK… | Framework selection and long-term safety | 📈 | 2026-07-28 |
+| [agent-frameworks](/en/topics/agent-frameworks) | Framework landscape: LangGraph/CrewAI/ADK/Agents SDK… | Framework selection and long-term safety | 🔥 | 2026-08-06 |
 | [agent-workflow](/en/topics/agent-workflow) | Workflow paradigms: orchestration vs autonomy, HITL, durable execution | Getting agents reliably into business processes | 📈 | 2026-07-28 |
-| [agent-skills](/en/topics/agent-skills) | Reusable capability packages (incl. GitHub heat rankings) | Distribution and reuse of agent capabilities | 🔥 | 2026-08-06 |
+| [agent-skills](/en/topics/agent-skills) | Reusable capability packages (incl. GitHub heat rankings) | Distribution and reuse of agent capabilities | 🔥 | 2026-08-07 |
 | [voice-agents](/en/topics/voice-agents) | Voice agents (cascaded/realtime S2S, frameworks & evaluation) | Realtime engineering and evaluation of voice-interface agents | 🔥 | 2026-08-04 |
 
 ### Runtime & Cloud (Hosted Runtimes ・ Agent Platforms ・ Foundry)
@@ -91,5 +91,5 @@
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [ai-code-review](/en/topics/ai-code-review) | AI code review tools & architecture | Scaling review while keeping signal-to-noise | 🔥 | 2026-07-31 |
-| [coding-agents](/en/topics/coding-agents) | Terminal/CLI coding agents (Claude Code/Codex CLI/Reasonix…) | Category selection; harness engineering and model-ecosystem coupling | 🔥 | 2026-08-04 |
+| [ai-code-review](/en/topics/ai-code-review) | AI code review tools & architecture | Scaling review while keeping signal-to-noise | 🔥 | 2026-08-07 |
+| [coding-agents](/en/topics/coding-agents) | Terminal/CLI coding agents (Claude Code/Codex CLI/Reasonix…) | Category selection; harness engineering and model-ecosystem coupling | 🔥 | 2026-08-07 |

@@ -29,7 +29,8 @@ High-star representative repos at topic creation (2026-07):
 | superpowers | New (hit Trending 2026-07-30; back on 08-05 at +653) | Agentic skills framework + development methodology |
 | last30days-skill | New (hit Trending 2026-07-31; still on through 08-03) | Cross-platform "last 30 days" research skill |
 | reverse-skill | New (hit Trending 2026-08-01; ~+2,300/day two days running on 08-04/05) | Reverse engineering / pentest / security research skill router pack |
-| addyosmani/agent-skills | New (hit Trending 2026-08-06, 82k stars total — currently the single hottest point in the skill ecosystem) | 24 professional engineering skills spanning the full development lifecycle |
+| addyosmani/agent-skills | New (hit Trending 2026-08-06, 82k stars total) | 24 professional engineering skills spanning the full development lifecycle |
+| mattpocock/skills | New (hit Trending 2026-08-07, ~207k stars total — currently the single hottest point in the skill ecosystem) | Engineering discipline distilled from a personal `.agents` directory (interview-driven planning/TDD/architecture review) |
 
 > This ranking is refreshed by `/update` whenever skill-related repos hit GitHub Trending.
 
@@ -50,6 +51,10 @@ High-star representative repos at topic creation (2026-07):
 - [Claude Code repos star leaderboard](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-07](/en/today/2026-08-07)
+
+Matt Pocock releases skills (~207k stars total, taking over as the ecosystem's single hottest point): distilled from a personal `.agents` directory, led by "interview-driven planning" (ask clarifying questions before starting) and other alignment-focused skills — a day after Addy Osmani, another well-known independent engineer distills personal experience into a high-star skill pack. "Open-sourcing distilled personal experience" is becoming a repeatable pattern, and skills are starting to reach for "communication alignment", a harder problem than procedural discipline.
 
 ### [2026-08-06](/en/today/2026-08-06)
 

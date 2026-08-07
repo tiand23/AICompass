@@ -34,6 +34,8 @@ Long-horizon autonomy is the current frontier of agent capability competition, a
 
 ### [2026-08-06](/en/today/2026-08-06)
 
+LangChain publishes a post clarifying Deep Agents / LangChain / LangGraph positioning: Deep Agents is an "opinionated" harness with built-in filesystem backends, subagents, skills and memory management — the default starting point for complex long-running tasks; all three are composable, three points on the "agency vs determinism" spectrum (see [agent-frameworks](/en/topics/agent-frameworks)).
+
 loopx arrives (2.1k stars total): not another agent framework, but an agent-agnostic external state kernel layered on top of any agent (Codex/Claude Code/Cursor) — durable goals, handoff-able todos, quota-aware scheduling, evidence logs. State management for long-horizon multi-agent collaboration is becoming its own independent layer.
 
 ### [2026-08-05](/en/today/2026-08-05)

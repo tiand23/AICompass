@@ -34,6 +34,8 @@ Deep Agents は LangChain が提唱するコンセプトとプロダクトの方
 
 ### [2026-08-06](/ja/today/2026-08-06)
 
+LangChain が Deep Agents / LangChain / LangGraph の位置づけを整理する記事を公開：Deep Agents はファイルシステムバックエンド・サブエージェント・skills・記憶管理を内蔵した「主張を持つ」harness——複雑で長時間のタスクのデフォルトの起点。3 者は組み合わせ可能で「能動性 vs 決定性」スペクトラム上の 3 つの目盛り（詳細は [agent-frameworks](/ja/topics/agent-frameworks)）。
+
 loopx が登場（累計 2.1k スター）：別の Agent フレームワークではなく、任意の Agent（Codex/Claude Code/Cursor）の上に載せる Agent 非依存の外部状態カーネル——永続目標、引き継ぎ可能なタスク、クォータ意識スケジューリング、証跡ログ。長期マルチ Agent 協調の状態管理が独立した層になりつつある。
 
 ### [2026-08-05](/ja/today/2026-08-05)

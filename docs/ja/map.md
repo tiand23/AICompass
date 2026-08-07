@@ -45,9 +45,9 @@
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
 | [deep-agents](/ja/topics/deep-agents) | 長期自律タスクエージェント（LangChain） | 多段階タスクの計画・回復・評価 | 🔥 | 2026-08-06 |
-| [agent-frameworks](/ja/topics/agent-frameworks) | フレームワーク版図：LangGraph/CrewAI/ADK/Agents SDK… | フレームワーク選定と長期的安全性 | 📈 | 2026-07-28 |
+| [agent-frameworks](/ja/topics/agent-frameworks) | フレームワーク版図：LangGraph/CrewAI/ADK/Agents SDK… | フレームワーク選定と長期的安全性 | 🔥 | 2026-08-06 |
 | [agent-workflow](/ja/topics/agent-workflow) | ワークフローパラダイム：編成 vs 自律、HITL、永続実行 | エージェントを業務プロセスに確実に組み込む | 📈 | 2026-07-28 |
-| [agent-skills](/ja/topics/agent-skills) | 再利用可能な能力パッケージ（GitHub 熱度ランキング付き） | エージェント能力の配布と再利用 | 🔥 | 2026-08-06 |
+| [agent-skills](/ja/topics/agent-skills) | 再利用可能な能力パッケージ（GitHub 熱度ランキング付き） | エージェント能力の配布と再利用 | 🔥 | 2026-08-07 |
 | [voice-agents](/ja/topics/voice-agents) | 音声エージェント（カスケード/リアルタイム S2S、フレームワークと評価） | 音声インターフェースエージェントのリアルタイム工学と評価 | 🔥 | 2026-08-04 |
 
 ### ランタイムとクラウド（ホスト型ランタイム ・ エージェントプラットフォーム ・ Foundry）
@@ -91,5 +91,5 @@
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [ai-code-review](/ja/topics/ai-code-review) | AI コードレビューのツールと設計 | レビューのスケールと S/N 比の両立 | 🔥 | 2026-07-31 |
-| [coding-agents](/ja/topics/coding-agents) | ターミナル/CLI コーディングエージェント（Claude Code/Codex CLI/Reasonix…） | カテゴリ選定；harness 工学とモデル生態系の結合 | 🔥 | 2026-08-04 |
+| [ai-code-review](/ja/topics/ai-code-review) | AI コードレビューのツールと設計 | レビューのスケールと S/N 比の両立 | 🔥 | 2026-08-07 |
+| [coding-agents](/ja/topics/coding-agents) | ターミナル/CLI コーディングエージェント（Claude Code/Codex CLI/Reasonix…） | カテゴリ選定；harness 工学とモデル生態系の結合 | 🔥 | 2026-08-07 |

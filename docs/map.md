@@ -45,9 +45,9 @@
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
 | [deep-agents](/topics/deep-agents) | 长时程自主任务 Agent（LangChain） | 多步骤任务的规划、恢复与评估 | 🔥 | 2026-08-06 |
-| [agent-frameworks](/topics/agent-frameworks) | 框架版图：LangGraph/CrewAI/ADK/Agents SDK… | 框架选型与长期安全性 | 📈 | 2026-07-28 |
+| [agent-frameworks](/topics/agent-frameworks) | 框架版图：LangGraph/CrewAI/ADK/Agents SDK… | 框架选型与长期安全性 | 🔥 | 2026-08-06 |
 | [agent-workflow](/topics/agent-workflow) | 工作流范式：编排 vs 自主、HITL、持久化执行 | 让 Agent 可靠地跑进业务流程 | 📈 | 2026-07-28 |
-| [agent-skills](/topics/agent-skills) | 可复用能力包生态（含 GitHub 热度排行） | Agent 能力的分发与复用 | 🔥 | 2026-08-06 |
+| [agent-skills](/topics/agent-skills) | 可复用能力包生态（含 GitHub 热度排行） | Agent 能力的分发与复用 | 🔥 | 2026-08-07 |
 | [voice-agents](/topics/voice-agents) | 语音 Agent（级联/实时 S2S、框架与评测） | 语音界面 Agent 的实时性工程与评测 | 🔥 | 2026-08-04 |
 
 ### 运行时与云（托管运行时 ・ Agent 平台 ・ Foundry）
@@ -91,5 +91,5 @@
 
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
-| [ai-code-review](/topics/ai-code-review) | AI 代码评审工具与架构 | 评审的规模化与信噪比 | 🔥 | 2026-07-31 |
-| [coding-agents](/topics/coding-agents) | 终端/CLI 编码 Agent（Claude Code/Codex CLI/Reasonix…） | 品类选型；harness 工程与模型生态绑定 | 🔥 | 2026-08-04 |
+| [ai-code-review](/topics/ai-code-review) | AI 代码评审工具与架构 | 评审的规模化与信噪比 | 🔥 | 2026-08-07 |
+| [coding-agents](/topics/coding-agents) | 终端/CLI 编码 Agent（Claude Code/Codex CLI/Reasonix…） | 品类选型；harness 工程与模型生态绑定 | 🔥 | 2026-08-07 |

@@ -13,6 +13,7 @@
 - **混合架构**：确定性检查（lint、规则）与 LLM 语义评审的分工与编排。
 - **误报控制**：评审工具的可用性取决于信噪比，常见手段是多验证器投票、可复现性检查。
 - **能力基线**：ReviewBench（真实 PR 评审意见派生的基准）显示当前模型基础 prompt 下只找回约 30% 人工基线问题；结构化评审 prompt 可显著提分——策略与模型同样重要。
+- **代码图代替全文读取**：用 Tree-sitter 把代码库解析成函数/类/调用关系的结构化图，评审时按影响范围（blast-radius）查图而非读整棵文件树——实测可比朴素全文读取省约 65 倍 token（code-review-graph 案例），是评审规模化的关键降本手段。
 
 ## 相关技术
 
@@ -29,6 +30,10 @@
 - [Evaluating code review agents with ReviewBench](https://www.langchain.com/blog/evaluating-code-review-agents-with-reviewbench)
 
 ## Timeline
+
+### [2026-08-07](/today/2026-08-07)
+
+code-review-graph 登场（累计 2.9 万 star）：Tree-sitter 代码图 + 本地 SQLite + 30 个 MCP 查询工具，用影响范围分析代替全文读取——审查 Flask 代码库 token 消耗从 143,594 降到 2,196（71 倍），六仓库中位数约 65 倍。与文档解析的"空间定位"、视频剪辑的"转写代理"是同一"压缩成低维结构化代理表示"模式的第三次复现。
 
 ### [2026-07-31](/today/2026-07-31)
 

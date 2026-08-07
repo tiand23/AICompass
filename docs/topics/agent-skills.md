@@ -29,7 +29,8 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 | superpowers | 新晋（2026-07-30 上榜，08-05 回榜 +653） | Agentic skills 框架 + 开发方法论 |
 | last30days-skill | 新晋（2026-07-31 上榜，连续在榜至 08-03） | 跨平台"最近 30 天"调研 skill |
 | reverse-skill | 新晋（2026-08-01 上榜，08-04/05 连续两日 +2,300 上下高热） | 逆向/渗透/安全研究 skill 路由包 |
-| addyosmani/agent-skills | 新晋（2026-08-06 上榜，累计 8.2 万 star，目前 skill 生态单点最高热） | 覆盖全开发生命周期的 24 个专业工程 skill |
+| addyosmani/agent-skills | 新晋（2026-08-06 上榜，累计 8.2 万 star） | 覆盖全开发生命周期的 24 个专业工程 skill |
+| mattpocock/skills | 新晋（2026-08-07 上榜，累计约 20.7 万 star，目前 skill 生态单点最高热） | 从个人 `.agents` 目录提炼的工程纪律 skill（面谈式规划/TDD/架构评估） |
 
 > 此排行由 `/update` 在 skill 类仓库登上 GitHub Trending 时自动更新。
 
@@ -50,6 +51,10 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 - [Claude Code 高星仓库排行](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-07](/today/2026-08-07)
+
+Matt Pocock 发布 skills（累计约 20.7 万 star，接棒成为生态单点最高热）：从个人 `.agents` 目录提炼，主打"面谈式规划"（先反问澄清意图再动手）等对齐类技能——继 Addy Osmani 之后一天内又一位知名独立工程师把私人经验提炼成高星 skill 包，"个人经验沉淀开源"正成为可复制模式，且开始触及"沟通对齐"这类比流程规范更难的问题。
 
 ### [2026-08-06](/today/2026-08-06)
 

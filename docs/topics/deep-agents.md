@@ -34,6 +34,8 @@ Deep Agents 是 LangChain 提出的概念与产品方向：能执行长时程、
 
 ### [2026-08-06](/today/2026-08-06)
 
+LangChain 发文厘清 Deep Agents / LangChain / LangGraph 三者定位：Deep Agents 是内置文件系统/子 Agent/skills/记忆管理的"有主见"harness，复杂长任务的默认起点；三者同栈可组合，是"能动性 vs 确定性"光谱上的三个刻度（详见 [agent-frameworks](/topics/agent-frameworks)）。
+
 loopx 登场（累计 2.1k star）：不做另一个 Agent 框架，而是给任意 Agent（Codex/Claude Code/Cursor）加一层 Agent-agnostic 的外部状态内核——持久目标、可交接待办、按配额调度、证据日志。长时程多 Agent 协作的状态管理正独立成单独一层。
 
 ### [2026-08-05](/today/2026-08-05)

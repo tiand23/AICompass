@@ -14,6 +14,7 @@
 - **AutoGen メンテナンスモード**：本番運用中なら選択肢は 2 つ——現状維持か移行か。アーキテクチャ的に最も近い移行先は LangGraph。
 - **スタックで選ぶ**：M365/Azure → Copilot Studio + Semantic Kernel；AWS → AgentCore + LangGraph；GCP → ADK；フルコード自前 → LangGraph か Claude Agent SDK。
 - **抽象スタイルの違い**：グラフ（LangGraph/ADK）、ロール（CrewAI）、handoff（OpenAI Agents SDK）——メンタルモデルとデバッグ体験を決める。
+- **能動性 vs 決定性のスペクトラム**（LangChain 公式の位置づけ）：Deep Agents（ベストプラクティス標準搭載の「主張を持つ」harness）→ LangChain（「LLM がループでツールを呼ぶ」最小フレームワーク + middleware でカスタマイズ）→ LangGraph（ドメイン知識を直接グラフトポロジーに埋め込み、最大限の決定性）——3 者は同じスタック上で組み合わせ可能。タスクが求める柔軟性と信頼性のバランスで目盛りを選ぶ。
 
 ## 関連技術
 
@@ -33,6 +34,10 @@
 - [オープンソースエージェントフレームワーク比較（Firecrawl）](https://www.firecrawl.dev/blog/best-open-source-agent-frameworks)
 
 ## Timeline
+
+### [2026-08-06](/ja/today/2026-08-06)
+
+LangChain が Deep Agents / LangChain / LangGraph の位置づけを整理する記事を公開：複雑で長時間のタスクで標準搭載のコンテキスト管理が欲しいなら Deep Agents；各ステップでモデルに渡すものを精密制御したいなら LangChain；フローが標準ループに収まらず決定的ステップと自律ステップの混在が必要なら LangGraph（詳細は [deep-agents](/ja/topics/deep-agents)）。
 
 ### 2026-07-28
 
