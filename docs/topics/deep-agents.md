@@ -16,6 +16,8 @@ Deep Agents 是 LangChain 提出的概念与产品方向：能执行长时程、
 - **分层架构**：开源 harness（Deep Agents）→ 企业专属 harness → 配置层（定制 Agent 实例）——通用底座与企业定制的分工模式。
 - **读写权限分离**：只读的诊断/分析可以完全自主，涉及副作用的写操作必须过人工审批（HITL）——Kubernetes SRE Agent 案例的核心设计铁律，审批范围还要收窄到"人能看懂"，而非笼统放行整类操作。
 - **外部状态内核**：跨会话的目标、待办、证据、责任交接不适合塞进单次对话上下文——loopx 这类 Agent-agnostic 的外部控制平面正在成为长时程多 Agent 协作的独立一层，而非某个框架的内置功能。
+- **托管化**：开源框架之上出现托管运行时——LangSmith Managed Deep Agents（2026-08 公测）把持久化执行、沙箱、记忆、可观测打包，`mda deploy` 一键上线，是"开源框架 + 托管运行时"分层模式在 Deep Agents 上的落地。
+- **自我改进循环（内置 vs 外部）**：prime-agent 的 `/refine` 把"复盘轨迹→更新经验"做成 Agent 自身内置能力（写回 harness 状态），是相对 loopx 外部状态层的另一种实现路径——同一个"让运行留下可复用沉淀"的目标，可以做在 Agent 内部，也可以做成外部工具。
 
 ## 相关技术
 
@@ -31,6 +33,14 @@ Deep Agents 是 LangChain 提出的概念与产品方向：能执行长时程、
 - [How We Benchmark Deep Agents（LangChain Blog）](https://www.langchain.com/blog/)
 
 ## Timeline
+
+### [2026-08-08](/today/2026-08-08)
+
+Prime Intellect 发布 prime-agent（累计 6.5k star）：RLM（递归语言模型）思路——把上下文当变量、工具当函数调用，在持久化 Python REPL 里运行；`/refine` 复盘任务轨迹并把经验写回 harness 状态，实现内置式自我改进，与 loopx 的外部状态内核是同一目标的不同实现路径（详见 [coding-agents](/topics/coding-agents)）。
+
+### [2026-08-07](/today/2026-08-07)
+
+LangSmith 发布 Managed Deep Agents 公测：托管化的 Deep Agents 运行时，持久化执行/沙箱/记忆/Slack·GitHub 接入/OIDC 身份/Harbor 评估/全链路可观测打包交付，`mda dev`/`mda deploy` 开发部署闭环；继 Claude、Gemini 之后第三家把"深度 Agent 托管化"推成产品线（详见 [cloud-agent-platforms](/topics/cloud-agent-platforms)）。
 
 ### [2026-08-06](/today/2026-08-06)
 

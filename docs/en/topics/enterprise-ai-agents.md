@@ -12,7 +12,7 @@ This is the main battleground for generative AI in the enterprise. As model capa
 
 - **Delivery model spectrum**: pure API self-build → hosted runtime (Managed Agents) → platform + embedded engineers (Presence's FDE model).
 - **Policy & permissions**: company-defined policies, permissions and evaluation standards constrain agent behavior; human escalation is table stakes.
-- **Operational maturity signals**: lifecycle webhooks, session seeding, streaming observation — concrete API capabilities for judging platform maturity.
+- **Operational maturity signals**: lifecycle webhooks, session seeding, streaming observation — concrete API capabilities for judging platform maturity; hard session-budget caps and data-residency control are the latest additions to this signal set.
 - **The "own your intelligence" debate**: outsource intelligence to a platform or keep it in-house — the core divide in enterprise AI architecture.
 
 ## Related Technologies
@@ -32,6 +32,10 @@ This is the main battleground for generative AI in the enterprise. As model capa
 - [Claude Managed Agents docs](https://platform.claude.com/docs/en/release-notes/overview)
 
 ## Timeline
+
+### [2026-08-07](/en/today/2026-08-07)
+
+Claude Managed Agents ships four ops features at once: hard session-budget caps, Advisor models (consult a stronger model mid-turn for strategic guidance), `inference_geo` data-residency control, and GitHub-repo-loaded skills. Same day, LangSmith launches Managed Deep Agents public beta — hosted-runtime competition intensifies further (see [cloud-agent-platforms](/en/topics/cloud-agent-platforms)).
 
 ### [2026-08-05](/en/today/2026-08-05)
 

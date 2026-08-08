@@ -12,7 +12,7 @@
 
 - **交付模式光谱**：纯 API 自建 → 托管运行时（Managed Agents）→ 平台 + 驻场工程师（Presence 的 FDE 模式）。
 - **策略与权限**：企业定义的 policy、permission、评估标准约束 Agent 行为；人工升级（escalation）是标配。
-- **运维成熟度信号**：生命周期 webhook、会话预置、流式观测等 API 能力是评估平台成熟度的具体指标。
+- **运维成熟度信号**：生命周期 webhook、会话预置、流式观测等 API 能力是评估平台成熟度的具体指标；会话级预算硬顶、数据落地地控制是这一信号集的最新补充。
 - **"拥有你的智能"之争**：智能外包给平台还是握在自己手里——企业 AI 架构选型的核心分歧。
 
 ## 相关技术
@@ -32,6 +32,10 @@
 - [Claude Managed Agents 文档](https://platform.claude.com/docs/en/release-notes/overview)
 
 ## Timeline
+
+### [2026-08-07](/today/2026-08-07)
+
+Claude Managed Agents 一次上线四项运维能力：会话预算硬顶、Advisor 顾问模型（中途咨询更强模型的策略建议）、`inference_geo` 数据落地地控制、GitHub 仓库自动加载 skills。同日 LangSmith 发布 Managed Deep Agents 公测，托管化竞争进一步升温（详见 [cloud-agent-platforms](/topics/cloud-agent-platforms)）。
 
 ### [2026-08-05](/today/2026-08-05)
 

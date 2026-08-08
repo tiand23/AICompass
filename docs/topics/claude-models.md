@@ -34,6 +34,10 @@ Claude 是 Agent 与编码场景的主流模型选择之一。其模型线的每
 
 ## Timeline
 
+### [2026-08-07](/today/2026-08-07)
+
+Fable 5 生物安全分类器重训：重写分类"宪法"、补充良性用途豁免、专家反馈+新训练数据，生物学相关误拦截降约 85%；病毒学/毒理学/分子设计仍拦截并路由至 Opus 5。双重用途护栏从"一刀切"走向"规则细化+数据反哺"的精细化校准。Managed Agents 同日上线会话预算硬顶、Advisor 顾问模型、`inference_geo` 数据落地控制、GitHub 仓库加载 skills（详见 [cloud-agent-platforms](/topics/cloud-agent-platforms)）。
+
 ### [2026-08-05](/today/2026-08-05)
 
 Claude Enterprise 上线 Inference Hooks（beta）：受管辖 prompt 推理前实时经企业安全服务器裁决 allow/deny，覆盖 claude.ai/Cowork/Claude Code（详见 [agentic-safety](/topics/agentic-safety)）。同日 Claude Opus 4.1 正式退役，请求返回错误，建议迁移 Opus 5。

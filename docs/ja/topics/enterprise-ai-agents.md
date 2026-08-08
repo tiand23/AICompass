@@ -12,7 +12,7 @@
 
 - **デリバリーモデルのスペクトラム**：純粋な API 自前構築 → ホスト型ランタイム（Managed Agents）→ プラットフォーム + 常駐エンジニア（Presence の FDE モデル）。
 - **ポリシーと権限**：企業が定義する policy・permission・評価基準がエージェントの行動を制約する。人間へのエスカレーションは標準装備。
-- **運用成熟度のシグナル**：ライフサイクル webhook、セッション初期投入、ストリーミング観測——プラットフォームの成熟度を測る具体的な API 能力。
+- **運用成熟度のシグナル**：ライフサイクル webhook、セッション初期投入、ストリーミング観測——プラットフォームの成熟度を測る具体的な API 能力。セッション単位の予算ハード上限とデータ所在地制御が、このシグナル群の最新の追加項目。
 - **「own your intelligence」論争**：インテリジェンスをプラットフォームに委ねるか、自社に留めるか——エンタープライズ AI アーキテクチャの核心的分岐。
 
 ## 関連技術
@@ -32,6 +32,10 @@
 - [Claude Managed Agents ドキュメント](https://platform.claude.com/docs/en/release-notes/overview)
 
 ## Timeline
+
+### [2026-08-07](/ja/today/2026-08-07)
+
+Claude Managed Agents が運用機能を一挙 4 件公開：セッション予算のハード上限、アドバイザーモデル（途中でより強いモデルに戦略的助言を求められる）、`inference_geo` データ所在地制御、GitHub リポジトリからの skill 読み込み。同日 LangSmith が Managed Deep Agents 公開ベータをローンチし、ホスト化競争がさらに激化（詳細は [cloud-agent-platforms](/ja/topics/cloud-agent-platforms)）。
 
 ### [2026-08-05](/ja/today/2026-08-05)
 

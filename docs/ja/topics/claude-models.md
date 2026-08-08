@@ -34,6 +34,10 @@ Claude はエージェントとコーディング用途における主流のモ�
 
 ## Timeline
 
+### [2026-08-07](/ja/today/2026-08-07)
+
+Fable 5 の生物学安全性分類器を再学習：分類「憲法」を書き直し、良性用途の例外規定を追加、専門家フィードバックと更新データで再学習——生物学関連の誤ブロックが約 85% 減少；ウイルス学/毒物学/分子設計は引き続きブロックされ Opus 5 へルーティング。デュアルユースガードレールが一律制限から「規則の精緻化 + データフィードバック」の精緻な較正へ移行。同日 Managed Agents がセッション予算ハード上限、アドバイザーモデル、`inference_geo` データ所在地制御、GitHub リポジトリからの skill 読み込みを公開（詳細は [cloud-agent-platforms](/ja/topics/cloud-agent-platforms)）。
+
 ### [2026-08-05](/ja/today/2026-08-05)
 
 Claude Enterprise が Inference Hooks（beta）を導入：管理対象 prompt が推論前に組織のセキュリティサーバーからリアルタイムで allow/deny 裁定を受ける。claude.ai/Cowork/Claude Code 対象（詳細は [agentic-safety](/ja/topics/agentic-safety)）。同日、Claude Opus 4.1 が正式に廃止——リクエストはエラーを返すようになり、Opus 5 への移行が推奨される。

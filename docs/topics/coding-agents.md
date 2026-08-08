@@ -18,6 +18,7 @@
 - **跨领域应用扩展**：编码 Agent 的"读改文件+跑命令+验证"这套通用能力正被复用到编码之外——video-use 用同一套 harness 剪视频，靠"先转写成低维代理表示、按需才升维到像素级"控制 token 成本，是多模态省 token 的通用模式。
 - **跨平台 skill 分发**：compound-engineering-plugin 等方法论类 skill 包同时上架 Claude Code/Cursor/Codex/Cline 等多个市场，"一次编写、多工具复用"正成为 skill 分发的新常态。
 - **代码图作为上下文优化层**：与其让 Agent 读整棵文件树，不如先建一张 Tree-sitter 代码图（函数/类/调用关系），Agent 经 MCP 按影响范围查图——是编码 Agent 品类里"上下文管理"这条核心问题的具体解法之一（详见 [ai-code-review](/topics/ai-code-review)）。
+- **RLM 路线**：把上下文当变量、工具当函数调用，在持久化编程环境（如 IPython REPL）里运行 Agent，而非常规对话式工具调用循环——prime-agent 代表的这条路线是"harness 形态"的另一种结构性选择，不只是全家桶 vs 极简配置的光谱，而是完全不同的执行范式。
 
 ## 相关技术
 
@@ -37,6 +38,10 @@
 - [esengine/DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix)
 
 ## Timeline
+
+### [2026-08-08](/today/2026-08-08)
+
+Prime Intellect 发布 prime-agent（累计 6.5k star）：RLM 思路——上下文作变量、工具作函数调用，跑在持久化 Python REPL 里；`/refine` 复盘轨迹并写回 harness 状态实现内置式自我改进。编码 Agent 的执行范式出现结构性分支（详见 [deep-agents](/topics/deep-agents)）。
 
 ### [2026-08-07](/today/2026-08-07)
 

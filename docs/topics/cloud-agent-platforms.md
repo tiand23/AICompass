@@ -11,7 +11,8 @@
 ## 核心概念
 
 - **选型的第一定律是跟着现有云走**：Azure 用户 → AI Foundry；AWS → Bedrock AgentCore；GCP → Gemini Enterprise Agent Platform。跨云中立需求才考虑 Anthropic/OpenAI 直连。
-- **各家长板**：AgentCore 模型面最广（30+ 模型统一 API，Claude/Llama/Mistral）；Foundry 深绑 GPT 家族与 M365/Copilot Studio；Google 强在 ML 密集负载、原生多模态与 A2A 协议（Gemini API Managed Agents 已补齐 hooks/预算护栏/定时触发的生产化能力）；Managed Agents 强在 Claude 生态与 API 工程化（effort、webhook、事件流）。
+- **各家长板**：AgentCore 模型面最广（30+ 模型统一 API，Claude/Llama/Mistral）；Foundry 深绑 GPT 家族与 M365/Copilot Studio；Google 强在 ML 密集负载、原生多模态与 A2A 协议（Gemini API Managed Agents 已补齐 hooks/预算护栏/定时触发的生产化能力）；Managed Agents 强在 Claude 生态与 API 工程化（effort、webhook、事件流、会话预算硬顶、顾问模型、数据落地地、GitHub 加载 skills）。
+- **托管 Deep Agents 成新品类**：继 Claude/Gemini 之后，LangSmith 的 Managed Deep Agents（2026-08 公测）把开源框架包装成托管运行时——持久化执行/沙箱/记忆/可观测打包交付，"框架开源 + 运行时托管"正成为多家的共同路线。
 - **管控平面**：Agent365 这类"Agent 的 MDM"是 2026 年新出现的层——企业要统一管理成百上千个 Agent 的身份、权限与审计。
 - **现实主流是"人审后执行"**：多数企业仍在 assisted workflow 阶段，全自主生产管线是少数。
 
@@ -33,6 +34,10 @@
 - [AWS Bedrock vs Microsoft Foundry vs Vertex AI 2026](https://www.epcgroup.net/blog/aws-bedrock-vs-microsoft-foundry-vs-vertex-ai-2026)
 
 ## Timeline
+
+### [2026-08-07](/today/2026-08-07)
+
+Claude Managed Agents 一次上线四项：会话预算硬顶（`budget_reached` 自动暂停）、Advisor 顾问模型（主线程中途咨询更强模型的策略建议）、`inference_geo` 推理地理位置控制（数据落地合规）、从挂载的 GitHub 仓库自动发现加载 skills。同日 LangSmith 发布 Managed Deep Agents 公测，第三家把 Deep Agent 托管化作为产品线推出（详见 [deep-agents](/topics/deep-agents)）。
 
 ### [2026-08-01](/today/2026-08-01)
 

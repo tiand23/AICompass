@@ -16,6 +16,8 @@ Deep Agents は LangChain が提唱するコンセプトとプロダクトの方
 - **積層アーキテクチャ**：オープンソース harness（Deep Agents）→ 企業専用 harness → 設定レイヤー（カスタムエージェントインスタンス）——汎用基盤と企業カスタマイズの分業モデル。
 - **読み書き権限の分離**：読み取り専用の診断/分析は完全に自律でよいが、副作用を伴う書き込みは必ず人間の承認（HITL）を経る——Kubernetes SRE エージェント事例の中核設計原則。承認範囲も「人間が理解できる」程度に狭めるべきで、操作カテゴリ全体を一括で許可すべきではない。
 - **外部状態カーネル**：セッションを跨ぐ目標・タスク・証拠・責任の引き継ぎは単一会話のコンテキストに詰め込むのに向かない——loopx のような Agent 非依存の外部コントロールプレーンが、特定フレームワークの内蔵機能ではなく独立した層として、長期マルチ Agent 協調のために台頭しつつある。
+- **マネージド化**：オープンソースフレームワークの上にホスト型ランタイムが登場——LangSmith の Managed Deep Agents（2026-08 公開ベータ）は永続実行・サンドボックス・記憶・可観測性を `mda deploy` 一発でまとめて提供、Deep Agents に「オープンソースフレームワーク + ホスト型ランタイム」の積層モデルを適用した例。
+- **自己改善ループ（内蔵 vs 外部）**：prime-agent の `/refine` は「軌跡を復盤して harness 自身の状態を更新する」ことをエージェント内蔵の能力にした（harness 状態への書き戻し）——loopx の外部状態層とは別の実装経路で、同じく「実行に再利用可能な蓄積を残す」という目標を達成している。
 
 ## 関連技術
 
@@ -31,6 +33,14 @@ Deep Agents は LangChain が提唱するコンセプトとプロダクトの方
 - [How We Benchmark Deep Agents（LangChain Blog）](https://www.langchain.com/blog/)
 
 ## Timeline
+
+### [2026-08-08](/ja/today/2026-08-08)
+
+Prime Intellect が prime-agent を公開（累計 6.5k スター）：RLM（再帰言語モデル）の発想——コンテキストを変数、ツールを関数呼び出しとして扱い、永続化された Python REPL の中で動作。`/refine` が軌跡を復盤して経験を harness 状態に書き戻す内蔵型自己改善で、loopx の外部状態カーネルとは別の経路で同じ目標を達成する（詳細は [coding-agents](/ja/topics/coding-agents)）。
+
+### [2026-08-07](/ja/today/2026-08-07)
+
+LangSmith が Managed Deep Agents 公開ベータをローンチ：永続実行・サンドボックス・記憶・Slack/GitHub 接続・OIDC 認証・Harbor 評価・全体トレーシングを一括パッケージ化したホスト型 Deep Agents ランタイム。`mda dev`/`mda deploy` で開発からデプロイまでを閉じる；Claude、Gemini に続き「深いエージェントのホスト化」を製品ラインとして打ち出した 3 社目（詳細は [cloud-agent-platforms](/ja/topics/cloud-agent-platforms)）。
 
 ### [2026-08-06](/ja/today/2026-08-06)
 

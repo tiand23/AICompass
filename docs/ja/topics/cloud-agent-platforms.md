@@ -11,7 +11,8 @@
 ## コアコンセプト
 
 - **選定の第一法則は既存クラウドに従う**：Azure → AI Foundry、AWS → Bedrock AgentCore、GCP → Gemini Enterprise Agent Platform。クロスクラウド中立が必要な場合のみ Anthropic/OpenAI 直結を検討。
-- **各社の強み**：AgentCore はモデルの幅が最大（30+ モデルを統一 API で、Claude/Llama/Mistral）；Foundry は GPT 系と M365/Copilot Studio に最深；Google は ML 集約ワークロード・ネイティブマルチモーダル・A2A プロトコル（Gemini API Managed Agents は hooks/予算ガードレール/定期トリガーの本番化能力も装備済み）；Managed Agents は Claude エコシステムと API エンジニアリング（effort、webhook、イベントストリーム）。
+- **各社の強み**：AgentCore はモデルの幅が最大（30+ モデルを統一 API で、Claude/Llama/Mistral）；Foundry は GPT 系と M365/Copilot Studio に最深；Google は ML 集約ワークロード・ネイティブマルチモーダル・A2A プロトコル（Gemini API Managed Agents は hooks/予算ガードレール/定期トリガーの本番化能力も装備済み）；Managed Agents は Claude エコシステムと API エンジニアリング（effort、webhook、イベントストリーム、セッション予算のハード上限、アドバイザーモデル、データ所在地、GitHub からの skill 読み込み）。
+- **ホスト型 Deep Agents が新カテゴリに**：Claude、Gemini に続き、LangSmith の Managed Deep Agents（2026-08 公開ベータ）がオープンソースフレームワークをホスト型ランタイムに包装——永続実行/サンドボックス/記憶/可観測性を一括パッケージ化して提供。「フレームワークはオープンソース、ランタイムはホスト型」が各社共通の路線になりつつある。
 - **コントロールプレーン**：Agent365 のような「エージェントの MDM」は 2026 年に現れた新しい層——数百のエージェントの ID・権限・監査を統一管理する必要がある。
 - **現実の主流は「人が承認してから実行」**：多くの企業は assisted workflow の段階にあり、完全自律の本番パイプラインは少数派。
 
@@ -33,6 +34,10 @@
 - [AWS Bedrock vs Microsoft Foundry vs Vertex AI 2026](https://www.epcgroup.net/blog/aws-bedrock-vs-microsoft-foundry-vs-vertex-ai-2026)
 
 ## Timeline
+
+### [2026-08-07](/ja/today/2026-08-07)
+
+Claude Managed Agents が 4 機能を一挙公開：セッション予算のハード上限（`budget_reached` で自動一時停止）、アドバイザーモデル（プライマリスレッドが途中でより強いモデルに相談可能）、`inference_geo` 推論地域制御（データ所在地コンプライアンス）、マウントした GitHub リポジトリから自動検出される skills。同日 LangSmith が Managed Deep Agents 公開ベータをローンチ——「深いエージェントのホスト化」を製品ラインとして打ち出した 3 社目に（詳細は [deep-agents](/ja/topics/deep-agents)）。
 
 ### [2026-08-01](/ja/today/2026-08-01)
 

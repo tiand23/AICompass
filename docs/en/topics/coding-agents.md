@@ -18,6 +18,7 @@ Terminal coding agents are the main arena of AI coding tool competition, and the
 - **Extending into non-coding domains**: the coding agent's generic "read/edit files, run commands, verify" capability is being reused beyond code — video-use applies the same harness to video editing, controlling token cost by "transcribe to a low-dimensional proxy first, upgrade to pixels only when needed", a general multimodal token-saving pattern.
 - **Cross-platform skill distribution**: methodology-class skill packs like compound-engineering-plugin now list simultaneously across Claude Code/Cursor/Codex/Cline marketplaces — "write once, reuse across tools" is becoming the new norm for skill distribution.
 - **Code graphs as a context-optimization layer**: instead of having the agent read the whole file tree, build a Tree-sitter code graph (functions/classes/call relationships) first and let the agent query it by blast-radius over MCP — a concrete solution to the "context management" core problem in the coding-agent category (see [ai-code-review](/en/topics/ai-code-review)).
+- **The RLM route**: treat context as variables and tools as function calls, running the agent inside a persistent programming environment (e.g. an IPython REPL) instead of a conventional conversational tool-calling loop — the route prime-agent represents is a structurally different choice of harness form, not just a point on the full-suite-vs-minimal-config spectrum but a wholly different execution paradigm.
 
 ## Related Technologies
 
@@ -37,6 +38,10 @@ Terminal coding agents are the main arena of AI coding tool competition, and the
 - [esengine/DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix)
 
 ## Timeline
+
+### [2026-08-08](/en/today/2026-08-08)
+
+Prime Intellect releases prime-agent (6.5k stars total): the RLM route — context as variables, tools as function calls, running inside a persistent Python REPL; `/refine` reviews trajectories and writes experience back into harness state for built-in self-improvement. A structural fork appears in the coding agent's execution paradigm (see [deep-agents](/en/topics/deep-agents)).
 
 ### [2026-08-07](/en/today/2026-08-07)
 

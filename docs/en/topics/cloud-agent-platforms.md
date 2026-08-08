@@ -11,7 +11,8 @@ The enterprise agent platform market entered consolidation in 2026 — the need 
 ## Core Concepts
 
 - **The first law of selection: follow your existing cloud.** Azure shops → AI Foundry; AWS → Bedrock AgentCore; GCP → Gemini Enterprise Agent Platform. Cross-cloud neutrality is the reason to go direct with Anthropic/OpenAI.
-- **Respective strengths**: AgentCore has the broadest model access (30+ models behind one API — Claude, Llama, Mistral); Foundry is deepest on the GPT family and M365/Copilot Studio; Google is strongest for ML-heavy workloads, native multimodal, and the A2A protocol (Gemini API Managed Agents has since completed its productionization set: hooks, budget guardrails, scheduled triggers); Managed Agents leads on the Claude ecosystem and API engineering (effort, webhooks, event streams).
+- **Respective strengths**: AgentCore has the broadest model access (30+ models behind one API — Claude, Llama, Mistral); Foundry is deepest on the GPT family and M365/Copilot Studio; Google is strongest for ML-heavy workloads, native multimodal, and the A2A protocol (Gemini API Managed Agents has since completed its productionization set: hooks, budget guardrails, scheduled triggers); Managed Agents leads on the Claude ecosystem and API engineering (effort, webhooks, event streams, hard session-budget caps, advisor models, data residency, GitHub-loaded skills).
+- **Hosted Deep Agents is a new category**: following Claude and Gemini, LangSmith's Managed Deep Agents (public beta, 2026-08) wraps the open-source framework into a hosted runtime — durable execution/sandboxes/memory/observability bundled and delivered; "open-source framework + hosted runtime" is becoming a shared route across vendors.
 - **Control planes**: Agent365-style "MDM for agents" is a new 2026 layer — enterprises need unified identity, permissions and auditing across hundreds of agents.
 - **The realistic mainstream is review-then-execute**: most organizations run assisted workflows, not fully autonomous production pipelines.
 
@@ -33,6 +34,10 @@ The enterprise agent platform market entered consolidation in 2026 — the need 
 - [AWS Bedrock vs Microsoft Foundry vs Vertex AI 2026](https://www.epcgroup.net/blog/aws-bedrock-vs-microsoft-foundry-vs-vertex-ai-2026)
 
 ## Timeline
+
+### [2026-08-07](/en/today/2026-08-07)
+
+Claude Managed Agents ships four features at once: hard session-budget caps (auto-pause with `budget_reached`), Advisor models (a stronger model the primary thread can consult mid-turn), `inference_geo` inference-location control (data-residency compliance), and skills auto-discovered from a mounted GitHub repo. Same day, LangSmith launches Managed Deep Agents public beta — the third vendor to launch hosted deep agents as a product line (see [deep-agents](/en/topics/deep-agents)).
 
 ### [2026-08-01](/en/today/2026-08-01)
 

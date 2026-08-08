@@ -13,6 +13,7 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 - **结构**：skill = 元数据（名称、触发描述）+ 指令文档 + 可选资源/脚本，Agent 按任务相关性自动加载。
 - **与 MCP 的分工**：MCP 给 Agent **接工具**（能力的接口），Skill 给 Agent **装知识和流程**（能力的用法）——互补而非竞争。
 - **分发生态**：GitHub 为主渠道，awesome 类清单（如 ComposioHQ/awesome-claude-skills）是入口，社区排行混合 star、互动热度与实测省时数据。
+- **供给方分层**：官方厂商（Anthropic 标准制定）→ 云厂商官方产品线合集（google/skills 覆盖自家全产品，"文档的可执行版本"）→ 知名独立工程师的个人经验萃取（Addy Osmani、Matt Pocock）→ 匿名/社区仓库——不同层的可信度与更新同步性不同，选型时按来源分层评估。
 
 ## 生态热度（GitHub 排行）
 
@@ -31,6 +32,7 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 | reverse-skill | 新晋（2026-08-01 上榜，08-04/05 连续两日 +2,300 上下高热） | 逆向/渗透/安全研究 skill 路由包 |
 | addyosmani/agent-skills | 新晋（2026-08-06 上榜，累计 8.2 万 star） | 覆盖全开发生命周期的 24 个专业工程 skill |
 | mattpocock/skills | 新晋（2026-08-07 上榜，累计约 20.7 万 star，目前 skill 生态单点最高热） | 从个人 `.agents` 目录提炼的工程纪律 skill（面谈式规划/TDD/架构评估） |
+| google/skills | 新晋（2026-08-08 上榜，累计 1.62 万 star，Google 官方） | 覆盖 GKE/BigQuery/Gemini API 等 Google 全产品线的官方 skill 合集 |
 
 > 此排行由 `/update` 在 skill 类仓库登上 GitHub Trending 时自动更新。
 
@@ -51,6 +53,10 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 - [Claude Code 高星仓库排行](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-08](/today/2026-08-08)
+
+Google 官方发布 google/skills（累计 1.62 万 star）：覆盖 GKE、BigQuery、Gemini API、Well-Architected Framework 等自家全产品线——继两位独立工程师的高星 skill 包之后，首家云厂商官方亲自下场维护自己产品线的 skill 合集，"skill 是产品文档的可执行版本"这个定位开始被平台方正式采纳。
 
 ### [2026-08-07](/today/2026-08-07)
 

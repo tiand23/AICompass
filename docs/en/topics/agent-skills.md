@@ -13,6 +13,7 @@ Skills turn "teaching an agent to do something" from prompt engineering into a d
 - **Structure**: a skill = metadata (name, trigger description) + instruction document + optional resources/scripts; agents auto-load by task relevance.
 - **Division of labor vs MCP**: MCP gives an agent **tools** (the interface to a capability); a skill gives it **knowledge and procedure** (how to use capabilities) — complements, not competitors.
 - **Distribution ecosystem**: GitHub is the main channel; awesome-lists (e.g. ComposioHQ/awesome-claude-skills) are the entry points; community rankings blend stars, interaction heat, and documented time savings.
+- **Supplier tiers**: standards vendor (Anthropic) → hyperscaler official product-line collections (google/skills, covering the whole product line — "documentation's executable version") → distilled personal experience from well-known independent engineers (Addy Osmani, Matt Pocock) → anonymous/community repos — credibility and update-sync differ by tier; weigh selection by source tier.
 
 ## Ecosystem Heat (GitHub Rankings)
 
@@ -31,6 +32,7 @@ High-star representative repos at topic creation (2026-07):
 | reverse-skill | New (hit Trending 2026-08-01; ~+2,300/day two days running on 08-04/05) | Reverse engineering / pentest / security research skill router pack |
 | addyosmani/agent-skills | New (hit Trending 2026-08-06, 82k stars total) | 24 professional engineering skills spanning the full development lifecycle |
 | mattpocock/skills | New (hit Trending 2026-08-07, ~207k stars total — currently the single hottest point in the skill ecosystem) | Engineering discipline distilled from a personal `.agents` directory (interview-driven planning/TDD/architecture review) |
+| google/skills | New (hit Trending 2026-08-08, 16.2k stars total, official Google) | Official skill collection spanning GKE/BigQuery/Gemini API and Google's whole product line |
 
 > This ranking is refreshed by `/update` whenever skill-related repos hit GitHub Trending.
 
@@ -51,6 +53,10 @@ High-star representative repos at topic creation (2026-07):
 - [Claude Code repos star leaderboard](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-08](/en/today/2026-08-08)
+
+Google officially releases google/skills (16.2k stars total): covering GKE, BigQuery, Gemini API, the Well-Architected Framework and the rest of its own product line — after two independent engineers' high-star skill packs, the first hyperscaler to officially maintain a skill collection for its own products; "a skill is an executable version of product documentation" is being formally adopted by platform vendors.
 
 ### [2026-08-07](/en/today/2026-08-07)
 

@@ -16,6 +16,8 @@ Long-horizon autonomy is the current frontier of agent capability competition, a
 - **Layered architecture**: open-source harness (Deep Agents) → company-specific harness → configuration layer (custom agent instances) — the division of labor between a general base and enterprise customization.
 - **Read/write privilege separation**: read-only diagnosis/analysis can be fully autonomous; any write with side effects must go through human approval (HITL) — the core design rule from the Kubernetes SRE agent case, with approval scope narrowed to "a human can understand it" rather than broadly greenlighting a whole class of operations.
 - **External state kernel**: cross-session goals, todos, evidence and handoffs of ownership don't fit well inside a single conversation's context — agent-agnostic external control planes like loopx are emerging as a standalone layer for long-horizon multi-agent collaboration, rather than a built-in feature of any one framework.
+- **Managed/hosted**: hosted runtimes are appearing on top of open-source frameworks — LangSmith's Managed Deep Agents (public beta, 2026-08) bundles durable execution, sandboxes, memory and observability behind a one-command `mda deploy`, an instance of the "open-source framework + hosted runtime" layering applied to Deep Agents.
+- **Self-improvement loop (built-in vs external)**: prime-agent's `/refine` makes "review the trajectory, then update the harness's own state" a built-in agent capability (writing back into harness state) — an alternative implementation path to loopx's external state layer, for the same goal of letting a run leave behind reusable residue.
 
 ## Related Technologies
 
@@ -31,6 +33,14 @@ Long-horizon autonomy is the current frontier of agent capability competition, a
 - [How We Benchmark Deep Agents (LangChain Blog)](https://www.langchain.com/blog/)
 
 ## Timeline
+
+### [2026-08-08](/en/today/2026-08-08)
+
+Prime Intellect releases prime-agent (6.5k stars total): the RLM (Recursive Language Model) idea — context as variables, tools as function calls, running in a persistent Python REPL; `/refine` reviews the trajectory and writes experience back into harness state as built-in self-improvement, an alternative path to loopx's external state kernel toward the same goal (see [coding-agents](/en/topics/coding-agents)).
+
+### [2026-08-07](/en/today/2026-08-07)
+
+LangSmith launches Managed Deep Agents public beta: a hosted Deep Agents runtime bundling durable execution, sandboxes, memory, Slack/GitHub channels, OIDC identity, Harbor evals and full-chain observability, with `mda dev`/`mda deploy` closing the develop-to-deploy loop; the third vendor, after Claude and Gemini, to launch "hosted deep agents" as a product line (see [cloud-agent-platforms](/en/topics/cloud-agent-platforms)).
 
 ### [2026-08-06](/en/today/2026-08-06)
 

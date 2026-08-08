@@ -34,6 +34,10 @@ Claude is one of the mainstream model choices for agent and coding workloads. Ev
 
 ## Timeline
 
+### [2026-08-07](/en/today/2026-08-07)
+
+Fable 5's biology-safety classifier retrained: rewrote the classification "constitution," added benign-use carve-outs, retrained on expert feedback and updated data — biology-related false-positive blocks down ~85%; virology/toxicology/molecular-design requests still blocked and routed to Opus 5. Dual-use guardrails moving from blanket restriction to fine-grained "rule refinement + data feedback" calibration. Same day, Managed Agents ships hard session-budget caps, Advisor models, `inference_geo` data-residency control, and GitHub-repo-loaded skills (see [cloud-agent-platforms](/en/topics/cloud-agent-platforms)).
+
 ### [2026-08-05](/en/today/2026-08-05)
 
 Claude Enterprise ships Inference Hooks (beta): a real-time allow/deny verdict from an organization's security server before governed prompts run, across claude.ai/Cowork/Claude Code (see [agentic-safety](/en/topics/agentic-safety)). Same day, Claude Opus 4.1 is formally retired — requests now return an error; migrate to Opus 5.
