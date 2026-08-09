@@ -33,6 +33,7 @@ High-star representative repos at topic creation (2026-07):
 | addyosmani/agent-skills | New (hit Trending 2026-08-06, 82k stars total) | 24 professional engineering skills spanning the full development lifecycle |
 | mattpocock/skills | New (hit Trending 2026-08-07, ~207k stars total — currently the single hottest point in the skill ecosystem) | Engineering discipline distilled from a personal `.agents` directory (interview-driven planning/TDD/architecture review) |
 | google/skills | New (hit Trending 2026-08-08, 16.2k stars total, official Google) | Official skill collection spanning GKE/BigQuery/Gemini API and Google's whole product line |
+| agency-agents | New (hit Trending 2026-08-09, ~140k stars total) | 230+ cross-domain expert-persona agent team template, with conversion scripts for 8+ platforms |
 
 > This ranking is refreshed by `/update` whenever skill-related repos hit GitHub Trending.
 
@@ -53,6 +54,10 @@ High-star representative repos at topic creation (2026-07):
 - [Claude Code repos star leaderboard](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-09](/en/today/2026-08-09)
+
+agency-agents arrives (~140k stars total): 230+ cross-domain expert personas (engineering/design/marketing/sales/game dev/GIS and more across 15+ divisions), native to Claude Code with conversion scripts for Copilot/Cursor/Aider and 8+ other platforms — huge demand for the "prebuilt expert-persona team" distribution form, a data point for the agent-capability ecosystem expanding from engineer tooling toward general workplace role-play.
 
 ### [2026-08-08](/en/today/2026-08-08)
 

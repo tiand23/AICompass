@@ -39,6 +39,10 @@
 
 ## Timeline
 
+### [2026-08-09](/today/2026-08-09)
+
+code-graph-rag 登上 Trending（累计 2.7k star）：图数据库（Memgraph）版本的代码知识图谱，AI 生成 Cypher 查询做自然语言代码问答——与 code-review-graph 的本地 SQLite 路线并存，代码图子领域出现明确的架构分野（详见 [ai-code-review](/topics/ai-code-review)）。
+
 ### [2026-08-08](/today/2026-08-08)
 
 Prime Intellect 发布 prime-agent（累计 6.5k star）：RLM 思路——上下文作变量、工具作函数调用，跑在持久化 Python REPL 里；`/refine` 复盘轨迹并写回 harness 状态实现内置式自我改进。编码 Agent 的执行范式出现结构性分支（详见 [deep-agents](/topics/deep-agents)）。

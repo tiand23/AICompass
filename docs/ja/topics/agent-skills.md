@@ -33,6 +33,7 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 | addyosmani/agent-skills | 新登場（2026-08-06 Trending 入り、累計 8.2 万スター） | 開発ライフサイクル全体をカバーする 24 のプロフェッショナル工学 skill |
 | mattpocock/skills | 新登場（2026-08-07 Trending 入り、累計約 20.7 万スター——現時点で skill エコシステム単体最高熱） | 個人の `.agents` ディレクトリから精製した工学規律 skill（面談式プランニング/TDD/アーキテクチャ評価） |
 | google/skills | 新登場（2026-08-08 Trending 入り、累計 1.62 万スター、Google 公式） | GKE/BigQuery/Gemini API など Google 全製品ラインをカバーする公式 skill 集 |
+| agency-agents | 新登場（2026-08-09 Trending 入り、累計約 14 万スター） | 230+ の分野横断エキスパートペルソナによるエージェントチームテンプレート、8+ プラットフォーム向け変換スクリプト |
 
 > このランキングは skill 系リポジトリが GitHub Trending に登場した際に `/update` が自動更新する。
 
@@ -53,6 +54,10 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 - [Claude Code リポジトリのスターランキング](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-09](/ja/today/2026-08-09)
+
+agency-agents が登場（累計約 14 万スター）：エンジニアリング/デザイン/マーケティング/セールス/ゲーム開発/GIS など 15+ 大分類にまたがる 230+ の分野横断エキスパートペルソナ。Claude Code にネイティブ対応し、変換スクリプトで Copilot/Cursor/Aider など 8+ プラットフォームをサポート——「既製のエキスパートペルソナチーム」という配布形態への需要は巨大で、Agent 能力エコシステムがエンジニアツールから汎用的な職場ロールプレイへ拡張しているサンプル。
 
 ### [2026-08-08](/ja/today/2026-08-08)
 

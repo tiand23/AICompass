@@ -12,7 +12,7 @@ GPT, Claude and Gemini form the three main lines of model selection. Two OpenAI 
 
 - **GPT-5.6 tiers**: Sol / Terra / Luna arranged by capability–cost (after the 2026-07 cuts of 80% on Luna and 20% on Terra, the value calculus shifted substantially).
 - **Fast mode**: the API's fast-processing option, replacing Priority Processing as of 2026-07.
-- **Deprecation cadence**: 2026-07 saw reusable prompt objects, the Evals platform and Agent Builder deprecated in one sweep — OpenAI's agent product line converging toward Presence.
+- **Deprecation cadence**: 2026-07 saw reusable prompt objects, the Evals platform and Agent Builder deprecated in one sweep — OpenAI's agent product line converging toward Presence; 2026-08 the standalone browser product Atlas (live under a year) is retired, with browser-agent capability folded into ChatGPT/Codex — another instance of the same convergence pattern.
 - **Channels**: direct OpenAI API + Microsoft Foundry (the enterprise Azure channel; GPT-5.6 available there).
 
 ## Related Technologies
@@ -33,6 +33,10 @@ GPT, Claude and Gemini form the three main lines of model selection. Two OpenAI 
 - [Introducing GPT-5.6](https://openai.com/index/gpt-5-6/)
 
 ## Timeline
+
+### [2026-08-09](/en/today/2026-08-09)
+
+OpenAI retires the standalone browser product Atlas (launched 2025-10, stops working 2026-08-09), folding browser-agent capability into ChatGPT (the desktop app takes on deep browser automation) and Codex — another case of a standalone new-form product giving way to a flagship-product embedding (see [agent-workspaces](/en/topics/agent-workspaces)).
 
 ### [2026-08-02](/en/today/2026-08-02)
 

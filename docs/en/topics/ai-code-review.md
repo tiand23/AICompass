@@ -14,6 +14,7 @@ Code review is one of the most directly cost-effective links in the AI coding to
 - **False-positive control**: a review tool's usefulness hinges on signal-to-noise; common techniques include multi-verifier voting and reproducibility checks.
 - **Capability baseline**: ReviewBench (a benchmark derived from real PR review comments) shows current models recover only ~30% of the human baseline with basic prompting; a structured review prompt lifts scores markedly — strategy matters as much as the model.
 - **Code graphs instead of full-text reads**: parse the codebase with Tree-sitter into a structured graph of functions/classes/call relationships, and query it by blast-radius during review instead of reading the whole file tree — measured at roughly 65x fewer tokens than naive full-text reads (the code-review-graph case), a key cost lever for scaling review.
+- **Lightweight local storage vs graph database**: two implementation routes for a code graph — local SQLite plus MCP query tools (code-review-graph) is lightweight and easy to deploy; a dedicated graph database plus natural-language-to-Cypher queries (code-graph-rag, using Memgraph) natively supports complex multi-hop relationship queries at the cost of an extra infrastructure dependency. Choose by required query complexity.
 
 ## Related Technologies
 
@@ -30,6 +31,10 @@ Code review is one of the most directly cost-effective links in the AI coding to
 - [Evaluating code review agents with ReviewBench](https://www.langchain.com/blog/evaluating-code-review-agents-with-reviewbench)
 
 ## Timeline
+
+### [2026-08-09](/en/today/2026-08-09)
+
+code-graph-rag arrives (2.7k stars total): stores Tree-sitter parse results in a Memgraph graph database, keeping functions/classes/calls/data-flows as queryable relationships, with AI-generated Cypher for natural-language Q&A — a contrast to code-review-graph's lightweight local SQLite route, a concrete data point on architectural choice in the code-graph sub-field.
 
 ### [2026-08-07](/en/today/2026-08-07)
 

@@ -12,7 +12,7 @@ GPT 系与 Claude、Gemini 构成模型选型的三大主线。OpenAI 的两个�
 
 - **GPT-5.6 系列档位**：Sol / Terra / Luna 等按能力-成本分档（2026-07 Luna 降价 80%、Terra 降 20% 后性价比大幅变化）。
 - **Fast mode**：API 的快速处理选项，2026-07 取代原 Priority Processing。
-- **弃用节奏**：2026-07 一次性弃用 reusable prompt objects、Evals 平台、Agent Builder——OpenAI 的 Agent 产品线向 Presence 等方向收敛。
+- **弃用节奏**：2026-07 一次性弃用 reusable prompt objects、Evals 平台、Agent Builder——OpenAI 的 Agent 产品线向 Presence 等方向收敛；2026-08 独立浏览器产品 Atlas（上线不到一年）停运，浏览器 Agent 能力并入 ChatGPT/Codex，同一收敛模式的再次印证。
 - **渠道**：OpenAI API 直连 + Microsoft Foundry（企业 Azure 渠道，GPT-5.6 已上架）。
 
 ## 相关技术
@@ -33,6 +33,10 @@ GPT 系与 Claude、Gemini 构成模型选型的三大主线。OpenAI 的两个�
 - [GPT-5.6 介绍](https://openai.com/index/gpt-5-6/)
 
 ## Timeline
+
+### [2026-08-09](/today/2026-08-09)
+
+OpenAI 停运独立浏览器产品 Atlas（2025-10 上线，2026-08-09 停止工作），把浏览器 Agent 能力并入 ChatGPT（桌面应用承接深度浏览器自动化）与 Codex——独立新形态产品让位给嵌入主力产品的又一例（详见 [agent-workspaces](/topics/agent-workspaces)）。
 
 ### [2026-08-02](/today/2026-08-02)
 

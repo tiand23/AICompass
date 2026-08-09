@@ -14,6 +14,7 @@ Whether an agent can go to production is ultimately decided by evaluation — wi
 - **Coverage vs precision**: the two basic axes of agent evaluation — did it find everything (coverage) and are its reports accurate (precision), usually combined as F1. Critical for review-class agents, where false positives burn user trust directly.
 - **LLM-as-judge**: use a model to compare agent output against the human baseline for semantic equivalence (hitting the same underlying issue, not matching wording) — the mainstream scoring method for open-ended tasks; watch for judge bias.
 - **Strategy is a variable**: the same model scores significantly higher with a structured, purpose-built prompt — evaluate "model + strategy" as a unit, not the model alone.
+- **Vertical benchmarks built by the domain's own leading company**: Harvey LAB (legal — 24 practice areas, 1,671 tasks) follows the same pattern as ReviewBench (code review) — a company deeply embedded in the domain builds its own all-pass-rubric real-task benchmark, closer to the industry's deep-water reality than a generic third-party benchmark; a shared route for evaluating professional-services agents (legal, finance, healthcare).
 
 ## Related Technologies
 
@@ -31,6 +32,10 @@ Whether an agent can go to production is ultimately decided by evaluation — wi
 - [Evaluating code review agents with ReviewBench](https://www.langchain.com/blog/evaluating-code-review-agents-with-reviewbench)
 
 ## Timeline
+
+### [2026-08-09](/en/today/2026-08-09)
+
+Harvey open-sources Harvey LAB: a legal agent benchmark — 24 practice areas, 1,671 real tasks (including M&A data-room scenarios), scored via all-pass rubrics plus an LLM judge — the "real-task-derived benchmark" methodology landing in the high-expertise legal vertical, built by a leading company in the domain itself.
 
 ### [2026-08-04](/en/today/2026-08-04)
 

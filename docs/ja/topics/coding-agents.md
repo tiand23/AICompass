@@ -39,6 +39,10 @@
 
 ## Timeline
 
+### [2026-08-09](/ja/today/2026-08-09)
+
+code-graph-rag が Trending 入り（累計 2.7k スター）：グラフデータベース（Memgraph）版のコードナレッジグラフ。AI 生成 Cypher クエリで自然言語コード問い合わせ——code-review-graph のローカル SQLite 路線と並存し、コードグラフのサブ分野に明確なアーキテクチャの分岐が現れた（詳細は [ai-code-review](/ja/topics/ai-code-review)）。
+
 ### [2026-08-08](/ja/today/2026-08-08)
 
 Prime Intellect が prime-agent を公開（累計 6.5k スター）：RLM 路線——コンテキストを変数、ツールを関数呼び出しとして扱い、永続化された Python REPL の中で動作。`/refine` が軌跡を復盤し経験を harness 状態に書き戻す内蔵型自己改善。コーディングエージェントの実行パラダイムに構造的な分岐が現れた（詳細は [deep-agents](/ja/topics/deep-agents)）。

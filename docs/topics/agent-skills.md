@@ -33,6 +33,7 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 | addyosmani/agent-skills | 新晋（2026-08-06 上榜，累计 8.2 万 star） | 覆盖全开发生命周期的 24 个专业工程 skill |
 | mattpocock/skills | 新晋（2026-08-07 上榜，累计约 20.7 万 star，目前 skill 生态单点最高热） | 从个人 `.agents` 目录提炼的工程纪律 skill（面谈式规划/TDD/架构评估） |
 | google/skills | 新晋（2026-08-08 上榜，累计 1.62 万 star，Google 官方） | 覆盖 GKE/BigQuery/Gemini API 等 Google 全产品线的官方 skill 合集 |
+| agency-agents | 新晋（2026-08-09 上榜，累计约 14 万 star） | 230+ 跨领域专家人格 Agent 团队模板，8+ 平台转换脚本 |
 
 > 此排行由 `/update` 在 skill 类仓库登上 GitHub Trending 时自动更新。
 
@@ -53,6 +54,10 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 - [Claude Code 高星仓库排行](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-09](/today/2026-08-09)
+
+agency-agents 登场（累计约 14 万 star）：230+ 个跨领域专家人格（工程/设计/营销/销售/游戏开发/GIS 等 15+ 大类），原生适配 Claude Code、脚本转换支持 Copilot/Cursor/Aider 等 8+ 平台——"预制专家人格团队"这一分发形态需求巨大，Agent 能力生态从工程师工具向通用职场角色扮演扩张的样本。
 
 ### [2026-08-08](/today/2026-08-08)
 

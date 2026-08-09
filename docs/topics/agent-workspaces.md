@@ -11,6 +11,7 @@ Agent 工作台是"Chat 界面"之后的下一代交互形态：从一问一答�
 ## 核心概念
 
 - **工作台 vs 编码工具**：编码工具（Claude Code/Cursor）以代码库为中心；工作台以任务和连接的服务为中心，覆盖非编码知识工作。
+- **独立浏览器 Agent 产品的存续风险**：OpenAI 的 Atlas（独立浏览器 + Agent 模式）上线不到一年即停运，能力并入 ChatGPT/Codex——把 Agent 能力嵌进已有主力入口，比做一个独立新形态产品更容易验证价值，这类"新形态先试后并"是当前平台方的常见路径。
 - **能力配置的可移植性**：skills、MCP 服务器、账号连接作为一层独立资产，通过统一接入点（如 openwork MCP）在多个 Agent 客户端间共享。
 - **组织级管控面**：团队维度的推理供给、访问管理、skill 发布与策略控制（openwork Den），与企业 Agent 平台的管控面思路同源。
 
@@ -29,6 +30,10 @@ Agent 工作台是"Chat 界面"之后的下一代交互形态：从一问一答�
 - [different-ai/openwork](https://github.com/different-ai/openwork)
 
 ## Timeline
+
+### [2026-08-09](/today/2026-08-09)
+
+OpenAI 停运独立浏览器产品 Atlas，浏览器 Agent 能力并入 ChatGPT 桌面应用与 Codex——"独立新形态产品"路线在不到一年内让位于"嵌入既有主力产品"（详见 [openai-models](/topics/openai-models)）。
 
 ### [2026-08-01](/today/2026-08-01)
 

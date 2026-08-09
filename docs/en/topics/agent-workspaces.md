@@ -11,6 +11,7 @@ The agent workspace is the next interaction form after the chat interface: from 
 ## Core Concepts
 
 - **Workspace vs coding tool**: coding tools (Claude Code/Cursor) center on a codebase; workspaces center on tasks and connected services, covering non-coding knowledge work.
+- **Survival risk of standalone browser-agent products**: OpenAI's Atlas (a standalone browser plus Agent mode) was retired in under a year, its capability folded into ChatGPT/Codex — embedding agent capability into an existing flagship entry point validates value faster than building a standalone new-form product; this "try the new form, then fold it in" is a common route for platform vendors right now.
 - **Portable capability configuration**: skills, MCP servers and account connections as an independent asset layer, shared across agent clients through a single integration point (e.g. the openwork MCP).
 - **Org-level control plane**: team-scale inference provisioning, access management, skill publishing and policy control (openwork's Den) — the same idea as enterprise agent platforms' control planes.
 
@@ -29,6 +30,10 @@ The agent workspace is the next interaction form after the chat interface: from 
 - [different-ai/openwork](https://github.com/different-ai/openwork)
 
 ## Timeline
+
+### [2026-08-09](/en/today/2026-08-09)
+
+OpenAI retires the standalone browser product Atlas, folding browser-agent capability into the ChatGPT desktop app and Codex — "standalone new-form product" gives way to "embedded in an existing flagship" within under a year (see [openai-models](/en/topics/openai-models)).
 
 ### [2026-08-01](/en/today/2026-08-01)
 

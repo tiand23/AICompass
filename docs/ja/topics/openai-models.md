@@ -12,7 +12,7 @@ GPT は Claude、Gemini と並ぶモデル選定の三大主流。OpenAI の 2 �
 
 - **GPT-5.6 のティア**：Sol / Terra / Luna が能力—コストで分かれる（2026-07 の Luna 80%・Terra 20% 値下げ後、コスパの計算は大きく変わった）。
 - **Fast mode**：API の高速処理オプション。2026-07 に Priority Processing を置き換え。
-- **廃止サイクル**：2026-07 に reusable prompt objects、Evals プラットフォーム、Agent Builder を一斉廃止——エージェント製品ラインは Presence 方向へ収斂。
+- **廃止サイクル**：2026-07 に reusable prompt objects、Evals プラットフォーム、Agent Builder を一斉廃止——エージェント製品ラインは Presence 方向へ収斂。2026-08 には独立ブラウザ製品 Atlas（提供開始から 1 年未満）が終了し、ブラウザエージェント能力は ChatGPT/Codex に統合——同じ収斂パターンの再確認。
 - **チャネル**：OpenAI API 直結 + Microsoft Foundry（企業向け Azure チャネル、GPT-5.6 提供中）。
 
 ## 関連技術
@@ -33,6 +33,10 @@ GPT は Claude、Gemini と並ぶモデル選定の三大主流。OpenAI の 2 �
 - [GPT-5.6 の紹介](https://openai.com/index/gpt-5-6/)
 
 ## Timeline
+
+### [2026-08-09](/ja/today/2026-08-09)
+
+OpenAI が独立ブラウザ製品 Atlas（2025-10 ローンチ、2026-08-09 停止）を終了し、ブラウザエージェント能力を ChatGPT（デスクトップアプリが深いブラウザ自動化を担う）と Codex に統合——独立した新形態製品が主力製品への組み込みに道を譲るまた 1 つの事例（詳細は [agent-workspaces](/ja/topics/agent-workspaces)）。
 
 ### [2026-08-02](/ja/today/2026-08-02)
 

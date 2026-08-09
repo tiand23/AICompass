@@ -14,6 +14,7 @@
 - **误报控制**：评审工具的可用性取决于信噪比，常见手段是多验证器投票、可复现性检查。
 - **能力基线**：ReviewBench（真实 PR 评审意见派生的基准）显示当前模型基础 prompt 下只找回约 30% 人工基线问题；结构化评审 prompt 可显著提分——策略与模型同样重要。
 - **代码图代替全文读取**：用 Tree-sitter 把代码库解析成函数/类/调用关系的结构化图，评审时按影响范围（blast-radius）查图而非读整棵文件树——实测可比朴素全文读取省约 65 倍 token（code-review-graph 案例），是评审规模化的关键降本手段。
+- **本地轻量存储 vs 图数据库**：代码图的两条实现路线——本地 SQLite + MCP 查询工具（code-review-graph）轻量、易部署；专业图数据库 + 自然语言转 Cypher 查询（code-graph-rag，用 Memgraph）原生支持复杂多跳关系查询，代价是多一层基础设施依赖。选型看查询复杂度需求。
 
 ## 相关技术
 
@@ -30,6 +31,10 @@
 - [Evaluating code review agents with ReviewBench](https://www.langchain.com/blog/evaluating-code-review-agents-with-reviewbench)
 
 ## Timeline
+
+### [2026-08-09](/today/2026-08-09)
+
+code-graph-rag 登场（累计 2.7k star）：用 Memgraph 图数据库存 Tree-sitter 解析结果，维持函数/类/调用/数据流的可查询关系，AI 生成 Cypher 做自然语言问答——与 code-review-graph 的轻量 SQLite 路线形成对照，是代码图子领域架构选型的具体样本。
 
 ### [2026-08-07](/today/2026-08-07)
 

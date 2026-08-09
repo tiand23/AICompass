@@ -39,6 +39,10 @@ Terminal coding agents are the main arena of AI coding tool competition, and the
 
 ## Timeline
 
+### [2026-08-09](/en/today/2026-08-09)
+
+code-graph-rag hits Trending (2.7k stars total): a graph-database (Memgraph) version of the code knowledge graph, with AI-generated Cypher for natural-language code Q&A — coexisting with code-review-graph's local SQLite route; a clear architectural split emerges in the code-graph sub-field (see [ai-code-review](/en/topics/ai-code-review)).
+
 ### [2026-08-08](/en/today/2026-08-08)
 
 Prime Intellect releases prime-agent (6.5k stars total): the RLM route — context as variables, tools as function calls, running inside a persistent Python REPL; `/refine` reviews trajectories and writes experience back into harness state for built-in self-improvement. A structural fork appears in the coding agent's execution paradigm (see [deep-agents](/en/topics/deep-agents)).
