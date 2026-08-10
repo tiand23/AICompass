@@ -12,7 +12,7 @@ RAG（Retrieval-Augmented Generation，检索增强生成）：让 LLM 在生成
 
 - **经典管线（2023–2025）**：query 向量化 → top-k 召回 → 塞进上下文生成。简单但僵硬：召回差则全盘皆输。
 - **Agentic RAG（2026 主流）**：检索决策嵌入模型推理流程——模型自主决定何时检索、检索什么、结果够不够，规划→检索→批判→改写→反思成环，多 Agent 并行分工（检索/验证互相把关）。
-- **进阶方向**：长文档记忆、自适应检索（简单问题不检索）、多模态 grounding、图谱推理（GraphRAG）、检索安全。
+- **进阶方向**：长文档记忆、自适应检索（简单问题不检索）、多模态 grounding、图谱推理（GraphRAG）、检索安全。图谱作为独立基础设施层（确定性推理、决策溯源）的用法详见 [knowledge-graph](/topics/knowledge-graph)。
 - **企业前提**：权限控制、元数据、上下文治理必须先于检索——没有治理的企业 RAG 必然失败。
 
 ## 相关技术
@@ -21,6 +21,7 @@ RAG（Retrieval-Augmented Generation，检索增强生成）：让 LLM 在生成
 - [document-parsing](/topics/document-parsing)（上游文档结构化）
 - [deep-agents](/topics/deep-agents)（Agentic RAG 与长时程 Agent 共享编排模式）
 - [enterprise-ai-agents](/topics/enterprise-ai-agents)（企业 Agent 的知识接入层就是 RAG）
+- [knowledge-graph](/topics/knowledge-graph)（图谱作为确定性推理/决策溯源基础设施层，比 GraphRAG 更宽的用法）
 
 ## 最佳实践
 

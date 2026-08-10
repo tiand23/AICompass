@@ -31,12 +31,11 @@
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [rag](/en/topics/rag) | Retrieval-augmented generation (mainstream: Agentic RAG) | Connecting private knowledge to LLMs; factuality and traceability | 📈 | 2026-07-28 |
+| [rag](/en/topics/rag) | Retrieval-augmented generation (mainstream: Agentic RAG) | Connecting private knowledge to LLMs; factuality and traceability | 🔥 | 2026-08-10 |
 | [document-parsing](/en/topics/document-parsing) | Document parsing & structuring (VLM + semantic reconstruction) | The first mile of unstructured documents into knowledge bases | 🔥 | 2026-08-05 |
 | [vector-databases](/en/topics/vector-databases) | Vector DB selection & hybrid search | The storage/retrieval layer for RAG and memory | 📈 | 2026-07-28 |
 | [agent-memory](/en/topics/agent-memory) | Agent memory infrastructure (session/long-term/team assets) | Retaining experience across sessions; team knowledge assets | 🔥 | 2026-08-03 |
-
-*Also watching: knowledge graphs / GraphRAG (accumulating).*
+| [knowledge-graph](/en/topics/knowledge-graph) | Knowledge graphs as a deterministic reasoning/decision-provenance infrastructure layer | Explainability, auditability and precedent search for agent decisions | 🔥 | 2026-08-10 |
 
 ## 3. Agent Development
 
@@ -54,9 +53,9 @@
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [enterprise-ai-agents](/en/topics/enterprise-ai-agents) | Enterprise agent platforms & delivery models | Reliably connecting agents to enterprise systems and operating them | 🔥 | 2026-08-07 |
-| [cloud-agent-platforms](/en/topics/cloud-agent-platforms) | The hyperscaler platform landscape (AgentCore/Foundry/GEAP/Managed Agents) | Platform selection and lock-in trade-offs | 🔥 | 2026-08-07 |
-| [agent-workspaces](/en/topics/agent-workspaces) | Desktop agent workspaces (Cowork/openwork/Codex app) | The assign-work-accept-results interaction form; portable capability config | 🔥 | 2026-08-09 |
+| [enterprise-ai-agents](/en/topics/enterprise-ai-agents) | Enterprise agent platforms & delivery models | Reliably connecting agents to enterprise systems and operating them | 🔥 | 2026-08-10 |
+| [cloud-agent-platforms](/en/topics/cloud-agent-platforms) | The hyperscaler platform landscape (AgentCore/Foundry/GEAP/Managed Agents) | Platform selection and lock-in trade-offs | 📈 | 2026-08-07 |
+| [agent-workspaces](/en/topics/agent-workspaces) | Desktop agent workspaces (Cowork/openwork/Codex app) | The assign-work-accept-results interaction form; portable capability config | 🔥 | 2026-08-10 |
 | [agent-sandboxes](/en/topics/agent-sandboxes) | Agent execution sandbox infrastructure (E2B/Daytona/Cloudflare computer) | Safe, isolated, reusable code-execution environments for agents | 🔥 | 2026-08-06 |
 
 ### Protocols & Interoperability (MCP ・ A2A ・ AG-UI)

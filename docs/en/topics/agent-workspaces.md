@@ -14,6 +14,7 @@ The agent workspace is the next interaction form after the chat interface: from 
 - **Survival risk of standalone browser-agent products**: OpenAI's Atlas (a standalone browser plus Agent mode) was retired in under a year, its capability folded into ChatGPT/Codex — embedding agent capability into an existing flagship entry point validates value faster than building a standalone new-form product; this "try the new form, then fold it in" is a common route for platform vendors right now.
 - **Portable capability configuration**: skills, MCP servers and account connections as an independent asset layer, shared across agent clients through a single integration point (e.g. the openwork MCP).
 - **Org-level control plane**: team-scale inference provisioning, access management, skill publishing and policy control (openwork's Den) — the same idea as enterprise agent platforms' control planes.
+- **From single-agent workspace to multi-agent team management**: openwork solves "give one person one agent's working environment"; Paperclip represents a new layer solving "give a team a whole fleet of agents" — ticket assignment, org structure, budget, approval workflows — the mental model upgrading from "give the agent a working environment" to "manage a fleet of agents the way you manage employees."
 
 ## Related Technologies
 
@@ -30,6 +31,10 @@ The agent workspace is the next interaction form after the chat interface: from 
 - [different-ai/openwork](https://github.com/different-ai/openwork)
 
 ## Timeline
+
+### [2026-08-10](/en/today/2026-08-10)
+
+Paperclip arrives (76.2k stars total): an open-source "agent-team HR management" product — ticket tracking, org structure, budget enforcement, governance approval, audit logs; no framework or orchestration, purely a management plane. The workspace form expands from "one person, one agent" to "a team managing a fleet of agents" (see [enterprise-ai-agents](/en/topics/enterprise-ai-agents)).
 
 ### [2026-08-09](/en/today/2026-08-09)
 

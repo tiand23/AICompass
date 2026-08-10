@@ -14,6 +14,7 @@ This is the main battleground for generative AI in the enterprise. As model capa
 - **Policy & permissions**: company-defined policies, permissions and evaluation standards constrain agent behavior; human escalation is table stakes.
 - **Operational maturity signals**: lifecycle webhooks, session seeding, streaming observation — concrete API capabilities for judging platform maturity; hard session-budget caps and data-residency control are the latest additions to this signal set.
 - **The "own your intelligence" debate**: outsource intelligence to a platform or keep it in-house — the core divide in enterprise AI architecture.
+- **The migration of an "HR management" mental model**: once agent count grows, teams start managing agents the way they manage employees — ticket assignment, org structure (roles/reporting lines), budget enforcement, governance approval workflows, audit logs (the Paperclip case). A productized attempt to fold Managed Agents' budget/permission capabilities and agent workflow orchestration into a single unified management plane.
 
 ## Related Technologies
 
@@ -32,6 +33,10 @@ This is the main battleground for generative AI in the enterprise. As model capa
 - [Claude Managed Agents docs](https://platform.claude.com/docs/en/release-notes/overview)
 
 ## Timeline
+
+### [2026-08-10](/en/today/2026-08-10)
+
+Paperclip arrives (76.2k stars total): "managing an agent team" as a standalone product — ticket tracking, org structure, budget enforcement by agent/project/company, governance approval, multi-company data isolation, audit logs; explicitly not a chatbot/framework/workflow builder, purely "enterprise management software for an agent team." Integrates previously scattered fragments — cross-session state, budgets, approval — into a unified "agent HR management" mental model (see [agent-workspaces](/en/topics/agent-workspaces)).
 
 ### [2026-08-07](/en/today/2026-08-07)
 

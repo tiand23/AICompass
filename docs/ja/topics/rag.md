@@ -12,7 +12,7 @@ RAG（Retrieval-Augmented Generation、検索拡張生成）：LLM が生成の�
 
 - **古典的パイプライン（2023–2025）**：クエリをベクトル化 → top-k 検索 → コンテキストに投入 → 生成。シンプルだが硬直的で、検索精度が悪ければ全てが崩れる。
 - **Agentic RAG（2026 年の主流）**：検索の意思決定をモデルの推論フローに埋め込む——いつ・何を検索するか、結果が十分かをモデルが自律判断。計画 → 検索 → 批判 → 書き直し → 内省のループを回し、検索と検証を専門エージェントが並行分担する。
-- **先端方向**：長文書メモリ、適応的検索（簡単な質問は検索しない）、マルチモーダル grounding、グラフ推論（GraphRAG）、検索セキュリティ。
+- **先端方向**：長文書メモリ、適応的検索（簡単な質問は検索しない）、マルチモーダル grounding、グラフ推論（GraphRAG）、検索セキュリティ。グラフを独立した基盤層（決定論的推論、意思決定の来歴管理）として使う用法は [knowledge-graph](/ja/topics/knowledge-graph) を参照。
 - **エンタープライズの前提**：アクセス制御・メタデータ・コンテキストのガバナンスが検索に先行しなければならない——ガバナンスなき企業 RAG は必ず失敗する。
 
 ## 関連技術
@@ -21,6 +21,7 @@ RAG（Retrieval-Augmented Generation、検索拡張生成）：LLM が生成の�
 - [document-parsing](/ja/topics/document-parsing)（上流の文書構造化）
 - [deep-agents](/ja/topics/deep-agents)（Agentic RAG は長期エージェントとオーケストレーションパターンを共有）
 - [enterprise-ai-agents](/ja/topics/enterprise-ai-agents)（企業エージェントの知識アクセス層が RAG）
+- [knowledge-graph](/ja/topics/knowledge-graph)（グラフを決定論的推論/意思決定来歴管理の基盤層として使う、GraphRAG より広い用法）
 
 ## ベストプラクティス
 

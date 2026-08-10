@@ -14,6 +14,7 @@ Agent 工作台是"Chat 界面"之后的下一代交互形态：从一问一答�
 - **独立浏览器 Agent 产品的存续风险**：OpenAI 的 Atlas（独立浏览器 + Agent 模式）上线不到一年即停运，能力并入 ChatGPT/Codex——把 Agent 能力嵌进已有主力入口，比做一个独立新形态产品更容易验证价值，这类"新形态先试后并"是当前平台方的常见路径。
 - **能力配置的可移植性**：skills、MCP 服务器、账号连接作为一层独立资产，通过统一接入点（如 openwork MCP）在多个 Agent 客户端间共享。
 - **组织级管控面**：团队维度的推理供给、访问管理、skill 发布与策略控制（openwork Den），与企业 Agent 平台的管控面思路同源。
+- **从单 Agent 工作台到多 Agent 团队管理**：openwork 等解决"一个人配一个 Agent 工作环境"，Paperclip 代表的新一层解决"一个团队配一整支 Agent 队伍"——工单分派、组织架构、预算、审批流，心智模型从"给 Agent 一个工作环境"升级为"像管理员工一样管理一群 Agent"。
 
 ## 相关技术
 
@@ -30,6 +31,10 @@ Agent 工作台是"Chat 界面"之后的下一代交互形态：从一问一答�
 - [different-ai/openwork](https://github.com/different-ai/openwork)
 
 ## Timeline
+
+### [2026-08-10](/today/2026-08-10)
+
+Paperclip 登场（累计 7.62 万 star）：开源的"Agent 团队人力管理"产品——工单追踪、组织架构、预算强制、治理审批、审计日志；不做框架/编排，只做管理面。工作台形态从"一人一 Agent"扩展到"团队管一支 Agent 队伍"（详见 [enterprise-ai-agents](/topics/enterprise-ai-agents)）。
 
 ### [2026-08-09](/today/2026-08-09)
 

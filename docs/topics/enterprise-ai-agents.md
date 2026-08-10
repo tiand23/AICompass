@@ -14,6 +14,7 @@
 - **策略与权限**：企业定义的 policy、permission、评估标准约束 Agent 行为；人工升级（escalation）是标配。
 - **运维成熟度信号**：生命周期 webhook、会话预置、流式观测等 API 能力是评估平台成熟度的具体指标；会话级预算硬顶、数据落地地控制是这一信号集的最新补充。
 - **"拥有你的智能"之争**：智能外包给平台还是握在自己手里——企业 AI 架构选型的核心分歧。
+- **"人力管理"心智模型的迁移**：Agent 数量一多，团队开始用管理员工的方式管理 Agent——工单分派、组织架构（角色/汇报线）、预算强制、治理审批流、审计日志（Paperclip 案例）。这是把 Managed Agents 的预算/权限能力和 Agent 工作流编排整合到一个统一管理面的产品化尝试。
 
 ## 相关技术
 
@@ -32,6 +33,10 @@
 - [Claude Managed Agents 文档](https://platform.claude.com/docs/en/release-notes/overview)
 
 ## Timeline
+
+### [2026-08-10](/today/2026-08-10)
+
+Paperclip 登场（累计 7.62 万 star）：把"管理 Agent 团队"做成独立产品——工单追踪、组织架构、按 Agent/项目/公司的预算强制、治理审批流、多公司数据隔离、审计日志；明确不做聊天机器人/框架/工作流编排，只做"给 Agent 团队配的企业管理软件"。把此前分散的跨会话状态、预算、审批碎片能力整合进统一的"Agent 人力管理"心智模型（详见 [agent-workspaces](/topics/agent-workspaces)）。
 
 ### [2026-08-07](/today/2026-08-07)
 

@@ -12,7 +12,7 @@ Model parameters can't hold private knowledge or keep up with knowledge updates 
 
 - **The classic pipeline (2023–2025)**: embed the query → top-k retrieval → stuff into context → generate. Simple but rigid: bad recall sinks everything.
 - **Agentic RAG (the 2026 mainstream)**: retrieval decisions embedded in the model's reasoning flow — the model autonomously decides when to retrieve, what to retrieve, and whether results suffice; plan → retrieve → critique → rewrite → reflect loops, with specialized agents handling retrieval and validation in parallel.
-- **Frontier directions**: long-document memory, adaptive retrieval (skip retrieval for easy questions), multimodal grounding, graph reasoning (GraphRAG), retrieval security.
+- **Frontier directions**: long-document memory, adaptive retrieval (skip retrieval for easy questions), multimodal grounding, graph reasoning (GraphRAG), retrieval security. Graphs as an independent infrastructure layer (deterministic reasoning, decision provenance) are covered under [knowledge-graph](/en/topics/knowledge-graph).
 - **Enterprise prerequisite**: access control, metadata and context governance must precede retrieval — enterprise RAG without governance fails.
 
 ## Related Technologies
@@ -21,6 +21,7 @@ Model parameters can't hold private knowledge or keep up with knowledge updates 
 - [document-parsing](/en/topics/document-parsing) (upstream document structuring)
 - [deep-agents](/en/topics/deep-agents) (Agentic RAG shares orchestration patterns with long-horizon agents)
 - [enterprise-ai-agents](/en/topics/enterprise-ai-agents) (RAG is the knowledge access layer of enterprise agents)
+- [knowledge-graph](/en/topics/knowledge-graph) (graphs as a deterministic reasoning/decision-provenance infrastructure layer, broader than GraphRAG)
 
 ## Best Practices
 
