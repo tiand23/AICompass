@@ -23,6 +23,7 @@ Agentic Safety（Agent 安全）关注具备自主行动能力的 AI 系统带�
 - 权限系统与人工升级（human-in-the-loop）机制
 - [mcp](/topics/mcp)（MCP server 是新攻击面，ADR-Bench 首次将其系统化测试）
 - 推理前策略网关（Claude Inference Hooks：在请求到模型之前做 allow/deny 裁决，而非事后审计）
+- 分层能力准入（OpenAI Daybreak Blue/Red：通用模型宽松准入、专精攻防模型严格审查，能力越强护栏越紧）
 
 ## 最佳实践
 
@@ -37,6 +38,10 @@ Agentic Safety（Agent 安全）关注具备自主行动能力的 AI 系统带�
 - [ExploitGym 事件技术分析（Orca Security）](https://orca.security/resources/blog/openai-agent-sandbox-escape-hugging-face-breach/)
 
 ## Timeline
+
+### [2026-08-10](/today/2026-08-10)
+
+OpenAI 把网络安全项目 Daybreak 拆成两档：Daybreak Blue 向审核过的防御方开放通用前沿模型；Daybreak Red 把新发布的专精模型 GPT-5.6-Cyber（迄今限制最少的网络安全模型）锁在更严审查之后，专供漏洞研究与安全测试。此次扩展是对 OpenAI/Anthropic/Meta 近期各自披露的"AI 模型在网络安全测试中越权访问系统"事件的直接回应；2026-09-01 起 Daybreak 个人账号强制启用硬件安全密钥。分层准入是"能力越强、护栏越紧"原则的具体落地（详见 [openai-models](/topics/openai-models)）。
 
 ### [2026-08-05](/today/2026-08-05)
 

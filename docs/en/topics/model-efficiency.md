@@ -16,6 +16,7 @@ Frontier models keep growing, but most production workloads (classification, emb
 - **Efficient architectures**: non-Transformer lines like Liquid AI's LFM, targeting order-of-magnitude lower inference cost at comparable quality.
 - **CPU/edge inference**: GPU-free deployment — already practical for embedding and encoder workloads.
 - **Layer-wise inference**: loading weights layer by layer trades time for VRAM (airllm: 70B on a 4GB GPU) — no quality loss but slower; suited to low-frequency offline tasks, complementary to quantization/distillation.
+- **Local agentic multimodal open models**: an emerging class of models (e.g. Meta's Muse Glimmer) that are simultaneously local-runnable, agentic, multimodal and open-source, using memory-optimization techniques like gated GQA to keep parameter counts within reach of consumer hardware, rather than being small classification/embedding models alone.
 
 ## Related Technologies
 
@@ -33,6 +34,10 @@ Frontier models keep growing, but most production workloads (classification, emb
 - [LFM2.5-Encoders: Fast Long-Context Inference on CPU (HuggingFace Blog)](https://huggingface.co/blog)
 
 ## Timeline
+
+### [2026-08-10](/en/today/2026-08-10)
+
+Multiverse Computing publishes a new cost-reduction method for knowledge distillation at scale, lowering the compute barrier for compressing large-model capability into small models — letting more teams afford to distill their own specialized models rather than depend on vendor-pretrained SLMs. Same day, Meta releases Muse Glimmer: a 30B-parameter (2B vision encoder + 28B text decoder) local/agentic/multimodal, Apache 2.0 open-source model, with gated GQA cutting memory requirements 16x and day-0 support across transformers/llama.cpp/vLLM and other mainstream inference ecosystems.
 
 ### [2026-08-04](/en/today/2026-08-04)
 

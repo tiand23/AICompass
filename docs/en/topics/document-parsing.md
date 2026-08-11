@@ -33,6 +33,10 @@ Document parsing and structuring: turning PDFs, scans, tables and charts into LL
 
 ## Timeline
 
+### [2026-08-11](/en/today/2026-08-11)
+
+LlamaIndex releases ExtractBench: an open benchmark of 14 extraction systems across 370 real enterprise documents, scored on completeness, grounding and cost per page — a reproducible-data follow-up to the "OCR won't be commoditized" position piece from a week earlier, turning the "specialized parser vs general model" selection debate from argument into measured comparison.
+
 ### [2026-08-05](/en/today/2026-08-05)
 
 LlamaIndex argues "document OCR is not getting commoditized": on ParseBench, specialized engines lead GPT-5.5 by ~20 points at lower cost; the visual-grounding gap (8% vs 55-80%) is structural; labs' post-training compute doesn't go to document reading. Positioned (their own benchmark), but the evidence belongs in long-term selection judgment.

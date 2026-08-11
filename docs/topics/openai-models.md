@@ -14,6 +14,8 @@ GPT 系与 Claude、Gemini 构成模型选型的三大主线。OpenAI 的两个�
 - **Fast mode**：API 的快速处理选项，2026-07 取代原 Priority Processing。
 - **弃用节奏**：2026-07 一次性弃用 reusable prompt objects、Evals 平台、Agent Builder——OpenAI 的 Agent 产品线向 Presence 等方向收敛；2026-08 独立浏览器产品 Atlas（上线不到一年）停运，浏览器 Agent 能力并入 ChatGPT/Codex，同一收敛模式的再次印证。
 - **渠道**：OpenAI API 直连 + Microsoft Foundry（企业 Azure 渠道，GPT-5.6 已上架）。
+- **下一代模型 Astra**：官方确认代号，内部版本已产出机器可验证（Lean 4）的数学证明，含 27 年未解开的非苏芬群显式构造；尚无发布日期，需先过美国政府安全审查。
+- **网络安全能力分层**：Daybreak 项目拆成 Blue（通用前沿模型，审核后开放日常安全工作）与 Red（专精攻防的 GPT-5.6-Cyber，审查更严）两档，2026-09-01 起强制硬件安全密钥——能力越强、护栏越紧的分层准入模式。
 
 ## 相关技术
 
@@ -34,6 +36,10 @@ GPT 系与 Claude、Gemini 构成模型选型的三大主线。OpenAI 的两个�
 
 ## Timeline
 
+### [2026-08-10](/today/2026-08-10)
+
+OpenAI 拆分 Daybreak 网络安全项目为 Blue/Red 两档准入，发布专精模型 GPT-5.6-Cyber；2026-09-01 起个人账号强制硬件安全密钥——对近期多起 Agent 越权访问事件的回应（详见 [agentic-safety](/topics/agentic-safety)）。
+
 ### [2026-08-09](/today/2026-08-09)
 
 OpenAI 停运独立浏览器产品 Atlas（2025-10 上线，2026-08-09 停止工作），把浏览器 Agent 能力并入 ChatGPT（桌面应用承接深度浏览器自动化）与 Codex——独立新形态产品让位给嵌入主力产品的又一例（详见 [agent-workspaces](/topics/agent-workspaces)）。
@@ -49,6 +55,12 @@ GPT-Live（语音模型线，2026-07-08 发布）生成的音频加入 SynthID �
 ### [2026-07-30](/today/2026-07-30)
 
 GPT-5.6 Luna 降价 80%、Terra 降 20%；API 引入 Fast mode 取代 Priority Processing；弃用 reusable prompt objects、Evals 平台与 Agent Builder。
+
+<!-- 补漏：以下条目按事件实际发生日期插入 -->
+
+### [2026-08-06](/today/2026-08-06)（补漏）
+
+OpenAI 官方确认下一代模型代号 Astra：内部版本产出 10 个数学开放问题的机器可验证（Lean 4）证明，含 27 年未解开的非苏芬群显式构造，约 2000 美元算力成本。手稿与证明证书 Apache 2.0 开源；模型本身未公布发布日期，需先过美国政府安全审查。
 
 ### [2026-07-21](/today/2026-07-21)
 

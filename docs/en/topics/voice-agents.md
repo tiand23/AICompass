@@ -15,6 +15,7 @@ Voice is the natural interface for customer service, interviews, automotive and 
 - **Barge-in and turn detection**: users interrupt at will — the agent must stop cleanly and pick the thread back up; VAD/turn-detection accuracy directly determines conversational flow.
 - **Three-axis evaluation** (LangChain, 2026-08): execution (tool-call/process correctness), outcomes (business attainment), experience (latency/interruptions/naturalness) — the third axis is voice-specific.
 - **Access channels**: WebRTC (browser/app) and telephony (SIP/PSTN) are the two mainstream channels; the framework layer (livekit et al.) papers over the difference.
+- **Open-weight local TTS**: of the cascaded route's three stages (STT/LLM/TTS), TTS has mostly relied on commercial cloud APIs until now; open-weight, fully self-hostable TTS (e.g. NVIDIA Magpie TTS) fills in the last piece for a fully local cascaded pipeline — a better fit for "controllability first" scenarios sensitive to latency and data compliance than an end-to-end speech model.
 
 ## Related Technologies
 
@@ -34,6 +35,10 @@ Voice is the natural interface for customer service, interviews, automotive and 
 - [livekit/agents](https://github.com/livekit/agents)
 
 ## Timeline
+
+### [2026-08-10](/en/today/2026-08-10)
+
+NVIDIA open-sources Magpie TTS: a low-latency, multilingual TTS model for voice agents, open-weight and fully self-hostable, no cloud API dependency — filling in the last piece of local deployment for cascaded pipelines in latency- or data-compliance-sensitive voice support scenarios.
 
 ### [2026-08-04](/en/today/2026-08-04)
 

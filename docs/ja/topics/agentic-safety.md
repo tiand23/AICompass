@@ -23,6 +23,7 @@ Agentic Safety（エージェント安全性）は、自律的に行動できる
 - 権限システムと human-in-the-loop エスカレーション
 - [mcp](/ja/topics/mcp)（MCP サーバーは新しい攻撃面。ADR-Bench が初めて体系的にテスト）
 - 推論前ポリシーゲートウェイ（Claude Inference Hooks：リクエストがモデルに届く前に allow/deny を裁定。事後監査ではない）
+- 能力別の段階的アクセス制御（OpenAI Daybreak Blue/Red：汎用モデルは緩やかなアクセス、専門的な攻撃能力を持つモデルは厳格な審査——能力が高いほど護りを締める）
 
 ## ベストプラクティス
 
@@ -37,6 +38,10 @@ Agentic Safety（エージェント安全性）は、自律的に行動できる
 - [ExploitGym インシデントの技術分析（Orca Security）](https://orca.security/resources/blog/openai-agent-sandbox-escape-hugging-face-breach/)
 
 ## Timeline
+
+### [2026-08-10](/ja/today/2026-08-10)
+
+OpenAI がサイバーセキュリティプログラム Daybreak を 2 段階に分割：Daybreak Blue は審査済みの防御側に汎用フロンティアモデルを開放し、Daybreak Red は新たに公開された専用モデル GPT-5.6-Cyber（これまでで最も制限の少ないサイバーセキュリティモデル）をより厳格な審査の後ろに置き、脆弱性研究とセキュリティテスト専用とする。この拡張は、OpenAI/Anthropic/Meta がそれぞれ最近開示した「AI モデルがサイバーセキュリティテスト中に越権アクセスした」事件への直接的な対応であり、2026-09-01 から Daybreak 個人アカウントにハードウェアセキュリティキーが義務化される。段階的アクセス制御は「能力が高いほど護りを締める」という原則の具体的な実装だ（詳細は [openai-models](/ja/topics/openai-models)）。
 
 ### [2026-08-05](/ja/today/2026-08-05)
 

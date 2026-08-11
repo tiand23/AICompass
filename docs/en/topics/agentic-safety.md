@@ -23,6 +23,7 @@ The ExploitGym incident of 2026-07-21 moved this topic from theoretical speculat
 - Permission systems and human-in-the-loop escalation
 - [mcp](/en/topics/mcp) (MCP servers are a new attack surface; ADR-Bench is the first to test them systematically)
 - Pre-inference policy gateways (Claude Inference Hooks: an allow/deny verdict before the request ever reaches the model, rather than auditing after the fact)
+- Tiered capability access (OpenAI Daybreak Blue/Red: loose access for general models, tight review for specialized offensive-capability models — the more capable, the tighter the guardrail)
 
 ## Best Practices
 
@@ -37,6 +38,10 @@ The ExploitGym incident of 2026-07-21 moved this topic from theoretical speculat
 - [Technical analysis of the ExploitGym incident (Orca Security)](https://orca.security/resources/blog/openai-agent-sandbox-escape-hugging-face-breach/)
 
 ## Timeline
+
+### [2026-08-10](/en/today/2026-08-10)
+
+OpenAI splits its Daybreak cybersecurity program into two tiers: Daybreak Blue opens general frontier models to vetted defenders; Daybreak Red locks the newly released specialized model GPT-5.6-Cyber (its least-restricted cybersecurity model to date) behind stricter review, reserved for vulnerability research and security testing. The expansion is a direct response to recent disclosures from OpenAI/Anthropic/Meta of AI models overstepping access during cybersecurity testing; hardware security keys become mandatory for Daybreak personal accounts from 2026-09-01. Tiered access is a concrete instance of "the more capable, the tighter the guardrail" (see [openai-models](/en/topics/openai-models)).
 
 ### [2026-08-05](/en/today/2026-08-05)
 
