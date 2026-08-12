@@ -14,6 +14,8 @@ Claude is one of the mainstream model choices for agent and coding workloads. Ev
 - **Thinking**: extended thinking. On by default on Opus 5; cannot be disabled at effort `xhigh`/`max` (returns 400).
 - **Context & output**: Opus 5 supports a 1M-token context window (default and maximum) and 128k max output.
 - **Fast mode**: runs Opus-tier models with faster output (no downgrade to a smaller model); supported models change across generations (removed for 4.7 — use 4.8 / 5).
+- **Local-session compliance auditing**: the Compliance API can retrieve full transcripts of Cowork/Claude Code sessions running on a user's own machine (`GET /v1/compliance/apps/sessions/local` and related endpoints), extending enterprise agent observability from "pre-inference blocking" (Inference Hooks) to "after-the-fact audit."
+- **Introductory price made permanent**: Sonnet 5's introductory pricing ($2/$10 per MTok) is now the long-term standard price, with the planned increase cancelled — a pricing strategy that trades a stable price for a long-term usage commitment.
 
 ## Related Technologies
 
@@ -33,6 +35,14 @@ Claude is one of the mainstream model choices for agent and coding workloads. Ev
 - [Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)
 
 ## Timeline
+
+### [2026-08-11](/en/today/2026-08-11)
+
+Compliance API gains local-session retrieval endpoints: full transcripts of Cowork/Claude Code sessions running on a user's own machine, beta for Claude Enterprise. Together with Inference Hooks (shipped 08-05), this closes the loop between pre-inference blocking and after-the-fact audit (see [agentic-safety](/en/topics/agentic-safety)).
+
+### [2026-08-10](/en/today/2026-08-10)
+
+Claude Sonnet 5's introductory price ($2/$10 per MTok) becomes the long-term standard price; the planned 2026-09-01 increase to $3/$15 is cancelled — a signal of converging certainty on flagship-model pricing.
 
 ### [2026-08-07](/en/today/2026-08-07)
 

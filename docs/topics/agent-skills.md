@@ -13,7 +13,7 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 - **结构**：skill = 元数据（名称、触发描述）+ 指令文档 + 可选资源/脚本，Agent 按任务相关性自动加载。
 - **与 MCP 的分工**：MCP 给 Agent **接工具**（能力的接口），Skill 给 Agent **装知识和流程**（能力的用法）——互补而非竞争。
 - **分发生态**：GitHub 为主渠道，awesome 类清单（如 ComposioHQ/awesome-claude-skills）是入口，社区排行混合 star、互动热度与实测省时数据。
-- **供给方分层**：官方厂商（Anthropic 标准制定）→ 云厂商官方产品线合集（google/skills 覆盖自家全产品，"文档的可执行版本"）→ 知名独立工程师的个人经验萃取（Addy Osmani、Matt Pocock）→ 匿名/社区仓库——不同层的可信度与更新同步性不同，选型时按来源分层评估。
+- **供给方分层**：官方厂商（Anthropic 标准制定，anthropics/skills 是其亲自维护的参考实现+规范文档）→ 云厂商官方产品线合集（google/skills 覆盖自家全产品，"文档的可执行版本"）→ 知名独立工程师的个人经验萃取（Addy Osmani、Matt Pocock）→ 垂直领域全流程知识封装（OpenMontage 把视频制作专业经验做成 700+ skill 文件）→ 匿名/社区仓库——不同层的可信度与更新同步性不同，选型时按来源分层评估。
 
 ## 生态热度（GitHub 排行）
 
@@ -34,6 +34,7 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 | mattpocock/skills | 新晋（2026-08-07 上榜，累计约 20.7 万 star，目前 skill 生态单点最高热） | 从个人 `.agents` 目录提炼的工程纪律 skill（面谈式规划/TDD/架构评估） |
 | google/skills | 新晋（2026-08-08 上榜，累计 1.62 万 star，Google 官方） | 覆盖 GKE/BigQuery/Gemini API 等 Google 全产品线的官方 skill 合集 |
 | agency-agents | 新晋（2026-08-09 上榜，累计约 14 万 star） | 230+ 跨领域专家人格 Agent 团队模板，8+ 平台转换脚本 |
+| anthropics/skills | 新晋（2026-08-12 上榜，累计 16.8 万 star，Anthropic 官方） | 标准制定者官方参考实现：规范文档 + 示例 skill + 模板，Claude 原生文档能力背后同款实现 |
 
 > 此排行由 `/update` 在 skill 类仓库登上 GitHub Trending 时自动更新。
 
@@ -54,6 +55,10 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 - [Claude Code 高星仓库排行](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-12](/today/2026-08-12)
+
+Anthropic 官方 anthropics/skills 首次以官方身份登上 GitHub Trending（累计 16.8 万 star）：标准制定者亲自维护的参考实现（规范 `/spec` + 示例 skill + 模板），补齐供给链最上游一环——开发者可直接对照官方规范评估其他来源 skill 包质量。同日 OpenMontage 开源（累计 4.73 万 star）：700+ 个 skill/生产知识文件把视频制作全流程专业经验封装成 Agent 可加载知识层，skill 生态从"通用工程纪律"向"垂直领域全流程知识"扩张的样本（详见 [deep-agents](/topics/deep-agents)）。
 
 ### [2026-08-09](/today/2026-08-09)
 

@@ -14,6 +14,8 @@ Claude 是 Agent 与编码场景的主流模型选择之一。其模型线的每
 - **Thinking**：扩展思考。Opus 5 默认开启；effort 为 `xhigh`/`max` 时不可禁用（返回 400）。
 - **上下文与输出**：Opus 5 支持 1M token 上下文（默认即最大）、128k 最大输出。
 - **Fast mode**：以更快输出运行 Opus 档模型（不降级到小模型），支持的型号随代际变化（4.7 已移除，需用 4.8 / 5）。
+- **本地会话合规审计**：Compliance API 可检索运行在用户本机的 Cowork / Claude Code 会话完整转录（`GET /v1/compliance/apps/sessions/local` 系列端点），把企业侧的 Agent 可观测性从"推理前拦截"（Inference Hooks）延伸到"事后可查"。
+- **引入价转正**：Sonnet 5 的引入价（$2/$10 每百万 token）已转为长期标准价，原定涨价计划取消——定价策略上用稳定价格换长期使用承诺。
 
 ## 相关技术
 
@@ -33,6 +35,14 @@ Claude 是 Agent 与编码场景的主流模型选择之一。其模型线的每
 - [模型总览](https://platform.claude.com/docs/en/about-claude/models/overview)
 
 ## Timeline
+
+### [2026-08-11](/today/2026-08-11)
+
+Compliance API 新增本地会话检索端点：可获取运行在用户本机上的 Cowork / Claude Code 会话完整转录，beta 阶段面向 Claude Enterprise。与 08-05 上线的 Inference Hooks 合起来，构成"事前拦截 + 事后审计"的完整企业治理闭环（详见 [agentic-safety](/topics/agentic-safety)）。
+
+### [2026-08-10](/today/2026-08-10)
+
+Claude Sonnet 5 引入价（$2/$10 每百万 token）转为长期标准价，原定 2026-09-01 上调至 $3/$15 的计划取消——主力模型定价不确定性收敛的信号。
 
 ### [2026-08-07](/today/2026-08-07)
 

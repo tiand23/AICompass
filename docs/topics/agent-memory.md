@@ -15,6 +15,7 @@ Agent 记忆：让 Agent 跨会话、跨任务保留并复用信息的基础设�
 - **写入策略**：什么值得记（显式指令 vs 自动提炼）、何时更新、何时遗忘/失效——记忆的信噪比管理是工程难点。
 - **权限与作用域**：团队级记忆需要 RBAC（private/team/restricted）与按 Agent 绑定（loadout）而非全局注入——记忆越权是新的安全面。
 - **与 RAG 的关系**：技术栈高度重叠（向量检索、结构化存储），区别在数据来源与生命周期——RAG 检索静态知识库，记忆持续从交互中生长。
+- **经验记忆的投喂策略**：从执行轨迹提炼"经验教训"时，别压缩总结（会丢信息），按支持次数逐条保留明细；但投喂环节要做选择性检索而非全量注入——ALTK-Evolve 用"核心准则打底+按任务挑选相关条目"比 ACE 的"每步全量注入 playbook"节省 60-85% token，且准确率不降反升（尤其在弱模型/难任务上，过长上下文反而拖累判断）。
 
 ## 相关技术
 
@@ -22,6 +23,7 @@ Agent 记忆：让 Agent 跨会话、跨任务保留并复用信息的基础设�
 - [rag](/topics/rag)（同栈不同源：静态知识 vs 交互生长）
 - [agent-skills](/topics/agent-skills)（skill 可以是记忆提炼的产物）
 - [enterprise-ai-agents](/topics/enterprise-ai-agents)（团队记忆是企业 Agent 运维的一环）
+- [model-efficiency](/topics/model-efficiency)（选择性记忆投喂本质是一种 token 效率优化）
 
 ## 最佳实践
 
@@ -34,6 +36,10 @@ Agent 记忆：让 Agent 跨会话、跨任务保留并复用信息的基础设�
 - [Mem0](https://github.com/mem0ai/mem0)
 
 ## Timeline
+
+### [2026-08-11](/today/2026-08-11)
+
+IBM Research 开源 ALTK-Evolve：与 ACE（Agentic Context Engineering）同源——都从执行轨迹提炼经验、按支持次数逐条保留而非压缩总结，但投喂方式不同：ACE 每步全量注入 playbook，ALTK-Evolve 只打底核心准则+按任务选相关条目。AppWorld 基准上，DeepSeek-V3.2 达到更高准确率（89.3% vs 80.4%）且 token 成本只有 ACE 的约 40%；弱模型 gpt-oss-120b 上准确率打平但 token 成本仅为 ACE 的约七分之一。
 
 ### [2026-08-03](/today/2026-08-03)
 

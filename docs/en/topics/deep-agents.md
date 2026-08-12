@@ -18,6 +18,9 @@ Long-horizon autonomy is the current frontier of agent capability competition, a
 - **External state kernel**: cross-session goals, todos, evidence and handoffs of ownership don't fit well inside a single conversation's context — agent-agnostic external control planes like loopx are emerging as a standalone layer for long-horizon multi-agent collaboration, rather than a built-in feature of any one framework.
 - **Managed/hosted**: hosted runtimes are appearing on top of open-source frameworks — LangSmith's Managed Deep Agents (public beta, 2026-08) bundles durable execution, sandboxes, memory and observability behind a one-command `mda deploy`, an instance of the "open-source framework + hosted runtime" layering applied to Deep Agents.
 - **Self-improvement loop (built-in vs external)**: prime-agent's `/refine` makes "review the trajectory, then update the harness's own state" a built-in agent capability (writing back into harness state) — an alternative implementation path to loopx's external state layer, for the same goal of letting a run leave behind reusable residue.
+- **Cost reduction via model routing**: most calls in a long-horizon task don't need a frontier model — LangChain's Switchyard benchmark on the Deep Agents eval suite routed 93% of calls to a 30B-class model, with only 7% escalated to a frontier model, cutting overall cost 74% (see [model-efficiency](/en/topics/model-efficiency)).
+- **Capability comes from the compute environment, not tool count**: the monday.com Sidekick case shows that cramming 200+ pre-defined tools into an agent pollutes context and makes it dumber and more expensive; giving the agent a persistent, isolated, code-executing sandbox — not an exhaustive tool catalog — is where the capability ceiling actually lives (see [agent-sandboxes](/en/topics/agent-sandboxes)).
+- **Vertical full-pipeline orchestration with mandatory human checkpoints**: OpenMontage standardizes a research→proposal→script→scene-plan→assets→edit→compose pipeline into long-horizon, multi-stage work with mandatory human approval and decision audit trails at every key node — a complete engineering implementation of "autonomous execution with retained human checkpoints" in a specific vertical (video production).
 
 ## Related Technologies
 
@@ -33,6 +36,14 @@ Long-horizon autonomy is the current frontier of agent capability competition, a
 - [How We Benchmark Deep Agents (LangChain Blog)](https://www.langchain.com/blog/)
 
 ## Timeline
+
+### [2026-08-12](/en/today/2026-08-12)
+
+OpenMontage open-sources (47.3k stars total): turns an AI coding assistant into a full-pipeline video production orchestrator; all 12 structured production pipelines follow a research→proposal→script→scene-plan→assets→edit→compose standard, with mandatory human approval at every key node — a complete landing example of "autonomous execution + human checkpoints" for long-horizon, multi-stage agent tasks, applied to a vertical domain (see [agent-skills](/en/topics/agent-skills)).
+
+### [2026-08-11](/en/today/2026-08-11)
+
+LangChain's NVIDIA Switchyard benchmark: 93% of calls in its own Deep Agents eval suite can be routed to a 30B-class model, with only 7% genuinely needing a frontier model, cutting overall cost 74% for a 6-point accuracy loss (see [model-efficiency](/en/topics/model-efficiency)). Same day, a post reveals the monday.com Sidekick case: a single agent crammed with 200+ pre-defined tools caused context pollution and got dumber and more expensive; switching to LangSmith Sandboxes (hardware-virtualized microVMs) to give the agent "its own computer" solved it — the capability ceiling comes from a dynamically executable compute environment, not tool count (see [agent-sandboxes](/en/topics/agent-sandboxes)).
 
 ### [2026-08-08](/en/today/2026-08-08)
 

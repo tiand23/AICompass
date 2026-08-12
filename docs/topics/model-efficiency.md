@@ -17,6 +17,7 @@
 - **CPU/端侧推理**：不依赖 GPU 的部署形态——embedding、编码器类负载已经实用化。
 - **分层加载推理**：逐层加载权重用时间换显存（airllm：4GB GPU 跑 70B），不损质量但牺牲速度——适合低频离线任务，与量化/蒸馏互补。
 - **本地 Agentic 多模态开源模型**：新兴的一类模型（如 Meta Muse Glimmer）同时满足"本地可跑、Agentic、多模态、开源"，靠门控 GQA 等显存优化技术把参数量控制在消费级硬件可承受范围，而非单纯做小分类/嵌入模型。
+- **执行期模型路由**：不是训练小模型，而是在 Agent 运行时把调用动态分流到便宜/昂贵模型之间——LangChain 用 NVIDIA Switchyard 实测，Deep Agents 评估集 93% 的调用可路由到 30B 模型，仅 7% 需要前沿模型，成本降 74%；是否划算取决于判断模型（judge）成本与两档模型价差的比值，价差越大路由越划算。
 
 ## 相关技术
 
@@ -34,6 +35,10 @@
 - [LFM2.5-Encoders: Fast Long-Context Inference on CPU（HuggingFace Blog）](https://huggingface.co/blog)
 
 ## Timeline
+
+### [2026-08-11](/today/2026-08-11)
+
+LangChain 用 NVIDIA NeMo Switchyard 实测 Deep Agents 评估集：93% 的调用路由到 30B 级 Nemotron 3.5 Lightning（仅耗 10.4% 花费），7% 升级到 Claude Opus 4.8（耗掉 68.4% 花费），整体成本比 Opus 全程单跑降 74%、准确率只掉 6 个百分点，并给出"判断模型成本 vs 两档模型价差"的路由划算判断公式（详见 [deep-agents](/topics/deep-agents)）。
 
 ### [2026-08-10](/today/2026-08-10)
 

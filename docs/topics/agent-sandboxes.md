@@ -14,6 +14,8 @@ Agent 一旦要"自己跑代码验证结果"（而不只是生成代码建议）
 - **隔离强度的光谱**：从"进程级隔离"（快、轻，隔离弱）到"微虚拟机/容器"（慢一些，隔离强，可跑完整 Linux 用户态与真实网络访问）——按任务风险选强度，而非一刀切用最重的方案。
 - **冷启动与复用**：沙箱按需创建、用完销毁的成本很高；托管沙箱平台普遍在做"秒级冷启动"与"沙箱池复用"优化。
 - **统一执行入口**：多种后端背后暴露单一调用接口（如 `workspace.runtime.exec()`），让上层 Agent 逻辑不必感知具体隔离实现。
+- **容器级隔离的现实风险**：共享内核的容器不足以隔离"执行不可信、模型生成代码"的 Agent——2025-09 Shai-Hulud npm 蠕虫经 preinstall 脚本污染 500+ 包、CVE-2026-31431（732 字节 Python 脚本即可在主流 Linux 发行版提权到 root）是具体的失败案例；硬件级虚拟化 microVM（独立内核）是更高强度的隔离选项。
+- **工具堆砌 vs 计算环境**：给 Agent 塞几十上百个预置工具，边际收益递减且会污染上下文（monday.com Sidekick 曾因 200+ 工具变笨变贵）；给 Agent 一个可持久执行代码、动态适应的沙箱环境，比穷举式工具清单更接近能力上限。
 
 ## 相关技术
 
@@ -33,6 +35,10 @@ Agent 一旦要"自己跑代码验证结果"（而不只是生成代码建议）
 - [cloudflare/computer](https://github.com/cloudflare/computer)
 
 ## Timeline
+
+### [2026-08-11](/today/2026-08-11)
+
+LangChain 发文《Give your agent its own computer》，以 monday.com Sidekick 为例：200+ 预置工具导致上下文污染、模型变笨变贵，改用 LangSmith Sandboxes（硬件级虚拟化 microVM，非共享内核容器）后 Agent 获得独立文件系统/shell/网络/跨会话持久状态，能力显著提升。文章同时点名 Shai-Hulud npm 蠕虫与 CVE-2026-31431 两起真实容器逃逸/供应链风险，论证共享内核容器不足以隔离模型生成代码（详见 [deep-agents](/topics/deep-agents)）。
 
 ### [2026-08-06](/today/2026-08-06)
 

@@ -14,6 +14,8 @@ Once an agent needs to actually run code to verify results (not just suggest cod
 - **A spectrum of isolation strength**: from process-level isolation (fast, light, weaker isolation) to micro-VMs/containers (slower, stronger isolation, full Linux userland and real network access) — pick strength by task risk rather than defaulting to the heaviest option everywhere.
 - **Cold start and reuse**: on-demand sandbox creation and teardown is expensive; hosted sandbox platforms commonly optimize for sub-second cold starts and sandbox-pool reuse.
 - **A unified execution entry point**: multiple backends exposed behind a single call interface (e.g. `workspace.runtime.exec()`), so the agent logic above doesn't need to know the concrete isolation implementation.
+- **Real risks of container-level isolation**: kernel-sharing containers aren't isolation enough for an agent executing untrusted, model-generated code — the September 2025 Shai-Hulud npm worm compromised 500+ packages via preinstall scripts, and CVE-2026-31431 (a 732-byte Python script that roots every major Linux distribution) are concrete failure cases; hardware-virtualized microVMs (independent kernels) are a stronger isolation option.
+- **Tool sprawl vs. a compute environment**: loading an agent with dozens or hundreds of pre-defined tools has diminishing returns and pollutes context (monday.com's Sidekick got dumber and more expensive with 200+ tools); giving the agent a persistent, code-executing, dynamically adaptive sandbox gets closer to the actual capability ceiling than an exhaustive tool catalog.
 
 ## Related Technologies
 
@@ -33,6 +35,10 @@ Once an agent needs to actually run code to verify results (not just suggest cod
 - [cloudflare/computer](https://github.com/cloudflare/computer)
 
 ## Timeline
+
+### [2026-08-11](/en/today/2026-08-11)
+
+LangChain publishes "Give your agent its own computer," featuring monday.com's Sidekick: 200+ pre-defined tools caused context pollution and degraded, costlier performance; switching to LangSmith Sandboxes (hardware-virtualized microVMs, not kernel-sharing containers) gave the agent its own filesystem/shell/network/cross-session persistent state and meaningfully improved capability. The post also names two real container-escape/supply-chain incidents — the Shai-Hulud npm worm and CVE-2026-31431 — arguing kernel-sharing containers aren't sufficient isolation for model-generated code (see [deep-agents](/en/topics/deep-agents)).
 
 ### [2026-08-06](/en/today/2026-08-06)
 

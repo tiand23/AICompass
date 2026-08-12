@@ -13,7 +13,7 @@ Skills turn "teaching an agent to do something" from prompt engineering into a d
 - **Structure**: a skill = metadata (name, trigger description) + instruction document + optional resources/scripts; agents auto-load by task relevance.
 - **Division of labor vs MCP**: MCP gives an agent **tools** (the interface to a capability); a skill gives it **knowledge and procedure** (how to use capabilities) — complements, not competitors.
 - **Distribution ecosystem**: GitHub is the main channel; awesome-lists (e.g. ComposioHQ/awesome-claude-skills) are the entry points; community rankings blend stars, interaction heat, and documented time savings.
-- **Supplier tiers**: standards vendor (Anthropic) → hyperscaler official product-line collections (google/skills, covering the whole product line — "documentation's executable version") → distilled personal experience from well-known independent engineers (Addy Osmani, Matt Pocock) → anonymous/community repos — credibility and update-sync differ by tier; weigh selection by source tier.
+- **Supplier tiers**: standards vendor (Anthropic — anthropics/skills is its own maintained reference implementation + spec) → hyperscaler official product-line collections (google/skills, covering the whole product line — "documentation's executable version") → distilled personal experience from well-known independent engineers (Addy Osmani, Matt Pocock) → full-pipeline domain-expertise packaging (OpenMontage packages video-production expertise into 700+ skill files) → anonymous/community repos — credibility and update-sync differ by tier; weigh selection by source tier.
 
 ## Ecosystem Heat (GitHub Rankings)
 
@@ -34,6 +34,7 @@ High-star representative repos at topic creation (2026-07):
 | mattpocock/skills | New (hit Trending 2026-08-07, ~207k stars total — currently the single hottest point in the skill ecosystem) | Engineering discipline distilled from a personal `.agents` directory (interview-driven planning/TDD/architecture review) |
 | google/skills | New (hit Trending 2026-08-08, 16.2k stars total, official Google) | Official skill collection spanning GKE/BigQuery/Gemini API and Google's whole product line |
 | agency-agents | New (hit Trending 2026-08-09, ~140k stars total) | 230+ cross-domain expert-persona agent team template, with conversion scripts for 8+ platforms |
+| anthropics/skills | New (hit Trending 2026-08-12, 168k stars total, official Anthropic) | The standards vendor's official reference implementation: spec + example skills + template; the same implementation behind Claude's native document capabilities |
 
 > This ranking is refreshed by `/update` whenever skill-related repos hit GitHub Trending.
 
@@ -54,6 +55,10 @@ High-star representative repos at topic creation (2026-07):
 - [Claude Code repos star leaderboard](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-12](/en/today/2026-08-12)
+
+Anthropic's own anthropics/skills hits GitHub Trending under its official banner for the first time (168k stars total): the standards vendor's own maintained reference implementation (spec `/spec` + example skills + template), filling in the topmost tier of the supply chain — developers can now benchmark other-source skill packages directly against an official spec. Same day, OpenMontage open-sources (47.3k stars total): 700+ skill/production-knowledge files package full-pipeline video-production expertise into an agent-loadable knowledge layer, a data point for the skills ecosystem expanding from "general engineering discipline" toward "full-pipeline domain expertise" (see [deep-agents](/en/topics/deep-agents)).
 
 ### [2026-08-09](/en/today/2026-08-09)
 

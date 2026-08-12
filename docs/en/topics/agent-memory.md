@@ -15,6 +15,7 @@ However large the context window, it is only "working memory" — an agent servi
 - **Write policy**: what deserves remembering (explicit instruction vs automatic extraction), when to update, when to forget/expire — managing memory signal-to-noise is the hard engineering problem.
 - **Permissions and scope**: team-level memory needs RBAC (private/team/restricted) and per-agent binding (loadouts) rather than global injection — memory overreach is a new security surface.
 - **Relation to RAG**: heavily overlapping stacks (vector retrieval, structured storage); the difference is data source and lifecycle — RAG retrieves a static knowledge base, memory grows continuously from interactions.
+- **Delivery strategy for experience memory**: when distilling "lessons" from execution trajectories, don't compress into summaries (that loses information) — keep itemized detail tracked by support count; but delivery at retrieval time should be selective, not a full dump — ALTK-Evolve's "small high-support core + task-relevant picks" cuts 60-85% of tokens versus ACE's "inject the full playbook every step," with accuracy holding or improving (especially on weaker models/harder tasks, where an overlong context hurts judgment).
 
 ## Related Technologies
 
@@ -22,6 +23,7 @@ However large the context window, it is only "working memory" — an agent servi
 - [rag](/en/topics/rag) (same stack, different source: static knowledge vs interaction-grown)
 - [agent-skills](/en/topics/agent-skills) (skills can be a product of memory distillation)
 - [enterprise-ai-agents](/en/topics/enterprise-ai-agents) (team memory is part of enterprise agent operations)
+- [model-efficiency](/en/topics/model-efficiency) (selective memory delivery is fundamentally a token-efficiency optimization)
 
 ## Best Practices
 
@@ -34,6 +36,10 @@ However large the context window, it is only "working memory" — an agent servi
 - [Mem0](https://github.com/mem0ai/mem0)
 
 ## Timeline
+
+### [2026-08-11](/en/today/2026-08-11)
+
+IBM Research open-sources ALTK-Evolve: shares its core premise with ACE (Agentic Context Engineering) — both distill "lessons" from execution trajectories and keep itemized detail tracked by support count rather than compressing into summaries — but differ in delivery: ACE injects the full playbook every step, ALTK-Evolve grounds on a small core of high-support guidelines plus task-relevant picks. On the AppWorld benchmark, DeepSeek-V3.2 hit higher accuracy (89.3% vs. 80.4%) at roughly 40% of ACE's token cost; on the weaker gpt-oss-120b, accuracy tied while using roughly one-seventh of ACE's tokens.
 
 ### [2026-08-03](/en/today/2026-08-03)
 

@@ -18,6 +18,9 @@ Deep Agents 是 LangChain 提出的概念与产品方向：能执行长时程、
 - **外部状态内核**：跨会话的目标、待办、证据、责任交接不适合塞进单次对话上下文——loopx 这类 Agent-agnostic 的外部控制平面正在成为长时程多 Agent 协作的独立一层，而非某个框架的内置功能。
 - **托管化**：开源框架之上出现托管运行时——LangSmith Managed Deep Agents（2026-08 公测）把持久化执行、沙箱、记忆、可观测打包，`mda deploy` 一键上线，是"开源框架 + 托管运行时"分层模式在 Deep Agents 上的落地。
 - **自我改进循环（内置 vs 外部）**：prime-agent 的 `/refine` 把"复盘轨迹→更新经验"做成 Agent 自身内置能力（写回 harness 状态），是相对 loopx 外部状态层的另一种实现路径——同一个"让运行留下可复用沉淀"的目标，可以做在 Agent 内部，也可以做成外部工具。
+- **模型路由降本**：长时程任务里多数调用不需要前沿模型——LangChain 用 Switchyard 实测 Deep Agents 评估集，93% 调用可路由到 30B 级模型，仅 7% 需要升级到前沿模型，整体成本降 74%（详见 [model-efficiency](/topics/model-efficiency)）。
+- **能力来自计算环境而非工具数量**：monday.com Sidekick 案例显示，塞进 200+ 预置工具会造成上下文污染、模型变笨变贵；给 Agent 一个持久、隔离、可执行代码的沙箱环境（而非穷举工具清单）才是能力上限所在（详见 [agent-sandboxes](/topics/agent-sandboxes)）。
+- **强制人工检查点的垂直全流程编排**：OpenMontage 把"调研→提案→脚本→分镜→素材→剪辑→合成"标准化为长时程多阶段管线，每个关键节点强制人工审批+决策审计轨迹——长时程 Agent"自主执行但保持人工检查点"模式在具体垂直领域（视频制作）的完整工程实现。
 
 ## 相关技术
 
@@ -33,6 +36,14 @@ Deep Agents 是 LangChain 提出的概念与产品方向：能执行长时程、
 - [How We Benchmark Deep Agents（LangChain Blog）](https://www.langchain.com/blog/)
 
 ## Timeline
+
+### [2026-08-12](/today/2026-08-12)
+
+OpenMontage 开源（累计 4.73 万 star）：把 AI 编码助手变成视频制作全流程编排者，12 套结构化生产管线均走"调研→提案→脚本→分镜→素材→剪辑→合成"标准阶段，每个关键节点强制人工审批——长时程多阶段 Agent 任务"自主执行 + 人工检查点"模式在垂直领域的完整落地样本（详见 [agent-skills](/topics/agent-skills)）。
+
+### [2026-08-11](/today/2026-08-11)
+
+LangChain 用 NVIDIA Switchyard 实测：自家 Deep Agents 评估集里 93% 的调用可路由到 30B 级模型，仅 7% 真正需要前沿模型，整体成本降 74%、准确率只掉 6 个百分点（详见 [model-efficiency](/topics/model-efficiency)）。同日发文披露 monday.com Sidekick 案例：单 Agent 塞 200+ 预置工具导致上下文污染、变笨变贵，改用 LangSmith Sandboxes（硬件级 microVM）给 Agent 一台"自己的电脑"后问题解决——能力上限来自可动态执行的计算环境而非工具数量（详见 [agent-sandboxes](/topics/agent-sandboxes)）。
 
 ### [2026-08-08](/today/2026-08-08)
 

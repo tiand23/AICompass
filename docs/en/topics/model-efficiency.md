@@ -17,6 +17,7 @@ Frontier models keep growing, but most production workloads (classification, emb
 - **CPU/edge inference**: GPU-free deployment — already practical for embedding and encoder workloads.
 - **Layer-wise inference**: loading weights layer by layer trades time for VRAM (airllm: 70B on a 4GB GPU) — no quality loss but slower; suited to low-frequency offline tasks, complementary to quantization/distillation.
 - **Local agentic multimodal open models**: an emerging class of models (e.g. Meta's Muse Glimmer) that are simultaneously local-runnable, agentic, multimodal and open-source, using memory-optimization techniques like gated GQA to keep parameter counts within reach of consumer hardware, rather than being small classification/embedding models alone.
+- **Runtime model routing**: rather than training a small model, dynamically split calls between cheap and expensive models at agent runtime — LangChain's NVIDIA Switchyard benchmark routed 93% of Deep Agents eval-suite calls to a 30B model, with only 7% needing a frontier model, cutting cost 74%; whether it's worth it depends on the ratio of judge-model cost to the price gap between the two tiers — the bigger the gap, the more routing pays off.
 
 ## Related Technologies
 
@@ -34,6 +35,10 @@ Frontier models keep growing, but most production workloads (classification, emb
 - [LFM2.5-Encoders: Fast Long-Context Inference on CPU (HuggingFace Blog)](https://huggingface.co/blog)
 
 ## Timeline
+
+### [2026-08-11](/en/today/2026-08-11)
+
+LangChain benchmarks NVIDIA NeMo Switchyard on its Deep Agents eval suite: 93% of calls routed to the 30B-class Nemotron 3.5 Lightning (only 10.4% of spend), 7% escalated to Claude Opus 4.8 (68.4% of spend), an overall cost cut of 74% versus running Opus alone for a 6-point accuracy loss, plus a formula for whether routing pays off (judge cost vs. the price gap between tiers) (see [deep-agents](/en/topics/deep-agents)).
 
 ### [2026-08-10](/en/today/2026-08-10)
 
