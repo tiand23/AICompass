@@ -13,6 +13,8 @@ The enterprise agent platform market entered consolidation in 2026 — the need 
 - **The first law of selection: follow your existing cloud.** Azure shops → AI Foundry; AWS → Bedrock AgentCore; GCP → Gemini Enterprise Agent Platform. Cross-cloud neutrality is the reason to go direct with Anthropic/OpenAI.
 - **Respective strengths**: AgentCore has the broadest model access (30+ models behind one API — Claude, Llama, Mistral); Foundry is deepest on the GPT family and M365/Copilot Studio; Google is strongest for ML-heavy workloads, native multimodal, and the A2A protocol (Gemini API Managed Agents has since completed its productionization set: hooks, budget guardrails, scheduled triggers); Managed Agents leads on the Claude ecosystem and API engineering (effort, webhooks, event streams, hard session-budget caps, advisor models, data residency, GitHub-loaded skills).
 - **Hosted Deep Agents is a new category**: following Claude and Gemini, LangSmith's Managed Deep Agents (public beta, 2026-08) wraps the open-source framework into a hosted runtime — durable execution/sandboxes/memory/observability bundled and delivered; "open-source framework + hosted runtime" is becoming a shared route across vendors.
+- **7 infrastructure challenges a managed offering must solve**: runtime reliability, user-facing event streaming, safely executing untrusted agent-generated code, context management, performance evaluation, memory systems, authorization and permissions — LangChain organized the previously scattered "why go managed" arguments into one checkable list, useful when evaluating self-build vs. managed.
+- **Three deployment-mode options**: fully-managed cloud / BYOC (Bring Your Own Cloud — runs in the customer's own cloud account, data stays in their private environment) / full self-hosting — BYOC is a middle ground between "managed convenience" and "data sovereignty"; LangSmith has taken this mode GA on AWS.
 - **Control planes**: Agent365-style "MDM for agents" is a new 2026 layer — enterprises need unified identity, permissions and auditing across hundreds of agents.
 - **The realistic mainstream is review-then-execute**: most organizations run assisted workflows, not fully autonomous production pipelines.
 
@@ -34,6 +36,10 @@ The enterprise agent platform market entered consolidation in 2026 — the need 
 - [AWS Bedrock vs Microsoft Foundry vs Vertex AI 2026](https://www.epcgroup.net/blog/aws-bedrock-vs-microsoft-foundry-vs-vertex-ai-2026)
 
 ## Timeline
+
+### [2026-08-12](/en/today/2026-08-12)
+
+LangChain publishes "Why managed agents are the next big thing in agent building," systematically listing 7 infrastructure challenges that must be solved to take an agent to production (runtime reliability, event streaming, safely executing untrusted code, context management, performance evaluation, memory systems, authorization), arguing managed services bundle this infrastructure so developers can focus on business logic. Same day, LangSmith's BYOC deployment mode goes generally available on AWS — enterprises can run LangSmith on a cluster in their own AWS account, data never leaving their private environment, a third deployment option between managed convenience and data sovereignty (see [deep-agents](/en/topics/deep-agents)).
 
 ### [2026-08-07](/en/today/2026-08-07)
 

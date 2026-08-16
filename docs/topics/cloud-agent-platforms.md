@@ -13,6 +13,8 @@
 - **选型的第一定律是跟着现有云走**：Azure 用户 → AI Foundry；AWS → Bedrock AgentCore；GCP → Gemini Enterprise Agent Platform。跨云中立需求才考虑 Anthropic/OpenAI 直连。
 - **各家长板**：AgentCore 模型面最广（30+ 模型统一 API，Claude/Llama/Mistral）；Foundry 深绑 GPT 家族与 M365/Copilot Studio；Google 强在 ML 密集负载、原生多模态与 A2A 协议（Gemini API Managed Agents 已补齐 hooks/预算护栏/定时触发的生产化能力）；Managed Agents 强在 Claude 生态与 API 工程化（effort、webhook、事件流、会话预算硬顶、顾问模型、数据落地地、GitHub 加载 skills）。
 - **托管 Deep Agents 成新品类**：继 Claude/Gemini 之后，LangSmith 的 Managed Deep Agents（2026-08 公测）把开源框架包装成托管运行时——持久化执行/沙箱/记忆/可观测打包交付，"框架开源 + 运行时托管"正成为多家的共同路线。
+- **托管化要解决的 7 类基础设施难题**：运行时可靠性、面向用户的事件流式推送、不可信 Agent 生成代码的安全执行、上下文管理、性能评估、记忆系统、授权权限——LangChain 把此前散见于各产品页的"为什么要用托管"论点整理成一份可对照的清单，评估自建 vs 托管时可直接核对。
+- **部署模式三选项**：全托管云服务 / BYOC（Bring Your Own Cloud，跑在客户自己云账号的集群里，数据不出私有环境）/ 完全自托管——BYOC 是介于"托管便利"与"数据主权"之间的折中选项，LangSmith 已在 AWS 上把这一模式做到 GA。
 - **管控平面**：Agent365 这类"Agent 的 MDM"是 2026 年新出现的层——企业要统一管理成百上千个 Agent 的身份、权限与审计。
 - **现实主流是"人审后执行"**：多数企业仍在 assisted workflow 阶段，全自主生产管线是少数。
 
@@ -34,6 +36,10 @@
 - [AWS Bedrock vs Microsoft Foundry vs Vertex AI 2026](https://www.epcgroup.net/blog/aws-bedrock-vs-microsoft-foundry-vs-vertex-ai-2026)
 
 ## Timeline
+
+### [2026-08-12](/today/2026-08-12)
+
+LangChain 发文《Why managed agents are the next big thing in agent building》：系统列出把 Agent 推向生产必须解决的 7 类基础设施难题（运行时可靠性、事件流式推送、安全执行不可信代码、上下文管理、性能评估、记忆系统、授权权限），主张托管服务打包这些基础设施让开发者专注业务逻辑。同日 LangSmith 的 BYOC 部署模式在 AWS 正式 GA——企业可把 LangSmith 跑在自己 AWS 账号下的集群里，数据不出私有环境，是托管便利与数据主权之间的第三种部署选项（详见 [deep-agents](/topics/deep-agents)）。
 
 ### [2026-08-07](/today/2026-08-07)
 

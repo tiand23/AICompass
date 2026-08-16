@@ -19,6 +19,7 @@ Terminal coding agents are the main arena of AI coding tool competition, and the
 - **Cross-platform skill distribution**: methodology-class skill packs like compound-engineering-plugin now list simultaneously across Claude Code/Cursor/Codex/Cline marketplaces — "write once, reuse across tools" is becoming the new norm for skill distribution.
 - **Code graphs as a context-optimization layer**: instead of having the agent read the whole file tree, build a Tree-sitter code graph (functions/classes/call relationships) first and let the agent query it by blast-radius over MCP — a concrete solution to the "context management" core problem in the coding-agent category (see [ai-code-review](/en/topics/ai-code-review)).
 - **The RLM route**: treat context as variables and tools as function calls, running the agent inside a persistent programming environment (e.g. an IPython REPL) instead of a conventional conversational tool-calling loop — the route prime-agent represents is a structurally different choice of harness form, not just a point on the full-suite-vs-minimal-config spectrum but a wholly different execution paradigm.
+- **Locally fine-tuned models connect directly to coding agents**: Unsloth Desktop's `unsloth start` command connects a locally trained/fine-tuned model directly to Claude Code or Codex — the "local model ecosystem" and the "coding agent ecosystem" are starting to merge into one pipeline rather than staying two parallel tracks (see [model-efficiency](/en/topics/model-efficiency)).
 
 ## Related Technologies
 
@@ -38,6 +39,10 @@ Terminal coding agents are the main arena of AI coding tool competition, and the
 - [esengine/DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix)
 
 ## Timeline
+
+### [2026-08-12](/en/today/2026-08-12)
+
+Unsloth ships a desktop app: local training/inference in a GUI, with `unsloth start` connecting locally fine-tuned models directly to Claude Code and Codex — the local-model ecosystem and coding-agent ecosystem starting to merge (see [model-efficiency](/en/topics/model-efficiency)).
 
 ### [2026-08-09](/en/today/2026-08-09)
 

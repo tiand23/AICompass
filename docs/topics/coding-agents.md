@@ -19,6 +19,7 @@
 - **跨平台 skill 分发**：compound-engineering-plugin 等方法论类 skill 包同时上架 Claude Code/Cursor/Codex/Cline 等多个市场，"一次编写、多工具复用"正成为 skill 分发的新常态。
 - **代码图作为上下文优化层**：与其让 Agent 读整棵文件树，不如先建一张 Tree-sitter 代码图（函数/类/调用关系），Agent 经 MCP 按影响范围查图——是编码 Agent 品类里"上下文管理"这条核心问题的具体解法之一（详见 [ai-code-review](/topics/ai-code-review)）。
 - **RLM 路线**：把上下文当变量、工具当函数调用，在持久化编程环境（如 IPython REPL）里运行 Agent，而非常规对话式工具调用循环——prime-agent 代表的这条路线是"harness 形态"的另一种结构性选择，不只是全家桶 vs 极简配置的光谱，而是完全不同的执行范式。
+- **本地微调模型直连编码 Agent**：Unsloth Desktop 的 `unsloth start` 命令把本地训练/微调出的模型直接接给 Claude Code、Codex 使用——"本地模型生态"与"编码 Agent 生态"开始打通成一条流水线，而不是两条平行赛道（详见 [model-efficiency](/topics/model-efficiency)）。
 
 ## 相关技术
 
@@ -38,6 +39,10 @@
 - [esengine/DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix)
 
 ## Timeline
+
+### [2026-08-12](/today/2026-08-12)
+
+Unsloth 发布桌面客户端：本地训练/推理图形化，`unsloth start` 命令把本地微调模型直接接给 Claude Code、Codex 用——本地模型生态与编码 Agent 生态开始打通（详见 [model-efficiency](/topics/model-efficiency)）。
 
 ### [2026-08-09](/today/2026-08-09)
 

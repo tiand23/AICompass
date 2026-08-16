@@ -13,6 +13,8 @@
 - **選定の第一法則は既存クラウドに従う**：Azure → AI Foundry、AWS → Bedrock AgentCore、GCP → Gemini Enterprise Agent Platform。クロスクラウド中立が必要な場合のみ Anthropic/OpenAI 直結を検討。
 - **各社の強み**：AgentCore はモデルの幅が最大（30+ モデルを統一 API で、Claude/Llama/Mistral）；Foundry は GPT 系と M365/Copilot Studio に最深；Google は ML 集約ワークロード・ネイティブマルチモーダル・A2A プロトコル（Gemini API Managed Agents は hooks/予算ガードレール/定期トリガーの本番化能力も装備済み）；Managed Agents は Claude エコシステムと API エンジニアリング（effort、webhook、イベントストリーム、セッション予算のハード上限、アドバイザーモデル、データ所在地、GitHub からの skill 読み込み）。
 - **ホスト型 Deep Agents が新カテゴリに**：Claude、Gemini に続き、LangSmith の Managed Deep Agents（2026-08 公開ベータ）がオープンソースフレームワークをホスト型ランタイムに包装——永続実行/サンドボックス/記憶/可観測性を一括パッケージ化して提供。「フレームワークはオープンソース、ランタイムはホスト型」が各社共通の路線になりつつある。
+- **マネージド化が解決すべき 7 種類のインフラ課題**：ランタイムの信頼性、ユーザー向けイベントストリーミング、信頼できない Agent 生成コードの安全な実行、コンテキスト管理、性能評価、記憶システム、認可と権限——LangChain がこれまで散らばっていた「なぜマネージド化すべきか」という論点を照合可能な 1 つのリストに整理した。自前構築 vs マネージドの検討に有用。
+- **デプロイモードの 3 つの選択肢**：全面マネージドクラウド / BYOC（Bring Your Own Cloud、顧客自身のクラウドアカウント内で稼働しデータが私有環境の外に出ない）/ 完全セルフホスト——BYOC は「マネージドの利便性」と「データ主権」の中間に位置する選択肢で、LangSmith はこのモードを AWS 上で GA にした。
 - **コントロールプレーン**：Agent365 のような「エージェントの MDM」は 2026 年に現れた新しい層——数百のエージェントの ID・権限・監査を統一管理する必要がある。
 - **現実の主流は「人が承認してから実行」**：多くの企業は assisted workflow の段階にあり、完全自律の本番パイプラインは少数派。
 
@@ -34,6 +36,10 @@
 - [AWS Bedrock vs Microsoft Foundry vs Vertex AI 2026](https://www.epcgroup.net/blog/aws-bedrock-vs-microsoft-foundry-vs-vertex-ai-2026)
 
 ## Timeline
+
+### [2026-08-12](/ja/today/2026-08-12)
+
+LangChain が「Why managed agents are the next big thing in agent building」を公開：Agent を本番に持っていくために解決すべき 7 種類のインフラ課題（ランタイムの信頼性、イベントストリーミング、信頼できないコードの安全な実行、コンテキスト管理、性能評価、記憶システム、認可）を体系的に列挙し、マネージドサービスがこれらをパッケージ化することで開発者がビジネスロジックに専念できると論じる。同日、LangSmith の BYOC デプロイモードが AWS で正式 GA——企業は自分の AWS アカウント内のクラスタで LangSmith を稼働でき、データは私有環境の外に出ない。マネージドの利便性とデータ主権の中間に位置する第 3 のデプロイ選択肢（詳細は [deep-agents](/ja/topics/deep-agents)）。
 
 ### [2026-08-07](/ja/today/2026-08-07)
 

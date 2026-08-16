@@ -15,6 +15,8 @@ Document parsing and structuring: turning PDFs, scans, tables and charts into LL
 - **Schema-based structured extraction**: define target fields and get typed JSON back (e.g. LlamaExtract) — the most reliable path to clean structured data.
 - **Selection notes**: LlamaParse is the most production-ready for RAG stacks; Docling fits privacy-sensitive self-hosting (unusually strong on technical/scientific content); Reducto ranked #1 on LongExtractBench with 99.6% precision/recall.
 - **Spatial grounding**: the structural gap between specialized parsers and general frontier models — frontier models score ~8% on ParseBench visual grounding versus 55-80% for specialized engines; agent evidence chains need "which page, which location", which anchors the "OCR won't be commoditized" argument.
+- **"Fluent" errors are more dangerous than "garbled" errors**: traditional OCR fails into visibly broken garbage; LLM OCR fails into fluent, plausible-looking but incorrect text — when visual evidence is ambiguous, models favor "most probable as text" over "best supported by the image," and high-entropy strings like account/part numbers are especially vulnerable since the language prior is weakest exactly where it's needed most.
+- **Page-averaged metrics mask critical-field errors**: character/word error rate average across a page, so a page reporting 99% accuracy can still be worthless if the 1% wrong is a total or an identifier — acceptance testing should measure accuracy per field type (especially high-entropy fields), not a single page-average score.
 
 ## Related Technologies
 
@@ -32,6 +34,10 @@ Document parsing and structuring: turning PDFs, scans, tables and charts into LL
 - [Top document parsing APIs for 2026 (LlamaIndex)](https://www.llamaindex.ai/insights/top-document-parsing-apis)
 
 ## Timeline
+
+### [2026-08-12](/en/today/2026-08-12)
+
+LlamaIndex argues LLM OCR errors aren't getting rarer, just quieter: breaks down three mainstream architectures (OCR+LLM correction, native VLM transcription, agentic segmentation-and-routing), each failing its own way; the core mechanism is that models favor language priors over image evidence when visual signal is ambiguous, and CER/WER-style page-averaged metrics mask critical-field errors — production systems need segmentation, routing, validation loops and pixel-level citations as architectural controls.
 
 ### [2026-08-11](/en/today/2026-08-11)
 

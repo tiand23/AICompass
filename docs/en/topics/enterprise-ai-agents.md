@@ -15,6 +15,7 @@ This is the main battleground for generative AI in the enterprise. As model capa
 - **Operational maturity signals**: lifecycle webhooks, session seeding, streaming observation — concrete API capabilities for judging platform maturity; hard session-budget caps and data-residency control are the latest additions to this signal set.
 - **The "own your intelligence" debate**: outsource intelligence to a platform or keep it in-house — the core divide in enterprise AI architecture.
 - **The migration of an "HR management" mental model**: once agent count grows, teams start managing agents the way they manage employees — ticket assignment, org structure (roles/reporting lines), budget enforcement, governance approval workflows, audit logs (the Paperclip case). A productized attempt to fold Managed Agents' budget/permission capabilities and agent workflow orchestration into a single unified management plane.
+- **Three speeds of cost governance**: runtime optimization (route each request to a right-sized model in real time), workflow optimization (test and improve agent efficiency over days/weeks), continuous governance (spending caps that don't get relaxed on demand) — three different paces that need to run in parallel, not as an either-or choice; a way to organize previously scattered cost-reduction tactics (routing, caching, evaluation-driven iteration, hard spending caps) into one framework (proposed by Azure). A companion self-check: can you see cost by model/agent/workflow? Are requests over-provisioned to unnecessarily capable models? Is there a mechanism for agent efficiency to keep improving? Can you enforce spending limits during usage spikes?
 
 ## Related Technologies
 
@@ -33,6 +34,10 @@ This is the main battleground for generative AI in the enterprise. As model capa
 - [Claude Managed Agents docs](https://platform.claude.com/docs/en/release-notes/overview)
 
 ## Timeline
+
+### [2026-08-12](/en/today/2026-08-12)
+
+Azure proposes a "three-speed" model for agent cost governance: runtime routing, workflow iteration and continuous governance running at three paces in parallel, paired with Microsoft Foundry's model router / prompt caching / agent optimizer / AI Gateway rate limits; the core argument is shifting from "buying intelligence" once to "managing it" continuously (see [model-efficiency](/en/topics/model-efficiency)).
 
 ### [2026-08-10](/en/today/2026-08-10)
 

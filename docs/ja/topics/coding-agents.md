@@ -19,6 +19,7 @@
 - **クロスプラットフォーム skill 配布**：compound-engineering-plugin のような方法論系 skill パックは Claude Code/Cursor/Codex/Cline のマーケットプレイスに同時掲載されるようになった——「一度書けば複数ツールで再利用」が skill 配布の新常態になりつつある。
 - **コンテキスト最適化層としてのコードグラフ**：エージェントにファイルツリー全体を読ませる代わりに、先に Tree-sitter コードグラフ（関数/クラス/呼び出し関係）を構築し、エージェントは MCP 経由で影響範囲を問い合わせる——コーディングエージェントの核心問題である「コンテキスト管理」への具体的な解法のひとつ（詳細は [ai-code-review](/ja/topics/ai-code-review)）。
 - **RLM 路線**：コンテキストを変数、ツールを関数呼び出しとして扱い、永続化されたプログラミング環境（IPython REPL など）の中でエージェントを動かす——通常の対話型ツール呼び出しループではない。prime-agent が代表するこの路線は harness 形態の構造的に異なる選択で、フル機能スイート vs ミニマリスト設定というスペクトラムの一点ではなく、まったく異なる実行パラダイムである。
+- **ローカルでファインチューニングしたモデルをコーディング Agent に直結**：Unsloth Desktop の `unsloth start` コマンドは、ローカルで訓練/ファインチューニングしたモデルを Claude Code や Codex に直接接続する——「ローカルモデルのエコシステム」と「コーディング Agent のエコシステム」が並行する 2 本のレーンではなく、1 本のパイプラインへ統合され始めている（詳細は [model-efficiency](/ja/topics/model-efficiency)）。
 
 ## 関連技術
 
@@ -38,6 +39,10 @@
 - [esengine/DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix)
 
 ## Timeline
+
+### [2026-08-12](/ja/today/2026-08-12)
+
+Unsloth がデスクトップアプリを公開：ローカル訓練/推論を GUI 化し、`unsloth start` コマンドでローカルにファインチューニングしたモデルを Claude Code、Codex に直結——ローカルモデルのエコシステムとコーディング Agent のエコシステムが統合し始めた（詳細は [model-efficiency](/ja/topics/model-efficiency)）。
 
 ### [2026-08-09](/ja/today/2026-08-09)
 

@@ -39,6 +39,8 @@ Deep Agents 是 LangChain 提出的概念与产品方向：能执行长时程、
 
 ### [2026-08-12](/today/2026-08-12)
 
+LangChain 发文系统列出把 Agent 推向生产必须解决的 7 类基础设施难题（运行时可靠性、事件流式推送、安全执行不可信代码、上下文管理、性能评估、记忆系统、授权权限），主张托管服务打包这些基础设施；同日 LangSmith BYOC 部署模式在 AWS 正式 GA（详见 [cloud-agent-platforms](/topics/cloud-agent-platforms)）。
+
 OpenMontage 开源（累计 4.73 万 star）：把 AI 编码助手变成视频制作全流程编排者，12 套结构化生产管线均走"调研→提案→脚本→分镜→素材→剪辑→合成"标准阶段，每个关键节点强制人工审批——长时程多阶段 Agent 任务"自主执行 + 人工检查点"模式在垂直领域的完整落地样本（详见 [agent-skills](/topics/agent-skills)）。
 
 ### [2026-08-11](/today/2026-08-11)

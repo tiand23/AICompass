@@ -15,6 +15,7 @@ Agent 工作台是"Chat 界面"之后的下一代交互形态：从一问一答�
 - **能力配置的可移植性**：skills、MCP 服务器、账号连接作为一层独立资产，通过统一接入点（如 openwork MCP）在多个 Agent 客户端间共享。
 - **组织级管控面**：团队维度的推理供给、访问管理、skill 发布与策略控制（openwork Den），与企业 Agent 平台的管控面思路同源。
 - **从单 Agent 工作台到多 Agent 团队管理**：openwork 等解决"一个人配一个 Agent 工作环境"，Paperclip 代表的新一层解决"一个团队配一整支 Agent 队伍"——工单分派、组织架构、预算、审批流，心智模型从"给 Agent 一个工作环境"升级为"像管理员工一样管理一群 Agent"。
+- **多 Agent 并跑 + 跨 Agent 共享记忆**：holaOS 让 Claude Code、Codex 等不同 Agent 在同一工作台里并排同跑而非来回切换，且共享同一套记忆——记忆存成用户可直接读写的明文文件而非厂商专有云端格式，是"记忆可审计、不被单一供应商锁定"原则在工作台产品层的具体实现。
 
 ## 相关技术
 
@@ -31,6 +32,10 @@ Agent 工作台是"Chat 界面"之后的下一代交互形态：从一问一答�
 - [different-ai/openwork](https://github.com/different-ai/openwork)
 
 ## Timeline
+
+### [2026-08-12](/today/2026-08-12)
+
+holaOS 开源（累计 6.2k star）："给你和你的 Agent 用的电脑"——Claude Code/Codex/原生 Agent 在同一工作台并排同跑并共享明文本地记忆，100+ 集成 + MCP，内置模型与 BYOK 双轨。多 Agent 并跑与跨 Agent 共享记忆成为工作台产品的新差异化卖点。
 
 ### [2026-08-10](/today/2026-08-10)
 

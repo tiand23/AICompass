@@ -39,6 +39,8 @@ Long-horizon autonomy is the current frontier of agent capability competition, a
 
 ### [2026-08-12](/en/today/2026-08-12)
 
+LangChain systematically lists 7 infrastructure challenges that must be solved to take an agent to production (runtime reliability, event streaming, safely executing untrusted code, context management, performance evaluation, memory systems, authorization), arguing managed services bundle this infrastructure; same day, LangSmith's BYOC deployment mode goes generally available on AWS (see [cloud-agent-platforms](/en/topics/cloud-agent-platforms)).
+
 OpenMontage open-sources (47.3k stars total): turns an AI coding assistant into a full-pipeline video production orchestrator; all 12 structured production pipelines follow a research→proposal→script→scene-plan→assets→edit→compose standard, with mandatory human approval at every key node — a complete landing example of "autonomous execution + human checkpoints" for long-horizon, multi-stage agent tasks, applied to a vertical domain (see [agent-skills](/en/topics/agent-skills)).
 
 ### [2026-08-11](/en/today/2026-08-11)

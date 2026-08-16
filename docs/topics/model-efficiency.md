@@ -18,6 +18,8 @@
 - **分层加载推理**：逐层加载权重用时间换显存（airllm：4GB GPU 跑 70B），不损质量但牺牲速度——适合低频离线任务，与量化/蒸馏互补。
 - **本地 Agentic 多模态开源模型**：新兴的一类模型（如 Meta Muse Glimmer）同时满足"本地可跑、Agentic、多模态、开源"，靠门控 GQA 等显存优化技术把参数量控制在消费级硬件可承受范围，而非单纯做小分类/嵌入模型。
 - **执行期模型路由**：不是训练小模型，而是在 Agent 运行时把调用动态分流到便宜/昂贵模型之间——LangChain 用 NVIDIA Switchyard 实测，Deep Agents 评估集 93% 的调用可路由到 30B 模型，仅 7% 需要前沿模型，成本降 74%；是否划算取决于判断模型（judge）成本与两档模型价差的比值，价差越大路由越划算。
+- **极小体积专精模型**：不追求通用对话质量，专精工具调用/结构化抽取这类窄任务，靠激进量化把体积压到极限（needle：14MB 单文件、约 28MB 运行时内存，专为手机/穿戴/机器人设计）——SLM 路线在体积维度的极端样本，与"够用就好"的效率哲学一脉相承。
+- **本地训练/推理从命令行走向图形界面**：Unsloth Desktop 把此前需要写训练脚本的本地微调（LLM 与图像/视频扩散模型 LoRA）装进桌面图形界面，`unsloth start` 可直连 Claude Code/Codex 等编码 Agent——本地效率工具的易用性门槛正在下降，而不仅是效率数字本身在优化（详见 [coding-agents](/topics/coding-agents)）。
 
 ## 相关技术
 
@@ -35,6 +37,10 @@
 - [LFM2.5-Encoders: Fast Long-Context Inference on CPU（HuggingFace Blog）](https://huggingface.co/blog)
 
 ## Timeline
+
+### [2026-08-12](/today/2026-08-12)
+
+Unsloth 发布桌面客户端（beta）：本地模型训练与推理装进图形界面，`unsloth start` 直连 Claude Code/Codex；官方数据训练提速 2 倍、显存降 70%（详见 [coding-agents](/topics/coding-agents)）。同日 needle 2 登场：14MB 单文件基础模型，专精工具调用与结构化抽取，专为手机/穿戴/机器人设计，体积比同类小模型再小 5-70 倍。
 
 ### [2026-08-11](/today/2026-08-11)
 

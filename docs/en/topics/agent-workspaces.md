@@ -15,6 +15,7 @@ The agent workspace is the next interaction form after the chat interface: from 
 - **Portable capability configuration**: skills, MCP servers and account connections as an independent asset layer, shared across agent clients through a single integration point (e.g. the openwork MCP).
 - **Org-level control plane**: team-scale inference provisioning, access management, skill publishing and policy control (openwork's Den) — the same idea as enterprise agent platforms' control planes.
 - **From single-agent workspace to multi-agent team management**: openwork solves "give one person one agent's working environment"; Paperclip represents a new layer solving "give a team a whole fleet of agents" — ticket assignment, org structure, budget, approval workflows — the mental model upgrading from "give the agent a working environment" to "manage a fleet of agents the way you manage employees."
+- **Multiple agents running side by side, sharing memory**: holaOS lets Claude Code, Codex and other agents run in parallel in the same workspace rather than switching back and forth, sharing the same memory — stored as user-readable plain files rather than a vendor's proprietary cloud format, a concrete implementation of "memory should be auditable and not locked to a single vendor" at the workspace-product layer.
 
 ## Related Technologies
 
@@ -31,6 +32,10 @@ The agent workspace is the next interaction form after the chat interface: from 
 - [different-ai/openwork](https://github.com/different-ai/openwork)
 
 ## Timeline
+
+### [2026-08-12](/en/today/2026-08-12)
+
+holaOS open-sources (6.2k stars total): "the computer for you and your agent" — Claude Code/Codex/its native agent run side by side in one workspace sharing plain-text local memory, 100+ integrations plus MCP, built-in models and BYOK. Multi-agent parallelism with cross-agent shared memory becomes a new differentiator for workspace products.
 
 ### [2026-08-10](/en/today/2026-08-10)
 
