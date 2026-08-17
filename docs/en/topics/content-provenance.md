@@ -11,9 +11,10 @@ Generated content (images, audio, video) has crossed the threshold of human perc
 ## Core Concepts
 
 - **Watermarking (SynthID)**: imperceptible signals embedded at generation time, with some robustness to cropping, compression and other common transforms; created by Google, adopted by OpenAI in 2026, covering images and audio.
+- **Text watermarking (Claude)**: a fundamentally different route from image/audio watermarking — instead of embedding an independent signal, it rewrites the source of randomness used for low-stakes word choices during generation, with a key plus preceding context jointly biasing word choice; a single choice is undetectable, but a long enough text is statistically detectable. Text's discrete, low-dimensional nature means it lacks the "redundant signal space" audio/video have for hiding a watermark, hence the entirely different technical route.
 - **Signed metadata (C2PA)**: the Content Credentials industry standard, recording generation origin and edit history in file metadata; strippable, hence complementary to watermarks.
 - **Verification tools & APIs**: e.g. OpenAI's public verifier, which checks uploaded files for OpenAI provenance signals (C2PA + SynthID), supports images and audio, and offers an API for programmatic integration.
-- **Limits**: watermarks only cover cooperating generators — content from open-weights models or non-watermarking services is undetectable; provenance verification is "positive is trustworthy", and a negative does not mean human-made.
+- **Limits**: watermarks only cover cooperating generators — content from open-weights models or non-watermarking services is undetectable; provenance verification is "positive is trustworthy", and a negative does not mean human-made. Claude's text watermark is likewise not a definitive detector: content from older models, or heavily edited, paraphrased, translated or mixed-in text, may not be detectable.
 
 ## Related Technologies
 
@@ -31,6 +32,10 @@ Generated content (images, audio, video) has crossed the threshold of human perc
 - [The C2PA standard](https://c2pa.org/)
 
 ## Timeline
+
+### [2026-08-14](/en/today/2026-08-14)
+
+Anthropic details how Claude's text watermark works: not an embedded independent signal, but a rewrite of the randomness source behind low-stakes word choices, with a key plus preceding context jointly biasing word choice; it travels with copy-pasted text and may partially survive editing, but it is not a definitive AI detector.
 
 ### [2026-07-31](/en/today/2026-07-31)
 

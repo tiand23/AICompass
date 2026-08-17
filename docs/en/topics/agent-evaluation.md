@@ -15,6 +15,7 @@ Whether an agent can go to production is ultimately decided by evaluation — wi
 - **LLM-as-judge**: use a model to compare agent output against the human baseline for semantic equivalence (hitting the same underlying issue, not matching wording) — the mainstream scoring method for open-ended tasks; watch for judge bias.
 - **Strategy is a variable**: the same model scores significantly higher with a structured, purpose-built prompt — evaluate "model + strategy" as a unit, not the model alone.
 - **Vertical benchmarks built by the domain's own leading company**: Harvey LAB (legal — 24 practice areas, 1,671 tasks) follows the same pattern as ReviewBench (code review) — a company deeply embedded in the domain builds its own all-pass-rubric real-task benchmark, closer to the industry's deep-water reality than a generic third-party benchmark; a shared route for evaluating professional-services agents (legal, finance, healthcare).
+- **Large-scale real-research tasks as a stress test**: the ICML 2026 Reproducibility Hackathon had 1,221 people use coding agents to reproduce the core claims of 2,226 papers (34% of the conference's accepted total), with an automated judge model uniformly issuing "verified/falsified/toy-scale/inconclusive" verdicts — an extreme-scale sample of the "real-task-derived benchmark" methodology applied to open-ended research reproduction, with a quantitative baseline of 51% of papers getting at least one claim verified and 23% falsified or contested; the conclusion stresses that the most reliable results come from human-in-the-loop, not full agent autonomy in reaching a verdict.
 
 ## Related Technologies
 
@@ -32,6 +33,10 @@ Whether an agent can go to production is ultimately decided by evaluation — wi
 - [Evaluating code review agents with ReviewBench](https://www.langchain.com/blog/evaluating-code-review-agents-with-reviewbench)
 
 ## Timeline
+
+### [2026-08-13](/en/today/2026-08-13)
+
+HuggingFace publishes ICML 2026 Reproducibility Hackathon results: 1,221 participants used coding agents like Claude Code, Codex and Cursor to attempt reproducing the claims of 2,226 papers, producing 6,816 reproduction logbooks and 35,908 judged claims — 51% of examined papers had at least one claim verified, 23% had claims falsified or contested, and 266 were fully verified; agents showed limitations like getting stuck in loops and misreading scale-dependent behavior, and the most reliable results came from human-in-the-loop (see [coding-agents](/en/topics/coding-agents)).
 
 ### [2026-08-09](/en/today/2026-08-09)
 

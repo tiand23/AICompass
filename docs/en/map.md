@@ -12,7 +12,7 @@
 |---|---|---|---|---|
 | [claude-models](/en/topics/claude-models) | Anthropic's Claude model line | Model selection and migration for agent/coding workloads | 🔥 | 2026-08-11 |
 | [openai-models](/en/topics/openai-models) | OpenAI's GPT model line & API platform | Selection, price volatility and deprecation risk | 🔥 | 2026-08-10 |
-| [gemini-models](/en/topics/gemini-models) | Google's Gemini model line | Cost-effective selection for price-sensitive workloads | 📈 | 2026-07-21 |
+| [gemini-models](/en/topics/gemini-models) | Google's Gemini model line | Cost-effective selection for price-sensitive workloads | 🔥 | 2026-08-13 |
 
 ### Multimodal Generation
 
@@ -25,7 +25,7 @@
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [model-efficiency](/en/topics/model-efficiency) | SLMs, distillation, quantization, efficient architectures, CPU/edge inference | Usable intelligence from less compute | 🔥 | 2026-08-12 |
+| [model-efficiency](/en/topics/model-efficiency) | SLMs, distillation, quantization, efficient architectures, CPU/edge inference | Usable intelligence from less compute | 🔥 | 2026-08-14 |
 
 ## 2. Knowledge & Retrieval
 
@@ -75,7 +75,7 @@
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [agent-evaluation](/en/topics/agent-evaluation) | Agent evaluation methods & benchmarks (real-task-derived + LLM-as-judge) | Reproducible measurement before agents go to production | 🔥 | 2026-08-09 |
+| [agent-evaluation](/en/topics/agent-evaluation) | Agent evaluation methods & benchmarks (real-task-derived + LLM-as-judge) | Reproducible measurement before agents go to production | 🔥 | 2026-08-13 |
 
 *Also watching: model benchmarks. (For long-horizon agent evaluation, see [deep-agents](/en/topics/deep-agents).)*
 
@@ -84,11 +84,11 @@
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
 | [agentic-safety](/en/topics/agentic-safety) | Agent behavioral safety | Real risks of autonomous models overstepping and escaping | 🔥 | 2026-08-11 |
-| [content-provenance](/en/topics/content-provenance) | AI content watermarking & verification (SynthID/C2PA) | Identifiability and compliance checking of generated content | 📈 | 2026-07-31 |
+| [content-provenance](/en/topics/content-provenance) | AI content watermarking & verification (SynthID/C2PA) | Identifiability and compliance checking of generated content | 🔥 | 2026-08-14 |
 
 ## 7. Coding Tools
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [ai-code-review](/en/topics/ai-code-review) | AI code review tools & architecture | Scaling review while keeping signal-to-noise | 🔥 | 2026-08-09 |
-| [coding-agents](/en/topics/coding-agents) | Terminal/CLI coding agents (Claude Code/Codex CLI/Reasonix…) | Category selection; harness engineering and model-ecosystem coupling | 🔥 | 2026-08-12 |
+| [ai-code-review](/en/topics/ai-code-review) | AI code review tools & architecture | Scaling review while keeping signal-to-noise | 📈 | 2026-08-09 |
+| [coding-agents](/en/topics/coding-agents) | Terminal/CLI coding agents (Claude Code/Codex CLI/Reasonix…) | Category selection; harness engineering and model-ecosystem coupling | 🔥 | 2026-08-14 |

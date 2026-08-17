@@ -12,6 +12,7 @@ Gemini 是 Claude / GPT 之外的第三个主流选型，Flash 档"更便宜 + �
 
 - **Flash / Flash-Lite / Pro 档位**：能力—成本阶梯；Flash 是 Google 定义的"主力模型"档。
 - **Token 效率**：3.6 Flash 相比前代 token 用量最多降 17%，等效于变相降价。
+- **高频小步迭代**：Flash 档发布节奏明显加快（3.6→3.7 Flash 仅间隔 3 周），编码/Agent 类基准跳升幅度大于通用对话类基准，引入价格再降——"高频迭代、Agent 场景优先、持续降价"是 Flash 档的固定打法。
 - **受管控特化模型**：Flash Cyber 仅向政府与可信伙伴限量开放——"能力受管控发布"模式的样本。
 
 ## 相关技术
@@ -29,6 +30,10 @@ Gemini 是 Claude / GPT 之外的第三个主流选型，Flash 档"更便宜 + �
 - [Google AI Blog](https://blog.google/technology/ai/)
 
 ## Timeline
+
+### [2026-08-13](/today/2026-08-13)
+
+Gemini 3.7 Flash 发布，距 3.6 Flash 仅 3 周：编码/Agent 基准大幅跳升（AutomationBench 17.0%→30.4%、DeepSWE v1.1 49.0%→65.3%、WebDev Arena Elo 1538→1588），引入价较 3.6 Flash 发布价再降一半（$0.75/$3.75 每百万 token）；未发 3.5 Pro。
 
 ### [2026-07-21](/today/2026-07-21)
 

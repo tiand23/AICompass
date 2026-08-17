@@ -12,7 +12,7 @@
 |---|---|---|---|---|
 | [claude-models](/ja/topics/claude-models) | Anthropic Claude モデルライン | エージェント/コーディング用途の選定と移行 | 🔥 | 2026-08-11 |
 | [openai-models](/ja/topics/openai-models) | OpenAI GPT モデルラインと API プラットフォーム | 選定、価格変動、廃止リスク | 🔥 | 2026-08-10 |
-| [gemini-models](/ja/topics/gemini-models) | Google Gemini モデルライン | コスト重視ワークロードの高コスパ選定 | 📈 | 2026-07-21 |
+| [gemini-models](/ja/topics/gemini-models) | Google Gemini モデルライン | コスト重視ワークロードの高コスパ選定 | 🔥 | 2026-08-13 |
 
 ### マルチモーダル生成
 
@@ -25,7 +25,7 @@
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [model-efficiency](/ja/topics/model-efficiency) | SLM、蒸留、量子化、効率アーキテクチャ、CPU/エッジ推論 | より少ない計算資源で十分な知能を | 🔥 | 2026-08-12 |
+| [model-efficiency](/ja/topics/model-efficiency) | SLM、蒸留、量子化、効率アーキテクチャ、CPU/エッジ推論 | より少ない計算資源で十分な知能を | 🔥 | 2026-08-14 |
 
 ## 2. ナレッジと検索
 
@@ -75,7 +75,7 @@
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [agent-evaluation](/ja/topics/agent-evaluation) | エージェント評価の方法とベンチマーク（実タスク由来 + LLM-as-judge） | エージェント本番投入前の再現可能な測定 | 🔥 | 2026-08-09 |
+| [agent-evaluation](/ja/topics/agent-evaluation) | エージェント評価の方法とベンチマーク（実タスク由来 + LLM-as-judge） | エージェント本番投入前の再現可能な測定 | 🔥 | 2026-08-13 |
 
 *ほかに注目：モデルベンチマーク。（長期エージェント評価は [deep-agents](/ja/topics/deep-agents) を参照）*
 
@@ -84,11 +84,11 @@
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
 | [agentic-safety](/ja/topics/agentic-safety) | エージェントの行動安全性 | 自律モデルの越権・脱出という現実リスク | 🔥 | 2026-08-11 |
-| [content-provenance](/ja/topics/content-provenance) | AI コンテンツの透かしと検証（SynthID/C2PA） | 生成コンテンツの識別可能性とコンプライアンス確認 | 📈 | 2026-07-31 |
+| [content-provenance](/ja/topics/content-provenance) | AI コンテンツの透かしと検証（SynthID/C2PA） | 生成コンテンツの識別可能性とコンプライアンス確認 | 🔥 | 2026-08-14 |
 
 ## 7. コーディングツール
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [ai-code-review](/ja/topics/ai-code-review) | AI コードレビューのツールと設計 | レビューのスケールと S/N 比の両立 | 🔥 | 2026-08-09 |
-| [coding-agents](/ja/topics/coding-agents) | ターミナル/CLI コーディングエージェント（Claude Code/Codex CLI/Reasonix…） | カテゴリ選定；harness 工学とモデル生態系の結合 | 🔥 | 2026-08-12 |
+| [ai-code-review](/ja/topics/ai-code-review) | AI コードレビューのツールと設計 | レビューのスケールと S/N 比の両立 | 📈 | 2026-08-09 |
+| [coding-agents](/ja/topics/coding-agents) | ターミナル/CLI コーディングエージェント（Claude Code/Codex CLI/Reasonix…） | カテゴリ選定；harness 工学とモデル生態系の結合 | 🔥 | 2026-08-14 |

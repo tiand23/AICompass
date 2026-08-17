@@ -20,6 +20,8 @@ Terminal coding agents are the main arena of AI coding tool competition, and the
 - **Code graphs as a context-optimization layer**: instead of having the agent read the whole file tree, build a Tree-sitter code graph (functions/classes/call relationships) first and let the agent query it by blast-radius over MCP — a concrete solution to the "context management" core problem in the coding-agent category (see [ai-code-review](/en/topics/ai-code-review)).
 - **The RLM route**: treat context as variables and tools as function calls, running the agent inside a persistent programming environment (e.g. an IPython REPL) instead of a conventional conversational tool-calling loop — the route prime-agent represents is a structurally different choice of harness form, not just a point on the full-suite-vs-minimal-config spectrum but a wholly different execution paradigm.
 - **Locally fine-tuned models connect directly to coding agents**: Unsloth Desktop's `unsloth start` command connects a locally trained/fine-tuned model directly to Claude Code or Codex — the "local model ecosystem" and the "coding agent ecosystem" are starting to merge into one pipeline rather than staying two parallel tracks (see [model-efficiency](/en/topics/model-efficiency)).
+- **Agents becoming a new primary access identity in the software ecosystem**: HuggingFace data shows agents overtook humans as the Hub's primary traffic source for the first time in 2026, with Claude Code alone accounting for 44.4% of July traffic (though volatile, with no stable incumbent) and nearly 25% of traffic coming from unregistered agent identities — coding agents' influence has shifted from "a tool developers use" to "one of a platform's primary traffic sources," and measuring ecosystem heat now requires treating agent traffic as its own variable (see [model-efficiency](/en/topics/model-efficiency)).
+- **Large-scale real-task reproduction as a capability litmus test**: the ICML 2026 Reproducibility Hackathon had coding agents independently reproduce the core claims of 2,226 papers, with 51% of papers getting at least one claim verified and 23% falsified or contested — the largest real-world stress test to date of the coding agent's full "read the doc → write the code → run the experiment → draw a conclusion" capability chain, and confirmation that human-in-the-loop remains a necessary condition, not an optional extra, for reliable results at the current stage (see [agent-evaluation](/en/topics/agent-evaluation)).
 
 ## Related Technologies
 
@@ -39,6 +41,14 @@ Terminal coding agents are the main arena of AI coding tool competition, and the
 - [esengine/DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix)
 
 ## Timeline
+
+### [2026-08-14](/en/today/2026-08-14)
+
+HuggingFace's "State of Open Models: Summer 2026" report: agents overtook humans as HuggingFace Hub's primary traffic source for the first time, with Claude Code alone accounting for 44.4% of July traffic, and nearly 25% of July traffic coming from unregistered agent identities — adoption is outpacing tracking infrastructure (see [model-efficiency](/en/topics/model-efficiency)).
+
+### [2026-08-13](/en/today/2026-08-13)
+
+HuggingFace publishes ICML 2026 Reproducibility Hackathon results: 1,221 participants used coding agents like Claude Code, Codex and Cursor to reproduce 2,226 papers (34% of the conference's accepted total), with 51% of papers getting at least one claim verified and 23% falsified or contested, and 266 fully verified; conclusion — the most reliable results come from human-in-the-loop, not full autonomy (see [agent-evaluation](/en/topics/agent-evaluation)).
 
 ### [2026-08-12](/en/today/2026-08-12)
 

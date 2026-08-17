@@ -20,6 +20,8 @@ Frontier models keep growing, but most production workloads (classification, emb
 - **Runtime model routing**: rather than training a small model, dynamically split calls between cheap and expensive models at agent runtime — LangChain's NVIDIA Switchyard benchmark routed 93% of Deep Agents eval-suite calls to a 30B model, with only 7% needing a frontier model, cutting cost 74%; whether it's worth it depends on the ratio of judge-model cost to the price gap between the two tiers — the bigger the gap, the more routing pays off.
 - **Extreme-miniaturized specialist models**: not chasing general conversational quality, but specializing in narrow tasks like tool calling/structured extraction, pushed to the size extreme via aggressive quantization (needle: a 14MB single file, ~28MB runtime memory, built for phones/wearables/robots) — an extreme sample on the SLM route's size axis, consistent with the "good enough" efficiency philosophy.
 - **Local training/inference moving from CLI to GUI**: Unsloth Desktop packages previously script-driven local fine-tuning (LLMs and image/video diffusion-model LoRA) into a desktop GUI, with `unsloth start` connecting directly to coding agents like Claude Code/Codex — the usability bar for local efficiency tools is dropping, not just the efficiency numbers themselves (see [coding-agents](/en/topics/coding-agents)).
+- **Edge vision-language models**: Liquid AI's LFM2.5-VL-3B extends the SLM route from text-only into multimodal — UI understanding, screen grounding and multi-image input packed into a 3B-parameter, ~3GB-memory edge model, matching larger 4B-class models on document/OCR and grounding benchmarks, proving "shrink the footprint" and "keep pace with bigger models" aren't mutually exclusive.
+- **Downloads vs. attention diverge**: models under 1B parameters capture 83% of all-time platform downloads, while models above 100B capture just 1% — a download signals something wired into a running production pipeline, while a like reflects momentary excitement, and the two leaderboards barely overlap; local-inference infrastructure (GGUF, etc.) is growing repositories far faster (464%) than core modeling tools themselves (21%) — an acceleration signal for the efficiency route at the infrastructure layer (HuggingFace's "State of Open Models: Summer 2026").
 
 ## Related Technologies
 
@@ -38,9 +40,13 @@ Frontier models keep growing, but most production workloads (classification, emb
 
 ## Timeline
 
+### [2026-08-14](/en/today/2026-08-14)
+
+HuggingFace publishes "State of Open Models: Summer 2026": Chinese labs' monthly frontier parameter ceiling reaches 2.78 trillion (versus under 130B for the US in most months); Qwen-derived models reach 151,448 (2.6x Meta's ecosystem); models under 1B parameters capture 83% of all-time downloads, above 100B just 1%; GGUF local-inference repos grow 464%, Qwen's GGUF variants near 40M monthly downloads; agents become the Hub's primary traffic source for the first time, with Claude Code at 44.4% of July traffic (see [coding-agents](/en/topics/coding-agents)).
+
 ### [2026-08-12](/en/today/2026-08-12)
 
-Unsloth ships a desktop app (beta): local model training and inference in a GUI, `unsloth start` connects directly to Claude Code/Codex; official numbers show 2x faster training and 70% less VRAM (see [coding-agents](/en/topics/coding-agents)). Same day, needle 2 arrives: a 14MB single-file foundation model specializing in tool calling and structured extraction, built for phones/wearables/robots, 5-70x smaller than comparable small models.
+Liquid AI releases LFM2.5-VL-3B: the LFM2.5 series' first vision-language model — a SigLIP2 400M vision encoder plus a 2.6B text backbone packing UI understanding, screen grounding and multi-image input into a 3B-parameter, ~3GB-memory edge model, matching larger 4B-class models on document/OCR and grounding benchmarks. Same day, Unsloth ships a desktop app (beta): local model training and inference in a GUI, `unsloth start` connects directly to Claude Code/Codex; official numbers show 2x faster training and 70% less VRAM (see [coding-agents](/en/topics/coding-agents)). needle 2 also arrives the same day: a 14MB single-file foundation model specializing in tool calling and structured extraction, built for phones/wearables/robots, 5-70x smaller than comparable small models.
 
 ### [2026-08-11](/en/today/2026-08-11)
 
