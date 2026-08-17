@@ -16,6 +16,7 @@ The bottleneck for deploying image/video generation is inference cost and VRAM. 
 ## Related Technologies
 
 - [world-models](/en/topics/world-models) (generative simulation is also generative modeling)
+- [gemini-models](/en/topics/gemini-models) (the Imagen line folded into Gemini's native multimodal capability)
 
 ## Best Practices
 
@@ -26,6 +27,10 @@ The bottleneck for deploying image/video generation is inference cost and VRAM. 
 - [Bringing Nunchaku 4-bit Diffusion Inference to Diffusers (HuggingFace Blog)](https://huggingface.co/blog)
 
 ## Timeline
+
+### [2026-08-17](/en/today/2026-08-17)
+
+Google formally shuts down the Imagen 4 generation endpoints, shifting to Gemini 3.1 Flash Image — another instance of a standalone specialized generation model line folding into a flagship multimodal model (following OpenAI's Atlas folding into ChatGPT/Codex); the `generate_images()` method disappears entirely, not a seamless replacement, requiring callers to rewrite against the new API (see [gemini-models](/en/topics/gemini-models)).
 
 ### [2026-07-23](/en/today/2026-07-23)
 

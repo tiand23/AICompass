@@ -31,6 +31,10 @@ Gemini は Claude / GPT に並ぶ第三の主流選択肢。Flash 帯の「よ�
 
 ## Timeline
 
+### [2026-08-17](/ja/today/2026-08-17)
+
+Google が Gemini API 側の Imagen 4 生成エンドポイント（standard/fast/ultra）を正式終了し、Gemini 3.1 Flash Image への移行を促す；Vertex AI 側は 3 月に既に非推奨化済み。`generate_images()` メソッドは完全に消滅——シームレスな置き換えではなく、呼び出し元は Gemini ネイティブ画像 API に合わせて書き直す必要がある（詳細は [diffusion-models](/ja/topics/diffusion-models)）。
+
 ### [2026-08-13](/ja/today/2026-08-13)
 
 Gemini 3.7 Flash がリリース、3.6 Flash からわずか 3 週間：コーディング/Agent ベンチマークが大幅向上（AutomationBench 17.0%→30.4%、DeepSWE v1.1 49.0%→65.3%、WebDev Arena Elo 1538→1588）、導入価格は 3.6 Flash のローンチ価格の半額（$0.75/$3.75・100 万トークンあたり）；3.5 Pro は未発表。

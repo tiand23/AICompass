@@ -31,6 +31,10 @@ Gemini is the third mainstream choice alongside Claude / GPT. The Flash tier's "
 
 ## Timeline
 
+### [2026-08-17](/en/today/2026-08-17)
+
+Google formally shuts down the Imagen 4 generation endpoints on the Gemini API side (standard/fast/ultra), pointing to Gemini 3.1 Flash Image; already deprecated on Vertex AI in March. The `generate_images()` method disappears entirely — not a seamless replacement; callers must rewrite against the Gemini-native image API (see [diffusion-models](/en/topics/diffusion-models)).
+
 ### [2026-08-13](/en/today/2026-08-13)
 
 Gemini 3.7 Flash released, just 3 weeks after 3.6 Flash: big jumps on coding/agent benchmarks (AutomationBench 17.0%→30.4%, DeepSWE v1.1 49.0%→65.3%, WebDev Arena Elo 1538→1588), introductory pricing halved from 3.6 Flash's launch price ($0.75/$3.75 per million tokens); no 3.5 Pro released.

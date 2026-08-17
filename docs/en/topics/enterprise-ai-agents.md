@@ -16,6 +16,7 @@ This is the main battleground for generative AI in the enterprise. As model capa
 - **The "own your intelligence" debate**: outsource intelligence to a platform or keep it in-house — the core divide in enterprise AI architecture.
 - **The migration of an "HR management" mental model**: once agent count grows, teams start managing agents the way they manage employees — ticket assignment, org structure (roles/reporting lines), budget enforcement, governance approval workflows, audit logs (the Paperclip case). A productized attempt to fold Managed Agents' budget/permission capabilities and agent workflow orchestration into a single unified management plane.
 - **Three speeds of cost governance**: runtime optimization (route each request to a right-sized model in real time), workflow optimization (test and improve agent efficiency over days/weeks), continuous governance (spending caps that don't get relaxed on demand) — three different paces that need to run in parallel, not as an either-or choice; a way to organize previously scattered cost-reduction tactics (routing, caching, evaluation-driven iteration, hard spending caps) into one framework (proposed by Azure). A companion self-check: can you see cost by model/agent/workflow? Are requests over-provisioned to unnecessarily capable models? Is there a mechanism for agent efficiency to keep improving? Can you enforce spending limits during usage spikes?
+- **Localized execution as a compliance middle ground**: Claude Code's self-hosted runners keep source checkouts and build artifacts inside a customer's network while prompts/conversation content still go to the cloud for inference — a more finely-grained third option between "fully managed" and "fully self-built," mapping directly onto a common enterprise compliance line: "source code can't leave the intranet, content sent to a vendor for inference is acceptable" (see [coding-agents](/en/topics/coding-agents)).
 
 ## Related Technologies
 
@@ -46,6 +47,10 @@ Paperclip arrives (76.2k stars total): "managing an agent team" as a standalone 
 ### [2026-08-07](/en/today/2026-08-07)
 
 Claude Managed Agents ships four ops features at once: hard session-budget caps, Advisor models (consult a stronger model mid-turn for strategic guidance), `inference_geo` data-residency control, and GitHub-repo-loaded skills. Same day, LangSmith launches Managed Deep Agents public beta — hosted-runtime competition intensifies further (see [cloud-agent-platforms](/en/topics/cloud-agent-platforms)).
+
+### [2026-08-06](/en/today/2026-08-06) (backfilled)
+
+Claude Code ships self-hosted environments in public beta: Team/Enterprise organizations can move session execution inside their own network, next to internal services and security controls, while inference requests still go to Anthropic — a concrete productization of the enterprise compliance line "source code stays on the intranet, content can go out for inference" (see [coding-agents](/en/topics/coding-agents)).
 
 ### [2026-08-05](/en/today/2026-08-05)
 

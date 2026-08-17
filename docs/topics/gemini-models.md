@@ -31,6 +31,10 @@ Gemini 是 Claude / GPT 之外的第三个主流选型，Flash 档"更便宜 + �
 
 ## Timeline
 
+### [2026-08-17](/today/2026-08-17)
+
+Google 正式关停 Gemini API 侧的 Imagen 4 三档生成端点（standard/fast/ultra），引导迁移至 Gemini 3.1 Flash Image；Vertex AI 侧已于 3 月弃用。`generate_images()` 方法整体消失，非无缝替换，需按 Gemini 原生图像 API 重写调用（详见 [diffusion-models](/topics/diffusion-models)）。
+
 ### [2026-08-13](/today/2026-08-13)
 
 Gemini 3.7 Flash 发布，距 3.6 Flash 仅 3 周：编码/Agent 基准大幅跳升（AutomationBench 17.0%→30.4%、DeepSWE v1.1 49.0%→65.3%、WebDev Arena Elo 1538→1588），引入价较 3.6 Flash 发布价再降一半（$0.75/$3.75 每百万 token）；未发 3.5 Pro。

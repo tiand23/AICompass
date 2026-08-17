@@ -55,6 +55,8 @@ Prime Intellect が prime-agent を公開（累計 6.5k スター）：RLM（再
 
 LangSmith が Managed Deep Agents 公開ベータをローンチ：永続実行・サンドボックス・記憶・Slack/GitHub 接続・OIDC 認証・Harbor 評価・全体トレーシングを一括パッケージ化したホスト型 Deep Agents ランタイム。`mda dev`/`mda deploy` で開発からデプロイまでを閉じる；Claude、Gemini に続き「深いエージェントのホスト化」を製品ラインとして打ち出した 3 社目（詳細は [cloud-agent-platforms](/ja/topics/cloud-agent-platforms)）。
 
+Claude Code v2.1.224（補漏）：クロスセッション通信を追加、独立したセッションが `ListAgents`/`SendMessage` でプレーンテキストのメッセージを交換して協調——マルチ Agent 協調能力が、外部のオーケストレーションフレームワークや外部状態レイヤーに全面的に頼るのではなく、コーディング Agent 製品自体に組み込まれる。「外部状態カーネル」アプローチ（loopx 系）と並ぶもう 1 つの実装経路（詳細は [coding-agents](/ja/topics/coding-agents)）。
+
 ### [2026-08-06](/ja/today/2026-08-06)
 
 LangChain が Deep Agents / LangChain / LangGraph の位置づけを整理する記事を公開：Deep Agents はファイルシステムバックエンド・サブエージェント・skills・記憶管理を内蔵した「主張を持つ」harness——複雑で長時間のタスクのデフォルトの起点。3 者は組み合わせ可能で「能動性 vs 決定性」スペクトラム上の 3 つの目盛り（詳細は [agent-frameworks](/ja/topics/agent-frameworks)）。

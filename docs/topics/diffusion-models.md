@@ -16,6 +16,7 @@
 ## 相关技术
 
 - [world-models](/topics/world-models)（生成式仿真同属生成建模）
+- [gemini-models](/topics/gemini-models)（Imagen 系列并入 Gemini 原生多模态能力）
 
 ## 最佳实践
 
@@ -26,6 +27,10 @@
 - [Bringing Nunchaku 4-bit Diffusion Inference to Diffusers（HuggingFace Blog）](https://huggingface.co/blog)
 
 ## Timeline
+
+### [2026-08-17](/today/2026-08-17)
+
+Google 正式关停 Imagen 4 三档生成端点，转向 Gemini 3.1 Flash Image——独立专用生成模型线并入通用多模态旗舰的又一例（继 OpenAI Atlas 并入 ChatGPT/Codex 之后），`generate_images()` 方法整体消失，非无缝替换，需按新 API 重写调用（详见 [gemini-models](/topics/gemini-models)）。
 
 ### [2026-07-23](/today/2026-07-23)
 

@@ -12,13 +12,13 @@
 |---|---|---|---|---|
 | [claude-models](/ja/topics/claude-models) | Anthropic Claude モデルライン | エージェント/コーディング用途の選定と移行 | 🔥 | 2026-08-11 |
 | [openai-models](/ja/topics/openai-models) | OpenAI GPT モデルラインと API プラットフォーム | 選定、価格変動、廃止リスク | 🔥 | 2026-08-10 |
-| [gemini-models](/ja/topics/gemini-models) | Google Gemini モデルライン | コスト重視ワークロードの高コスパ選定 | 🔥 | 2026-08-13 |
+| [gemini-models](/ja/topics/gemini-models) | Google Gemini モデルライン | コスト重視ワークロードの高コスパ選定 | 🔥 | 2026-08-17 |
 
 ### マルチモーダル生成
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [diffusion-models](/ja/topics/diffusion-models) | 拡散モデルと推論最適化 | 画像/動画生成のコストと VRAM の壁 | 📈 | 2026-07-23 |
+| [diffusion-models](/ja/topics/diffusion-models) | 拡散モデルと推論最適化 | 画像/動画生成のコストと VRAM の壁 | 🔥 | 2026-08-17 |
 | [world-models](/ja/topics/world-models) | ワールドモデル / 生成シミュレーション | ロボット学習データの高コスト・高リスク | 📈 | 2026-07-27 |
 
 ### 効率化と小型化（SLM ・ 蒸留 ・ 量子化）

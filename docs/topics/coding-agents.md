@@ -20,6 +20,8 @@
 - **代码图作为上下文优化层**：与其让 Agent 读整棵文件树，不如先建一张 Tree-sitter 代码图（函数/类/调用关系），Agent 经 MCP 按影响范围查图——是编码 Agent 品类里"上下文管理"这条核心问题的具体解法之一（详见 [ai-code-review](/topics/ai-code-review)）。
 - **RLM 路线**：把上下文当变量、工具当函数调用，在持久化编程环境（如 IPython REPL）里运行 Agent，而非常规对话式工具调用循环——prime-agent 代表的这条路线是"harness 形态"的另一种结构性选择，不只是全家桶 vs 极简配置的光谱，而是完全不同的执行范式。
 - **本地微调模型直连编码 Agent**：Unsloth Desktop 的 `unsloth start` 命令把本地训练/微调出的模型直接接给 Claude Code、Codex 使用——"本地模型生态"与"编码 Agent 生态"开始打通成一条流水线，而不是两条平行赛道（详见 [model-efficiency](/topics/model-efficiency)）。
+- **执行环境本地化 vs 完全本地化**：Claude Code 自托管 runner 只把"执行"放进客户网络（源码检出、构建产物留在本地），推理请求仍需发给云端模型——是比"全托管"和"完全自建"更细粒度的第三条路，精确对应"源码不能出内网、但可接受 prompt 经供应商推理"这条常见合规红线。
+- **会话间原生协调**：Claude Code 支持独立会话通过 `ListAgents`/`SendMessage` 互相发现、交换纯文本消息（不含历史与文件），把单会话工具变成小型分布式系统——多 Agent 协调能力开始做进编码 Agent 产品自身，而不必全靠外部编排框架或外部状态层。
 - **Agent 正成为软件生态的新访问主体**：HuggingFace 数据显示 2026 年 Agent 首次超过人类成为 Hub 主要流量来源，7 月 Claude Code 单一工具占比达 44.4%（但波动剧烈，尚无稳定霸主），另有近 25% 流量来自未注册身份的 Agent——编码 Agent 的影响力已经从"开发者用的工具"变成"平台流量的主要来源之一"，度量生态热度需要把 Agent 流量本身当作独立变量看待（详见 [model-efficiency](/topics/model-efficiency)）。
 - **大规模真实任务复现作为能力试金石**：ICML 2026 可复现性黑客松让编码 Agent 独立复现 2,226 篇论文的核心主张，51% 的论文至少一条主张验证通过、23% 被证伪或存疑——这是编码 Agent"读文档→写代码→跑实验→下结论"这条完整能力链条迄今最大规模的真实世界压力测试，也印证了"人在回路"仍是当前阶段获得可靠结果的必要条件，而非可选项（详见 [agent-evaluation](/topics/agent-evaluation)）。
 
@@ -65,6 +67,12 @@ Prime Intellect 发布 prime-agent（累计 6.5k star）：RLM 思路——上�
 ### [2026-08-07](/today/2026-08-07)
 
 code-review-graph 登上 Trending（累计 2.9 万 star）：Tree-sitter 代码图 + MCP 查询接口，把"读整棵文件树"换成"按影响范围查结构化图"，实测节省约 65 倍 token——上下文管理这一编码 Agent 核心问题的又一具体解法（详见 [ai-code-review](/topics/ai-code-review)）。
+
+Claude Code v2.1.224（补漏）：新增跨会话通信——独立会话通过 `ListAgents`/`SendMessage` 互相发现并交换纯文本消息（不含对话历史或文件），同机器走 Unix domain socket、跨机器经 Remote Control 路由；次日 2.1.225 放宽为可按名字主动发起对话。仅 macOS/Linux。与前一天的自托管 runner 互补：一个解决执行放在哪，一个解决多会话怎么协调（详见 [deep-agents](/topics/deep-agents)）。
+
+### [2026-08-06](/today/2026-08-06)（补漏）
+
+Claude Code 上线自托管环境公测：Team/Enterprise 组织可把会话跑在自己网络内，长驻 runner 进程接单派生独立 Claude Code 进程，支持固定/按需自动扩缩容两种模式；源码检出、构建产物留在客户基础设施，但对话内容仍需传给 Anthropic 推理——执行本地化而非完全本地化。默认关闭，需自建 runner 镜像与编排（详见 [enterprise-ai-agents](/topics/enterprise-ai-agents)）。
 
 ### [2026-08-05](/today/2026-08-05)
 

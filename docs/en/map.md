@@ -12,13 +12,13 @@
 |---|---|---|---|---|
 | [claude-models](/en/topics/claude-models) | Anthropic's Claude model line | Model selection and migration for agent/coding workloads | 🔥 | 2026-08-11 |
 | [openai-models](/en/topics/openai-models) | OpenAI's GPT model line & API platform | Selection, price volatility and deprecation risk | 🔥 | 2026-08-10 |
-| [gemini-models](/en/topics/gemini-models) | Google's Gemini model line | Cost-effective selection for price-sensitive workloads | 🔥 | 2026-08-13 |
+| [gemini-models](/en/topics/gemini-models) | Google's Gemini model line | Cost-effective selection for price-sensitive workloads | 🔥 | 2026-08-17 |
 
 ### Multimodal Generation
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [diffusion-models](/en/topics/diffusion-models) | Diffusion models & inference optimization | Cost and VRAM barriers of image/video generation | 📈 | 2026-07-23 |
+| [diffusion-models](/en/topics/diffusion-models) | Diffusion models & inference optimization | Cost and VRAM barriers of image/video generation | 🔥 | 2026-08-17 |
 | [world-models](/en/topics/world-models) | World models / generative simulation | Robot training data is expensive and dangerous | 📈 | 2026-07-27 |
 
 ### Efficiency & Miniaturization (SLM ・ Distillation ・ Quantization)

@@ -55,6 +55,8 @@ Prime Intellect 发布 prime-agent（累计 6.5k star）：RLM（递归语言模
 
 LangSmith 发布 Managed Deep Agents 公测：托管化的 Deep Agents 运行时，持久化执行/沙箱/记忆/Slack·GitHub 接入/OIDC 身份/Harbor 评估/全链路可观测打包交付，`mda dev`/`mda deploy` 开发部署闭环；继 Claude、Gemini 之后第三家把"深度 Agent 托管化"推成产品线（详见 [cloud-agent-platforms](/topics/cloud-agent-platforms)）。
 
+Claude Code v2.1.224（补漏）：新增跨会话通信，独立会话经 `ListAgents`/`SendMessage` 互发纯文本消息协调——多 Agent 协调能力做进编码 Agent 产品本身，而非全靠外部编排框架或外部状态层，是"外部状态内核"（loopx 一类）之外的另一种协调实现路径（详见 [coding-agents](/topics/coding-agents)）。
+
 ### [2026-08-06](/today/2026-08-06)
 
 LangChain 发文厘清 Deep Agents / LangChain / LangGraph 三者定位：Deep Agents 是内置文件系统/子 Agent/skills/记忆管理的"有主见"harness，复杂长任务的默认起点；三者同栈可组合，是"能动性 vs 确定性"光谱上的三个刻度（详见 [agent-frameworks](/topics/agent-frameworks)）。

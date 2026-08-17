@@ -55,6 +55,8 @@ Prime Intellect releases prime-agent (6.5k stars total): the RLM (Recursive Lang
 
 LangSmith launches Managed Deep Agents public beta: a hosted Deep Agents runtime bundling durable execution, sandboxes, memory, Slack/GitHub channels, OIDC identity, Harbor evals and full-chain observability, with `mda dev`/`mda deploy` closing the develop-to-deploy loop; the third vendor, after Claude and Gemini, to launch "hosted deep agents" as a product line (see [cloud-agent-platforms](/en/topics/cloud-agent-platforms)).
 
+Claude Code v2.1.224 (backfilled): adds cross-session communication, with independent sessions exchanging plain-text messages via `ListAgents`/`SendMessage` to coordinate — multi-agent coordination capability gets built into the coding agent product itself, rather than relying entirely on an external orchestration framework or external state layer, another implementation path alongside the "external state kernel" approach (loopx-style) (see [coding-agents](/en/topics/coding-agents)).
+
 ### [2026-08-06](/en/today/2026-08-06)
 
 LangChain publishes a post clarifying Deep Agents / LangChain / LangGraph positioning: Deep Agents is an "opinionated" harness with built-in filesystem backends, subagents, skills and memory management — the default starting point for complex long-running tasks; all three are composable, three points on the "agency vs determinism" spectrum (see [agent-frameworks](/en/topics/agent-frameworks)).
