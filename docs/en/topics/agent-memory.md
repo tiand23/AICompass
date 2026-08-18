@@ -16,6 +16,7 @@ However large the context window, it is only "working memory" — an agent servi
 - **Permissions and scope**: team-level memory needs RBAC (private/team/restricted) and per-agent binding (loadouts) rather than global injection — memory overreach is a new security surface.
 - **Relation to RAG**: heavily overlapping stacks (vector retrieval, structured storage); the difference is data source and lifecycle — RAG retrieves a static knowledge base, memory grows continuously from interactions.
 - **Delivery strategy for experience memory**: when distilling "lessons" from execution trajectories, don't compress into summaries (that loses information) — keep itemized detail tracked by support count; but delivery at retrieval time should be selective, not a full dump — ALTK-Evolve's "small high-support core + task-relevant picks" cuts 60-85% of tokens versus ACE's "inject the full playbook every step," with accuracy holding or improving (especially on weaker models/harder tasks, where an overlong context hurts judgment).
+- **Cross-vendor portability of memory**: prior memory discussion mostly focused on "how does the same agent/same vendor remember across sessions" — ai-memory extends the scope to "can memory travel when you switch to a different vendor's agent": rather than storing raw conversation logs, it sanitizes lifecycle events and compiles them into a searchable Markdown wiki, implementing separate hook adapters for different agents (Claude Code, Codex, Cursor, etc.) that all write into the same memory service, which is what makes cross-vendor handoff possible; it also ships a "zero-LLM mode" that decouples having a memory system from being able to afford a large model.
 
 ## Related Technologies
 
@@ -36,6 +37,10 @@ However large the context window, it is only "working memory" — an agent servi
 - [Mem0](https://github.com/mem0ai/mem0)
 
 ## Timeline
+
+### [2026-08-18](/en/today/2026-08-18)
+
+ai-memory open-sources: a long-term memory layer for coding agents, built around seamless cross-vendor handoff (quit Claude Code mid-task, switch to Codex in the same directory, continue without re-explaining the architecture); sanitizes session lifecycle events into a Markdown wiki, with separate hook adapters for Claude Code/Codex/Cursor and others sharing the same memory service; ships a zero-LLM mode (see [coding-agents](/en/topics/coding-agents)).
 
 ### [2026-08-11](/en/today/2026-08-11)
 

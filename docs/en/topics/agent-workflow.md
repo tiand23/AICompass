@@ -14,6 +14,7 @@ Fully autonomous agents remain the minority in 2026 enterprise reality — the m
 - **Human-in-the-loop nodes**: approval gates before destructive actions; the design goal is making review low-friction, or it gets bypassed.
 - **Durable execution**: long processes must suspend/resume across hours or days (waiting on approvals, external systems) — state belongs on disk, not in memory.
 - **Rollbackability**: the practical reason graph architectures won — every node is a natural audit and rollback point.
+- **Durable workflows aren't an agent-only need**: LlamaIndex's rebuild of its document-parsing pipeline scheduling on Temporal proves that "a long task can automatically resume from a checkpoint after a failure rather than restarting from scratch" is a general requirement for any large-scale asynchronous processing system, agent or not; modeling "resource coordination" itself as a durable, observable workflow entity (e.g. a semaphore Workflow) is more reliable than scattering locks and retry counters through application code (see [document-parsing](/en/topics/document-parsing)).
 
 ## Related Technologies
 
@@ -32,6 +33,10 @@ Fully autonomous agents remain the minority in 2026 enterprise reality — the m
 - [Agentic AI Frameworks 2026: Production Comparison](https://uvik.net/blog/agentic-ai-frameworks/)
 
 ## Timeline
+
+### [2026-08-17](/en/today/2026-08-17)
+
+LlamaIndex shares its practice of rebuilding document-processing scheduling on Temporal durable workflows: a Workflow+Activity model, a semaphore Workflow for concurrency control, failed jobs automatically resuming from a checkpoint — durable execution landing in a concrete, non-agent-centric scenario (large-scale document processing) (see [document-parsing](/en/topics/document-parsing)).
 
 ### 2026-07-28
 

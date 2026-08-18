@@ -24,6 +24,7 @@ Terminal coding agents are the main arena of AI coding tool competition, and the
 - **Native cross-session coordination**: Claude Code supports independent sessions discovering each other and exchanging plain-text messages (no history, no files) via `ListAgents`/`SendMessage`, turning a single-session tool into a small distributed system — multi-agent coordination capability is starting to get built into the coding agent product itself, rather than relying entirely on an external orchestration framework or external state layer.
 - **Agents becoming a new primary access identity in the software ecosystem**: HuggingFace data shows agents overtook humans as the Hub's primary traffic source for the first time in 2026, with Claude Code alone accounting for 44.4% of July traffic (though volatile, with no stable incumbent) and nearly 25% of traffic coming from unregistered agent identities — coding agents' influence has shifted from "a tool developers use" to "one of a platform's primary traffic sources," and measuring ecosystem heat now requires treating agent traffic as its own variable (see [model-efficiency](/en/topics/model-efficiency)).
 - **Large-scale real-task reproduction as a capability litmus test**: the ICML 2026 Reproducibility Hackathon had coding agents independently reproduce the core claims of 2,226 papers, with 51% of papers getting at least one claim verified and 23% falsified or contested — the largest real-world stress test to date of the coding agent's full "read the doc → write the code → run the experiment → draw a conclusion" capability chain, and confirmation that human-in-the-loop remains a necessary condition, not an optional extra, for reliable results at the current stage (see [agent-evaluation](/en/topics/agent-evaluation)).
+- **Cross-vendor memory handoff**: with using multiple coding-agent tools in parallel now the norm (holaOS reflected the same trend earlier), memory itself shouldn't be locked into a single vendor's harness — ai-memory implements separate hook adapters for different agents but shares one memory service, enabling seamless handoff ("quit Claude Code, switch to Codex, continue without re-explaining the architecture") (see [agent-memory](/en/topics/agent-memory)).
 
 ## Related Technologies
 
@@ -43,6 +44,10 @@ Terminal coding agents are the main arena of AI coding tool competition, and the
 - [esengine/DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix)
 
 ## Timeline
+
+### [2026-08-18](/en/today/2026-08-18)
+
+ai-memory open-sources: a long-term memory layer for coding agents supporting seamless cross-vendor handoff (quit Claude Code mid-task, switch to Codex in the same directory, continue without re-explaining the architecture); separate hook adapters per agent share one memory service, plus a zero-LLM mode (see [agent-memory](/en/topics/agent-memory)).
 
 ### [2026-08-14](/en/today/2026-08-14)
 

@@ -16,6 +16,7 @@ Agent 记忆：让 Agent 跨会话、跨任务保留并复用信息的基础设�
 - **权限与作用域**：团队级记忆需要 RBAC（private/team/restricted）与按 Agent 绑定（loadout）而非全局注入——记忆越权是新的安全面。
 - **与 RAG 的关系**：技术栈高度重叠（向量检索、结构化存储），区别在数据来源与生命周期——RAG 检索静态知识库，记忆持续从交互中生长。
 - **经验记忆的投喂策略**：从执行轨迹提炼"经验教训"时，别压缩总结（会丢信息），按支持次数逐条保留明细；但投喂环节要做选择性检索而非全量注入——ALTK-Evolve 用"核心准则打底+按任务挑选相关条目"比 ACE 的"每步全量注入 playbook"节省 60-85% token，且准确率不降反升（尤其在弱模型/难任务上，过长上下文反而拖累判断）。
+- **记忆的跨厂商可移植性**：此前记忆讨论大多聚焦"同一 Agent/同一厂商内怎么记得住"——ai-memory 把范围扩大到"换一个厂商的 Agent 继续干活，记忆能不能带得走"：不存原始对话日志而是把生命周期事件脱敏提炼成可检索的 Markdown wiki，为不同 Agent（Claude Code、Codex、Cursor 等）分别适配 hook schema，但都写入同一个记忆服务，跨供应商交接由此实现；提供不依赖任何 LLM 调用的"零 LLM 模式"，把记忆系统本身与"用不用得起大模型"解耦。
 
 ## 相关技术
 
@@ -36,6 +37,10 @@ Agent 记忆：让 Agent 跨会话、跨任务保留并复用信息的基础设�
 - [Mem0](https://github.com/mem0ai/mem0)
 
 ## Timeline
+
+### [2026-08-18](/today/2026-08-18)
+
+ai-memory 开源：编码 Agent 长期记忆层，核心场景是跨厂商无缝交接（Claude Code 中途退出，同目录换 Codex 继续，不必重讲架构）；会话生命周期事件脱敏后编译成 Markdown wiki，为 Claude Code/Codex/Cursor 等分别适配 hook 但共用同一记忆服务；提供零 LLM 模式（详见 [coding-agents](/topics/coding-agents)）。
 
 ### [2026-08-11](/today/2026-08-11)
 

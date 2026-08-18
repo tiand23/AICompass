@@ -17,6 +17,7 @@ Document parsing and structuring: turning PDFs, scans, tables and charts into LL
 - **Spatial grounding**: the structural gap between specialized parsers and general frontier models — frontier models score ~8% on ParseBench visual grounding versus 55-80% for specialized engines; agent evidence chains need "which page, which location", which anchors the "OCR won't be commoditized" argument.
 - **"Fluent" errors are more dangerous than "garbled" errors**: traditional OCR fails into visibly broken garbage; LLM OCR fails into fluent, plausible-looking but incorrect text — when visual evidence is ambiguous, models favor "most probable as text" over "best supported by the image," and high-entropy strings like account/part numbers are especially vulnerable since the language prior is weakest exactly where it's needed most.
 - **Page-averaged metrics mask critical-field errors**: character/word error rate average across a page, so a page reporting 99% accuracy can still be worthless if the 1% wrong is a total or an identifier — acceptance testing should measure accuracy per field type (especially high-entropy fields), not a single page-average score.
+- **Durable workflows as the scheduling backbone for large-scale parsing pipelines**: document processing is naturally long-running, multi-stage, and failure-prone (a single document may need OCR + a vision model + multiple passes) — using a durable workflow engine like Temporal to model "resource coordination" itself as an observable workflow entity (e.g. a semaphore Workflow for concurrency control) is more reliable than hand-rolled locks/retry counters, and lets failed jobs resume from a checkpoint instead of restarting from scratch (see [agent-workflow](/en/topics/agent-workflow)).
 
 ## Related Technologies
 
@@ -34,6 +35,10 @@ Document parsing and structuring: turning PDFs, scans, tables and charts into LL
 - [Top document parsing APIs for 2026 (LlamaIndex)](https://www.llamaindex.ai/insights/top-document-parsing-apis)
 
 ## Timeline
+
+### [2026-08-17](/en/today/2026-08-17)
+
+LlamaIndex details rebuilding its document-processing scheduling on Temporal: migrating from a homegrown RabbitMQ system lacking native durability/fairness primitives to a Workflow+Activity model, using a semaphore Workflow for concurrency control and "durable function execution" to eliminate silent job death from machine OOM events; now handles 130+ file types and processes tens of millions of pages daily (see [agent-workflow](/en/topics/agent-workflow)).
 
 ### [2026-08-12](/en/today/2026-08-12)
 

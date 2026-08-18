@@ -24,6 +24,7 @@ Agentic Safety（Agent 安全）关注具备自主行动能力的 AI 系统带�
 - [mcp](/topics/mcp)（MCP server 是新攻击面，ADR-Bench 首次将其系统化测试）
 - 推理前策略网关（Claude Inference Hooks：在请求到模型之前做 allow/deny 裁决，而非事后审计）
 - 分层能力准入（OpenAI Daybreak Blue/Red：通用模型宽松准入、专精攻防模型严格审查，能力越强护栏越紧）
+- 结构化网络安全知识库（Anthropic-Cybersecurity-Skills：817 条从业者工作流映射到 MITRE ATT&CK/ATLAS/D3FEND、NIST CSF/AI RMF 等六大框架，详见 [agent-skills](/topics/agent-skills)）
 
 ## 最佳实践
 
@@ -38,6 +39,10 @@ Agentic Safety（Agent 安全）关注具备自主行动能力的 AI 系统带�
 - [ExploitGym 事件技术分析（Orca Security）](https://orca.security/resources/blog/openai-agent-sandbox-escape-hugging-face-breach/)
 
 ## Timeline
+
+### [2026-08-18](/today/2026-08-18)
+
+社区发布 Anthropic-Cybersecurity-Skills：817 条网络安全 Skill，系统映射到 MITRE ATT&CK/ATLAS/D3FEND、NIST CSF/AI RMF、MITRE F3 等六大行业框架，其中 93 条专门针对 AI/ML 对抗威胁与 Agentic AI 攻击向量——网络安全 Agent 化从模型层（Daybreak）、工具层继续向知识层铺开（详见 [agent-skills](/topics/agent-skills)）。
 
 ### [2026-08-10](/today/2026-08-10)
 

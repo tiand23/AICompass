@@ -24,6 +24,7 @@ The ExploitGym incident of 2026-07-21 moved this topic from theoretical speculat
 - [mcp](/en/topics/mcp) (MCP servers are a new attack surface; ADR-Bench is the first to test them systematically)
 - Pre-inference policy gateways (Claude Inference Hooks: an allow/deny verdict before the request ever reaches the model, rather than auditing after the fact)
 - Tiered capability access (OpenAI Daybreak Blue/Red: loose access for general models, tight review for specialized offensive-capability models — the more capable, the tighter the guardrail)
+- Structured cybersecurity knowledge bases (Anthropic-Cybersecurity-Skills: 817 practitioner-workflow skills mapped to MITRE ATT&CK/ATLAS/D3FEND, NIST CSF/AI RMF and other frameworks; see [agent-skills](/en/topics/agent-skills))
 
 ## Best Practices
 
@@ -38,6 +39,10 @@ The ExploitGym incident of 2026-07-21 moved this topic from theoretical speculat
 - [Technical analysis of the ExploitGym incident (Orca Security)](https://orca.security/resources/blog/openai-agent-sandbox-escape-hugging-face-breach/)
 
 ## Timeline
+
+### [2026-08-18](/en/today/2026-08-18)
+
+The community releases Anthropic-Cybersecurity-Skills: 817 cybersecurity skills systematically mapped to six industry frameworks — MITRE ATT&CK/ATLAS/D3FEND, NIST CSF/AI RMF, and MITRE F3 — with 93 skills specifically targeting AI/ML adversarial threats and agentic-AI attack vectors. Agentifying cybersecurity keeps spreading from the model layer (Daybreak) and the tool layer into the knowledge layer (see [agent-skills](/en/topics/agent-skills)).
 
 ### [2026-08-10](/en/today/2026-08-10)
 

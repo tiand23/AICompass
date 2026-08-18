@@ -35,6 +35,7 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 | google/skills | 新登場（2026-08-08 Trending 入り、累計 1.62 万スター、Google 公式） | GKE/BigQuery/Gemini API など Google 全製品ラインをカバーする公式 skill 集 |
 | agency-agents | 新登場（2026-08-09 Trending 入り、累計約 14 万スター） | 230+ の分野横断エキスパートペルソナによるエージェントチームテンプレート、8+ プラットフォーム向け変換スクリプト |
 | anthropics/skills | 新登場（2026-08-12 Trending 入り、累計 16.8 万スター、Anthropic 公式） | 標準策定者による公式参照実装：仕様 + サンプル skill + テンプレート。Claude のネイティブ文書処理能力の背後にあるのと同じ実装 |
+| Anthropic-Cybersecurity-Skills | 新登場（2026-08-18 Trending 入り、累計 2.85 万スター） | 817 件のサイバーセキュリティ実務者 skill、MITRE ATT&CK/ATLAS/D3FEND、NIST CSF/AI RMF、MITRE F3 の六大フレームワークにマッピング |
 
 > このランキングは skill 系リポジトリが GitHub Trending に登場した際に `/update` が自動更新する。
 
@@ -55,6 +56,10 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 - [Claude Code リポジトリのスターランキング](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-18](/ja/today/2026-08-18)
+
+Anthropic-Cybersecurity-Skills が登場（累計 2.85 万スター）：29 のセキュリティ領域にわたる実際の実務者ワークフロー由来の 817 件の skill を、MITRE ATT&CK v19.1、NIST CSF 2.0、MITRE ATLAS、MITRE D3FEND、NIST AI RMF、MITRE F3 の六大業界フレームワークに体系的にマッピング；「frontmatter の軽量スキャン（1 件約 30 token）+ 一致時のみ完全な内容をロード」という段階的開示で token コストを抑制、Claude Code など 20+ プラットフォームに対応（詳細は [agentic-safety](/ja/topics/agentic-safety)）。
 
 ### [2026-08-12](/ja/today/2026-08-12)
 

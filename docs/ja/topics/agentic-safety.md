@@ -24,6 +24,7 @@ Agentic Safety（エージェント安全性）は、自律的に行動できる
 - [mcp](/ja/topics/mcp)（MCP サーバーは新しい攻撃面。ADR-Bench が初めて体系的にテスト）
 - 推論前ポリシーゲートウェイ（Claude Inference Hooks：リクエストがモデルに届く前に allow/deny を裁定。事後監査ではない）
 - 能力別の段階的アクセス制御（OpenAI Daybreak Blue/Red：汎用モデルは緩やかなアクセス、専門的な攻撃能力を持つモデルは厳格な審査——能力が高いほど護りを締める）
+- 構造化されたサイバーセキュリティ知識ベース（Anthropic-Cybersecurity-Skills：817 件の実務者ワークフロー skill を MITRE ATT&CK/ATLAS/D3FEND、NIST CSF/AI RMF など六大フレームワークにマッピング、詳細は [agent-skills](/ja/topics/agent-skills)）
 
 ## ベストプラクティス
 
@@ -38,6 +39,10 @@ Agentic Safety（エージェント安全性）は、自律的に行動できる
 - [ExploitGym インシデントの技術分析（Orca Security）](https://orca.security/resources/blog/openai-agent-sandbox-escape-hugging-face-breach/)
 
 ## Timeline
+
+### [2026-08-18](/ja/today/2026-08-18)
+
+コミュニティが Anthropic-Cybersecurity-Skills を公開：817 件のサイバーセキュリティ skill を MITRE ATT&CK/ATLAS/D3FEND、NIST CSF/AI RMF、MITRE F3 の六大業界フレームワークに体系的にマッピング、うち 93 件は AI/ML への敵対的脅威と Agentic AI 攻撃ベクトルに特化——サイバーセキュリティの Agent 化がモデル層（Daybreak）・ツール層に続き知識層へも拡大（詳細は [agent-skills](/ja/topics/agent-skills)）。
 
 ### [2026-08-10](/ja/today/2026-08-10)
 

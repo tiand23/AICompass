@@ -35,6 +35,7 @@ High-star representative repos at topic creation (2026-07):
 | google/skills | New (hit Trending 2026-08-08, 16.2k stars total, official Google) | Official skill collection spanning GKE/BigQuery/Gemini API and Google's whole product line |
 | agency-agents | New (hit Trending 2026-08-09, ~140k stars total) | 230+ cross-domain expert-persona agent team template, with conversion scripts for 8+ platforms |
 | anthropics/skills | New (hit Trending 2026-08-12, 168k stars total, official Anthropic) | The standards vendor's official reference implementation: spec + example skills + template; the same implementation behind Claude's native document capabilities |
+| Anthropic-Cybersecurity-Skills | New (hit Trending 2026-08-18, 28.5k stars total) | 817 cybersecurity practitioner skills mapped to MITRE ATT&CK/ATLAS/D3FEND, NIST CSF/AI RMF, and MITRE F3 |
 
 > This ranking is refreshed by `/update` whenever skill-related repos hit GitHub Trending.
 
@@ -55,6 +56,10 @@ High-star representative repos at topic creation (2026-07):
 - [Claude Code repos star leaderboard](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-18](/en/today/2026-08-18)
+
+Anthropic-Cybersecurity-Skills arrives (28.5k stars total): 817 skills drawn from real practitioner workflows across 29 security domains, systematically mapped to six industry frameworks — MITRE ATT&CK v19.1, NIST CSF 2.0, MITRE ATLAS, MITRE D3FEND, NIST AI RMF, and MITRE F3; uses progressive disclosure ("lightweight frontmatter scan, ~30 tokens per skill, load full content only on a match") to control token cost, and is compatible with Claude Code and 20+ platforms (see [agentic-safety](/en/topics/agentic-safety)).
 
 ### [2026-08-12](/en/today/2026-08-12)
 

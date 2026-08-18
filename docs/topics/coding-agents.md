@@ -24,6 +24,7 @@
 - **会话间原生协调**：Claude Code 支持独立会话通过 `ListAgents`/`SendMessage` 互相发现、交换纯文本消息（不含历史与文件），把单会话工具变成小型分布式系统——多 Agent 协调能力开始做进编码 Agent 产品自身，而不必全靠外部编排框架或外部状态层。
 - **Agent 正成为软件生态的新访问主体**：HuggingFace 数据显示 2026 年 Agent 首次超过人类成为 Hub 主要流量来源，7 月 Claude Code 单一工具占比达 44.4%（但波动剧烈，尚无稳定霸主），另有近 25% 流量来自未注册身份的 Agent——编码 Agent 的影响力已经从"开发者用的工具"变成"平台流量的主要来源之一"，度量生态热度需要把 Agent 流量本身当作独立变量看待（详见 [model-efficiency](/topics/model-efficiency)）。
 - **大规模真实任务复现作为能力试金石**：ICML 2026 可复现性黑客松让编码 Agent 独立复现 2,226 篇论文的核心主张，51% 的论文至少一条主张验证通过、23% 被证伪或存疑——这是编码 Agent"读文档→写代码→跑实验→下结论"这条完整能力链条迄今最大规模的真实世界压力测试，也印证了"人在回路"仍是当前阶段获得可靠结果的必要条件，而非可选项（详见 [agent-evaluation](/topics/agent-evaluation)）。
+- **记忆跨厂商交接**：多工具并用成为编码 Agent 使用常态后（此前 holaOS 也体现同一趋势），记忆本身不该被锁死在单一供应商的 harness 里——ai-memory 为不同 Agent 各自适配 hook schema、但共用同一记忆服务，实现"退出 Claude Code、换 Codex 继续、不必重讲架构"的无缝交接（详见 [agent-memory](/topics/agent-memory)）。
 
 ## 相关技术
 
@@ -43,6 +44,10 @@
 - [esengine/DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix)
 
 ## Timeline
+
+### [2026-08-18](/today/2026-08-18)
+
+ai-memory 开源：编码 Agent 长期记忆层，支持跨厂商无缝交接任务（Claude Code 中途退出、同目录换 Codex 继续不必重讲架构）；为不同 Agent 分别适配 hook schema 但共用同一记忆服务，另提供零 LLM 模式（详见 [agent-memory](/topics/agent-memory)）。
 
 ### [2026-08-14](/today/2026-08-14)
 

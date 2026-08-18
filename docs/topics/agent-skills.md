@@ -35,6 +35,7 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 | google/skills | 新晋（2026-08-08 上榜，累计 1.62 万 star，Google 官方） | 覆盖 GKE/BigQuery/Gemini API 等 Google 全产品线的官方 skill 合集 |
 | agency-agents | 新晋（2026-08-09 上榜，累计约 14 万 star） | 230+ 跨领域专家人格 Agent 团队模板，8+ 平台转换脚本 |
 | anthropics/skills | 新晋（2026-08-12 上榜，累计 16.8 万 star，Anthropic 官方） | 标准制定者官方参考实现：规范文档 + 示例 skill + 模板，Claude 原生文档能力背后同款实现 |
+| Anthropic-Cybersecurity-Skills | 新晋（2026-08-18 上榜，累计 2.85 万 star） | 817 条网络安全从业者 skill，映射 MITRE ATT&CK/ATLAS/D3FEND、NIST CSF/AI RMF、MITRE F3 六大框架 |
 
 > 此排行由 `/update` 在 skill 类仓库登上 GitHub Trending 时自动更新。
 
@@ -55,6 +56,10 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 - [Claude Code 高星仓库排行](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-18](/today/2026-08-18)
+
+Anthropic-Cybersecurity-Skills 登场（累计 2.85 万 star）：817 条来自真实从业者工作流的网络安全 skill，覆盖 29 个安全领域，系统映射到 MITRE ATT&CK v19.1、NIST CSF 2.0、MITRE ATLAS、MITRE D3FEND、NIST AI RMF、MITRE F3 六大行业框架；采用"frontmatter 轻扫描（每条约 30 token）+ 命中后加载完整内容"的渐进式披露控制 token 成本，兼容 Claude Code 等 20+ 平台（详见 [agentic-safety](/topics/agentic-safety)）。
 
 ### [2026-08-12](/today/2026-08-12)
 
