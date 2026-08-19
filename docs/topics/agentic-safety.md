@@ -25,6 +25,7 @@ Agentic Safety（Agent 安全）关注具备自主行动能力的 AI 系统带�
 - 推理前策略网关（Claude Inference Hooks：在请求到模型之前做 allow/deny 裁决，而非事后审计）
 - 分层能力准入（OpenAI Daybreak Blue/Red：通用模型宽松准入、专精攻防模型严格审查，能力越强护栏越紧）
 - 结构化网络安全知识库（Anthropic-Cybersecurity-Skills：817 条从业者工作流映射到 MITRE ATT&CK/ATLAS/D3FEND、NIST CSF/AI RMF 等六大框架，详见 [agent-skills](/topics/agent-skills)）
+- 开放式行业安全联盟（NVIDIA 牵头 37 家机构组建 Open Secure AI Alliance，主张防御方需要能读改自己硬件上跑的模型；OpenAI/Google/Anthropic/Meta 均缺席首批成员）
 
 ## 最佳实践
 
@@ -66,7 +67,9 @@ Anthropic Frontier Red Team 复盘网络安全评估中的三起真实事件—�
 
 OpenAI/Anthropic/Google/Meta 的 1100 余名员工联署公开信，呼吁美国政府牵头建立可验证的国际 AI"步调机制"——前沿实验室内部的罕见集体发声。
 
-### [2026-07-27](/today/2026-07-27)
+### [2026-07-27](/today/2026-07-27)（补漏）
+
+NVIDIA 联合 Microsoft、Cisco、Cloudflare、CrowdStrike、HuggingFace、IBM、Palo Alto Networks、Red Hat、Linux Foundation 等共 37 家机构发起 Open Secure AI Alliance：主张网络防御方需要"能读、能改、能在自己硬件上跑"的模型，而非只能通过厂商 API 触达的闭源系统；首个技术产出 NOOA（NVIDIA-labs OO Agents）框架把 Agent harness 表示成确定性代码与 LLM 驱动代码混合的 Python 类，CyberGym L1 基准 86.8%，但明确自我声明检查机制只是"纵深防御"而非"隔离边界"。此次结盟直接回应 ExploitGym/HuggingFace 入侵事件（详见 07-21）——HuggingFace 事后用开放权重 GLM 5.2 分析 17,000 多条攻击行为记录复原时间线，原因是商用闭源前沿模型的安全护栏一开始直接拒绝了分析所需的攻击载荷相关请求（但开放模型只是辅助复原，并未独立检测/阻止入侵）。OpenAI、Google、Meta、Anthropic 均不在首批成员名单中，联盟材料未说明缺席原因。
 
 Anthropic 发表 open-weights 模型立场声明：从未主张禁止，但强调权重释出后不可监控、不可召回的风险。
 

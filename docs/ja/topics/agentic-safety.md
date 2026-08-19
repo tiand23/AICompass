@@ -25,6 +25,7 @@ Agentic Safety（エージェント安全性）は、自律的に行動できる
 - 推論前ポリシーゲートウェイ（Claude Inference Hooks：リクエストがモデルに届く前に allow/deny を裁定。事後監査ではない）
 - 能力別の段階的アクセス制御（OpenAI Daybreak Blue/Red：汎用モデルは緩やかなアクセス、専門的な攻撃能力を持つモデルは厳格な審査——能力が高いほど護りを締める）
 - 構造化されたサイバーセキュリティ知識ベース（Anthropic-Cybersecurity-Skills：817 件の実務者ワークフロー skill を MITRE ATT&CK/ATLAS/D3FEND、NIST CSF/AI RMF など六大フレームワークにマッピング、詳細は [agent-skills](/ja/topics/agent-skills)）
+- 開かれた業界セキュリティ連合（NVIDIA が 37 の組織を率いて Open Secure AI Alliance を結成、防御側には自身のハードウェア上で読み書きできるモデルが必要だと主張；OpenAI/Google/Anthropic/Meta はいずれも創設メンバーに不在）
 
 ## ベストプラクティス
 
@@ -66,7 +67,9 @@ Anthropic Frontier Red Team がサイバーセキュリティ評価での実世�
 
 OpenAI/Anthropic/Google/Meta の従業員 1,100 名超が、検証可能な国際 AI「ペーシングメカニズム」の構築を米政府に求める公開書簡に署名——フロンティアラボ内部からの稀な集団的発声。
 
-### [2026-07-27](/ja/today/2026-07-27)
+### [2026-07-27](/ja/today/2026-07-27)（補漏）
+
+NVIDIA が Microsoft、Cisco、Cloudflare、CrowdStrike、HuggingFace、IBM、Palo Alto Networks、Red Hat、Linux Foundation など合計 37 の組織と共に Open Secure AI Alliance を発足：サイバー防御側には「読める・改変できる・自分のハードウェア上で動かせる」モデルが必要であり、ベンダーの API を通じてしかアクセスできないクローズドシステムに頼るべきではないと主張する。初の技術成果である NOOA（NVIDIA-labs OO Agents）フレームワークは、決定論的コードと LLM 駆動コードを混在させた Python クラスとして Agent harness を表現し、CyberGym L1 ベンチマークで 86.8% を記録したが、自身のチェックは「多層防御」にすぎず「隔離境界ではない」と明言している。この連合は ExploitGym/HuggingFace 侵入事件（07-21 を参照）への直接的な対応であり——HuggingFace はその後、オープンウェイトモデルの GLM 5.2 を使って 17,000 件超の攻撃行動記録を分析しタイムラインを復元した。理由は商用クローズドソースのフロンティアモデル API の安全ガードレールが、攻撃ペイロードを含む分析に必要なリクエストを最初は拒否したためだ（ただしオープンモデルは侵入の復元を助けたにとどまり、自ら検知・封じ込めを行ったわけではない）。OpenAI、Google、Meta、Anthropic はいずれも創設メンバーリストに不在で、その理由は説明されていない。
 
 Anthropic がオープンウェイトモデルに関する立場を表明：禁止を主張したことはないが、ウェイトは一度公開されると利用の監視も回収も不可能になるリスクを強調。
 

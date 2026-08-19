@@ -16,6 +16,7 @@ Whether an agent can go to production is ultimately decided by evaluation — wi
 - **Strategy is a variable**: the same model scores significantly higher with a structured, purpose-built prompt — evaluate "model + strategy" as a unit, not the model alone.
 - **Vertical benchmarks built by the domain's own leading company**: Harvey LAB (legal — 24 practice areas, 1,671 tasks) follows the same pattern as ReviewBench (code review) — a company deeply embedded in the domain builds its own all-pass-rubric real-task benchmark, closer to the industry's deep-water reality than a generic third-party benchmark; a shared route for evaluating professional-services agents (legal, finance, healthcare).
 - **Large-scale real-research tasks as a stress test**: the ICML 2026 Reproducibility Hackathon had 1,221 people use coding agents to reproduce the core claims of 2,226 papers (34% of the conference's accepted total), with an automated judge model uniformly issuing "verified/falsified/toy-scale/inconclusive" verdicts — an extreme-scale sample of the "real-task-derived benchmark" methodology applied to open-ended research reproduction, with a quantitative baseline of 51% of papers getting at least one claim verified and 23% falsified or contested; the conclusion stresses that the most reliable results come from human-in-the-loop, not full agent autonomy in reaching a verdict.
+- **Specialized judge models replacing frontier models for evaluation**: rather than building your own LLM-as-judge, an evaluation-toolchain vendor can turn a "specially trained judgment model" directly into a managed service — LangSmith's first Tuned Evaluator, Perceived Error, is post-trained on labeled conversation data and outperforms all frontier models in judgment accuracy while cutting cost by 82% (up to 98% in some scenarios); the "vertical scenarios don't need frontier intelligence" efficiency philosophy now extends to the evaluation tooling itself.
 
 ## Related Technologies
 
@@ -33,6 +34,10 @@ Whether an agent can go to production is ultimately decided by evaluation — wi
 - [Evaluating code review agents with ReviewBench](https://www.langchain.com/blog/evaluating-code-review-agents-with-reviewbench)
 
 ## Timeline
+
+### [2026-08-18](/en/today/2026-08-18)
+
+LangSmith launches Tuned Evaluators, a managed service: the first evaluator, Perceived Error, is post-trained specifically on labeled conversational agent traces, outperforms all frontier models in judgment accuracy while cutting cost by 82% (up to 98% for some customer workloads); threads must meet a minimum two rounds of human-AI message pairs, evaluation completes within 12 hours, and billing applies only to successful runs.
 
 ### [2026-08-13](/en/today/2026-08-13)
 

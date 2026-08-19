@@ -14,6 +14,7 @@ The cost of the wrong choice explodes only at scale (latency, cost, recall colla
 - **Choose by scale**: <1M vectors → Chroma/pgvector suffice; 1M–10M → pgvector (HNSW)/Qdrant/Weaviate/Pinecone; 10M–100M → Qdrant/Weaviate/Pinecone/Milvus; 100M+ → Milvus/Vespa/Pinecone Enterprise.
 - **Performance reference**: Qdrant leads OSS speed (10–25% faster on common workloads; ~12ms p99 at 10M vectors) — but extensions like pgvectorscale can flip the result by an order of magnitude on specific workloads. Benchmark on your own load.
 - **Don't go dedicated too early**: with Postgres already in place and small-to-mid data, pgvector is the default right answer.
+- **Multi-vector (late-interaction) retrieval**: the ColBERT-style approach — keep one vector per token rather than compressing the whole document into one, deferring "interaction" to scoring time (the MaxSim operator: for each query token, find the document token with the highest similarity, then sum). At matched scale, multi-vector beats dense on most datasets in accuracy, but at an order-of-magnitude higher storage cost (mitigated via PLAID indexing / token pooling). Natively supported from Sentence Transformers v6.0 onward, marking this previously niche path's entry into a mainstream library.
 
 ## Related Technologies
 
@@ -31,6 +32,10 @@ The cost of the wrong choice explodes only at scale (latency, cost, recall colla
 - [Qdrant vs Pinecone vs pgvector selection guide](https://www.knowsync.ai/blog/choosing-vector-database-qdrant-pinecone-pgvector-2026)
 
 ## Timeline
+
+### [2026-08-18](/en/today/2026-08-18)
+
+Sentence Transformers v6.0 adds `MultiVectorEncoder`, natively supporting ColBERT-style multi-vector/late-interaction embeddings: at matched model scale, the multi-vector version (LateOn) beats the corresponding dense version (DenseOn) on 9 of 13 NanoBEIR datasets, but encoding the same document batch costs roughly 20-40x more storage (heavily reducible via PLAID indexing/token pooling); already supports native indexing in Qdrant/Weaviate/Vespa and others (see [rag](/en/topics/rag)).
 
 ### 2026-07-28
 

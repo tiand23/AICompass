@@ -10,7 +10,7 @@
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [claude-models](/en/topics/claude-models) | Anthropic's Claude model line | Model selection and migration for agent/coding workloads | 🔥 | 2026-08-11 |
+| [claude-models](/en/topics/claude-models) | Anthropic's Claude model line | Model selection and migration for agent/coding workloads | 📈 | 2026-08-11 |
 | [openai-models](/en/topics/openai-models) | OpenAI's GPT model line & API platform | Selection, price volatility and deprecation risk | 📈 | 2026-08-10 |
 | [gemini-models](/en/topics/gemini-models) | Google's Gemini model line | Cost-effective selection for price-sensitive workloads | 🔥 | 2026-08-17 |
 
@@ -33,7 +33,7 @@
 |---|---|---|---|---|
 | [rag](/en/topics/rag) | Retrieval-augmented generation (mainstream: Agentic RAG) | Connecting private knowledge to LLMs; factuality and traceability | 📈 | 2026-08-10 |
 | [document-parsing](/en/topics/document-parsing) | Document parsing & structuring (VLM + semantic reconstruction) | The first mile of unstructured documents into knowledge bases | 🔥 | 2026-08-17 |
-| [vector-databases](/en/topics/vector-databases) | Vector DB selection & hybrid search | The storage/retrieval layer for RAG and memory | 📈 | 2026-07-28 |
+| [vector-databases](/en/topics/vector-databases) | Vector DB selection & hybrid search | The storage/retrieval layer for RAG and memory | 🔥 | 2026-08-18 |
 | [agent-memory](/en/topics/agent-memory) | Agent memory infrastructure (session/long-term/team assets) | Retaining experience across sessions; team knowledge assets | 🔥 | 2026-08-18 |
 | [knowledge-graph](/en/topics/knowledge-graph) | Knowledge graphs as a deterministic reasoning/decision-provenance infrastructure layer | Explainability, auditability and precedent search for agent decisions | 📈 | 2026-08-10 |
 
@@ -56,7 +56,7 @@
 | [enterprise-ai-agents](/en/topics/enterprise-ai-agents) | Enterprise agent platforms & delivery models | Reliably connecting agents to enterprise systems and operating them | 🔥 | 2026-08-12 |
 | [cloud-agent-platforms](/en/topics/cloud-agent-platforms) | The hyperscaler platform landscape (AgentCore/Foundry/GEAP/Managed Agents) | Platform selection and lock-in trade-offs | 🔥 | 2026-08-12 |
 | [agent-workspaces](/en/topics/agent-workspaces) | Desktop agent workspaces (Cowork/openwork/Codex app) | The assign-work-accept-results interaction form; portable capability config | 🔥 | 2026-08-12 |
-| [agent-sandboxes](/en/topics/agent-sandboxes) | Agent execution sandbox infrastructure (E2B/Daytona/Cloudflare computer) | Safe, isolated, reusable code-execution environments for agents | 🔥 | 2026-08-11 |
+| [agent-sandboxes](/en/topics/agent-sandboxes) | Agent execution sandbox infrastructure (E2B/Daytona/Cloudflare computer) | Safe, isolated, reusable code-execution environments for agents | 📈 | 2026-08-11 |
 
 ### Protocols & Interoperability (MCP ・ A2A ・ AG-UI)
 
@@ -79,7 +79,7 @@
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [agent-evaluation](/en/topics/agent-evaluation) | Agent evaluation methods & benchmarks (real-task-derived + LLM-as-judge) | Reproducible measurement before agents go to production | 🔥 | 2026-08-13 |
+| [agent-evaluation](/en/topics/agent-evaluation) | Agent evaluation methods & benchmarks (real-task-derived + LLM-as-judge) | Reproducible measurement before agents go to production | 🔥 | 2026-08-18 |
 
 *Also watching: model benchmarks. (For long-horizon agent evaluation, see [deep-agents](/en/topics/deep-agents).)*
 

@@ -25,6 +25,7 @@ The ExploitGym incident of 2026-07-21 moved this topic from theoretical speculat
 - Pre-inference policy gateways (Claude Inference Hooks: an allow/deny verdict before the request ever reaches the model, rather than auditing after the fact)
 - Tiered capability access (OpenAI Daybreak Blue/Red: loose access for general models, tight review for specialized offensive-capability models — the more capable, the tighter the guardrail)
 - Structured cybersecurity knowledge bases (Anthropic-Cybersecurity-Skills: 817 practitioner-workflow skills mapped to MITRE ATT&CK/ATLAS/D3FEND, NIST CSF/AI RMF and other frameworks; see [agent-skills](/en/topics/agent-skills))
+- An open industry security alliance (NVIDIA leading 37 organizations to form the Open Secure AI Alliance, arguing defenders need models they can read and modify on their own hardware; OpenAI/Google/Anthropic/Meta are all absent from the founding membership)
 
 ## Best Practices
 
@@ -66,7 +67,9 @@ Microsoft open-sourced agent-governance-toolkit: an agent governance and securit
 
 1,100+ employees across OpenAI/Anthropic/Google/Meta signed an open letter urging the US government to build a verifiable international AI "pacing mechanism" — a rare collective voice from inside frontier labs.
 
-### [2026-07-27](/en/today/2026-07-27)
+### [2026-07-27](/en/today/2026-07-27) (backfilled)
+
+NVIDIA, along with Microsoft, Cisco, Cloudflare, CrowdStrike, HuggingFace, IBM, Palo Alto Networks, Red Hat, the Linux Foundation and others — 37 organizations in total — launched the Open Secure AI Alliance: arguing that cyber defenders need models they can "read, modify, and run on their own hardware," rather than closed systems reachable only through a vendor's API. Its first technical output, the NOOA (NVIDIA-labs OO Agents) framework, represents agent harnesses as Python classes mixing deterministic code with LLM-driven code, scoring 86.8% on the CyberGym L1 benchmark, but explicitly states its checks are only "defense-in-depth," not "a containment boundary." The alliance directly responds to the ExploitGym/HuggingFace breach (see 07-21) — HuggingFace afterward used the open-weights model GLM 5.2 to analyze over 17,000 logged attack actions and reconstruct the timeline, because commercial closed-source frontier model APIs' safety guardrails initially rejected the requests needed for the analysis involving attack payloads (though the open model only helped reconstruct the intrusion and did not itself detect or contain it). OpenAI, Google, Meta and Anthropic are all absent from the founding member list, with no explanation given for the absence.
 
 Anthropic published its position on open-weights models: it has never advocated a ban, but stresses that once weights are released their use can be neither monitored nor recalled.
 

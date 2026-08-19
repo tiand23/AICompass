@@ -17,6 +17,7 @@ However large the context window, it is only "working memory" — an agent servi
 - **Relation to RAG**: heavily overlapping stacks (vector retrieval, structured storage); the difference is data source and lifecycle — RAG retrieves a static knowledge base, memory grows continuously from interactions.
 - **Delivery strategy for experience memory**: when distilling "lessons" from execution trajectories, don't compress into summaries (that loses information) — keep itemized detail tracked by support count; but delivery at retrieval time should be selective, not a full dump — ALTK-Evolve's "small high-support core + task-relevant picks" cuts 60-85% of tokens versus ACE's "inject the full playbook every step," with accuracy holding or improving (especially on weaker models/harder tasks, where an overlong context hurts judgment).
 - **Cross-vendor portability of memory**: prior memory discussion mostly focused on "how does the same agent/same vendor remember across sessions" — ai-memory extends the scope to "can memory travel when you switch to a different vendor's agent": rather than storing raw conversation logs, it sanitizes lifecycle events and compiles them into a searchable Markdown wiki, implementing separate hook adapters for different agents (Claude Code, Codex, Cursor, etc.) that all write into the same memory service, which is what makes cross-vendor handoff possible; it also ships a "zero-LLM mode" that decouples having a memory system from being able to afford a large model.
+- **Delivery should be calibrated by model tier, not one-size-fits-all**: an IBM Research follow-up study (8 models, 117B-745B parameters, 585 AppWorld tasks) found "more memory is always better" doesn't hold — capable, headroom-rich models (DeepSeek-V3.2) benefit most from full-guideline injection; weaker/smaller models (gpt-oss-120b) instead do better with curated retrieval (higher accuracy gains, fewer tokens spent); already-saturated models (GLM-5) show no gain from either delivery mode. Memory optimization is fundamentally about "calibrating the dose," not maximizing information volume — delivery strategy needs to be tuned per target-model capability tier.
 
 ## Related Technologies
 
@@ -39,6 +40,8 @@ However large the context window, it is only "working memory" — an agent servi
 ## Timeline
 
 ### [2026-08-18](/en/today/2026-08-18)
+
+IBM Research publishes an ALTK-Evolve follow-up: 8 models (117B-745B parameters) on 585 AppWorld tasks show "how much memory to give" varies by model tier — a capable model (DeepSeek-V3.2) gains 9.5 percentage points in task completion with full-guideline injection; a weaker model (gpt-oss-120b) gains 16.1 points with curated retrieval while spending only 5% more tokens; a saturated model (GLM-5) gains 0 from either mode. Memory optimization should be understood as "calibrating the dose" rather than "maximizing information volume."
 
 ai-memory open-sources: a long-term memory layer for coding agents, built around seamless cross-vendor handoff (quit Claude Code mid-task, switch to Codex in the same directory, continue without re-explaining the architecture); sanitizes session lifecycle events into a Markdown wiki, with separate hook adapters for Claude Code/Codex/Cursor and others sharing the same memory service; ships a zero-LLM mode (see [coding-agents](/en/topics/coding-agents)).
 

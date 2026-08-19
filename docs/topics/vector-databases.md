@@ -14,6 +14,7 @@
 - **按规模选型**：<100 万向量 → Chroma/pgvector 足够；100 万~1000 万 → pgvector(HNSW)/Qdrant/Weaviate/Pinecone；1000 万~1 亿 → Qdrant/Weaviate/Pinecone/Milvus；1 亿+ → Milvus/Vespa/Pinecone 企业版。
 - **性能参考**：Qdrant 开源速度领先（常见负载快 10-25%，1000 万向量 p99 约 12ms）；但 pgvectorscale 这类扩展在特定负载下 QPS 反超一个数量级——benchmark 要看你自己的负载。
 - **别过早上专用库**：已有 Postgres 且数据量中小，pgvector 是默认正确答案。
+- **多向量（后期交互）检索**：ColBERT 式路线——每个 token 保留一个向量而非把整份文档压成一个向量，交互推迟到打分阶段（MaxSim 算子：每个查询 token 找文档里相似度最高的 token 再求和）；同等规模下多向量在多数数据集上精度优于稠密向量，但存储成本高一个数量级（可用 PLAID 索引/token 池化压缩）。Sentence Transformers v6.0 起原生支持，标志着这条此前偏小众的路线进入主流库。
 
 ## 相关技术
 
@@ -31,6 +32,10 @@
 - [Qdrant vs Pinecone vs pgvector 选型](https://www.knowsync.ai/blog/choosing-vector-database-qdrant-pinecone-pgvector-2026)
 
 ## Timeline
+
+### [2026-08-18](/today/2026-08-18)
+
+Sentence Transformers v6.0 新增 `MultiVectorEncoder`，原生支持 ColBERT 式多向量/后期交互 Embedding：NanoBEIR 基准上同规模多向量模型（LateOn）13 个数据集中 9 个跑赢稠密版本（DenseOn），但编码同批文档存储成本高约 20-40 倍（可经 PLAID 索引/token 池化大幅压缩）；已支持 Qdrant/Weaviate/Vespa 等原生索引（详见 [rag](/topics/rag)）。
 
 ### 2026-07-28
 
