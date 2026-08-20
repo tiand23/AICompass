@@ -25,7 +25,7 @@
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [model-efficiency](/en/topics/model-efficiency) | SLMs, distillation, quantization, efficient architectures, CPU/edge inference | Usable intelligence from less compute | 🔥 | 2026-08-14 |
+| [model-efficiency](/en/topics/model-efficiency) | SLMs, distillation, quantization, efficient architectures, CPU/edge inference | Usable intelligence from less compute | 🔥 | 2026-08-19 |
 
 ## 2. Knowledge & Retrieval
 

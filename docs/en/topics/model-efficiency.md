@@ -22,6 +22,7 @@ Frontier models keep growing, but most production workloads (classification, emb
 - **Local training/inference moving from CLI to GUI**: Unsloth Desktop packages previously script-driven local fine-tuning (LLMs and image/video diffusion-model LoRA) into a desktop GUI, with `unsloth start` connecting directly to coding agents like Claude Code/Codex — the usability bar for local efficiency tools is dropping, not just the efficiency numbers themselves (see [coding-agents](/en/topics/coding-agents)).
 - **Edge vision-language models**: Liquid AI's LFM2.5-VL-3B extends the SLM route from text-only into multimodal — UI understanding, screen grounding and multi-image input packed into a 3B-parameter, ~3GB-memory edge model, matching larger 4B-class models on document/OCR and grounding benchmarks, proving "shrink the footprint" and "keep pace with bigger models" aren't mutually exclusive.
 - **Downloads vs. attention diverge**: models under 1B parameters capture 83% of all-time platform downloads, while models above 100B capture just 1% — a download signals something wired into a running production pipeline, while a like reflects momentary excitement, and the two leaderboards barely overlap; local-inference infrastructure (GGUF, etc.) is growing repositories far faster (464%) than core modeling tools themselves (21%) — an acceleration signal for the efficiency route at the infrastructure layer (HuggingFace's "State of Open Models: Summer 2026").
+- **Quantization-Aware Distillation (QAD)**: unlike post-training quantization (PTQ), which compresses a model after training completes, QAD integrates quantization directly into distillation training — a high-precision teacher model guides the quantized student's training so it learns to preserve capability under quantization constraints from the start. LiquidAI's results across four LFM2.5 models show QAD Q4_0 checkpoints recovering 96.5%-97.4% of BF16 performance while achieving 3-33% higher throughput than the higher-bit quantization needed for equivalent quality — merging the previously separate quantization and knowledge-distillation routes.
 
 ## Related Technologies
 
@@ -39,6 +40,10 @@ Frontier models keep growing, but most production workloads (classification, emb
 - [LFM2.5-Encoders: Fast Long-Context Inference on CPU (HuggingFace Blog)](https://huggingface.co/blog)
 
 ## Timeline
+
+### [2026-08-19](/en/today/2026-08-19)
+
+LiquidAI releases Quantization-Aware Distillation (QAD) Q4_0 checkpoints: unlike post-training quantization (PTQ), QAD integrates quantization into distillation training itself, so the model learns to preserve capability under quantization constraints from the start; across four LFM2.5 models (230M/350M/1.2B-Instruct/2.6B), it recovers 96.5%-97.4% of BF16 performance with 3-33% higher throughput than the higher-bit quantization needed for equivalent quality, targeting edge devices like MacBook Pro, NucBox EVO-X2, Galaxy S26 Ultra and Raspberry Pi 5.
 
 ### [2026-08-14](/en/today/2026-08-14)
 

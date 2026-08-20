@@ -25,7 +25,7 @@
 
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
-| [model-efficiency](/topics/model-efficiency) | SLM、蒸馏、量化、高效架构、CPU/端侧推理 | 用更少算力跑出够用的智能 | 🔥 | 2026-08-14 |
+| [model-efficiency](/topics/model-efficiency) | SLM、蒸馏、量化、高效架构、CPU/端侧推理 | 用更少算力跑出够用的智能 | 🔥 | 2026-08-19 |
 
 ## 2. 知识与检索
 

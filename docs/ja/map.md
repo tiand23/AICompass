@@ -25,7 +25,7 @@
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [model-efficiency](/ja/topics/model-efficiency) | SLM、蒸留、量子化、効率アーキテクチャ、CPU/エッジ推論 | より少ない計算資源で十分な知能を | 🔥 | 2026-08-14 |
+| [model-efficiency](/ja/topics/model-efficiency) | SLM、蒸留、量子化、効率アーキテクチャ、CPU/エッジ推論 | より少ない計算資源で十分な知能を | 🔥 | 2026-08-19 |
 
 ## 2. ナレッジと検索
 
