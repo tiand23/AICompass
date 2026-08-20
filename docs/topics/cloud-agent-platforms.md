@@ -37,6 +37,10 @@
 
 ## Timeline
 
+### [2026-08-19](/today/2026-08-19)
+
+Claude Managed Agents 新增网络工具域名白名单/黑名单：可对一个 agent 的 `web_search`/`web_fetch` 工具设置 `allowed_domains` 或 `blocked_domains`，`web_fetch` 另支持 `max_content_tokens`——权限最小化原则在托管 Agent 网络访问场景的又一次细化落地。同日 Agent Skills API 正式转 GA（详见 [agent-skills](/topics/agent-skills)）。
+
 ### [2026-08-12](/today/2026-08-12)
 
 LangChain 发文《Why managed agents are the next big thing in agent building》：系统列出把 Agent 推向生产必须解决的 7 类基础设施难题（运行时可靠性、事件流式推送、安全执行不可信代码、上下文管理、性能评估、记忆系统、授权权限），主张托管服务打包这些基础设施让开发者专注业务逻辑。同日 LangSmith 的 BYOC 部署模式在 AWS 正式 GA——企业可把 LangSmith 跑在自己 AWS 账号下的集群里，数据不出私有环境，是托管便利与数据主权之间的第三种部署选项（详见 [deep-agents](/topics/deep-agents)）。

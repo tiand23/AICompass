@@ -57,6 +57,10 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 
 ## Timeline
 
+### [2026-08-19](/today/2026-08-19)
+
+Claude Platform 的 Agent Skills 与 Skills API（`/v1/skills`）正式转为 GA，不再需要 `skills-2025-10-02` beta header，含通过 `container` 参数在 Messages API 里加载 Skill 的请求——自 2025 年 10 月推出以来快速扩张的 Skill 生态，终于有了官方 API 层面的生产级承诺（详见 [cloud-agent-platforms](/topics/cloud-agent-platforms)）。
+
 ### [2026-08-18](/today/2026-08-18)
 
 Anthropic-Cybersecurity-Skills 登场（累计 2.85 万 star）：817 条来自真实从业者工作流的网络安全 skill，覆盖 29 个安全领域，系统映射到 MITRE ATT&CK v19.1、NIST CSF 2.0、MITRE ATLAS、MITRE D3FEND、NIST AI RMF、MITRE F3 六大行业框架；采用"frontmatter 轻扫描（每条约 30 token）+ 命中后加载完整内容"的渐进式披露控制 token 成本，兼容 Claude Code 等 20+ 平台（详见 [agentic-safety](/topics/agentic-safety)）。

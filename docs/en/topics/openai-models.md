@@ -14,7 +14,7 @@ GPT, Claude and Gemini form the three main lines of model selection. Two OpenAI 
 - **Fast mode**: the API's fast-processing option, replacing Priority Processing as of 2026-07.
 - **Deprecation cadence**: 2026-07 saw reusable prompt objects, the Evals platform and Agent Builder deprecated in one sweep — OpenAI's agent product line converging toward Presence; 2026-08 the standalone browser product Atlas (live under a year) is retired, with browser-agent capability folded into ChatGPT/Codex — another instance of the same convergence pattern.
 - **Channels**: direct OpenAI API + Microsoft Foundry (the enterprise Azure channel; GPT-5.6 available there).
-- **Next-generation model Astra**: officially confirmed codename; an internal build has already produced machine-verifiable (Lean 4) math proofs, including an explicit construction of a non-sofic group unsolved for 27 years; no release date yet, and it must clear US government security review first.
+- **Next-generation model Astra**: officially confirmed codename; an internal build has already produced machine-verifiable (Lean 4) math proofs, including an explicit construction of a non-sofic group unsolved for 27 years; its cybersecurity capability evaluation can't rule out having reached the Preparedness Framework's Critical threshold, prompting OpenAI to proactively tighten its development environment (isolated testing, chain-of-thought monitoring) and slow its pace; no release date yet, and it must clear US government security review first.
 - **Tiered cybersecurity access**: the Daybreak program split into Blue (vetted general frontier models for day-to-day security work) and Red (the specialized GPT-5.6-Cyber, under stricter review) tiers, with hardware security keys mandatory from 2026-09-01 — a concrete instance of "the more capable, the tighter the guardrail."
 
 ## Related Technologies
@@ -35,6 +35,10 @@ GPT, Claude and Gemini form the three main lines of model selection. Two OpenAI 
 - [Introducing GPT-5.6](https://openai.com/index/gpt-5-6/)
 
 ## Timeline
+
+### [2026-08-19](/en/today/2026-08-19)
+
+OpenAI previews Private Safety Processing: a safety monitoring system tested with early customers that identifies misuse patterns across multiple related interactions while preserving its Zero Data Retention commitment — sending OpenAI only a narrowly defined "safety signal," never the underlying prompt/response content; for enterprise and API customers, with a technical white paper due in September (see [agentic-safety](/en/topics/agentic-safety)).
 
 ### [2026-08-10](/en/today/2026-08-10)
 
@@ -57,6 +61,10 @@ Audio generated with GPT-Live (the voice model line, launched 2026-07-08) gains 
 GPT-5.6 Luna cut 80%, Terra 20%; Fast mode replaces Priority Processing in the API; reusable prompt objects, the Evals platform and Agent Builder deprecated.
 
 <!-- Backfill: entries below are placed by actual event date -->
+
+### [2026-08-07](/en/today/2026-08-07) (backfilled)
+
+OpenAI officially warns that Astra's cybersecurity capability evaluation can't rule out having reached the Preparedness Framework's Critical threshold (the ability to develop full-severity zero-day exploits against hardened critical systems without human intervention) — the first time it has attached this possibility to a specific model; it has implemented isolated testing environments, encrypted weights, sandboxed execution, and real-time chain-of-thought monitoring as precautionary restrictions, and slowed development (see [agentic-safety](/en/topics/agentic-safety)).
 
 ### [2026-08-06](/en/today/2026-08-06) (backfilled)
 

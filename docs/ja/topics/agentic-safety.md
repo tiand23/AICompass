@@ -26,6 +26,8 @@ Agentic Safety（エージェント安全性）は、自律的に行動できる
 - 能力別の段階的アクセス制御（OpenAI Daybreak Blue/Red：汎用モデルは緩やかなアクセス、専門的な攻撃能力を持つモデルは厳格な審査——能力が高いほど護りを締める）
 - 構造化されたサイバーセキュリティ知識ベース（Anthropic-Cybersecurity-Skills：817 件の実務者ワークフロー skill を MITRE ATT&CK/ATLAS/D3FEND、NIST CSF/AI RMF など六大フレームワークにマッピング、詳細は [agent-skills](/ja/topics/agent-skills)）
 - 開かれた業界セキュリティ連合（NVIDIA が 37 の組織を率いて Open Secure AI Alliance を結成、防御側には自身のハードウェア上で読み書きできるモデルが必要だと主張；OpenAI/Google/Anthropic/Meta はいずれも創設メンバーに不在）
+- Preparedness Framework の Critical 級閾値を現実のエンジニアリング制約として扱う（OpenAI が未公開モデル Astra に隔離テスト・思考連鎖モニタリングなどの予防的制限を自主的に実施、詳細は [openai-models](/ja/topics/openai-models)）
+- プライバシーを維持したままの対話横断の悪用検知（OpenAI Private Safety Processing：Zero Data Retention を壊さず、狭い安全シグナルのみをアップロード）
 
 ## ベストプラクティス
 
@@ -40,6 +42,14 @@ Agentic Safety（エージェント安全性）は、自律的に行動できる
 - [ExploitGym インシデントの技術分析（Orca Security）](https://orca.security/resources/blog/openai-agent-sandbox-escape-hugging-face-breach/)
 
 ## Timeline
+
+### [2026-08-19](/ja/today/2026-08-19)
+
+OpenAI が Private Safety Processing をプレビュー：Zero Data Retention へのコミットメントを維持したまま複数の関連対話をまたいで悪用パターンを識別する安全モニタリングシステム——OpenAI 側には狭く定義された「安全シグナル」のみを送信し、底流の prompt/応答内容は一切送らない。顧客データは自社基盤に留めるか、OpenAI が保存しつつ暗号鍵は顧客が保持する；既存の ZDR 互換システムが各対話を個別にしか評価できず複数ターンをまたいで初めて可視化される長期リスクを見逃していた、という限界に対応するもの（詳細は [openai-models](/ja/topics/openai-models)）。
+
+### [2026-08-07](/ja/today/2026-08-07)（補漏）
+
+OpenAI は、具体的なモデル（未公開の Astra）のサイバーセキュリティ能力が Preparedness Framework の Critical 級閾値——人間の介入なしに多様な強化された重要システムに対しあらゆる深刻度のゼロデイエクスプロイトを特定・開発できる能力、あるいは高レベルの目標だけを与えられてエンドツーエンドの新規サイバー攻撃を考案・実行できる能力——に達している可能性を初めて公に認めた。予防的対応として、隔離テスト環境、制限されたネットワーク/ツールアクセス、暗号化されたモデル重み、サンドボックス化された実行、高リスク活動をリアルタイムで中断できる思考連鎖モニタリングを実施し、開発ペースを自主的に落とした；OpenAI はこれがあくまで予備的評価であり Astra を正式に Critical と認定したわけではないと強調している（詳細は [openai-models](/ja/topics/openai-models)）。これは 08-10 の Daybreak 段階的アクセス制御に続き、安全面の引き締めが「公開済みモデルへのアクセス権限管理」から「未公開モデルの開発段階での予防的制限」へと広がったことを示す。
 
 ### [2026-08-18](/ja/today/2026-08-18)
 

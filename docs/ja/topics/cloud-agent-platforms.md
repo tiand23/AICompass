@@ -37,6 +37,10 @@
 
 ## Timeline
 
+### [2026-08-19](/ja/today/2026-08-19)
+
+Claude Managed Agents に Web ツールのドメイン許可/拒否リストを追加：agent の `web_search`/`web_fetch` ツールに `allowed_domains` または `blocked_domains` を設定可能に、`web_fetch` は `max_content_tokens` にも対応——ホスト型 Agent のネットワークアクセスにおける最小権限原則のさらなる細分化。同日 Agent Skills API が正式 GA に（詳細は [agent-skills](/ja/topics/agent-skills)）。
+
 ### [2026-08-12](/ja/today/2026-08-12)
 
 LangChain が「Why managed agents are the next big thing in agent building」を公開：Agent を本番に持っていくために解決すべき 7 種類のインフラ課題（ランタイムの信頼性、イベントストリーミング、信頼できないコードの安全な実行、コンテキスト管理、性能評価、記憶システム、認可）を体系的に列挙し、マネージドサービスがこれらをパッケージ化することで開発者がビジネスロジックに専念できると論じる。同日、LangSmith の BYOC デプロイモードが AWS で正式 GA——企業は自分の AWS アカウント内のクラスタで LangSmith を稼働でき、データは私有環境の外に出ない。マネージドの利便性とデータ主権の中間に位置する第 3 のデプロイ選択肢（詳細は [deep-agents](/ja/topics/deep-agents)）。

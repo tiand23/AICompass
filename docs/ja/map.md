@@ -11,7 +11,7 @@
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
 | [claude-models](/ja/topics/claude-models) | Anthropic Claude モデルライン | エージェント/コーディング用途の選定と移行 | 📈 | 2026-08-11 |
-| [openai-models](/ja/topics/openai-models) | OpenAI GPT モデルラインと API プラットフォーム | 選定、価格変動、廃止リスク | 📈 | 2026-08-10 |
+| [openai-models](/ja/topics/openai-models) | OpenAI GPT モデルラインと API プラットフォーム | 選定、価格変動、廃止リスク | 🔥 | 2026-08-19 |
 | [gemini-models](/ja/topics/gemini-models) | Google Gemini モデルライン | コスト重視ワークロードの高コスパ選定 | 🔥 | 2026-08-17 |
 
 ### マルチモーダル生成
@@ -43,19 +43,19 @@
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [deep-agents](/ja/topics/deep-agents) | 長期自律タスクエージェント（LangChain） | 多段階タスクの計画・回復・評価 | 🔥 | 2026-08-12 |
+| [deep-agents](/ja/topics/deep-agents) | 長期自律タスクエージェント（LangChain） | 多段階タスクの計画・回復・評価 | 📈 | 2026-08-12 |
 | [agent-frameworks](/ja/topics/agent-frameworks) | フレームワーク版図：LangGraph/CrewAI/ADK/Agents SDK… | フレームワーク選定と長期的安全性 | 📈 | 2026-08-06 |
 | [agent-workflow](/ja/topics/agent-workflow) | ワークフローパラダイム：編成 vs 自律、HITL、永続実行 | エージェントを業務プロセスに確実に組み込む | 🔥 | 2026-08-17 |
-| [agent-skills](/ja/topics/agent-skills) | 再利用可能な能力パッケージ（GitHub 熱度ランキング付き） | エージェント能力の配布と再利用 | 🔥 | 2026-08-18 |
+| [agent-skills](/ja/topics/agent-skills) | 再利用可能な能力パッケージ（GitHub 熱度ランキング付き） | エージェント能力の配布と再利用 | 🔥 | 2026-08-19 |
 | [voice-agents](/ja/topics/voice-agents) | 音声エージェント（カスケード/リアルタイム S2S、フレームワークと評価） | 音声インターフェースエージェントのリアルタイム工学と評価 | 📈 | 2026-08-10 |
 
 ### ランタイムとクラウド（ホスト型ランタイム ・ エージェントプラットフォーム ・ Foundry）
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [enterprise-ai-agents](/ja/topics/enterprise-ai-agents) | 企業向けエージェントプラットフォームとデリバリー | エージェントを企業システムへ確実に接続し運用する | 🔥 | 2026-08-12 |
-| [cloud-agent-platforms](/ja/topics/cloud-agent-platforms) | 4 大クラウドのプラットフォーム版図（AgentCore/Foundry/GEAP/Managed Agents） | プラットフォーム選定とロックインの権衡 | 🔥 | 2026-08-12 |
-| [agent-workspaces](/ja/topics/agent-workspaces) | デスクトップ型エージェントワークスペース（Cowork/openwork/Codex アプリ） | 仕事を任せ成果物を受け取る対話形態；能力設定の可搬性 | 🔥 | 2026-08-12 |
+| [enterprise-ai-agents](/ja/topics/enterprise-ai-agents) | 企業向けエージェントプラットフォームとデリバリー | エージェントを企業システムへ確実に接続し運用する | 📈 | 2026-08-12 |
+| [cloud-agent-platforms](/ja/topics/cloud-agent-platforms) | 4 大クラウドのプラットフォーム版図（AgentCore/Foundry/GEAP/Managed Agents） | プラットフォーム選定とロックインの権衡 | 🔥 | 2026-08-19 |
+| [agent-workspaces](/ja/topics/agent-workspaces) | デスクトップ型エージェントワークスペース（Cowork/openwork/Codex アプリ） | 仕事を任せ成果物を受け取る対話形態；能力設定の可搬性 | 📈 | 2026-08-12 |
 | [agent-sandboxes](/ja/topics/agent-sandboxes) | Agent 実行サンドボックス基盤（E2B/Daytona/Cloudflare computer） | Agent に安全で隔離された再利用可能なコード実行環境を提供 | 📈 | 2026-08-11 |
 
 ### プロトコルと相互運用性（MCP ・ A2A ・ AG-UI）
@@ -87,7 +87,7 @@
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [agentic-safety](/ja/topics/agentic-safety) | エージェントの行動安全性 | 自律モデルの越権・脱出という現実リスク | 🔥 | 2026-08-18 |
+| [agentic-safety](/ja/topics/agentic-safety) | エージェントの行動安全性 | 自律モデルの越権・脱出という現実リスク | 🔥 | 2026-08-19 |
 | [content-provenance](/ja/topics/content-provenance) | AI コンテンツの透かしと検証（SynthID/C2PA） | 生成コンテンツの識別可能性とコンプライアンス確認 | 🔥 | 2026-08-14 |
 
 ## 7. コーディングツール

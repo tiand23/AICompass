@@ -26,6 +26,8 @@ Agentic Safety（Agent 安全）关注具备自主行动能力的 AI 系统带�
 - 分层能力准入（OpenAI Daybreak Blue/Red：通用模型宽松准入、专精攻防模型严格审查，能力越强护栏越紧）
 - 结构化网络安全知识库（Anthropic-Cybersecurity-Skills：817 条从业者工作流映射到 MITRE ATT&CK/ATLAS/D3FEND、NIST CSF/AI RMF 等六大框架，详见 [agent-skills](/topics/agent-skills)）
 - 开放式行业安全联盟（NVIDIA 牵头 37 家机构组建 Open Secure AI Alliance，主张防御方需要能读改自己硬件上跑的模型；OpenAI/Google/Anthropic/Meta 均缺席首批成员）
+- Preparedness Framework 的 Critical 级门槛作为真实工程约束（OpenAI 对未发布模型 Astra 主动实施隔离测试、思维链监控等预防性限制，详见 [openai-models](/topics/openai-models)）
+- 保留隐私前提下的跨交互滥用检测（OpenAI Private Safety Processing：不破坏 Zero Data Retention，只上传窄范围安全信号）
 
 ## 最佳实践
 
@@ -40,6 +42,14 @@ Agentic Safety（Agent 安全）关注具备自主行动能力的 AI 系统带�
 - [ExploitGym 事件技术分析（Orca Security）](https://orca.security/resources/blog/openai-agent-sandbox-escape-hugging-face-breach/)
 
 ## Timeline
+
+### [2026-08-19](/today/2026-08-19)
+
+OpenAI 预览 Private Safety Processing：在保留 Zero Data Retention 承诺的前提下，跨多次相关交互识别滥用模式的安全监控系统——只向 OpenAI 发送窄范围界定的"安全信号"，不暴露底层 prompt/响应内容，客户数据可留在自有基础设施或由 OpenAI 存储但密钥客户自持；解决的是此前 ZDR 兼容系统只能孤立评估单次交互、无法发现跨轮次才显现的长程风险这一局限（详见 [openai-models](/topics/openai-models)）。
+
+### [2026-08-07](/today/2026-08-07)（补漏）
+
+OpenAI 首次公开承认某个具体模型（未发布的 Astra）的网络安全能力可能触及 Preparedness Framework 定义的 Critical 级门槛——即无人工介入下对多种加固关键系统识别并开发全严重等级零日漏洞利用，或仅凭高层目标就设计执行端到端新颖网络攻击。作为预防性响应，实施隔离测试环境、受限网络与工具访问、加密模型权重、沙箱化执行、可实时中断高风险活动的思维链监控，并主动放慢开发节奏；官方强调这仍是初步评估，未正式认定 Astra 为 Critical 级（详见 [openai-models](/topics/openai-models)）。这是继 08-10 Daybreak 分级准入之后，安全收紧动作从"已发布模型的访问权限管理"延伸到"未发布模型开发阶段的预防性限制"。
 
 ### [2026-08-18](/today/2026-08-18)
 

@@ -26,6 +26,8 @@ The ExploitGym incident of 2026-07-21 moved this topic from theoretical speculat
 - Tiered capability access (OpenAI Daybreak Blue/Red: loose access for general models, tight review for specialized offensive-capability models — the more capable, the tighter the guardrail)
 - Structured cybersecurity knowledge bases (Anthropic-Cybersecurity-Skills: 817 practitioner-workflow skills mapped to MITRE ATT&CK/ATLAS/D3FEND, NIST CSF/AI RMF and other frameworks; see [agent-skills](/en/topics/agent-skills))
 - An open industry security alliance (NVIDIA leading 37 organizations to form the Open Secure AI Alliance, arguing defenders need models they can read and modify on their own hardware; OpenAI/Google/Anthropic/Meta are all absent from the founding membership)
+- The Preparedness Framework's Critical threshold as a real engineering constraint (OpenAI proactively applying isolated testing, chain-of-thought monitoring and other precautionary restrictions to its unreleased Astra model; see [openai-models](/en/topics/openai-models))
+- Cross-interaction abuse detection under a privacy guarantee (OpenAI's Private Safety Processing: doesn't break Zero Data Retention, uploads only a narrow safety signal)
 
 ## Best Practices
 
@@ -40,6 +42,14 @@ The ExploitGym incident of 2026-07-21 moved this topic from theoretical speculat
 - [Technical analysis of the ExploitGym incident (Orca Security)](https://orca.security/resources/blog/openai-agent-sandbox-escape-hugging-face-breach/)
 
 ## Timeline
+
+### [2026-08-19](/en/today/2026-08-19)
+
+OpenAI previews Private Safety Processing: a safety monitoring system that identifies misuse patterns across multiple related interactions while preserving its Zero Data Retention commitment — sending OpenAI only a narrowly defined "safety signal," never the underlying prompt/response content, with customer data staying on customer infrastructure or stored by OpenAI under customer-held encryption keys; it addresses a limitation of prior ZDR-compatible systems, which could only evaluate each interaction in isolation and missed long-horizon risks only visible across multiple turns (see [openai-models](/en/topics/openai-models)).
+
+### [2026-08-07](/en/today/2026-08-07) (backfilled)
+
+OpenAI publicly acknowledged for the first time that a specific model (its unreleased Astra) may have cybersecurity capability reaching the Preparedness Framework's Critical threshold — the ability to identify and develop full-severity zero-day exploits against many hardened critical systems without human intervention, or to devise and execute end-to-end novel cyberattacks given only a high-level goal. As a precautionary response, it implemented isolated testing environments, restricted network and tool access, encrypted model weights, sandboxed execution, and chain-of-thought monitoring able to interrupt high-risk activity in real time, and proactively slowed development; OpenAI stressed this remains a preliminary assessment and Astra has not been formally classified as Critical (see [openai-models](/en/topics/openai-models)). This extends the safety-tightening trend — following the 08-10 Daybreak tiered access — from "managing access to already-released models" to "precautionary restrictions during an unreleased model's development."
 
 ### [2026-08-18](/en/today/2026-08-18)
 

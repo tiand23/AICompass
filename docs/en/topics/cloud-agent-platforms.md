@@ -37,6 +37,10 @@ The enterprise agent platform market entered consolidation in 2026 — the need 
 
 ## Timeline
 
+### [2026-08-19](/en/today/2026-08-19)
+
+Claude Managed Agents adds web-tool domain allow/block lists: an agent's `web_search`/`web_fetch` tools can be scoped with `allowed_domains` or `blocked_domains`, with `web_fetch` also supporting `max_content_tokens` — another step in refining least-privilege for hosted agents' network access. Same day, the Agent Skills API reaches formal GA (see [agent-skills](/en/topics/agent-skills)).
+
 ### [2026-08-12](/en/today/2026-08-12)
 
 LangChain publishes "Why managed agents are the next big thing in agent building," systematically listing 7 infrastructure challenges that must be solved to take an agent to production (runtime reliability, event streaming, safely executing untrusted code, context management, performance evaluation, memory systems, authorization), arguing managed services bundle this infrastructure so developers can focus on business logic. Same day, LangSmith's BYOC deployment mode goes generally available on AWS — enterprises can run LangSmith on a cluster in their own AWS account, data never leaving their private environment, a third deployment option between managed convenience and data sovereignty (see [deep-agents](/en/topics/deep-agents)).

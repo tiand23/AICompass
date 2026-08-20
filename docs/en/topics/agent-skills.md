@@ -57,6 +57,10 @@ High-star representative repos at topic creation (2026-07):
 
 ## Timeline
 
+### [2026-08-19](/en/today/2026-08-19)
+
+Claude Platform's Agent Skills and Skills API (`/v1/skills`) reach formal GA, no longer requiring the `skills-2025-10-02` beta header, including Messages API requests that load a Skill via the `container` parameter — the rapidly expanding skill ecosystem since October 2025 finally gets an official, production-grade API commitment (see [cloud-agent-platforms](/en/topics/cloud-agent-platforms)).
+
 ### [2026-08-18](/en/today/2026-08-18)
 
 Anthropic-Cybersecurity-Skills arrives (28.5k stars total): 817 skills drawn from real practitioner workflows across 29 security domains, systematically mapped to six industry frameworks — MITRE ATT&CK v19.1, NIST CSF 2.0, MITRE ATLAS, MITRE D3FEND, NIST AI RMF, and MITRE F3; uses progressive disclosure ("lightweight frontmatter scan, ~30 tokens per skill, load full content only on a match") to control token cost, and is compatible with Claude Code and 20+ platforms (see [agentic-safety](/en/topics/agentic-safety)).

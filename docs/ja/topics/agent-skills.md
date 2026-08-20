@@ -57,6 +57,10 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 
 ## Timeline
 
+### [2026-08-19](/ja/today/2026-08-19)
+
+Claude Platform の Agent Skills と Skills API（`/v1/skills`）が正式 GA に、`skills-2025-10-02` beta header が不要になった。`container` パラメータ経由で Messages API に Skill を読み込むリクエストも含む——2025 年 10 月以来急速に拡大してきた skill エコシステムに、ついに公式 API レベルでの本番運用の裏付けが与えられた（詳細は [cloud-agent-platforms](/ja/topics/cloud-agent-platforms)）。
+
 ### [2026-08-18](/ja/today/2026-08-18)
 
 Anthropic-Cybersecurity-Skills が登場（累計 2.85 万スター）：29 のセキュリティ領域にわたる実際の実務者ワークフロー由来の 817 件の skill を、MITRE ATT&CK v19.1、NIST CSF 2.0、MITRE ATLAS、MITRE D3FEND、NIST AI RMF、MITRE F3 の六大業界フレームワークに体系的にマッピング；「frontmatter の軽量スキャン（1 件約 30 token）+ 一致時のみ完全な内容をロード」という段階的開示で token コストを抑制、Claude Code など 20+ プラットフォームに対応（詳細は [agentic-safety](/ja/topics/agentic-safety)）。
