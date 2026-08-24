@@ -36,6 +36,10 @@ Voice is the natural interface for customer service, interviews, automotive and 
 
 ## Timeline
 
+### [2026-08-21](/en/today/2026-08-21)
+
+HuggingFace publishes an ASR benchmaxxing-detection methodology: 6 of 11 speech-recognition models showed "dataset-fingerprinting" behavior rather than genuinely improved transcription — a systematic challenge to how much trust ASR benchmark scores deserve (see [agent-evaluation](/en/topics/agent-evaluation)).
+
 ### [2026-08-10](/en/today/2026-08-10)
 
 NVIDIA open-sources Magpie TTS: a low-latency, multilingual TTS model for voice agents, open-weight and fully self-hostable, no cloud API dependency — filling in the last piece of local deployment for cascaded pipelines in latency- or data-compliance-sensitive voice support scenarios.

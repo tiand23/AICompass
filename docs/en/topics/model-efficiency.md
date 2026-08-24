@@ -41,6 +41,10 @@ Frontier models keep growing, but most production workloads (classification, emb
 
 ## Timeline
 
+### [2026-08-20](/en/today/2026-08-20)
+
+Liquid AI releases LFM2.5-DSpark: speculative-decoding draft models for the LFM2.5 line, averaging 2.1-2.67x speedup on H100 (peak 3.18x), up to 2.54x on-device on a MacBook, and a 57% cut in function-calling latency; output matches greedy decoding token-for-token with no quality loss — complements the same batch's QAD quantization route, together covering the main approaches to making edge models faster without losing quality.
+
 ### [2026-08-19](/en/today/2026-08-19)
 
 LiquidAI releases Quantization-Aware Distillation (QAD) Q4_0 checkpoints: unlike post-training quantization (PTQ), QAD integrates quantization into distillation training itself, so the model learns to preserve capability under quantization constraints from the start; across four LFM2.5 models (230M/350M/1.2B-Instruct/2.6B), it recovers 96.5%-97.4% of BF16 performance with 3-33% higher throughput than the higher-bit quantization needed for equivalent quality, targeting edge devices like MacBook Pro, NucBox EVO-X2, Galaxy S26 Ultra and Raspberry Pi 5.

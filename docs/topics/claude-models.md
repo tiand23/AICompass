@@ -36,6 +36,14 @@ Claude 是 Agent 与编码场景的主流模型选择之一。其模型线的每
 
 ## Timeline
 
+### [2026-08-20](/today/2026-08-20)
+
+Claude Python SDK 发布 v1.0：httpx 迁移至 httpx2，移除 legacy Text Completions API 等长期废弃接口，要求 Python 3.10+——大版本清债式发布，对停留旧版本、依赖 httpx 补丁的集成方是破坏性变更。
+
+### [2026-08-19](/today/2026-08-19)（补漏）
+
+Claude API 新增浏览器工具（`browser_toolset_20260801`，浏览器视口内操作、读无障碍树而非纯截图）、计算机工具转 GA、Managed Agents 自托管沙箱支持挂载记忆库（详见 [agent-sandboxes](/topics/agent-sandboxes) ・ [agent-memory](/topics/agent-memory)）。
+
 ### [2026-08-11](/today/2026-08-11)
 
 Compliance API 新增本地会话检索端点：可获取运行在用户本机上的 Cowork / Claude Code 会话完整转录，beta 阶段面向 Claude Enterprise。与 08-05 上线的 Inference Hooks 合起来，构成"事前拦截 + 事后审计"的完整企业治理闭环（详见 [agentic-safety](/topics/agentic-safety)）。

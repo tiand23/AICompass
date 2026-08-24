@@ -39,7 +39,7 @@
 
 ### [2026-08-19](/today/2026-08-19)
 
-Claude Managed Agents 新增网络工具域名白名单/黑名单：可对一个 agent 的 `web_search`/`web_fetch` 工具设置 `allowed_domains` 或 `blocked_domains`，`web_fetch` 另支持 `max_content_tokens`——权限最小化原则在托管 Agent 网络访问场景的又一次细化落地。同日 Agent Skills API 正式转 GA（详见 [agent-skills](/topics/agent-skills)）。
+Claude Managed Agents 新增网络工具域名白名单/黑名单：可对一个 agent 的 `web_search`/`web_fetch` 工具设置 `allowed_domains` 或 `blocked_domains`，`web_fetch` 另支持 `max_content_tokens`——权限最小化原则在托管 Agent 网络访问场景的又一次细化落地。同日 Agent Skills API 正式转 GA（详见 [agent-skills](/topics/agent-skills)），Claude API 浏览器/计算机工具、自托管沙箱记忆库挂载也在同批发布（详见 [agent-sandboxes](/topics/agent-sandboxes) ・ [agent-memory](/topics/agent-memory)）。
 
 ### [2026-08-12](/today/2026-08-12)
 

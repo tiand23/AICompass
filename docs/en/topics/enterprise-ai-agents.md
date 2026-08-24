@@ -36,6 +36,10 @@ This is the main battleground for generative AI in the enterprise. As model capa
 
 ## Timeline
 
+### [2026-08-20](/en/today/2026-08-20)
+
+LangSmith launches Preview Builds public beta: opening a PR automatically creates an isolated agent preview deployment linked to production, rebuilding and staying in sync as new commits land, with non-engineering roles able to test it directly — systematically bringing the mature web-dev practice of "CI/CD preview environments" into agent deployment (see [cloud-agent-platforms](/en/topics/cloud-agent-platforms)).
+
 ### [2026-08-12](/en/today/2026-08-12)
 
 Azure proposes a "three-speed" model for agent cost governance: runtime routing, workflow iteration and continuous governance running at three paces in parallel, paired with Microsoft Foundry's model router / prompt caching / agent optimizer / AI Gateway rate limits; the core argument is shifting from "buying intelligence" once to "managing it" continuously (see [model-efficiency](/en/topics/model-efficiency)).

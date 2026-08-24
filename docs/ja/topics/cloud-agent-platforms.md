@@ -39,7 +39,7 @@
 
 ### [2026-08-19](/ja/today/2026-08-19)
 
-Claude Managed Agents に Web ツールのドメイン許可/拒否リストを追加：agent の `web_search`/`web_fetch` ツールに `allowed_domains` または `blocked_domains` を設定可能に、`web_fetch` は `max_content_tokens` にも対応——ホスト型 Agent のネットワークアクセスにおける最小権限原則のさらなる細分化。同日 Agent Skills API が正式 GA に（詳細は [agent-skills](/ja/topics/agent-skills)）。
+Claude Managed Agents に Web ツールのドメイン許可/拒否リストを追加：agent の `web_search`/`web_fetch` ツールに `allowed_domains` または `blocked_domains` を設定可能に、`web_fetch` は `max_content_tokens` にも対応——ホスト型 Agent のネットワークアクセスにおける最小権限原則のさらなる細分化。同日 Agent Skills API が正式 GA に（詳細は [agent-skills](/ja/topics/agent-skills)）、Claude API のブラウザ/コンピュータ使用ツールと自托管サンドボックスの記憶ストア接続も同じバッチで公開された（詳細は [agent-sandboxes](/ja/topics/agent-sandboxes) ・ [agent-memory](/ja/topics/agent-memory)）。
 
 ### [2026-08-12](/ja/today/2026-08-12)
 

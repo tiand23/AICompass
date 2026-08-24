@@ -39,7 +39,7 @@ The enterprise agent platform market entered consolidation in 2026 — the need 
 
 ### [2026-08-19](/en/today/2026-08-19)
 
-Claude Managed Agents adds web-tool domain allow/block lists: an agent's `web_search`/`web_fetch` tools can be scoped with `allowed_domains` or `blocked_domains`, with `web_fetch` also supporting `max_content_tokens` — another step in refining least-privilege for hosted agents' network access. Same day, the Agent Skills API reaches formal GA (see [agent-skills](/en/topics/agent-skills)).
+Claude Managed Agents adds web-tool domain allow/block lists: an agent's `web_search`/`web_fetch` tools can be scoped with `allowed_domains` or `blocked_domains`, with `web_fetch` also supporting `max_content_tokens` — another step in refining least-privilege for hosted agents' network access. Same day, the Agent Skills API reaches formal GA (see [agent-skills](/en/topics/agent-skills)), and the Claude API's browser/computer-use tools and self-hosted-sandbox memory-store attachment ship in the same batch (see [agent-sandboxes](/en/topics/agent-sandboxes) ・ [agent-memory](/en/topics/agent-memory)).
 
 ### [2026-08-12](/en/today/2026-08-12)
 

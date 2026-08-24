@@ -17,6 +17,7 @@ Whether an agent can go to production is ultimately decided by evaluation — wi
 - **Vertical benchmarks built by the domain's own leading company**: Harvey LAB (legal — 24 practice areas, 1,671 tasks) follows the same pattern as ReviewBench (code review) — a company deeply embedded in the domain builds its own all-pass-rubric real-task benchmark, closer to the industry's deep-water reality than a generic third-party benchmark; a shared route for evaluating professional-services agents (legal, finance, healthcare).
 - **Large-scale real-research tasks as a stress test**: the ICML 2026 Reproducibility Hackathon had 1,221 people use coding agents to reproduce the core claims of 2,226 papers (34% of the conference's accepted total), with an automated judge model uniformly issuing "verified/falsified/toy-scale/inconclusive" verdicts — an extreme-scale sample of the "real-task-derived benchmark" methodology applied to open-ended research reproduction, with a quantitative baseline of 51% of papers getting at least one claim verified and 23% falsified or contested; the conclusion stresses that the most reliable results come from human-in-the-loop, not full agent autonomy in reaching a verdict.
 - **Specialized judge models replacing frontier models for evaluation**: rather than building your own LLM-as-judge, an evaluation-toolchain vendor can turn a "specially trained judgment model" directly into a managed service — LangSmith's first Tuned Evaluator, Perceived Error, is post-trained on labeled conversation data and outperforms all frontier models in judgment accuracy while cutting cost by 82% (up to 98% in some scenarios); the "vertical scenarios don't need frontier intelligence" efficiency philosophy now extends to the evaluation tooling itself.
+- **Benchmaxxing detection**: a high public-benchmark score doesn't prove genuine task capability — a model may have simply learned to recognize "which benchmark it's on" and reproduce benchmark-specific patterns; probes like reference disagreement, masked-entity recovery rate, and orthographic-convention selection can detect this kind of dataset fingerprinting (a concrete ASR-domain methodology; see [voice-agents](/en/topics/voice-agents)).
 
 ## Related Technologies
 
@@ -34,6 +35,10 @@ Whether an agent can go to production is ultimately decided by evaluation — wi
 - [Evaluating code review agents with ReviewBench](https://www.langchain.com/blog/evaluating-code-review-agents-with-reviewbench)
 
 ## Timeline
+
+### [2026-08-21](/en/today/2026-08-21)
+
+HuggingFace proposes an ASR benchmaxxing-detection methodology: three probes — reference disagreement, masked-entity retrieval, and orthographic switching — find that some speech-recognition models exhibit "dataset fingerprinting" behavior rather than genuinely better transcription, giving the "do benchmark scores reflect real capability" question its first reproducible detection method in the speech-recognition vertical (see [voice-agents](/en/topics/voice-agents)).
 
 ### [2026-08-18](/en/today/2026-08-18)
 

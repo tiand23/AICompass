@@ -36,6 +36,10 @@ Once an agent needs to actually run code to verify results (not just suggest cod
 
 ## Timeline
 
+### [2026-08-19](/en/today/2026-08-19) (backfilled)
+
+Claude API ships a browser-use tool (`browser_toolset_20260801`): unlike the computer-use tool that controls a whole desktop, it operates only inside a browser viewport, reading the page's accessibility tree/elements/forms rather than screenshot-and-click, with element grounding, form input, tab management and optional file upload — separating "full desktop control" from "in-browser action" is a concrete instance of least-privilege in tool design. The computer-use tool reaches formal GA the same day (see [claude-models](/en/topics/claude-models)).
+
 ### [2026-08-11](/en/today/2026-08-11)
 
 LangChain publishes "Give your agent its own computer," featuring monday.com's Sidekick: 200+ pre-defined tools caused context pollution and degraded, costlier performance; switching to LangSmith Sandboxes (hardware-virtualized microVMs, not kernel-sharing containers) gave the agent its own filesystem/shell/network/cross-session persistent state and meaningfully improved capability. The post also names two real container-escape/supply-chain incidents — the Shai-Hulud npm worm and CVE-2026-31431 — arguing kernel-sharing containers aren't sufficient isolation for model-generated code (see [deep-agents](/en/topics/deep-agents)).

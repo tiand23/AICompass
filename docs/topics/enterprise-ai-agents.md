@@ -36,6 +36,10 @@
 
 ## Timeline
 
+### [2026-08-20](/today/2026-08-20)
+
+LangSmith 发布 Preview Builds 公测：PR 打开时自动创建关联生产环境的隔离 Agent 预览部署，新提交自动重建同步，支持非工程角色直接访问测试——把"CI/CD 预览环境"这一 Web 开发成熟实践系统性搬进 Agent 部署（详见 [cloud-agent-platforms](/topics/cloud-agent-platforms)）。
+
 ### [2026-08-12](/today/2026-08-12)
 
 Azure 发文提出 Agent 成本治理"三速模型"：运行时路由、工作流迭代、持续治理三层节奏并行，配套 Microsoft Foundry 的模型路由器/prompt 缓存/Agent optimizer/AI Gateway 速率限制；核心主张从"一次性采购智能"转向"持续管理智能"（详见 [model-efficiency](/topics/model-efficiency)）。

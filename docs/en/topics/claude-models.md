@@ -36,6 +36,14 @@ Claude is one of the mainstream model choices for agent and coding workloads. Ev
 
 ## Timeline
 
+### [2026-08-20](/en/today/2026-08-20)
+
+Claude Python SDK v1.0 released: HTTP layer migrates from `httpx` to `httpx2`, a maintained API-compatible fork; removes long-deprecated surface including the legacy Text Completions API; requires Python 3.10+ — a debt-clearing major release, breaking for integrations still on old patterns.
+
+### [2026-08-19](/en/today/2026-08-19) (backfilled)
+
+Claude API adds a browser-use tool (`browser_toolset_20260801`, operating inside the browser viewport and reading the accessibility tree rather than screenshots), the computer-use tool reaches GA, and Managed Agents' self-hosted sandboxes gain memory-store attachment (see [agent-sandboxes](/en/topics/agent-sandboxes) ・ [agent-memory](/en/topics/agent-memory)).
+
 ### [2026-08-11](/en/today/2026-08-11)
 
 Compliance API gains local-session retrieval endpoints: full transcripts of Cowork/Claude Code sessions running on a user's own machine, beta for Claude Enterprise. Together with Inference Hooks (shipped 08-05), this closes the loop between pre-inference blocking and after-the-fact audit (see [agentic-safety](/en/topics/agentic-safety)).

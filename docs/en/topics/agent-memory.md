@@ -39,6 +39,10 @@ However large the context window, it is only "working memory" — an agent servi
 
 ## Timeline
 
+### [2026-08-19](/en/today/2026-08-19) (backfilled)
+
+Claude Managed Agents' self-hosted sandbox sessions gain memory-store attachment: an SDK worker downloads the attached store into the sandbox at session start and syncs the agent's changes back — pushing agent memory down from an API-level capability into the hosted execution environment itself, binding memory read/write directly to the sandbox lifecycle.
+
 ### [2026-08-18](/en/today/2026-08-18)
 
 IBM Research publishes an ALTK-Evolve follow-up: 8 models (117B-745B parameters) on 585 AppWorld tasks show "how much memory to give" varies by model tier — a capable model (DeepSeek-V3.2) gains 9.5 percentage points in task completion with full-guideline injection; a weaker model (gpt-oss-120b) gains 16.1 points with curated retrieval while spending only 5% more tokens; a saturated model (GLM-5) gains 0 from either mode. Memory optimization should be understood as "calibrating the dose" rather than "maximizing information volume."

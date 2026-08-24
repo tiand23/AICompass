@@ -36,6 +36,14 @@ Claude はエージェントとコーディング用途における主流のモ�
 
 ## Timeline
 
+### [2026-08-20](/ja/today/2026-08-20)
+
+Claude Python SDK v1.0 をリリース：HTTP 層を `httpx` から保守された API 互換フォーク `httpx2` へ移行；legacy Text Completions API など長期間廃止予定だったインターフェースを削除；Python 3.10+ が必須——大型版の負債整理リリースで、旧来のパターンに依存する統合にとっては破壊的変更となる。
+
+### [2026-08-19](/ja/today/2026-08-19)（補漏）
+
+Claude API がブラウザ使用ツール（`browser_toolset_20260801`、ブラウザのビューポート内で動作しスクリーンショットではなく無障害ツリーを読む）を追加、コンピュータ使用ツールが GA に、Managed Agents の自托管サンドボックスが記憶ストアの接続に対応（詳細は [agent-sandboxes](/ja/topics/agent-sandboxes) ・ [agent-memory](/ja/topics/agent-memory)）。
+
 ### [2026-08-11](/ja/today/2026-08-11)
 
 Compliance API にローカルセッション取得エンドポイントが追加：ユーザー自身のマシン上で動く Cowork / Claude Code セッションの完全な転記を取得可能に。Claude Enterprise 向け beta。08-05 に導入された Inference Hooks と合わせ、推論前ブロックと事後監査の完全な閉ループが形成される（詳細は [agentic-safety](/ja/topics/agentic-safety)）。

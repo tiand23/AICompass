@@ -36,6 +36,10 @@ Agent 一旦要"自己跑代码验证结果"（而不只是生成代码建议）
 
 ## Timeline
 
+### [2026-08-19](/today/2026-08-19)（补漏）
+
+Claude API 发布浏览器工具（`browser_toolset_20260801`）：不同于操作整个桌面的计算机工具，它只在浏览器视口内工作，读取页面无障碍树/元素/表单而非纯截图+点击，支持元素定位、表单填写、标签管理与可选文件上传——"全桌面控制"与"浏览器内操作"分离，是权限最小化在工具设计层的具体体现。同日计算机工具转正式 GA（详见 [claude-models](/topics/claude-models)）。
+
 ### [2026-08-11](/today/2026-08-11)
 
 LangChain 发文《Give your agent its own computer》，以 monday.com Sidekick 为例：200+ 预置工具导致上下文污染、模型变笨变贵，改用 LangSmith Sandboxes（硬件级虚拟化 microVM，非共享内核容器）后 Agent 获得独立文件系统/shell/网络/跨会话持久状态，能力显著提升。文章同时点名 Shai-Hulud npm 蠕虫与 CVE-2026-31431 两起真实容器逃逸/供应链风险，论证共享内核容器不足以隔离模型生成代码（详见 [deep-agents](/topics/deep-agents)）。

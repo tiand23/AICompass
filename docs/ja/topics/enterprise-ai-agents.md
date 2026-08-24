@@ -36,6 +36,10 @@
 
 ## Timeline
 
+### [2026-08-20](/ja/today/2026-08-20)
+
+LangSmith が Preview Builds 公開ベータをローンチ：PR を開くと本番環境に紐づいた隔離済みの Agent プレビューデプロイが自動生成され、新しいコミットで自動再構築・同期される。非エンジニアの役割も直接テストできる——「CI/CD プレビュー環境」という Web 開発の成熟した実践を Agent デプロイに体系的に持ち込むもの（詳細は [cloud-agent-platforms](/ja/topics/cloud-agent-platforms)）。
+
 ### [2026-08-12](/ja/today/2026-08-12)
 
 Azure が Agent コスト統治の「3 段速度モデル」を提唱：ランタイムのルーティング、ワークフローの反復改善、継続的ガバナンスを 3 つの異なるペースで並行して進める、Microsoft Foundry のモデルルーター/prompt キャッシュ/Agent optimizer/AI Gateway レート制限が対応；核心的な主張は「知能を一度買う」から「知能を継続的に管理する」への転換（詳細は [model-efficiency](/ja/topics/model-efficiency)）。
