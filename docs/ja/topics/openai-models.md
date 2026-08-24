@@ -36,6 +36,10 @@ GPT は Claude、Gemini と並ぶモデル選定の三大主流。OpenAI の 2 �
 
 ## Timeline
 
+### [2026-08-21](/ja/today/2026-08-21)（補漏）
+
+OpenAI が GPT-5.6 Sol の API/クレジット価格を 20% 超引き下げ（出力は約 3 分の 1 減）、ChatGPT Work と Codex にも拡大、11 月 21 日まで維持を保証、サブスクリプション価格は影響を受けない——07-30 の Luna/Terra 値下げに続く主力モデル階層の価格改定で、Anthropic や中国系モデルとの競争圧力への対応と報じられている；3 か月の期間限定はプロモーション色が強く恒久的な値下げではないことを示唆する。
+
 ### [2026-08-19](/ja/today/2026-08-19)
 
 OpenAI が Private Safety Processing をプレビュー：早期顧客とテスト中の安全モニタリングシステムで、Zero Data Retention へのコミットメントを維持したまま複数の関連対話をまたいで悪用パターンを識別する——OpenAI 側には狭く定義された「安全シグナル」のみを送信し、底流の prompt/応答内容は一切送らない；エンタープライズと API 顧客向けで、技術白書は 9 月に公開予定（詳細は [agentic-safety](/ja/topics/agentic-safety)）。

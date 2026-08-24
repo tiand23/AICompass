@@ -36,6 +36,10 @@ GPT, Claude and Gemini form the three main lines of model selection. Two OpenAI 
 
 ## Timeline
 
+### [2026-08-21](/en/today/2026-08-21) (backfilled)
+
+OpenAI cuts GPT-5.6 Sol API/credit pricing by over 20% (output down about a third), extending to ChatGPT Work and Codex, guaranteed through November 21, with subscription prices unaffected — another flagship-tier price move following Luna/Terra's 07-30 cuts, reported as a response to competitive pressure from Anthropic and Chinese models; the three-month window suggests this reads more like a promotion than a permanent repricing.
+
 ### [2026-08-19](/en/today/2026-08-19)
 
 OpenAI previews Private Safety Processing: a safety monitoring system tested with early customers that identifies misuse patterns across multiple related interactions while preserving its Zero Data Retention commitment — sending OpenAI only a narrowly defined "safety signal," never the underlying prompt/response content; for enterprise and API customers, with a technical white paper due in September (see [agentic-safety](/en/topics/agentic-safety)).

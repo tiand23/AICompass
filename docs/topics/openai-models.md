@@ -36,6 +36,10 @@ GPT 系与 Claude、Gemini 构成模型选型的三大主线。OpenAI 的两个�
 
 ## Timeline
 
+### [2026-08-21](/today/2026-08-21)（补漏）
+
+OpenAI 下调 GPT-5.6 Sol API/信用点定价逾 20%（输出降约三分之一），延伸至 ChatGPT Work、Codex，保证维持到 11 月 21 日，订阅价格不受影响——继 07-30 Luna/Terra 降价后又一次主力模型档位调价，报道归因于 Anthropic 与中国模型的竞争压力；三个月限时窗口提示更接近促销而非永久调价。
+
 ### [2026-08-19](/today/2026-08-19)
 
 OpenAI 预览 Private Safety Processing：与早期客户测试的安全监控系统，在保留 Zero Data Retention 承诺的前提下跨多次相关交互识别滥用模式——只向 OpenAI 发送窄范围界定的"安全信号"，不暴露底层 prompt/响应内容；面向企业与 API 客户，9 月发布技术白皮书（详见 [agentic-safety](/topics/agentic-safety)）。

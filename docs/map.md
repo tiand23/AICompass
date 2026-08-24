@@ -11,7 +11,7 @@
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
 | [claude-models](/topics/claude-models) | Anthropic Claude 模型线 | Agent/编码场景的模型选型与迁移 | 🔥 | 2026-08-20 |
-| [openai-models](/topics/openai-models) | OpenAI GPT 模型线与 API 平台 | 选型、成本波动与产品弃用风险 | 🔥 | 2026-08-19 |
+| [openai-models](/topics/openai-models) | OpenAI GPT 模型线与 API 平台 | 选型、成本波动与产品弃用风险 | 🔥 | 2026-08-21 |
 | [gemini-models](/topics/gemini-models) | Google Gemini 模型线 | 成本敏感场景的高性价比选型 | 🔥 | 2026-08-17 |
 
 ### 多模态生成
