@@ -18,6 +18,7 @@ Whether an agent can go to production is ultimately decided by evaluation — wi
 - **Large-scale real-research tasks as a stress test**: the ICML 2026 Reproducibility Hackathon had 1,221 people use coding agents to reproduce the core claims of 2,226 papers (34% of the conference's accepted total), with an automated judge model uniformly issuing "verified/falsified/toy-scale/inconclusive" verdicts — an extreme-scale sample of the "real-task-derived benchmark" methodology applied to open-ended research reproduction, with a quantitative baseline of 51% of papers getting at least one claim verified and 23% falsified or contested; the conclusion stresses that the most reliable results come from human-in-the-loop, not full agent autonomy in reaching a verdict.
 - **Specialized judge models replacing frontier models for evaluation**: rather than building your own LLM-as-judge, an evaluation-toolchain vendor can turn a "specially trained judgment model" directly into a managed service — LangSmith's first Tuned Evaluator, Perceived Error, is post-trained on labeled conversation data and outperforms all frontier models in judgment accuracy while cutting cost by 82% (up to 98% in some scenarios); the "vertical scenarios don't need frontier intelligence" efficiency philosophy now extends to the evaluation tooling itself.
 - **Benchmaxxing detection**: a high public-benchmark score doesn't prove genuine task capability — a model may have simply learned to recognize "which benchmark it's on" and reproduce benchmark-specific patterns; probes like reference disagreement, masked-entity recovery rate, and orthographic-convention selection can detect this kind of dataset fingerprinting (a concrete ASR-domain methodology; see [voice-agents](/en/topics/voice-agents)).
+- **Methodology for building the evaluation task itself**: split "writing the task" into a human-reviewed spec-generation stage (a Markdown spec describing input/environment/scoring rubric) and an agent-automated Spec2Task conversion stage, letting task creation run in parallel while concentrating human review at the cheapest step; a "world spec" shared across tasks (data schemas, scoring methodology, domain patterns) further cuts the cost of repeated task-writing — systematizing the "real-task-derived benchmark" methodology at the engineering level of "how you actually write the tasks."
 
 ## Related Technologies
 
@@ -35,6 +36,10 @@ Whether an agent can go to production is ultimately decided by evaluation — wi
 - [Evaluating code review agents with ReviewBench](https://www.langchain.com/blog/evaluating-code-review-agents-with-reviewbench)
 
 ## Timeline
+
+### [2026-08-25](/en/today/2026-08-25)
+
+LangChain shares its methodology for building agent evaluation environments and tasks: a spec-generation (human-reviewed) + Spec2Task conversion (agent-automated) two-stage pipeline, with a "world spec" carrying information shared across tasks; already used to build internal benchmarks for GTM research, code review and trace mining. Same day, LangSmith Engine gets an upgrade: its IssueBench score more than doubles, having scanned 60M+ traces to identify 20,000+ issues (see [enterprise-ai-agents](/en/topics/enterprise-ai-agents)).
 
 ### [2026-08-21](/en/today/2026-08-21)
 

@@ -36,6 +36,10 @@ Claude 是 Agent 与编码场景的主流模型选择之一。其模型线的每
 
 ## Timeline
 
+### [2026-08-26](/today/2026-08-26)
+
+Compliance API 会话相关端点（Cowork、Claude Code）转正式 GA；本地会话检索新增覆盖 Claude Science 与 Claude for Microsoft 365（Excel/PowerPoint/Word/Outlook）会话完整转录，Claude Enterprise beta——合规审计能力随 Claude 产品面扩张同步铺开。
+
 ### [2026-08-20](/today/2026-08-20)
 
 Claude Python SDK 发布 v1.0：httpx 迁移至 httpx2，移除 legacy Text Completions API 等长期废弃接口，要求 Python 3.10+——大版本清债式发布，对停留旧版本、依赖 httpx 补丁的集成方是破坏性变更。

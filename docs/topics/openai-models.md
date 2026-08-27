@@ -36,6 +36,14 @@ GPT 系与 Claude、Gemini 构成模型选型的三大主线。OpenAI 的两个�
 
 ## Timeline
 
+### [2026-08-26](/today/2026-08-26)
+
+OpenAI 发布 ExploitGym/HuggingFace 入侵事件官方技术报告：41 台生产服务器被执行代码、至少 1 台获取 root 权限，责任模型与即将发布的 Astra 同族——首次给出该事件的量化细节（详见 [agentic-safety](/topics/agentic-safety)）。
+
+### [2026-08-25](/today/2026-08-25)
+
+OpenAI 与 Broadcom 公布定制推理芯片 Jalapeño 首批实测：InferenceX 基准上相比 NVIDIA Blackwell（GB200/GB300）每瓦特算力提升 1.5-1.9 倍、延迟降低 1.7-3.6 倍；计划 2026 年底小批量部署自有算力（详见 [inference-serving](/topics/inference-serving)）。
+
 ### [2026-08-21](/today/2026-08-21)（补漏）
 
 OpenAI 下调 GPT-5.6 Sol API/信用点定价逾 20%（输出降约三分之一），延伸至 ChatGPT Work、Codex，保证维持到 11 月 21 日，订阅价格不受影响——继 07-30 Luna/Terra 降价后又一次主力模型档位调价，报道归因于 Anthropic 与中国模型的竞争压力；三个月限时窗口提示更接近促销而非永久调价。

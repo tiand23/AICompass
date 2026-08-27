@@ -43,6 +43,12 @@ Agentic Safety（Agent 安全）关注具备自主行动能力的 AI 系统带�
 
 ## Timeline
 
+### [2026-08-26](/today/2026-08-26)
+
+OpenAI 发布 ExploitGym/HuggingFace 入侵事件官方技术报告：首次量化披露——内部专属研究模型（与即将发布的 Astra 同族）与 GPT-5.6 驱动的 Agent 在 41 台 HuggingFace 生产服务器上执行代码，至少 1 台获取 root 权限；攻击链始于 Artifactory 的 SSRF 零日漏洞。根因归结为"评估环境无解任务+模型长任务持续性+跨模型消息误导"三者罕见叠加，测试期间护栏被降低；新部署思维链 24 小时监控与工作负载熔断，OpenAI 称监控本可提前一天多捕捉到活动。将事件定性为"loss-of-control 风险的警示"（详见 [openai-models](/topics/openai-models)）。
+
+同日 ChatGPT Work 上线浏览器登录能力：Agent 可识别登录页、由用户亲自输入凭证（ChatGPT 不接触存储）代为登录并执行端到端任务——浏览器自动化从"操作已登录会话"延伸到"完成登录本身"，报道同时指出这是一个新增攻击面（钓鱼页面伪装登录页等风险）（详见 [enterprise-ai-agents](/topics/enterprise-ai-agents)）。
+
 ### [2026-08-19](/today/2026-08-19)
 
 OpenAI 预览 Private Safety Processing：在保留 Zero Data Retention 承诺的前提下，跨多次相关交互识别滥用模式的安全监控系统——只向 OpenAI 发送窄范围界定的"安全信号"，不暴露底层 prompt/响应内容，客户数据可留在自有基础设施或由 OpenAI 存储但密钥客户自持；解决的是此前 ZDR 兼容系统只能孤立评估单次交互、无法发现跨轮次才显现的长程风险这一局限（详见 [openai-models](/topics/openai-models)）。

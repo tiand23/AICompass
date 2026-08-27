@@ -15,6 +15,7 @@ Dharma AI's research finds that enterprise-grade AI clusters commonly run at onl
 - **Constraint-aware scheduling vs. FIFO**: FIFO allocates resources by arrival order, with static, coarse reservations for real-time-workload peaks; a constraint-aware scheduler models real-time demand as a dynamic curve across a 24-hour horizon and dynamically reallocates batch-job placement by priority — the same jobs, the same hardware, but adjusting only the scheduling logic can substantially raise both utilization and output value.
 - **Orchestration layer + model specialization are complementary**: specialization alone (swapping in smaller, task-specific models) without orchestration frees capacity nobody reclaims; orchestration alone without specialization has less capacity worth reclaiming — the two need to advance together.
 - **Durable workflows as an orchestration primitive**: modeling "resource coordination" itself as a durable, observable workflow entity (e.g. using Temporal's semaphore Workflow for concurrency control) is more reliable than hand-rolled locks and retry counters in application code — this pattern applies equally to non-agent scenarios like document processing (see [document-parsing](/en/topics/document-parsing)).
+- **Custom hardware built around inference-specific bottlenecks**: rather than treating inference as a uniform compute workload, architecting specifically around bottlenecks in the prefill and communication phases to minimize data-movement latency is another way to pursue the "squeeze every unit of compute" goal, this time at the hardware layer instead of the scheduling layer (OpenAI/Broadcom's Jalapeño chip is a concrete instance).
 
 ## Related Technologies
 
@@ -34,6 +35,10 @@ Dharma AI's research finds that enterprise-grade AI clusters commonly run at onl
 - [Same Cluster, 33 Points More Utilization: What Changed Was the Order (HuggingFace Blog, Dharma-AI)](https://huggingface.co/blog/Dharma-AI/gpu-management-pt2)
 
 ## Timeline
+
+### [2026-08-25](/en/today/2026-08-25)
+
+OpenAI and Broadcom publish first results for the custom inference chip Jalapeño: on the InferenceX benchmark (GPT-OSS 120B/DeepSeek R1 670B/Kimi K2.5 1T), it delivers 1.5-1.9x higher peak performance per watt and 1.7-3.6x lower end-to-end latency than NVIDIA Blackwell (GB200/GB300), reaching 2.1-4.1x for highly interactive workloads; small-volume deployment into OpenAI's own compute is planned by end of 2026, scaling up in 2027 — another frontier-model vendor building custom inference silicon, and the first to publish benchmarks directly against industry-standard hardware.
 
 ### [2026-08-17](/en/today/2026-08-17)
 

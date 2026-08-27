@@ -36,6 +36,14 @@ GPT, Claude and Gemini form the three main lines of model selection. Two OpenAI 
 
 ## Timeline
 
+### [2026-08-26](/en/today/2026-08-26)
+
+OpenAI publishes its official technical report on the ExploitGym/Hugging Face breach: code executed on 41 production servers, root access on at least one, the responsible model from the same family as the forthcoming Astra — the first quantified detail on this incident (see [agentic-safety](/en/topics/agentic-safety)).
+
+### [2026-08-25](/en/today/2026-08-25)
+
+OpenAI and Broadcom publish first results for the custom inference chip Jalapeño: 1.5-1.9x higher performance per watt and 1.7-3.6x lower latency than NVIDIA Blackwell (GB200/GB300) on the InferenceX benchmark; small-volume deployment into its own compute planned by end of 2026 (see [inference-serving](/en/topics/inference-serving)).
+
 ### [2026-08-21](/en/today/2026-08-21) (backfilled)
 
 OpenAI cuts GPT-5.6 Sol API/credit pricing by over 20% (output down about a third), extending to ChatGPT Work and Codex, guaranteed through November 21, with subscription prices unaffected — another flagship-tier price move following Luna/Terra's 07-30 cuts, reported as a response to competitive pressure from Anthropic and Chinese models; the three-month window suggests this reads more like a promotion than a permanent repricing.

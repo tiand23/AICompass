@@ -15,6 +15,7 @@
 - **性能参考**：Qdrant 开源速度领先（常见负载快 10-25%，1000 万向量 p99 约 12ms）；但 pgvectorscale 这类扩展在特定负载下 QPS 反超一个数量级——benchmark 要看你自己的负载。
 - **别过早上专用库**：已有 Postgres 且数据量中小，pgvector 是默认正确答案。
 - **多向量（后期交互）检索**：ColBERT 式路线——每个 token 保留一个向量而非把整份文档压成一个向量，交互推迟到打分阶段（MaxSim 算子：每个查询 token 找文档里相似度最高的 token 再求和）；同等规模下多向量在多数数据集上精度优于稠密向量，但存储成本高一个数量级（可用 PLAID 索引/token 池化压缩）。Sentence Transformers v6.0 起原生支持，标志着这条此前偏小众的路线进入主流库。
+- **静态 Embedding**：纯查表+平均，无需 Transformer 前向计算，CPU 上约 0.05 毫秒/行；根本局限是不感知上下文、长文本池化稀释语义。轻量卷积适配器（推理时按上下文微调 token 向量）可把精度做到稠密小模型（MiniLM-L6）的约 94%，速度却快约 100 倍——延迟极度敏感、CPU/边缘部署场景的一个具体折中点，但换更强教师模型、直接对比训练等更复杂手段均未进一步突破。
 
 ## 相关技术
 
@@ -32,6 +33,10 @@
 - [Qdrant vs Pinecone vs pgvector 选型](https://www.knowsync.ai/blog/choosing-vector-database-qdrant-pinecone-pgvector-2026)
 
 ## Timeline
+
+### [2026-08-26](/today/2026-08-26)
+
+LlamaIndex 实验静态 Embedding + MaxSim（minishlab/potion-base-32M）：轻量卷积适配器（530KB）把精度做到 MiniLM-L6 的约 94%（0.526 vs 0.562 NDCG），速度快约 100 倍；换更强教师模型、直接对比训练、微调整个 embedding 表等其余尝试均未进一步突破——静态 Embedding 精度上限的一次扎实实证探索（详见 [rag](/topics/rag)）。
 
 ### [2026-08-18](/today/2026-08-18)
 

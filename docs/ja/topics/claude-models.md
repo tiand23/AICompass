@@ -36,6 +36,10 @@ Claude はエージェントとコーディング用途における主流のモ�
 
 ## Timeline
 
+### [2026-08-26](/ja/today/2026-08-26)
+
+Compliance API のセッション関連エンドポイント（Cowork、Claude Code）が正式 GA に；ローカルセッション取得が Claude Science と Claude for Microsoft 365（Excel/PowerPoint/Word/Outlook）セッションの完全な転記もカバーするようになった。Claude Enterprise 向け beta——コンプライアンス監査能力が Claude の製品面の拡大に合わせて広がっている。
+
 ### [2026-08-20](/ja/today/2026-08-20)
 
 Claude Python SDK v1.0 をリリース：HTTP 層を `httpx` から保守された API 互換フォーク `httpx2` へ移行；legacy Text Completions API など長期間廃止予定だったインターフェースを削除；Python 3.10+ が必須——大型版の負債整理リリースで、旧来のパターンに依存する統合にとっては破壊的変更となる。

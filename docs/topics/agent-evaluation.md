@@ -18,6 +18,7 @@ Agent 能不能上生产，最终由评估说了算——没有可复现的评�
 - **大规模真实科研任务作为压力测试**：ICML 2026 可复现性黑客松让 1,221 人用编码 Agent 复现 2,226 篇论文（占会议录用总量 34%）的核心主张，用自动化裁判模型统一判定"已验证/被证伪/仅玩具规模/无法判定"——是"真实任务派生基准"方法论在开放式科研复现场景的极限规模样本，量化基线为 51% 论文至少一条主张验证通过、23% 被证伪或存疑；结论强调最可靠结果来自人在回路，而非 Agent 完全自主判定。
 - **专用裁判模型替代前沿模型做评估**：与其自建 LLM-as-judge，评估工具链厂商可以直接把"专门训练过的判断模型"做成托管服务——LangSmith Tuned Evaluators 首发的 Perceived Error 评估器，在标注对话数据上做专门后训练，判断准确度超过所有前沿模型，同时成本降低 82%（部分场景达 98%）；"垂直场景不需要前沿智能"这条效率哲学延伸到了评估工具本身。
 - **基准"刷分"（benchmaxxing）检测**：模型在公开基准上高分不代表任务能力真的强，可能是学会了识别"自己身处哪个基准"进而复现基准特有模式；参考分歧、遮蔽实体恢复率、拼写惯例选择等探针可用来检测这种数据集指纹识别行为（ASR 领域的具体方法论，参见 [voice-agents](/topics/voice-agents)）。
+- **评估任务本身的构建方法论**：把"造题"拆成人工把关的 Spec 生成（Markdown 描述输入/环境/评分细则）与 Agent 自动执行的 Spec2Task 转换两阶段，让任务创建可并行、人工审核集中在成本最低的环节；跨任务共享的"world spec"（数据 schema、评分方法论、领域模式）进一步降低重复造题成本——是"真实任务派生基准"方法论在"怎么造题"这一工程环节的系统化。
 
 ## 相关技术
 
@@ -35,6 +36,10 @@ Agent 能不能上生产，最终由评估说了算——没有可复现的评�
 - [Evaluating code review agents with ReviewBench](https://www.langchain.com/blog/evaluating-code-review-agents-with-reviewbench)
 
 ## Timeline
+
+### [2026-08-25](/today/2026-08-25)
+
+LangChain 分享 Agent 评估环境与任务的构建方法论：Spec 生成（人工把关）+ Spec2Task 转换（Agent 自动执行）两阶段流水线，"world spec"承载跨任务共享信息；已用于构建 GTM 调研、代码评审、trace 挖掘等内部基准。同日 LangSmith Engine 升级：IssueBench 得分翻倍以上，扫描 6000 多万条 trace 识别 2 万多个 issue（详见 [enterprise-ai-agents](/topics/enterprise-ai-agents)）。
 
 ### [2026-08-21](/today/2026-08-21)
 

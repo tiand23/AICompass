@@ -36,6 +36,14 @@
 
 ## Timeline
 
+### [2026-08-26](/today/2026-08-26)
+
+ChatGPT Work 支持登录密码保护网站并执行端到端任务（用户亲自输入凭证，ChatGPT 不接触存储），新增 Webhook 触发定时任务（响应 Gmail/Slack/GitHub PR 事件），免费版也开放定时任务（详见 [agentic-safety](/topics/agentic-safety)）。同日 Azure 发布"Agent 优化经济学"系列第二篇，把 08-12"三速治理模型"里的"运行时优化"拆解成四个具体杠杆：模型路由与部署类型选型、prompt 缓存、prompt/Agent 自动化调优、可观测性与评估——从战略框架推进到战术执行指南。
+
+### [2026-08-25](/today/2026-08-25)
+
+LangSmith Engine（平台内置 Deep Agent，自动扫描生产 trace 诊断 Agent 故障）性能升级：内部基准 IssueBench 得分翻倍以上，公开基准 Terminal-Bench 提升 25%，累计扫描 6000 多万条 trace、识别 2 万多个 issue，每个 issue 附证据链与可部署修复 PR；新增自托管部署、Slack/Linear 集成。"Agent 生产运维"从人工巡检向"专用 Deep Agent 自动诊断+自动修复"演进的具体产品化案例（详见 [agent-evaluation](/topics/agent-evaluation)）。
+
 ### [2026-08-20](/today/2026-08-20)
 
 LangSmith 发布 Preview Builds 公测：PR 打开时自动创建关联生产环境的隔离 Agent 预览部署，新提交自动重建同步，支持非工程角色直接访问测试——把"CI/CD 预览环境"这一 Web 开发成熟实践系统性搬进 Agent 部署（详见 [cloud-agent-platforms](/topics/cloud-agent-platforms)）。

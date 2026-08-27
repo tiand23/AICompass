@@ -15,6 +15,7 @@ The cost of the wrong choice explodes only at scale (latency, cost, recall colla
 - **Performance reference**: Qdrant leads OSS speed (10–25% faster on common workloads; ~12ms p99 at 10M vectors) — but extensions like pgvectorscale can flip the result by an order of magnitude on specific workloads. Benchmark on your own load.
 - **Don't go dedicated too early**: with Postgres already in place and small-to-mid data, pgvector is the default right answer.
 - **Multi-vector (late-interaction) retrieval**: the ColBERT-style approach — keep one vector per token rather than compressing the whole document into one, deferring "interaction" to scoring time (the MaxSim operator: for each query token, find the document token with the highest similarity, then sum). At matched scale, multi-vector beats dense on most datasets in accuracy, but at an order-of-magnitude higher storage cost (mitigated via PLAID indexing / token pooling). Natively supported from Sentence Transformers v6.0 onward, marking this previously niche path's entry into a mainstream library.
+- **Static embeddings**: pure lookup-plus-average, no transformer forward pass, ~0.05ms/line on CPU; fundamentally limited by context-blindness and semantic dilution from pooling long text. A lightweight convolutional adapter (adjusting token vectors based on context at inference time) can push accuracy to about 94% of a small dense model (MiniLM-L6) at roughly 100x the speed — a concrete middle ground for latency-critical, CPU/edge scenarios, though more complex approaches (stronger teacher models, direct contrastive training) fail to push further.
 
 ## Related Technologies
 
@@ -32,6 +33,10 @@ The cost of the wrong choice explodes only at scale (latency, cost, recall colla
 - [Qdrant vs Pinecone vs pgvector selection guide](https://www.knowsync.ai/blog/choosing-vector-database-qdrant-pinecone-pgvector-2026)
 
 ## Timeline
+
+### [2026-08-26](/en/today/2026-08-26)
+
+LlamaIndex experiments with static embeddings + MaxSim (minishlab/potion-base-32M): a lightweight convolutional adapter (530KB) reaches about 94% of MiniLM-L6's accuracy (0.526 vs. 0.562 NDCG) at roughly 100x the speed; switching to a stronger teacher model, direct contrastive training, and fine-tuning the full embedding table all failed to push further — a solid empirical exploration of static embeddings' accuracy ceiling (see [rag](/en/topics/rag)).
 
 ### [2026-08-18](/en/today/2026-08-18)
 

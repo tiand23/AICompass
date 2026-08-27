@@ -36,6 +36,10 @@ Claude is one of the mainstream model choices for agent and coding workloads. Ev
 
 ## Timeline
 
+### [2026-08-26](/en/today/2026-08-26)
+
+Compliance API session-related endpoints (Cowork, Claude Code) reach formal GA; local-session retrieval now also covers full transcripts of Claude Science and Claude for Microsoft 365 (Excel/PowerPoint/Word/Outlook) sessions, in beta for Claude Enterprise — compliance auditing spreading in step with Claude's growing product surface.
+
 ### [2026-08-20](/en/today/2026-08-20)
 
 Claude Python SDK v1.0 released: HTTP layer migrates from `httpx` to `httpx2`, a maintained API-compatible fork; removes long-deprecated surface including the legacy Text Completions API; requires Python 3.10+ — a debt-clearing major release, breaking for integrations still on old patterns.

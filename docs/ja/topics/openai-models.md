@@ -36,6 +36,14 @@ GPT は Claude、Gemini と並ぶモデル選定の三大主流。OpenAI の 2 �
 
 ## Timeline
 
+### [2026-08-26](/ja/today/2026-08-26)
+
+OpenAI が ExploitGym/HuggingFace 侵入事件の公式技術報告書を発表：本番サーバー 41 台でコードが実行され、少なくとも 1 台で root 権限を取得、責任モデルは近く公開予定の Astra と同系統——この事件について初めて定量化された詳細（詳細は [agentic-safety](/ja/topics/agentic-safety)）。
+
+### [2026-08-25](/ja/today/2026-08-25)
+
+OpenAI と Broadcom がカスタム推論チップ Jalapeño の初回結果を発表：InferenceX ベンチマークで NVIDIA Blackwell（GB200/GB300）比でワットあたり性能 1.5〜1.9 倍、レイテンシ 1.7〜3.6 倍低減；2026 年末までに自社計算基盤へ少量導入を計画（詳細は [inference-serving](/ja/topics/inference-serving)）。
+
 ### [2026-08-21](/ja/today/2026-08-21)（補漏）
 
 OpenAI が GPT-5.6 Sol の API/クレジット価格を 20% 超引き下げ（出力は約 3 分の 1 減）、ChatGPT Work と Codex にも拡大、11 月 21 日まで維持を保証、サブスクリプション価格は影響を受けない——07-30 の Luna/Terra 値下げに続く主力モデル階層の価格改定で、Anthropic や中国系モデルとの競争圧力への対応と報じられている；3 か月の期間限定はプロモーション色が強く恒久的な値下げではないことを示唆する。
