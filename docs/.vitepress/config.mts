@@ -46,6 +46,16 @@ export default defineConfig({
   description: 'Living AI Developer Handbook',
   cleanUrls: true,
   lastUpdated: true,
+  head: [
+    [
+      'script',
+      {
+        type: 'module',
+        src: 'https://static.cloudflareinsights.com/beacon.min.js',
+        'data-cf-beacon': '{"token": "c7e163d24be845b7912e175ab65bf9bd"}',
+      },
+    ],
+  ],
   locales: {
     root: {
       label: '简体中文',
