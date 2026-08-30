@@ -40,6 +40,10 @@
 
 ChatGPT Work がパスワード保護されたサイトへのログインとエンドツーエンドのタスク実行に対応（ユーザー自身が認証情報を入力し、ChatGPT は一切触れず保存しない）、Webhook トリガーの定期タスク（Gmail/Slack/GitHub PR のイベントに応答）も追加；定期タスクは無料ユーザーにも開放された（詳細は [agentic-safety](/ja/topics/agentic-safety)）。同日 Azure が「Agent 最適化の経済学」シリーズ第 2 弾を発表：08-12 の「3 段速度ガバナンスモデル」の「ランタイム最適化」を、モデルルーティングとデプロイ種別の選定、prompt キャッシュ、prompt/Agent の自動チューニング、可観測性と評価という 4 つの具体的なレバーに分解——戦略的フレームワークから戦術的な実行ガイドへ。
 
+### [2026-08-24](/ja/today/2026-08-24)（補漏）
+
+Toyota 北米の事例（LangChain 発表）：Deep Agents/LangSmith を基盤に構築した 3 つの本番アプリケーション（ToyotaGPT、GearPal、R&D GPT）——Agent デプロイを「6 か月・6 人」から「4 日・1 人」へ、設備診断を 5〜6 時間から 2〜3 分へ短縮；各生産ラインの目標は年間最低 6 桁（ドル）の節約。「AI 投資を実験的支出ではなく資本投資として扱う」——「Agent 本番化事例ライブラリ」で財務リターンを明示的に定量化した最初の事例（詳細は [deep-agents](/ja/topics/deep-agents)）。
+
 ### [2026-08-25](/ja/today/2026-08-25)
 
 LangSmith Engine（本番 trace を自動スキャンして Agent の不具合を診断するプラットフォーム内蔵の Deep Agent）が性能アップグレード：内部ベンチマーク IssueBench のスコアが 2 倍以上に、公開ベンチマーク Terminal-Bench が 25% 向上、累計 6000 万件超の trace をスキャンし 2 万件超の issue を特定、それぞれに証拠チェーンとそのまま展開可能な修正 PR が付属；自托管デプロイや Slack/Linear 連携などの新機能も追加。「Agent の本番運用」が人手によるトリアージから「専用の Deep Agent が自動診断・自動修正する」形へ進化した具体的な製品化事例だ（詳細は [agent-evaluation](/ja/topics/agent-evaluation)）。

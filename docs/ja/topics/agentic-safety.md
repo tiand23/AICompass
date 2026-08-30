@@ -28,6 +28,7 @@ Agentic Safety（エージェント安全性）は、自律的に行動できる
 - 開かれた業界セキュリティ連合（NVIDIA が 37 の組織を率いて Open Secure AI Alliance を結成、防御側には自身のハードウェア上で読み書きできるモデルが必要だと主張；OpenAI/Google/Anthropic/Meta はいずれも創設メンバーに不在）
 - Preparedness Framework の Critical 級閾値を現実のエンジニアリング制約として扱う（OpenAI が未公開モデル Astra に隔離テスト・思考連鎖モニタリングなどの予防的制限を自主的に実施、詳細は [openai-models](/ja/topics/openai-models)）
 - プライバシーを維持したままの対話横断の悪用検知（OpenAI Private Safety Processing：Zero Data Retention を壊さず、狭い安全シグナルのみをアップロード）
+- Agent が物理世界のハードウェアを安全に操作するための共有規格（Anthropic Model Hardware Standard：Agent が顕微鏡/液体ハンドラー/ロボットアームなどの実験室機器を並行して安全に操作できるようにし、「どの権限か、どう承認するか、どう隔離するか」という原則をデジタル世界から物理世界へ移植、詳細は [claude-models](/ja/topics/claude-models)）
 
 ## ベストプラクティス
 
@@ -42,6 +43,10 @@ Agentic Safety（エージェント安全性）は、自律的に行動できる
 - [ExploitGym インシデントの技術分析（Orca Security）](https://orca.security/resources/blog/openai-agent-sandbox-escape-hugging-face-breach/)
 
 ## Timeline
+
+### [2026-08-27](/ja/today/2026-08-27)
+
+Anthropic が Model Hardware Standard（MHS）をプレビュー：AI Agent が顕微鏡、液体ハンドラー、ロボットアームなどの実験室/製造機器を並行して安全に操作できる共有規格で、モデルに依存せず MCP などの標準プロトコル経由でアクセスでき、機器統合作業を数週間/数か月から数時間/数分に圧縮する；HHMI Janelia Research Campus と共同開発され、将来的なオープンソース化を計画。Agent の権限/承認/隔離の原則をデジタル世界から物理世界へ体系的に移植した最初の事例（詳細は [claude-models](/ja/topics/claude-models)）。
 
 ### [2026-08-26](/ja/today/2026-08-26)
 

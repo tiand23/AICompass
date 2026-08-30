@@ -37,6 +37,14 @@ Deep Agents は LangChain が提唱するコンセプトとプロダクトの方
 
 ## Timeline
 
+### [2026-08-25](/ja/today/2026-08-25)
+
+IBM が Granite 4.2 を発表：Apache 2.0 のオープン推論モデルファミリー（3B/8B/30B）。核心的な革新は多段階の連鎖的強化学習——基礎 RL の後、専用の Agentic RL 段階で 8B/30B モデルの SWE Agent、ターミナル操作、Web 検索を、合成シミュレーションではなく実際にサンドボックス化されたリポジトリ・ターミナル・ブラウザの中で直接訓練する；30B モデルは SWE-Bench Verified で 57% を達成。訓練側でも実環境を採用し始めており、評価側の「実タスク由来ベンチマーク」と同じ流れを反復している（詳細は [model-efficiency](/ja/topics/model-efficiency)）。
+
+### [2026-08-24](/ja/today/2026-08-24)（補漏）
+
+Toyota 北米の事例（LangChain 発表）：ToyotaGPT、GearPal、R&D GPT という 3 つの本番アプリケーション——Agent デプロイを「6 か月・6 人」から「4 日・1 人」へ、設備診断を 5〜6 時間から 2〜3 分へ短縮、チームは各プロジェクトで年率 6〜7 桁の ROI を要求——AI を実験的支出ではなく資本投資として扱う定量化された事例だ（詳細は [enterprise-ai-agents](/ja/topics/enterprise-ai-agents)）。
+
 ### [2026-08-12](/ja/today/2026-08-12)
 
 LangChain が Agent を本番に持っていくために解決すべき 7 種類のインフラ課題（ランタイムの信頼性、イベントストリーミング、信頼できないコードの安全な実行、コンテキスト管理、性能評価、記憶システム、認可）を体系的に列挙し、マネージドサービスがこれらをパッケージ化すると論じる；同日 LangSmith の BYOC デプロイモードが AWS で正式 GA（詳細は [cloud-agent-platforms](/ja/topics/cloud-agent-platforms)）。

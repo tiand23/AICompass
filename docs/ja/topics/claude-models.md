@@ -36,6 +36,10 @@ Claude はエージェントとコーディング用途における主流のモ�
 
 ## Timeline
 
+### [2026-08-27](/ja/today/2026-08-27)
+
+Anthropic が Model Hardware Standard（MHS）をプレビュー：Agent が実験室/製造機器を並行して安全に操作できる共有規格で、モデルに依存せず MCP などの標準プロトコル経由でアクセスでき、機器統合を数週間/数か月から数時間に圧縮する（詳細は [agentic-safety](/ja/topics/agentic-safety)）。同日、科学者向けに Claude Team の無料/割引席を 1 万席開放すると発表——Claude Science（06-30 発表）を土台とし、生命科学研究者に Mythos 級モデルを開放する政府提携アクセスプログラムも伴う——科学研究がエンタープライズ Agent と並ぶ第 2 の重点製品ラインになりつつある。
+
 ### [2026-08-26](/ja/today/2026-08-26)
 
 Compliance API のセッション関連エンドポイント（Cowork、Claude Code）が正式 GA に；ローカルセッション取得が Claude Science と Claude for Microsoft 365（Excel/PowerPoint/Word/Outlook）セッションの完全な転記もカバーするようになった。Claude Enterprise 向け beta——コンプライアンス監査能力が Claude の製品面の拡大に合わせて広がっている。

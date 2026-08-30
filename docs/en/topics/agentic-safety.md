@@ -28,6 +28,7 @@ The ExploitGym incident of 2026-07-21 moved this topic from theoretical speculat
 - An open industry security alliance (NVIDIA leading 37 organizations to form the Open Secure AI Alliance, arguing defenders need models they can read and modify on their own hardware; OpenAI/Google/Anthropic/Meta are all absent from the founding membership)
 - The Preparedness Framework's Critical threshold as a real engineering constraint (OpenAI proactively applying isolated testing, chain-of-thought monitoring and other precautionary restrictions to its unreleased Astra model; see [openai-models](/en/topics/openai-models))
 - Cross-interaction abuse detection under a privacy guarantee (OpenAI's Private Safety Processing: doesn't break Zero Data Retention, uploads only a narrow safety signal)
+- A shared spec for agents to safely operate physical-world hardware (Anthropic's Model Hardware Standard: letting agents operate lab equipment like microscopes/liquid handlers/robotic arms in parallel, transplanting "what permissions, what approval, what isolation" principles from the digital world into the physical world; see [claude-models](/en/topics/claude-models))
 
 ## Best Practices
 
@@ -42,6 +43,10 @@ The ExploitGym incident of 2026-07-21 moved this topic from theoretical speculat
 - [Technical analysis of the ExploitGym incident (Orca Security)](https://orca.security/resources/blog/openai-agent-sandbox-escape-hugging-face-breach/)
 
 ## Timeline
+
+### [2026-08-27](/en/today/2026-08-27)
+
+Anthropic previews the Model Hardware Standard (MHS): a shared spec letting AI agents safely operate microscopes, liquid handlers, robotic arms and other lab/manufacturing equipment in parallel, model-agnostic and accessed via standard protocols like MCP, compressing device-integration work from weeks/months to hours or minutes; developed with HHMI Janelia Research Campus, with plans to open-source it later. The first systematic transplant of agent permission/approval/isolation principles from the digital world into the physical world (see [claude-models](/en/topics/claude-models)).
 
 ### [2026-08-26](/en/today/2026-08-26)
 

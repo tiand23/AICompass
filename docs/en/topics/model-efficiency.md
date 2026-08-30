@@ -23,6 +23,7 @@ Frontier models keep growing, but most production workloads (classification, emb
 - **Edge vision-language models**: Liquid AI's LFM2.5-VL-3B extends the SLM route from text-only into multimodal — UI understanding, screen grounding and multi-image input packed into a 3B-parameter, ~3GB-memory edge model, matching larger 4B-class models on document/OCR and grounding benchmarks, proving "shrink the footprint" and "keep pace with bigger models" aren't mutually exclusive.
 - **Downloads vs. attention diverge**: models under 1B parameters capture 83% of all-time platform downloads, while models above 100B capture just 1% — a download signals something wired into a running production pipeline, while a like reflects momentary excitement, and the two leaderboards barely overlap; local-inference infrastructure (GGUF, etc.) is growing repositories far faster (464%) than core modeling tools themselves (21%) — an acceleration signal for the efficiency route at the infrastructure layer (HuggingFace's "State of Open Models: Summer 2026").
 - **Quantization-Aware Distillation (QAD)**: unlike post-training quantization (PTQ), which compresses a model after training completes, QAD integrates quantization directly into distillation training — a high-precision teacher model guides the quantized student's training so it learns to preserve capability under quantization constraints from the start. LiquidAI's results across four LFM2.5 models show QAD Q4_0 checkpoints recovering 96.5%-97.4% of BF16 performance while achieving 3-33% higher throughput than the higher-bit quantization needed for equivalent quality — merging the previously separate quantization and knowledge-distillation routes.
+- **Quantization-Aware Healing (QAH)**: unlike standard QAT, which distills from an already-degraded recovered checkpoint as teacher, QAH distills directly from the original, pre-compression full-precision model (frozen teacher logits + KL-divergence loss, which is architecture-agnostic) — avoiding anchoring the student below a degraded teacher's ceiling. In testing, the 4-bit compressed model outperforms its own 16-bit source on most benchmarks, and training needs only ~100 steps (versus QAT collapsing after ~700).
 
 ## Related Technologies
 
@@ -40,6 +41,10 @@ Frontier models keep growing, but most production workloads (classification, emb
 - [LFM2.5-Encoders: Fast Long-Context Inference on CPU (HuggingFace Blog)](https://huggingface.co/blog)
 
 ## Timeline
+
+### [2026-08-25](/en/today/2026-08-25)
+
+Multiverse Computing releases Quantization-Aware Healing (QAH): a 4-bit compressed model beats its own 16-bit source on 7 of 9 benchmarks in testing on GPT-OSS 120B→60B, cutting weight memory to about a quarter — a third solution in the "make edge models faster without losing quality" efficiency cluster, alongside 08-19's QAD and 08-20's DSpark. Same day, IBM releases Granite 4.2: an Apache 2.0 open reasoning model family (3B/8B/30B) whose agentic RL stage trains in real sandboxed environments (not simulations); the 30B model hits 57% on SWE-Bench Verified (see [deep-agents](/en/topics/deep-agents)).
 
 ### [2026-08-20](/en/today/2026-08-20)
 

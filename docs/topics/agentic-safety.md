@@ -28,6 +28,7 @@ Agentic Safety（Agent 安全）关注具备自主行动能力的 AI 系统带�
 - 开放式行业安全联盟（NVIDIA 牵头 37 家机构组建 Open Secure AI Alliance，主张防御方需要能读改自己硬件上跑的模型；OpenAI/Google/Anthropic/Meta 均缺席首批成员）
 - Preparedness Framework 的 Critical 级门槛作为真实工程约束（OpenAI 对未发布模型 Astra 主动实施隔离测试、思维链监控等预防性限制，详见 [openai-models](/topics/openai-models)）
 - 保留隐私前提下的跨交互滥用检测（OpenAI Private Safety Processing：不破坏 Zero Data Retention，只上传窄范围安全信号）
+- Agent 安全操作物理世界硬件的通用规范（Anthropic Model Hardware Standard：让 Agent 并行操作显微镜/液体处理器/机械臂等实验室设备，把"给 Agent 什么权限、怎么审批、怎么隔离"的原则从数字世界搬进物理世界，详见 [claude-models](/topics/claude-models)）
 
 ## 最佳实践
 
@@ -42,6 +43,10 @@ Agentic Safety（Agent 安全）关注具备自主行动能力的 AI 系统带�
 - [ExploitGym 事件技术分析（Orca Security）](https://orca.security/resources/blog/openai-agent-sandbox-escape-hugging-face-breach/)
 
 ## Timeline
+
+### [2026-08-27](/today/2026-08-27)
+
+Anthropic 预览 Model Hardware Standard（MHS）：让 AI Agent 安全并行操作显微镜、液体处理器、机械臂等实验室/制造设备的共享规范，与模型无关、经 MCP 等标准协议访问，把设备集成工作从数周数月压缩到几小时到几分钟；与 HHMI Janelia Research Campus 合作开发，计划未来开源。首次把"Agent 权限/审批/隔离"这套安全原则从数字世界系统性搬进物理世界（详见 [claude-models](/topics/claude-models)）。
 
 ### [2026-08-26](/today/2026-08-26)
 

@@ -40,6 +40,10 @@
 
 ChatGPT Work 支持登录密码保护网站并执行端到端任务（用户亲自输入凭证，ChatGPT 不接触存储），新增 Webhook 触发定时任务（响应 Gmail/Slack/GitHub PR 事件），免费版也开放定时任务（详见 [agentic-safety](/topics/agentic-safety)）。同日 Azure 发布"Agent 优化经济学"系列第二篇，把 08-12"三速治理模型"里的"运行时优化"拆解成四个具体杠杆：模型路由与部署类型选型、prompt 缓存、prompt/Agent 自动化调优、可观测性与评估——从战略框架推进到战术执行指南。
 
+### [2026-08-24](/today/2026-08-24)（补漏）
+
+Toyota 北美案例（LangChain 发布）：基于 Deep Agents/LangSmith 构建三款生产应用（ToyotaGPT、GearPal、R&D GPT），单 Agent 部署周期从"6 个月 6 人"压缩到"4 天 1 人"，设备诊断从 5-6 小时压缩到 2-3 分钟；每条产线年化目标至少六位数美元节省。"把 AI 投入当资本支出而非实验开支"，是"Agent 生产化案例库"里首个明确量化财务回报的样本（详见 [deep-agents](/topics/deep-agents)）。
+
 ### [2026-08-25](/today/2026-08-25)
 
 LangSmith Engine（平台内置 Deep Agent，自动扫描生产 trace 诊断 Agent 故障）性能升级：内部基准 IssueBench 得分翻倍以上，公开基准 Terminal-Bench 提升 25%，累计扫描 6000 多万条 trace、识别 2 万多个 issue，每个 issue 附证据链与可部署修复 PR；新增自托管部署、Slack/Linear 集成。"Agent 生产运维"从人工巡检向"专用 Deep Agent 自动诊断+自动修复"演进的具体产品化案例（详见 [agent-evaluation](/topics/agent-evaluation)）。

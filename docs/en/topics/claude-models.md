@@ -36,6 +36,10 @@ Claude is one of the mainstream model choices for agent and coding workloads. Ev
 
 ## Timeline
 
+### [2026-08-27](/en/today/2026-08-27)
+
+Anthropic previews the Model Hardware Standard (MHS): a shared spec letting agents safely operate lab/manufacturing equipment in parallel, model-agnostic and accessed via standard protocols like MCP, compressing device integration from weeks/months to hours (see [agentic-safety](/en/topics/agentic-safety)). Same day, Anthropic announces 10,000 free/discounted Claude Team seats for scientists, building on Claude Science (launched 06-30), plus a government-partnered access program opening Mythos-class models to life-sciences researchers — science becoming a second major product focus alongside enterprise agents.
+
 ### [2026-08-26](/en/today/2026-08-26)
 
 Compliance API session-related endpoints (Cowork, Claude Code) reach formal GA; local-session retrieval now also covers full transcripts of Claude Science and Claude for Microsoft 365 (Excel/PowerPoint/Word/Outlook) sessions, in beta for Claude Enterprise — compliance auditing spreading in step with Claude's growing product surface.

@@ -37,6 +37,14 @@ Deep Agents 是 LangChain 提出的概念与产品方向：能执行长时程、
 
 ## Timeline
 
+### [2026-08-25](/today/2026-08-25)
+
+IBM 发布 Granite 4.2：Apache 2.0 开源推理模型家族（3B/8B/30B），核心创新是多阶段链式强化学习——基础 RL 之后专设 Agentic RL 阶段，8B/30B 版本直接在真实沙箱化仓库/终端/浏览器里训练 SWE Agent、终端操作与网页搜索，而非合成模拟环境；30B 版本 SWE-Bench Verified 达 57%。训练侧开始用真实环境而非模拟环境，呼应评估侧"真实任务派生基准"的同一趋势（详见 [model-efficiency](/topics/model-efficiency)）。
+
+### [2026-08-24](/today/2026-08-24)（补漏）
+
+Toyota 北美案例（LangChain 发布）：ToyotaGPT/GearPal/R&D GPT 三款生产应用，Agent 部署周期从"6 个月 6 人"压缩到"4 天 1 人"，设备诊断从 5-6 小时压缩到 2-3 分钟，团队要求每个项目年化 ROI 达六到七位数——"把 AI 当资本支出而非实验开支"的量化案例（详见 [enterprise-ai-agents](/topics/enterprise-ai-agents)）。
+
 ### [2026-08-12](/today/2026-08-12)
 
 LangChain 发文系统列出把 Agent 推向生产必须解决的 7 类基础设施难题（运行时可靠性、事件流式推送、安全执行不可信代码、上下文管理、性能评估、记忆系统、授权权限），主张托管服务打包这些基础设施；同日 LangSmith BYOC 部署模式在 AWS 正式 GA（详见 [cloud-agent-platforms](/topics/cloud-agent-platforms)）。

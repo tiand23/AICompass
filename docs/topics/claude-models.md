@@ -36,6 +36,10 @@ Claude 是 Agent 与编码场景的主流模型选择之一。其模型线的每
 
 ## Timeline
 
+### [2026-08-27](/today/2026-08-27)
+
+Anthropic 预览 Model Hardware Standard（MHS）：让 Agent 安全并行操作实验室/制造设备的共享规范，与模型无关，经 MCP 等标准协议访问，把设备集成从数周数月压缩到几小时（详见 [agentic-safety](/topics/agentic-safety)）。同日宣布向科学家开放 1 万个免费/折扣 Claude Team 席位，建立在 Claude Science（06-30 发布）之上，并与美国政府合作为生命科学研究者开放 Mythos 级模型访问计划——科研正成为除企业 Agent 外的第二条重点产品线。
+
 ### [2026-08-26](/today/2026-08-26)
 
 Compliance API 会话相关端点（Cowork、Claude Code）转正式 GA；本地会话检索新增覆盖 Claude Science 与 Claude for Microsoft 365（Excel/PowerPoint/Word/Outlook）会话完整转录，Claude Enterprise beta——合规审计能力随 Claude 产品面扩张同步铺开。

@@ -37,6 +37,14 @@ Long-horizon autonomy is the current frontier of agent capability competition, a
 
 ## Timeline
 
+### [2026-08-25](/en/today/2026-08-25)
+
+IBM releases Granite 4.2: an Apache 2.0 open reasoning model family (3B/8B/30B); its core innovation is a multi-stage RL chain — following foundational RL, a dedicated agentic RL stage trains the 8B/30B models' SWE agent, terminal operations and web search directly inside real sandboxed repositories, terminals and browsers rather than synthetic simulations; the 30B model hits 57% on SWE-Bench Verified. Training is now adopting real environments too, echoing the same trend already seen on the evaluation side with "real-task-derived benchmarks" (see [model-efficiency](/en/topics/model-efficiency)).
+
+### [2026-08-24](/en/today/2026-08-24) (backfilled)
+
+The Toyota North America case (published by LangChain): three production applications — ToyotaGPT, GearPal, R&D GPT — cutting agent deployment from "6 months, 6 people" to "4 days, 1 person," and equipment diagnosis from 5-6 hours to 2-3 minutes, with the team requiring six-to-seven-figure annual ROI per project — a quantified case for treating AI as capital investment rather than experimental spend (see [enterprise-ai-agents](/en/topics/enterprise-ai-agents)).
+
 ### [2026-08-12](/en/today/2026-08-12)
 
 LangChain systematically lists 7 infrastructure challenges that must be solved to take an agent to production (runtime reliability, event streaming, safely executing untrusted code, context management, performance evaluation, memory systems, authorization), arguing managed services bundle this infrastructure; same day, LangSmith's BYOC deployment mode goes generally available on AWS (see [cloud-agent-platforms](/en/topics/cloud-agent-platforms)).

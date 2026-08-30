@@ -40,6 +40,10 @@ This is the main battleground for generative AI in the enterprise. As model capa
 
 ChatGPT Work adds browser login for password-protected sites to complete end-to-end tasks (the user enters credentials themselves, ChatGPT never touches or stores them), plus webhook-triggered scheduled tasks (firing on Gmail/Slack/GitHub PR events); scheduled tasks also open up to Free users (see [agentic-safety](/en/topics/agentic-safety)). Same day, Azure publishes the second entry in its "economics of agent optimization" series, breaking the "runtime optimization" pace from its 08-12 "three-speed governance model" into four concrete levers: model routing and deployment-type selection, prompt caching, automated prompt/agent tuning, and observability plus evaluation — moving from strategic framework to tactical execution guide.
 
+### [2026-08-24](/en/today/2026-08-24) (backfilled)
+
+The Toyota North America case (published by LangChain): three production applications built on Deep Agents/LangSmith (ToyotaGPT, GearPal, R&D GPT), cutting agent deployment from "6 months, 6 people" to "4 days, 1 person," and equipment diagnosis from 5-6 hours to 2-3 minutes; each production line targets a minimum six-figure annual saving. "Treat AI spend as a capital investment rather than an experimental one" — the first entry in the "agents-in-production case library" to explicitly quantify financial return (see [deep-agents](/en/topics/deep-agents)).
+
 ### [2026-08-25](/en/today/2026-08-25)
 
 LangSmith Engine (an in-platform Deep Agent that automatically scans production traces to diagnose agent failures) gets a performance upgrade: its internal IssueBench score more than doubles, the public Terminal-Bench score rises 25%, and it has scanned 60M+ traces to identify 20,000+ issues, each with an evidence chain and a ready-to-deploy fix PR; new features include self-hosted deployment and Slack/Linear integrations. A concrete productization of "agent production ops" evolving from manual triage toward "a dedicated Deep Agent that auto-diagnoses and auto-fixes" (see [agent-evaluation](/en/topics/agent-evaluation)).
