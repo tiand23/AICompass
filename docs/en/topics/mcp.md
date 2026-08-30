@@ -34,6 +34,10 @@ Before MCP, every AI app × every tool needed its own glue code (the M×N proble
 
 ## Timeline
 
+### [2026-08-29](/en/today/2026-08-29)
+
+three.ws open-sources: its official registry includes 72 MCP servers as part of its "multi-surface distribution" capability, letting the same agent instance (including its 3D embodiment and on-chain payment identity) be accessed directly through any MCP client — a large-scale application sample of MCP at the distribution layer (see [agent-frameworks](/en/topics/agent-frameworks)).
+
 ### [2026-08-03](/en/today/2026-08-03)
 
 Agent-Reach hits Trending (+659/day, 64.7k total): a "CLI capability layer" route complementary to MCP's protocol approach — reusing existing CLI tools with primary-method/fallback-list routing to keep tools usable under anti-scraping measures and API churn.

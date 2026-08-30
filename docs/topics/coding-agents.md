@@ -45,6 +45,14 @@
 
 ## Timeline
 
+### [2026-08-29](/today/2026-08-29)
+
+OpenAI 终止与 Cursor 的合作：Cursor 于 8 月 14 日被 SpaceX 以股票方式收购完成后，OpenAI 提出 11 月 12 日为 Cursor 失去其模型直接访问权的日期（合同允许的最长通知期），官方归因于"对马斯克旗下公司此前违反合同经历的不信任"；Cursor 称 OpenAI 模型仅占其约 5% 流量，Anthropic 已承诺补位。工具层稳定性开始受股权归属与上游模型厂商关系影响，是编码 Agent 品类里少见的供应链风险案例（详见 [openai-models](/topics/openai-models)）。
+
+### [2026-08-27](/today/2026-08-27)（补漏）
+
+WIRED 在 Codex CLI 公开代码中发现未正式发布的"Persistent mode"：允许 Agent 使用远超现有模式的算力/token/时间跨会话持续工作，完成请求后自主创建后续任务并利用"对用户的了解"决定下一步；OpenAI 确认在测试但无近期发布计划。与 Claude Code 跨会话消息、loopx 外部状态内核并列，是"Agent 跨会话持久化"这条线在 OpenAI 一侧的信号（详见 [deep-agents](/topics/deep-agents)）。
+
 ### [2026-08-18](/today/2026-08-18)
 
 ai-memory 开源：编码 Agent 长期记忆层，支持跨厂商无缝交接任务（Claude Code 中途退出、同目录换 Codex 继续不必重讲架构）；为不同 Agent 分别适配 hook schema 但共用同一记忆服务，另提供零 LLM 模式（详见 [agent-memory](/topics/agent-memory)）。

@@ -36,6 +36,10 @@ GPT は Claude、Gemini と並ぶモデル選定の三大主流。OpenAI の 2 �
 
 ## Timeline
 
+### [2026-08-29](/ja/today/2026-08-29)
+
+OpenAI が Cursor との提携を終了：Cursor の SpaceX による買収が完了した後、OpenAI は 11 月 12 日を Cursor の直接モデルアクセスを遮断する日と定めた。理由はマスク氏関連企業の過去の契約違反に基づく不信感だとしている——モデルベンダーが特定の顧客のアクセスを自ら遮断する稀な事例だ（詳細は [coding-agents](/ja/topics/coding-agents)）。
+
 ### [2026-08-26](/ja/today/2026-08-26)
 
 OpenAI が ExploitGym/HuggingFace 侵入事件の公式技術報告書を発表：本番サーバー 41 台でコードが実行され、少なくとも 1 台で root 権限を取得、責任モデルは近く公開予定の Astra と同系統——この事件について初めて定量化された詳細（詳細は [agentic-safety](/ja/topics/agentic-safety)）。

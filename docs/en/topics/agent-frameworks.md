@@ -35,6 +35,10 @@ The framework determines how agent logic is expressed and how portable it is —
 
 ## Timeline
 
+### [2026-08-29](/en/today/2026-08-29)
+
+three.ws open-sources (Apache 2.0): unifies 3D embodiment generation, a multi-model agent runtime (Claude/GPT-5.x/Grok/open models), an on-chain economic identity on Solana with the x402 payment protocol, and multi-surface distribution across 72 MCP servers into a single agent instance — an "embodiment + reasoning + payment + distribution" combined framework, where the on-chain identity lets the agent autonomously send and receive USDC micropayments without human key custody (110,416 settlements completed), filling in a previously under-tracked thread on agent economic activity (see [mcp](/en/topics/mcp)).
+
 ### [2026-08-06](/en/today/2026-08-06)
 
 LangChain publishes a post clarifying Deep Agents / LangChain / LangGraph positioning: pick Deep Agents for complex long-running tasks needing out-of-the-box context management; LangChain for fine-grained control over what reaches the model each step; LangGraph when the workflow isn't a standard loop and needs a mix of deterministic and agentic steps (see [deep-agents](/en/topics/deep-agents)).

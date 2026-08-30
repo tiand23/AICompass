@@ -11,7 +11,7 @@
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
 | [claude-models](/ja/topics/claude-models) | Anthropic Claude モデルライン | エージェント/コーディング用途の選定と移行 | 🔥 | 2026-08-27 |
-| [openai-models](/ja/topics/openai-models) | OpenAI GPT モデルラインと API プラットフォーム | 選定、価格変動、廃止リスク | 🔥 | 2026-08-26 |
+| [openai-models](/ja/topics/openai-models) | OpenAI GPT モデルラインと API プラットフォーム | 選定、価格変動、廃止リスク | 🔥 | 2026-08-29 |
 | [gemini-models](/ja/topics/gemini-models) | Google Gemini モデルライン | コスト重視ワークロードの高コスパ選定 | 📈 | 2026-08-17 |
 
 ### マルチモーダル生成
@@ -43,8 +43,8 @@
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [deep-agents](/ja/topics/deep-agents) | 長期自律タスクエージェント（LangChain） | 多段階タスクの計画・回復・評価 | 🔥 | 2026-08-25 |
-| [agent-frameworks](/ja/topics/agent-frameworks) | フレームワーク版図：LangGraph/CrewAI/ADK/Agents SDK… | フレームワーク選定と長期的安全性 | 📈 | 2026-08-06 |
+| [deep-agents](/ja/topics/deep-agents) | 長期自律タスクエージェント（LangChain） | 多段階タスクの計画・回復・評価 | 🔥 | 2026-08-27 |
+| [agent-frameworks](/ja/topics/agent-frameworks) | フレームワーク版図：LangGraph/CrewAI/ADK/Agents SDK… | フレームワーク選定と長期的安全性 | 🔥 | 2026-08-29 |
 | [agent-workflow](/ja/topics/agent-workflow) | ワークフローパラダイム：編成 vs 自律、HITL、永続実行 | エージェントを業務プロセスに確実に組み込む | 📈 | 2026-08-17 |
 | [agent-skills](/ja/topics/agent-skills) | 再利用可能な能力パッケージ（GitHub 熱度ランキング付き） | エージェント能力の配布と再利用 | 📈 | 2026-08-19 |
 | [voice-agents](/ja/topics/voice-agents) | 音声エージェント（カスケード/リアルタイム S2S、フレームワークと評価） | 音声インターフェースエージェントのリアルタイム工学と評価 | 📈 | 2026-08-21 |
@@ -62,7 +62,7 @@
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [mcp](/ja/topics/mcp) | ツール接続プロトコル（事実上の標準） | AI とツールを繋ぐ M×N グルーコード問題 | 📈 | 2026-08-03 |
+| [mcp](/ja/topics/mcp) | ツール接続プロトコル（事実上の標準） | AI とツールを繋ぐ M×N グルーコード問題 | 🔥 | 2026-08-29 |
 | [a2a](/ja/topics/a2a) | エージェント間連携プロトコル（Google 主導、50+ ベンダー） | ベンダー横断のエージェント発見とタスク委任 | 💤 | 2026-07-28 |
 
 *ほかに注目：AG-UI（蓄積中）。*
@@ -95,4 +95,4 @@
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
 | [ai-code-review](/ja/topics/ai-code-review) | AI コードレビューのツールと設計 | レビューのスケールと S/N 比の両立 | 📈 | 2026-08-09 |
-| [coding-agents](/ja/topics/coding-agents) | ターミナル/CLI コーディングエージェント（Claude Code/Codex CLI/Reasonix…） | カテゴリ選定；harness 工学とモデル生態系の結合 | 📈 | 2026-08-18 |
+| [coding-agents](/ja/topics/coding-agents) | ターミナル/CLI コーディングエージェント（Claude Code/Codex CLI/Reasonix…） | カテゴリ選定；harness 工学とモデル生態系の結合 | 🔥 | 2026-08-29 |

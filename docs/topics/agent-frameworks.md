@@ -35,6 +35,10 @@ Agent 开发框架版图：LangGraph（LangChain 系，图编排）、CrewAI（�
 
 ## Timeline
 
+### [2026-08-29](/today/2026-08-29)
+
+three.ws 开源（Apache 2.0）：把 3D 具身生成、多模型路由运行时（Claude/GPT-5.x/Grok/开源模型）、基于 Solana 与 x402 支付协议的链上经济身份、72 个 MCP server 等多端分发整合进单一 Agent 实例——"具身+推理+支付+分发"四件套的综合框架，其中链上身份让 Agent 可自主收发 USDC 微支付而无需人工托管私钥（已完成 110,416 笔结算），补上 Agent 经济活动这条此前较少涉及的线（详见 [mcp](/topics/mcp)）。
+
 ### [2026-08-06](/today/2026-08-06)
 
 LangChain 发文厘清 Deep Agents / LangChain / LangGraph 三者定位：复杂长任务要开箱即用上下文管理选 Deep Agents；需精确控制每步喂给模型什么选 LangChain；流程非标准循环、需混合确定性与自主步骤选 LangGraph（详见 [deep-agents](/topics/deep-agents)）。

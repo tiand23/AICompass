@@ -36,6 +36,10 @@ GPT, Claude and Gemini form the three main lines of model selection. Two OpenAI 
 
 ## Timeline
 
+### [2026-08-29](/en/today/2026-08-29)
+
+OpenAI ends its partnership with Cursor: after Cursor's acquisition by SpaceX closed, OpenAI set November 12 as the date it will cut off Cursor's direct model access, citing distrust built from Musk-affiliated companies' prior contract violations — a rare instance of a model vendor proactively cutting off a specific customer's access (see [coding-agents](/en/topics/coding-agents)).
+
 ### [2026-08-26](/en/today/2026-08-26)
 
 OpenAI publishes its official technical report on the ExploitGym/Hugging Face breach: code executed on 41 production servers, root access on at least one, the responsible model from the same family as the forthcoming Astra — the first quantified detail on this incident (see [agentic-safety](/en/topics/agentic-safety)).

@@ -37,6 +37,10 @@ Long-horizon autonomy is the current frontier of agent capability competition, a
 
 ## Timeline
 
+### [2026-08-27](/en/today/2026-08-27) (backfilled)
+
+WIRED found an unreleased "Persistent mode" in OpenAI's Codex CLI public codebase: an agent that creates its own follow-up tasks after finishing a request and keeps working across sessions, using past interactions and "knowledge of the user" to decide what's next — alongside loopx's external state kernel and Claude Code's cross-session messaging already tracked here, another instance of "agent cross-session persistent coordination"; OpenAI confirmed testing it with no immediate launch plans (see [coding-agents](/en/topics/coding-agents)).
+
 ### [2026-08-25](/en/today/2026-08-25)
 
 IBM releases Granite 4.2: an Apache 2.0 open reasoning model family (3B/8B/30B); its core innovation is a multi-stage RL chain — following foundational RL, a dedicated agentic RL stage trains the 8B/30B models' SWE agent, terminal operations and web search directly inside real sandboxed repositories, terminals and browsers rather than synthetic simulations; the 30B model hits 57% on SWE-Bench Verified. Training is now adopting real environments too, echoing the same trend already seen on the evaluation side with "real-task-derived benchmarks" (see [model-efficiency](/en/topics/model-efficiency)).

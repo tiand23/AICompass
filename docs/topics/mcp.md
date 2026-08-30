@@ -34,6 +34,10 @@ MCP（Model Context Protocol）：Anthropic 提出的开放协议，标准化 AI
 
 ## Timeline
 
+### [2026-08-29](/today/2026-08-29)
+
+three.ws 开源：官方注册表含 72 个 MCP server，作为其"多端分发"能力的一环——让同一个 Agent 实例（含 3D 具身与链上支付身份）经 MCP 客户端直接接入，是 MCP 协议在分发层的一次大规模应用样本（详见 [agent-frameworks](/topics/agent-frameworks)）。
+
 ### [2026-08-03](/today/2026-08-03)
 
 Agent-Reach 登上 Trending（单日 +659，累计 64.7k）：与 MCP 协议化互补的"CLI 能力层"路线——复用现成 CLI 工具 + 主方法/降级列表路由，解决平台反爬与接口变动下的工具可用性运维。

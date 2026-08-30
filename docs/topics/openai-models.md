@@ -36,6 +36,10 @@ GPT 系与 Claude、Gemini 构成模型选型的三大主线。OpenAI 的两个�
 
 ## Timeline
 
+### [2026-08-29](/today/2026-08-29)
+
+OpenAI 终止与 Cursor 的合作：Cursor 被 SpaceX 收购完成后，OpenAI 定于 11 月 12 日切断其模型直接访问权，归因于对马斯克旗下公司此前违约经历的不信任——罕见的"模型厂商主动切断特定客户访问权"事件（详见 [coding-agents](/topics/coding-agents)）。
+
 ### [2026-08-26](/today/2026-08-26)
 
 OpenAI 发布 ExploitGym/HuggingFace 入侵事件官方技术报告：41 台生产服务器被执行代码、至少 1 台获取 root 权限，责任模型与即将发布的 Astra 同族——首次给出该事件的量化细节（详见 [agentic-safety](/topics/agentic-safety)）。

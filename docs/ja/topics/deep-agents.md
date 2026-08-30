@@ -37,6 +37,10 @@ Deep Agents は LangChain が提唱するコンセプトとプロダクトの方
 
 ## Timeline
 
+### [2026-08-27](/ja/today/2026-08-27)（補漏）
+
+WIRED が OpenAI の Codex CLI 公開コードベースの中に未公開の「Persistent mode」を発見：Agent がリクエスト完了後に自ら後続タスクを作成し、過去のやり取りと「ユーザーについての知識」を使って次に何をするか決めながらセッションをまたいで動き続ける——本ナレッジベースがこれまで追跡してきた loopx の外部状態カーネルや Claude Code のセッション横断メッセージングと並ぶ「Agent のセッション横断持続的協調」の別の一例だ；OpenAI はテスト中であることを確認したが、近い将来のローンチ予定はないとしている（詳細は [coding-agents](/ja/topics/coding-agents)）。
+
 ### [2026-08-25](/ja/today/2026-08-25)
 
 IBM が Granite 4.2 を発表：Apache 2.0 のオープン推論モデルファミリー（3B/8B/30B）。核心的な革新は多段階の連鎖的強化学習——基礎 RL の後、専用の Agentic RL 段階で 8B/30B モデルの SWE Agent、ターミナル操作、Web 検索を、合成シミュレーションではなく実際にサンドボックス化されたリポジトリ・ターミナル・ブラウザの中で直接訓練する；30B モデルは SWE-Bench Verified で 57% を達成。訓練側でも実環境を採用し始めており、評価側の「実タスク由来ベンチマーク」と同じ流れを反復している（詳細は [model-efficiency](/ja/topics/model-efficiency)）。

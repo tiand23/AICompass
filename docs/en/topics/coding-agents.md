@@ -45,6 +45,14 @@ Terminal coding agents are the main arena of AI coding tool competition, and the
 
 ## Timeline
 
+### [2026-08-29](/en/today/2026-08-29)
+
+OpenAI ends its partnership with Cursor: after Cursor's acquisition by SpaceX (in stock) closed on August 14, OpenAI proposed November 12 as the date Cursor loses direct access to its models (the maximum notice period allowed under the contract), attributing this to distrust built from Musk-affiliated companies' prior contract violations; Cursor says OpenAI models handle only about 5% of its traffic, and Anthropic has already stepped in to backfill. Tool-layer stability is now shaped by ownership structure and upstream model-vendor relationships, a rare supply-chain-risk case in the coding-agent category (see [openai-models](/en/topics/openai-models)).
+
+### [2026-08-27](/en/today/2026-08-27) (backfilled)
+
+WIRED found an unreleased "Persistent mode" in the Codex CLI public codebase: lets an agent use far more compute/tokens/time than existing modes to keep working across sessions, creating its own follow-up tasks after finishing a request and using "knowledge of the user" to decide what's next; OpenAI confirmed it's testing this with no immediate launch plans. Alongside Claude Code's cross-session messaging and loopx's external state kernel, this is a signal of the "agent cross-session persistence" thread now showing up on OpenAI's side (see [deep-agents](/en/topics/deep-agents)).
+
 ### [2026-08-18](/en/today/2026-08-18)
 
 ai-memory open-sources: a long-term memory layer for coding agents supporting seamless cross-vendor handoff (quit Claude Code mid-task, switch to Codex in the same directory, continue without re-explaining the architecture); separate hook adapters per agent share one memory service, plus a zero-LLM mode (see [agent-memory](/en/topics/agent-memory)).

@@ -11,7 +11,7 @@
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
 | [claude-models](/en/topics/claude-models) | Anthropic's Claude model line | Model selection and migration for agent/coding workloads | 🔥 | 2026-08-27 |
-| [openai-models](/en/topics/openai-models) | OpenAI's GPT model line & API platform | Selection, price volatility and deprecation risk | 🔥 | 2026-08-26 |
+| [openai-models](/en/topics/openai-models) | OpenAI's GPT model line & API platform | Selection, price volatility and deprecation risk | 🔥 | 2026-08-29 |
 | [gemini-models](/en/topics/gemini-models) | Google's Gemini model line | Cost-effective selection for price-sensitive workloads | 📈 | 2026-08-17 |
 
 ### Multimodal Generation
@@ -43,8 +43,8 @@
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [deep-agents](/en/topics/deep-agents) | Long-horizon autonomous agents (LangChain) | Planning, recovery and evaluation of multi-step tasks | 🔥 | 2026-08-25 |
-| [agent-frameworks](/en/topics/agent-frameworks) | Framework landscape: LangGraph/CrewAI/ADK/Agents SDK… | Framework selection and long-term safety | 📈 | 2026-08-06 |
+| [deep-agents](/en/topics/deep-agents) | Long-horizon autonomous agents (LangChain) | Planning, recovery and evaluation of multi-step tasks | 🔥 | 2026-08-27 |
+| [agent-frameworks](/en/topics/agent-frameworks) | Framework landscape: LangGraph/CrewAI/ADK/Agents SDK… | Framework selection and long-term safety | 🔥 | 2026-08-29 |
 | [agent-workflow](/en/topics/agent-workflow) | Workflow paradigms: orchestration vs autonomy, HITL, durable execution | Getting agents reliably into business processes | 📈 | 2026-08-17 |
 | [agent-skills](/en/topics/agent-skills) | Reusable capability packages (incl. GitHub heat rankings) | Distribution and reuse of agent capabilities | 📈 | 2026-08-19 |
 | [voice-agents](/en/topics/voice-agents) | Voice agents (cascaded/realtime S2S, frameworks & evaluation) | Realtime engineering and evaluation of voice-interface agents | 📈 | 2026-08-21 |
@@ -62,7 +62,7 @@
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [mcp](/en/topics/mcp) | Tool-integration protocol (de facto standard) | The M×N glue-code problem of connecting AI to tools | 📈 | 2026-08-03 |
+| [mcp](/en/topics/mcp) | Tool-integration protocol (de facto standard) | The M×N glue-code problem of connecting AI to tools | 🔥 | 2026-08-29 |
 | [a2a](/en/topics/a2a) | Agent collaboration protocol (Google-led, 50+ vendors) | Discovery and task delegation across vendors | 💤 | 2026-07-28 |
 
 *Also watching: AG-UI (accumulating).*
@@ -95,4 +95,4 @@
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
 | [ai-code-review](/en/topics/ai-code-review) | AI code review tools & architecture | Scaling review while keeping signal-to-noise | 📈 | 2026-08-09 |
-| [coding-agents](/en/topics/coding-agents) | Terminal/CLI coding agents (Claude Code/Codex CLI/Reasonix…) | Category selection; harness engineering and model-ecosystem coupling | 📈 | 2026-08-18 |
+| [coding-agents](/en/topics/coding-agents) | Terminal/CLI coding agents (Claude Code/Codex CLI/Reasonix…) | Category selection; harness engineering and model-ecosystem coupling | 🔥 | 2026-08-29 |
