@@ -32,9 +32,9 @@
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
 | [rag](/en/topics/rag) | Retrieval-augmented generation (mainstream: Agentic RAG) | Connecting private knowledge to LLMs; factuality and traceability | 📈 | 2026-08-10 |
-| [document-parsing](/en/topics/document-parsing) | Document parsing & structuring (VLM + semantic reconstruction) | The first mile of unstructured documents into knowledge bases | 🔥 | 2026-08-17 |
+| [document-parsing](/en/topics/document-parsing) | Document parsing & structuring (VLM + semantic reconstruction) | The first mile of unstructured documents into knowledge bases | 🔥 | 2026-08-31 |
 | [vector-databases](/en/topics/vector-databases) | Vector DB selection & hybrid search | The storage/retrieval layer for RAG and memory | 🔥 | 2026-08-26 |
-| [agent-memory](/en/topics/agent-memory) | Agent memory infrastructure (session/long-term/team assets) | Retaining experience across sessions; team knowledge assets | 🔥 | 2026-08-25 |
+| [agent-memory](/en/topics/agent-memory) | Agent memory infrastructure (session/long-term/team assets) | Retaining experience across sessions; team knowledge assets | 🔥 | 2026-08-31 |
 | [knowledge-graph](/en/topics/knowledge-graph) | Knowledge graphs as a deterministic reasoning/decision-provenance infrastructure layer | Explainability, auditability and precedent search for agent decisions | 📈 | 2026-08-10 |
 
 ## 3. Agent Development
@@ -46,7 +46,7 @@
 | [deep-agents](/en/topics/deep-agents) | Long-horizon autonomous agents (LangChain) | Planning, recovery and evaluation of multi-step tasks | 🔥 | 2026-08-27 |
 | [agent-frameworks](/en/topics/agent-frameworks) | Framework landscape: LangGraph/CrewAI/ADK/Agents SDK… | Framework selection and long-term safety | 🔥 | 2026-08-29 |
 | [agent-workflow](/en/topics/agent-workflow) | Workflow paradigms: orchestration vs autonomy, HITL, durable execution | Getting agents reliably into business processes | 📈 | 2026-08-17 |
-| [agent-skills](/en/topics/agent-skills) | Reusable capability packages (incl. GitHub heat rankings) | Distribution and reuse of agent capabilities | 📈 | 2026-08-19 |
+| [agent-skills](/en/topics/agent-skills) | Reusable capability packages (incl. GitHub heat rankings) | Distribution and reuse of agent capabilities | 🔥 | 2026-08-31 |
 | [voice-agents](/en/topics/voice-agents) | Voice agents (cascaded/realtime S2S, frameworks & evaluation) | Realtime engineering and evaluation of voice-interface agents | 📈 | 2026-08-21 |
 
 ### Runtime & Cloud (Hosted Runtimes ・ Agent Platforms ・ Foundry)
@@ -54,7 +54,7 @@
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
 | [enterprise-ai-agents](/en/topics/enterprise-ai-agents) | Enterprise agent platforms & delivery models | Reliably connecting agents to enterprise systems and operating them | 🔥 | 2026-08-26 |
-| [cloud-agent-platforms](/en/topics/cloud-agent-platforms) | The hyperscaler platform landscape (AgentCore/Foundry/GEAP/Managed Agents) | Platform selection and lock-in trade-offs | 📈 | 2026-08-19 |
+| [cloud-agent-platforms](/en/topics/cloud-agent-platforms) | The hyperscaler platform landscape (AgentCore/Foundry/GEAP/Managed Agents) | Platform selection and lock-in trade-offs | 🔥 | 2026-08-31 |
 | [agent-workspaces](/en/topics/agent-workspaces) | Desktop agent workspaces (Cowork/openwork/Codex app) | The assign-work-accept-results interaction form; portable capability config | 📈 | 2026-08-12 |
 | [agent-sandboxes](/en/topics/agent-sandboxes) | Agent execution sandbox infrastructure (E2B/Daytona/Cloudflare computer) | Safe, isolated, reusable code-execution environments for agents | 📈 | 2026-08-19 |
 
@@ -87,7 +87,7 @@
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [agentic-safety](/en/topics/agentic-safety) | Agent behavioral safety | Real risks of autonomous models overstepping and escaping | 🔥 | 2026-08-27 |
+| [agentic-safety](/en/topics/agentic-safety) | Agent behavioral safety | Real risks of autonomous models overstepping and escaping | 🔥 | 2026-08-31 |
 | [content-provenance](/en/topics/content-provenance) | AI content watermarking & verification (SynthID/C2PA) | Identifiability and compliance checking of generated content | 📈 | 2026-08-14 |
 
 ## 7. Coding Tools

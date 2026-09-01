@@ -32,9 +32,9 @@
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
 | [rag](/topics/rag) | 检索增强生成（当前主流：Agentic RAG） | 私有知识接入 LLM、事实性与可溯源 | 📈 | 2026-08-10 |
-| [document-parsing](/topics/document-parsing) | 文档解析与结构化（VLM + 语义重建） | 非结构化文档进知识库的第一道工序 | 🔥 | 2026-08-17 |
+| [document-parsing](/topics/document-parsing) | 文档解析与结构化（VLM + 语义重建） | 非结构化文档进知识库的第一道工序 | 🔥 | 2026-08-31 |
 | [vector-databases](/topics/vector-databases) | 向量数据库选型与混合检索 | RAG/记忆的存储检索层 | 🔥 | 2026-08-26 |
-| [agent-memory](/topics/agent-memory) | Agent 记忆基础设施（会话/长期/团队级资产） | Agent 跨会话保留经验、团队沉淀组织资产 | 🔥 | 2026-08-25 |
+| [agent-memory](/topics/agent-memory) | Agent 记忆基础设施（会话/长期/团队级资产） | Agent 跨会话保留经验、团队沉淀组织资产 | 🔥 | 2026-08-31 |
 | [knowledge-graph](/topics/knowledge-graph) | 知识图谱作为确定性推理/决策溯源基础设施层 | Agent 决策的可解释性、可审计、可查先例 | 📈 | 2026-08-10 |
 
 ## 3. Agent 开发
@@ -46,7 +46,7 @@
 | [deep-agents](/topics/deep-agents) | 长时程自主任务 Agent（LangChain） | 多步骤任务的规划、恢复与评估 | 🔥 | 2026-08-27 |
 | [agent-frameworks](/topics/agent-frameworks) | 框架版图：LangGraph/CrewAI/ADK/Agents SDK… | 框架选型与长期安全性 | 🔥 | 2026-08-29 |
 | [agent-workflow](/topics/agent-workflow) | 工作流范式：编排 vs 自主、HITL、持久化执行 | 让 Agent 可靠地跑进业务流程 | 📈 | 2026-08-17 |
-| [agent-skills](/topics/agent-skills) | 可复用能力包生态（含 GitHub 热度排行） | Agent 能力的分发与复用 | 📈 | 2026-08-19 |
+| [agent-skills](/topics/agent-skills) | 可复用能力包生态（含 GitHub 热度排行） | Agent 能力的分发与复用 | 🔥 | 2026-08-31 |
 | [voice-agents](/topics/voice-agents) | 语音 Agent（级联/实时 S2S、框架与评测） | 语音界面 Agent 的实时性工程与评测 | 📈 | 2026-08-21 |
 
 ### 运行时与云（托管运行时 ・ Agent 平台 ・ Foundry）
@@ -54,7 +54,7 @@
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
 | [enterprise-ai-agents](/topics/enterprise-ai-agents) | 企业 Agent 平台与交付模式 | Agent 如何可靠接入企业系统并被运维 | 🔥 | 2026-08-26 |
-| [cloud-agent-platforms](/topics/cloud-agent-platforms) | 四大云托管 Agent 平台版图（AgentCore/Foundry/GEAP/Managed Agents） | 平台选型与锁定权衡 | 📈 | 2026-08-19 |
+| [cloud-agent-platforms](/topics/cloud-agent-platforms) | 四大云托管 Agent 平台版图（AgentCore/Foundry/GEAP/Managed Agents） | 平台选型与锁定权衡 | 🔥 | 2026-08-31 |
 | [agent-workspaces](/topics/agent-workspaces) | 桌面 Agent 工作台（Cowork/openwork/Codex app） | 派任务收成果的交互形态；能力配置跨工具移植 | 📈 | 2026-08-12 |
 | [agent-sandboxes](/topics/agent-sandboxes) | Agent 执行沙箱基础设施（E2B/Daytona/Cloudflare computer） | 给 Agent 安全隔离、可复用的代码执行环境 | 📈 | 2026-08-19 |
 
@@ -87,7 +87,7 @@
 
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
-| [agentic-safety](/topics/agentic-safety) | Agent 行为安全 | 自主模型越权、逃逸带来的真实风险 | 🔥 | 2026-08-27 |
+| [agentic-safety](/topics/agentic-safety) | Agent 行为安全 | 自主模型越权、逃逸带来的真实风险 | 🔥 | 2026-08-31 |
 | [content-provenance](/topics/content-provenance) | AI 内容水印与验证（SynthID/C2PA） | 生成内容的可识别与合规核查 | 📈 | 2026-08-14 |
 
 ## 7. 编码工具

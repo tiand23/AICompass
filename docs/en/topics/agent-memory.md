@@ -40,6 +40,10 @@ However large the context window, it is only "working memory" — an agent servi
 
 ## Timeline
 
+### [2026-08-31](/en/today/2026-08-31)
+
+Microsoft Foundry Agent Service publishes an Azure Cosmos DB long-term memory reference implementation: a sample `CosmosMemoryContextProvider` combines vector similarity (semantic relevance), full-text search (lexical matching), and structured metadata (user/memory type). Memories persist against a stable user ID rather than a session ID — a new chat carries no prior transcript but still recalls that user's stated preferences — while different users' memories stay isolated even within the same database, and it supports factual, procedural, and episodic memory types. It re-implements, using the cloud vendor's own database plus an official Microsoft Agent Framework sample, core design patterns previously scattered across dedicated memory products like Mem0/Zep/LangMem — teams already committed to Azure/Cosmos DB now have an official reference path that doesn't require adopting a separate memory product (see [cloud-agent-platforms](/en/topics/cloud-agent-platforms)).
+
 ### [2026-08-25](/en/today/2026-08-25)
 
 LangChain shares OpenWiki's self-correcting memory design: each claim carries a versioned evidence reference; when code changes, dependent claims get flagged "stale" rather than deleted, then re-verified automatically on the next update. Testing across 2,000 claims cut the stale rate from 3.5% to 0.5% and hallucination rate from 0.7% to 0%, with cost scaling with code changes rather than accumulated claim volume — filling in the "what happens when what you remembered goes stale" gap in memory signal-to-noise management.

@@ -40,6 +40,10 @@ Agent 记忆：让 Agent 跨会话、跨任务保留并复用信息的基础设�
 
 ## Timeline
 
+### [2026-08-31](/today/2026-08-31)
+
+Microsoft Foundry Agent Service 发布 Azure Cosmos DB 长期记忆参考实现：示例 `CosmosMemoryContextProvider` 结合向量相似度（语义相关）、全文检索（词面匹配）与结构化元数据（用户/记忆类型）三种检索方式；按稳定用户 ID 而非会话 ID 持久化记忆，新会话不携带原始对话记录但能召回该用户此前偏好，不同用户之间记忆严格隔离即使共用同一个数据库，同时支持事实型、程序型、情节型三类记忆。把此前散见于 Mem0/Zep/LangMem 等专用记忆产品里的核心设计用云厂商自家数据库配 Microsoft Agent Framework 官方示例的形式重新实现——已绑定 Azure/Cosmos DB 技术栈的团队现在有了"不额外引入记忆专用产品"的官方参考路径（详见 [cloud-agent-platforms](/topics/cloud-agent-platforms)）。
+
 ### [2026-08-25](/today/2026-08-25)
 
 LangChain 分享 OpenWiki 自我校正记忆设计：每条声明配版本化证据引用，代码变更后相关声明标记"存疑"而非删除，下次更新时自动重新核验；实测 2000 条声明过期率从 3.5% 降至 0.5%、幻觉率从 0.7% 降至 0%，成本与代码变更量成正比而非累积声明总量。补上"记住的东西过时了怎么办"这一记忆信噪比管理难题。

@@ -36,6 +36,8 @@ High-star representative repos at topic creation (2026-07):
 | agency-agents | New (hit Trending 2026-08-09, ~140k stars total) | 230+ cross-domain expert-persona agent team template, with conversion scripts for 8+ platforms |
 | anthropics/skills | New (hit Trending 2026-08-12, 168k stars total, official Anthropic) | The standards vendor's official reference implementation: spec + example skills + template; the same implementation behind Claude's native document capabilities |
 | Anthropic-Cybersecurity-Skills | New (hit Trending 2026-08-18, 28.5k stars total) | 817 cybersecurity practitioner skills mapped to MITRE ATT&CK/ATLAS/D3FEND, NIST CSF/AI RMF, and MITRE F3 |
+| archify | New (hit Trending 2026-08-31, ~36k stars total) | Generates architecture/workflow/sequence/data-flow/lifecycle diagrams from natural language or Mermaid input, self-contained HTML output |
+| scientific-agent-skills | New (hit Trending 2026-08-31, ~30-40k stars total) | 165 validated scientific-research skills + 100+ scientific databases, covering biology, chemistry, medicine, and drug discovery |
 
 > This ranking is refreshed by `/update` whenever skill-related repos hit GitHub Trending.
 
@@ -56,6 +58,10 @@ High-star representative repos at topic creation (2026-07):
 - [Claude Code repos star leaderboard](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-31](/en/today/2026-08-31)
+
+archify (~36k stars total) and scientific-agent-skills (~30-40k stars total) hit GitHub Trending on the same day: the former packages architecture/workflow/sequence/data-flow/lifecycle diagram generation into a skill, accepting natural-language or pasted-Mermaid input and producing self-contained HTML (with motion) plus PNG/SVG/WebM/share-card exports; the latter targets scientific research, with 165 validated skills and 100+ scientific databases covering biology, chemistry, medicine, and drug discovery, compatible with Claude Code, Cursor, Codex, and more. Continues the trajectory from "general engineering-discipline skills" to "vertical-domain, full-workflow knowledge packaging" — scientific-agent-skills is a larger-scale instance of vertical-domain packaging after video production (OpenMontage).
 
 ### [2026-08-19](/en/today/2026-08-19)
 

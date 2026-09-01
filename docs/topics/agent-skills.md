@@ -36,6 +36,8 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 | agency-agents | 新晋（2026-08-09 上榜，累计约 14 万 star） | 230+ 跨领域专家人格 Agent 团队模板，8+ 平台转换脚本 |
 | anthropics/skills | 新晋（2026-08-12 上榜，累计 16.8 万 star，Anthropic 官方） | 标准制定者官方参考实现：规范文档 + 示例 skill + 模板，Claude 原生文档能力背后同款实现 |
 | Anthropic-Cybersecurity-Skills | 新晋（2026-08-18 上榜，累计 2.85 万 star） | 817 条网络安全从业者 skill，映射 MITRE ATT&CK/ATLAS/D3FEND、NIST CSF/AI RMF、MITRE F3 六大框架 |
+| archify | 新晋（2026-08-31 上榜，累计约 3.6 万 star） | 自然语言/Mermaid 输入生成架构・工作流・时序・数据流・生命周期图，自包含 HTML 输出 |
+| scientific-agent-skills | 新晋（2026-08-31 上榜，累计约 3-4 万 star） | 165 条科研场景验证 skill + 100 余个科学数据库，覆盖生物/化学/医学/药物发现 |
 
 > 此排行由 `/update` 在 skill 类仓库登上 GitHub Trending 时自动更新。
 
@@ -56,6 +58,10 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 - [Claude Code 高星仓库排行](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-31](/today/2026-08-31)
+
+archify（累计约 3.6 万 star）与 scientific-agent-skills（累计约 3-4 万 star）同日登上 GitHub Trending：前者把架构图/工作流图/时序图/数据流图/生命周期图生成打包成 skill，接受自然语言或粘贴的 Mermaid 输入，产出自包含 HTML（含动效）及 PNG/SVG/WebM/分享卡片导出；后者面向科研场景，165 条验证过的 skill 加 100 余个科学数据库，覆盖生物/化学/医学/药物发现，兼容 Claude Code/Cursor/Codex 等平台。延续"通用工程纪律 skill → 垂直领域全流程知识封装"的生态扩张脉络，scientific-agent-skills 是继视频制作（OpenMontage）之后规模更大的垂直领域封装样本。
 
 ### [2026-08-19](/today/2026-08-19)
 

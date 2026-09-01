@@ -36,6 +36,10 @@ Document parsing and structuring: turning PDFs, scans, tables and charts into LL
 
 ## Timeline
 
+### [2026-08-31](/en/today/2026-08-31)
+
+Cohere releases Parse V5 and brings it to Microsoft Foundry: a 2.3-billion-parameter vision-language model dedicated to document parsing, converting PDF/PPT/JPEG pages into Markdown with reading order preserved, HTML tables, form key-value pairs, image descriptions, and bounding-box coordinates. It covers domains like finance, insurance, and scientific research, supports 9 major languages, and parses roughly 4.5 pages per second per GPU; it isn't the top benchmark scorer, but wins on cost at $1.50 per 1,000 pages. Now available via the Cohere API, Model Vault, Microsoft Foundry, and AWS SageMaker; deployed in Foundry, inference stays within the customer's Azure tenant boundary. Echoes the recurring point that page-averaged metrics mask critical field-level errors — putting "cost" forward as an independent, selectable axis is another concrete instance of the parsing space shifting toward a multi-objective "accuracy vs. cost" trade-off.
+
 ### [2026-08-17](/en/today/2026-08-17)
 
 LlamaIndex details rebuilding its document-processing scheduling on Temporal: migrating from a homegrown RabbitMQ system lacking native durability/fairness primitives to a Workflow+Activity model, using a semaphore Workflow for concurrency control and "durable function execution" to eliminate silent job death from machine OOM events; now handles 130+ file types and processes tens of millions of pages daily (see [agent-workflow](/en/topics/agent-workflow)).

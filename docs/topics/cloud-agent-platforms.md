@@ -37,6 +37,10 @@
 
 ## Timeline
 
+### [2026-08-31](/today/2026-08-31)
+
+Microsoft Foundry（原 Azure AI Foundry）引入 xAI Grok 4.6（公开预览）：1.5T 规模模型家族，主打长时程推理与复杂工作流，覆盖代码工程、办公生产力、科研与推理优化任务，纳入 Foundry 统一的模型评测/部署/治理控制面。延续"多厂商模型集市"策略（此前已接入 GPT/Cohere/Llama/Mistral 等），进一步印证"选平台先于选模型"——已绑定 Azure 生态的企业无需切换供应商合同即可评测更多前沿模型。同日 Foundry Agent Service 发布 Azure Cosmos DB 长期记忆参考实现（详见 [agent-memory](/topics/agent-memory)）。
+
 ### [2026-08-19](/today/2026-08-19)
 
 Claude Managed Agents 新增网络工具域名白名单/黑名单：可对一个 agent 的 `web_search`/`web_fetch` 工具设置 `allowed_domains` 或 `blocked_domains`，`web_fetch` 另支持 `max_content_tokens`——权限最小化原则在托管 Agent 网络访问场景的又一次细化落地。同日 Agent Skills API 正式转 GA（详见 [agent-skills](/topics/agent-skills)），Claude API 浏览器/计算机工具、自托管沙箱记忆库挂载也在同批发布（详见 [agent-sandboxes](/topics/agent-sandboxes) ・ [agent-memory](/topics/agent-memory)）。

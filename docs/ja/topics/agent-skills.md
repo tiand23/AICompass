@@ -36,6 +36,8 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 | agency-agents | 新登場（2026-08-09 Trending 入り、累計約 14 万スター） | 230+ の分野横断エキスパートペルソナによるエージェントチームテンプレート、8+ プラットフォーム向け変換スクリプト |
 | anthropics/skills | 新登場（2026-08-12 Trending 入り、累計 16.8 万スター、Anthropic 公式） | 標準策定者による公式参照実装：仕様 + サンプル skill + テンプレート。Claude のネイティブ文書処理能力の背後にあるのと同じ実装 |
 | Anthropic-Cybersecurity-Skills | 新登場（2026-08-18 Trending 入り、累計 2.85 万スター） | 817 件のサイバーセキュリティ実務者 skill、MITRE ATT&CK/ATLAS/D3FEND、NIST CSF/AI RMF、MITRE F3 の六大フレームワークにマッピング |
+| archify | 新登場（2026-08-31 Trending 入り、累計約 3.6 万スター） | 自然言語/Mermaid 入力からアーキテクチャ・ワークフロー・シーケンス・データフロー・ライフサイクル図を生成、自己完結型 HTML 出力 |
+| scientific-agent-skills | 新登場（2026-08-31 Trending 入り、累計約 3〜4 万スター） | 科学研究向け検証済み skill 165 件 + 100 以上の科学データベース、生物学・化学・医学・創薬をカバー |
 
 > このランキングは skill 系リポジトリが GitHub Trending に登場した際に `/update` が自動更新する。
 
@@ -56,6 +58,10 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 - [Claude Code リポジトリのスターランキング](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-08-31](/ja/today/2026-08-31)
+
+archify（累計約 3.6 万スター）と scientific-agent-skills（累計約 3〜4 万スター）が同日 GitHub Trending 入り：前者はアーキテクチャ図・ワークフロー図・シーケンス図・データフロー図・ライフサイクル図の生成を skill としてパッケージ化し、自然言語または貼り付けられた Mermaid 入力を受け付けて自己完結型の HTML（モーション付き）や PNG/SVG/WebM・共有カードを出力する；後者は科学研究向けで、生物学・化学・医学・創薬をカバーする検証済み skill 165 件と 100 以上の科学データベースを提供し、Claude Code・Cursor・Codex などに対応する。「汎用的なエンジニアリング規律 skill → 垂直領域の全工程知識パッケージ化」という流れの継続であり、scientific-agent-skills は動画制作（OpenMontage）に続く、より大規模な垂直領域パッケージ化の事例。
 
 ### [2026-08-19](/ja/today/2026-08-19)
 

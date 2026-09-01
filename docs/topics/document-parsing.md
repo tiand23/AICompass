@@ -36,6 +36,10 @@
 
 ## Timeline
 
+### [2026-08-31](/today/2026-08-31)
+
+Cohere 发布 Parse V5 并登陆 Microsoft Foundry：23 亿参数视觉语言模型，专用于文档解析，将 PDF/PPT/JPEG 页面转成带阅读顺序的 Markdown、HTML 表格、表单键值对、图像描述与边界框坐标；覆盖财务/保险/科研等领域文档，支持 9 种主要语言，单 GPU 每秒解析约 4.5 页；跑分测试中不是精度最高的模型，但以每千页 1.5 美元的成本取胜，现已通过 Cohere API、Model Vault、Microsoft Foundry、AWS SageMaker 提供，部署进 Foundry 后推理留在客户 Azure 租户边界内。呼应"整页平均指标会掩盖关键字段错误"——把"成本"作为独立可选的选型维度摆上台面，是解析赛道从单一追求准确率转向"准确率 vs 成本"多目标权衡的又一个具体样本。
+
 ### [2026-08-17](/today/2026-08-17)
 
 LlamaIndex 发文详解用 Temporal 重构文档处理调度：从缺乏原生持久性/公平性原语的自建 RabbitMQ 方案迁移到 Workflow+Activity 模型，用信号量 Workflow 做并发控制、靠"持久化函数执行"消除机器 OOM 导致的静默任务死亡；现支持 130+ 文件类型，日均处理数千万页（详见 [agent-workflow](/topics/agent-workflow)）。
