@@ -38,6 +38,7 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 | Anthropic-Cybersecurity-Skills | 新晋（2026-08-18 上榜，累计 2.85 万 star） | 817 条网络安全从业者 skill，映射 MITRE ATT&CK/ATLAS/D3FEND、NIST CSF/AI RMF、MITRE F3 六大框架 |
 | archify | 新晋（2026-08-31 上榜，累计约 3.6 万 star） | 自然语言/Mermaid 输入生成架构・工作流・时序・数据流・生命周期图，自包含 HTML 输出 |
 | scientific-agent-skills | 新晋（2026-08-31 上榜，累计约 3-4 万 star） | 165 条科研场景验证 skill + 100 余个科学数据库，覆盖生物/化学/医学/药物发现 |
+| academic-research-skills | 新晋（2026-09-01 上榜，累计约 4.4 万 star） | 学术研究全流程 skill 套件：调研→写作→评审→修改→定稿，另有 Codex 原生版本 |
 
 > 此排行由 `/update` 在 skill 类仓库登上 GitHub Trending 时自动更新。
 
@@ -58,6 +59,10 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 - [Claude Code 高星仓库排行](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-09-01](/today/2026-09-01)
+
+academic-research-skills 登上 GitHub Trending（累计约 4.4 万 star）：把学术研究全流程（调研→写作→评审→修改→定稿）封装成 Claude Code skill 套件，另有配套的 Codex 原生版本仓库。延续"通用工程纪律 skill → 垂直领域全流程知识封装"的生态扩张脉络，是继视频制作、科研之后又一个高星垂直领域封装样本。
 
 ### [2026-08-31](/today/2026-08-31)
 

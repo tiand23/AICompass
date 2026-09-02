@@ -10,7 +10,7 @@
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [claude-models](/en/topics/claude-models) | Anthropic's Claude model line | Model selection and migration for agent/coding workloads | 🔥 | 2026-08-27 |
+| [claude-models](/en/topics/claude-models) | Anthropic's Claude model line | Model selection and migration for agent/coding workloads | 🔥 | 2026-09-01 |
 | [openai-models](/en/topics/openai-models) | OpenAI's GPT model line & API platform | Selection, price volatility and deprecation risk | 🔥 | 2026-08-29 |
 | [gemini-models](/en/topics/gemini-models) | Google's Gemini model line | Cost-effective selection for price-sensitive workloads | 📈 | 2026-08-17 |
 
@@ -46,7 +46,7 @@
 | [deep-agents](/en/topics/deep-agents) | Long-horizon autonomous agents (LangChain) | Planning, recovery and evaluation of multi-step tasks | 🔥 | 2026-08-27 |
 | [agent-frameworks](/en/topics/agent-frameworks) | Framework landscape: LangGraph/CrewAI/ADK/Agents SDK… | Framework selection and long-term safety | 🔥 | 2026-08-29 |
 | [agent-workflow](/en/topics/agent-workflow) | Workflow paradigms: orchestration vs autonomy, HITL, durable execution | Getting agents reliably into business processes | 📈 | 2026-08-17 |
-| [agent-skills](/en/topics/agent-skills) | Reusable capability packages (incl. GitHub heat rankings) | Distribution and reuse of agent capabilities | 🔥 | 2026-08-31 |
+| [agent-skills](/en/topics/agent-skills) | Reusable capability packages (incl. GitHub heat rankings) | Distribution and reuse of agent capabilities | 🔥 | 2026-09-01 |
 | [voice-agents](/en/topics/voice-agents) | Voice agents (cascaded/realtime S2S, frameworks & evaluation) | Realtime engineering and evaluation of voice-interface agents | 📈 | 2026-08-21 |
 
 ### Runtime & Cloud (Hosted Runtimes ・ Agent Platforms ・ Foundry)
@@ -87,7 +87,7 @@
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [agentic-safety](/en/topics/agentic-safety) | Agent behavioral safety | Real risks of autonomous models overstepping and escaping | 🔥 | 2026-08-31 |
+| [agentic-safety](/en/topics/agentic-safety) | Agent behavioral safety | Real risks of autonomous models overstepping and escaping | 🔥 | 2026-09-01 |
 | [content-provenance](/en/topics/content-provenance) | AI content watermarking & verification (SynthID/C2PA) | Identifiability and compliance checking of generated content | 📈 | 2026-08-14 |
 
 ## 7. Coding Tools

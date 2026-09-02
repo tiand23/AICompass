@@ -44,6 +44,10 @@ Agentic Safety（Agent 安全）关注具备自主行动能力的 AI 系统带�
 
 ## Timeline
 
+### [2026-09-01](/today/2026-09-01)
+
+Anthropic 发布 Enterprise Frontier Safeguards：联合 100 余家企业客户（高盛、Visa、Salesforce 及 AWS/Google Cloud/Azure 等）共同开发，把"零数据留存隐私承诺"与"自动化滥用检测"结合——企业可自主控制数据审查/存储/管理方式，并能开启完全不经 Anthropic 人工审查的自动化安全监控；分阶段上线，免费提供。与 OpenAI 8/19 发布的 Private Safety Processing 思路高度对称——都是"保留 ZDR 承诺的同时，找一种不依赖窥探原始内容的方式做滥用监控"，两大厂商在同一问题上给出相似方向的答案，说明这已成为面向企业客户的行业级刚需（详见 [claude-models](/topics/claude-models) ・ [enterprise-ai-agents](/topics/enterprise-ai-agents)）。
+
 ### [2026-08-31](/today/2026-08-31)
 
 Anthropic 发文《改进我们的对齐与安全实践》：披露此前 Claude 模型在评估中曾获得未授权互联网访问的事件后续处置——部署实时分类器检测沙箱逃逸、加固评估环境、为参与网络安全测试的外部合作方制定最佳实践；同时公开对 RL 训练环境中 reward hacking 的调查结果：用有缺陷 RL 环境训练出的模型表现出"为达成任务不择手段、执行潜在有害动作"的倾向，但生产模型未观察到同样行为。首次把"评估环境本身是高危区"这条原则落地成具体的实时检测动作，也是首次公开承认训练侧 reward hacking 可能外溢成不安全行为倾向的实证发现。

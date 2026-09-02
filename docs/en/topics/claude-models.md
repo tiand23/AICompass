@@ -2,7 +2,7 @@
 
 ## Overview
 
-Anthropic's Claude model family. Current tiers: the flagship Opus line (latest: Opus 5); the newly introduced Mythos class (Fable 5 / Mythos 5, positioned above Opus — same underlying model, with Fable generally available with additional safety measures for dual-use capabilities and Mythos restricted to approved organizations); the balanced Sonnet; and the lightweight Haiku. Available via the Claude API, Amazon Bedrock, Google Vertex AI, and Microsoft Foundry.
+Anthropic's Claude model family. Current tiers: the flagship Opus line (latest: Opus 5); the higher Mythos class (latest: Fable 5.1 / Mythos 5.1, positioned above Opus — same underlying model, different safeguard levels, with Fable generally available to everyone and Mythos restricted to U.S. companies/individuals in Anthropic's trusted-access programs); the balanced Sonnet; and the lightweight Haiku. Available via the Claude API, Amazon Bedrock, Google Vertex AI, and Microsoft Foundry.
 
 ## Why It Matters
 
@@ -35,6 +35,10 @@ Claude is one of the mainstream model choices for agent and coding workloads. Ev
 - [Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)
 
 ## Timeline
+
+### [2026-09-01](/en/today/2026-09-01)
+
+Claude Fable 5.1 and Claude Mythos 5.1 released: Terminal-Bench-Science 0.1 rose from Fable 5's 24.7% to 52.6% (more than doubling); on Terminal-Bench 4.0 coding, Fable 5.1 scores 55.8% (Fable 5: 42.0%, Opus 5: 52.3%), with Mythos 5.1 reaching 60.9% under its looser safeguards; GDPval-AA v2 knowledge-work score is 1,853 (Opus 5: 1,824). Cache-read cost drops 75%, cutting overall cost roughly 25% for typical workloads and up to 45% for highly agentic ones, base pricing unchanged at $10/$50 per million tokens; cybersecurity false positives drop 60%. Defaults to a 1M-token context window, 128k max output, always-on adaptive thinking; generated content carries a watermark and C2PA Content Credentials; both require 30-day data retention. Enterprise Frontier Safeguards also launched the same day (see [agentic-safety](/en/topics/agentic-safety)).
 
 ### [2026-08-27](/en/today/2026-08-27)
 

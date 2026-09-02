@@ -2,7 +2,7 @@
 
 ## 概要
 
-Anthropic の Claude モデルファミリー。現在の主なティア：フラッグシップの Opus 系（最新は Opus 5）、新設の Mythos クラス（Fable 5 / Mythos 5。Opus の上位に位置し、両者は同一の基盤モデル。Fable はデュアルユース能力への追加の安全対策付きで一般提供、Mythos は承認済み組織限定）、バランス型の Sonnet、軽量の Haiku。Claude API、Amazon Bedrock、Google Vertex AI、Microsoft Foundry から利用できる。
+Anthropic の Claude モデルファミリー。現在の主なティア：フラッグシップの Opus 系（最新は Opus 5）、Opus の上位に位置する Mythos クラス（最新は Fable 5.1 / Mythos 5.1。両者は同一の基盤モデルだが安全対策のレベルが異なり、Fable は全ユーザー向けに一般提供、Mythos は Anthropic の信頼済みアクセスプログラムに参加する米国企業/個人限定）、バランス型の Sonnet、軽量の Haiku。Claude API、Amazon Bedrock、Google Vertex AI、Microsoft Foundry から利用できる。
 
 ## なぜ重要か
 
@@ -35,6 +35,10 @@ Claude はエージェントとコーディング用途における主流のモ�
 - [モデル概要](https://platform.claude.com/docs/en/about-claude/models/overview)
 
 ## Timeline
+
+### [2026-09-01](/ja/today/2026-09-01)
+
+Claude Fable 5.1 と Claude Mythos 5.1 を発表：Terminal-Bench-Science 0.1 は Fable 5 の 24.7% から 52.6% へ倍増以上に上昇；Terminal-Bench 4.0 コーディングベンチマークでは Fable 5.1 が 55.8%（Fable 5 は 42.0%、Opus 5 は 52.3%）、Mythos 5.1 はより緩やかな安全対策の下で 60.9% に到達；GDPval-AA v2 知識労働ベンチマークのスコアは 1,853（Opus 5 は 1,824）。キャッシュ読み取りコストは 75% 削減され、通常のワークロードで総コストが約 25%、高度に Agentic なワークロードでは最大 45% 削減、基本料金は $10/$50（100万トークンあたり）を維持；サイバーセキュリティの誤検知は 60% 減少。デフォルトで 100 万トークンのコンテキストウィンドウ、最大出力 12.8 万トークン、常時オンの適応的思考；生成コンテンツには電子透かしと C2PA コンテンツクレデンシャルが付与され、両モデルとも 30 日間のデータ保持が必須。同日 Enterprise Frontier Safeguards も発表（詳細は [agentic-safety](/ja/topics/agentic-safety)）。
 
 ### [2026-08-27](/ja/today/2026-08-27)
 

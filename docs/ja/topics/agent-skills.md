@@ -38,6 +38,7 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 | Anthropic-Cybersecurity-Skills | 新登場（2026-08-18 Trending 入り、累計 2.85 万スター） | 817 件のサイバーセキュリティ実務者 skill、MITRE ATT&CK/ATLAS/D3FEND、NIST CSF/AI RMF、MITRE F3 の六大フレームワークにマッピング |
 | archify | 新登場（2026-08-31 Trending 入り、累計約 3.6 万スター） | 自然言語/Mermaid 入力からアーキテクチャ・ワークフロー・シーケンス・データフロー・ライフサイクル図を生成、自己完結型 HTML 出力 |
 | scientific-agent-skills | 新登場（2026-08-31 Trending 入り、累計約 3〜4 万スター） | 科学研究向け検証済み skill 165 件 + 100 以上の科学データベース、生物学・化学・医学・創薬をカバー |
+| academic-research-skills | 新登場（2026-09-01 Trending 入り、累計約 4.4 万スター） | 学術研究全工程 skill スイート：調査→執筆→レビュー→修正→仕上げ、Codex ネイティブ版も提供 |
 
 > このランキングは skill 系リポジトリが GitHub Trending に登場した際に `/update` が自動更新する。
 
@@ -58,6 +59,10 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 - [Claude Code リポジトリのスターランキング](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-09-01](/ja/today/2026-09-01)
+
+academic-research-skills が GitHub Trending 入り（累計約 4.4 万スター）：学術研究の全工程（調査→執筆→レビュー→修正→仕上げ）を Claude Code skill スイートとしてパッケージ化し、Codex ネイティブ版も提供。「汎用的なエンジニアリング規律 skill → 垂直領域の全工程知識パッケージ化」という流れの継続であり、動画制作・科学研究に続く高スターの垂直領域パッケージ化事例。
 
 ### [2026-08-31](/ja/today/2026-08-31)
 

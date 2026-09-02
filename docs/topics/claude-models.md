@@ -2,7 +2,7 @@
 
 ## 简介
 
-Anthropic 的 Claude 模型家族。当前主要档位：旗舰的 Opus 系列（最新 Opus 5）、新引入的 Mythos 级（Fable 5 / Mythos 5，位于 Opus 之上，两者同底座，Fable 面向公开可用并附加双重用途能力的安全措施，Mythos 仅向获批组织开放）、均衡的 Sonnet 与轻量的 Haiku。可通过 Claude API、Amazon Bedrock、Google Vertex AI、Microsoft Foundry 使用。
+Anthropic 的 Claude 模型家族。当前主要档位：旗舰的 Opus 系列（最新 Opus 5）、更高一级的 Mythos 级（最新 Fable 5.1 / Mythos 5.1，位于 Opus 之上，两者同底座、安全护栏级别不同，Fable 面向所有人公开可用，Mythos 仅向受信任访问计划内的美国企业/个人开放）、均衡的 Sonnet 与轻量的 Haiku。可通过 Claude API、Amazon Bedrock、Google Vertex AI、Microsoft Foundry 使用。
 
 ## 为什么重要
 
@@ -35,6 +35,10 @@ Claude 是 Agent 与编码场景的主流模型选择之一。其模型线的每
 - [模型总览](https://platform.claude.com/docs/en/about-claude/models/overview)
 
 ## Timeline
+
+### [2026-09-01](/today/2026-09-01)
+
+Claude Fable 5.1 与 Claude Mythos 5.1 发布：Terminal-Bench-Science 0.1 从 Fable 5 的 24.7% 提升到 52.6%（翻倍以上）；Terminal-Bench 4.0 编码基准 Fable 5.1 得 55.8%（Fable 5 为 42.0%、Opus 5 为 52.3%），Mythos 5.1 在更宽松护栏下达 60.9%；GDPval-AA v2 知识工作基准得分 1,853（Opus 5 为 1,824）。缓存读取成本降 75%，典型工作负载综合降本约 25%、高强度 Agent 场景最高降 45%，基础定价维持 $10/$50 每百万 token 不变；网络安全护栏误报减少 60%。默认 100 万 token 上下文、12.8 万最大输出、始终开启自适应思考；生成内容附带水印与 C2PA 内容凭证；均要求 30 天数据留存。同日发布 Enterprise Frontier Safeguards（详见 [agentic-safety](/topics/agentic-safety)）。
 
 ### [2026-08-27](/today/2026-08-27)
 

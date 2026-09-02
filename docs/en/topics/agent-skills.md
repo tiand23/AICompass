@@ -38,6 +38,7 @@ High-star representative repos at topic creation (2026-07):
 | Anthropic-Cybersecurity-Skills | New (hit Trending 2026-08-18, 28.5k stars total) | 817 cybersecurity practitioner skills mapped to MITRE ATT&CK/ATLAS/D3FEND, NIST CSF/AI RMF, and MITRE F3 |
 | archify | New (hit Trending 2026-08-31, ~36k stars total) | Generates architecture/workflow/sequence/data-flow/lifecycle diagrams from natural language or Mermaid input, self-contained HTML output |
 | scientific-agent-skills | New (hit Trending 2026-08-31, ~30-40k stars total) | 165 validated scientific-research skills + 100+ scientific databases, covering biology, chemistry, medicine, and drug discovery |
+| academic-research-skills | New (hit Trending 2026-09-01, ~44k stars total) | Full academic-research-workflow skill suite: research → write → review → revise → finalize; companion Codex-native version available |
 
 > This ranking is refreshed by `/update` whenever skill-related repos hit GitHub Trending.
 
@@ -58,6 +59,10 @@ High-star representative repos at topic creation (2026-07):
 - [Claude Code repos star leaderboard](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-09-01](/en/today/2026-09-01)
+
+academic-research-skills hit GitHub Trending (~44k stars total): packages the full academic research workflow (research → write → review → revise → finalize) into a Claude Code skill suite, with a companion Codex-native version. Continues the trajectory from "general engineering-discipline skills" to "vertical-domain, full-workflow knowledge packaging," another high-star vertical-domain instance after video production and scientific research.
 
 ### [2026-08-31](/en/today/2026-08-31)
 
