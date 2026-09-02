@@ -5,4 +5,6 @@
 | 図 | 説明 |
 |---|---|
 | [企業 AI リファレンスアーキテクチャ](/ja/diagrams/enterprise-ai-architecture) | ナレッジベース QA / 設計書生成 / コード生成の 3 つのシナリオを横断するエンドツーエンド構成。日本企業のデータガバナンスと稟議承認文化の制約に沿って選定 |
-| [資産構造化・3つの方式比較](/ja/diagrams/asset-structuring-options) | 汎用マルチパイプライン構造化 / 全体グラフ化 / grep 中心型、資産構造化の 3 つの設計思想のトレードオフ比較 |
+| [資産構造化・方式1：汎用マルチパイプライン構造化](/ja/diagrams/asset-structuring-01-general) | 全文 / ベクトル / ナレッジグラフ / 画像ベクトルの 4 系統を並行して取り込む、資産の異種性が高い場面に向く |
+| [資産構造化・方式2：全体グラフ化](/ja/diagrams/asset-structuring-02-graph) | 先にオントロジー（Ontology）を設計し、すべての抽出を統一 schema に従わせ、1 枚のナレッジグラフへ収束 |
+| [資産構造化・方式3：grep 中心型](/ja/diagrams/asset-structuring-03-grep) | 精度はツールから生まれる、AI からではない。実際に検証済みの実装を参照；簡明版と詳細版を収録 |
