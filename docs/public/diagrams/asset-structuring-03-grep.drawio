@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="drawio" version="26.0.0">
+  <diagram name="资产结构化-方案三-以grep为中心">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ===================== TITLE ===================== -->
+        <mxCell id="title" value="资产结构化 · 方案三：以 grep 为中心（工程1→2→3 真实实现）" style="text;html=1;fontSize=20;fontStyle=1;fontColor=#1B2229;align=left;verticalAlign=middle;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="16" width="1100" height="32" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== PHILOSOPHY CALLOUT ===================== -->
+        <mxCell id="ph1" value="&lt;b&gt;精度来自工具，不来自 AI&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=#5B6169&gt;机械抽取优先：能靠规则 / 列位置 / 语法树抽取的内容一律不问 AI（0 费用 · 100% 准确 · 可复现）；AI 只处理机械做不到的事——读图、读散文、写摘要。表格类内容绝不交给 AI 抄：实测同一张表 AI 有时抄 26 个字段有时只抄 2 个，机械抄永远是 26 个。&lt;br&gt;台账构建（下面②）完全是&lt;b&gt;规则驱动&lt;/b&gt;（config 里的 extractor 定义），不掺杂 LLM；AI 只出现在「索引摘要」（下面①）这一步，做它擅长的事。&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=2;align=left;verticalAlign=middle;spacingLeft=44;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="1650" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_ph1" value="" style="shape=mxgraph.ios7.icons.flag;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.6;" vertex="1" parent="1">
+          <mxGeometry x="58" y="106" width="24" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== INPUT ===================== -->
+        <mxCell id="in1" value="&lt;b&gt;原始资产&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=#5B6169&gt;Excel 设计书（工程1 ExcelSheetToPngText 的输入）&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="680" y="204" width="330" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_in1" value="" style="shape=mxgraph.ios7.icons.documents;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="692" y="227" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="e_in_doclane" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.34;entryY=0;" edge="1" parent="1" source="in1" target="doclane">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== DOC LANE (工程1 + 工程2：索引 + 台账) ===================== -->
+        <mxCell id="doclane" value="ExcelSheetToPngText（工程1）→ DesignDocIndexer（工程2 索引 + 工程3 台账，build.py 统一调度）" style="swimlane;startSize=32;arcSize=2;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#2E6E7A;fontSize=14;fontStyle=1;verticalAlign=top;fontColor=#2E6E7A;strokeWidth=1.6;fontFamily=Helvetica;swimlaneFillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="300" width="1650" height="1860" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d_sub1" value="区块 1 · 机械转换（ExcelSheetToPngText）" style="text;html=1;fontSize=14;fontStyle=1;fontColor=#2E6E7A;align=left;verticalAlign=middle;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="60" y="44" width="500" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="d1a" value="&lt;b&gt;直接读 Excel 内部文件&lt;/b&gt;&lt;font style=&quot;font-size:11px&quot; color=#5B6169&gt;（不走常规读取方式）&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=#1B2229&gt;常规方式（比如常用的 openpyxl 库）会漏掉三样东西：①图形里的文字——流程图方框、箭头旁边的说明文字，图形本身不算文字，容易被忽略；②箭头到底指向哪一边——画的时候先点哪个框，和箭头最终指向哪边是两回事，容易搞反，实测就出过一张图方向记反了，靠检查线条画的箭头在哪一头才发现并修正；③日文汉字上标的读音假名——比如「工番（こうばん）」，处理不当读音会混进正文，变成「工番こうばん」。&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2E6E7A;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="60" y="76" width="1580" height="106" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_d1a" value="" style="shape=mxgraph.ios7.icons.document;html=1;strokeColor=#2E6E7A;fillColor=none;strokeWidth=1.4;" vertex="1" parent="doclane">
+          <mxGeometry x="72" y="99" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d1b" value="&lt;b&gt;每张 sheet 双份产出&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=#1B2229&gt;每张 sheet 生成两个文件——一张图片（PNG，长什么样，供人和 AI 看版式）+ 一段文字（TXT，写了什么，供机器处理）。文字里每个值都标上它在哪一列，比如「第10行 A列=4，D列=工番」——方眼纸类表格空列很多，不标列号的话 AI 容易把不同列的值张冠李戴、对错行。隐藏的 sheet 也照样处理，先打上「隐藏」标记，但不在这一步删除——是不是草稿、要不要用，留到下一步统一判断。&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="60" y="198" width="1580" height="116" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_d1b" value="" style="shape=mxgraph.ios7.icons.storage;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.4;" vertex="1" parent="doclane">
+          <mxGeometry x="72" y="221" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="e_d1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" edge="1" parent="doclane" source="d1a" target="d1b">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d_sub2" value="区块 2 · 索引 + 台账构建（build.py 依次跑 ①②③，同一份 TXT 分两条独立路径消费）" style="text;html=1;fontSize=15;fontStyle=1;fontColor=#1B2229;align=left;verticalAlign=middle;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="60" y="322" width="1000" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sub2a_label" value="① 索引摘要（indexer.py，花钱这一步）" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#8A6A2E;align=left;verticalAlign=middle;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="60" y="354" width="500" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d2_filter" value="筛选：剔除隐藏 sheet&#xa;（草稿 / 旧版本，不是交付物）" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="60" y="384" width="560" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="e_d1b_filter" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="doclane" source="d1b" target="d2_filter">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="d2_classify" value="&lt;b&gt;免费分类&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#5B6169&gt;不问 AI，靠形状 / 命名特征瞬间判断&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot;&gt;→ 表格类 / 图类 / 空 / 履历等&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="60" y="468" width="560" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_d2_classify" value="" style="shape=mxgraph.ios7.icons.settings;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.4;" vertex="1" parent="doclane">
+          <mxGeometry x="72" y="490" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="e_filter_classify" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" edge="1" parent="doclane" source="d2_filter" target="d2_classify">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pathA" value="&lt;b&gt;路径 A · 机械抄&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#3E6B63&gt;表格类走这条：表头列位置固定 → 按列一行行抄&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;100% 准确 · 0 费用&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9.5px&quot; color=#5B6169&gt;实测：AI 抄同一张表有时 26 个字段有时只 2 个，机械抄永远 26 个——表格绝不给 AI&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="30" y="588" width="280" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_pathA" value="" style="shape=mxgraph.ios7.icons.tools;html=1;strokeColor=#3E6B63;fillColor=none;strokeWidth=1.5;" vertex="1" parent="doclane">
+          <mxGeometry x="42" y="612" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pathB" value="&lt;b&gt;路径 B · AI 读懂&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#8A6A2E&gt;非空的非表格 sheet（图 / 叙述类）走这条&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;是图 → 连图片一起给 AI；是表格 → 只给文字不给图片&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9.5px&quot; color=#5B6169&gt;实测给图反而更差：12 个字段掉到 1 个（AI 看图说话，不逐行读字）&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9.5px&quot; color=#5B6169&gt;问 5 件事：写了什么 / 属于哪个系统 / 有哪些识别子 / 能答什么问题 / 哪里看不懂&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A6A2E;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="340" y="588" width="290" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_pathB" value="" style="shape=mxgraph.ios7.icons.looking_glass;html=1;strokeColor=#8A6A2E;fillColor=none;strokeWidth=1.5;" vertex="1" parent="doclane">
+          <mxGeometry x="352" y="612" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_classify_pathA" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="doclane" source="d2_classify" target="pathA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_classify_pathB" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.7;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="doclane" source="d2_classify" target="pathB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="merge" value="合并结果" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="180" y="792" width="300" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="e_pathA_merge" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="doclane" source="pathA" target="merge">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_pathB_merge" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.7;entryY=0;" edge="1" parent="doclane" source="pathB" target="merge">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="out1" value="&lt;b&gt;index.sqlite&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#5B6169&gt;可检索数据库&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=30;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="60" y="884" width="190" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_out1" value="" style="shape=mxgraph.ios7.icons.storage;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.3;" vertex="1" parent="doclane">
+          <mxGeometry x="70" y="905" width="18" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="out2" value="&lt;b&gt;OVERVIEW.md&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#5B6169&gt;全局地图&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="270" y="884" width="190" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="out3" value="&lt;b&gt;REVIEW.md&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#9C3B2C&gt;要确认清单（人工介入）&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FDF3F0;strokeColor=#9C3B2C;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=30;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="480" y="884" width="190" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_out3" value="" style="shape=mxgraph.ios7.icons.flag;html=1;strokeColor=#9C3B2C;fillColor=none;strokeWidth=1.3;" vertex="1" parent="doclane">
+          <mxGeometry x="490" y="905" width="18" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="out4" value="&lt;b&gt;TEMPLATES.md&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#5B6169&gt;模板发现报告&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="690" y="884" width="190" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="out5" value="&lt;b&gt;md/*.md&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#5B6169&gt;每张纸可读版&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="900" y="884" width="190" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="e_merge_out1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.2;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="doclane" source="merge" target="out1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_merge_out2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.4;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="doclane" source="merge" target="out2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_merge_out3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="doclane" source="merge" target="out3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_merge_out4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.6;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="doclane" source="merge" target="out4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_merge_out5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.8;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="doclane" source="merge" target="out5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ============ ② 台账构建（ledger.py） ============ -->
+        <mxCell id="sub2b_label" value="② 台账构建（ledger.py，免费这一步，规则驱动，不掺 LLM）——与①并行消费同一份 TXT" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#3E6B63;align=left;verticalAlign=middle;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="60" y="984" width="900" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ledger_input" value="&lt;b&gt;输入&lt;/b&gt;：reader.py 解析出的表格结构（表头 / 表头上方区域 / 表体）+&lt;br&gt;config/extractors/*.json 里定义的抽取器规则" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="60" y="1016" width="560" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_ledger_input" value="" style="shape=mxgraph.ios7.icons.document;html=1;strokeColor=#3E6B63;fillColor=none;strokeWidth=1.4;" vertex="1" parent="doclane">
+          <mxGeometry x="72" y="1040" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="e_d1b_ledger_input" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="doclane" source="d1b" target="ledger_input">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="20" y="256" />
+              <mxPoint x="20" y="1054" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ex_table" value="&lt;b&gt;表型抽取器&lt;/b&gt;&lt;br&gt;固定表头，一行 = 一条记录&lt;br&gt;（如レコードレイアウト）" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=16;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="60" y="1112" width="270" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ex_label" value="&lt;b&gt;标签型抽取器&lt;/b&gt;&lt;br&gt;无固定表头，「标签｜值」对匹配&lt;br&gt;（如プログラム概要）" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=16;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="350" y="1112" width="270" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e_li_extable" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="doclane" source="ledger_input" target="ex_table">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_li_exlabel" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.7;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="doclane" source="ledger_input" target="ex_label">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ledger_objects" value="&lt;b&gt;抽出对象&lt;/b&gt;：tables / columns / screens / screen_items / programs / history（改订履历）" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="60" y="1226" width="560" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_ledger_objects" value="" style="shape=mxgraph.ios7.icons.documents;html=1;strokeColor=#26415C;fillColor=none;strokeWidth=1.4;" vertex="1" parent="doclane">
+          <mxGeometry x="72" y="1249" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="terms" value="&lt;b&gt;用语字典&lt;/b&gt;（terms 表）&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#5B6169&gt;抽取时顺手生成，日语名 ↔ 物理名双向映射，不是单独一步&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="660" y="1226" width="320" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_terms" value="" style="shape=mxgraph.ios7.icons.link;html=1;strokeColor=#26415C;fillColor=none;strokeWidth=1.4;" vertex="1" parent="doclane">
+          <mxGeometry x="672" y="1249" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="e_extable_objects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.3;exitY=1;entryX=0.15;entryY=0;" edge="1" parent="doclane" source="ex_table" target="ledger_objects">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_exlabel_objects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.7;exitY=1;entryX=0.6;entryY=0;" edge="1" parent="doclane" source="ex_label" target="ledger_objects">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_objects_terms" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.1;strokeColor=#8A8F96;endArrow=open;endFill=0;fontSize=10;fontColor=#5B6169;" edge="1" parent="doclane" source="ledger_objects" target="terms" value="顺手生成">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="links_declared" value="&lt;b&gt;关系 · 明记&lt;/b&gt;&lt;font style=&quot;font-size:10px&quot; color=#3E6B63&gt;（source=declared）&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#5B6169&gt;参照テーブルID / 参照フィールドID 列写明的&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=16;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="60" y="1338" width="270" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="infer_block" value="&lt;b&gt;两段推断&lt;/b&gt;&lt;font style=&quot;font-size:10px&quot; color=#8A6A2E&gt;（source=inferred）&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#5B6169&gt;① learn_prefixes：自动学习画面控件命名前缀（去掉后是否更命中DB列名来验证，不写死配置）&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#5B6169&gt;② infer_links：物理名一致→确度高／日语名一致→确度中&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A6A2E;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=16;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="350" y="1338" width="420" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="corrections" value="&lt;b&gt;corrections 表&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#5B6169&gt;设计书本身写错的地方（如逻辑名/物理名颠倒、画面名复制忘改）——自动纠正但绝不静默，前后都记录，人可事后审查&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FDF3F0;strokeColor=#9C3B2C;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=16;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="800" y="1338" width="280" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="e_objects_declared" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.2;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="doclane" source="ledger_objects" target="links_declared">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_objects_infer" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.4;entryY=0;" edge="1" parent="doclane" source="ledger_objects" target="infer_block">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_objects_corrections" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.95;exitY=1;entryX=0;entryY=0.25;" edge="1" parent="doclane" source="ledger_objects" target="corrections">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="596" y="1320" />
+              <mxPoint x="800" y="1320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="src_store" value="&lt;b&gt;原文留存&lt;/b&gt;（src_sheets / src_cells）&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#5B6169&gt;工程1 的 TXT 逐行解析后原样存入台账，供 grep 直接查，不用重新解析&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="60" y="1478" width="560" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_src_store" value="" style="shape=mxgraph.ios7.icons.documents;html=1;strokeColor=#26415C;fillColor=none;strokeWidth=1.4;" vertex="1" parent="doclane">
+          <mxGeometry x="72" y="1499" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="e_li_srcstore" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0;exitY=0.8;entryX=0;entryY=0.5;" edge="1" parent="doclane" source="ledger_input" target="src_store">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="20" y="1077" />
+              <mxPoint x="20" y="1513" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ledger_out" value="&lt;b&gt;ledger.sqlite&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#5B6169&gt;完整台账：tables / columns / screens / screen_items / programs / history / terms / links / corrections / src_sheets / src_cells&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="60" y="1580" width="560" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_ledger_out" value="" style="shape=mxgraph.ios7.icons.storage;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.4;" vertex="1" parent="doclane">
+          <mxGeometry x="72" y="1603" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="e_declared_out" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.3;exitY=1;entryX=0.1;entryY=0;" edge="1" parent="doclane" source="links_declared" target="ledger_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_infer_out" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.4;exitY=1;entryX=0.4;entryY=0;" edge="1" parent="doclane" source="infer_block" target="ledger_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_corrections_out" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.3;exitY=1;entryX=0.7;entryY=0;" edge="1" parent="doclane" source="corrections" target="ledger_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_srcstore_out" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.9;entryY=0;" edge="1" parent="doclane" source="src_store" target="ledger_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="health_check" value="&lt;b&gt;health_check&lt;/b&gt; 离线健康检查&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#5B6169&gt;覆盖率&lt;30%？抽取器 0 命中？推断关系太少？用语字典&lt;20词？→ 生成 warning&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="660" y="1580" width="330" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_health" value="" style="shape=mxgraph.ios7.icons.looking_glass;html=1;strokeColor=#26415C;fillColor=none;strokeWidth=1.4;" vertex="1" parent="doclane">
+          <mxGeometry x="672" y="1603" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="e_out_health" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" edge="1" parent="doclane" source="ledger_out" target="health_check">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="kb_report" value="&lt;b&gt;KB_REPORT.md&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#9C3B2C&gt;含健康检查 warning + 统计（人工介入）&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FDF3F0;strokeColor=#9C3B2C;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=30;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="660" y="1690" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_kbreport" value="" style="shape=mxgraph.ios7.icons.flag;html=1;strokeColor=#9C3B2C;fillColor=none;strokeWidth=1.3;" vertex="1" parent="doclane">
+          <mxGeometry x="670" y="1710" width="18" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="e_health_kbreport" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" edge="1" parent="doclane" source="health_check" target="kb_report">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- loop-back: 报告 to config to rerun -->
+        <mxCell id="e_loop_back" value="人看报告 → 调整 config/extractors 或 config/rules/infer.json → 重跑 --ledger-only（免费 · 秒级，随便重试）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.2;strokeColor=#9C3B2C;fontColor=#9C3B2C;endArrow=open;endFill=0;labelBackgroundColor=#FFFFFF;fontSize=10;exitX=1;exitY=0.3;entryX=1;entryY=0.5;" edge="1" parent="doclane" source="kb_report" target="ex_label">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1120" y="1710" />
+              <mxPoint x="1120" y="1152" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============ ③ 向量索引（embed.py，可选） ============ -->
+        <mxCell id="vecbox" value="&lt;b&gt;③ 向量索引&lt;/b&gt;（embed.py）&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=#9C3B2C&gt;可选 · 非必需&lt;/font&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#5B6169&gt;：只是 search_docs 的语义相近打分辅助信号，&lt;b&gt;没有它系统一样能完整工作&lt;/b&gt;（纯全文检索）。build.py 支持 --no-embed 直接跳过。&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;产出：vectors.sqlite&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;dashed=1;fillColor=#FFFFFF;strokeColor=#8A8F96;strokeWidth=1.4;align=left;verticalAlign=top;spacingLeft=16;spacingTop=16;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="1160" y="1016" width="430" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="e_li_vec" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.1;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=1;exitY=0.5;entryX=0;entryY=0.1;" edge="1" parent="doclane" source="ledger_input" target="vecbox">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ============ 汇总：喂给 DesignDocAsk 的 KB() ============ -->
+        <mxCell id="summary_kb" value="&lt;b&gt;两个目录喂给 DesignDocAsk 的 KB()&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=#5B6169&gt;docs/_index/（index.sqlite + md/*.md，来自 ①）　＋　docs/_kb/（ledger.sqlite + KB_REPORT.md，来自 ②；vectors.sqlite 可选，来自 ③）&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=2;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
+          <mxGeometry x="60" y="1760" width="1000" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_summary" value="" style="shape=mxgraph.ios7.icons.storage;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.5;" vertex="1" parent="doclane">
+          <mxGeometry x="72" y="1786" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ledgerout_summary" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.1;exitY=1;entryX=0.05;entryY=0;" edge="1" parent="doclane" source="ledger_out" target="summary_kb">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="90" y="1730" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_kbreport_summary" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.4;entryY=0;" edge="1" parent="doclane" source="kb_report" target="summary_kb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_out1_summary" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.1;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.1;exitY=1;entryX=0.7;entryY=0;" edge="1" parent="doclane" source="out1" target="summary_kb">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="20" y="1800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_vec_summary" value="如果启用" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.1;strokeColor=#8A8F96;endArrow=open;endFill=0;fontSize=10;fontColor=#5B6169;exitX=0.3;exitY=1;entryX=0.9;entryY=0;" edge="1" parent="doclane" source="vecbox" target="summary_kb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== BLOCK 3 · Q&amp;A (DesignDocAsk) ===================== -->
+        <mxCell id="b3_title" value="区块 3 · 问答（DesignDocAsk，ask.py 的 LLM function-calling agent 循环）" style="text;html=1;fontSize=18;fontStyle=1;fontColor=#1B2229;align=left;verticalAlign=middle;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="820" y="2210" width="800" height="28" as="geometry" />
+        </mxCell>
+
+        <mxCell id="q_input" value="&lt;b&gt;用户提问 + 对话历史&lt;/b&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="220" y="2260" width="260" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_q_input" value="" style="shape=mxgraph.ios7.icons.message;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="232" y="2277" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="llm_judge" value="&lt;b&gt;LLM 判断&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;材料够了吗？还要不要继续查？&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A6A2E;strokeWidth=1.8;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="190" y="2346" width="320" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="e_input_judge" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" edge="1" parent="1" source="q_input" target="llm_judge">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="call_tool" value="&lt;b&gt;调用一个工具&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#5B6169&gt;从下面 10 个工具里选 1 个&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.4;align=left;verticalAlign=middle;spacingLeft=16;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="640" y="2376" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e_judge_call" value="继续查" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;fontColor=#5B6169;fontSize=10;endArrow=open;endFill=0;exitX=1;exitY=0.35;entryX=0;entryY=0.5;" edge="1" parent="1" source="llm_judge" target="call_tool">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="get_result" value="&lt;b&gt;拿到结果&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#5B6169&gt;纯 SQL / 规则返回的 JSON——这一步没有 LLM 参与，kbtools.py 不含任何 AI 逻辑&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.4;align=left;verticalAlign=middle;spacingLeft=16;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="640" y="2476" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="e_call_result" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" edge="1" parent="1" source="call_tool" target="get_result">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_result_loop" value="循环" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.3;strokeColor=#8A6A2E;fontColor=#8A6A2E;fontSize=10;endArrow=open;endFill=0;exitX=0;exitY=0.15;entryX=0;entryY=0.75;" edge="1" parent="1" source="get_result" target="llm_judge">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="120" y="2490" />
+              <mxPoint x="120" y="2444" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="final_answer" value="&lt;b&gt;生成最终回答&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#5B6169&gt;附出典；标注哪些设计书明写、哪些是推断、哪些没查到写「未确认」&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A6A2E;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=16;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="190" y="2510" width="320" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="e_judge_final" value="够了 / 到预算上限" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;fontColor=#5B6169;fontSize=10;endArrow=open;endFill=0;" edge="1" parent="1" source="llm_judge" target="final_answer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="budget_note" value="&lt;b&gt;预算保护&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#5B6169&gt;最多循环 12 轮／调用 24 次工具。快到上限时，系统提示 LLM「这是最后机会，只能用已有材料回答，查不到的地方必须写未确认」——不会无限查下去。&lt;/font&gt;" style="rounded=1;arcSize=4;dashed=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A8F96;strokeWidth=1;align=left;verticalAlign=middle;spacingLeft=16;fontSize=11;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="980" y="2476" width="340" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="e_call_budget" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1;strokeColor=#8A8F96;endArrow=none;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" edge="1" parent="1" source="call_tool" target="budget_note">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_summary_agent" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.4;strokeColor=#1B2229;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="summary_kb" target="q_input">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="grp_find" value="&lt;b&gt;找（第一手）&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;grep&lt;/b&gt;：原文全量机械检索，不排序不截断（默认限60条但告知总数）。&lt;b&gt;探索的第一手，地位最突出&lt;/b&gt;。结果带 in_column（该词在哪个表头列下——判断定义/引用）和 next_terms（同行其它标识符，供继续深挖）&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;list_objects&lt;/b&gt;：全体目录（表/画面/程序/72行sheet目录）——不知道去哪找，看目录比检索更快更准&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="100" y="2680" width="440" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_grp_find" value="" style="shape=mxgraph.ios7.icons.looking_glass;html=1;strokeColor=#3E6B63;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="112" y="2704" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="grp_confirm" value="&lt;b&gt;确认&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;impact_of&lt;/b&gt;：多跳影响范围（区分 declared/inferred），并自动兜底 grep 全文，把台账没收录的 other_mentions 也列出来，防止台账覆盖不全漏查&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;get_table / get_screen&lt;/b&gt;：拿某表/某画面完整定义&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;read_around&lt;/b&gt;：读 grep 命中处上下文（大表专用）&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;get_sheet&lt;/b&gt;：读某 sheet 完整原文（给出处用）&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="580" y="2680" width="460" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_grp_confirm" value="" style="shape=mxgraph.ios7.icons.documents;html=1;strokeColor=#26415C;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="592" y="2704" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="grp_assist" value="&lt;b&gt;辅助&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;resolve&lt;/b&gt;：日语人话→物理名翻译，&lt;font color=#9C3B2C&gt;查不到就返回相似候选 + 原文 grep 结果，绝不瞎猜&lt;/font&gt;&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;find_entity&lt;/b&gt;：某名字在哪定义/出现（台账+全文双查）&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;search_docs&lt;/b&gt;：语义检索，&lt;b&gt;只在 grep 和 list_objects 都找不到时才用&lt;/b&gt;，全文 BM25 为主，向量（如果有）只是加分辅助&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A6A2E;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="2680" width="440" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_grp_assist" value="" style="shape=mxgraph.ios7.icons.settings;html=1;strokeColor=#8A6A2E;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1092" y="2704" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_agent_find" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0;exitY=0.5;entryX=0.34;entryY=0;" edge="1" parent="1" source="call_tool" target="grp_find">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="560" y="2411" />
+              <mxPoint x="560" y="2650" />
+              <mxPoint x="250" y="2650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_agent_confirm" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="call_tool" target="grp_confirm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_agent_assist" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.85;exitY=1;entryX=0.7;entryY=0;" edge="1" parent="1" source="call_tool" target="grp_assist">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="synth" value="&lt;b&gt;真实的兜底关系&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11.5px&quot; color=#5B6169&gt;grep（全文机械检索）本身直接查原文，不经过台账，是绕开台账覆盖不全的兜底手段；impact_of 等台账类工具反而会主动调用 grep 补漏。真实设计不是「台账为主、向量为辅」，而是&lt;b&gt;「grep + 台账互为兜底，语义检索是最后手段」&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=2;align=left;verticalAlign=middle;spacingLeft=44;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="200" y="2970" width="1320" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_synth" value="" style="shape=mxgraph.ios7.icons.flag;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.6;" vertex="1" parent="1">
+          <mxGeometry x="218" y="3008" width="24" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_find_synth" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.4;exitY=1;entryX=0.15;entryY=0;" edge="1" parent="1" source="grp_find" target="synth">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_confirm_synth" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="grp_confirm" target="synth">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_assist_synth" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.6;exitY=1;entryX=0.85;entryY=0;" edge="1" parent="1" source="grp_assist" target="synth">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="final" value="&lt;b&gt;问答就绪&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=#5B6169&gt;serve.py 提供网页界面，SSE 流式展示 agent 每一步调用了哪个工具、命中了几条——让用户看到调查过程，而不是干等&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=14;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="600" y="3110" width="560" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_final" value="" style="shape=mxgraph.ios7.icons.pie_chart;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="612" y="3143" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="e_synth_final" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" edge="1" parent="1" source="synth" target="final">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_finalanswer_final" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.3;strokeColor=#1B2229;endArrow=open;endFill=0;exitX=0;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="final_answer" target="final">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="50" y="2610" />
+              <mxPoint x="50" y="3155" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===================== LEGEND ===================== -->
+        <mxCell id="legend" value="图例" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#D6D3C8;verticalAlign=top;fontStyle=1;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1750" y="60" width="300" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" value="" style="rounded=1;arcSize=4;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="30" width="30" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1t" value="通用处理步骤" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="legend">
+          <mxGeometry x="50" y="27" width="230" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" value="" style="rounded=1;arcSize=4;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.8;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="58" width="30" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2t" value="机械抽取 / 高确定性（路径A、表型抽取器、grep、list_objects 等）" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10.5;fontColor=#5B6169;fontFamily=Helvetica;" vertex="1" parent="legend">
+          <mxGeometry x="50" y="54" width="235" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3" value="" style="rounded=1;arcSize=4;html=1;fillColor=#FFFFFF;strokeColor=#8A6A2E;strokeWidth=1.8;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="100" width="30" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3t" value="AI 处理 / 需要判断（索引摘要路径B、resolve 候选等）" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10.5;fontColor=#5B6169;fontFamily=Helvetica;" vertex="1" parent="legend">
+          <mxGeometry x="50" y="96" width="235" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="leg4" value="" style="rounded=1;arcSize=4;html=1;fillColor=#FDF3F0;strokeColor=#9C3B2C;strokeWidth=1.8;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="142" width="30" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="leg4t" value="需要人工确认（REVIEW.md、corrections、KB_REPORT.md，全图唯一强调色）" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10.5;fontColor=#5B6169;fontFamily=Helvetica;" vertex="1" parent="legend">
+          <mxGeometry x="50" y="136" width="235" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="leg5" value="" style="rounded=1;arcSize=4;dashed=1;html=1;fillColor=#FFFFFF;strokeColor=#8A8F96;strokeWidth=1.4;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="184" width="30" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="leg5t" value="可选组件（向量索引，非必需，虚线框）" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10.5;fontColor=#5B6169;fontFamily=Helvetica;" vertex="1" parent="legend">
+          <mxGeometry x="50" y="180" width="235" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="leg6" value="" style="html=1;endArrow=open;endFill=0;strokeWidth=1.2;strokeColor=#9C3B2C;dashed=1;" edge="1" parent="legend">
+          <mxGeometry width="30" height="18" relative="1" as="geometry">
+            <mxPoint x="10" y="216" as="sourcePoint" />
+            <mxPoint x="40" y="216" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg6t" value="回环 / 跨区引用（报告→调 config→重跑；台账+索引→Agent）" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=10.5;fontColor=#5B6169;fontFamily=Helvetica;" vertex="1" parent="legend">
+          <mxGeometry x="50" y="206" width="235" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="leg7" value="示例" style="text;html=1;align=center;verticalAlign=middle;fontSize=10.5;fontColor=#9C3B2C;fontFamily=Helvetica;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="250" width="30" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="leg7t" value="小号赤陶红文字 = 需要人工确认 / 置信度标注" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=10.5;fontColor=#5B6169;fontFamily=Helvetica;" vertex="1" parent="legend">
+          <mxGeometry x="50" y="246" width="235" height="34" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

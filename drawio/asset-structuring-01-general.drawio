@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="drawio" version="26.0.0">
+  <diagram name="方案一·通用多链路结构化">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1020" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="p1_title" value="方案一 · 通用多链路结构化" style="text;html=1;fontSize=18;fontStyle=1;fontColor=#1B2229;align=left;verticalAlign=middle;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="700" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- legend / positioning note -->
+        <mxCell id="p1_legend" value="&lt;b&gt;方案定位&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;最通用的多模态 RAG 摄取方案——不区分资产的业务价值高低，统一走全文 + 向量 + 图谱 + 图像四条并行索引，AI（VLM）参与度较高。适合资产异构度高、不追求精确结构化的场景。&lt;/font&gt;" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A8F96;dashed=1;align=left;verticalAlign=top;spacing=10;fontSize=12;fontColor=#5B6169;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="20" width="340" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== 主流程 ===================== -->
+        <mxCell id="p1_n1" value="&lt;b&gt;原始资产&lt;/b&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:11px&quot;&gt;Office 文本 / PDF / 图片 / 扫描件&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="60" y="100" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_p1_n1" value="" style="shape=mxgraph.ios7.icons.document;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="72" y="123" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1_n2" value="&lt;b&gt;扫描 &amp; 类型判断&lt;/b&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:11px&quot;&gt;纯文本 / 复杂表格 / 流程图 / 图片&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="360" y="100" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_p1_n2" value="" style="shape=mxgraph.ios7.icons.settings;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="372" y="123" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1_n3" value="文字抽取 + page/sheet → PNG&#xa;双份产出：文字 + 图像" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="720" y="100" width="260" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1_n4" value="&lt;b&gt;metaData 登录&lt;/b&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:11px&quot;&gt;来源 · 页码/sheet · 类型 · 时间戳&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="100" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_p1_n4" value="" style="shape=mxgraph.ios7.icons.flag;html=1;strokeColor=#26415C;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1052" y="123" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1_e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" edge="1" parent="1" source="p1_n1" target="p1_n2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" edge="1" parent="1" source="p1_n2" target="p1_n3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" edge="1" parent="1" source="p1_n3" target="p1_n4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== 四条并行链路 ===================== -->
+        <mxCell id="p1_laneA" value="链路 A · 全文" style="swimlane;startSize=32;arcSize=2;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#2E6E7A;fontSize=14;fontStyle=1;verticalAlign=top;fontColor=#2E6E7A;strokeWidth=1.6;fontFamily=Helvetica;swimlaneFillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="60" y="280" width="360" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_a1" value="&lt;b&gt;全文入库&lt;/b&gt;&lt;br&gt;&lt;font color=#2E6E7A style=&quot;font-size:11px&quot;&gt;全文检索 / FTS&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2E6E7A;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneA">
+          <mxGeometry x="40" y="150" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_p1_a1" value="" style="shape=mxgraph.ios7.icons.storage;html=1;strokeColor=#2E6E7A;fillColor=none;strokeWidth=1.5;" vertex="1" parent="p1_laneA">
+          <mxGeometry x="52" y="180" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1_laneB" value="链路 B · 向量" style="swimlane;startSize=32;arcSize=2;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#26415C;fontSize=14;fontStyle=1;verticalAlign=top;fontColor=#26415C;strokeWidth=1.6;fontFamily=Helvetica;swimlaneFillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="460" y="280" width="360" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_b1" value="父 block → 子 block → chunk 切分" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneB">
+          <mxGeometry x="40" y="60" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_b2" value="Embedding 向量化" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneB">
+          <mxGeometry x="40" y="180" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_b3" value="&lt;b&gt;向量库&lt;/b&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneB">
+          <mxGeometry x="40" y="280" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_p1_b3" value="" style="shape=mxgraph.ios7.icons.cube;html=1;strokeColor=#26415C;fillColor=none;strokeWidth=1.5;" vertex="1" parent="p1_laneB">
+          <mxGeometry x="52" y="303" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_be1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="p1_laneB" source="p1_b1" target="p1_b2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_be2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="p1_laneB" source="p1_b2" target="p1_b3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1_laneC" value="链路 C · VLM 识别" style="swimlane;startSize=32;arcSize=2;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#5B4C8A;fontSize=14;fontStyle=1;verticalAlign=top;fontColor=#5B4C8A;strokeWidth=1.6;fontFamily=Helvetica;swimlaneFillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="860" y="280" width="360" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_c1" value="VLM 识别&#xa;（流程图 / 复杂表格 / 图片）" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneC">
+          <mxGeometry x="40" y="60" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_c2" value="转文字 → graph 化" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneC">
+          <mxGeometry x="40" y="180" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_c3" value="&lt;b&gt;图谱库&lt;/b&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B4C8A;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneC">
+          <mxGeometry x="40" y="280" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_p1_c3" value="" style="shape=mxgraph.ios7.icons.link;html=1;strokeColor=#5B4C8A;fillColor=none;strokeWidth=1.5;" vertex="1" parent="p1_laneC">
+          <mxGeometry x="52" y="303" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_ce1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="p1_laneC" source="p1_c1" target="p1_c2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_ce2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="p1_laneC" source="p1_c2" target="p1_c3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1_laneD" value="链路 D · 图片向量化" style="swimlane;startSize=32;arcSize=2;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#8A6A2E;fontSize=14;fontStyle=1;verticalAlign=top;fontColor=#8A6A2E;strokeWidth=1.6;fontFamily=Helvetica;swimlaneFillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="280" width="360" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_d1" value="所有图片&#xa;（含 page/sheet PNG）" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneD">
+          <mxGeometry x="40" y="60" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_d2" value="图像向量化&#xa;Image Embedding" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneD">
+          <mxGeometry x="40" y="180" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_d3" value="&lt;b&gt;图像向量库&lt;/b&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A6A2E;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneD">
+          <mxGeometry x="40" y="280" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_p1_d3" value="" style="shape=mxgraph.ios7.icons.cube;html=1;strokeColor=#8A6A2E;fillColor=none;strokeWidth=1.5;" vertex="1" parent="p1_laneD">
+          <mxGeometry x="52" y="303" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_de1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="p1_laneD" source="p1_d1" target="p1_d2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_de2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="p1_laneD" source="p1_d2" target="p1_d3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- fan-out from metaData登录 into 4 lanes -->
+        <mxCell id="p1_fan_a" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.15;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1_n4" target="p1_laneA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_fan_b" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.38;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1_n4" target="p1_laneB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_fan_c" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.62;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1_n4" target="p1_laneC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_fan_d" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.85;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1_n4" target="p1_laneD">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ledger / registry -->
+        <mxCell id="p1_ledger" value="&lt;b&gt;资产总账&lt;/b&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:11px&quot;&gt;metaData 登记表&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.4;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="670" y="740" width="340" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_p1_ledger" value="" style="shape=mxgraph.ios7.icons.flag;html=1;strokeColor=#26415C;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="682" y="768" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_ledger_note" value="各链路完成后，索引位置统一登记回这里" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="758" width="320" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1_le_a" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.15;entryY=0;" edge="1" parent="1" source="p1_a1" target="p1_ledger">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_le_b" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.38;entryY=0;" edge="1" parent="1" source="p1_b3" target="p1_ledger">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_le_c" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.62;entryY=0;" edge="1" parent="1" source="p1_c3" target="p1_ledger">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_le_d" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.85;entryY=0;" edge="1" parent="1" source="p1_d3" target="p1_ledger">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- final output -->
+        <mxCell id="p1_output" value="&lt;b&gt;知识库就绪&lt;/b&gt;&lt;br&gt;&lt;font color=#2E6E7A style=&quot;font-size:11px&quot;&gt;供下游 RAG / 问答系统使用&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2E6E7A;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=14;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="670" y="860" width="340" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_p1_output" value="" style="shape=mxgraph.ios7.icons.storage;html=1;strokeColor=#2E6E7A;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="682" y="890" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e_final" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.4;strokeColor=#2E6E7A;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1_ledger" target="p1_output">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

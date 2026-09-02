@@ -1,0 +1,182 @@
+<mxfile host="drawio" version="26.0.0">
+  <diagram name="方式一・汎用マルチパイプライン構造化">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1020" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="p1_title" value="方式一 ・ 汎用マルチパイプライン構造化" style="text;html=1;fontSize=18;fontStyle=1;fontColor=#1B2229;align=left;verticalAlign=middle;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="700" height="28" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="p1_legend" value="&lt;b&gt;方式の位置付け&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;最も汎用的なマルチモーダル RAG 取り込み方式——資産の業務価値の高低を問わず、全文 + ベクトル + グラフ + 画像の 4 系統を並行してインデックス化する。AI（VLM）の関与度が高い。資産の異種性が高く、厳密な構造化を求めない場面に向く。&lt;/font&gt;" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A8F96;dashed=1;align=left;verticalAlign=top;spacing=10;fontSize=12;fontColor=#5B6169;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="20" width="340" height="130" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="p1_n1" value="&lt;b&gt;元資産&lt;/b&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:11px&quot;&gt;Office 文書 / PDF / 画像 / スキャンデータ&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="60" y="100" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_p1_n1" value="" style="shape=mxgraph.ios7.icons.document;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="72" y="123" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1_n2" value="&lt;b&gt;スキャン &amp; 種別判定&lt;/b&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:11px&quot;&gt;平文 / 複雑な表 / フロー図 / 画像&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="360" y="100" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_p1_n2" value="" style="shape=mxgraph.ios7.icons.settings;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="372" y="123" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1_n3" value="文字抽出 + page/sheet → PNG&#10;二重出力：文字 + 画像" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="720" y="100" width="260" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1_n4" value="&lt;b&gt;metaData 登録&lt;/b&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:11px&quot;&gt;出所 · ページ/sheet 番号 · 種別 · タイムスタンプ&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="100" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_p1_n4" value="" style="shape=mxgraph.ios7.icons.flag;html=1;strokeColor=#26415C;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="1052" y="123" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1_e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" edge="1" parent="1" source="p1_n1" target="p1_n2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" edge="1" parent="1" source="p1_n2" target="p1_n3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" edge="1" parent="1" source="p1_n3" target="p1_n4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="p1_laneA" value="パイプライン A ・ 全文" style="swimlane;startSize=32;arcSize=2;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#2E6E7A;fontSize=14;fontStyle=1;verticalAlign=top;fontColor=#2E6E7A;strokeWidth=1.6;fontFamily=Helvetica;swimlaneFillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="60" y="280" width="360" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_a1" value="&lt;b&gt;全文格納&lt;/b&gt;&lt;br&gt;&lt;font color=#2E6E7A style=&quot;font-size:11px&quot;&gt;全文検索 / FTS&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2E6E7A;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneA">
+          <mxGeometry x="40" y="150" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_p1_a1" value="" style="shape=mxgraph.ios7.icons.storage;html=1;strokeColor=#2E6E7A;fillColor=none;strokeWidth=1.5;" vertex="1" parent="p1_laneA">
+          <mxGeometry x="52" y="180" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1_laneB" value="パイプライン B ・ ベクトル" style="swimlane;startSize=32;arcSize=2;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#26415C;fontSize=14;fontStyle=1;verticalAlign=top;fontColor=#26415C;strokeWidth=1.6;fontFamily=Helvetica;swimlaneFillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="460" y="280" width="360" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_b1" value="親 block → 子 block → chunk 分割" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneB">
+          <mxGeometry x="40" y="60" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_b2" value="Embedding ベクトル化" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneB">
+          <mxGeometry x="40" y="180" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_b3" value="&lt;b&gt;ベクトルストア&lt;/b&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneB">
+          <mxGeometry x="40" y="280" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_p1_b3" value="" style="shape=mxgraph.ios7.icons.cube;html=1;strokeColor=#26415C;fillColor=none;strokeWidth=1.5;" vertex="1" parent="p1_laneB">
+          <mxGeometry x="52" y="303" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_be1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="p1_laneB" source="p1_b1" target="p1_b2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_be2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="p1_laneB" source="p1_b2" target="p1_b3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1_laneC" value="パイプライン C ・ VLM 認識" style="swimlane;startSize=32;arcSize=2;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#5B4C8A;fontSize=14;fontStyle=1;verticalAlign=top;fontColor=#5B4C8A;strokeWidth=1.6;fontFamily=Helvetica;swimlaneFillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="860" y="280" width="360" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_c1" value="VLM 認識&#10;（フロー図 / 複雑な表 / 画像）" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneC">
+          <mxGeometry x="40" y="60" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_c2" value="文字化 → graph 化" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneC">
+          <mxGeometry x="40" y="180" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_c3" value="&lt;b&gt;グラフストア&lt;/b&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B4C8A;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneC">
+          <mxGeometry x="40" y="280" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_p1_c3" value="" style="shape=mxgraph.ios7.icons.link;html=1;strokeColor=#5B4C8A;fillColor=none;strokeWidth=1.5;" vertex="1" parent="p1_laneC">
+          <mxGeometry x="52" y="303" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_ce1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="p1_laneC" source="p1_c1" target="p1_c2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_ce2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="p1_laneC" source="p1_c2" target="p1_c3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1_laneD" value="パイプライン D ・ 画像ベクトル化" style="swimlane;startSize=32;arcSize=2;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#8A6A2E;fontSize=14;fontStyle=1;verticalAlign=top;fontColor=#8A6A2E;strokeWidth=1.6;fontFamily=Helvetica;swimlaneFillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="280" width="360" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_d1" value="全画像&#10;（page/sheet の PNG を含む）" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneD">
+          <mxGeometry x="40" y="60" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_d2" value="画像ベクトル化&#10;Image Embedding" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneD">
+          <mxGeometry x="40" y="180" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_d3" value="&lt;b&gt;画像ベクトルストア&lt;/b&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A6A2E;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneD">
+          <mxGeometry x="40" y="280" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_p1_d3" value="" style="shape=mxgraph.ios7.icons.cube;html=1;strokeColor=#8A6A2E;fillColor=none;strokeWidth=1.5;" vertex="1" parent="p1_laneD">
+          <mxGeometry x="52" y="303" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_de1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="p1_laneD" source="p1_d1" target="p1_d2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_de2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="p1_laneD" source="p1_d2" target="p1_d3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="p1_fan_a" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.15;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1_n4" target="p1_laneA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_fan_b" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.38;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1_n4" target="p1_laneB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_fan_c" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.62;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1_n4" target="p1_laneC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_fan_d" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.85;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1_n4" target="p1_laneD">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="p1_ledger" value="&lt;b&gt;資産台帳&lt;/b&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:11px&quot;&gt;metaData 登録表&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.4;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="670" y="740" width="340" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_p1_ledger" value="" style="shape=mxgraph.ios7.icons.flag;html=1;strokeColor=#26415C;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="682" y="768" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_ledger_note" value="各パイプライン完了後、インデックス位置をここに一括登録" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="758" width="320" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p1_le_a" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.15;entryY=0;" edge="1" parent="1" source="p1_a1" target="p1_ledger">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_le_b" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.38;entryY=0;" edge="1" parent="1" source="p1_b3" target="p1_ledger">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_le_c" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.62;entryY=0;" edge="1" parent="1" source="p1_c3" target="p1_ledger">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_le_d" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.85;entryY=0;" edge="1" parent="1" source="p1_d3" target="p1_ledger">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="p1_output" value="&lt;b&gt;ナレッジベース準備完了&lt;/b&gt;&lt;br&gt;&lt;font color=#2E6E7A style=&quot;font-size:11px&quot;&gt;後段の RAG / QA システムで使用&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2E6E7A;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=14;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="670" y="860" width="340" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_p1_output" value="" style="shape=mxgraph.ios7.icons.storage;html=1;strokeColor=#2E6E7A;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="682" y="890" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e_final" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.4;strokeColor=#2E6E7A;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1_ledger" target="p1_output">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

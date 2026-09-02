@@ -1,0 +1,485 @@
+<mxfile host="Electron">
+  <diagram name="資産構造化-方式3-grep中心型" id="0">
+    <mxGraphModel dx="1245" dy="801" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=20;fontStyle=1;fontColor=#1B2229;align=left;verticalAlign=middle;fontFamily=Helvetica;" value="資産構造化 ・ 方式3：grep中心型（工程1→2→3 の実装に基づく）" vertex="1">
+          <mxGeometry height="32" width="1100" x="40" y="16" as="geometry" />
+        </mxCell>
+        <mxCell id="ph1" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=2;align=left;verticalAlign=middle;spacingLeft=44;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;精度はツールから生まれる。AIからではない&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=#5B6169&gt;機械的抽出を優先：ルール／列位置／構文木で抽出できる内容は一律 AI に聞かない（コスト0・100%正確・再現可能）。AI は機械にできないことだけを担当——図を読む、文章を読む、要約を書く。表形式の内容は絶対に AI に転記させない：実測では同じ表を AI に読ませると 26 項目のときも 2 項目のときもあったが、機械的な転記は常に 26 項目。&lt;br&gt;台帳構築（下記②）は完全に&lt;b&gt;ルール駆動&lt;/b&gt;（config の extractor 定義）で、LLM は一切介在しない。AI が登場するのは「要約」（下記①）の工程だけ——AI が得意なことをやらせている。&lt;/font&gt;" vertex="1">
+          <mxGeometry height="112" width="1650" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_ph1" parent="1" style="shape=mxgraph.ios7.icons.flag;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.6;" value="" vertex="1">
+          <mxGeometry height="24" width="24" x="58" y="106" as="geometry" />
+        </mxCell>
+        <mxCell id="in1" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;元データ&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=#5B6169&gt;Excel 設計書（工程1 ExcelSheetToPngText の入力）&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="330" x="680" y="204" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_in1" parent="1" style="shape=mxgraph.ios7.icons.documents;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="692" y="227" as="geometry" />
+        </mxCell>
+        <mxCell id="e_in_doclane" edge="1" parent="1" source="in1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.34;entryY=0;" target="doclane">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="doclane" parent="1" style="swimlane;startSize=32;arcSize=2;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#2E6E7A;fontSize=14;fontStyle=1;verticalAlign=top;fontColor=#2E6E7A;strokeWidth=1.6;fontFamily=Helvetica;swimlaneFillColor=none;" value="ExcelSheetToPngText（工程1）→ DesignDocIndexer（工程2 索引＋工程3 台帳、build.py が一括制御）" vertex="1">
+          <mxGeometry height="1860" width="1650" x="40" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="d_sub1" parent="doclane" style="text;html=1;fontSize=14;fontStyle=1;fontColor=#2E6E7A;align=left;verticalAlign=middle;fontFamily=Helvetica;" value="エリア1・機械的変換（ExcelSheetToPngText）" vertex="1">
+          <mxGeometry height="24" width="500" x="60" y="44" as="geometry" />
+        </mxCell>
+        <mxCell id="d1a" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2E6E7A;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;Excel 内部ファイルを直接読む&lt;/b&gt;&lt;font style=&quot;font-size:11px&quot; color=#5B6169&gt;（一般的な読み取り方式は使わない）&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=#1B2229&gt;一般的な方法（よく使われる openpyxl ライブラリなど）では、次の三つが漏れる——①図形の中の文字：フローチャートの枠や矢印の脇にある説明文字は、図形そのものは文字として扱われず見落とされやすい；②矢印がどちら向きか：描くときにどちらの枠を先にクリックしたかと、矢印が最終的にどちらを向くかは別物で、逆になりやすい——実際にある図で向きが逆に記録されていたことがあり、線そのものに描かれた矢印がどちら側にあるかを確認して修正した；③日本語漢字に振られた読み仮名：たとえば「工番（こうばん）」を正しく扱わないと、読み仮名が本文に混ざり「工番こうばん」になってしまう。&lt;/font&gt;" vertex="1">
+          <mxGeometry height="106" width="1580" x="60" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_d1a" parent="doclane" style="shape=mxgraph.ios7.icons.document;html=1;strokeColor=#2E6E7A;fillColor=none;strokeWidth=1.4;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="72" y="99" as="geometry" />
+        </mxCell>
+        <mxCell id="d1b" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;シートごとに二つの成果物&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=#1B2229&gt;1枚のシートごとに二つのファイルを生成する——画像1枚（PNG、見た目そのまま。人と AI が版面を見るため）＋テキスト1本（TXT、書かれている内容。機械処理用）。テキスト内の値にはすべて列の位置を付ける、たとえば「10行目 A列=4、D列=工番」——方眼紙形式の表は空列が多く、列番号を付けないと AI が値を別の列と取り違えてしまう。非表示のシートも同様に処理し、まず「非表示」マークだけ付ける。この段階では削除しない——草稿かどうか、使うかどうかの判断は次の工程でまとめて行う。&lt;/font&gt;" vertex="1">
+          <mxGeometry height="116" width="1580" x="60" y="198" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_d1b" parent="doclane" style="shape=mxgraph.ios7.icons.storage;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.4;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="72" y="221" as="geometry" />
+        </mxCell>
+        <mxCell id="e_d1" edge="1" parent="doclane" source="d1a" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" target="d1b">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_sub2" parent="doclane" style="text;html=1;fontSize=15;fontStyle=1;fontColor=#1B2229;align=left;verticalAlign=middle;fontFamily=Helvetica;" value="エリア2・要約＋台帳構築（build.py が①②③の順に実行、同じ TXT を二つの独立した経路で消費）" vertex="1">
+          <mxGeometry height="26" width="1000" x="60" y="322" as="geometry" />
+        </mxCell>
+        <mxCell id="sub2a_label" parent="doclane" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#8A6A2E;align=left;verticalAlign=middle;fontFamily=Helvetica;" value="① 要約（indexer.py、費用が発生する工程）" vertex="1">
+          <mxGeometry height="22" width="500" x="60" y="354" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_filter" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="選別：非表示シートを除外&#xa;（草稿／旧版本、成果物ではない）" vertex="1">
+          <mxGeometry height="64" width="560" x="60" y="384" as="geometry" />
+        </mxCell>
+        <mxCell id="e_d1b_filter" edge="1" parent="doclane" source="d1b" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" target="d2_filter">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d2_classify" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;無料の分類&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#5B6169&gt;AI に聞かず、形状／命名の特徴だけで即座に判断&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot;&gt;→ 表形式／図／空／履歴 など&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="560" x="60" y="468" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_d2_classify" parent="doclane" style="shape=mxgraph.ios7.icons.settings;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.4;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="72" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="e_filter_classify" edge="1" parent="doclane" source="d2_filter" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" target="d2_classify">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pathA" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;経路A・機械的に転記&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#3E6B63&gt;表形式のシートはこちら：表頭の列位置が固定 → 列ごとに1行ずつ転記&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;100% 正確・コスト0&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9.5px&quot; color=#5B6169&gt;実測：同じ表を AI に転記させると 26 項目のときも 2 項目のときもあったが、機械的な転記は常に 26 項目——表形式は絶対に AI に渡さない&lt;/font&gt;" vertex="1">
+          <mxGeometry height="170" width="280" x="30" y="588" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_pathA" parent="doclane" style="shape=mxgraph.ios7.icons.tools;html=1;strokeColor=#3E6B63;fillColor=none;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="42" y="612" as="geometry" />
+        </mxCell>
+        <mxCell id="pathB" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A6A2E;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;経路B・AI に読ませる&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#8A6A2E&gt;空でない非表形式のシート（図／文章系）はこちら&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;図なら画像も一緒に AI に渡す／表なら文字だけ渡して画像は渡さない&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9.5px&quot; color=#5B6169&gt;実測：画像を渡すとかえって悪化——12 項目が 1 項目に減った（AI が図を見て語ってしまい、行ごとに文字を読まなくなる）&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9.5px&quot; color=#5B6169&gt;5つを問う：何が書かれているか／どのシステムか／どんな識別子があるか／どんな質問に答えられるか／どこが読み取れないか&lt;/font&gt;" vertex="1">
+          <mxGeometry height="170" width="290" x="340" y="588" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_pathB" parent="doclane" style="shape=mxgraph.ios7.icons.looking_glass;html=1;strokeColor=#8A6A2E;fillColor=none;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="352" y="612" as="geometry" />
+        </mxCell>
+        <mxCell id="e_classify_pathA" edge="1" parent="doclane" source="d2_classify" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" target="pathA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_classify_pathB" edge="1" parent="doclane" source="d2_classify" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.7;exitY=1;entryX=0.5;entryY=0;" target="pathB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="merge" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="統合結果" vertex="1">
+          <mxGeometry height="56" width="300" x="180" y="792" as="geometry" />
+        </mxCell>
+        <mxCell id="e_pathA_merge" edge="1" parent="doclane" source="pathA" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.3;entryY=0;" target="merge">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_pathB_merge" edge="1" parent="doclane" source="pathB" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.7;entryY=0;" target="merge">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="out1" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=30;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;index.sqlite&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#5B6169&gt;検索可能なデータベース&lt;/font&gt;" vertex="1">
+          <mxGeometry height="64" width="190" x="60" y="884" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_out1" parent="doclane" style="shape=mxgraph.ios7.icons.storage;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.3;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="70" y="905" as="geometry" />
+        </mxCell>
+        <mxCell id="out2" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;OVERVIEW.md&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#5B6169&gt;全体マップ&lt;/font&gt;" vertex="1">
+          <mxGeometry height="64" width="190" x="270" y="884" as="geometry" />
+        </mxCell>
+        <mxCell id="out3" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FDF3F0;strokeColor=#9C3B2C;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=30;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;REVIEW.md&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#9C3B2C&gt;要確認リスト（人手介入）&lt;/font&gt;" vertex="1">
+          <mxGeometry height="64" width="190" x="480" y="884" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_out3" parent="doclane" style="shape=mxgraph.ios7.icons.flag;html=1;strokeColor=#9C3B2C;fillColor=none;strokeWidth=1.3;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="490" y="905" as="geometry" />
+        </mxCell>
+        <mxCell id="out4" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;TEMPLATES.md&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#5B6169&gt;テンプレート検出レポート&lt;/font&gt;" vertex="1">
+          <mxGeometry height="64" width="190" x="690" y="884" as="geometry" />
+        </mxCell>
+        <mxCell id="out5" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;md/*.md&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#5B6169&gt;シートごとの可読版&lt;/font&gt;" vertex="1">
+          <mxGeometry height="64" width="190" x="900" y="884" as="geometry" />
+        </mxCell>
+        <mxCell id="e_merge_out1" edge="1" parent="doclane" source="merge" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.2;exitY=1;entryX=0.5;entryY=0;" target="out1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_merge_out2" edge="1" parent="doclane" source="merge" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.4;exitY=1;entryX=0.5;entryY=0;" target="out2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_merge_out3" edge="1" parent="doclane" source="merge" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="out3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_merge_out4" edge="1" parent="doclane" source="merge" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.6;exitY=1;entryX=0.5;entryY=0;" target="out4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_merge_out5" edge="1" parent="doclane" source="merge" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.8;exitY=1;entryX=0.5;entryY=0;" target="out5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sub2b_label" parent="doclane" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#3E6B63;align=left;verticalAlign=middle;fontFamily=Helvetica;" value="② 台帳構築（ledger.py、無料の工程、ルール駆動で LLM は不使用）——①と並行して同じ TXT を消費" vertex="1">
+          <mxGeometry height="22" width="900" x="60" y="984" as="geometry" />
+        </mxCell>
+        <mxCell id="ledger_input" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;入力&lt;/b&gt;：reader.py が解析した表の構造（表頭／表頭より上の領域／表本体）＋&lt;br&gt;config/extractors/*.json で定義された抽出器のルール" vertex="1">
+          <mxGeometry height="76" width="560" x="60" y="1016" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_ledger_input" parent="doclane" style="shape=mxgraph.ios7.icons.document;html=1;strokeColor=#3E6B63;fillColor=none;strokeWidth=1.4;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="72" y="1040" as="geometry" />
+        </mxCell>
+        <mxCell id="e_d1b_ledger_input" edge="1" parent="doclane" source="d1b" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" target="ledger_input">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="20" y="256" />
+              <mxPoint x="20" y="1054" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ex_table" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=16;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;表型抽出器&lt;/b&gt;&lt;br&gt;固定表頭、1行＝1レコード&lt;br&gt;（例：レコードレイアウト）" vertex="1">
+          <mxGeometry height="80" width="270" x="60" y="1112" as="geometry" />
+        </mxCell>
+        <mxCell id="ex_label" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=16;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;ラベル型抽出器&lt;/b&gt;&lt;br&gt;固定表頭なし、「ラベル｜値」のペアで照合&lt;br&gt;（例：プログラム概要）" vertex="1">
+          <mxGeometry height="80" width="270" x="350" y="1112" as="geometry" />
+        </mxCell>
+        <mxCell id="e_li_extable" edge="1" parent="doclane" source="ledger_input" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" target="ex_table">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_li_exlabel" edge="1" parent="doclane" source="ledger_input" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.7;exitY=1;entryX=0.5;entryY=0;" target="ex_label">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ledger_objects" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;抽出対象&lt;/b&gt;：tables / columns / screens / screen_items / programs / history（改訂履歴）" vertex="1">
+          <mxGeometry height="76" width="560" x="60" y="1226" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_ledger_objects" parent="doclane" style="shape=mxgraph.ios7.icons.documents;html=1;strokeColor=#26415C;fillColor=none;strokeWidth=1.4;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="72" y="1249" as="geometry" />
+        </mxCell>
+        <mxCell id="terms" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;用語辞書&lt;/b&gt;（terms テーブル）&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#5B6169&gt;抽出のついでに生成される。日本語名 ↔ 物理名の双方向マッピングで、独立した工程ではない&lt;/font&gt;" vertex="1">
+          <mxGeometry height="76" width="320" x="660" y="1226" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_terms" parent="doclane" style="shape=mxgraph.ios7.icons.link;html=1;strokeColor=#26415C;fillColor=none;strokeWidth=1.4;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="672" y="1249" as="geometry" />
+        </mxCell>
+        <mxCell id="e_extable_objects" edge="1" parent="doclane" source="ex_table" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.3;exitY=1;entryX=0.15;entryY=0;" target="ledger_objects">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_exlabel_objects" edge="1" parent="doclane" source="ex_label" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.7;exitY=1;entryX=0.6;entryY=0;" target="ledger_objects">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_objects_terms" edge="1" parent="doclane" source="ledger_objects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.1;strokeColor=#8A8F96;endArrow=open;endFill=0;fontSize=10;fontColor=#5B6169;" target="terms" value="ついでに生成">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="links_declared" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=16;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;関係・明記&lt;/b&gt;&lt;font style=&quot;font-size:10px&quot; color=#3E6B63&gt;（source=declared）&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#5B6169&gt;参照テーブルID／参照フィールドID 列に明記されているもの&lt;/font&gt;" vertex="1">
+          <mxGeometry height="108" width="270" x="60" y="1338" as="geometry" />
+        </mxCell>
+        <mxCell id="infer_block" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A6A2E;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=16;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;二段階の推論&lt;/b&gt;&lt;font style=&quot;font-size:10px&quot; color=#8A6A2E&gt;（source=inferred）&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#5B6169&gt;① learn_prefixes：画面コントロールの命名接頭辞を自動学習（外した方が DB 列名によりヒットするかで検証、設定に決め打ちしない）&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#5B6169&gt;② infer_links：物理名一致→確度高／日本語名一致→確度中&lt;/font&gt;" vertex="1">
+          <mxGeometry height="108" width="420" x="350" y="1338" as="geometry" />
+        </mxCell>
+        <mxCell id="corrections" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FDF3F0;strokeColor=#9C3B2C;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=16;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;corrections テーブル&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#5B6169&gt;設計書自体の誤り（論理名／物理名の入れ違い、画面名のコピペ修正忘れなど）——自動で修正するが決して黙って行わず、前後とも記録し、人が事後に確認できる&lt;/font&gt;" vertex="1">
+          <mxGeometry height="108" width="280" x="800" y="1338" as="geometry" />
+        </mxCell>
+        <mxCell id="e_objects_declared" edge="1" parent="doclane" source="ledger_objects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.2;exitY=1;entryX=0.5;entryY=0;" target="links_declared">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_objects_infer" edge="1" parent="doclane" source="ledger_objects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.4;entryY=0;" target="infer_block">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_objects_corrections" edge="1" parent="doclane" source="ledger_objects" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.95;exitY=1;entryX=0;entryY=0.25;" target="corrections">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="596" y="1320" />
+              <mxPoint x="800" y="1320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="src_store" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;原文の保存&lt;/b&gt;（src_sheets / src_cells）&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#5B6169&gt;工程1 の TXT を1行ずつ解析した結果をそのまま台帳に保存、grep で直接参照でき、再解析は不要&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="560" x="60" y="1478" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_src_store" parent="doclane" style="shape=mxgraph.ios7.icons.documents;html=1;strokeColor=#26415C;fillColor=none;strokeWidth=1.4;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="72" y="1499" as="geometry" />
+        </mxCell>
+        <mxCell id="e_li_srcstore" edge="1" parent="doclane" source="ledger_input" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0;exitY=0.8;entryX=0;entryY=0.5;" target="src_store">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="20" y="1077" />
+              <mxPoint x="20" y="1513" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ledger_out" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;ledger.sqlite&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#5B6169&gt;完全な台帳：tables / columns / screens / screen_items / programs / history / terms / links / corrections / src_sheets / src_cells&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="560" x="60" y="1580" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_ledger_out" parent="doclane" style="shape=mxgraph.ios7.icons.storage;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.4;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="72" y="1603" as="geometry" />
+        </mxCell>
+        <mxCell id="e_declared_out" edge="1" parent="doclane" source="links_declared" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.3;exitY=1;entryX=0.1;entryY=0;" target="ledger_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_infer_out" edge="1" parent="doclane" source="infer_block" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.849;exitY=1.017;entryX=0.4;entryY=0;exitDx=0;exitDy=0;exitPerimeter=0;" target="ledger_out">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="706.65" y="1554.88" />
+              <mxPoint x="283.94" y="1554.88" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_corrections_out" edge="1" parent="doclane" source="corrections" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.3;exitY=1;entryX=0.7;entryY=0;" target="ledger_out">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="884.06" y="1560.76" />
+              <mxPoint x="452.06" y="1560.76" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_srcstore_out" edge="1" parent="doclane" source="src_store" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.9;entryY=0;" target="ledger_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="health_check" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;health_check&lt;/b&gt; オフラインのヘルスチェック&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#5B6169&gt;カバー率&lt;30%？抽出器の命中0件？推論による関係が少なすぎ？用語辞書&lt;20語？→ warning を生成&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="330" x="660" y="1580" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_health" parent="doclane" style="shape=mxgraph.ios7.icons.looking_glass;html=1;strokeColor=#26415C;fillColor=none;strokeWidth=1.4;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="672" y="1603" as="geometry" />
+        </mxCell>
+        <mxCell id="e_out_health" edge="1" parent="doclane" source="ledger_out" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" target="health_check">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kb_report" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FDF3F0;strokeColor=#9C3B2C;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=30;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;KB_REPORT.md&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#9C3B2C&gt;ヘルスチェックの warning ＋統計を含む（人手介入）&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="330" x="660" y="1690" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_kbreport" parent="doclane" style="shape=mxgraph.ios7.icons.flag;html=1;strokeColor=#9C3B2C;fillColor=none;strokeWidth=1.3;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="670" y="1710" as="geometry" />
+        </mxCell>
+        <mxCell id="e_health_kbreport" edge="1" parent="doclane" source="health_check" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" target="kb_report">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_loop_back" edge="1" parent="doclane" source="kb_report" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.2;strokeColor=#9C3B2C;fontColor=#9C3B2C;endArrow=open;endFill=0;labelBackgroundColor=#FFFFFF;fontSize=10;exitX=1;exitY=0.3;entryX=1;entryY=0.5;" target="ex_label" value="人がレポートを見る → config/extractors か config/rules/infer.json を調整 → --ledger-only で再実行（無料・数秒、何度でも試せる）">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1120" y="1710" />
+              <mxPoint x="1120" y="1152" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vecbox" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;dashed=1;fillColor=#FFFFFF;strokeColor=#8A8F96;strokeWidth=1.4;align=left;verticalAlign=top;spacingLeft=16;spacingTop=16;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;③ ベクトル索引&lt;/b&gt;（embed.py）&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=#9C3B2C&gt;任意・必須ではない&lt;/font&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#5B6169&gt;：search_docs の意味的な近さを測る補助スコアにすぎず、&lt;b&gt;これが無くてもシステムは完全に機能する&lt;/b&gt;（全文検索のみで動作）。build.py は --no-embed で丸ごとスキップできる。&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;出力：vectors.sqlite&lt;/font&gt;" vertex="1">
+          <mxGeometry height="540" width="430" x="1160" y="1016" as="geometry" />
+        </mxCell>
+        <mxCell id="e_li_vec" edge="1" parent="doclane" source="ledger_input" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.1;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=1;exitY=0.5;entryX=0;entryY=0.1;" target="vecbox">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="summary_kb" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=2;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;二つのディレクトリを DesignDocAsk の KB() に渡す&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=#5B6169&gt;docs/_index/（index.sqlite＋md/*.md、①由来）　＋　docs/_kb/（ledger.sqlite＋KB_REPORT.md、②由来／vectors.sqlite は任意、③由来）&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="1000" x="60" y="1760" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_summary" parent="doclane" style="shape=mxgraph.ios7.icons.storage;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="24" width="24" x="72" y="1786" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ledgerout_summary" edge="1" parent="doclane" source="ledger_out" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.1;exitY=1;entryX=0.05;entryY=0;" target="summary_kb">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="116.06" y="1747.82" />
+              <mxPoint x="110.06" y="1747.82" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_kbreport_summary" edge="1" parent="doclane" source="kb_report" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0;exitY=0.5;entryX=0.4;entryY=0;exitDx=0;exitDy=0;" target="summary_kb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_out1_summary" edge="1" parent="doclane" source="out1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.1;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0;exitY=0.5;entryX=0;entryY=0.5;exitDx=0;exitDy=0;entryDx=0;entryDy=0;" target="summary_kb">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="42.06" y="916.06" />
+              <mxPoint x="42.06" y="948.06" />
+              <mxPoint x="39.71" y="948.06" />
+              <mxPoint x="39.71" y="1800.06" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_vec_summary" edge="1" parent="doclane" source="vecbox" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.1;strokeColor=#8A8F96;endArrow=open;endFill=0;fontSize=10;fontColor=#5B6169;exitX=0.3;exitY=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="summary_kb" value="有効な場合">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1289" y="1800.06" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="b3_title" parent="1" style="text;html=1;fontSize=18;fontStyle=1;fontColor=#1B2229;align=left;verticalAlign=middle;fontFamily=Helvetica;" value="エリア3・質問応答（DesignDocAsk、ask.py の LLM function-calling エージェントループ）" vertex="1">
+          <mxGeometry height="28" width="800" x="820" y="2210" as="geometry" />
+        </mxCell>
+        <mxCell id="q_input" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;ユーザーの質問＋対話履歴&lt;/b&gt;" vertex="1">
+          <mxGeometry height="56" width="260" x="220" y="2260" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_q_input" parent="1" style="shape=mxgraph.ios7.icons.message;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="232" y="2277" as="geometry" />
+        </mxCell>
+        <mxCell id="llm_judge" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A6A2E;strokeWidth=1.8;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;LLM の判断&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;材料は揃ったか？まだ調べ続けるべきか？&lt;/font&gt;" vertex="1">
+          <mxGeometry height="130" width="320" x="190" y="2346" as="geometry" />
+        </mxCell>
+        <mxCell id="e_input_judge" edge="1" parent="1" source="q_input" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" target="llm_judge">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="call_tool" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.4;align=left;verticalAlign=middle;spacingLeft=16;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;ツールを1つ呼び出す&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#5B6169&gt;下記10個のツールから1つを選ぶ&lt;/font&gt;" vertex="1">
+          <mxGeometry height="70" width="280" x="640" y="2376" as="geometry" />
+        </mxCell>
+        <mxCell id="e_judge_call" edge="1" parent="1" source="llm_judge" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;fontColor=#5B6169;fontSize=10;endArrow=open;endFill=0;exitX=1;exitY=0.35;entryX=0;entryY=0.5;" target="call_tool" value="調べ続ける">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="get_result" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.4;align=left;verticalAlign=middle;spacingLeft=16;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;結果を受け取る&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#5B6169&gt;純粋な SQL／ルールが返す JSON——この工程に LLM は関与しない。kbtools.py には AI のロジックが一切含まれない&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="280" x="640" y="2476" as="geometry" />
+        </mxCell>
+        <mxCell id="e_call_result" edge="1" parent="1" source="call_tool" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" target="get_result">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_result_loop" edge="1" parent="1" source="get_result" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.3;strokeColor=#8A6A2E;fontColor=#8A6A2E;fontSize=10;endArrow=open;endFill=0;exitX=0;exitY=0.15;entryX=0;entryY=0.75;" target="llm_judge" value="ループ">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="120" y="2490" />
+              <mxPoint x="120" y="2444" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="final_answer" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A6A2E;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=16;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;最終回答を生成&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#5B6169&gt;出典を添付。設計書に明記／推論／見つからず「未確認」のいずれかを明示&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="320" x="190" y="2510" as="geometry" />
+        </mxCell>
+        <mxCell id="e_judge_final" edge="1" parent="1" source="llm_judge" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;fontColor=#5B6169;fontSize=10;endArrow=open;endFill=0;" target="final_answer" value="十分／予算上限に到達">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="budget_note" parent="1" style="rounded=1;arcSize=4;dashed=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A8F96;strokeWidth=1;align=left;verticalAlign=middle;spacingLeft=16;fontSize=11;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;予算保護&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#5B6169&gt;最大12ループ／ツール呼び出し24回まで。上限が近づくと、システムは LLM に「これが最後の機会です。手元の材料だけで回答し、確認できなかった箇所は必ず『未確認』と書いてください」と促す——無限に調べ続けることはない。&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="340" x="980" y="2476" as="geometry" />
+        </mxCell>
+        <mxCell id="e_call_budget" edge="1" parent="1" source="call_tool" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1;strokeColor=#8A8F96;endArrow=none;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" target="budget_note">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_summary_agent" edge="1" parent="1" source="summary_kb" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.4;strokeColor=#1B2229;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="q_input">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="grp_find" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;見つける（第一手）&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;grep&lt;/b&gt;：原文を全量そのまま機械的に検索、並べ替えも打ち切りもしない（既定で60件まで表示するが総数は伝える）。&lt;b&gt;探索の第一手であり、最も重要な位置づけ&lt;/b&gt;。結果には in_column（その語がどの表頭列の下にあるか——定義か参照かの判断材料）と next_terms（同じ行の他の識別子、さらに深掘りする手がかり）が付く&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;list_objects&lt;/b&gt;：全体の目録（表／画面／プログラム／全72行のシート目録）——どこにあるか見当が付かないときは、検索より目録を見るほうが速くて確実&lt;/font&gt;" vertex="1">
+          <mxGeometry height="250" width="440" x="100" y="2680" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_grp_find" parent="1" style="shape=mxgraph.ios7.icons.looking_glass;html=1;strokeColor=#3E6B63;fillColor=none;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="112" y="2704" as="geometry" />
+        </mxCell>
+        <mxCell id="grp_confirm" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;確かめる&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;impact_of&lt;/b&gt;：多段階の影響範囲（declared/inferred を区別）。自動的に grep で全文もフォローし、台帳に取り込めていない other_mentions も列挙——台帳のカバー漏れによる見落としを防ぐ&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;get_table / get_screen&lt;/b&gt;：ある表／ある画面の完全な定義を取得&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;read_around&lt;/b&gt;：grep がヒットした箇所の前後を読む（大きな表向け）&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;get_sheet&lt;/b&gt;：あるシートの原文全体を読む（出典の提示用）&lt;/font&gt;" vertex="1">
+          <mxGeometry height="250" width="460" x="580" y="2680" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_grp_confirm" parent="1" style="shape=mxgraph.ios7.icons.documents;html=1;strokeColor=#26415C;fillColor=none;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="592" y="2704" as="geometry" />
+        </mxCell>
+        <mxCell id="grp_assist" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A6A2E;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;補助&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;resolve&lt;/b&gt;：日本語の言葉→物理名への翻訳。&lt;font color=#9C3B2C&gt;見つからなければ似た候補＋原文の grep 結果を返すだけで、絶対に当て推量はしない&lt;/font&gt;&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;find_entity&lt;/b&gt;：ある名前がどこで定義／出現しているか（台帳＋全文の両方を検索）&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;search_docs&lt;/b&gt;：意味的な検索。&lt;b&gt;grep と list_objects のどちらでも見つからないときのみ使う&lt;/b&gt;、全文 BM25 が主でベクトル（あれば）は加点補助にすぎない&lt;/font&gt;" vertex="1">
+          <mxGeometry height="250" width="440" x="1080" y="2680" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_grp_assist" parent="1" style="shape=mxgraph.ios7.icons.settings;html=1;strokeColor=#8A6A2E;fillColor=none;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="1092" y="2704" as="geometry" />
+        </mxCell>
+        <mxCell id="e_agent_find" edge="1" parent="1" source="call_tool" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0;exitY=0.5;entryX=0.34;entryY=0;" target="grp_find">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="560" y="2411" />
+              <mxPoint x="560" y="2650" />
+              <mxPoint x="250" y="2650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_agent_confirm" edge="1" parent="1" source="call_tool" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="grp_confirm">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="780.06" y="2457.24" />
+              <mxPoint x="599.71" y="2457.24" />
+              <mxPoint x="599.71" y="2600.76" />
+              <mxPoint x="810.06" y="2600.76" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_agent_assist" edge="1" parent="1" source="call_tool" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=1;exitY=0.25;entryX=0.7;entryY=0;exitDx=0;exitDy=0;" target="grp_assist">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="synth" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=2;align=left;verticalAlign=middle;spacingLeft=44;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;実際の補完関係&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11.5px&quot; color=#5B6169&gt;grep（全文の機械的検索）自体が台帳を経由せず原文を直接調べる、台帳のカバー漏れを補う手段である。impact_of など台帳系のツールも、自らすすんで grep を呼び出して見落としを補っている。実際の設計は「台帳が主、ベクトルが従」ではなく、&lt;b&gt;「grep と台帳が互いに補い合い、意味検索は最後の手段」&lt;/b&gt;である&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="1320" x="200" y="2970" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_synth" parent="1" style="shape=mxgraph.ios7.icons.flag;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.6;" value="" vertex="1">
+          <mxGeometry height="24" width="24" x="218" y="3008" as="geometry" />
+        </mxCell>
+        <mxCell id="e_find_synth" edge="1" parent="1" source="grp_find" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.4;exitY=1;entryX=0.15;entryY=0;" target="synth">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_confirm_synth" edge="1" parent="1" source="grp_confirm" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="synth">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_assist_synth" edge="1" parent="1" source="grp_assist" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.6;exitY=1;entryX=0.85;entryY=0;" target="synth">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="final" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=14;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;質問応答の準備完了&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot; color=#5B6169&gt;serve.py が Web 画面を提供し、SSE でエージェントが各ステップでどのツールを呼び、何件ヒットしたかをリアルタイムに表示——利用者に調査の過程を見せる、ただ待たせるのではなく&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="560" x="600" y="3110" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_final" parent="1" style="shape=mxgraph.ios7.icons.pie_chart;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="24" width="24" x="612" y="3143" as="geometry" />
+        </mxCell>
+        <mxCell id="e_synth_final" edge="1" parent="1" source="synth" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" target="final">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_finalanswer_final" edge="1" parent="1" source="final_answer" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.3;strokeColor=#1B2229;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0;entryY=0.5;exitDx=0;exitDy=0;" target="final">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="350.06" y="2627.82" />
+              <mxPoint x="50.06" y="2627.82" />
+              <mxPoint x="50.06" y="3155" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#D6D3C8;verticalAlign=top;fontStyle=1;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" value="凡例" vertex="1">
+          <mxGeometry height="300" width="300" x="1750" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" parent="legend" style="rounded=1;arcSize=4;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="16" width="30" x="10" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1t" parent="legend" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontColor=#1B2229;fontFamily=Helvetica;" value="汎用処理ステップ" vertex="1">
+          <mxGeometry height="22" width="230" x="50" y="27" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" parent="legend" style="rounded=1;arcSize=4;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.8;" value="" vertex="1">
+          <mxGeometry height="16" width="30" x="10" y="58" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2t" parent="legend" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10.5;fontColor=#5B6169;fontFamily=Helvetica;" value="機械的抽出／高確実性（経路A、表型抽出器、grep、list_objects など）" vertex="1">
+          <mxGeometry height="34" width="235" x="50" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3" parent="legend" style="rounded=1;arcSize=4;html=1;fillColor=#FFFFFF;strokeColor=#8A6A2E;strokeWidth=1.8;" value="" vertex="1">
+          <mxGeometry height="16" width="30" x="10" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3t" parent="legend" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10.5;fontColor=#5B6169;fontFamily=Helvetica;" value="AI 処理／判断が必要（要約の経路B、resolve の候補など）" vertex="1">
+          <mxGeometry height="34" width="235" x="50" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="leg4" parent="legend" style="rounded=1;arcSize=4;html=1;fillColor=#FDF3F0;strokeColor=#9C3B2C;strokeWidth=1.8;" value="" vertex="1">
+          <mxGeometry height="16" width="30" x="10" y="142" as="geometry" />
+        </mxCell>
+        <mxCell id="leg4t" parent="legend" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10.5;fontColor=#5B6169;fontFamily=Helvetica;" value="人手確認が必要（REVIEW.md、corrections、KB_REPORT.md。図中で唯一の強調色）" vertex="1">
+          <mxGeometry height="34" width="235" x="50" y="136" as="geometry" />
+        </mxCell>
+        <mxCell id="leg5" parent="legend" style="rounded=1;arcSize=4;dashed=1;html=1;fillColor=#FFFFFF;strokeColor=#8A8F96;strokeWidth=1.4;" value="" vertex="1">
+          <mxGeometry height="16" width="30" x="10" y="184" as="geometry" />
+        </mxCell>
+        <mxCell id="leg5t" parent="legend" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10.5;fontColor=#5B6169;fontFamily=Helvetica;" value="任意コンポーネント（ベクトル索引、必須ではない、破線枠）" vertex="1">
+          <mxGeometry height="22" width="235" x="50" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="leg6" edge="1" parent="legend" style="html=1;endArrow=open;endFill=0;strokeWidth=1.2;strokeColor=#9C3B2C;dashed=1;" value="">
+          <mxGeometry height="18" relative="1" width="30" as="geometry">
+            <mxPoint x="10" y="216" as="sourcePoint" />
+            <mxPoint x="40" y="216" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg6t" parent="legend" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=10.5;fontColor=#5B6169;fontFamily=Helvetica;" value="ループ／エリア間の参照（レポート→config調整→再実行；台帳＋索引→エージェント）" vertex="1">
+          <mxGeometry height="34" width="235" x="50" y="206" as="geometry" />
+        </mxCell>
+        <mxCell id="leg7" parent="legend" style="text;html=1;align=center;verticalAlign=middle;fontSize=10.5;fontColor=#9C3B2C;fontFamily=Helvetica;" value="例" vertex="1">
+          <mxGeometry height="16" width="30" x="10" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="leg7t" parent="legend" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=10.5;fontColor=#5B6169;fontFamily=Helvetica;" value="小さな赤陶色の文字＝人手確認が必要／確度の注記" vertex="1">
+          <mxGeometry height="34" width="235" x="50" y="246" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="drawio" version="26.0.0">
+  <diagram name="方案二·全体图谱化">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="方案二 · 全体图谱化（Ontology 驱动）" style="text;html=1;fontSize=18;fontStyle=1;fontColor=#1B2229;align=left;verticalAlign=middle;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="760" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="核心特点：先设计本体（Ontology），所有抽取都服从这个 schema，最终统一收敛成一张知识图谱 —— 不像方案一那样并行输出多种独立索引" style="text;html=1;fontSize=12;fontColor=#5B6169;align=left;verticalAlign=middle;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="52" width="1100" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- Row 1: main pipeline -->
+        <mxCell id="n1" value="&lt;b&gt;原始资产&lt;/b&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:11px&quot;&gt;Office 文本 / PDF / 图片 / 扫描件&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="80" y="240" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_n1" value="" style="shape=mxgraph.ios7.icons.document;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="92" y="273" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="n2" value="扫描 &amp; 类型判断&#xa;纯文本 / 复杂表格 / 流程图 / 图片" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="360" y="240" width="260" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="n3" value="&lt;b&gt;文字抽取 + page/sheet → PNG&lt;/b&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:11px&quot;&gt;非结构化内容（图 / 复杂表格）由 VLM 识别生成文本&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="680" y="240" width="320" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_n3" value="" style="shape=mxgraph.ios7.icons.looking_glass;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="692" y="273" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="n4" value="&lt;b&gt;metaData 登录&lt;/b&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:11px&quot;&gt;来源 / 页码·sheet号 / 类型&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="240" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_n4" value="" style="shape=mxgraph.ios7.icons.flag;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="1072" y="273" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_n1n2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="n1" target="n2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_n2n3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="n2" target="n3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_n3n4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="n3" target="n4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Row 2: ontology + hero extraction -->
+        <mxCell id="ontology" value="&lt;b&gt;设计资产领域本体&lt;/b&gt;&lt;br&gt;&lt;font color=#5B4C8A style=&quot;font-size:11px&quot;&gt;Ontology：实体类型 + 关系类型 schema&lt;/font&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:10.5px&quot;&gt;人工设计 · 可迭代 · 是后续抽取的&quot;标准答案模板&quot;&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B4C8A;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="80" y="460" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_ontology" value="" style="shape=mxgraph.ios7.icons.link;html=1;strokeColor=#5B4C8A;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="92" y="483" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="hero" value="&lt;b&gt;实体 &amp; 关系抽取（Harness）&lt;/b&gt;&lt;br&gt;&lt;font color=#5B4C8A style=&quot;font-size:11.5px&quot;&gt;输入：本体 schema + metaData + 抽取文本&lt;/font&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:10.5px&quot;&gt;按本体定义的实体类型 / 关系类型做抽取（LLM / 规则 harness）&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B4C8A;strokeWidth=2;align=left;verticalAlign=middle;spacingLeft=40;fontSize=14;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="460" y="460" width="480" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_hero" value="" style="shape=mxgraph.ios7.icons.cube;html=1;strokeColor=#5B4C8A;fillColor=none;strokeWidth=1.7;" vertex="1" parent="1">
+          <mxGeometry x="474" y="486" width="26" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_ontology_hero" value="约束" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.4;strokeColor=#5B4C8A;endArrow=open;endFill=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;labelBackgroundColor=#FFFFFF;fontSize=11;fontColor=#5B4C8A;" edge="1" parent="1" source="ontology" target="hero">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_n4_hero" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.8;entryY=0;" edge="1" parent="1" source="n4" target="hero">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1180" y="410" />
+              <mxPoint x="844" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Decision -->
+        <mxCell id="gate" value="置信度判断" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FDF3F0;strokeColor=#9C3B2C;strokeWidth=1.8;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="590" y="660" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="e_hero_gate" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="hero" target="gate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Branches -->
+        <mxCell id="review" value="&lt;b&gt;人工审核队列&lt;/b&gt;&lt;br&gt;&lt;font color=#9C3B2C style=&quot;font-size:11px&quot;&gt;置信度低 / 抽取不确定&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FDF3F0;strokeColor=#9C3B2C;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="280" y="840" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_review" value="" style="shape=mxgraph.ios7.icons.user;html=1;strokeColor=#9C3B2C;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="292" y="863" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="graphdb" value="&lt;b&gt;知识图谱就绪&lt;/b&gt;&lt;br&gt;&lt;font color=#2E6E7A style=&quot;font-size:11px&quot;&gt;Graph DB&lt;/font&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:10.5px&quot;&gt;全部资产实体化 · 关系化 · 供下游多跳查询 / 问答使用&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2E6E7A;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="760" y="840" width="340" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_graphdb" value="" style="shape=mxgraph.ios7.icons.storage;html=1;strokeColor=#2E6E7A;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="772" y="863" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_gate_review" value="低 / 不确定" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.4;strokeColor=#9C3B2C;fontColor=#9C3B2C;endArrow=open;endFill=0;exitX=0.25;exitY=1;entryX=0.5;entryY=0;labelBackgroundColor=#FFFFFF;fontSize=11;" edge="1" parent="1" source="gate" target="review">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gate_graphdb" value="高 / 规则确定" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.75;exitY=1;entryX=0.35;entryY=0;labelBackgroundColor=#FFFFFF;fontSize=11;fontColor=#5B6169;" edge="1" parent="1" source="gate" target="graphdb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_review_graphdb" value="人工确认后回写" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.3;strokeColor=#3E6B63;fontColor=#3E6B63;endArrow=open;endFill=0;exitX=1;exitY=0.5;entryX=0;entryY=0.7;labelBackgroundColor=#FFFFFF;fontSize=11;" edge="1" parent="1" source="review" target="graphdb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend" value="图例" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#D6D3C8;verticalAlign=top;fontStyle=1;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="240" width="280" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" value="" style="rounded=1;arcSize=4;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="30" width="30" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1t" value="通用处理步骤" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="legend">
+          <mxGeometry x="50" y="27" width="210" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" value="" style="rounded=1;arcSize=4;html=1;fillColor=#FFFFFF;strokeColor=#5B4C8A;strokeWidth=1.6;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="60" width="30" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2t" value="紫色描边 = 本体驱动的关键步骤（本体设计 / 服从本体的抽取）" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10.5;fontColor=#5B6169;fontFamily=Helvetica;" vertex="1" parent="legend">
+          <mxGeometry x="50" y="57" width="220" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3" value="" style="rhombus;html=1;fillColor=#FDF3F0;strokeColor=#9C3B2C;strokeWidth=1.8;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="102" width="30" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3t" value="置信度判断（低置信度需人工复核）" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=11;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="legend">
+          <mxGeometry x="50" y="95" width="220" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="leg4" value="" style="html=1;endArrow=open;endFill=0;strokeWidth=1.4;strokeColor=#9C3B2C;dashed=1;" edge="1" parent="legend">
+          <mxGeometry width="30" height="18" relative="1" as="geometry">
+            <mxPoint x="10" y="150" as="sourcePoint" />
+            <mxPoint x="40" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg4t" value="低置信度 · 待人工审核" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=10.5;fontColor=#5B6169;fontFamily=Helvetica;" vertex="1" parent="legend">
+          <mxGeometry x="50" y="142" width="220" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="leg5" value="" style="html=1;endArrow=open;endFill=0;strokeWidth=1.3;strokeColor=#3E6B63;dashed=1;" edge="1" parent="legend">
+          <mxGeometry width="30" height="18" relative="1" as="geometry">
+            <mxPoint x="10" y="180" as="sourcePoint" />
+            <mxPoint x="40" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg5t" value="人工确认后回写图谱" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=10.5;fontColor=#5B6169;fontFamily=Helvetica;" vertex="1" parent="legend">
+          <mxGeometry x="50" y="172" width="220" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="leg6" value="示例" style="text;html=1;align=center;verticalAlign=middle;fontSize=10.5;fontColor=#9C3B2C;fontFamily=Helvetica;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="204" width="30" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="leg6t" value="与方案一相比，AI 角色收窄为&quot;服从本体做抽取&quot;" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=10.5;fontColor=#5B6169;fontFamily=Helvetica;" vertex="1" parent="legend">
+          <mxGeometry x="50" y="200" width="220" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- Positioning note -->
+        <mxCell id="note" value="&lt;b&gt;方案定位&lt;/b&gt;&lt;br&gt;本方案假定资产的实体关系可以被一套统一 schema 覆盖，前置本体设计投入较高，但产出是一张结构一致、可推理的知识图谱，而非多个独立索引。适合资产结构相对规整、业务概念可预先建模的场景；和方案一相比，AI 的角色从&quot;并行处理一环&quot;收窄为&quot;服从本体做抽取&quot;，精度依赖本体设计质量和人工审核环节。" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#D6D3C8;align=left;verticalAlign=top;spacing=12;fontSize=12;fontColor=#5B6169;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1010" width="1560" height="100" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

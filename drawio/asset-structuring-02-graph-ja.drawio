@@ -1,0 +1,144 @@
+<mxfile host="Electron">
+  <diagram name="方案二・全体グラフ化" id="0">
+    <mxGraphModel dx="1763" dy="1135" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=18;fontStyle=1;fontColor=#1B2229;align=left;verticalAlign=middle;fontFamily=Helvetica;" value="方案二 ・ 全体グラフ化（オントロジー駆動）" vertex="1">
+          <mxGeometry height="30" width="760" x="40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;fontSize=12;fontColor=#5B6169;align=left;verticalAlign=middle;fontFamily=Helvetica;" value="核心特徴：先にオントロジーを設計し、すべての抽出はこの schema に従う。方案一のように複数の独立インデックスを並行出力するのではなく、最終的に 1 枚のナレッジグラフへ収束する" vertex="1">
+          <mxGeometry height="24" width="1100" x="40" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="n1" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;原本資産&lt;/b&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:11px&quot;&gt;Office / PDF / 画像 / スキャン紙&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="240" x="80" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_n1" parent="1" style="shape=mxgraph.ios7.icons.document;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="92" y="273" as="geometry" />
+        </mxCell>
+        <mxCell id="n2" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="スキャン &amp; 種別判定&#xa;プレーンテキスト / 複雑な表 / フローチャート / 画像" vertex="1">
+          <mxGeometry height="90" width="260" x="360" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="n3" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;文字抽出 + page/sheet → PNG&lt;/b&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:11px&quot;&gt;非構造化コンテンツ（図 / 複雑な表）は VLM 認識でテキスト化&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="320" x="680" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_n3" parent="1" style="shape=mxgraph.ios7.icons.looking_glass;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.4;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="692" y="273" as="geometry" />
+        </mxCell>
+        <mxCell id="n4" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;metaData 登録&lt;/b&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:11px&quot;&gt;出典 / ページ・シート番号 / 種別&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="240" x="1060" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_n4" parent="1" style="shape=mxgraph.ios7.icons.flag;html=1;strokeColor=#1B2229;fillColor=none;strokeWidth=1.4;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="1072" y="273" as="geometry" />
+        </mxCell>
+        <mxCell id="e_n1n2" edge="1" parent="1" source="n1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="n2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_n2n3" edge="1" parent="1" source="n2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="n3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_n3n4" edge="1" parent="1" source="n3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="n4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ontology" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B4C8A;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;資産ドメインのオントロジー設計&lt;/b&gt;&lt;br&gt;&lt;font color=#5B4C8A style=&quot;font-size:11px&quot;&gt;オントロジー：エンティティ型 + 関係型 schema&lt;/font&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:10.5px&quot;&gt;人手で設計 ・ 反復改善可 ・ 以降の抽出の&quot;ひな形&quot;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="150" width="300" x="80" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_ontology" parent="1" style="shape=mxgraph.ios7.icons.link;html=1;strokeColor=#5B4C8A;fillColor=none;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="92" y="483" as="geometry" />
+        </mxCell>
+        <mxCell id="hero" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#5B4C8A;strokeWidth=2;align=left;verticalAlign=middle;spacingLeft=40;fontSize=14;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;エンティティ &amp; 関係抽出（Harness）&lt;/b&gt;&lt;br&gt;&lt;font color=#5B4C8A style=&quot;font-size:11.5px&quot;&gt;入力：オントロジー schema + metaData + 抽出テキスト&lt;/font&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:10.5px&quot;&gt;オントロジーで定義したエンティティ型 / 関係型に沿って抽出（LLM / ルール harness）&lt;/font&gt;" vertex="1">
+          <mxGeometry height="150" width="480" x="460" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_hero" parent="1" style="shape=mxgraph.ios7.icons.cube;html=1;strokeColor=#5B4C8A;fillColor=none;strokeWidth=1.7;" value="" vertex="1">
+          <mxGeometry height="26" width="26" x="474" y="486" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ontology_hero" edge="1" parent="1" source="ontology" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.4;strokeColor=#5B4C8A;endArrow=open;endFill=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;labelBackgroundColor=#FFFFFF;fontSize=11;fontColor=#5B4C8A;" target="hero" value="制約">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_n4_hero" edge="1" parent="1" source="n4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.8;entryY=0;" target="hero">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1180" y="410" />
+              <mxPoint x="844" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gate" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FDF3F0;strokeColor=#9C3B2C;strokeWidth=1.8;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="信頼度判定" vertex="1">
+          <mxGeometry height="110" width="220" x="590" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="e_hero_gate" edge="1" parent="1" source="hero" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="gate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="review" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FDF3F0;strokeColor=#9C3B2C;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;人手レビュー待ちキュー&lt;/b&gt;&lt;br&gt;&lt;font color=#9C3B2C style=&quot;font-size:11px&quot;&gt;信頼度が低い / 抽出結果が不確定&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="300" x="280" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_review" parent="1" style="shape=mxgraph.ios7.icons.user;html=1;strokeColor=#9C3B2C;fillColor=none;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="292" y="863" as="geometry" />
+        </mxCell>
+        <mxCell id="graphdb" parent="1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2E6E7A;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;ナレッジグラフ準備完了&lt;/b&gt;&lt;br&gt;&lt;font color=#2E6E7A style=&quot;font-size:11px&quot;&gt;Graph DB&lt;/font&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:10.5px&quot;&gt;全資産をエンティティ化 ・ 関係化 ・ 下流のマルチホップ検索 / QA で使用&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="340" x="760" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_graphdb" parent="1" style="shape=mxgraph.ios7.icons.storage;html=1;strokeColor=#2E6E7A;fillColor=none;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="772" y="863" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gate_review" edge="1" parent="1" source="gate" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.4;strokeColor=#9C3B2C;fontColor=#9C3B2C;endArrow=open;endFill=0;exitX=0.25;exitY=1;entryX=0.5;entryY=0;labelBackgroundColor=#FFFFFF;fontSize=11;" target="review" value="低 / 不確定">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gate_graphdb" edge="1" parent="1" source="gate" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.75;exitY=1;entryX=0.35;entryY=0;labelBackgroundColor=#FFFFFF;fontSize=11;fontColor=#5B6169;" target="graphdb" value="高 / ルールで確定">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_review_graphdb" edge="1" parent="1" source="review" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.3;strokeColor=#3E6B63;fontColor=#3E6B63;endArrow=open;endFill=0;exitX=1;exitY=0.5;entryX=0;entryY=0.7;labelBackgroundColor=#FFFFFF;fontSize=11;" target="graphdb" value="人手確認後に書き戻し">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#D6D3C8;verticalAlign=top;fontStyle=1;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" value="凡例" vertex="1">
+          <mxGeometry height="240" width="280" x="1360" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" parent="legend" style="rounded=1;arcSize=4;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="16" width="30" x="10" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1t" parent="legend" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontColor=#1B2229;fontFamily=Helvetica;" value="汎用処理ステップ" vertex="1">
+          <mxGeometry height="22" width="210" x="50" y="27" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" parent="legend" style="rounded=1;arcSize=4;html=1;fillColor=#FFFFFF;strokeColor=#5B4C8A;strokeWidth=1.6;" value="" vertex="1">
+          <mxGeometry height="16" width="30" x="10" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2t" parent="legend" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10.5;fontColor=#5B6169;fontFamily=Helvetica;" value="紫の枠線 = オントロジー駆動の重要ステップ（設計 ・ 準拠抽出）" vertex="1">
+          <mxGeometry height="34" width="220" x="50" y="57" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3" parent="legend" style="rhombus;html=1;fillColor=#FDF3F0;strokeColor=#9C3B2C;strokeWidth=1.8;" value="" vertex="1">
+          <mxGeometry height="18" width="30" x="10" y="102" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3t" parent="legend" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=11;fontColor=#1B2229;fontFamily=Helvetica;" value="信頼度判定（低い場合は人手レビュー）" vertex="1">
+          <mxGeometry height="32" width="220" x="50" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="leg4" edge="1" parent="legend" style="html=1;endArrow=open;endFill=0;strokeWidth=1.4;strokeColor=#9C3B2C;dashed=1;" value="">
+          <mxGeometry height="18" relative="1" width="30" as="geometry">
+            <mxPoint x="10" y="150" as="sourcePoint" />
+            <mxPoint x="40" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg4t" parent="legend" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=10.5;fontColor=#5B6169;fontFamily=Helvetica;" value="低信頼度 ・ 人手レビュー待ち" vertex="1">
+          <mxGeometry height="22" width="220" x="50" y="142" as="geometry" />
+        </mxCell>
+        <mxCell id="leg5" edge="1" parent="legend" style="html=1;endArrow=open;endFill=0;strokeWidth=1.3;strokeColor=#3E6B63;dashed=1;" value="">
+          <mxGeometry height="18" relative="1" width="30" as="geometry">
+            <mxPoint x="10" y="180" as="sourcePoint" />
+            <mxPoint x="40" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg5t" parent="legend" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=10.5;fontColor=#5B6169;fontFamily=Helvetica;" value="人手確認後にグラフへ書き戻し" vertex="1">
+          <mxGeometry height="22" width="220" x="50" y="172" as="geometry" />
+        </mxCell>
+        <mxCell id="leg6" parent="legend" style="text;html=1;align=center;verticalAlign=middle;fontSize=10.5;fontColor=#9C3B2C;fontFamily=Helvetica;" value="例" vertex="1">
+          <mxGeometry height="16" width="30" x="10" y="204" as="geometry" />
+        </mxCell>
+        <mxCell id="leg6t" parent="legend" style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=10.5;fontColor=#5B6169;fontFamily=Helvetica;" value="方案一と比べ、AI はオントロジー準拠抽出に限定" vertex="1">
+          <mxGeometry height="34" width="220" x="50" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#D6D3C8;align=left;verticalAlign=top;spacing=12;fontSize=12;fontColor=#5B6169;fontFamily=Helvetica;" value="&lt;b&gt;方案の位置づけ&lt;/b&gt;&lt;br&gt;本方案は、資産の実体・関係が一つの統一 schema でカバーできることを前提とする。前段のオントロジー設計に投資が必要だが、成果物は複数の独立インデックスではなく、構造が一貫し推論可能な 1 枚のナレッジグラフとなる。資産の構造が比較的整っており、業務概念を事前にモデル化できる場面に向く。方案一と比べ、AI の役割は&quot;並行処理の一工程&quot;から&quot;オントロジーに従って抽出する&quot;ことへと限定され、精度はオントロジー設計の質と人手レビュー工程に依存する。" vertex="1">
+          <mxGeometry height="100" width="1560" x="80" y="1010" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
