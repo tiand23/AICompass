@@ -1,3 +1,7 @@
+---
+aside: false
+---
+
 # 企业 AI 参考架构
 
 知识库问答、设计书生成、代码生成三个场景，从资产接入、Agent 记忆、到共享基础设施的请求生命周期——一张图画到底。按日本企业的数据合规与稟議审批文化约束选型：数据落地地优先自建/日本区云，写操作强制人工审批（链长可配置），代码生成走 CLI harness 不做 IDE 内嵌。
@@ -15,12 +19,16 @@
   padding: 16px;
   overflow-x: auto;
   background: #ffffff;
-  margin: 24px 0;
+  margin: 24px -4rem;
 }
 .diagram-frame img {
   display: block;
   width: 100%;
-  min-width: 1400px;
   height: auto;
+}
+@media (max-width: 960px) {
+  .diagram-frame {
+    margin: 24px 0;
+  }
 }
 </style>
