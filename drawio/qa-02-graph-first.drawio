@@ -1,0 +1,223 @@
+<mxfile host="drawio" modified="2026-09-02T00:00:00.000Z" agent="drawio-skill" version="24.0.0" type="device">
+  <diagram id="qa02" name="QA-2 Graph优先">
+    <mxGraphModel dx="1400" dy="900" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1450" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="QA-2 · Graph 查询为主（带记忆层）" style="text;html=1;fontSize=20;fontStyle=1;fontColor=#1B2229;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="700" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- ================= Memory cycle (visual language copied from enterprise-ai-architecture.drawio Section A) ================= -->
+        <mxCell id="mem_label" value="记忆层（4 步循环）" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#3E6B63;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="72" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mem_query" value="① 查询记忆库&#xa;按 user_id / project_id 取历史对话 + 已解析实体/结论" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="260" height="94" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mem_calibrate" value="&lt;b&gt;② 分层校准&lt;/b&gt;&lt;br&gt;&lt;font color=#3E6B63 style=&quot;font-size:11px&quot;&gt;强模型全量 / 弱模型精选摘要 / 已近上下文上限则跳过&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="380" y="100" width="320" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_mem_calibrate" value="" style="shape=mxgraph.ios7.icons.settings;html=1;strokeColor=#3E6B63;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="392" y="124" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mem_execute" value="③ 任务执行&#xa;下方主流程（问题解析起）" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="380" y="286" width="320" height="94" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mem_write" value="④ 写入声明 + 版本化证据&#xa;非覆盖式追加" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.6;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="286" width="260" height="94" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mem_e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="mem_query" target="mem_calibrate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mem_e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="mem_calibrate" target="mem_execute">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mem_e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="mem_execute" target="mem_write">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mem_loop" value="下次读取前核验版本 → 过期标记「存疑」" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.2;strokeColor=#3E6B63;fontColor=#3E6B63;endArrow=open;endFill=0;exitX=0.5;exitY=0;entryX=0.5;entryY=1;labelBackgroundColor=#FFFFFF;fontSize=11;" edge="1" parent="1" source="mem_write" target="mem_query">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ================= Main flow ================= -->
+        <mxCell id="flow_label" value="主流程（图谱多跳遍历为主线，非图谱问题降级兜底）" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#26415C;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="430" width="600" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="q_parse" value="问题解析" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.4;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;fontStyle=1;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="160" y="466" width="360" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="q_parse_sub" value="结合记忆层历史上下文做指代消解；&#xa;判断问题类型：关系/路径类 vs 属性/一般类" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="174" y="500" width="332" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dec_type" value="问题类型？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.4;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="255" y="620" width="170" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Left branch: relation/path -->
+        <mxCell id="branch_rel_label" value="关系 / 路径类" style="text;html=1;fontSize=11;fontStyle=1;fontColor=#26415C;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="60" y="790" width="140" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ent_link" value="实体链接" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="812" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_link_sub" value="自然语言实体 → 图谱节点（用语字典 resolve 机制）" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="74" y="846" width="272" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ent_unresolved" value="查不到 → 返回候选&#xa;反问用户，不硬猜" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FDF3F0;strokeColor=#9C3B2C;strokeWidth=1.4;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="420" y="820" width="240" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ent_unresolved" value="不确定" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.2;strokeColor=#9C3B2C;fontColor=#9C3B2C;endArrow=open;endFill=0;labelBackgroundColor=#FFFFFF;fontSize=10.5;exitX=1;exitY=0.4;entryX=0;entryY=0.5;" edge="1" parent="1" source="ent_link" target="ent_unresolved">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="trav" value="图谱多跳遍历" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="978" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="trav_sub" value="按关系类型走 N 跳，收集子图" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="74" y="1012" width="272" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="trav_budget" value="预算保护" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;dashed=1;fillColor=#FFFFFF;strokeColor=#8A8F96;strokeWidth=1.2;fontSize=12;fontColor=#5B6169;fontFamily=Helvetica;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="420" y="978" width="240" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="trav_budget_sub" value="最大跳数 / 最大访问节点数；&#xa;到上限就收工，用已收集子图回答，不无限遍历" style="text;html=1;fontSize=10.5;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="432" y="1006" width="216" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="e_trav_budget" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.1;strokeColor=#8A8F96;endArrow=none;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="trav" target="trav_budget">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sub_text" value="子图 → 文本化" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1144" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_text_sub" value="转成 LLM 可读的自然语言描述，带证据路径&#xa;（记录经过的节点/关系，供回答时说明推理路径）" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="74" y="1178" width="272" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_ent_trav" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.3;strokeColor=#26415C;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ent_link" target="trav">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_trav_sub" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.3;strokeColor=#26415C;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="trav" target="sub_text">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Right branch: fallback -->
+        <mxCell id="branch_fb_label" value="属性 / 一般类（图谱覆盖不到）" style="text;html=1;fontSize=11;fontStyle=1;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="760" y="790" width="260" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="fallback" value="降级检索" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;dashed=1;fillColor=#FFFFFF;strokeColor=#8A8F96;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="760" y="812" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="fallback_sub" value="向量检索 + 全文检索（简化处理，不展开4路并行）" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="774" y="846" width="272" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_type_rel" value="关系 / 路径类" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.3;strokeColor=#26415C;fontColor=#26415C;endArrow=open;endFill=0;labelBackgroundColor=#FFFFFF;fontSize=11;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec_type" target="ent_link">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="760" />
+              <mxPoint x="210" y="760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_type_fb" value="属性 / 一般类" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.2;strokeColor=#8A8F96;fontColor=#5B6169;endArrow=open;endFill=0;labelBackgroundColor=#FFFFFF;fontSize=11;exitX=1;exitY=0.5;entryX=0;entryY=0.4;" edge="1" parent="1" source="dec_type" target="fallback">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="710" y="675" />
+              <mxPoint x="710" y="847" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Merge -->
+        <mxCell id="gen_answer" value="生成回答" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;fontStyle=1;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="380" y="1310" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="gen_answer_sub" value="关系类问题：附「沿着哪条关系链得出结论」的可解释路径&#xa;兜底类问题：正常回答" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="394" y="1344" width="352" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_sub_gen" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.3;strokeColor=#26415C;endArrow=open;endFill=0;exitX=0.7;exitY=1;entryX=0.15;entryY=0;" edge="1" parent="1" source="sub_text" target="gen_answer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_fb_gen" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.85;entryY=0;" edge="1" parent="1" source="fallback" target="gen_answer">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="910" y="1290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e_parse_dec" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="q_parse" target="dec_type">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_exec_parse" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="mem_execute" target="q_parse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- close the loop back to memory write -->
+        <mxCell id="e_gen_write" value="写回记忆（闭环）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.3;strokeColor=#3E6B63;fontColor=#3E6B63;endArrow=open;endFill=0;labelBackgroundColor=#FFFFFF;fontSize=10.5;exitX=0;exitY=0.3;entryX=0;entryY=1;" edge="1" parent="1" source="gen_answer" target="mem_write">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="20" y="1360" />
+              <mxPoint x="20" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ================= Legend ================= -->
+        <mxCell id="legend" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#8A8F96;strokeWidth=1;dashed=1;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1500" y="72" width="360" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_title" value="图例" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#1B2229;align=center;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1500" y="80" width="360" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg_sw1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="1518" y="118" width="34" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_sw1_t" value="关系 / 路径主线（图谱多跳遍历）" style="text;html=1;fontSize=11;fontColor=#1B2229;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1562" y="115" width="290" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg_sw2" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;dashed=1;fillColor=#FFFFFF;strokeColor=#8A8F96;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="1518" y="150" width="34" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_sw2_t" value="兜底 / 可选分支（降级检索、预算保护）" style="text;html=1;fontSize=11;fontColor=#1B2229;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1562" y="147" width="290" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg_sw3" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FDF3F0;strokeColor=#9C3B2C;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="1518" y="182" width="34" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_sw3_t" value="不确定处理点（查不到实体则反问，不硬猜）" style="text;html=1;fontSize=11;fontColor=#1B2229;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1562" y="179" width="290" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg_sw4" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.6;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1518" y="214" width="34" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_sw4_t" value="记忆层读写（虚线，闭环）" style="text;html=1;fontSize=11;fontColor=#1B2229;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1562" y="211" width="290" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg_note" value="示例：本图与 QA-1（混合检索）互补——QA-1 广度并行兜底，本图靠图遍历做多跳推理，卖点是可解释性。" style="text;html=1;fontSize=10.5;fontColor=#9C3B2C;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1518" y="250" width="326" height="46" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

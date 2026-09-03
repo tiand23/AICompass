@@ -8,3 +8,6 @@
 | [資産構造化・方式1：汎用マルチパイプライン構造化](/ja/diagrams/asset-structuring-01-general) | 全文 / ベクトル / ナレッジグラフ / 画像ベクトルの 4 系統を並行して取り込む、資産の異種性が高い場面に向く |
 | [資産構造化・方式2：全体グラフ化](/ja/diagrams/asset-structuring-02-graph) | 先にオントロジー（Ontology）を設計し、すべての抽出を統一 schema に従わせ、1 枚のナレッジグラフへ収束 |
 | [資産構造化・方式3：grep 中心型](/ja/diagrams/asset-structuring-03-grep) | 精度はツールから生まれる、AI からではない。実際に検証済みの実装を参照；簡明版と詳細版を収録 |
+| [QA Agent・方式1：ハイブリッド検索](/ja/diagrams/qa-01-hybrid-retrieval) | 全文 / ベクトル / グラフ / 画像ベクトルの 4 系統並行 + 統一表現化 + 再ランキング、記憶層あり、広さ優先 |
+| [QA Agent・方式2：グラフクエリ優先](/ja/diagrams/qa-02-graph-first) | グラフのマルチホップ探索を主線（予算保護付き）、説明可能なパス、非グラフ系質問はフォールバック、記憶層あり |
+| [QA Agent・方式3：grep を中心に + harness](/ja/diagrams/qa-03-grep-harness) | LLM は何を調べるかを決定するだけ、ツール自体には AI なし；セッション内記憶（実装済み）とセッション横断記憶（設計上の拡張）を区別 |

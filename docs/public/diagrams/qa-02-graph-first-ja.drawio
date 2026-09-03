@@ -1,0 +1,223 @@
+<mxfile host="drawio" modified="2026-09-02T00:00:00.000Z" agent="drawio-skill" version="24.0.0" type="device">
+  <diagram id="qa02" name="QA-2 グラフ優先">
+    <mxGraphModel dx="1400" dy="900" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1450" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        
+        <mxCell id="title" value="QA-2 · グラフクエリ優先（記憶層付き）" style="text;html=1;fontSize=20;fontStyle=1;fontColor=#1B2229;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="700" height="34" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="mem_label" value="記憶層（4ステップループ）" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#3E6B63;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="72" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mem_query" value="① 記憶ストアを検索&#10;user_id / project_id 単位で履歴対話 + 解析済みのエンティティ・結論を取得" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="260" height="94" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mem_calibrate" value="&lt;b&gt;② 階層的較正&lt;/b&gt;&lt;br&gt;&lt;font color=#3E6B63 style=&quot;font-size:11px&quot;&gt;強モデルは全量 / 弱モデルは厳選 / 飽和モデルは対象外&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="380" y="100" width="320" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_mem_calibrate" value="" style="shape=mxgraph.ios7.icons.settings;html=1;strokeColor=#3E6B63;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="392" y="124" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mem_execute" value="③ タスク実行&#10;下記メインフロー（問題解析から開始）" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="380" y="286" width="320" height="94" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mem_write" value="④ 主張 + バージョン管理された根拠を書き込み&#10;上書きせず追記" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.6;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="286" width="260" height="94" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mem_e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="mem_query" target="mem_calibrate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mem_e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="mem_calibrate" target="mem_execute">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mem_e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="mem_execute" target="mem_write">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mem_loop" value="次回読み取り前にバージョンを検証 → 期限切れは「要確認」に" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.2;strokeColor=#3E6B63;fontColor=#3E6B63;endArrow=open;endFill=0;exitX=0.5;exitY=0;entryX=0.5;entryY=1;labelBackgroundColor=#FFFFFF;fontSize=11;" edge="1" parent="1" source="mem_write" target="mem_query">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="flow_label" value="メインフロー（グラフのマルチホップ探索が主軸、非グラフ系質問はフォールバック検索へ降格）" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#26415C;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="40" y="430" width="600" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="q_parse" value="問題解析" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.4;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;fontStyle=1;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="160" y="466" width="360" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="q_parse_sub" value="記憶層の履歴コンテキストを踏まえて指示語を解決；&#10;質問タイプを判定：関係・パス系 vs 属性・一般系" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="174" y="500" width="332" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dec_type" value="質問タイプ？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.4;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="255" y="620" width="170" height="110" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="branch_rel_label" value="関係 / パス系" style="text;html=1;fontSize=11;fontStyle=1;fontColor=#26415C;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="60" y="790" width="140" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ent_link" value="エンティティリンキング" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="812" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_link_sub" value="自然言語エンティティ → グラフノード&#10;（用語辞書の resolve）" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="74" y="846" width="272" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ent_unresolved" value="見つからない場合 → 候補を返し&#10;ユーザーに確認、当て推量はしない" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FDF3F0;strokeColor=#9C3B2C;strokeWidth=1.4;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="420" y="820" width="240" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="e_ent_unresolved" value="不確定" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.2;strokeColor=#9C3B2C;fontColor=#9C3B2C;endArrow=open;endFill=0;labelBackgroundColor=#FFFFFF;fontSize=10.5;exitX=1;exitY=0.4;entryX=0;entryY=0.5;" edge="1" parent="1" source="ent_link" target="ent_unresolved">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="trav" value="グラフのマルチホップ探索" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="978" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="trav_sub" value="関係タイプに沿って N ホップ辿り、サブグラフを収集" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="74" y="1012" width="272" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="trav_budget" value="予算保護" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;dashed=1;fillColor=#FFFFFF;strokeColor=#8A8F96;strokeWidth=1.2;fontSize=12;fontColor=#5B6169;fontFamily=Helvetica;align=left;verticalAlign=top;spacingLeft=12;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="420" y="978" width="240" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="trav_budget_sub" value="最大ホップ数 / 最大アクセスノード数；&#10;上限に達したら打ち切り、収集済みのサブグラフで回答、無限に探索しない" style="text;html=1;fontSize=10.5;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="432" y="1006" width="216" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="e_trav_budget" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.1;strokeColor=#8A8F96;endArrow=none;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="trav" target="trav_budget">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sub_text" value="サブグラフ → テキスト化" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1144" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="sub_text_sub" value="LLM が読める自然言語の説明に変換、根拠パス付き&#10;（経由したノード/関係を記録し、回答時に推論パスを説明できるようにする）" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="74" y="1178" width="272" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_ent_trav" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.3;strokeColor=#26415C;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ent_link" target="trav">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_trav_sub" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.3;strokeColor=#26415C;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="trav" target="sub_text">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="branch_fb_label" value="属性 / 一般系（グラフでカバーできない）" style="text;html=1;fontSize=11;fontStyle=1;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="760" y="790" width="260" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="fallback" value="フォールバック検索" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;dashed=1;fillColor=#FFFFFF;strokeColor=#8A8F96;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="760" y="812" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="fallback_sub" value="ベクトル検索 + 全文検索（簡易処理、4系統並行は展開しない）" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="774" y="846" width="272" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_type_rel" value="関係 / パス系" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.3;strokeColor=#26415C;fontColor=#26415C;endArrow=open;endFill=0;labelBackgroundColor=#FFFFFF;fontSize=11;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec_type" target="ent_link">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="760" />
+              <mxPoint x="210" y="760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_type_fb" value="属性 / 一般系" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.2;strokeColor=#8A8F96;fontColor=#5B6169;endArrow=open;endFill=0;labelBackgroundColor=#FFFFFF;fontSize=11;exitX=1;exitY=0.5;entryX=0;entryY=0.4;" edge="1" parent="1" source="dec_type" target="fallback">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="710" y="675" />
+              <mxPoint x="710" y="847" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        
+        <mxCell id="gen_answer" value="回答を生成" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;fontStyle=1;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="380" y="1310" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="gen_answer_sub" value="関係系の質問：「どの関係チェーンを辿って結論に至ったか」を示す説明可能なパスを付与&#10;フォールバック系の質問：通常どおり回答" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="394" y="1344" width="352" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_sub_gen" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.3;strokeColor=#26415C;endArrow=open;endFill=0;exitX=0.7;exitY=1;entryX=0.15;entryY=0;" edge="1" parent="1" source="sub_text" target="gen_answer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_fb_gen" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.85;entryY=0;" edge="1" parent="1" source="fallback" target="gen_answer">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="910" y="1290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e_parse_dec" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="q_parse" target="dec_type">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_exec_parse" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="mem_execute" target="q_parse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="e_gen_write" value="記憶に書き戻し（クローズドループ）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.3;strokeColor=#3E6B63;fontColor=#3E6B63;endArrow=open;endFill=0;labelBackgroundColor=#FFFFFF;fontSize=10.5;exitX=0;exitY=0.3;entryX=0;entryY=1;" edge="1" parent="1" source="gen_answer" target="mem_write">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="20" y="1360" />
+              <mxPoint x="20" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        
+        <mxCell id="legend" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#8A8F96;strokeWidth=1;dashed=1;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1500" y="72" width="360" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_title" value="凡例" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#1B2229;align=center;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1500" y="80" width="360" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg_sw1" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="1518" y="118" width="34" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_sw1_t" value="関係 / パスのメインライン（グラフのマルチホップ探索）" style="text;html=1;fontSize=11;fontColor=#1B2229;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1562" y="115" width="290" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg_sw2" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;dashed=1;fillColor=#FFFFFF;strokeColor=#8A8F96;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="1518" y="150" width="34" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_sw2_t" value="フォールバック / 任意分岐（降格検索、予算保護）" style="text;html=1;fontSize=11;fontColor=#1B2229;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1562" y="147" width="290" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg_sw3" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FDF3F0;strokeColor=#9C3B2C;strokeWidth=1.4;" vertex="1" parent="1">
+          <mxGeometry x="1518" y="182" width="34" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_sw3_t" value="不確定処理ポイント（エンティティが見つからなければ確認、当て推量はしない）" style="text;html=1;fontSize=11;fontColor=#1B2229;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1562" y="179" width="290" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg_sw4" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.6;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1518" y="214" width="34" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_sw4_t" value="記憶層の読み書き（破線、クローズドループ）" style="text;html=1;fontSize=11;fontColor=#1B2229;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1562" y="211" width="290" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg_note" value="例：本図は QA-1（ハイブリッド検索）と補完関係にある——QA-1 は広く並行フォールバックする一方、本図はグラフ探索によるマルチホップ推論を行い、説明可能性が売りである。" style="text;html=1;fontSize=10.5;fontColor=#9C3B2C;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1518" y="250" width="326" height="46" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
