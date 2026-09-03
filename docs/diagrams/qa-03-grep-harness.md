@@ -8,7 +8,7 @@ aside: false
 
 **记忆层特别说明**：图上区分了两层——**会话内记忆**（实线框，对应 DesignDocAsk 已验证实现的 `history` 机制，随会话结束而消失）和**跨会话持久记忆**（虚线框 + 赤陶红警示框，是在已验证实现基础上的设计延伸，DesignDocAsk 当前尚未实现）。两者不要混为一谈。
 
-其他方案：[方案一 · 混合检索](/diagrams/qa-01-hybrid-retrieval) · [方案二 · Graph 查询为主](/diagrams/qa-02-graph-first)
+其他方案：[方案一 · 混合检索](/diagrams/qa-01-hybrid-retrieval) · [方案二 · Graph 查询为主](/diagrams/qa-02-graph-first) · [方案四 · 质量闭环](/diagrams/qa-04-quality-loop)
 
 <div class="diagram-frame">
   <img src="/diagrams/qa-03-grep-harness.svg" alt="QA-3 grep+harness架构图">

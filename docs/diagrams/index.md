@@ -11,3 +11,4 @@
 | [QA Agent · 方案一：混合检索](/diagrams/qa-01-hybrid-retrieval) | 全文 / 向量 / Graph / 图向量四路并行 + 统一表示化 + 重排序，带记忆层，广度优先 |
 | [QA Agent · 方案二：Graph 查询为主](/diagrams/qa-02-graph-first) | 图谱多跳遍历为主线（带预算保护），可解释路径，非图谱问题降级兜底，带记忆层 |
 | [QA Agent · 方案三：以 grep 为核心 + harness](/diagrams/qa-03-grep-harness) | LLM 只决定查什么，工具本身没有 AI；区分会话内记忆（已实现）与跨会话记忆（设计延伸） |
+| [QA Agent · 方案四：质量闭环](/diagrams/qa-04-quality-loop) | QA-1/2/3 共用的质量保障层：会话检索状态复用、索引新鲜度、评估反馈三类根因分流 |

@@ -6,7 +6,7 @@ aside: false
 
 四路并行检索（全文 / 向量 / Graph / 图向量）+ 统一表示化 + 重排序的标准 RAG 架构，广度优先，适合不确定该走哪条检索路径的场景。记忆层沿用企业 AI 参考架构 Section A 的四步循环（查询记忆库 → 分层校准 → 任务执行 → 写入声明），保证跨会话的上下文连续性。
 
-其他方案：[方案二 · Graph 查询为主](/diagrams/qa-02-graph-first) · [方案三 · 以 grep 为核心 + harness](/diagrams/qa-03-grep-harness)
+其他方案：[方案二 · Graph 查询为主](/diagrams/qa-02-graph-first) · [方案三 · 以 grep 为核心 + harness](/diagrams/qa-03-grep-harness) · [方案四 · 质量闭环](/diagrams/qa-04-quality-loop)
 
 <div class="diagram-frame">
   <img src="/diagrams/qa-01-hybrid-retrieval.svg" alt="QA-1混合检索架构图">

@@ -1,6 +1,6 @@
 <mxfile host="drawio" version="26.0.0">
-  <diagram name="方式一・汎用マルチパイプライン構造化">
-    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1020" math="0" shadow="0" background="#FFFFFF">
+  <diagram name="方案一·通用多链路结构化">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1100" math="0" shadow="0" background="#FFFFFF">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -43,16 +43,32 @@
         <mxCell id="p1_e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" edge="1" parent="1" source="p1_n1" target="p1_n2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="p1_e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" edge="1" parent="1" source="p1_n2" target="p1_n3">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="p1_e2" value="非表形式" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;fontSize=11;fontColor=#5B6169;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="p1_n2" target="p1_n3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="0" y="-55" as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="p1_e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;" edge="1" parent="1" source="p1_n3" target="p1_n4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
         
+        <mxCell id="p1_mech" value="&lt;b&gt;機械的に転記&lt;/b&gt;（表形式）&lt;br&gt;&lt;font color=#2E6E7A style=&quot;font-size:11px&quot;&gt;列位置固定で抽出・AI不使用 ・ 100% 正確 ・ 0 費用&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2E6E7A;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="360" y="210" width="300" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ic_p1_mech" value="" style="shape=mxgraph.ios7.icons.tools;html=1;strokeColor=#2E6E7A;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="372" y="238" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e_mech" value="表形式" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;orthogonalLoop=1;jettySize=auto;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;fontSize=11;fontColor=#5B6169;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1_n2" target="p1_mech">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1_e_mech_ledger" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1_mech" target="p1_ledger">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
         <mxCell id="p1_laneA" value="パイプライン A ・ 全文" style="swimlane;startSize=32;arcSize=2;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#2E6E7A;fontSize=14;fontStyle=1;verticalAlign=top;fontColor=#2E6E7A;strokeWidth=1.6;fontFamily=Helvetica;swimlaneFillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="60" y="280" width="360" height="400" as="geometry" />
+          <mxGeometry x="60" y="350" width="360" height="400" as="geometry" />
         </mxCell>
         <mxCell id="p1_a1" value="&lt;b&gt;全文格納&lt;/b&gt;&lt;br&gt;&lt;font color=#2E6E7A style=&quot;font-size:11px&quot;&gt;全文検索 / FTS&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2E6E7A;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneA">
           <mxGeometry x="40" y="150" width="280" height="90" as="geometry" />
@@ -62,7 +78,7 @@
         </mxCell>
 
         <mxCell id="p1_laneB" value="パイプライン B ・ ベクトル" style="swimlane;startSize=32;arcSize=2;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#26415C;fontSize=14;fontStyle=1;verticalAlign=top;fontColor=#26415C;strokeWidth=1.6;fontFamily=Helvetica;swimlaneFillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="460" y="280" width="360" height="400" as="geometry" />
+          <mxGeometry x="460" y="350" width="360" height="400" as="geometry" />
         </mxCell>
         <mxCell id="p1_b1" value="親 block → 子 block → chunk 分割" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneB">
           <mxGeometry x="40" y="60" width="280" height="90" as="geometry" />
@@ -84,7 +100,7 @@
         </mxCell>
 
         <mxCell id="p1_laneC" value="パイプライン C ・ VLM 認識" style="swimlane;startSize=32;arcSize=2;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#5B4C8A;fontSize=14;fontStyle=1;verticalAlign=top;fontColor=#5B4C8A;strokeWidth=1.6;fontFamily=Helvetica;swimlaneFillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="860" y="280" width="360" height="400" as="geometry" />
+          <mxGeometry x="860" y="350" width="360" height="400" as="geometry" />
         </mxCell>
         <mxCell id="p1_c1" value="VLM 認識&#10;（フロー図 / 複雑な表 / 画像）" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneC">
           <mxGeometry x="40" y="60" width="280" height="90" as="geometry" />
@@ -106,7 +122,7 @@
         </mxCell>
 
         <mxCell id="p1_laneD" value="パイプライン D ・ 画像ベクトル化" style="swimlane;startSize=32;arcSize=2;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#8A6A2E;fontSize=14;fontStyle=1;verticalAlign=top;fontColor=#8A6A2E;strokeWidth=1.6;fontFamily=Helvetica;swimlaneFillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="1260" y="280" width="360" height="400" as="geometry" />
+          <mxGeometry x="1260" y="350" width="360" height="400" as="geometry" />
         </mxCell>
         <mxCell id="p1_d1" value="全画像&#10;（page/sheet の PNG を含む）" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="p1_laneD">
           <mxGeometry x="40" y="60" width="280" height="90" as="geometry" />
@@ -143,13 +159,13 @@
 
         
         <mxCell id="p1_ledger" value="&lt;b&gt;資産台帳&lt;/b&gt;&lt;br&gt;&lt;font color=#5B6169 style=&quot;font-size:11px&quot;&gt;metaData 登録表&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.4;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="670" y="740" width="340" height="80" as="geometry" />
+          <mxGeometry x="670" y="810" width="340" height="80" as="geometry" />
         </mxCell>
         <mxCell id="ic_p1_ledger" value="" style="shape=mxgraph.ios7.icons.flag;html=1;strokeColor=#26415C;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
-          <mxGeometry x="682" y="768" width="22" height="22" as="geometry" />
+          <mxGeometry x="682" y="838" width="22" height="22" as="geometry" />
         </mxCell>
-        <mxCell id="p1_ledger_note" value="各パイプライン完了後、インデックス位置をここに一括登録" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="1030" y="758" width="320" height="40" as="geometry" />
+        <mxCell id="p1_ledger_note" value="各パイプライン完了後、インデックス位置をここに一括登録する；各レコードには検索元の方式（全文完全一致 / ベクトル意味的類似 / グラフ推論 / 機械的転記）も併せて登録し、後段の生成段階で信頼度を判断できるようにする" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;verticalAlign=top;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="818" width="360" height="80" as="geometry" />
         </mxCell>
 
         <mxCell id="p1_le_a" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.15;entryY=0;" edge="1" parent="1" source="p1_a1" target="p1_ledger">
@@ -167,10 +183,10 @@
 
         
         <mxCell id="p1_output" value="&lt;b&gt;ナレッジベース準備完了&lt;/b&gt;&lt;br&gt;&lt;font color=#2E6E7A style=&quot;font-size:11px&quot;&gt;後段の RAG / QA システムで使用&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2E6E7A;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=14;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="670" y="860" width="340" height="80" as="geometry" />
+          <mxGeometry x="670" y="930" width="340" height="80" as="geometry" />
         </mxCell>
         <mxCell id="ic_p1_output" value="" style="shape=mxgraph.ios7.icons.storage;html=1;strokeColor=#2E6E7A;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
-          <mxGeometry x="682" y="890" width="22" height="22" as="geometry" />
+          <mxGeometry x="682" y="960" width="22" height="22" as="geometry" />
         </mxCell>
         <mxCell id="p1_e_final" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.4;strokeColor=#2E6E7A;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1_ledger" target="p1_output">
           <mxGeometry relative="1" as="geometry" />

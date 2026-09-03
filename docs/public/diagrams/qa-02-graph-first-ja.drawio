@@ -1,5 +1,5 @@
 <mxfile host="drawio" modified="2026-09-02T00:00:00.000Z" agent="drawio-skill" version="24.0.0" type="device">
-  <diagram id="qa02" name="QA-2 グラフ優先">
+  <diagram id="qa02" name="QA-2 Graph优先">
     <mxGraphModel dx="1400" dy="900" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1450" math="0" shadow="0" background="#FFFFFF">
       <root>
         <mxCell id="0" />
@@ -55,7 +55,7 @@
         <mxCell id="q_parse" value="問題解析" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.4;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;fontStyle=1;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
           <mxGeometry x="160" y="466" width="360" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="q_parse_sub" value="記憶層の履歴コンテキストを踏まえて指示語を解決；&#10;質問タイプを判定：関係・パス系 vs 属性・一般系" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+        <mxCell id="q_parse_sub" value="記憶層の履歴コンテキストを踏まえて指示語解決；&#10;質問タイプを判定：関係/パス系 vs 属性/一般系 vs 混合系" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
           <mxGeometry x="174" y="500" width="332" height="60" as="geometry" />
         </mxCell>
 
@@ -99,11 +99,11 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <mxCell id="sub_text" value="サブグラフ → テキスト化" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
-          <mxGeometry x="60" y="1144" width="300" height="100" as="geometry" />
+        <mxCell id="sub_text" value="サブグラフ → テキスト化（説明可能性という売りが実現できるかの重要ステップ）" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1144" width="620" height="115" as="geometry" />
         </mxCell>
-        <mxCell id="sub_text_sub" value="LLM が読める自然言語の説明に変換、根拠パス付き&#10;（経由したノード/関係を記録し、回答時に推論パスを説明できるようにする）" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="74" y="1178" width="272" height="60" as="geometry" />
+        <mxCell id="sub_text_sub" value="各ホップを漏らさず保持する必要がある——各ホップのエンティティ名・関係タイプ・方向をすべて明示的に記述し、漠然とした結論的要約だけで済ませてはならない；そうして初めて回答生成時に完全な推論チェーンを正確に述べられ、曖昧にごまかさずに済む。" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="74" y="1178" width="590" height="70" as="geometry" />
         </mxCell>
 
         <mxCell id="e_ent_trav" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.3;strokeColor=#26415C;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ent_link" target="trav">
@@ -142,11 +142,30 @@
         </mxCell>
 
         
-        <mxCell id="gen_answer" value="回答を生成" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;fontStyle=1;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
-          <mxGeometry x="380" y="1310" width="380" height="100" as="geometry" />
+        <mxCell id="e_type_mix_rel" value="混合系（関係部分）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.3;strokeColor=#6B4C9A;fontColor=#6B4C9A;endArrow=open;endFill=0;labelBackgroundColor=#FFFFFF;fontSize=10.5;exitX=0.91;exitY=1;entryX=0.5;entryY=1;" edge="1" parent="1" source="dec_type" target="trav">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="920" />
+              <mxPoint x="730" y="920" />
+              <mxPoint x="730" y="1120" />
+              <mxPoint x="210" y="1120" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="gen_answer_sub" value="関係系の質問：「どの関係チェーンを辿って結論に至ったか」を示す説明可能なパスを付与&#10;フォールバック系の質問：通常どおり回答" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="394" y="1344" width="352" height="60" as="geometry" />
+        <mxCell id="e_type_mix_attr" value="混合系（属性部分）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.3;strokeColor=#6B4C9A;fontColor=#6B4C9A;endArrow=open;endFill=0;labelBackgroundColor=#FFFFFF;fontSize=10.5;exitX=1;exitY=0.25;entryX=0.933;entryY=0;" edge="1" parent="1" source="dec_type" target="fallback">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1040" y="648" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        
+        <mxCell id="gen_answer" value="回答を生成" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;fontStyle=1;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="380" y="1310" width="380" height="116" as="geometry" />
+        </mxCell>
+        <mxCell id="gen_answer_sub" value="関係系の質問：「どの関係チェーンを辿って結論に至ったか」を示す説明可能なパスを付与&#10;フォールバック系の質問：通常どおり回答&#10;混合系の質問：まず関係の結論を示し、続けて属性の詳細を補足、両部分にそれぞれ出典を明記" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="394" y="1344" width="352" height="76" as="geometry" />
         </mxCell>
 
         <mxCell id="e_sub_gen" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.3;strokeColor=#26415C;endArrow=open;endFill=0;exitX=0.7;exitY=1;entryX=0.15;entryY=0;" edge="1" parent="1" source="sub_text" target="gen_answer">
@@ -179,7 +198,7 @@
 
         
         <mxCell id="legend" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#8A8F96;strokeWidth=1;dashed=1;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="1500" y="72" width="360" height="230" as="geometry" />
+          <mxGeometry x="1500" y="72" width="360" height="262" as="geometry" />
         </mxCell>
         <mxCell id="legend_title" value="凡例" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#1B2229;align=center;fontFamily=Helvetica;" vertex="1" parent="1">
           <mxGeometry x="1500" y="80" width="360" height="24" as="geometry" />
@@ -206,15 +225,22 @@
           <mxGeometry x="1562" y="179" width="290" height="26" as="geometry" />
         </mxCell>
 
-        <mxCell id="leg_sw4" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.6;dashed=1;" vertex="1" parent="1">
+        <mxCell id="leg_sw5" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;dashed=1;fillColor=#FFFFFF;strokeColor=#6B4C9A;strokeWidth=1.3;" vertex="1" parent="1">
           <mxGeometry x="1518" y="214" width="34" height="20" as="geometry" />
         </mxCell>
+        <mxCell id="leg_sw5_t" value="混合系の質問（関係・属性の両方の処理を同時にトリガー、質問解析後の 3 番目の分岐を参照）" style="text;html=1;fontSize=11;fontColor=#1B2229;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1562" y="208" width="290" height="32" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg_sw4" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.6;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1518" y="246" width="34" height="20" as="geometry" />
+        </mxCell>
         <mxCell id="leg_sw4_t" value="記憶層の読み書き（破線、クローズドループ）" style="text;html=1;fontSize=11;fontColor=#1B2229;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="1562" y="211" width="290" height="26" as="geometry" />
+          <mxGeometry x="1562" y="243" width="290" height="26" as="geometry" />
         </mxCell>
 
         <mxCell id="leg_note" value="例：本図は QA-1（ハイブリッド検索）と補完関係にある——QA-1 は広く並行フォールバックする一方、本図はグラフ探索によるマルチホップ推論を行い、説明可能性が売りである。" style="text;html=1;fontSize=10.5;fontColor=#9C3B2C;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="1518" y="250" width="326" height="46" as="geometry" />
+          <mxGeometry x="1518" y="282" width="326" height="46" as="geometry" />
         </mxCell>
 
       </root>

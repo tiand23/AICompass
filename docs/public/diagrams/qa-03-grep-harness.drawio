@@ -116,8 +116,8 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <mxCell id="get_result" value="&lt;b&gt;拿到结果&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#5B6169&gt;纯规则返回的 JSON——这一步没有 LLM 参与&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.4;align=left;verticalAlign=middle;spacingLeft=16;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="760" y="654" width="280" height="94" as="geometry" />
+        <mxCell id="get_result" value="&lt;b&gt;拿到结果&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#5B6169&gt;纯规则返回的 JSON——这一步没有 LLM 参与&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#9C3B2C&gt;失败（超时/连接失败/参数错误）同样返回给 LLM 判断，不静默丢失，计入调用预算&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.4;align=left;verticalAlign=middle;spacingLeft=16;fontSize=12;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="760" y="654" width="280" height="122" as="geometry" />
         </mxCell>
         <mxCell id="e_call_result" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="call_tool" target="get_result">
           <mxGeometry relative="1" as="geometry" />
@@ -138,8 +138,8 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <mxCell id="budget_note" value="&lt;b&gt;预算保护&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#5B6169&gt;最多循环 12 轮／调用 24 次工具。快到上限时提示 LLM「这是最后机会，只能用已有材料回答，查不到的地方必须写未确认」。&lt;/font&gt;" style="rounded=1;arcSize=4;dashed=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A8F96;strokeWidth=1;align=left;verticalAlign=middle;spacingLeft=16;fontSize=11;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="1100" y="650" width="340" height="100" as="geometry" />
+        <mxCell id="budget_note" value="&lt;b&gt;预算保护&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#5B6169&gt;最多循环 12 轮／调用 24 次工具。快到上限时提示 LLM「这是最后机会，只能用已有材料回答，查不到的地方必须写未确认」。&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=#9C3B2C&gt;失败的调用同样计数，避免对同一个失败工具无限重试。&lt;/font&gt;" style="rounded=1;arcSize=4;dashed=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A8F96;strokeWidth=1;align=left;verticalAlign=middle;spacingLeft=16;fontSize=11;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="650" width="340" height="120" as="geometry" />
         </mxCell>
         <mxCell id="e_call_budget" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1;strokeColor=#8A8F96;endArrow=none;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" edge="1" parent="1" source="call_tool" target="budget_note">
           <mxGeometry relative="1" as="geometry" />

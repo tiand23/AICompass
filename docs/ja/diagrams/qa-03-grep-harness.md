@@ -8,7 +8,7 @@ aside: false
 
 **記憶層について**：図では二層に分けています——**セッション内記憶**（実線枠、DesignDocAsk で実装済みの `history` 機構に対応、セッション終了とともに消失）と**セッション横断の永続記憶**（破線枠 + 赤陶色の注意喚起ボックス、実装済み機能を基にした設計上の拡張であり、DesignDocAsk では現時点で未実装）。両者を混同しないよう明記しています。
 
-他の方式：[方式1・ハイブリッド検索](/ja/diagrams/qa-01-hybrid-retrieval) · [方式2・グラフクエリ優先](/ja/diagrams/qa-02-graph-first)
+他の方式：[方式1・ハイブリッド検索](/ja/diagrams/qa-01-hybrid-retrieval) · [方式2・グラフクエリ優先](/ja/diagrams/qa-02-graph-first) · [方式4・品質フィードバックループ](/ja/diagrams/qa-04-quality-loop)
 
 <div class="diagram-frame">
   <img src="/diagrams/qa-03-grep-harness-ja.svg" alt="QA-3grepを中心にharnessのアーキテクチャ図">

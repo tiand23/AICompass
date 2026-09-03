@@ -22,8 +22,8 @@
           <mxGeometry x="400" y="90" width="240" height="70" as="geometry" />
         </mxCell>
 
-        <mxCell id="s0_doc3" value="&lt;b&gt;知识库就绪&lt;/b&gt;&lt;br&gt;&lt;font color=#2E6E7A style=&quot;font-size:11px&quot;&gt;硬前提 · 供①使用&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2E6E7A;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="720" y="90" width="240" height="70" as="geometry" />
+        <mxCell id="s0_doc3" value="&lt;b&gt;知识库就绪&lt;/b&gt;&lt;br&gt;&lt;font color=#2E6E7A style=&quot;font-size:11px&quot;&gt;grep 兜底可用 · 持续提升质量&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#2E6E7A;strokeWidth=1.6;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="720" y="90" width="260" height="86" as="geometry" />
         </mxCell>
         <mxCell id="ic_s0_doc3" value="" style="shape=mxgraph.ios7.icons.storage;html=1;strokeColor=#2E6E7A;fillColor=none;strokeWidth=1.5;" vertex="1" parent="1">
           <mxGeometry x="732" y="113" width="22" height="22" as="geometry" />
@@ -101,8 +101,8 @@
             <mxPoint x="-80" y="0" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="sA_note" value="服务范围：① 知识库问答 · ③ 代码生成&#xa;（② 设计书生成不接共享记忆）" style="text;html=1;fontSize=12;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="880" y="465" width="360" height="40" as="geometry" />
+        <mxCell id="sA_note" value="服务范围：① 知识库问答 · ③ 代码生成（读写）&#xa;② 设计书生成仅只读访问，避免重复提出已否决方案，不写入草稿" style="text;html=1;fontSize=12;fontColor=#5B6169;align=left;fontFamily=Helvetica;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="880" y="465" width="440" height="54" as="geometry" />
         </mxCell>
 
         <!-- ===================== SECTION B · THREE LANES (outline swimlanes) ===================== -->
@@ -359,6 +359,14 @@
               <mxPoint x="900" y="685" />
               <mxPoint x="900" y="820" />
               <mxPoint x="1533" y="820" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x_A_to_l2" value="只读②" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;dashPattern=1 3;strokeWidth=1;strokeColor=#3E6B63;fontColor=#3E6B63;endArrow=open;endFill=0;labelBackgroundColor=#FFFFFF;fontSize=10.5;exitX=1;exitY=0.3;entryX=0.05;entryY=0;" edge="1" parent="1" source="sA_execute" target="lane2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="970" y="666" />
+              <mxPoint x="970" y="830" />
             </Array>
           </mxGeometry>
         </mxCell>

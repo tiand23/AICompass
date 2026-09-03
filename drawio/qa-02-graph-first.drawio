@@ -55,7 +55,7 @@
         <mxCell id="q_parse" value="问题解析" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#26415C;strokeWidth=1.4;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;fontStyle=1;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
           <mxGeometry x="160" y="466" width="360" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="q_parse_sub" value="结合记忆层历史上下文做指代消解；&#xa;判断问题类型：关系/路径类 vs 属性/一般类" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+        <mxCell id="q_parse_sub" value="结合记忆层历史上下文做指代消解；&#xa;判断问题类型：关系/路径类 vs 属性/一般类 vs 混合类" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
           <mxGeometry x="174" y="500" width="332" height="60" as="geometry" />
         </mxCell>
 
@@ -99,11 +99,11 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <mxCell id="sub_text" value="子图 → 文本化" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
-          <mxGeometry x="60" y="1144" width="300" height="100" as="geometry" />
+        <mxCell id="sub_text" value="子图 → 文本化（可解释性卖点能否兑现的关键步骤）" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1144" width="620" height="115" as="geometry" />
         </mxCell>
-        <mxCell id="sub_text_sub" value="转成 LLM 可读的自然语言描述，带证据路径&#xa;（记录经过的节点/关系，供回答时说明推理路径）" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="74" y="1178" width="272" height="60" as="geometry" />
+        <mxCell id="sub_text_sub" value="必须逐跳保留——每一跳的实体名、关系类型、方向都要显式写进描述里，不能只给一段笼统的结论性摘要；生成回答时才能准确复述完整推理链，而不是含糊带过。" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="74" y="1178" width="590" height="70" as="geometry" />
         </mxCell>
 
         <mxCell id="e_ent_trav" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.3;strokeColor=#26415C;endArrow=open;endFill=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="ent_link" target="trav">
@@ -141,12 +141,33 @@
           </mxGeometry>
         </mxCell>
 
+        <!-- Mixed-type branch: a question that has both a relational part and an attribute part
+             (e.g. "what type is this field, and which screens does it affect") is common in
+             practice and the old binary either/or split couldn't route it anywhere. -->
+        <mxCell id="e_type_mix_rel" value="混合类（关系部分）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.3;strokeColor=#6B4C9A;fontColor=#6B4C9A;endArrow=open;endFill=0;labelBackgroundColor=#FFFFFF;fontSize=10.5;exitX=0.91;exitY=1;entryX=0.5;entryY=1;" edge="1" parent="1" source="dec_type" target="trav">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="920" />
+              <mxPoint x="730" y="920" />
+              <mxPoint x="730" y="1120" />
+              <mxPoint x="210" y="1120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_type_mix_attr" value="混合类（属性部分）" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.3;strokeColor=#6B4C9A;fontColor=#6B4C9A;endArrow=open;endFill=0;labelBackgroundColor=#FFFFFF;fontSize=10.5;exitX=1;exitY=0.25;entryX=0.933;entryY=0;" edge="1" parent="1" source="dec_type" target="fallback">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1040" y="648" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
         <!-- Merge -->
         <mxCell id="gen_answer" value="生成回答" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;fontStyle=1;align=left;verticalAlign=top;spacingLeft=14;spacingTop=10;" vertex="1" parent="1">
-          <mxGeometry x="380" y="1310" width="380" height="100" as="geometry" />
+          <mxGeometry x="380" y="1310" width="380" height="116" as="geometry" />
         </mxCell>
-        <mxCell id="gen_answer_sub" value="关系类问题：附「沿着哪条关系链得出结论」的可解释路径&#xa;兜底类问题：正常回答" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="394" y="1344" width="352" height="60" as="geometry" />
+        <mxCell id="gen_answer_sub" value="关系类问题：附「沿着哪条关系链得出结论」的可解释路径&#xa;兜底类问题：正常回答&#xa;混合类问题：先给关系结论，再补充属性细节，两部分分别标注来源" style="text;html=1;fontSize=11;fontColor=#5B6169;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="394" y="1344" width="352" height="76" as="geometry" />
         </mxCell>
 
         <mxCell id="e_sub_gen" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.3;strokeColor=#26415C;endArrow=open;endFill=0;exitX=0.7;exitY=1;entryX=0.15;entryY=0;" edge="1" parent="1" source="sub_text" target="gen_answer">
@@ -179,7 +200,7 @@
 
         <!-- ================= Legend ================= -->
         <mxCell id="legend" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#8A8F96;strokeWidth=1;dashed=1;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="1500" y="72" width="360" height="230" as="geometry" />
+          <mxGeometry x="1500" y="72" width="360" height="262" as="geometry" />
         </mxCell>
         <mxCell id="legend_title" value="图例" style="text;html=1;fontSize=13;fontStyle=1;fontColor=#1B2229;align=center;fontFamily=Helvetica;" vertex="1" parent="1">
           <mxGeometry x="1500" y="80" width="360" height="24" as="geometry" />
@@ -206,15 +227,22 @@
           <mxGeometry x="1562" y="179" width="290" height="26" as="geometry" />
         </mxCell>
 
-        <mxCell id="leg_sw4" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.6;dashed=1;" vertex="1" parent="1">
+        <mxCell id="leg_sw5" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;dashed=1;fillColor=#FFFFFF;strokeColor=#6B4C9A;strokeWidth=1.3;" vertex="1" parent="1">
           <mxGeometry x="1518" y="214" width="34" height="20" as="geometry" />
         </mxCell>
+        <mxCell id="leg_sw5_t" value="混合类问题（同时触发关系+属性两条处理，见问题解析后的第三条分支）" style="text;html=1;fontSize=11;fontColor=#1B2229;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="1562" y="208" width="290" height="32" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg_sw4" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.6;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1518" y="246" width="34" height="20" as="geometry" />
+        </mxCell>
         <mxCell id="leg_sw4_t" value="记忆层读写（虚线，闭环）" style="text;html=1;fontSize=11;fontColor=#1B2229;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="1562" y="211" width="290" height="26" as="geometry" />
+          <mxGeometry x="1562" y="243" width="290" height="26" as="geometry" />
         </mxCell>
 
         <mxCell id="leg_note" value="示例：本图与 QA-1（混合检索）互补——QA-1 广度并行兜底，本图靠图遍历做多跳推理，卖点是可解释性。" style="text;html=1;fontSize=10.5;fontColor=#9C3B2C;align=left;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="1518" y="250" width="326" height="46" as="geometry" />
+          <mxGeometry x="1518" y="282" width="326" height="46" as="geometry" />
         </mxCell>
 
       </root>
