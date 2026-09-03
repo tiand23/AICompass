@@ -45,6 +45,10 @@ Terminal coding agents are the main arena of AI coding tool competition, and the
 
 ## Timeline
 
+### [2026-09-03](/en/today/2026-09-03)
+
+atlas arrives (newly trending on GitHub, ~2,900 stars total): a source-control system for multi-agent coding collaboration — every agent run produces a checkpoint, with commits linked back to the session that produced them (prompt, tool calls, reasoning trace); supports Claude Code, Codex and other agents working in parallel on the same codebase with shared memory, so switching agents mid-task doesn't mean starting over. Fills the previously-open infrastructure gap of "agent decision trails that are queryable and replayable."
+
 ### [2026-08-29](/en/today/2026-08-29)
 
 OpenAI ends its partnership with Cursor: after Cursor's acquisition by SpaceX (in stock) closed on August 14, OpenAI proposed November 12 as the date Cursor loses direct access to its models (the maximum notice period allowed under the contract), attributing this to distrust built from Musk-affiliated companies' prior contract violations; Cursor says OpenAI models handle only about 5% of its traffic, and Anthropic has already stepped in to backfill. Tool-layer stability is now shaped by ownership structure and upstream model-vendor relationships, a rare supply-chain-risk case in the coding-agent category (see [openai-models](/en/topics/openai-models)).

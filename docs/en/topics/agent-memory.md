@@ -40,6 +40,10 @@ However large the context window, it is only "working memory" — an agent servi
 
 ## Timeline
 
+### [2026-09-02](/en/today/2026-09-02)
+
+Azure's "Economics of Agent Optimization" series publishes quantified memory and retrieval data: Foundry IQ's knowledge base (semantic reranking plus targeted passage retrieval) improves evidence recall by 54% and cuts retrieval token cost by 34%; tiered memory (session/user/workflow-level) reduces the cost of replaying conversation history, alongside Toolboxes fetching tool definitions on demand to cut input tokens by roughly 97% for large tool libraries. Following 08-31's Cosmos DB memory reference implementation, Azure again publishes hard numbers on "memory plus retrieval" context engineering (see [enterprise-ai-agents](/en/topics/enterprise-ai-agents)).
+
 ### [2026-08-31](/en/today/2026-08-31)
 
 Microsoft Foundry Agent Service publishes an Azure Cosmos DB long-term memory reference implementation: a sample `CosmosMemoryContextProvider` combines vector similarity (semantic relevance), full-text search (lexical matching), and structured metadata (user/memory type). Memories persist against a stable user ID rather than a session ID — a new chat carries no prior transcript but still recalls that user's stated preferences — while different users' memories stay isolated even within the same database, and it supports factual, procedural, and episodic memory types. It re-implements, using the cloud vendor's own database plus an official Microsoft Agent Framework sample, core design patterns previously scattered across dedicated memory products like Mem0/Zep/LangMem — teams already committed to Azure/Cosmos DB now have an official reference path that doesn't require adopting a separate memory product (see [cloud-agent-platforms](/en/topics/cloud-agent-platforms)).

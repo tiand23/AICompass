@@ -36,6 +36,10 @@ GPT 系与 Claude、Gemini 构成模型选型的三大主线。OpenAI 的两个�
 
 ## Timeline
 
+### [2026-09-01](/today/2026-09-01)
+
+OpenAI 官方确认 Astra 已越过 Preparedness Framework 网络安全「Critical」门槛：ExploitBench 满分，另在针对近期披露漏洞的测试中无需人工分步指导自主发现并利用两个零日漏洞——是继 08-07 官方预警"无法排除已达 Critical 门槛"之后的正式确认。作为回应，Astra 高级网络安全能力不公开发布，仅通过 Daybreak 网络安全联盟向审核过的特定机构开放访问，公司称将"尽快"发布强化防护后的受限版本（详见 [agentic-safety](/topics/agentic-safety)）。
+
 ### [2026-08-29](/today/2026-08-29)
 
 OpenAI 终止与 Cursor 的合作：Cursor 被 SpaceX 收购完成后，OpenAI 定于 11 月 12 日切断其模型直接访问权，归因于对马斯克旗下公司此前违约经历的不信任——罕见的"模型厂商主动切断特定客户访问权"事件（详见 [coding-agents](/topics/coding-agents)）。

@@ -39,6 +39,7 @@ High-star representative repos at topic creation (2026-07):
 | archify | New (hit Trending 2026-08-31, ~36k stars total) | Generates architecture/workflow/sequence/data-flow/lifecycle diagrams from natural language or Mermaid input, self-contained HTML output |
 | scientific-agent-skills | New (hit Trending 2026-08-31, ~30-40k stars total) | 165 validated scientific-research skills + 100+ scientific databases, covering biology, chemistry, medicine, and drug discovery |
 | academic-research-skills | New (hit Trending 2026-09-01, ~44k stars total) | Full academic-research-workflow skill suite: research → write → review → revise → finalize; companion Codex-native version available |
+| ponytail | New (hit Trending 2026-09-03, climbed to ~122k stars within 9 days, the fastest-growing skill repo recently) | Enforces a "decision ladder" to compress AI-generated code volume; official benchmark shows an average 54% reduction in code output |
 
 > This ranking is refreshed by `/update` whenever skill-related repos hit GitHub Trending.
 
@@ -59,6 +60,10 @@ High-star representative repos at topic creation (2026-07):
 - [Claude Code repos star leaderboard](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-09-03](/en/today/2026-09-03)
+
+ponytail arrives (GitHub Trending, climbed to ~122k stars within 9 days, the fastest-growing skill repo recently): a general-purpose skill compatible with 15+ platforms including Claude Code/Codex/Copilot CLI, whose core is a forced "decision ladder" to run through before writing any code — does this need to exist, is it already in the codebase, can the standard library/native platform feature/an installed dependency do it, all "no" required before writing anything new. Official benchmarks show an average 54% reduction in code output, up to 94% in the best case. Continues the "stopping agents from being lazy or over-engineering" thread (Addy Osmani's agent-skills previously introduced "rebutting the agent's excuses for cutting corners"), pushing "write less code" into an enforced process rather than a suggestion — the further extreme of that idea — and its rapid growth suggests demand for "constraint" skills may be no less than for "capability-expanding" ones.
 
 ### [2026-09-01](/en/today/2026-09-01)
 

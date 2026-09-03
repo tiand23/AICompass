@@ -40,6 +40,10 @@ Agent 记忆：让 Agent 跨会话、跨任务保留并复用信息的基础设�
 
 ## Timeline
 
+### [2026-09-02](/today/2026-09-02)
+
+Azure "Agent 优化经济学"系列新文章给出记忆与检索的量化数据：Foundry IQ 知识库用语义重排序+定向段落检索，证据召回率提升 54%、检索 token 成本降低 34%；配合分级记忆（会话/用户/流程级）减少对话重放消耗，另有 Toolboxes 按需检索工具定义使大型工具库场景输入 token 降约 97%。延续 08-31 Cosmos DB 记忆参考实现之后，Azure 在"记忆+检索"上下文工程上又一次给出实测量化数字（详见 [enterprise-ai-agents](/topics/enterprise-ai-agents)）。
+
 ### [2026-08-31](/today/2026-08-31)
 
 Microsoft Foundry Agent Service 发布 Azure Cosmos DB 长期记忆参考实现：示例 `CosmosMemoryContextProvider` 结合向量相似度（语义相关）、全文检索（词面匹配）与结构化元数据（用户/记忆类型）三种检索方式；按稳定用户 ID 而非会话 ID 持久化记忆，新会话不携带原始对话记录但能召回该用户此前偏好，不同用户之间记忆严格隔离即使共用同一个数据库，同时支持事实型、程序型、情节型三类记忆。把此前散见于 Mem0/Zep/LangMem 等专用记忆产品里的核心设计用云厂商自家数据库配 Microsoft Agent Framework 官方示例的形式重新实现——已绑定 Azure/Cosmos DB 技术栈的团队现在有了"不额外引入记忆专用产品"的官方参考路径（详见 [cloud-agent-platforms](/topics/cloud-agent-platforms)）。

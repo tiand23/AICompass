@@ -36,6 +36,10 @@ GPT は Claude、Gemini と並ぶモデル選定の三大主流。OpenAI の 2 �
 
 ## Timeline
 
+### [2026-09-01](/ja/today/2026-09-01)
+
+OpenAI は Astra がすでに Preparedness Framework のサイバーセキュリティ「Critical」閾値を超えたことを公式に確認：ExploitBench で満点、さらに最近開示された脆弱性を対象としたテストでは人間による段階的な指示なしにゼロデイ脆弱性を 2 件自律的に発見・悪用した——これは 08-07 の公式警告「Critical 閾値への到達を排除できない」に続く正式な確認である。対応として、Astra の高度なサイバーセキュリティ能力は一般公開せず、Daybreak サイバーセキュリティ連合を通じて審査済みの特定機関にのみアクセスを開放し、強化された防護を施した限定版を「できるだけ早く」リリースするとしている（詳細は [agentic-safety](/ja/topics/agentic-safety)）。
+
 ### [2026-08-29](/ja/today/2026-08-29)
 
 OpenAI が Cursor との提携を終了：Cursor の SpaceX による買収が完了した後、OpenAI は 11 月 12 日を Cursor の直接モデルアクセスを遮断する日と定めた。理由はマスク氏関連企業の過去の契約違反に基づく不信感だとしている——モデルベンダーが特定の顧客のアクセスを自ら遮断する稀な事例だ（詳細は [coding-agents](/ja/topics/coding-agents)）。

@@ -36,6 +36,10 @@ GPT, Claude and Gemini form the three main lines of model selection. Two OpenAI 
 
 ## Timeline
 
+### [2026-09-01](/en/today/2026-09-01)
+
+OpenAI officially confirms Astra has crossed the Preparedness Framework's cybersecurity "Critical" threshold: a perfect ExploitBench score, plus autonomously discovering and exploiting two zero-days against recently disclosed vulnerabilities without step-by-step human guidance — the formal confirmation following its 08-07 warning that it "could not rule out" having reached the Critical threshold. In response, Astra's advanced cybersecurity capabilities won't be publicly released; access goes only to vetted organizations through the Daybreak cybersecurity coalition, with OpenAI saying a hardened, restricted version will follow "as soon as possible" (see [agentic-safety](/en/topics/agentic-safety)).
+
 ### [2026-08-29](/en/today/2026-08-29)
 
 OpenAI ends its partnership with Cursor: after Cursor's acquisition by SpaceX closed, OpenAI set November 12 as the date it will cut off Cursor's direct model access, citing distrust built from Musk-affiliated companies' prior contract violations — a rare instance of a model vendor proactively cutting off a specific customer's access (see [coding-agents](/en/topics/coding-agents)).

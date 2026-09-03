@@ -36,6 +36,14 @@ This is the main battleground for generative AI in the enterprise. As model capa
 
 ## Timeline
 
+### [2026-09-03](/en/today/2026-09-03)
+
+LangChain publishes "Agents That Pay," co-authored with Nevermined: gives LangChain agents autonomous payment capability built on the x402 protocol (created by Coinbase, now stewarded by the Linux Foundation) — detecting an HTTP 402 payment-required response, validating the amount against a session budget, signing the payment, and retrying the original request, with LangSmith audit integration. LangChain had already published a similar payment-middleware piece on 08-17 built on Amazon Bedrock AgentCore. A concrete instance of the "agent economy" extending from the coordination layer into real financial settlement; publishing two different payment approaches within the same framework in short succession suggests this is becoming a routine capability rather than a one-off experiment.
+
+### [2026-09-02](/en/today/2026-09-02)
+
+Azure publishes a new entry in its "Economics of Agent Optimization" series with quantified context-engineering results: Foundry IQ's knowledge base (semantic reranking plus targeted passage retrieval) improves evidence recall by 54% and cuts retrieval token cost by 34%; Toolboxes fetch tool definitions on demand rather than stuffing every tool into the prompt, cutting input token consumption by roughly 97% for large tool libraries; paired with tiered memory to reduce the cost of replaying conversation history. A further concretization of the "runtime optimization" layer from the 08-12 "three-speed governance model," and the first time this series has published gains this large (see [agent-memory](/en/topics/agent-memory)).
+
 ### [2026-08-26](/en/today/2026-08-26)
 
 ChatGPT Work adds browser login for password-protected sites to complete end-to-end tasks (the user enters credentials themselves, ChatGPT never touches or stores them), plus webhook-triggered scheduled tasks (firing on Gmail/Slack/GitHub PR events); scheduled tasks also open up to Free users (see [agentic-safety](/en/topics/agentic-safety)). Same day, Azure publishes the second entry in its "economics of agent optimization" series, breaking the "runtime optimization" pace from its 08-12 "three-speed governance model" into four concrete levers: model routing and deployment-type selection, prompt caching, automated prompt/agent tuning, and observability plus evaluation — moving from strategic framework to tactical execution guide.

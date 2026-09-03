@@ -45,6 +45,10 @@
 
 ## Timeline
 
+### [2026-09-03](/today/2026-09-03)
+
+atlas 登场（GitHub Trending 新晋，累计约 2,900 star）：面向多 Agent 协作编码的源代码版本控制系统——每次 Agent 运行产生 checkpoint，commit 关联回触发它的会话（含 prompt、工具调用、推理过程），支持 Claude Code、Codex 等多个 Agent 并行操作同一代码库并共享记忆，切换 Agent 无需重讲上下文。补上"Agent 决策轨迹可查询可回放"这个此前空白的基础设施类别。
+
 ### [2026-08-29](/today/2026-08-29)
 
 OpenAI 终止与 Cursor 的合作：Cursor 于 8 月 14 日被 SpaceX 以股票方式收购完成后，OpenAI 提出 11 月 12 日为 Cursor 失去其模型直接访问权的日期（合同允许的最长通知期），官方归因于"对马斯克旗下公司此前违反合同经历的不信任"；Cursor 称 OpenAI 模型仅占其约 5% 流量，Anthropic 已承诺补位。工具层稳定性开始受股权归属与上游模型厂商关系影响，是编码 Agent 品类里少见的供应链风险案例（详见 [openai-models](/topics/openai-models)）。

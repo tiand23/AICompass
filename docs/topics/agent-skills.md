@@ -39,6 +39,7 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 | archify | 新晋（2026-08-31 上榜，累计约 3.6 万 star） | 自然语言/Mermaid 输入生成架构・工作流・时序・数据流・生命周期图，自包含 HTML 输出 |
 | scientific-agent-skills | 新晋（2026-08-31 上榜，累计约 3-4 万 star） | 165 条科研场景验证 skill + 100 余个科学数据库，覆盖生物/化学/医学/药物发现 |
 | academic-research-skills | 新晋（2026-09-01 上榜，累计约 4.4 万 star） | 学术研究全流程 skill 套件：调研→写作→评审→修改→定稿，另有 Codex 原生版本 |
+| ponytail | 新晋（2026-09-03 上榜，9 天内冲至约 12.2 万 star，近期增速最快） | 强制"决策梯"流程压缩 AI 生成代码量，官方基准平均减少 54% 代码输出 |
 
 > 此排行由 `/update` 在 skill 类仓库登上 GitHub Trending 时自动更新。
 
@@ -59,6 +60,10 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 - [Claude Code 高星仓库排行](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-09-03](/today/2026-09-03)
+
+ponytail 登场（GitHub Trending，9 天内冲至约 12.2 万 star，近期 skill 仓库增速最快）：兼容 Claude Code/Codex/Copilot CLI 等 15+ 平台的通用 skill，核心是写代码前的强制"决策梯"——逐层反问是否真的需要新代码、代码库/标准库/平台原生能力/已装依赖能不能做到，全部"否"才动手；官方基准显示平均减少 54% 代码输出，最高减少 94%。延续"防 Agent 偷懒/过度工程"脉络（Addy Osmani 的 agent-skills 此前已提出"反驳偷懒借口"），把"少写代码"做成强制流程而非倡议，是这条思路的进一步极端化，也印证"约束类" skill 的市场需求可能不亚于"能力扩展类"。
 
 ### [2026-09-01](/today/2026-09-01)
 

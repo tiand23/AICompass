@@ -36,6 +36,14 @@
 
 ## Timeline
 
+### [2026-09-03](/today/2026-09-03)
+
+LangChain 发布与 Nevermined 合作文章《Agents That Pay》：给 LangChain Agent 接入基于 x402 协议（Coinbase 创建，现由 Linux Foundation 托管）的自主支付能力——检测 API 返回的 HTTP 402 付款请求、按会话预算校验金额、签名支付并重试原请求，带 LangSmith 审计集成；此前 08-17 已发布过基于 Amazon Bedrock AgentCore 的同类支付中间件文章。"Agent 经济"从协调层向真实资金结算层延伸的具体样本，同一框架短期内发布两种不同支付方案说明这已成为常规能力供给而非单点实验。
+
+### [2026-09-02](/today/2026-09-02)
+
+Azure 发布"Agent 优化经济学"系列新文章，给出上下文工程量化数据：Foundry IQ 知识库（语义重排序+定向段落检索）证据召回率提升 54%、检索 token 成本降低 34%；Toolboxes 按需检索工具定义（而非全量塞入 prompt）使大型工具库场景输入 token 消耗降低约 97%；配合分级记忆减少对话重放消耗。是 08-12"三速治理模型"里"运行时优化"层的又一次具体化，也是这一系列里首次给出如此大幅的量化改善数字（详见 [agent-memory](/topics/agent-memory)）。
+
 ### [2026-08-26](/today/2026-08-26)
 
 ChatGPT Work 支持登录密码保护网站并执行端到端任务（用户亲自输入凭证，ChatGPT 不接触存储），新增 Webhook 触发定时任务（响应 Gmail/Slack/GitHub PR 事件），免费版也开放定时任务（详见 [agentic-safety](/topics/agentic-safety)）。同日 Azure 发布"Agent 优化经济学"系列第二篇，把 08-12"三速治理模型"里的"运行时优化"拆解成四个具体杠杆：模型路由与部署类型选型、prompt 缓存、prompt/Agent 自动化调优、可观测性与评估——从战略框架推进到战术执行指南。
