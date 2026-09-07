@@ -37,6 +37,10 @@
 
 ## Timeline
 
+### [2026-09-05](/ja/today/2026-09-05)
+
+Microsoft Foundry に GPT-6 Astra（09-03 発表）が追加：Limited Access Program を通じて段階的に展開され、Global と米国データゾーンのみで利用可能（**EU データゾーンなし**）；Global 標準ティアの価格はコンテキスト長に応じて 100 万トークンあたり $10〜$75、米国ゾーンには割増あり；Standard（従量課金）と Provisioned Throughput（専用スループット）の 2 種類の購入方式；Microsoft Entra による ID 管理、暗号化、専用ネットワーク、全操作ログを統合。08-31 の xAI Grok 4.6 追加に続く「マルチベンダーモデルマーケットプレイス」戦略の継続だが、今回は明確な地域制限と段階的アクセスを伴う——Critical レベルのサイバーセキュリティ判定は OpenAI 自身のリリースケイデンスだけでなく、クラウドベンダー自身のアクセスポリシーにも直接波及している（詳細は [openai-models](/ja/topics/openai-models)）。
+
 ### [2026-08-31](/ja/today/2026-08-31)
 
 Microsoft Foundry（旧 Azure AI Foundry）が xAI の Grok 4.6 をパブリックプレビューで追加：1.5T 規模モデルファミリーで、長時間推論と複雑なワークフロー向けに設計され、ソフトウェアエンジニアリング、オフィス生産性、研究、推論最適化タスクをカバー、Foundry の統一モデル評価・デプロイ・ガバナンス管理面に組み込まれた。GPT、Cohere、Llama、Mistral などを既に取り込んできた「マルチベンダーモデルマーケットプレイス」戦略の継続であり、「モデル選定よりプラットフォーム選定が先」を裏付ける——既に Azure に依存する企業はベンダー契約を切り替えることなくより多くの最先端モデルを評価できる。同日、Foundry Agent Service が Azure Cosmos DB による長期記憶のリファレンス実装を公開（詳細は [agent-memory](/ja/topics/agent-memory)）。

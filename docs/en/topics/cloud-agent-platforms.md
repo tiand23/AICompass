@@ -37,6 +37,10 @@ The enterprise agent platform market entered consolidation in 2026 — the need 
 
 ## Timeline
 
+### [2026-09-05](/en/today/2026-09-05)
+
+Microsoft Foundry adds GPT-6 Astra (launched 09-03): rolling out through a Limited Access Program, available only in the Global and US data zones (**no EU data zone**); Global standard-tier pricing runs $10-$75 per million tokens (tiered by context length), with a premium in the US zone; both Standard (pay-as-you-go) and Provisioned Throughput (dedicated capacity) purchase options; integrates Microsoft Entra identity management, encryption, private networking, and full activity logging. This continues the "multi-vendor model marketplace" strategy following 08-31's xAI Grok 4.6 addition, but this time comes with explicit geographic restrictions and staged access — the Critical-level cybersecurity rating is flowing directly into the cloud vendor's own access policy, not just OpenAI's release cadence (see [openai-models](/en/topics/openai-models)).
+
 ### [2026-08-31](/en/today/2026-08-31)
 
 Microsoft Foundry (formerly Azure AI Foundry) adds xAI's Grok 4.6 in public preview: from its 1.5T-scale model family, built for long-horizon reasoning and complex workflows spanning software engineering, office productivity, research, and inference optimization, integrated into Foundry's unified model evaluation/deployment/governance control plane. This continues the "multi-vendor model marketplace" strategy (having already added GPT, Cohere, Llama, Mistral, and more), reinforcing "platform before model" — enterprises already committed to Azure can evaluate more frontier models without switching vendor contracts. The same day, Foundry Agent Service published an Azure Cosmos DB long-term memory reference implementation (see [agent-memory](/en/topics/agent-memory)).

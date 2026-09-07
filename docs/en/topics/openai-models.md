@@ -14,7 +14,7 @@ GPT, Claude and Gemini form the three main lines of model selection. Two OpenAI 
 - **Fast mode**: the API's fast-processing option, replacing Priority Processing as of 2026-07.
 - **Deprecation cadence**: 2026-07 saw reusable prompt objects, the Evals platform and Agent Builder deprecated in one sweep — OpenAI's agent product line converging toward Presence; 2026-08 the standalone browser product Atlas (live under a year) is retired, with browser-agent capability folded into ChatGPT/Codex — another instance of the same convergence pattern.
 - **Channels**: direct OpenAI API + Microsoft Foundry (the enterprise Azure channel; GPT-5.6 available there).
-- **Next-generation model Astra**: officially confirmed codename; an internal build has already produced machine-verifiable (Lean 4) math proofs, including an explicit construction of a non-sofic group unsolved for 27 years; its cybersecurity capability evaluation can't rule out having reached the Preparedness Framework's Critical threshold, prompting OpenAI to proactively tighten its development environment (isolated testing, chain-of-thought monitoring) and slow its pace; no release date yet, and it must clear US government security review first.
+- **GPT-6 Astra (released 2026-09-03)**: formerly codenamed Astra; on launch the lineup was reorganized into two tiers — Astra and the higher-end Astra Pro (retiring the Sol/Terra/Luna three-tier scheme). Saturates FrontierMath Tier 4 (98%), saturates ARC-AGI-3 (99.9%), and scores 100% on ExploitBench; versus GPT-5.6 Sol, the "acting beyond authorized scope" rate dropped from 48% to 0%. Context window is 1.05M tokens, knowledge cutoff 2026-04-30, and pricing runs roughly 2.5x Sol. The first production model to receive a formal "Critical" cybersecurity rating under the Preparedness Framework, with a staged, restricted rollout (Daybreak-vetted defenders first, then ChatGPT/API/Azure/AWS).
 - **Tiered cybersecurity access**: the Daybreak program split into Blue (vetted general frontier models for day-to-day security work) and Red (the specialized GPT-5.6-Cyber, under stricter review) tiers, with hardware security keys mandatory from 2026-09-01 — a concrete instance of "the more capable, the tighter the guardrail."
 
 ## Related Technologies
@@ -35,6 +35,14 @@ GPT, Claude and Gemini form the three main lines of model selection. Two OpenAI 
 - [Introducing GPT-5.6](https://openai.com/index/gpt-5-6/)
 
 ## Timeline
+
+### [2026-09-05](/en/today/2026-09-05)
+
+GPT-6 Astra lands on Microsoft Foundry: rolling out through a Limited Access Program, Global/US data zones only (no EU zone); pricing $10-$75 per million tokens (premium in the US zone); Standard and Provisioned Throughput purchase options (see [cloud-agent-platforms](/en/topics/cloud-agent-platforms)).
+
+### [2026-09-03](/en/today/2026-09-03)
+
+OpenAI officially launches GPT-6 Astra: lineup reorganized into Astra / Astra Pro tiers, saturating FrontierMath Tier 4 (98%) and ARC-AGI-3 (99.9%), a perfect ExploitBench score, and the "acting beyond authorized scope" rate dropping from GPT-5.6 Sol's 48% to 0%; context window 1.05M tokens; pricing roughly 2.5x Sol. As the first production model to receive a formal "Critical" cybersecurity rating under the Preparedness Framework, rollout is staged and restricted (Daybreak-vetted defenders first, then ChatGPT/API/Azure/AWS) (see [agentic-safety](/en/topics/agentic-safety)).
 
 ### [2026-09-01](/en/today/2026-09-01)
 

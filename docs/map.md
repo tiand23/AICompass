@@ -11,7 +11,7 @@
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
 | [claude-models](/topics/claude-models) | Anthropic Claude 模型线 | Agent/编码场景的模型选型与迁移 | 🔥 | 2026-09-01 |
-| [openai-models](/topics/openai-models) | OpenAI GPT 模型线与 API 平台 | 选型、成本波动与产品弃用风险 | 🔥 | 2026-09-01 |
+| [openai-models](/topics/openai-models) | OpenAI GPT 模型线与 API 平台 | 选型、成本波动与产品弃用风险 | 🔥 | 2026-09-05 |
 | [gemini-models](/topics/gemini-models) | Google Gemini 模型线 | 成本敏感场景的高性价比选型 | 📈 | 2026-08-17 |
 
 ### 多模态生成
@@ -54,7 +54,7 @@
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
 | [enterprise-ai-agents](/topics/enterprise-ai-agents) | 企业 Agent 平台与交付模式 | Agent 如何可靠接入企业系统并被运维 | 🔥 | 2026-09-03 |
-| [cloud-agent-platforms](/topics/cloud-agent-platforms) | 四大云托管 Agent 平台版图（AgentCore/Foundry/GEAP/Managed Agents） | 平台选型与锁定权衡 | 🔥 | 2026-08-31 |
+| [cloud-agent-platforms](/topics/cloud-agent-platforms) | 四大云托管 Agent 平台版图（AgentCore/Foundry/GEAP/Managed Agents） | 平台选型与锁定权衡 | 🔥 | 2026-09-05 |
 | [agent-workspaces](/topics/agent-workspaces) | 桌面 Agent 工作台（Cowork/openwork/Codex app） | 派任务收成果的交互形态；能力配置跨工具移植 | 📈 | 2026-08-12 |
 | [agent-sandboxes](/topics/agent-sandboxes) | Agent 执行沙箱基础设施（E2B/Daytona/Cloudflare computer） | 给 Agent 安全隔离、可复用的代码执行环境 | 📈 | 2026-08-19 |
 

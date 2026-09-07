@@ -37,6 +37,10 @@
 
 ## Timeline
 
+### [2026-09-05](/today/2026-09-05)
+
+Microsoft Foundry 上线 GPT-6 Astra（09-03 发布）：通过 Limited Access Program 分批开放，目前只有 Global 与美国数据区可购买，**没有欧盟数据区**；定价 Global 标准档 $10～$75/百万 token（按上下文长度分档），美国区有溢价；Standard（按量付费）与 Provisioned Throughput（专属吞吐量）两种购买方式；集成 Microsoft Entra 身份管理、加密、专用网络与全量操作日志。延续 08-31 xAI Grok 4.6 接入的"多厂商模型集市"策略，但这次首次伴随明确的地域限制和分批准入——Critical 级网络安全定级直接传导进了云厂商侧的准入策略（详见 [openai-models](/topics/openai-models)）。
+
 ### [2026-08-31](/today/2026-08-31)
 
 Microsoft Foundry（原 Azure AI Foundry）引入 xAI Grok 4.6（公开预览）：1.5T 规模模型家族，主打长时程推理与复杂工作流，覆盖代码工程、办公生产力、科研与推理优化任务，纳入 Foundry 统一的模型评测/部署/治理控制面。延续"多厂商模型集市"策略（此前已接入 GPT/Cohere/Llama/Mistral 等），进一步印证"选平台先于选模型"——已绑定 Azure 生态的企业无需切换供应商合同即可评测更多前沿模型。同日 Foundry Agent Service 发布 Azure Cosmos DB 长期记忆参考实现（详见 [agent-memory](/topics/agent-memory)）。

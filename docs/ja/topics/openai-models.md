@@ -14,7 +14,7 @@ GPT は Claude、Gemini と並ぶモデル選定の三大主流。OpenAI の 2 �
 - **Fast mode**：API の高速処理オプション。2026-07 に Priority Processing を置き換え。
 - **廃止サイクル**：2026-07 に reusable prompt objects、Evals プラットフォーム、Agent Builder を一斉廃止——エージェント製品ラインは Presence 方向へ収斂。2026-08 には独立ブラウザ製品 Atlas（提供開始から 1 年未満）が終了し、ブラウザエージェント能力は ChatGPT/Codex に統合——同じ収斂パターンの再確認。
 - **チャネル**：OpenAI API 直結 + Microsoft Foundry（企業向け Azure チャネル、GPT-5.6 提供中）。
-- **次世代モデル Astra**：公式確認済みのコードネーム。内部版はすでに機械検証可能（Lean 4）な数学証明を産出しており、27 年間未解決だった非苏芬群の明示的構成を含む；サイバーセキュリティ能力評価では Preparedness Framework の Critical 級閾値にすでに達している可能性を排除できず、OpenAI は開発環境を自主的に強化（隔離テスト、思考連鎖モニタリング）し開発ペースを落とした；発表日は未定で、まず米国政府のセキュリティ審査を通過する必要がある。
+- **GPT-6 Astra（2026-09-03 発表）**：旧コードネーム Astra。発表時に製品ラインを Astra と上位版 Astra Pro の 2 段階に再編（Sol/Terra/Luna の 3 段階制は終了）。FrontierMath Tier 4 で飽和（98%）、ARC-AGI-3 で飽和（99.9%）、ExploitBench で満点（100%）を記録。GPT-5.6 Sol と比較し「権限範囲を超えて行動する」割合が 48% から 0% に低下。コンテキストウィンドウは 105 万トークン、知識のカットオフは 2026-04-30、価格は Sol の約 2.5 倍。Preparedness Framework の下でサイバーセキュリティ「Critical」の正式判定を受けた初の量産モデルで、段階的・制限付きで展開（まず Daybreak 審査済みの防御側組織、その後 ChatGPT/API/Azure/AWS へ）。
 - **サイバーセキュリティ能力の階層化**：Daybreak プログラムが Blue（審査済みの汎用フロンティアモデルを日常のセキュリティ業務に開放）と Red（より厳格な審査を受ける専用モデル GPT-5.6-Cyber）の 2 段階に分割。2026-09-01 からハードウェアセキュリティキーが義務化——「能力が高いほど護りを締める」という原則の具体的な実装。
 
 ## 関連技術
@@ -35,6 +35,14 @@ GPT は Claude、Gemini と並ぶモデル選定の三大主流。OpenAI の 2 �
 - [GPT-5.6 の紹介](https://openai.com/index/gpt-5-6/)
 
 ## Timeline
+
+### [2026-09-05](/ja/today/2026-09-05)
+
+GPT-6 Astra が Microsoft Foundry に登場：Limited Access Program を通じて段階的に展開、Global／米国データゾーンのみ（EU ゾーンなし）；価格は 100 万トークンあたり $10〜$75（米国ゾーンは割増）；Standard と Provisioned Throughput の 2 種類の購入方式（詳細は [cloud-agent-platforms](/ja/topics/cloud-agent-platforms)）。
+
+### [2026-09-03](/ja/today/2026-09-03)
+
+OpenAI が GPT-6 Astra を正式発表：製品ラインを Astra／Astra Pro の 2 段階に再編、FrontierMath Tier 4 で飽和（98%）、ARC-AGI-3 で飽和（99.9%）、ExploitBench で満点、「権限範囲を超えて行動する」割合が GPT-5.6 Sol の 48% から 0% に低下；コンテキストウィンドウ 105 万トークン；価格は Sol の約 2.5 倍。Preparedness Framework の下でサイバーセキュリティ「Critical」の正式判定を受けた初の量産モデルとして、段階的・制限付きで展開（まず Daybreak 審査済みの防御側組織、その後 ChatGPT/API/Azure/AWS へ）（詳細は [agentic-safety](/ja/topics/agentic-safety)）。
 
 ### [2026-09-01](/ja/today/2026-09-01)
 

@@ -14,7 +14,7 @@ GPT 系与 Claude、Gemini 构成模型选型的三大主线。OpenAI 的两个�
 - **Fast mode**：API 的快速处理选项，2026-07 取代原 Priority Processing。
 - **弃用节奏**：2026-07 一次性弃用 reusable prompt objects、Evals 平台、Agent Builder——OpenAI 的 Agent 产品线向 Presence 等方向收敛；2026-08 独立浏览器产品 Atlas（上线不到一年）停运，浏览器 Agent 能力并入 ChatGPT/Codex，同一收敛模式的再次印证。
 - **渠道**：OpenAI API 直连 + Microsoft Foundry（企业 Azure 渠道，GPT-5.6 已上架）。
-- **下一代模型 Astra**：官方确认代号，内部版本已产出机器可验证（Lean 4）的数学证明，含 27 年未解开的非苏芬群显式构造；网络安全能力评估中无法排除已达 Preparedness Framework 的 Critical 级门槛，OpenAI 已主动收紧其开发环境（隔离测试、思维链监控）并放慢节奏；尚无发布日期，需先过美国政府安全审查。
+- **GPT-6 Astra（已发布，2026-09-03）**：原代号 Astra，正式发布后重组产品线为两档——Astra 与更高端 Astra Pro（原 Sol/Terra/Luna 三档终结）。FrontierMath Tier 4 饱和 98%、ARC-AGI-3 饱和 99.9%、ExploitBench 满分；对比 GPT-5.6 Sol，"超出授权范围行事"比例从 48% 降到 0%。上下文 105 万 token，知识截止 2026-04-30，定价约为 Sol 的 2.5 倍。OpenAI Preparedness Framework 下首个网络安全「Critical」定级的量产模型，分阶段受限发布（Daybreak 审核方 → ChatGPT/API/Azure/AWS 逐步开放）。
 - **网络安全能力分层**：Daybreak 项目拆成 Blue（通用前沿模型，审核后开放日常安全工作）与 Red（专精攻防的 GPT-5.6-Cyber，审查更严）两档，2026-09-01 起强制硬件安全密钥——能力越强、护栏越紧的分层准入模式。
 
 ## 相关技术
@@ -35,6 +35,14 @@ GPT 系与 Claude、Gemini 构成模型选型的三大主线。OpenAI 的两个�
 - [GPT-5.6 介绍](https://openai.com/index/gpt-5-6/)
 
 ## Timeline
+
+### [2026-09-05](/today/2026-09-05)
+
+GPT-6 Astra 登陆 Microsoft Foundry：Limited Access Program 分批开放，仅 Global/美国数据区（无欧盟区）；定价 $10～$75/百万 token（美国区有溢价）；Standard/Provisioned Throughput 两种购买方式（详见 [cloud-agent-platforms](/topics/cloud-agent-platforms)）。
+
+### [2026-09-03](/today/2026-09-03)
+
+OpenAI 正式发布 GPT-6 Astra：产品线重组为 Astra / Astra Pro 两档，FrontierMath Tier 4 饱和 98%、ARC-AGI-3 饱和 99.9%、ExploitBench 满分，"超出授权范围行事"比例从 GPT-5.6 Sol 的 48% 降到 0%；上下文 105 万 token；定价约为 Sol 的 2.5 倍。作为 Preparedness Framework 下首个网络安全「Critical」定级的量产模型，采取分阶段受限发布（Daybreak 审核方优先，随后陆续开放 ChatGPT/API/Azure/AWS）（详见 [agentic-safety](/topics/agentic-safety)）。
 
 ### [2026-09-01](/today/2026-09-01)
 
