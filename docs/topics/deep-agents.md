@@ -21,6 +21,9 @@ Deep Agents 是 LangChain 提出的概念与产品方向：能执行长时程、
 - **模型路由降本**：长时程任务里多数调用不需要前沿模型——LangChain 用 Switchyard 实测 Deep Agents 评估集，93% 调用可路由到 30B 级模型，仅 7% 需要升级到前沿模型，整体成本降 74%（详见 [model-efficiency](/topics/model-efficiency)）。
 - **能力来自计算环境而非工具数量**：monday.com Sidekick 案例显示，塞进 200+ 预置工具会造成上下文污染、模型变笨变贵；给 Agent 一个持久、隔离、可执行代码的沙箱环境（而非穷举工具清单）才是能力上限所在（详见 [agent-sandboxes](/topics/agent-sandboxes)）。
 - **强制人工检查点的垂直全流程编排**：OpenMontage 把"调研→提案→脚本→分镜→素材→剪辑→合成"标准化为长时程多阶段管线，每个关键节点强制人工审批+决策审计轨迹——长时程 Agent"自主执行但保持人工检查点"模式在具体垂直领域（视频制作）的完整工程实现。
+- **上下文传递模式（Forked vs Isolated Subagents）**：LangChain 把 Supervisor/子 Agent 架构里"子 Agent 该拿多少上下文"显式区分为两种模式——Isolated（默认，子 Agent 只拿任务描述，空白上下文起步，适合并行/独立验证）与 Forked（`'mode': 'fork'`，子 Agent 继承主管当前状态与对话历史，靠 prompt 缓存复用，避免重复取证）；选型准则是 Worker/Memory Agent 用 fork，Verifier/Researcher 用 isolated。
+- **多路径推理应对不确定性**：Microsoft Discovery Engine（内核 CLIO）代表的另一种长时程模式——不是单线程规划-执行-恢复，而是多条独立推理路径并行探索、互相比对，自主决定继续探索、切换策略、换模型或引入人类专家；在科研发现这类高不确定性垂直任务上给出了可比较的基准分数（详见 [enterprise-ai-agents](/topics/enterprise-ai-agents)）。
+- **托管凭证与按调用者身份**：LangSmith Managed Deep Agents 的 Connections 把凭证管理独立成两条轴——归属（Agent 共享 / 按调用者各自）与类型（静态密钥 / OAuth）——解决托管 Agent 密钥轮换与"操作应带真实调用者身份而非笼统机器人身份"这两个问题，免去手工搭 OAuth 回调管道。
 
 ## 相关技术
 
@@ -36,6 +39,14 @@ Deep Agents 是 LangChain 提出的概念与产品方向：能执行长时程、
 - [How We Benchmark Deep Agents（LangChain Blog）](https://www.langchain.com/blog/)
 
 ## Timeline
+
+### [2026-09-09](/today/2026-09-09)
+
+LangChain 发布 Connections：LangSmith Managed Deep Agents 新增托管凭证系统，命名凭证存在工作区（不进代码/`.env`），运行时按 `connections.get("<slug>", {"type": "agent"|"user"})` 取用；归属（Agent 共享 vs 按调用者）与凭证类型（静态密钥 vs OAuth）两条独立维度，免去手工搭建 OAuth 回调/令牌存储/刷新逻辑——解决密钥轮换与"操作应带真实调用者身份"两个托管 Agent 的真实痛点。
+
+### [2026-09-08](/today/2026-09-08)
+
+LangChain 为 Deep Agents 框架显式区分两种多 Agent 上下文传递模式：Isolated（默认，子 Agent 空白上下文起步，适合并行验证/独立调研）与新增的 Forked（`'mode': 'fork'`，继承主管当前状态与对话历史，靠 prompt 缓存复用，避免子 Agent 重复取证），给出按角色选型准则（Worker/Memory 用 fork，Verifier/Researcher 用 isolated）。同日 Microsoft 发布 Discovery Engine（内核 CLIO）：多条独立推理路径并行探索、互相比对收敛为单一证据支撑结果，可自主决定继续探索/切换策略/换模型/引入人类专家，在 "Agent's Last Exam" 基准取得健康 61.6%、物理科学 75.2%、生命科学 64.6%，称已协助发现一种新型有机氧化还原液流电池——长时程 Agent 应对不确定性的另一种模式（多路径探索 vs 单线程规划-恢复），落地在科研发现这一垂直场景（详见 [enterprise-ai-agents](/topics/enterprise-ai-agents)）。
 
 ### [2026-08-27](/today/2026-08-27)（补漏）
 

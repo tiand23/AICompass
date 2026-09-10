@@ -21,6 +21,9 @@ Deep Agents は LangChain が提唱するコンセプトとプロダクトの方
 - **モデルルーティングによるコスト削減**：長時程タスクの大半の呼び出しは前沿モデルを必要としない——LangChain が Switchyard で Deep Agents 評価セットを実測したところ、93% の呼び出しは 30B 級モデルにルーティング可能で、前沿モデルが本当に必要なのはわずか 7%、全体コストは 74% 削減された（詳細は [model-efficiency](/ja/topics/model-efficiency)）。
 - **能力はツールの数ではなく計算環境から生まれる**：monday.com Sidekick の事例では、200 以上の事前定義ツールを詰め込んだことでコンテキストが汚染され、Agent は鈍く高コストになった。持続的で隔離された、コードを実行できるサンドボックス環境を与えることこそが能力の上限を決める——網羅的なツールカタログではない（詳細は [agent-sandboxes](/ja/topics/agent-sandboxes)）。
 - **人間の必須チェックポイントを備えた垂直領域の全工程編成**：OpenMontage は「調査→提案→脚本→シーンプラン→素材→編集→合成」を長時程・多段階のパイプラインとして標準化し、各重要ノードで人間承認と意思決定監査証跡を必須にした——「自律実行 + 人間チェックポイントの保持」という長時程 Agent タスクのパターンを、特定の垂直領域（動画制作）で完全に工学実装した例。
+- **コンテキスト伝播モード（Forked vs Isolated Subagents）**：LangChain は Supervisor/子 Agent 構成で「子 Agent にどれだけコンテキストを渡すか」を 2 つのモードに明示的に分離した——Isolated（デフォルト、子 Agent はタスク説明のみを受け取り空のコンテキストから開始、並列検証/独立調査向き）と Forked（`'mode': 'fork'`、子 Agent がスーパーバイザーの現在の状態と会話履歴をプロンプトキャッシュ経由で継承し、重複した情報収集を回避）；使い分けの指針は Worker/Memory エージェントは fork、Verifier/Researcher エージェントは isolated。
+- **不確実性に対処する複数経路推論**：Microsoft の Discovery Engine（中核 CLIO）は別の長期パターンを示す——単一スレッドの計画・実行・回復ではなく、複数の独立した推論経路が並行して探索し互いに学習を共有、探索継続・戦略切替・モデル切替・人間の専門家関与を自律的に判断する；科学的発見という不確実性の高い垂直タスクで比較可能なベンチマークスコアを出した（詳細は [enterprise-ai-agents](/ja/topics/enterprise-ai-agents)）。
+- **管理された認証情報と呼び出し元単位の ID**：LangSmith Managed Deep Agents の Connections は認証情報管理を 2 つの独立した軸に分離——所有者（Agent 共有 vs 呼び出し元ごと）と種別（静的シークレット vs OAuth）——ホスト型 Agent のキーローテーションと「操作は汎用ボット ID ではなく実際の呼び出し元の ID を伴うべき」という 2 つの課題を解決し、OAuth コールバックの手作り配管を不要にする。
 
 ## 関連技術
 
@@ -36,6 +39,14 @@ Deep Agents は LangChain が提唱するコンセプトとプロダクトの方
 - [How We Benchmark Deep Agents（LangChain Blog）](https://www.langchain.com/blog/)
 
 ## Timeline
+
+### [2026-09-09](/ja/today/2026-09-09)
+
+LangChain が Connections をローンチ：LangSmith Managed Deep Agents に管理型認証情報システムを追加、名前付き認証情報をワークスペースに保存（コードや `.env` には置かない）、実行時に `connections.get("<slug>", {"type": "agent"|"user"})` で取得；所有者（Agent 共有 vs 呼び出し元ごと）と認証情報タイプ（静的シークレット vs OAuth）という 2 つの独立した軸を持ち、OAuth コールバックルート/トークンストア/リフレッシュロジックの手作りが不要に——ホスト型 Agent のキーローテーションと「操作は実際の呼び出し元の ID を伴うべき」という 2 つの現実的な課題を解決。
+
+### [2026-09-08](/ja/today/2026-09-08)
+
+LangChain が Deep Agents のマルチ Agent コンテキスト伝播を 2 つのモードに明示的に分離：Isolated（デフォルト、子 Agent は空のコンテキストから開始、並列検証/独立調査向き）と新設の Forked（`'mode': 'fork'`、プロンプトキャッシュ経由でスーパーバイザーの現在の状態と会話履歴を継承し、重複した情報収集を回避）、役割ごとの使い分け指針（Worker/Memory は fork、Verifier/Researcher は isolated）を提示。同日 Microsoft が Discovery Engine（中核 CLIO）を発表：複数の独立した推論経路が並行して探索し学習を共有、証拠に裏付けられた 1 つの結果に収束、探索継続/戦略切替/モデル切替/人間の専門家関与を自律的に判断——「Agent's Last Exam」ベンチマークで健康 61.6%、物理科学 75.2%、生命科学 64.6% を達成し、新しい有機系レドックスフロー電池の発見を支援したと主張——長時程 Agent が不確実性に対処するもう 1 つのパターン（複数経路探索 vs 単一スレッドの計画・回復）を、科学的発見という垂直領域で具体化した例（詳細は [enterprise-ai-agents](/ja/topics/enterprise-ai-agents)）。
 
 ### [2026-08-27](/ja/today/2026-08-27)（補漏）
 

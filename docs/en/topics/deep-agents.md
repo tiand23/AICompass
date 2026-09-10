@@ -21,6 +21,9 @@ Long-horizon autonomy is the current frontier of agent capability competition, a
 - **Cost reduction via model routing**: most calls in a long-horizon task don't need a frontier model — LangChain's Switchyard benchmark on the Deep Agents eval suite routed 93% of calls to a 30B-class model, with only 7% escalated to a frontier model, cutting overall cost 74% (see [model-efficiency](/en/topics/model-efficiency)).
 - **Capability comes from the compute environment, not tool count**: the monday.com Sidekick case shows that cramming 200+ pre-defined tools into an agent pollutes context and makes it dumber and more expensive; giving the agent a persistent, isolated, code-executing sandbox — not an exhaustive tool catalog — is where the capability ceiling actually lives (see [agent-sandboxes](/en/topics/agent-sandboxes)).
 - **Vertical full-pipeline orchestration with mandatory human checkpoints**: OpenMontage standardizes a research→proposal→script→scene-plan→assets→edit→compose pipeline into long-horizon, multi-stage work with mandatory human approval and decision audit trails at every key node — a complete engineering implementation of "autonomous execution with retained human checkpoints" in a specific vertical (video production).
+- **Context-propagation modes (Forked vs Isolated Subagents)**: LangChain explicitly splits "how much context a subagent gets" in supervisor/subagent architectures into two modes — Isolated (default, subagent gets only the task description, starting from blank context, good for parallel/independent verification) and Forked (`'mode': 'fork'`, subagent inherits the supervisor's current state and conversation history, reusing it via prompt caching to avoid redundant context-gathering); guidance is Worker/Memory agents → fork, Verifier/Researcher agents → isolated.
+- **Multi-path reasoning to handle uncertainty**: Microsoft's Discovery Engine (powered by CLIO) represents a different long-horizon pattern — not a single-threaded plan-execute-recover loop, but multiple independent reasoning paths exploring in parallel and comparing notes, deciding on its own to keep exploring, switch strategy, swap models, or bring in a human expert; delivers comparable benchmark scores on a high-uncertainty vertical task, scientific discovery (see [enterprise-ai-agents](/en/topics/enterprise-ai-agents)).
+- **Managed credentials and per-caller identity**: LangSmith Managed Deep Agents' Connections splits credential management into two independent axes — Owner (agent-shared vs. per-caller) and Type (static secret vs. OAuth) — solving both key rotation for hosted agents and "an action should carry the actual caller's identity, not a generic bot identity," without hand-building an OAuth callback pipeline.
 
 ## Related Technologies
 
@@ -36,6 +39,14 @@ Long-horizon autonomy is the current frontier of agent capability competition, a
 - [How We Benchmark Deep Agents (LangChain Blog)](https://www.langchain.com/blog/)
 
 ## Timeline
+
+### [2026-09-09](/en/today/2026-09-09)
+
+LangChain launches Connections: LangSmith Managed Deep Agents adds a managed-credential system, named credentials stored in the workspace (not in code/`.env`), retrieved at runtime via `connections.get("<slug>", {"type": "agent"|"user"})`; two independent axes — Owner (agent-shared vs. per-caller) and Credential Type (static secret vs. OAuth) — removing the need to hand-build an OAuth callback route/token store/refresh logic, solving both key rotation and "an action should carry the actual caller's identity" for hosted agents.
+
+### [2026-09-08](/en/today/2026-09-08)
+
+LangChain explicitly splits multi-agent context propagation in Deep Agents into two modes: Isolated (default, subagent starts from blank context, good for parallel verification/independent research) and the new Forked (`'mode': 'fork'`, inherits the supervisor's current state and conversation history via prompt caching, avoiding redundant context-gathering), with role-based guidance (Worker/Memory → fork, Verifier/Researcher → isolated). Same day, Microsoft launches Discovery Engine (powered by CLIO): multiple independent reasoning paths explore in parallel, compare notes, and converge on one evidence-backed result, deciding on its own to keep exploring, switch strategy, swap models, or bring in a human expert — scoring 61.6% on health, 75.2% on physical sciences, and 64.6% on life sciences on the "Agent's Last Exam" benchmark, and claiming to have helped discover a novel organic redox flow battery — another pattern (multi-path exploration vs. single-threaded plan-and-recover) for handling uncertainty in long-horizon agents, applied to the scientific-discovery vertical (see [enterprise-ai-agents](/en/topics/enterprise-ai-agents)).
 
 ### [2026-08-27](/en/today/2026-08-27) (backfilled)
 
