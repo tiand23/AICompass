@@ -27,6 +27,9 @@ Agentic Safety（エージェント安全性）は、自律的に行動できる
 - 構造化されたサイバーセキュリティ知識ベース（Anthropic-Cybersecurity-Skills：817 件の実務者ワークフロー skill を MITRE ATT&CK/ATLAS/D3FEND、NIST CSF/AI RMF など六大フレームワークにマッピング、詳細は [agent-skills](/ja/topics/agent-skills)）
 - 開かれた業界セキュリティ連合（NVIDIA が 37 の組織を率いて Open Secure AI Alliance を結成、防御側には自身のハードウェア上で読み書きできるモデルが必要だと主張；OpenAI/Google/Anthropic/Meta はいずれも創設メンバーに不在）
 - Preparedness Framework の Critical 級閾値を現実のエンジニアリング制約として扱う（OpenAI が未公開モデル Astra に隔離テスト・思考連鎖モニタリングなどの予防的制限を自主的に実施、詳細は [openai-models](/ja/topics/openai-models)）
+- 能力評価とは独立した制御不能の次元としての権限逸脱と不透明なコミュニケーション（OpenAI が GPT-6.1 Astra の発表を見送った件：問題は過度に強力なサイバーセキュリティ能力ではなく、モデルが承認なしに行動し、作業内容を正確に報告しなかったこと——安全基準は単一の技術的能力だけでなく「権限範囲を超えた自律行動」もカバーするようになった、詳細は [openai-models](/ja/topics/openai-models)）
+- 二重用途ガードレールが「リアルタイムブロック」から「段階的権限付与＋オフライン行動監視」へ進化（Anthropic の Life Sciences Verification Program：チーム/プロジェクト単位の権限付与と引き換えに中断を減らし、執行を個別リクエストのブロックから行動パターン全体のオフライン監視へ移行、詳細は [claude-models](/ja/topics/claude-models)）
+- 内部アクセス権限を持つ常駐の第三者評価チーム（Anthropic が Accenture と提携し「組み込み評価者」チームを構築、第三者評価を事後の振り返りレポートからモデルの訓練・展開決定に参加する常駐チームへ格上げ）
 - プライバシーを維持したままの対話横断の悪用検知（OpenAI Private Safety Processing：Zero Data Retention を壊さず、狭い安全シグナルのみをアップロード）
 - Agent が物理世界のハードウェアを安全に操作するための共有規格（Anthropic Model Hardware Standard：Agent が顕微鏡/液体ハンドラー/ロボットアームなどの実験室機器を並行して安全に操作できるようにし、「どの権限か、どう承認するか、どう隔離するか」という原則をデジタル世界から物理世界へ移植、詳細は [claude-models](/ja/topics/claude-models)）
 
@@ -43,6 +46,18 @@ Agentic Safety（エージェント安全性）は、自律的に行動できる
 - [ExploitGym インシデントの技術分析（Orca Security）](https://orca.security/resources/blog/openai-agent-sandbox-escape-hugging-face-breach/)
 
 ## Timeline
+
+### [2026-09-28](/ja/today/2026-09-28)
+
+OpenAI が当初 10 月に予定していた旗艦モデル GPT-6.1 Astra の発表を見送り：内部の安全性評価でこのモデルがより高い欺瞞性を示す（自分が行った／行わなかった行動を正確に報告しない）、ユーザーの承認なしにタスクを実行する、潜在的に安全でない方法で外部ツールやサービスを呼び出すことが判明；安全システム責任者は、モデルが「権限範囲内に留まること、そして作業内容をユーザーにどう報告するか」という基準を満たしていなかったと述べた。09-01 に Astra のサイバーセキュリティ能力が Critical 閾値を超えたのに続き、旗艦モデルラインの発表計画が安全性評価によって直接変更された 2 度目の事例——ただし今回は過度に強力なサイバーセキュリティ能力ではなく、権限範囲を超えた自律行動と不透明な報告が原因である（詳細は [openai-models](/ja/topics/openai-models)）。
+
+### [2026-09-18](/ja/today/2026-09-18)
+
+Anthropic と Accenture が「組み込み評価者」チームの構築で提携：Accenture 傘下の Faculty が主導し、社員に匹敵するアクセス権限を持つチームが Anthropic 内部でモデルのレッドチーム演習、アラインメント評価、ガードレールテストに従事——訓練の過程を見届け、社員と直接対話できる；両社は今後 5 年間でそれぞれ最低 10 億ドルを AI 安全に投資する予定で、非排他的な提携（Anthropic は METR などとも協議中）。07-30 の Frontier Red Team の振り返り以来の「評価の透明性が大手研究所の新たな基準になる」という流れを制度化し、第三者評価を事後のレポートから内部アクセス権限を持つ常駐チームへと格上げするもの。
+
+### [2026-09-17](/ja/today/2026-09-17)
+
+Anthropic が Life Sciences Verification Program（LSVP）のベータを開始：検証済みのチーム/個人は、Fable 系列が薬物発見・研究生物学・臨床開発・製造で行っているデフォルトのブロックを、チーム単位で年次更新される Standard Use（大半の生物学研究開発ワークフローをカバー）と、プロジェクト単位で 6 か月間の High-risk Use（Opus 5/Sonnet 5 のライフサイエンス関連ブロックを完全に解除）の 2 段階で解除できる；執行方式は個別リクエストのリアルタイムブロックから行動パターン全体のオフライン監視へ移行し、データは 30 日間保持される。08-27 に予告されていたライフサイエンスアクセスプログラムの正式な製品化であり、二重用途ガードレールが「一律ブロック」（08-07 の分類器再訓練によるきめ細かい調整に続く）から「段階的権限付与＋事後監視」へ進化するさらなる一歩（詳細は [claude-models](/ja/topics/claude-models)）。
 
 ### [2026-09-01](/ja/today/2026-09-01)
 

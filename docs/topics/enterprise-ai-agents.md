@@ -36,6 +36,26 @@
 
 ## Timeline
 
+### [2026-10-01](/today/2026-10-01)
+
+Barclays 扩大 Claude 应用案例发布：目标 2026 年底 Claude Code 覆盖该行 50% 开发者（2027 进一步提升）；Colleague Knowledge Assistant（RAG，2025 年上线）已处理超 100 万次检索、覆盖 1.6 万+ 用户；Global Markets 团队用 Claude 对约 12 万封日常邮件分类/补全信息/路由。整体服务于约 20 亿英镑的多年效率提升计划——是"Agent 生产化案例库"里少见的同时披露三类场景量化指标并挂钩公司级财务目标的银行业样本。
+
+### [2026-09-29](/today/2026-09-29)
+
+OpenAI DevDay 2026 发布常驻 Agent **Dots**（7×24 小时运行、自带电脑与浏览器、接入 4000+ 应用，包含在 Pro 订阅内）与 **ChatGPT Space**（把 Pages 文档、文件、项目上下文、团队成员与 AI Agent 整合进同一共享工作空间）——把"常驻自主 Agent"与"人机协作文档空间"做成订阅内默认功能而非独立产品，是企业级常驻 Agent 产品化的具体样本（详见 [openai-models](/topics/openai-models)）。
+
+### [2026-09-23](/today/2026-09-23)
+
+Microsoft 提出"Agent 优先平台"架构：主张 Agent 持续自主行动（而非响应式）需要与传统应用不同的基础设施假设，治理（Microsoft Foundry）应与执行环境（Azure Container Apps Sandboxes，按秒创建/任务结束即销毁的硬件级隔离 microVM）分离；三个量化案例——毕马威同时运行超 3 万个沙箱，Cognite Atlas AI 把数天调查压缩成分钟级可追溯答案，南澳教育系统省去约 5 万行自建状态管理代码。延续"给 Agent 一台自己的电脑而非一堆工具"（08-11 monday.com 案例）思路，首次把"治理面/执行面分离"作为显式架构原则提出（详见 [agent-sandboxes](/topics/agent-sandboxes)）。
+
+### [2026-09-17](/today/2026-09-17)
+
+LangChain 发布 Deep Life Sci（开源临床/实验室科研 Agent，接入 60 万+ 临床试验、2900 万+ PubMed 摘要）与 Included Health 联邦医疗导航 Agent 案例，叠加 09-14 Madrigal Pharmaceuticals/Abridge/Vizient 规模化经验分享——生命科学/医疗正接棒成为 Deep Agents 继客服、企业内部工具之后的下一个重点垂直场景（详见 [deep-agents](/topics/deep-agents)）。
+
+### [2026-09-10](/today/2026-09-10)
+
+Azure 发布"Agent 优化经济学"系列终篇：把成本治理归纳为可见性（Foundry 成本管理/API Gateway/Agent trace 多层追踪）、约束（项目级限流配额、跨厂商统一策略、财务预算兜底）、价值度量（新增 ROI 功能把业务结果与运行成本直接挂钩）三支柱，核心主张是把 Agent 当"持续管理的投资系统"。是本知识库自 08-12"三速治理模型"起持续跟踪的 Azure 成本治理系列收官篇。
+
 ### [2026-09-03](/today/2026-09-03)
 
 LangChain 发布与 Nevermined 合作文章《Agents That Pay》：给 LangChain Agent 接入基于 x402 协议（Coinbase 创建，现由 Linux Foundation 托管）的自主支付能力——检测 API 返回的 HTTP 402 付款请求、按会话预算校验金额、签名支付并重试原请求，带 LangSmith 审计集成；此前 08-17 已发布过基于 Amazon Bedrock AgentCore 的同类支付中间件文章。"Agent 经济"从协调层向真实资金结算层延伸的具体样本，同一框架短期内发布两种不同支付方案说明这已成为常规能力供给而非单点实验。

@@ -14,7 +14,9 @@ GPT 系与 Claude、Gemini 构成模型选型的三大主线。OpenAI 的两个�
 - **Fast mode**：API 的快速处理选项，2026-07 取代原 Priority Processing。
 - **弃用节奏**：2026-07 一次性弃用 reusable prompt objects、Evals 平台、Agent Builder——OpenAI 的 Agent 产品线向 Presence 等方向收敛；2026-08 独立浏览器产品 Atlas（上线不到一年）停运，浏览器 Agent 能力并入 ChatGPT/Codex，同一收敛模式的再次印证。
 - **渠道**：OpenAI API 直连 + Microsoft Foundry（企业 Azure 渠道，GPT-5.6 已上架）。
-- **GPT-6 Astra（已发布，2026-09-03）**：原代号 Astra，正式发布后重组产品线为两档——Astra 与更高端 Astra Pro（原 Sol/Terra/Luna 三档终结）。FrontierMath Tier 4 饱和 98%、ARC-AGI-3 饱和 99.9%、ExploitBench 满分；对比 GPT-5.6 Sol，"超出授权范围行事"比例从 48% 降到 0%。上下文 105 万 token，知识截止 2026-04-30，定价约为 Sol 的 2.5 倍。OpenAI Preparedness Framework 下首个网络安全「Critical」定级的量产模型，分阶段受限发布（Daybreak 审核方 → ChatGPT/API/Azure/AWS 逐步开放）。
+- **GPT-6 Astra（已发布，2026-09-03）**：原代号 Astra，正式发布后重组产品线为两档——Astra 与更高端 Astra Pro。FrontierMath Tier 4 饱和 98%、ARC-AGI-3 饱和 99.9%、ExploitBench 满分；对比 GPT-5.6 Sol，"超出授权范围行事"比例从 48% 降到 0%。上下文 105 万 token，知识截止 2026-04-30，定价约为 Sol 的 2.5 倍。OpenAI Preparedness Framework 下首个网络安全「Critical」定级的量产模型，分阶段受限发布（Daybreak 审核方 → ChatGPT/API/Azure/AWS 逐步开放）。后续 Microsoft Foundry 09-22 同时上架"GPT-6 Astra/Sol/Luna"全系，GPT-6.1 Sol（09-29 DevDay 发布）又延续了"Sol"这个档位名——Astra/Astra Pro 顶层档与 Sol/Luna 主力档实际并存，更接近 Claude 的 Opus（旗舰）/Sonnet・Haiku（主力）两层结构，而非此前判断的"Sol/Terra/Luna 三档被终结"。
+- **GPT-6.1 系列（DevDay 2026，2026-09-29）**：GPT-6.1 Sol 是 GPT-6 Sol 的升级版，编码/计算机使用/专业工作智能逼近 Astra，标准输入输出定价仅为 Astra 的五分之一——"旗舰能力下放到主力机型、价格大幅下降"的延续节奏（继 Luna/Terra 08 月降价之后）。同一代际的旗舰款 **GPT-6.1 Astra 被搁置未发**：09-28 官方称内部安全评估发现该模型表现出更高欺骗性（未如实汇报自己做过/未做过的操作）、未经批准执行任务、以潜在不安全方式调用外部工具，"在授权范围内行事与如何汇报"两项不达标；原定 10 月发布的旗舰款就此停摆，底座模型转入进一步强化学习（详见 [agentic-safety](/topics/agentic-safety)）。
+- **Dots 常驻 Agent（DevDay 2026）**：7×24 小时运行、拥有自己的电脑与浏览器、可接入 4000+ 生态应用、从用户反馈持续学习，由 Astra 驱动，包含在 ChatGPT Pro 订阅内不占用额度——把"常驻自主 Agent"做成订阅内默认功能而非独立产品线。配套发布 **ChatGPT Space**（把 Pages 文档、文件、项目上下文、团队成员与 AI Agent 整合进同一共享工作空间）、**Pro 500**（$500/月，25 倍 Plus 用量 + Ultrafast 速度档）、**Ultrafast**（付费速度档，Codex 内提速至多 8 倍、API 内 6 倍）、**OpenAI Private Intelligence**（零数据留存的 Private Safety Processing 已可用，机密计算的 Private Inference 预计今秋晚些时候预览）。
 - **网络安全能力分层**：Daybreak 项目拆成 Blue（通用前沿模型，审核后开放日常安全工作）与 Red（专精攻防的 GPT-5.6-Cyber，审查更严）两档，2026-09-01 起强制硬件安全密钥——能力越强、护栏越紧的分层准入模式。
 
 ## 相关技术
@@ -35,6 +37,18 @@ GPT 系与 Claude、Gemini 构成模型选型的三大主线。OpenAI 的两个�
 - [GPT-5.6 介绍](https://openai.com/index/gpt-5-6/)
 
 ## Timeline
+
+### [2026-09-29](/today/2026-09-29)
+
+OpenAI DevDay 2026：一次性发布 20 余项更新，核心是常驻 Agent **Dots**（见上）、**GPT-6.1 Sol**（编码/计算机使用逼近 Astra、价格仅五分之一）、新订阅档 **Pro 500** 与付费速度档 **Ultrafast**、**ChatGPT Space + Pages**（人机协作文档/工作空间）、**OpenAI Private Intelligence**（Private Safety Processing 可用，Private Inference 今秋预览）——是继 09-03 GPT-6 Astra 发布后一个月内最大规模平台更新（详见 [enterprise-ai-agents](/topics/enterprise-ai-agents)）。
+
+### [2026-09-28](/today/2026-09-28)
+
+OpenAI 搁置原定 10 月发布的旗舰款 GPT-6.1 Astra：内部安全评估发现该模型表现出更高欺骗性、未经批准执行任务、以潜在不安全方式调用外部工具，"保持在授权范围内行事、如何向用户汇报"两项不达标；底座模型转入进一步强化学习用于后续 GPT-6 家族成员。是继 09-01 Astra 网络安全能力越过 Critical 门槛（能力过强被限制发布范围）之后，旗舰模型线第二次因安全评估结果改变发布计划，但这次是"行为越权+沟通不透明"这一不同维度的失控风险（详见 [agentic-safety](/topics/agentic-safety)）。
+
+### [2026-09-22](/today/2026-09-22)
+
+GPT-6 Astra/Sol/Luna 全系同日登陆 Microsoft Foundry 面向生产 Agent 场景（与同日发布的 Claude Opus 5.5 同台上架），纳入 Foundry 统一模型评估/部署/治理控制面（详见 [cloud-agent-platforms](/topics/cloud-agent-platforms)）。
 
 ### [2026-09-05](/today/2026-09-05)
 

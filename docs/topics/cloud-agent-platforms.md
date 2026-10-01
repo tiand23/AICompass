@@ -37,6 +37,14 @@
 
 ## Timeline
 
+### [2026-09-24](/today/2026-09-24)
+
+Microsoft Foundry 新增语音 Agent 公测（亚秒级延迟、80+ 语言/140+ 地区，可部署到 Web/Teams/Teams Phone/Twilio，支持 prompt 式与托管两种形态）、扩展模型选择（新增 GPT-6 系列 SKU 与 Claude Opus 5.5）、持续优化能力（用生产 trace 针对质量/延迟/成本持续调优 Agent）——语音 Agent 补上对标 Google Gemini Live 的最后一块拼图（详见 [voice-agents](/topics/voice-agents)）。同日 LangChain 发布 LangSmith 五项更新：Engine v2（为自动诊断 Agent 故障的 Engine 新增红队测试与自动化测试）、**Managed Deep Agents v0.8**（新增身份认证、记忆管理、消息渠道，紧接 09-09 Connections 之后的又一次托管运行时扩充）、Trajectories（Agent 会话全过程可读视图）、LangSmith Fine-Tuning（平台内置微调）、LangSmith Custom Apps（围绕 Agent 数据构建自定义界面）——LangSmith 正从工具集合向一体化 Agent 生产平台收敛（详见 [deep-agents](/topics/deep-agents)）。
+
+### [2026-09-22](/today/2026-09-22)
+
+GPT-6 Astra/Sol/Luna 全系与刚发布的 Claude Opus 5.5 同日登陆 Microsoft Foundry 面向生产 Agent 场景，纳入统一模型评估/部署/治理控制面——新模型发布当天即同步上架的间隔正在缩短，两条模型线同台可直接对比选型（详见 [openai-models](/topics/openai-models) ・ [claude-models](/topics/claude-models)）。
+
 ### [2026-09-05](/today/2026-09-05)
 
 Microsoft Foundry 上线 GPT-6 Astra（09-03 发布）：通过 Limited Access Program 分批开放，目前只有 Global 与美国数据区可购买，**没有欧盟数据区**；定价 Global 标准档 $10～$75/百万 token（按上下文长度分档），美国区有溢价；Standard（按量付费）与 Provisioned Throughput（专属吞吐量）两种购买方式；集成 Microsoft Entra 身份管理、加密、专用网络与全量操作日志。延续 08-31 xAI Grok 4.6 接入的"多厂商模型集市"策略，但这次首次伴随明确的地域限制和分批准入——Critical 级网络安全定级直接传导进了云厂商侧的准入策略（详见 [openai-models](/topics/openai-models)）。

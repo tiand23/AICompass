@@ -37,6 +37,14 @@ The enterprise agent platform market entered consolidation in 2026 — the need 
 
 ## Timeline
 
+### [2026-09-24](/en/today/2026-09-24)
+
+Microsoft Foundry adds voice agents in public preview (sub-second latency, 80+ languages/140+ locales, deployable to web/Teams/Teams Phone/Twilio, supporting both prompt-based and hosted agent forms), expanded model choice (new GPT-6-series SKUs and Claude Opus 5.5), and continuous optimization (tuning agents from production traces against quality/latency/cost) — voice agents fill the last piece of Foundry's puzzle to compete with Google Gemini Live (see [voice-agents](/en/topics/voice-agents)). Same day, LangChain ships five LangSmith updates: **Engine v2** (red-teaming and automated testing added to the agent-failure-diagnosis Engine), **Managed Deep Agents v0.8** (adds authentication, memory management, and messaging channels — right on the heels of 09-09's Connections), **Trajectories** (a readable view of an agent session's full run), **LangSmith Fine-Tuning**, and **LangSmith Custom Apps** — LangSmith is converging from a collection of tools toward an integrated agent production platform (see [deep-agents](/en/topics/deep-agents)).
+
+### [2026-09-22](/en/today/2026-09-22)
+
+The full GPT-6 Astra/Sol/Luna lineup and the just-launched Claude Opus 5.5 arrive on Microsoft Foundry the same day for production agent scenarios, folded into the unified model evaluation/deployment/governance control plane — the lag between a model vendor's release cadence and a cloud vendor's listing cadence keeps shrinking, with the two model lines now directly comparable side by side (see [openai-models](/en/topics/openai-models) ・ [claude-models](/en/topics/claude-models)).
+
 ### [2026-09-05](/en/today/2026-09-05)
 
 Microsoft Foundry adds GPT-6 Astra (launched 09-03): rolling out through a Limited Access Program, available only in the Global and US data zones (**no EU data zone**); Global standard-tier pricing runs $10-$75 per million tokens (tiered by context length), with a premium in the US zone; both Standard (pay-as-you-go) and Provisioned Throughput (dedicated capacity) purchase options; integrates Microsoft Entra identity management, encryption, private networking, and full activity logging. This continues the "multi-vendor model marketplace" strategy following 08-31's xAI Grok 4.6 addition, but this time comes with explicit geographic restrictions and staged access — the Critical-level cybersecurity rating is flowing directly into the cloud vendor's own access policy, not just OpenAI's release cadence (see [openai-models](/en/topics/openai-models)).

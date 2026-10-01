@@ -11,8 +11,9 @@ Claude is one of the mainstream model choices for agent and coding workloads. Ev
 ## Core Concepts
 
 - **Effort levels**: five levels (`low` / `medium` / `high` / `xhigh` / `max`), the primary steering control from Opus 5 onward, replacing much manual prompt tuning; `max` is for capability-critical work.
-- **Thinking**: extended thinking. On by default on Opus 5; cannot be disabled at effort `xhigh`/`max` (returns 400).
-- **Context & output**: Opus 5 supports a 1M-token context window (default and maximum) and 128k max output.
+- **Thinking**: extended thinking. On by default on Opus 5; cannot be disabled at effort `xhigh`/`max` (returns 400); always on and fully non-disableable from Opus 5.5; from Sonnet 5.5, effort `high` and below must use `thinking: {"type": "between_tools"}` in place of the old `"disabled"` — "adaptive thinking on by default, not fully disableable" is spreading from the Opus tier into a unified policy across both Opus and Sonnet.
+- **Context & output**: Opus 5 supports a 1M-token context window (default and maximum) and 128k max output; Opus 5.5 keeps the same spec.
+- **Cross-account isolation**: from Sonnet 5.5, thinking blocks only work within the account that produced them or a linked account — a new boundary to watch for multi-tenant/multi-account orchestration.
 - **Fast mode**: runs Opus-tier models with faster output (no downgrade to a smaller model); supported models change across generations (removed for 4.7 — use 4.8 / 5).
 - **Local-session compliance auditing**: the Compliance API can retrieve full transcripts of Cowork/Claude Code sessions running on a user's own machine (`GET /v1/compliance/apps/sessions/local` and related endpoints), extending enterprise agent observability from "pre-inference blocking" (Inference Hooks) to "after-the-fact audit."
 - **Introductory price made permanent**: Sonnet 5's introductory pricing ($2/$10 per MTok) is now the long-term standard price, with the planned increase cancelled — a pricing strategy that trades a stable price for a long-term usage commitment.
@@ -35,6 +36,22 @@ Claude is one of the mainstream model choices for agent and coding workloads. Ev
 - [Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)
 
 ## Timeline
+
+### [2026-09-30](/en/today/2026-09-30)
+
+Claude Sonnet 4.5 (`claude-sonnet-4-5-20250929`) is announced for retirement, service ending 2026-11-30, with migration recommended to the just-released Sonnet 5.5 — a two-month migration window typical of recent model retirements.
+
+### [2026-09-28](/en/today/2026-09-28)
+
+Claude Sonnet 5.5 launches: at effort `high` and below, use `thinking: {"type": "between_tools"}` in place of the old `"disabled"`; the `tool_choice` types `any`/`tool` now return 400; the legacy computer-use tool `computer_20251124` is no longer accepted on the Claude API/Google Cloud; the Advisor tool no longer accepts Opus 4.8, 4.7, or Sonnet 5 as advisors; thinking blocks are scoped to the account that produced them or a linked account. Follows Opus 5.5 on 09-22, completing a same-generation refresh of both the Opus and Sonnet tiers within one week.
+
+### [2026-09-22](/en/today/2026-09-22)
+
+Claude Opus 5.5 launches: a default-and-maximum 1M-token context window, 128K max output, adaptive thinking always on and non-disableable (`thinking: disabled` returns 400); priced at $4/$20 per million tokens; available simultaneously via the Claude API, Amazon Bedrock, Claude Platform on AWS/Google Cloud, and Microsoft Foundry. Breaking changes: `tool_choice` types `any`/`tool` now return 400; the computer-use tool requires the upgraded `computer_toolset_20260801`. Same day: Fast Mode research preview (Opus 5.5 only) and Inline Tools beta (tools definable mid-conversation in a system message), and the same-day arrival on Microsoft Foundry (see [cloud-agent-platforms](/en/topics/cloud-agent-platforms)).
+
+### [2026-09-17](/en/today/2026-09-17)
+
+Anthropic opens the Life Sciences Verification Program (LSVP) beta: verified teams can lift Fable-series default blocks on drug discovery/research biology/clinical development/manufacturing, through a team-wide annual Standard Use tier and a project-scoped 6-month High-risk Use tier (removing all life-science blocking entirely for Opus 5/Sonnet 5); enforcement shifts from real-time per-request blocking to offline behavioral-pattern monitoring, with data retained 30 days — the formal productization of the life-sciences access program previewed on 08-27 (see [agentic-safety](/en/topics/agentic-safety)).
 
 ### [2026-09-01](/en/today/2026-09-01)
 

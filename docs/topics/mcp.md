@@ -14,6 +14,7 @@ MCP（Model Context Protocol）：Anthropic 提出的开放协议，标准化 AI
 - **传输**：本地 stdio 与远程 HTTP（可挂鉴权），远程 MCP 是企业集成的主形态。
 - **工具发现与按需加载**：客户端可搜索/延迟加载工具 schema，缓解大工具集的上下文占用。
 - **安全面**：MCP Server 是新的攻击面——工具描述注入、越权访问；企业部署要做 server 白名单与权限收敛。
+- **溯源正确性是独立的核查维度**：MCP Agent 拼接多个工具调用结果作答时，传统事实核查方法（RAGAS faithfulness、MiniCheck 等）只判断"论断是否被证据池某处支持"，不判断"引用的具体来源是否就是那个支持它的来源"——这类"跨来源混淆"错误会被放过，需要能对齐"声称来源"与"实际路由来源"的专门核查（ProvenanceGuard 方案，详见 [agent-evaluation](/topics/agent-evaluation)）。
 
 ## 相关技术
 
@@ -33,6 +34,10 @@ MCP（Model Context Protocol）：Anthropic 提出的开放协议，标准化 AI
 - [六大 Agent 协议指南（MindStudio）](https://www.mindstudio.ai/blog/six-agent-protocols-ai-builders-2026)
 
 ## Timeline
+
+### [2026-09-29](/today/2026-09-29)
+
+论文提出 ProvenanceGuard：消费带稳定工具 ID/来源 ID/原始输出的 MCP 调用记录，把答案拆解成原子论断，逐条路由到对应来源证据核查支持度，再比对"声称的来源"与"实际路由到的来源"是否一致，输出逐条判定与整体放行/拦截结论——第一个把"引用对不对源"系统化为独立核查维度的方案，MCP 普及会放大这个此前被忽视的盲区（详见 [agent-evaluation](/topics/agent-evaluation)）。
 
 ### [2026-08-29](/today/2026-08-29)
 

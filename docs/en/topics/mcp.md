@@ -14,6 +14,7 @@ Before MCP, every AI app × every tool needed its own glue code (the M×N proble
 - **Transports**: local stdio and remote HTTP (with auth) — remote MCP is the main enterprise integration form.
 - **Tool discovery and lazy loading**: clients can search and defer-load tool schemas, easing context pressure from large tool sets.
 - **Security surface**: MCP servers are a new attack surface — tool-description injection, privilege escalation; enterprise deployments need server allowlists and permission narrowing.
+- **Source correctness is an independent verification dimension**: when an MCP agent stitches an answer together from multiple tool calls, traditional fact-checking methods (RAGAS faithfulness, MiniCheck, etc.) only ask "is the claim supported somewhere in the evidence pool," not "does the output's cited source actually support it" — this "cross-source conflation" failure slips through, requiring dedicated verification that aligns the claimed source against the actually-routed one (the ProvenanceGuard approach; see [agent-evaluation](/en/topics/agent-evaluation)).
 
 ## Related Technologies
 
@@ -33,6 +34,10 @@ Before MCP, every AI app × every tool needed its own glue code (the M×N proble
 - [Six agent protocols guide (MindStudio)](https://www.mindstudio.ai/blog/six-agent-protocols-ai-builders-2026)
 
 ## Timeline
+
+### [2026-09-29](/en/today/2026-09-29)
+
+A paper proposes ProvenanceGuard: consuming captured MCP traces with stable tool IDs, source IDs, and raw outputs, decomposing answers into atomic claims, routing each to its specific source evidence, checking support, and comparing the claimed attribution against the actually-routed source, returning per-claim verdicts plus an overall allow/block decision — the first approach to systematize "is the citation correct" as an independent verification dimension; this blind spot will grow as MCP agents spread (see [agent-evaluation](/en/topics/agent-evaluation)).
 
 ### [2026-08-29](/en/today/2026-08-29)
 

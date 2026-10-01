@@ -40,6 +40,14 @@ Deep Agents は LangChain が提唱するコンセプトとプロダクトの方
 
 ## Timeline
 
+### [2026-09-24](/ja/today/2026-09-24)
+
+LangSmith Managed Deep Agents v0.8 発表：認証、記憶管理、メッセージチャネルを追加——09-09 の Connections に続く、ホスト型ランタイム機能のさらなる拡充で、同日の Engine v2（レッドチーム演習）、Trajectories（読める形のセッションビュー）、Fine-Tuning、Custom Apps と合わせた LangSmith の一括更新の一部（詳細は [cloud-agent-platforms](/ja/topics/cloud-agent-platforms)）。
+
+### [2026-09-17](/ja/today/2026-09-17)
+
+LangChain が Deep Life Sci を発表：Deep Agents harness を基盤としたオープンソースの臨床/実験室研究 Agent で、60 万件以上の ClinicalTrials.gov 試験、2,900 万件の PubMed 抄録、1,200 万件の PubMed Central 全文にアクセスし、PDF・画像・表・RIS ファイル・SMILES/FASTA 配列・RNA-seq・プロテオミクスデータに対応、サンドボックス化されたサブエージェントが検索/レビュー/分析を分担、LangSmith が検索・コード実行・文書レビュー・サブエージェントのルーティング・最終回答までの全経路を記録しデバッグと監査に活用できる；オープンソースのため独自データ・モデルの差し替え・カスタムガードレールに対応できる。同日 Included Health が Deep Agents + LangGraph で構築した連合型医療ナビゲーション Agent の事例を公開——09-14 の Madrigal Pharmaceuticals/Abridge/Vizient のスケーリング事例に続くもので、カスタマーサポートや社内業務ツールに続き、ヘルスケア/ライフサイエンスが次の重点垂直領域のバトンを受け取りつつあり、「オープンな汎用 harness + 垂直領域への深いカスタマイズ」というパターン（動画制作の OpenMontage、法律の Harvey LAB に続く）を継続している（詳細は [enterprise-ai-agents](/ja/topics/enterprise-ai-agents)）。
+
 ### [2026-09-09](/ja/today/2026-09-09)
 
 LangChain が Connections をローンチ：LangSmith Managed Deep Agents に管理型認証情報システムを追加、名前付き認証情報をワークスペースに保存（コードや `.env` には置かない）、実行時に `connections.get("<slug>", {"type": "agent"|"user"})` で取得；所有者（Agent 共有 vs 呼び出し元ごと）と認証情報タイプ（静的シークレット vs OAuth）という 2 つの独立した軸を持ち、OAuth コールバックルート/トークンストア/リフレッシュロジックの手作りが不要に——ホスト型 Agent のキーローテーションと「操作は実際の呼び出し元の ID を伴うべき」という 2 つの現実的な課題を解決。

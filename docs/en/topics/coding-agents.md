@@ -45,6 +45,10 @@ Terminal coding agents are the main arena of AI coding tool competition, and the
 
 ## Timeline
 
+### [2026-09-29](/en/today/2026-09-29)
+
+H Company open-sources Holo4 on Hugging Face: a generalist computer-use agent model (27B dense / 35B-A3B MoE, plus the smaller Holotron4 Nano), where a single model decides on its own, at each step, whether to click/type on screen, write and run its own code, or call MCP/API tools. On OSWorld 2.0, the 27B variant scores 61.7% (versus 81.8% for Claude Opus 5.5), trading one to two orders of magnitude fewer parameters and cost for near-usable capability; weights published in BF16, FP8, NVFP4, and 4-bit GGUF.
+
 ### [2026-09-03](/en/today/2026-09-03)
 
 atlas arrives (newly trending on GitHub, ~2,900 stars total): a source-control system for multi-agent coding collaboration — every agent run produces a checkpoint, with commits linked back to the session that produced them (prompt, tool calls, reasoning trace); supports Claude Code, Codex and other agents working in parallel on the same codebase with shared memory, so switching agents mid-task doesn't mean starting over. Fills the previously-open infrastructure gap of "agent decision trails that are queryable and replayable."

@@ -40,6 +40,14 @@ Long-horizon autonomy is the current frontier of agent capability competition, a
 
 ## Timeline
 
+### [2026-09-24](/en/today/2026-09-24)
+
+LangSmith Managed Deep Agents v0.8 launches: adds authentication, memory management, and messaging channels — another hosted-runtime capability expansion right after 09-09's Connections, part of a bundled LangSmith update wave alongside the same day's Engine v2 (red-teaming), Trajectories (readable session view), Fine-Tuning, and Custom Apps (see [cloud-agent-platforms](/en/topics/cloud-agent-platforms)).
+
+### [2026-09-17](/en/today/2026-09-17)
+
+LangChain launches Deep Life Sci: an open-source clinical/lab research agent built on the Deep Agents harness, drawing on 600K+ ClinicalTrials.gov studies, 29M PubMed abstracts, and 12M PubMed Central full-text articles, accepting PDFs, images, tables, RIS files, SMILES/FASTA sequences, RNA-seq, and proteomics data, with sandboxed subagents dividing search/review/analysis and LangSmith logging the full chain — search, code execution, document review, subagent routing, final answer — for debugging and audit; being open source, it can be customized with proprietary data, swapped models, and custom guardrails. The same day, Included Health publishes a case study on a federated healthcare-navigation agent built with Deep Agents + LangGraph, on top of 09-14's scaling lessons from Madrigal Pharmaceuticals/Abridge/Vizient — healthcare/life sciences is taking the baton as the next major vertical, after customer service and internal enterprise tooling, continuing the "open general harness + deep vertical customization" pattern (following OpenMontage for video production and Harvey LAB for legal) (see [enterprise-ai-agents](/en/topics/enterprise-ai-agents)).
+
 ### [2026-09-09](/en/today/2026-09-09)
 
 LangChain launches Connections: LangSmith Managed Deep Agents adds a managed-credential system, named credentials stored in the workspace (not in code/`.env`), retrieved at runtime via `connections.get("<slug>", {"type": "agent"|"user"})`; two independent axes — Owner (agent-shared vs. per-caller) and Credential Type (static secret vs. OAuth) — removing the need to hand-build an OAuth callback route/token store/refresh logic, solving both key rotation and "an action should carry the actual caller's identity" for hosted agents.

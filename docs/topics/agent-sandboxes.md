@@ -36,6 +36,10 @@ Agent 一旦要"自己跑代码验证结果"（而不只是生成代码建议）
 
 ## Timeline
 
+### [2026-09-23](/today/2026-09-23)
+
+Microsoft 提出"Agent 优先平台"架构：持续自主行动的 Agent 需要与响应式传统应用不同的基础设施假设，主张把治理（Microsoft Foundry）与执行环境（Azure Container Apps Sandboxes：按秒创建、任务结束即销毁的硬件级隔离 microVM）分离，用限定权限 + 短生命周期控制故障/越权的影响半径；三个量化案例——毕马威同时运行超 3 万个沙箱，Cognite Atlas AI 把数天调查压缩成分钟级可追溯答案，南澳教育系统省去约 5 万行自建状态管理代码。延续"给 Agent 一台自己的电脑而非一堆工具"思路，首次把"治理面/执行面分离"明确为 Agent 平台架构原则（详见 [enterprise-ai-agents](/topics/enterprise-ai-agents)）。
+
 ### [2026-08-19](/today/2026-08-19)（补漏）
 
 Claude API 发布浏览器工具（`browser_toolset_20260801`）：不同于操作整个桌面的计算机工具，它只在浏览器视口内工作，读取页面无障碍树/元素/表单而非纯截图+点击，支持元素定位、表单填写、标签管理与可选文件上传——"全桌面控制"与"浏览器内操作"分离，是权限最小化在工具设计层的具体体现。同日计算机工具转正式 GA（详见 [claude-models](/topics/claude-models)）。

@@ -40,6 +40,9 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 | scientific-agent-skills | 新登場（2026-08-31 Trending 入り、累計約 3〜4 万スター） | 科学研究向け検証済み skill 165 件 + 100 以上の科学データベース、生物学・化学・医学・創薬をカバー |
 | academic-research-skills | 新登場（2026-09-01 Trending 入り、累計約 4.4 万スター） | 学術研究全工程 skill スイート：調査→執筆→レビュー→修正→仕上げ、Codex ネイティブ版も提供 |
 | ponytail | 新登場（2026-09-03 Trending 入り、9 日間で約 12.2 万スターに到達、直近で最も増加速度が速い） | 強制的な「意思決定のはしご」で AI 生成コード量を圧縮、公式ベンチマークで平均 54% のコード出力削減 |
+| mattpocock/skills | 2026-10-01 時点で累計約 27.3 万スター（初登場の 08-07 時点の約 20.7 万からさらに上昇、skill エコシステム単体最高熱を維持） | 個人の `.agents` ディレクトリから精製した工学規律 skill |
+| superpowers | 2026-10-01 に再び Trending 入り（日次 +888） | Agentic skills フレームワーク + 開発方法論 |
+| OpenShell（NVIDIA） | 新登場（2026-10-01 Trending 入り、日次 +2,503——当日最も増加速度が速い） | Rust で書かれた自律 AI Agent 向けの「安全でプライベートな」ランタイム——大手ハードウェアベンダーが Agent 実行隔離インフラを自ら提供する事例 |
 
 > このランキングは skill 系リポジトリが GitHub Trending に登場した際に `/update` が自動更新する。
 
@@ -60,6 +63,10 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 - [Claude Code リポジトリのスターランキング](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-10-01](/ja/today/2026-10-01)
+
+GitHub Trending のスナップショット：`mattpocock/skills` が累計約 27.3 万スターに成長し skill エコシステムの最高熱を維持；`superpowers` が日次 +888 で再び Trending 入り；NVIDIA がオープンソース化した **OpenShell**（Rust 製、自律 AI Agent 向けの「安全でプライベートな」ランタイム）が 1 日で 2,503 スターを獲得——Google・Anthropic の公式 skill コレクションに続き、大手ベンダーが Agent 基盤をオープンソースで提供するもう 1 つの事例。同時にトレンド入りした `pi`（統一 LLM API + Agent ループ + TUI + コーディング Agent CLI、累計 11 万超スター）、`context-mode`（コーディング Agent 向けコンテキストウィンドウ最適化とツールサンドボックス、累計 2.47 万スター）、`openrig`（共有コンテキストを持つ永続的な Agent チーム構築、累計 3,405 スター）。NVIDIA の参入は 09-23 の「Agent ファースト・プラットフォーム」記事が主張する「実行環境には専用の隔離インフラが必要」という論点と呼応している（詳細は [agent-sandboxes](/ja/topics/agent-sandboxes)）。
 
 ### [2026-09-03](/ja/today/2026-09-03)
 

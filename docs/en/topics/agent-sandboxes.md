@@ -36,6 +36,10 @@ Once an agent needs to actually run code to verify results (not just suggest cod
 
 ## Timeline
 
+### [2026-09-23](/en/today/2026-09-23)
+
+Microsoft proposes an "agent-first platform" architecture: agents acting continuously and autonomously need infrastructure assumptions different from traditional, response-driven apps, arguing for separating governance (Microsoft Foundry) from the execution environment (Azure Container Apps Sandboxes: hardware-isolated microVMs created in seconds and destroyed when the task ends), using scoped permissions plus short lifetimes to limit blast radius. Three quantified cases: KPMG runs 30,000+ sandboxes concurrently, Cognite Atlas AI turns days-long investigations into traceable, minutes-long answers, and South Australia's education system eliminated roughly 50,000 lines of custom state-management code. This extends "give the agent its own computer, not a pile of tools" into an explicit agent-platform architecture principle for the first time (see [enterprise-ai-agents](/en/topics/enterprise-ai-agents)).
+
 ### [2026-08-19](/en/today/2026-08-19) (backfilled)
 
 Claude API ships a browser-use tool (`browser_toolset_20260801`): unlike the computer-use tool that controls a whole desktop, it operates only inside a browser viewport, reading the page's accessibility tree/elements/forms rather than screenshot-and-click, with element grounding, form input, tab management and optional file upload — separating "full desktop control" from "in-browser action" is a concrete instance of least-privilege in tool design. The computer-use tool reaches formal GA the same day (see [claude-models](/en/topics/claude-models)).

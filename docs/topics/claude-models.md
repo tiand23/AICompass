@@ -11,8 +11,9 @@ Claude 是 Agent 与编码场景的主流模型选择之一。其模型线的每
 ## 核心概念
 
 - **Effort 档位**：`low` / `medium` / `high` / `xhigh` / `max` 五档，是 Opus 5 起的主要调控手段，替代了大量手工 prompt 调优；`max` 用于能力优先的关键任务。
-- **Thinking**：扩展思考。Opus 5 默认开启；effort 为 `xhigh`/`max` 时不可禁用（返回 400）。
-- **上下文与输出**：Opus 5 支持 1M token 上下文（默认即最大）、128k 最大输出。
+- **Thinking**：扩展思考。Opus 5 默认开启；effort 为 `xhigh`/`max` 时不可禁用（返回 400）；Opus 5.5 起始终开启、完全不可禁用；Sonnet 5.5 起 `high` 及以下 effort 需用 `thinking: {"type": "between_tools"}` 替代旧的 `"disabled"`——"自适应思考默认开启、不可完全关闭"正从 Opus 档扩散为 Opus/Sonnet 两档的统一策略。
+- **上下文与输出**：Opus 5 支持 1M token 上下文（默认即最大）、128k 最大输出；Opus 5.5 延续这一规格。
+- **跨账号隔离**：Sonnet 5.5 起，thinking 块只能在生成它的账号或关联账号内使用——多租户/多账号编排链路需注意这条新边界。
 - **Fast mode**：以更快输出运行 Opus 档模型（不降级到小模型），支持的型号随代际变化（4.7 已移除，需用 4.8 / 5）。
 - **本地会话合规审计**：Compliance API 可检索运行在用户本机的 Cowork / Claude Code 会话完整转录（`GET /v1/compliance/apps/sessions/local` 系列端点），把企业侧的 Agent 可观测性从"推理前拦截"（Inference Hooks）延伸到"事后可查"。
 - **引入价转正**：Sonnet 5 的引入价（$2/$10 每百万 token）已转为长期标准价，原定涨价计划取消——定价策略上用稳定价格换长期使用承诺。
@@ -35,6 +36,22 @@ Claude 是 Agent 与编码场景的主流模型选择之一。其模型线的每
 - [模型总览](https://platform.claude.com/docs/en/about-claude/models/overview)
 
 ## Timeline
+
+### [2026-09-30](/today/2026-09-30)
+
+Claude Sonnet 4.5（`claude-sonnet-4-5-20250929`）宣布退役，2026-11-30 停止服务，建议迁移到刚发布的 Sonnet 5.5——两个月迁移窗口是近期模型退役的典型节奏。
+
+### [2026-09-28](/today/2026-09-28)
+
+Claude Sonnet 5.5 发布：effort 为 `high` 及以下时须用 `thinking: {"type": "between_tools"}` 替代旧的 `"disabled"`；`tool_choice` 的 `any`/`tool` 强制调用类型返回 400；旧版计算机工具 `computer_20251124` 在 Claude API/Google Cloud 上不再接受；Advisor 顾问工具不再接受 Opus 4.8、4.7、Sonnet 5 作为被咨询对象；thinking 块仅限生成它的账号或关联账号使用。继 09-22 Opus 5.5 之后一周内完成 Opus/Sonnet 两档同代际升级。
+
+### [2026-09-22](/today/2026-09-22)
+
+Claude Opus 5.5 发布：默认即最大 100 万 token 上下文、12.8 万最大输出、自适应思考始终开启不可禁用（`thinking: disabled` 返回 400）；定价 $4/$20 每百万 token；经 Claude API、Amazon Bedrock、AWS/Google Cloud 上的 Claude Platform、Microsoft Foundry 同步提供。破坏性变更：`tool_choice` 的 `any`/`tool` 返回 400；计算机工具需升级到 `computer_toolset_20260801`。同日上线 Fast Mode 研究预览（Opus 5.5 专属）与 Inline Tools beta（对话中途的 system 消息里可定义工具），同日也登陆 Microsoft Foundry（详见 [cloud-agent-platforms](/topics/cloud-agent-platforms)）。
+
+### [2026-09-17](/today/2026-09-17)
+
+Anthropic 开放 Life Sciences Verification Program（LSVP）公测：验证通过的团队可解除 Fable 系列在药物发现/研究生物学/临床开发/制造等场景的默认拦截，分团队级年度 Standard Use 与项目级 6 个月 High-risk Use（为 Opus 5/Sonnet 5 完全移除生命科学拦截）两档；执法方式从逐条实时拦截转向跨行为模式的离线监控，相关数据保留 30 天——是 08-27 预告的生命科学访问计划的正式产品化（详见 [agentic-safety](/topics/agentic-safety)）。
 
 ### [2026-09-01](/today/2026-09-01)
 

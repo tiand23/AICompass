@@ -40,6 +40,9 @@ High-star representative repos at topic creation (2026-07):
 | scientific-agent-skills | New (hit Trending 2026-08-31, ~30-40k stars total) | 165 validated scientific-research skills + 100+ scientific databases, covering biology, chemistry, medicine, and drug discovery |
 | academic-research-skills | New (hit Trending 2026-09-01, ~44k stars total) | Full academic-research-workflow skill suite: research → write → review → revise → finalize; companion Codex-native version available |
 | ponytail | New (hit Trending 2026-09-03, climbed to ~122k stars within 9 days, the fastest-growing skill repo recently) | Enforces a "decision ladder" to compress AI-generated code volume; official benchmark shows an average 54% reduction in code output |
+| mattpocock/skills | As of 2026-10-01, ~273k stars total (up from ~207k when first listed 08-07 — still leads the skill ecosystem's single hottest point) | Engineering discipline distilled from a personal `.agents` directory |
+| superpowers | Back on Trending 2026-10-01 (+888/day) | Agentic skills framework + development methodology |
+| OpenShell (NVIDIA) | New (hit Trending 2026-10-01, +2,503/day — the fastest riser that day) | A "safe, private" runtime for autonomous AI agents, written in Rust — a major hardware vendor shipping agent-execution-isolation infrastructure directly |
 
 > This ranking is refreshed by `/update` whenever skill-related repos hit GitHub Trending.
 
@@ -60,6 +63,10 @@ High-star representative repos at topic creation (2026-07):
 - [Claude Code repos star leaderboard](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-10-01](/en/today/2026-10-01)
+
+A GitHub Trending snapshot: `mattpocock/skills` grows to ~273k stars total, still leading the skill ecosystem; `superpowers` re-enters trending with +888/day; NVIDIA open-sources **OpenShell** (written in Rust, a "safe, private runtime for autonomous AI agents"), gaining 2,503 stars in a single day — another example, after official skill collections from Google and Anthropic, of a major vendor shipping agent-infrastructure open source. Also trending: `pi` (a unified LLM API + agent loop + TUI + coding-agent CLI toolkit, 110K+ stars total), `context-mode` (context-window optimization and tool sandboxing for coding agents, 24.7K stars total), and `openrig` (building persistent agent teams with shared context, 3,405 stars total). NVIDIA's entry echoes the 09-23 "agent-first platforms" post's argument that execution environments need dedicated isolation infrastructure (see [agent-sandboxes](/en/topics/agent-sandboxes)).
 
 ### [2026-09-03](/en/today/2026-09-03)
 

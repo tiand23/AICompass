@@ -36,6 +36,26 @@ This is the main battleground for generative AI in the enterprise. As model capa
 
 ## Timeline
 
+### [2026-10-01](/en/today/2026-10-01)
+
+Barclays publishes an expanded-Claude-use case study: targeting 50% developer adoption of Claude Code by end of 2026 (rising further in 2027); its Colleague Knowledge Assistant (RAG-based, launched 2025) has processed over 1 million searches across 16,000+ users; the Global Markets team uses Claude to classify/enrich/route roughly 120,000 daily emails. All sits within a roughly £2 billion multi-year efficiency program — a rare banking example in the "agents-in-production case library" disclosing quantified metrics across three use cases at once, tied to a company-wide financial target.
+
+### [2026-09-29](/en/today/2026-09-29)
+
+OpenAI DevDay 2026 launches the always-on agent **Dots** (running 24/7, with its own computer and browser, connecting to 4,000+ apps, included in the Pro subscription) and **ChatGPT Space** (bringing Pages documents, files, project context, teammates, and AI agents into one shared workspace) — making "always-on autonomous agent" and "human-agent collaborative document space" default subscription features rather than standalone products, a concrete example of productizing enterprise-grade always-on agents (see [openai-models](/en/topics/openai-models)).
+
+### [2026-09-23](/en/today/2026-09-23)
+
+Microsoft proposes an "agent-first platform" architecture: arguing that agents acting continuously and autonomously (rather than responding to requests) need infrastructure assumptions different from traditional apps, with governance (Microsoft Foundry) separated from the execution environment (Azure Container Apps Sandboxes — hardware-isolated microVMs created in seconds and destroyed when the task ends). Three quantified cases: KPMG runs 30,000+ sandboxes concurrently; Cognite Atlas AI turns days-long investigations into traceable, minutes-long answers; South Australia's education system eliminated roughly 50,000 lines of custom state-management code. This extends "give the agent its own computer, not a pile of tools" (the 08-11 monday.com case) into an explicit architecture principle — separating the governance plane from the execution plane — for the first time (see [agent-sandboxes](/en/topics/agent-sandboxes)).
+
+### [2026-09-17](/en/today/2026-09-17)
+
+LangChain launches Deep Life Sci (an open-source clinical/lab research agent drawing on 600K+ clinical trials and 29M+ PubMed abstracts) and publishes the Included Health federated healthcare-navigation agent case study, on top of the 09-14 scaling lessons from Madrigal Pharmaceuticals/Abridge/Vizient — healthcare/life sciences is taking the baton as Deep Agents' next major vertical, after customer service and internal enterprise tooling (see [deep-agents](/en/topics/deep-agents)).
+
+### [2026-09-10](/en/today/2026-09-10)
+
+Azure publishes the finale of its "Economics of Agent Optimization" series: distilling cost governance into Visibility (multi-layer tracking via Foundry cost management/API Gateway/agent traces), Containment (project-level rate limits and quotas, cross-provider unified policy, financial budgets as a backstop), and Value Measurement (a new ROI feature tying business outcomes directly to operating cost), with the core argument being to treat agents as "managed investment systems." This closes out the Azure cost-governance series this knowledge base has tracked since the "three-speed governance model" on 08-12.
+
 ### [2026-09-03](/en/today/2026-09-03)
 
 LangChain publishes "Agents That Pay," co-authored with Nevermined: gives LangChain agents autonomous payment capability built on the x402 protocol (created by Coinbase, now stewarded by the Linux Foundation) — detecting an HTTP 402 payment-required response, validating the amount against a session budget, signing the payment, and retrying the original request, with LangSmith audit integration. LangChain had already published a similar payment-middleware piece on 08-17 built on Amazon Bedrock AgentCore. A concrete instance of the "agent economy" extending from the coordination layer into real financial settlement; publishing two different payment approaches within the same framework in short succession suggests this is becoming a routine capability rather than a one-off experiment.

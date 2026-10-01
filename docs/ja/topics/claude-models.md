@@ -11,8 +11,9 @@ Claude はエージェントとコーディング用途における主流のモ�
 ## コアコンセプト
 
 - **Effort レベル**：`low` / `medium` / `high` / `xhigh` / `max` の 5 段階。Opus 5 以降の主要な制御手段で、手作業のプロンプト調整の多くを置き換える。`max` は能力最優先のクリティカルな作業向け。
-- **Thinking**：拡張思考。Opus 5 ではデフォルト有効。effort `xhigh`/`max` では無効化不可（400 が返る）。
-- **コンテキストと出力**：Opus 5 は 1M トークンコンテキスト（デフォルト＝最大）、最大出力 128k。
+- **Thinking**：拡張思考。Opus 5 ではデフォルト有効。effort `xhigh`/`max` では無効化不可（400 が返る）；Opus 5.5 以降は常時オンで完全に無効化不可；Sonnet 5.5 以降は effort が `high` 以下の場合、旧来の `"disabled"` の代わりに `thinking: {"type": "between_tools"}` を使用する必要がある——「適応的思考はデフォルトでオン、完全な無効化は不可」が Opus 帯から Opus/Sonnet 両帯の統一方針へと広がりつつある。
+- **コンテキストと出力**：Opus 5 は 1M トークンコンテキスト（デフォルト＝最大）、最大出力 128k；Opus 5.5 も同じ仕様を維持。
+- **アカウント間の隔離**：Sonnet 5.5 以降、thinking ブロックはそれを生成したアカウントまたは連携アカウント内でのみ機能する——マルチテナント/マルチアカウント編成で注意すべき新しい境界。
 - **Fast mode**：Opus 帯モデルを高速出力で動かす（小型モデルへの格下げではない）。対応モデルは世代により変わる（4.7 は廃止——4.8 / 5 を使用）。
 - **ローカルセッションのコンプライアンス監査**：Compliance API がユーザー自身のマシン上で動く Cowork / Claude Code セッションの完全な転記を取得可能に（`GET /v1/compliance/apps/sessions/local` 系エンドポイント）。企業側の Agent 可観測性を「推論前ブロック」（Inference Hooks）から「事後監査」まで拡張。
 - **導入価格の恒久化**：Sonnet 5 の導入価格（$2/$10・100 万トークンあたり）が長期標準価格となり、予定されていた値上げは取りやめ——安定価格で長期利用のコミットメントを得る定価戦略。
@@ -35,6 +36,22 @@ Claude はエージェントとコーディング用途における主流のモ�
 - [モデル概要](https://platform.claude.com/docs/en/about-claude/models/overview)
 
 ## Timeline
+
+### [2026-09-30](/ja/today/2026-09-30)
+
+Claude Sonnet 4.5（`claude-sonnet-4-5-20250929`）の退役を発表、2026-11-30 にサービス終了、発表されたばかりの Sonnet 5.5 への移行を推奨——2 か月の移行期間は最近のモデル退役の典型的なペース。
+
+### [2026-09-28](/ja/today/2026-09-28)
+
+Claude Sonnet 5.5 発表：effort が `high` 以下の場合、旧来の `"disabled"` の代わりに `thinking: {"type": "between_tools"}` を使用する必要がある；`tool_choice` の `any`/`tool` は 400 を返すようになった；旧版の `computer_20251124` コンピュータ使用ツールは Claude API/Google Cloud で受け付けなくなった；Advisor ツールは Opus 4.8、4.7、Sonnet 5 を相談対象として受け付けなくなった；thinking ブロックはそれを生成したアカウントまたは連携アカウントに限定される。09-22 の Opus 5.5 に続き、1 週間のうちに Opus と Sonnet 両階層の同世代アップグレードが完了した。
+
+### [2026-09-22](/ja/today/2026-09-22)
+
+Claude Opus 5.5 発表：デフォルトかつ最大となる 100 万トークンのコンテキストウィンドウ、12.8 万の最大出力、適応的思考が常時オンで無効化不可（`thinking: disabled` は 400 エラー）；価格は 100 万トークンあたり $4/$20；Claude API、Amazon Bedrock、AWS/Google Cloud 上の Claude Platform、Microsoft Foundry で同時提供。破壊的変更：`tool_choice` の `any`/`tool` は 400 を返す；コンピュータ使用ツールはアップグレード版の `computer_toolset_20260801` が必須。同日、Fast Mode のリサーチプレビュー（Opus 5.5 専用）と Inline Tools のベータ（会話途中の system メッセージでツールを定義可能）も公開、同日 Microsoft Foundry にも登場（詳細は [cloud-agent-platforms](/ja/topics/cloud-agent-platforms)）。
+
+### [2026-09-17](/ja/today/2026-09-17)
+
+Anthropic が Life Sciences Verification Program（LSVP）のベータを開始：検証済みチームは Fable 系列の薬物発見/研究生物学/臨床開発/製造に関するデフォルトのブロックを、チーム単位で年次更新される Standard Use と、プロジェクト単位で 6 か月間の High-risk Use（Opus 5/Sonnet 5 のライフサイエンス関連ブロックを完全に解除）の 2 段階で解除できる；執行方式は個別リクエストのリアルタイムブロックからオフラインの行動パターン監視へ移行し、データは 30 日間保持される——08-27 に予告されていたライフサイエンスアクセスプログラムの正式な製品化（詳細は [agentic-safety](/ja/topics/agentic-safety)）。
 
 ### [2026-09-01](/ja/today/2026-09-01)
 

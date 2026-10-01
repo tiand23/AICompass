@@ -37,6 +37,14 @@
 
 ## Timeline
 
+### [2026-09-24](/ja/today/2026-09-24)
+
+Microsoft Foundry が音声 Agent の公開プレビュー（サブ秒レイテンシ、80 以上の言語/140 以上のロケール、Web/Teams/Teams Phone/Twilio へデプロイ可能、prompt 型とホスト型の両方の Agent 形態に対応）、拡張されたモデル選択肢（新しい GPT-6 系列 SKU と Claude Opus 5.5）、継続的最適化（本番トレースから品質/レイテンシ/コストの観点で Agent をチューニング）を追加——音声 Agent は Google Gemini Live に対抗する Foundry の最後のピースを埋めるもの（詳細は [voice-agents](/ja/topics/voice-agents)）。同日 LangChain が LangSmith の 5 つの更新を発表：**Engine v2**（Agent 不具合診断用 Engine にレッドチーム演習と自動テストを追加）、**Managed Deep Agents v0.8**（認証、記憶管理、メッセージチャネルを追加——09-09 の Connections に続くもの）、**Trajectories**（Agent セッションの全過程を読める形で見るビュー）、**LangSmith Fine-Tuning**、**LangSmith Custom Apps**——LangSmith はツールの寄せ集めから統合された Agent 生産プラットフォームへ収斂しつつある（詳細は [deep-agents](/ja/topics/deep-agents)）。
+
+### [2026-09-22](/ja/today/2026-09-22)
+
+GPT-6 Astra/Sol/Luna 全系列と、発表されたばかりの Claude Opus 5.5 が同日に Microsoft Foundry に登場し本番 Agent シナリオに対応、統一されたモデル評価/デプロイ/ガバナンス管理面に組み込まれた——モデルベンダーのリリースサイクルとクラウドベンダーの掲載サイクルの間隔が縮まり続けており、2 つのモデルラインを並べて直接比較できるようになった（詳細は [openai-models](/ja/topics/openai-models) ・ [claude-models](/ja/topics/claude-models)）。
+
 ### [2026-09-05](/ja/today/2026-09-05)
 
 Microsoft Foundry に GPT-6 Astra（09-03 発表）が追加：Limited Access Program を通じて段階的に展開され、Global と米国データゾーンのみで利用可能（**EU データゾーンなし**）；Global 標準ティアの価格はコンテキスト長に応じて 100 万トークンあたり $10〜$75、米国ゾーンには割増あり；Standard（従量課金）と Provisioned Throughput（専用スループット）の 2 種類の購入方式；Microsoft Entra による ID 管理、暗号化、専用ネットワーク、全操作ログを統合。08-31 の xAI Grok 4.6 追加に続く「マルチベンダーモデルマーケットプレイス」戦略の継続だが、今回は明確な地域制限と段階的アクセスを伴う——Critical レベルのサイバーセキュリティ判定は OpenAI 自身のリリースケイデンスだけでなく、クラウドベンダー自身のアクセスポリシーにも直接波及している（詳細は [openai-models](/ja/topics/openai-models)）。

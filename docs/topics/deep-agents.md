@@ -40,6 +40,14 @@ Deep Agents 是 LangChain 提出的概念与产品方向：能执行长时程、
 
 ## Timeline
 
+### [2026-09-24](/today/2026-09-24)
+
+LangSmith Managed Deep Agents v0.8 发布：新增身份认证、记忆管理、消息渠道（Channels）能力，紧接 09-09 Connections 托管凭证之后两周内又一次托管运行时能力扩充，与同日发布的 Engine v2（红队测试）、Trajectories（可读会话视图）、Fine-Tuning、Custom Apps 共同构成一次打包的 LangSmith 平台更新周（详见 [cloud-agent-platforms](/topics/cloud-agent-platforms)）。
+
+### [2026-09-17](/today/2026-09-17)
+
+LangChain 发布 Deep Life Sci：基于 Deep Agents harness 的开源临床/实验室科研 Agent，接入 60 万+ ClinicalTrials.gov 试验、2900 万篇 PubMed 摘要、1200 万篇 PubMed Central 全文，支持 PDF/图像/表格/RIS/SMILES/FASTA/RNA-seq/蛋白质组学等输入，沙箱化子 Agent 分工检索/审阅/分析，LangSmith 记录检索/代码执行/文档审阅/子 Agent 路由到最终答案的全链路供调试审计；因开源可接入私有数据、换模型、加自定义护栏。同日 Included Health 发布用 Deep Agents + LangGraph 构建联邦医疗导航 Agent 的案例，叠加 09-14 Madrigal Pharmaceuticals/Abridge/Vizient 规模化经验分享——生命科学/医疗正接棒成为继客服、企业内部工具之后的下一个重点垂直场景，延续"开源通用 harness + 垂直深度定制"模式（继 OpenMontage 视频制作、Harvey LAB 法律之后）（详见 [enterprise-ai-agents](/topics/enterprise-ai-agents)）。
+
 ### [2026-09-09](/today/2026-09-09)
 
 LangChain 发布 Connections：LangSmith Managed Deep Agents 新增托管凭证系统，命名凭证存在工作区（不进代码/`.env`），运行时按 `connections.get("<slug>", {"type": "agent"|"user"})` 取用；归属（Agent 共享 vs 按调用者）与凭证类型（静态密钥 vs OAuth）两条独立维度，免去手工搭建 OAuth 回调/令牌存储/刷新逻辑——解决密钥轮换与"操作应带真实调用者身份"两个托管 Agent 的真实痛点。

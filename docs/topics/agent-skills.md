@@ -40,6 +40,9 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 | scientific-agent-skills | 新晋（2026-08-31 上榜，累计约 3-4 万 star） | 165 条科研场景验证 skill + 100 余个科学数据库，覆盖生物/化学/医学/药物发现 |
 | academic-research-skills | 新晋（2026-09-01 上榜，累计约 4.4 万 star） | 学术研究全流程 skill 套件：调研→写作→评审→修改→定稿，另有 Codex 原生版本 |
 | ponytail | 新晋（2026-09-03 上榜，9 天内冲至约 12.2 万 star，近期增速最快） | 强制"决策梯"流程压缩 AI 生成代码量，官方基准平均减少 54% 代码输出 |
+| mattpocock/skills | 2026-10-01 时点累计约 27.3 万 star（较 08-07 首次登榜时约 20.7 万进一步上涨，持续领跑 skill 生态单点热度） | 从个人 `.agents` 目录提炼的工程纪律 skill |
+| superpowers | 2026-10-01 重新上榜（单日 +888） | Agentic skills 框架 + 开发方法论 |
+| OpenShell（NVIDIA） | 新晋（2026-10-01 上榜，单日 +2,503，当日涨速最快） | Rust 编写的"安全、私有"自主 AI Agent 运行时——官方大厂亲自下场做 Agent 执行隔离基础设施 |
 
 > 此排行由 `/update` 在 skill 类仓库登上 GitHub Trending 时自动更新。
 
@@ -60,6 +63,10 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 - [Claude Code 高星仓库排行](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-10-01](/today/2026-10-01)
+
+GitHub Trending 快照：`mattpocock/skills` 累计 star 涨至约 27.3 万，持续领跑 skill 生态；`superpowers` 单日 +888 重回热榜；NVIDIA 开源 **OpenShell**（Rust 编写，面向自主 AI Agent 的"安全、私有"运行时）单日涨 2,503 star，是继 Google/Anthropic 官方 skill 合集之后又一家大厂亲自开源 Agent 基础设施的样本；同期上榜 `pi`（统一 LLM API + Agent loop + TUI + 编码 Agent CLI，累计 11 万+ star）、`context-mode`（编码 Agent 上下文窗口优化与工具沙箱，累计 2.47 万 star）、`openrig`（共享上下文的持久化 Agent 团队构建工具，累计 3,405 star）。NVIDIA 下场呼应 09-23"Agent 优先平台"文章"执行环境需要专门隔离设施"的主张（详见 [agent-sandboxes](/topics/agent-sandboxes)）。
 
 ### [2026-09-03](/today/2026-09-03)
 

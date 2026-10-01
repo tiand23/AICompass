@@ -45,6 +45,10 @@
 
 ## Timeline
 
+### [2026-09-29](/today/2026-09-29)
+
+H Company 在 HuggingFace 开源 Holo4：通用计算机使用 Agent 模型（27B 稠密/35B-A3B MoE 两规格，另有更小的 Holotron4 Nano），单一模型自主决定每一步该用 GUI 点击输入、编写运行代码、还是调用 MCP/API 工具；OSWorld 2.0 基准 27B 版本得分 61.7%（对比 Claude Opus 5.5 的 81.8%），用低一到两个数量级的参数量与成本换取接近的实用能力，权重以 BF16/FP8/NVFP4/4-bit GGUF 等多种精度开放。
+
 ### [2026-09-03](/today/2026-09-03)
 
 atlas 登场（GitHub Trending 新晋，累计约 2,900 star）：面向多 Agent 协作编码的源代码版本控制系统——每次 Agent 运行产生 checkpoint，commit 关联回触发它的会话（含 prompt、工具调用、推理过程），支持 Claude Code、Codex 等多个 Agent 并行操作同一代码库并共享记忆，切换 Agent 无需重讲上下文。补上"Agent 决策轨迹可查询可回放"这个此前空白的基础设施类别。
