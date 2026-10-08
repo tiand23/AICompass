@@ -64,7 +64,7 @@
         </mxCell>
 
         <mxCell id="d2_filter" value="筛选：剔除隐藏 sheet&#xa;（草稿 / 旧版本，不是交付物）" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
-          <mxGeometry x="60" y="384" width="560" height="64" as="geometry" />
+          <mxGeometry x="90" y="384" width="560" height="64" as="geometry" />
         </mxCell>
         <mxCell id="e_d1b_filter" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="doclane" source="d1b" target="d2_filter">
           <mxGeometry relative="1" as="geometry" />
@@ -81,17 +81,17 @@
         </mxCell>
 
         <mxCell id="pathA" value="&lt;b&gt;路径 A · 机械抄&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#3E6B63&gt;表格类走这条：表头列位置固定 → 按列一行行抄&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;100% 准确 · 0 费用&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9.5px&quot; color=#5B6169&gt;实测：AI 抄同一张表有时 26 个字段有时只 2 个，机械抄永远 26 个——表格绝不给 AI&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
-          <mxGeometry x="30" y="588" width="280" height="170" as="geometry" />
+          <mxGeometry x="60" y="588" width="280" height="170" as="geometry" />
         </mxCell>
         <mxCell id="ic_pathA" value="" style="shape=mxgraph.ios7.icons.tools;html=1;strokeColor=#3E6B63;fillColor=none;strokeWidth=1.5;" vertex="1" parent="doclane">
-          <mxGeometry x="42" y="612" width="22" height="22" as="geometry" />
+          <mxGeometry x="72" y="612" width="22" height="22" as="geometry" />
         </mxCell>
 
         <mxCell id="pathB" value="&lt;b&gt;路径 B · AI 读懂&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#8A6A2E&gt;非空的非表格 sheet（图 / 叙述类）走这条&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;是图 → 连图片一起给 AI；是表格 → 只给文字不给图片&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9.5px&quot; color=#5B6169&gt;实测给图反而更差：12 个字段掉到 1 个（AI 看图说话，不逐行读字）&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9.5px&quot; color=#5B6169&gt;问 5 件事：写了什么 / 属于哪个系统 / 有哪些识别子 / 能答什么问题 / 哪里看不懂&lt;/font&gt;" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A6A2E;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="doclane">
-          <mxGeometry x="340" y="588" width="290" height="170" as="geometry" />
+          <mxGeometry x="370" y="588" width="290" height="170" as="geometry" />
         </mxCell>
         <mxCell id="ic_pathB" value="" style="shape=mxgraph.ios7.icons.looking_glass;html=1;strokeColor=#8A6A2E;fillColor=none;strokeWidth=1.5;" vertex="1" parent="doclane">
-          <mxGeometry x="352" y="612" width="22" height="22" as="geometry" />
+          <mxGeometry x="382" y="612" width="22" height="22" as="geometry" />
         </mxCell>
 
         <mxCell id="e_classify_pathA" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="doclane" source="d2_classify" target="pathA">
@@ -236,8 +236,8 @@
         <mxCell id="e_li_srcstore" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0;exitY=0.8;entryX=0;entryY=0.5;" edge="1" parent="doclane" source="ledger_input" target="src_store">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="20" y="1077" />
-              <mxPoint x="20" y="1513" />
+              <mxPoint x="0" y="1077" />
+              <mxPoint x="0" y="1513" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -319,7 +319,7 @@
         <mxCell id="e_out1_summary" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.1;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.1;exitY=1;entryX=0.7;entryY=0;" edge="1" parent="doclane" source="out1" target="summary_kb">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="20" y="1800" />
+              <mxPoint x="0" y="1800" />
             </Array>
           </mxGeometry>
         </mxCell>
