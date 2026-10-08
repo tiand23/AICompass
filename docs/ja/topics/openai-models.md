@@ -38,6 +38,10 @@ GPT は Claude、Gemini と並ぶモデル選定の三大主流。OpenAI の 2 �
 
 ## Timeline
 
+### [2026-10-06](/ja/today/2026-10-06)
+
+OpenAI の Decisions API が公開ベータへ：09-29 の DevDay で限定プレビューされたエンドポイントが全開発者に開放、GPT-6 Luna 駆動、事前定義された質問と有限の候補回答に特化、Responses API 経由で Luna を直接呼ぶより最大 10 倍速い；入力トークンのみ課金（100 万あたり $0.10、キャッシュ/出力は無料）、GA は数週間以内を予定；LangChain の Jev、LiquidAI の d1 と合わせて「意思決定/判定が独立した専用モデル品類へ分化する」という新しい流れを形成している（詳細は [agent-evaluation](/ja/topics/agent-evaluation)）。
+
 ### [2026-09-29](/ja/today/2026-09-29)
 
 OpenAI DevDay 2026：20 以上の更新を一度に発表、中心は常駐 Agent **Dots**（上記参照）、**GPT-6.1 Sol**（コーディング/コンピュータ使用が Astra に迫りながら価格は 5 分の 1）、新しいサブスクリプションティア **Pro 500** と有料スピードティア **Ultrafast**、**ChatGPT Space + Pages**（人間と Agent の協働ドキュメント/ワークスペース）、**OpenAI Private Intelligence**（Private Safety Processing が利用可能に、Private Inference は今秋プレビュー予定）——09-03 の GPT-6 Astra 発表から 1 か月以内での最大規模のプラットフォーム更新（詳細は [enterprise-ai-agents](/ja/topics/enterprise-ai-agents)）。

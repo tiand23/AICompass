@@ -37,6 +37,10 @@ Claude はエージェントとコーディング用途における主流のモ�
 
 ## Timeline
 
+### [2026-10-07](/ja/today/2026-10-07)
+
+Claude Haiku 5.5 発表：100 万トークンのコンテキストウィンドウ、12.8 万の最大出力、effort パラメータで駆動する適応的思考、Claude API・Amazon Bedrock・AWS/Google Cloud 上の Claude Platform・Microsoft Foundry で提供。Haiku 4.5 からの破壊的変更：手動の思考予算（`budget_tokens`）指定が 400 エラーを返す、適応的思考がデフォルトで有効になり応答が `thinking` ブロックから始まることがある。Claude の 3 階層（Opus/Sonnet/Haiku）すべてが 1 か月以内に 5.5 世代への刷新を完了。同日：Sonnet 5.5 のプロンプトキャッシュ読み取り価格が $0.20 から $0.10/百万トークンに低下（基礎入力価格の 0.05 倍、以前は 0.1 倍）；Python/TypeScript SDK にブラウザ使用ツールとコンピュータ使用ツールのベータ版ラッパークラスを追加；Max/Team サブスクリプションに毎月の API クレジットを追加；Managed Agents に `allowed_hosts` ネットワーク許可リストとデータ漏洩対策の URL 出典制限を追加——`web_fetch` は本セッションのユーザーメッセージ本文に既に出現した URL のみを取得できるようになった（詳細は [agentic-safety](/ja/topics/agentic-safety)）。
+
 ### [2026-09-30](/ja/today/2026-09-30)
 
 Claude Sonnet 4.5（`claude-sonnet-4-5-20250929`）の退役を発表、2026-11-30 にサービス終了、発表されたばかりの Sonnet 5.5 への移行を推奨——2 か月の移行期間は最近のモデル退役の典型的なペース。

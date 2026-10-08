@@ -38,6 +38,10 @@ GPT 系与 Claude、Gemini 构成模型选型的三大主线。OpenAI 的两个�
 
 ## Timeline
 
+### [2026-10-06](/today/2026-10-06)
+
+OpenAI Decisions API 开放公测：09-29 DevDay 限量预览的端点向所有开发者开放，GPT-6 Luna 驱动，专注于预定义问题与有限候选答案，比直接走 Responses API 调用 Luna 快至多 10 倍；只按输入 token 计费（$0.10/百万），缓存读写与输出不计费，正式 GA 预计未来几周；与 LangChain Jev、LiquidAI d1 共同构成"决策/判定独立成专门模型品类"的新趋势（详见 [agent-evaluation](/topics/agent-evaluation)）。
+
 ### [2026-09-29](/today/2026-09-29)
 
 OpenAI DevDay 2026：一次性发布 20 余项更新，核心是常驻 Agent **Dots**（见上）、**GPT-6.1 Sol**（编码/计算机使用逼近 Astra、价格仅五分之一）、新订阅档 **Pro 500** 与付费速度档 **Ultrafast**、**ChatGPT Space + Pages**（人机协作文档/工作空间）、**OpenAI Private Intelligence**（Private Safety Processing 可用，Private Inference 今秋预览）——是继 09-03 GPT-6 Astra 发布后一个月内最大规模平台更新（详见 [enterprise-ai-agents](/topics/enterprise-ai-agents)）。

@@ -37,6 +37,10 @@ Claude is one of the mainstream model choices for agent and coding workloads. Ev
 
 ## Timeline
 
+### [2026-10-07](/en/today/2026-10-07)
+
+Claude Haiku 5.5 launches: 1M-token context window, 128K max output, adaptive thinking driven by the effort parameter, available via the Claude API, Amazon Bedrock, Claude Platform on AWS/Google Cloud, and Microsoft Foundry. Breaking changes migrating from Haiku 4.5: manually specifying a thinking budget (`budget_tokens`) now returns a 400 error, adaptive thinking is on by default and responses may start with a `thinking` block. All three Claude tiers (Opus/Sonnet/Haiku) complete their 5.5-generation refresh within one month. Same day: Sonnet 5.5's prompt-cache read price drops from $0.20 to $0.10/million tokens (0.05x base input, down from 0.1x); the Python/TypeScript SDKs add beta wrapper classes for the browser-use and computer-use tools; Max/Team subscriptions gain monthly API credits; Managed Agents add an `allowed_hosts` network allowlist and an anti-exfiltration URL provenance restriction — `web_fetch` now only fetches URLs that already appeared in the current session's user message text (see [agentic-safety](/en/topics/agentic-safety)).
+
 ### [2026-09-30](/en/today/2026-09-30)
 
 Claude Sonnet 4.5 (`claude-sonnet-4-5-20250929`) is announced for retirement, service ending 2026-11-30, with migration recommended to the just-released Sonnet 5.5 — a two-month migration window typical of recent model retirements.

@@ -36,6 +36,10 @@
 
 ## Timeline
 
+### [2026-10-02](/today/2026-10-02)
+
+Anthropic 设立 Claude Frontier Academy：投入 1 亿美元，计划到 2027 年底培训 1 万名"前沿驻场工程师"（FDE），首批学员来自 Accenture、Bain、Deloitte、McKinsey、Morgan Stanley、Novo Nordisk 等机构，采用模拟部署评分 + 医学规培式实训的 12 周模式——是"交付模式光谱"里平台+驻场工程师（FDE）这一环，首次由厂商自己大规模投钱建人才管线来解决交付能力供给瓶颈，而非被动等咨询公司自行培养。
+
 ### [2026-10-01](/today/2026-10-01)
 
 Barclays 扩大 Claude 应用案例发布：目标 2026 年底 Claude Code 覆盖该行 50% 开发者（2027 进一步提升）；Colleague Knowledge Assistant（RAG，2025 年上线）已处理超 100 万次检索、覆盖 1.6 万+ 用户；Global Markets 团队用 Claude 对约 12 万封日常邮件分类/补全信息/路由。整体服务于约 20 亿英镑的多年效率提升计划——是"Agent 生产化案例库"里少见的同时披露三类场景量化指标并挂钩公司级财务目标的银行业样本。

@@ -40,6 +40,10 @@ However large the context window, it is only "working memory" — an agent servi
 
 ## Timeline
 
+### [2026-10-08](/en/today/2026-10-08)
+
+claude-mem hits GitHub Trending (98K+ stars total, +662/day): a "persistent context across sessions" layer that captures and compresses session data, injecting relevant context into future interactions on demand, compatible with Claude Code, OpenClaw, Codex, Gemini, and more. Extending ai-memory's "cross-vendor-portable memory" route with "compressed persistent context, injected on demand" as its specific implementation pattern, and broader platform compatibility (see [coding-agents](/en/topics/coding-agents)).
+
 ### [2026-09-02](/en/today/2026-09-02)
 
 Azure's "Economics of Agent Optimization" series publishes quantified memory and retrieval data: Foundry IQ's knowledge base (semantic reranking plus targeted passage retrieval) improves evidence recall by 54% and cuts retrieval token cost by 34%; tiered memory (session/user/workflow-level) reduces the cost of replaying conversation history, alongside Toolboxes fetching tool definitions on demand to cut input tokens by roughly 97% for large tool libraries. Following 08-31's Cosmos DB memory reference implementation, Azure again publishes hard numbers on "memory plus retrieval" context engineering (see [enterprise-ai-agents](/en/topics/enterprise-ai-agents)).

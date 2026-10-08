@@ -36,6 +36,14 @@
 
 ## Timeline
 
+### [2026-10-07](/today/2026-10-07)
+
+LlamaIndex 发布 OpenDocRouter：把前沿模型（Claude Opus 5.5、GPT-6 Luna、Gemini 3.8 Flash）与开源模型（MinerU2.5-Pro、TeleOCR、PaddleOCR-VL）统一到一个 API 下做文档转 Markdown，`layout: True` 输出带定位边界框的版式元素并跨模型标准化，按 token 计费、每千页 $0.86～$48.82（视模型选择）；定位为比 LlamaParse 更轻量的路由层，不是自建更强模型而是统一管理多个文档模型的 prompt 适配/限速/部署/成本优化，呼应 08-31 Cohere Parse V5"成本是独立选型维度"的趋势。
+
+### [2026-10-05](/today/2026-10-05)
+
+LlamaIndex 提出 Agentic OCR 三原则：自适应策略（复杂元素如表格/图表分配更多处理资源）、证据驱动纠错（纠正必须有证据证明确实改善结果）、有界执行（明确目标与时间/成本硬上限，拒绝开放式无限打磨）；首次把"Agentic OCR"从现象描述系统化成三条可操作设计原则，为"是否算得上 Agentic OCR"提供具体标尺。
+
 ### [2026-08-31](/today/2026-08-31)
 
 Cohere 发布 Parse V5 并登陆 Microsoft Foundry：23 亿参数视觉语言模型，专用于文档解析，将 PDF/PPT/JPEG 页面转成带阅读顺序的 Markdown、HTML 表格、表单键值对、图像描述与边界框坐标；覆盖财务/保险/科研等领域文档，支持 9 种主要语言，单 GPU 每秒解析约 4.5 页；跑分测试中不是精度最高的模型，但以每千页 1.5 美元的成本取胜，现已通过 Cohere API、Model Vault、Microsoft Foundry、AWS SageMaker 提供，部署进 Foundry 后推理留在客户 Azure 租户边界内。呼应"整页平均指标会掩盖关键字段错误"——把"成本"作为独立可选的选型维度摆上台面，是解析赛道从单一追求准确率转向"准确率 vs 成本"多目标权衡的又一个具体样本。

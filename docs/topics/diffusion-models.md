@@ -28,6 +28,10 @@
 
 ## Timeline
 
+### [2026-10-06](/today/2026-10-06)
+
+Google 发布 Gemini Nano Banana 2.1：保持 Flash 级速度与成本的图像生成/对话式编辑模型，视觉质量、prompt 遵循度、多轮角色一致性、文字渲染、宽幅/全景画幅生成均有提升——延续"Flash 档高频小步迭代"的打法在图像生成线的应用（详见 [gemini-models](/topics/gemini-models)）。
+
 ### [2026-08-17](/today/2026-08-17)
 
 Google 正式关停 Imagen 4 三档生成端点，转向 Gemini 3.1 Flash Image——独立专用生成模型线并入通用多模态旗舰的又一例（继 OpenAI Atlas 并入 ChatGPT/Codex 之后），`generate_images()` 方法整体消失，非无缝替换，需按新 API 重写调用（详见 [gemini-models](/topics/gemini-models)）。

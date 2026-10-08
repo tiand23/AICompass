@@ -20,6 +20,8 @@ Whether an agent can go to production is ultimately decided by evaluation — wi
 - **Benchmaxxing detection**: a high public-benchmark score doesn't prove genuine task capability — a model may have simply learned to recognize "which benchmark it's on" and reproduce benchmark-specific patterns; probes like reference disagreement, masked-entity recovery rate, and orthographic-convention selection can detect this kind of dataset fingerprinting (a concrete ASR-domain methodology; see [voice-agents](/en/topics/voice-agents)).
 - **A structured-verdict model replacing generative LLM-as-judge**: Jev doesn't generate a text judgment, it returns a typed verdict directly — on 500 real agent decisions judged repeatedly, it matched human-reviewer verdicts on every call, with continuous quality-score variance 92–913x lower than mainstream LLM judges, at two orders of magnitude lower cost and latency; but a structured-verdict model can still have its ruling swayed by prompt injection — it isn't immune.
 - **Source correctness is an evaluation dimension independent of factual correctness**: when an MCP agent stitches an answer together from multiple tool calls, "is the claim supported by some evidence" (factual correctness) and "is the claim's cited source actually that evidence" (source correctness) are two different things — a "cross-source conflation" error (a claim that's true but attributed to the wrong source) slips past fact-checking methods that only look at support, requiring dedicated source-aware verification (see [mcp](/en/topics/mcp)).
+- **Grading an agent on system end-state, not self-reported completion**: a final response and a valid tool call are both just proxies — an agent can sound correct while writing the wrong value, changing the wrong record, or creating an extra side effect; ThinkingBox directly inspects the end-state and side effects an agent leaves in a database, repeating the same task 20 times to quantify a dimension rarely measured on its own — can it succeed reliably, not just get lucky once — extending the "don't just trust what the agent says about itself" methodology (after ProvenanceGuard's source-attribution check) to the object of "actual system-state change."
+- **Decision-making/judgment is splitting off into its own specialized model category**: LangChain's Jev (09-21), OpenAI's Decisions API (10-06, powered by GPT-6 Luna), and LiquidAI's d1 (10-07, a single forward pass returning a deterministic answer) — three vendors from very different backgrounds converged on a structurally identical solution within one month: a narrowly-defined question, typed output, and cost/latency far below a general chat call; classification, routing, and deciding an agent's next action no longer default to "call a general LLM and parse a text answer" — evaluation and selection should now treat a dedicated decision model as an option alongside LLM-as-judge.
 - **Methodology for building the evaluation task itself**: split "writing the task" into a human-reviewed spec-generation stage (a Markdown spec describing input/environment/scoring rubric) and an agent-automated Spec2Task conversion stage, letting task creation run in parallel while concentrating human review at the cheapest step; a "world spec" shared across tasks (data schemas, scoring methodology, domain patterns) further cuts the cost of repeated task-writing — systematizing the "real-task-derived benchmark" methodology at the engineering level of "how you actually write the tasks."
 
 ## Related Technologies
@@ -38,6 +40,18 @@ Whether an agent can go to production is ultimately decided by evaluation — wi
 - [Evaluating code review agents with ReviewBench](https://www.langchain.com/blog/evaluating-code-review-agents-with-reviewbench)
 
 ## Timeline
+
+### [2026-10-07](/en/today/2026-10-07)
+
+LiquidAI open-sources the decision models d1-3B/d1-omni-600M (a single forward pass returning a deterministic answer), together with 10-06's OpenAI Decisions API confirming "decision-specialized models" are becoming their own category (see [model-efficiency](/en/topics/model-efficiency)).
+
+### [2026-10-06](/en/today/2026-10-06)
+
+OpenAI's Decisions API opens public beta: powered by GPT-6 Luna, focused on developer-defined questions with a finite set of candidate answers, up to 10x faster than calling Luna directly, billed on input tokens only ($0.10/million, output/cache free); together with LangChain's Jev (09-21) and LiquidAI's d1 (10-07), this forms a new trend of "decision-making/judgment splitting off into its own specialized model category" (see [openai-models](/en/topics/openai-models) ・ [model-efficiency](/en/topics/model-efficiency)).
+
+### [2026-10-03](/en/today/2026-10-03)
+
+Microsoft × Hugging Face launch ThinkingBox: grading agents by the end-state and side effects they leave in a database, rather than trusting their final response or tool-call record; 507 stateful enterprise workflows, each run 20 times per model across 18 LLMs, built on the argument that both "the final response" and "a valid tool call" are only proxies — only the records left behind settle whether the agent actually succeeded.
 
 ### [2026-09-29](/en/today/2026-09-29)
 

@@ -38,6 +38,10 @@ GPT, Claude and Gemini form the three main lines of model selection. Two OpenAI 
 
 ## Timeline
 
+### [2026-10-06](/en/today/2026-10-06)
+
+OpenAI's Decisions API opens public beta: the endpoint previewed in limited form at the 09-29 DevDay opens to all developers, powered by GPT-6 Luna, focused on predefined questions with a finite set of candidate answers, up to 10x faster than calling Luna directly via the Responses API; billed on input tokens only ($0.10/million, cache/output free), with GA expected within weeks; together with LangChain's Jev and LiquidAI's d1, this forms a new trend of "decision-making/judgment splitting off into its own specialized model category" (see [agent-evaluation](/en/topics/agent-evaluation)).
+
 ### [2026-09-29](/en/today/2026-09-29)
 
 OpenAI DevDay 2026: 20+ updates shipped at once, centered on the always-on agent **Dots** (see above), **GPT-6.1 Sol** (coding/computer-use nearing Astra at one-fifth the price), the new **Pro 500** subscription tier and paid **Ultrafast** speed tier, **ChatGPT Space + Pages** (human-agent collaborative documents/workspace), and **OpenAI Private Intelligence** (Private Safety Processing available now, Private Inference previewing this autumn) — the largest platform update within a month of the 09-03 GPT-6 Astra launch (see [enterprise-ai-agents](/en/topics/enterprise-ai-agents)).

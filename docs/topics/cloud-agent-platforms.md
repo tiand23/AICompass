@@ -37,6 +37,10 @@
 
 ## Timeline
 
+### [2026-10-06](/today/2026-10-06)
+
+Gemini Enterprise 新增 Antigravity 管理控制：企业管理员可集中管控 Boost（分层多 Agent 架构解决复杂算法/深度调试任务，已 GA）与 Teamwork（协调自主子 Agent 执行大规模长时程项目，预览阶段）两项功能的可用范围——Google 版"给企业 Agent 功能配治理开关"的落地。
+
 ### [2026-09-24](/today/2026-09-24)
 
 Microsoft Foundry 新增语音 Agent 公测（亚秒级延迟、80+ 语言/140+ 地区，可部署到 Web/Teams/Teams Phone/Twilio，支持 prompt 式与托管两种形态）、扩展模型选择（新增 GPT-6 系列 SKU 与 Claude Opus 5.5）、持续优化能力（用生产 trace 针对质量/延迟/成本持续调优 Agent）——语音 Agent 补上对标 Google Gemini Live 的最后一块拼图（详见 [voice-agents](/topics/voice-agents)）。同日 LangChain 发布 LangSmith 五项更新：Engine v2（为自动诊断 Agent 故障的 Engine 新增红队测试与自动化测试）、**Managed Deep Agents v0.8**（新增身份认证、记忆管理、消息渠道，紧接 09-09 Connections 之后的又一次托管运行时扩充）、Trajectories（Agent 会话全过程可读视图）、LangSmith Fine-Tuning（平台内置微调）、LangSmith Custom Apps（围绕 Agent 数据构建自定义界面）——LangSmith 正从工具集合向一体化 Agent 生产平台收敛（详见 [deep-agents](/topics/deep-agents)）。

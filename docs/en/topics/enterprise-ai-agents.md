@@ -36,6 +36,10 @@ This is the main battleground for generative AI in the enterprise. As model capa
 
 ## Timeline
 
+### [2026-10-02](/en/today/2026-10-02)
+
+Anthropic launches Claude Frontier Academy: a $100M commitment to train 10,000 "Frontier Deployed Engineers" (FDEs) by end of 2027, with first cohorts from Accenture, Bain, Deloitte, McKinsey, Morgan Stanley, and Novo Nordisk, using a simulated-deployment-plus-graded-assessment and medical-residency-style practicum over 12 weeks — the first time a vendor has directly funded a large-scale talent pipeline for the platform-plus-embedded-engineer (FDE) point on the "delivery model spectrum," treating constrained delivery-engineer supply as a bottleneck to solve directly rather than waiting on consulting firms to train people on their own.
+
 ### [2026-10-01](/en/today/2026-10-01)
 
 Barclays publishes an expanded-Claude-use case study: targeting 50% developer adoption of Claude Code by end of 2026 (rising further in 2027); its Colleague Knowledge Assistant (RAG-based, launched 2025) has processed over 1 million searches across 16,000+ users; the Global Markets team uses Claude to classify/enrich/route roughly 120,000 daily emails. All sits within a roughly £2 billion multi-year efficiency program — a rare banking example in the "agents-in-production case library" disclosing quantified metrics across three use cases at once, tied to a company-wide financial target.

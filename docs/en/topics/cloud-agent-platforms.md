@@ -37,6 +37,10 @@ The enterprise agent platform market entered consolidation in 2026 — the need 
 
 ## Timeline
 
+### [2026-10-06](/en/today/2026-10-06)
+
+Gemini Enterprise adds Antigravity admin controls: enterprise admins can now centrally manage access to Boost (a tiered multi-agent hierarchy for complex algorithmic/deep-debugging tasks, now GA) and Teamwork (coordinated autonomous subagents for large-scale, long-horizon projects, still in preview) — Google's version of adding governance switches to enterprise agent features.
+
 ### [2026-09-24](/en/today/2026-09-24)
 
 Microsoft Foundry adds voice agents in public preview (sub-second latency, 80+ languages/140+ locales, deployable to web/Teams/Teams Phone/Twilio, supporting both prompt-based and hosted agent forms), expanded model choice (new GPT-6-series SKUs and Claude Opus 5.5), and continuous optimization (tuning agents from production traces against quality/latency/cost) — voice agents fill the last piece of Foundry's puzzle to compete with Google Gemini Live (see [voice-agents](/en/topics/voice-agents)). Same day, LangChain ships five LangSmith updates: **Engine v2** (red-teaming and automated testing added to the agent-failure-diagnosis Engine), **Managed Deep Agents v0.8** (adds authentication, memory management, and messaging channels — right on the heels of 09-09's Connections), **Trajectories** (a readable view of an agent session's full run), **LangSmith Fine-Tuning**, and **LangSmith Custom Apps** — LangSmith is converging from a collection of tools toward an integrated agent production platform (see [deep-agents](/en/topics/deep-agents)).

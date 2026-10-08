@@ -37,6 +37,10 @@ Model parameters can't hold private knowledge or keep up with knowledge updates 
 
 ## Timeline
 
+### [2026-10-06](/en/today/2026-10-06)
+
+Google launches EmbeddingGemma 2: a 740M-parameter open multimodal on-device embedding model (Apache 2.0, built on Gemma 4) mapping text/code, image, and audio into one shared vector space via a 270M text/code backbone plus a 170M vision encoder and a 300M audio encoder; the quantized full version uses roughly 567MB of active RAM on a Pixel 11 Pro (191MB text-only), an 8,192-token context window (4x the first EmbeddingGemma), and leads sub-1B multimodal embedders on benchmarks like MTEB Code and MAEB — packing privacy-first, offline-capable multimodal semantic search/RAG into a footprint consumer hardware can afford, a concrete instance of "a small on-device model covering a vertical capability" applied to the embedding layer at the core of RAG.
+
 (Auto-filled by daily updates; baseline below)
 
 ### 2026-07-28

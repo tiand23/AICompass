@@ -24,6 +24,8 @@ Deep Agents 是 LangChain 提出的概念与产品方向：能执行长时程、
 - **上下文传递模式（Forked vs Isolated Subagents）**：LangChain 把 Supervisor/子 Agent 架构里"子 Agent 该拿多少上下文"显式区分为两种模式——Isolated（默认，子 Agent 只拿任务描述，空白上下文起步，适合并行/独立验证）与 Forked（`'mode': 'fork'`，子 Agent 继承主管当前状态与对话历史，靠 prompt 缓存复用，避免重复取证）；选型准则是 Worker/Memory Agent 用 fork，Verifier/Researcher 用 isolated。
 - **多路径推理应对不确定性**：Microsoft Discovery Engine（内核 CLIO）代表的另一种长时程模式——不是单线程规划-执行-恢复，而是多条独立推理路径并行探索、互相比对，自主决定继续探索、切换策略、换模型或引入人类专家；在科研发现这类高不确定性垂直任务上给出了可比较的基准分数（详见 [enterprise-ai-agents](/topics/enterprise-ai-agents)）。
 - **托管凭证与按调用者身份**：LangSmith Managed Deep Agents 的 Connections 把凭证管理独立成两条轴——归属（Agent 共享 / 按调用者各自）与类型（静态密钥 / OAuth）——解决托管 Agent 密钥轮换与"操作应带真实调用者身份而非笼统机器人身份"这两个问题，免去手工搭 OAuth 回调管道。
+- **工具披露与 skill 披露绑定**：企业 skill 库规模涨到数千条后暴露的问题——工具与 skill 披露分离导致 Agent 可能绕过指令直接用工具；`include_tools` 让工具在 skill 元数据里绑定，对上下文保持隐藏直到 Agent 读取该 skill 才作为新系统消息出现（支持中途加工具的模型可借此保持 prompt 缓存不失效），`pinned_skills` 让应用在模型调用前把指定 skill 完整指令直接预加载（省掉"先发现再加载"的一轮），调用时把 `skills_metadata` 设为 `None` 让长时程线程不重启也能感知新增/修改的 skill——三项改动都不破坏"渐进式披露"这一核心设计原则。
+- **按运行时上下文动态配置的部署**：同一个托管部署可以依据运行时上下文（如触发它的 Slack 频道）选择不同的模型/指令/skills/工具/沙箱，不必为每种场景复制粘贴几乎一样的 Agent；配合聊天触发的定时任务（周期任务绑定 prompt+cron，一次性任务在指定时间运行并回复原线程），把"配置 Agent"和"调度 Agent"都变成运行时可声明的参数而非部署时固定的常量。
 
 ## 相关技术
 
@@ -39,6 +41,10 @@ Deep Agents 是 LangChain 提出的概念与产品方向：能执行长时程、
 - [How We Benchmark Deep Agents（LangChain Blog）](https://www.langchain.com/blog/)
 
 ## Timeline
+
+### [2026-10-07](/today/2026-10-07)
+
+LangSmith Managed Deep Agents v0.9 公测：新增 Schedules SDK（聊天创建/修改/查看/删除定时任务，周期任务绑定 prompt+cron，一次性任务指定时间运行并回复原线程）、按次运行配置（同一部署依据运行时上下文选择不同模型/指令/skills/工具/沙箱）、可配置的 Slack 确认反应。同日 LangChain 发文《Revamping Skills in Deep Agents》重构 Skills 机制，解决企业 skill 库规模涨到数千条后暴露的三个问题（工具披露与 skill 披露脱节、显式请求仍要多一轮加载、长时程线程感知不到 skill 更新），具体改动见上方核心概念。紧接两周前的 v0.8（认证/记忆/消息渠道）与三周前的 Connections，托管运行时能力扩充节奏明显加快（详见 [cloud-agent-platforms](/topics/cloud-agent-platforms)）。
 
 ### [2026-09-24](/today/2026-09-24)
 

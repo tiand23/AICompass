@@ -40,7 +40,9 @@ High-star representative repos at topic creation (2026-07):
 | scientific-agent-skills | New (hit Trending 2026-08-31, ~30-40k stars total) | 165 validated scientific-research skills + 100+ scientific databases, covering biology, chemistry, medicine, and drug discovery |
 | academic-research-skills | New (hit Trending 2026-09-01, ~44k stars total) | Full academic-research-workflow skill suite: research → write → review → revise → finalize; companion Codex-native version available |
 | ponytail | New (hit Trending 2026-09-03, climbed to ~122k stars within 9 days, the fastest-growing skill repo recently) | Enforces a "decision ladder" to compress AI-generated code volume; official benchmark shows an average 54% reduction in code output |
-| mattpocock/skills | As of 2026-10-01, ~273k stars total (up from ~207k when first listed 08-07 — still leads the skill ecosystem's single hottest point) | Engineering discipline distilled from a personal `.agents` directory |
+| mattpocock/skills | As of 2026-10-08, ~281k stars total (up from ~207k when first listed 08-07 — still leads the skill ecosystem's single hottest point) | Engineering discipline distilled from a personal `.agents` directory |
+| rea | New (hit Trending 2026-10-08, +7,744/day — the fastest riser among recent skill/agent-tool repos) | An agent-based reverse-engineering tool spanning behavioral analysis to low-level inspection of apps and native binaries |
+| knowledge-work-plugins | New (hit Trending 2026-10-08, ~27.3k stars total) | An open-source plugin repo for knowledge workers, mainly for use with Claude Cowork |
 | superpowers | Back on Trending 2026-10-01 (+888/day) | Agentic skills framework + development methodology |
 | OpenShell (NVIDIA) | New (hit Trending 2026-10-01, +2,503/day — the fastest riser that day) | A "safe, private" runtime for autonomous AI agents, written in Rust — a major hardware vendor shipping agent-execution-isolation infrastructure directly |
 
@@ -63,6 +65,10 @@ High-star representative repos at topic creation (2026-07):
 - [Claude Code repos star leaderboard](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-10-08](/en/today/2026-10-08)
+
+A GitHub Trending snapshot: `mattpocock/skills` grows to ~281k stars total, still leading; `rea` (an agent-based reverse-engineering tool spanning behavioral analysis to low-level inspection) spikes +7,744/day — the fastest riser among recent skill/agent-tool repos, continuing the observation (first evidenced by reverse-skill) that demand for security-research-oriented agent tools runs high; `knowledge-work-plugins` (an open-source plugin repo for knowledge workers, mainly for Claude Cowork, ~27.3k stars total) newly lists.
 
 ### [2026-10-01](/en/today/2026-10-01)
 

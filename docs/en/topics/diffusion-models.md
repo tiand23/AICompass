@@ -28,6 +28,10 @@ The bottleneck for deploying image/video generation is inference cost and VRAM. 
 
 ## Timeline
 
+### [2026-10-06](/en/today/2026-10-06)
+
+Google launches Gemini Nano Banana 2.1: an image-generation/conversational-editing model keeping Flash-level speed and cost while improving visual quality, prompt adherence, multi-turn character consistency, text rendering, and wide/panoramic aspect-ratio generation — continuing the "frequent, incremental Flash-tier iteration" playbook applied to the image-generation line (see [gemini-models](/en/topics/gemini-models)).
+
 ### [2026-08-17](/en/today/2026-08-17)
 
 Google formally shuts down the Imagen 4 generation endpoints, shifting to Gemini 3.1 Flash Image — another instance of a standalone specialized generation model line folding into a flagship multimodal model (following OpenAI's Atlas folding into ChatGPT/Codex); the `generate_images()` method disappears entirely, not a seamless replacement, requiring callers to rewrite against the new API (see [gemini-models](/en/topics/gemini-models)).

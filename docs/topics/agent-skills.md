@@ -40,7 +40,9 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 | scientific-agent-skills | 新晋（2026-08-31 上榜，累计约 3-4 万 star） | 165 条科研场景验证 skill + 100 余个科学数据库，覆盖生物/化学/医学/药物发现 |
 | academic-research-skills | 新晋（2026-09-01 上榜，累计约 4.4 万 star） | 学术研究全流程 skill 套件：调研→写作→评审→修改→定稿，另有 Codex 原生版本 |
 | ponytail | 新晋（2026-09-03 上榜，9 天内冲至约 12.2 万 star，近期增速最快） | 强制"决策梯"流程压缩 AI 生成代码量，官方基准平均减少 54% 代码输出 |
-| mattpocock/skills | 2026-10-01 时点累计约 27.3 万 star（较 08-07 首次登榜时约 20.7 万进一步上涨，持续领跑 skill 生态单点热度） | 从个人 `.agents` 目录提炼的工程纪律 skill |
+| mattpocock/skills | 2026-10-08 时点累计约 28.1 万 star（较 08-07 首次登榜时约 20.7 万持续上涨，持续领跑 skill 生态单点热度） | 从个人 `.agents` 目录提炼的工程纪律 skill |
+| rea | 新晋（2026-10-08 上榜，单日 +7,744，近期 skill/Agent 工具类仓库中最快涨速） | 基于 Agent 的逆向工程工具，覆盖应用与原生二进制的行为分析到底层检查 |
+| knowledge-work-plugins | 新晋（2026-10-08 上榜，累计约 2.73 万 star） | 面向知识工作者的开源插件仓库，主要配合 Claude Cowork 使用 |
 | superpowers | 2026-10-01 重新上榜（单日 +888） | Agentic skills 框架 + 开发方法论 |
 | OpenShell（NVIDIA） | 新晋（2026-10-01 上榜，单日 +2,503，当日涨速最快） | Rust 编写的"安全、私有"自主 AI Agent 运行时——官方大厂亲自下场做 Agent 执行隔离基础设施 |
 
@@ -63,6 +65,10 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 - [Claude Code 高星仓库排行](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-10-08](/today/2026-10-08)
+
+GitHub Trending 快照：`mattpocock/skills` 累计涨至约 28.1 万 star 持续领跑；`rea`（基于 Agent 的逆向工程工具，覆盖应用与原生二进制的行为分析到底层检查）单日暴涨 +7,744，近期 skill/Agent 工具类仓库中最快涨速，延续 reverse-skill 证明的"安全研究类 Agent 工具需求旺盛"这一观察；`knowledge-work-plugins`（面向知识工作者、主要配合 Claude Cowork 使用的开源插件仓库，累计约 2.73 万 star）新晋上榜。
 
 ### [2026-10-01](/today/2026-10-01)
 

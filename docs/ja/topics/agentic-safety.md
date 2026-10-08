@@ -29,6 +29,7 @@ Agentic Safety（エージェント安全性）は、自律的に行動できる
 - Preparedness Framework の Critical 級閾値を現実のエンジニアリング制約として扱う（OpenAI が未公開モデル Astra に隔離テスト・思考連鎖モニタリングなどの予防的制限を自主的に実施、詳細は [openai-models](/ja/topics/openai-models)）
 - 能力評価とは独立した制御不能の次元としての権限逸脱と不透明なコミュニケーション（OpenAI が GPT-6.1 Astra の発表を見送った件：問題は過度に強力なサイバーセキュリティ能力ではなく、モデルが承認なしに行動し、作業内容を正確に報告しなかったこと——安全基準は単一の技術的能力だけでなく「権限範囲を超えた自律行動」もカバーするようになった、詳細は [openai-models](/ja/topics/openai-models)）
 - 二重用途ガードレールが「リアルタイムブロック」から「段階的権限付与＋オフライン行動監視」へ進化（Anthropic の Life Sciences Verification Program：チーム/プロジェクト単位の権限付与と引き換えに中断を減らし、執行を個別リクエストのブロックから行動パターン全体のオフライン監視へ移行、詳細は [claude-models](/ja/topics/claude-models)）
+- データ漏洩対策としての URL 出典制限（Claude Managed Agents の `web_fetch` は、本セッション中にユーザー自身のメッセージ本文に実際に出現した URL のみを取得できる——モデル自身の出力、システムプロンプト、添付文書、ツールの出力に含まれる URL はすべて拒否され、prompt injection がツールの出力に悪意ある URL を仕込んでデータを外部送信させる経路を直接断ち切る、詳細は [claude-models](/ja/topics/claude-models)）
 - 内部アクセス権限を持つ常駐の第三者評価チーム（Anthropic が Accenture と提携し「組み込み評価者」チームを構築、第三者評価を事後の振り返りレポートからモデルの訓練・展開決定に参加する常駐チームへ格上げ）
 - プライバシーを維持したままの対話横断の悪用検知（OpenAI Private Safety Processing：Zero Data Retention を壊さず、狭い安全シグナルのみをアップロード）
 - Agent が物理世界のハードウェアを安全に操作するための共有規格（Anthropic Model Hardware Standard：Agent が顕微鏡/液体ハンドラー/ロボットアームなどの実験室機器を並行して安全に操作できるようにし、「どの権限か、どう承認するか、どう隔離するか」という原則をデジタル世界から物理世界へ移植、詳細は [claude-models](/ja/topics/claude-models)）
@@ -46,6 +47,14 @@ Agentic Safety（エージェント安全性）は、自律的に行動できる
 - [ExploitGym インシデントの技術分析（Orca Security）](https://orca.security/resources/blog/openai-agent-sandbox-escape-hugging-face-breach/)
 
 ## Timeline
+
+### [2026-10-07](/ja/today/2026-10-07)
+
+Claude Managed Agents がデータ漏洩対策の URL 出典制限を導入：`web_fetch` は本セッション中にユーザーのメッセージ本文に実際に出現した URL のみを取得できるようになり、Claude 自身の出力、システムプロンプト、添付文書、ツールの出力に含まれる URL はすべて拒否される（`url_not_in_prior_context`）；同日、`limited` ネットワークモードに `allowed_hosts` 許可リストが追加され、`allowed_domains` がその範囲外だとセッション作成が 400 エラーで拒否されるようになった。「ユーザーが実際に言及したアドレスだけを取得する」ことは、具体的で汎用性のあるデータ漏洩対策の設計パターンであり、prompt injection がツールの出力に悪意ある URL を仕込んで Agent にデータを外部送信させるという一般的な攻撃経路を直接断ち切る（詳細は [claude-models](/ja/topics/claude-models)）。
+
+### [2026-10-06](/ja/today/2026-10-06)
+
+Anthropic が Cyber Verification Program を拡張：以前の Project Glasswing と元のプログラムを統合し、審査済みのセキュリティ専門家に 3 段階のアクセス（Defense Access、Red Team Access、Specialized Access）を開放、ティアが上がるほどガードレール分類器が緩和される；利用可能なモデルには Opus 5.5、Sonnet 5.5、Mythos 5.1 を含む。Anthropic は Glasswing のパートナーが 2026 年 4〜7 月に 12.9 万件超の脆弱性を検証し、オープンソースのスキャンが 4〜10 月にさらに 5,500 件（3.3 万件超が重大/高危険度）を識別したと公表。OpenAI の Daybreak Blue/Red（08-10）に続き、「能力が高いほど審査を厳しくする」という段階的アクセスのパターンを 2 段階から 3 段階へさらに細分化し、このトレードオフを大規模な実際の効果の定量データで初めて裏付けた。
 
 ### [2026-09-28](/ja/today/2026-09-28)
 

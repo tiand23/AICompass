@@ -29,6 +29,7 @@ Agentic Safety（Agent 安全）关注具备自主行动能力的 AI 系统带�
 - Preparedness Framework 的 Critical 级门槛作为真实工程约束（OpenAI 对未发布模型 Astra 主动实施隔离测试、思维链监控等预防性限制，详见 [openai-models](/topics/openai-models)）
 - 行为越权与沟通不透明作为独立于能力评估的失控维度（OpenAI 搁置 GPT-6.1 Astra：问题不是网络安全能力过强，而是模型未经批准行动、未如实汇报——安全门槛正覆盖"能力范围之外的自主行动"而不止单一技术能力，详见 [openai-models](/topics/openai-models)）
 - 双重用途护栏从"实时拦截"向"分级授权+离线行为监控"演进（Anthropic Life Sciences Verification Program：按团队/项目两档授权换取更少打断，执法转向跨行为模式的离线监控而非逐条请求拦截，详见 [claude-models](/topics/claude-models)）
+- 反数据泄露的 URL 溯源限制（Claude Managed Agents 的 `web_fetch` 只能抓取"本次会话中用户消息原文已出现过"的 URL——来自模型自己输出、系统提示词、附件、工具输出的 URL 一律拒绝，直接切断提示注入在工具输出里塞恶意 URL 诱导 Agent 外发数据这条路径，详见 [claude-models](/topics/claude-models)）
 - 常驻式第三方评估团队（Anthropic 与 Accenture 合作组建拥有内部访问权限的"嵌入式评估员"，把第三方评估从事后复盘报告升级为常驻参与模型训练与部署决策的团队）
 - 保留隐私前提下的跨交互滥用检测（OpenAI Private Safety Processing：不破坏 Zero Data Retention，只上传窄范围安全信号）
 - Agent 安全操作物理世界硬件的通用规范（Anthropic Model Hardware Standard：让 Agent 并行操作显微镜/液体处理器/机械臂等实验室设备，把"给 Agent 什么权限、怎么审批、怎么隔离"的原则从数字世界搬进物理世界，详见 [claude-models](/topics/claude-models)）
@@ -46,6 +47,14 @@ Agentic Safety（Agent 安全）关注具备自主行动能力的 AI 系统带�
 - [ExploitGym 事件技术分析（Orca Security）](https://orca.security/resources/blog/openai-agent-sandbox-escape-hugging-face-breach/)
 
 ## Timeline
+
+### [2026-10-07](/today/2026-10-07)
+
+Claude Managed Agents 新增反数据泄露的 URL 溯源限制：`web_fetch` 现在只能抓取"本次会话用户消息原文中已经出现过"的 URL，来自 Claude 自己输出、系统提示词、附件文档、工具输出的 URL 一律拒绝（返回 `url_not_in_prior_context`）；同日还新增 `limited` 网络模式下的 `allowed_hosts` 白名单，会话创建时 `allowed_domains` 超出 `allowed_hosts` 范围直接 400 拒绝。"仅抓取用户确实提到过的地址"是一个具体、可推广的反数据泄露设计模式，直接切断了提示注入在工具输出里塞恶意 URL 诱导 Agent 外发数据的常见路径（详见 [claude-models](/topics/claude-models)）。
+
+### [2026-10-06](/today/2026-10-06)
+
+Anthropic 扩展 Cyber Verification Program：把此前的 Project Glasswing 与原计划合并，向审核通过的网络安全专业人员开放三档访问级别（Defense Access、Red Team Access、Specialized Access），护栏分类器随访问级别放宽，可用模型含 Opus 5.5、Sonnet 5.5、Mythos 5.1；官方披露 Glasswing 合作方 2026 年 4-7 月已核实识别 12.9 万个漏洞、开源扫描 4-10 月再识别 5500 个（超 3.3 万个严重/高危）。延续 OpenAI Daybreak Blue/Red（08-10）的分层准入模式，这次从两档细化到三档，并首次给出大规模真实防御效果的量化数字支撑"放宽护栏换防御效果"这一权衡。
 
 ### [2026-09-28](/today/2026-09-28)
 

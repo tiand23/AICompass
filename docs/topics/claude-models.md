@@ -37,6 +37,10 @@ Claude 是 Agent 与编码场景的主流模型选择之一。其模型线的每
 
 ## Timeline
 
+### [2026-10-07](/today/2026-10-07)
+
+Claude Haiku 5.5 发布：100 万 token 上下文、12.8 万最大输出、effort 参数驱动自适应思考，经 Claude API、Amazon Bedrock、AWS/Google Cloud 上的 Claude Platform、Microsoft Foundry 同步提供；从 Haiku 4.5 迁移的破坏性变更——手工指定思考预算（`budget_tokens`）返回 400，自适应思考默认开启、回复可能以 `thinking` 块开头。Opus/Sonnet/Haiku 三档在一个月内全部完成 5.5 代际升级。同日 Sonnet 5.5 缓存读取价从 $0.20 降到 $0.10/百万 token（基础输入价的 0.05 倍，此前 0.1 倍）；Python/TypeScript SDK 新增浏览器与计算机使用工具的 beta 封装类；Max/Team 订阅新增每月 API 额度；Managed Agents 新增 `allowed_hosts` 网络白名单与 `web_fetch` 反数据泄露的 URL 溯源限制——`web_fetch` 现在只能抓取本次会话用户消息原文中已出现过的 URL（详见 [agentic-safety](/topics/agentic-safety)）。
+
 ### [2026-09-30](/today/2026-09-30)
 
 Claude Sonnet 4.5（`claude-sonnet-4-5-20250929`）宣布退役，2026-11-30 停止服务，建议迁移到刚发布的 Sonnet 5.5——两个月迁移窗口是近期模型退役的典型节奏。

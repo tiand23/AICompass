@@ -40,6 +40,10 @@ Agent 记忆：让 Agent 跨会话、跨任务保留并复用信息的基础设�
 
 ## Timeline
 
+### [2026-10-08](/today/2026-10-08)
+
+claude-mem 登上 GitHub Trending（累计 9.8 万+ star，单日 +662）："跨会话持久上下文"层——捕获并压缩会话数据，按需把相关上下文注入后续交互，兼容 Claude Code、OpenClaw、Codex、Gemini 等多个平台。延续 ai-memory 开创的"记忆跨厂商可移植"路线，这次以"持久上下文压缩注入"作为具体实现模式，兼容平台范围更广（详见 [coding-agents](/topics/coding-agents)）。
+
 ### [2026-09-02](/today/2026-09-02)
 
 Azure "Agent 优化经济学"系列新文章给出记忆与检索的量化数据：Foundry IQ 知识库用语义重排序+定向段落检索，证据召回率提升 54%、检索 token 成本降低 34%；配合分级记忆（会话/用户/流程级）减少对话重放消耗，另有 Toolboxes 按需检索工具定义使大型工具库场景输入 token 降约 97%。延续 08-31 Cosmos DB 记忆参考实现之后，Azure 在"记忆+检索"上下文工程上又一次给出实测量化数字（详见 [enterprise-ai-agents](/topics/enterprise-ai-agents)）。
