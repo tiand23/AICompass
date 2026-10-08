@@ -50,7 +50,7 @@
           <mxGeometry height="22" width="500" x="60" y="354" as="geometry" />
         </mxCell>
         <mxCell id="d2_filter" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="選別：非表示シートを除外&#xa;（草稿／旧版本、成果物ではない）" vertex="1">
-          <mxGeometry height="64" width="560" x="60" y="384" as="geometry" />
+          <mxGeometry height="64" width="560" x="90" y="384" as="geometry" />
         </mxCell>
         <mxCell id="e_d1b_filter" edge="1" parent="doclane" source="d1b" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" target="d2_filter">
           <mxGeometry relative="1" as="geometry" />
@@ -65,16 +65,16 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="pathA" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3E6B63;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;経路A・機械的に転記&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#3E6B63&gt;表形式のシートはこちら：表頭の列位置が固定 → 列ごとに1行ずつ転記&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;&lt;b&gt;100% 正確・コスト0&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9.5px&quot; color=#5B6169&gt;実測：同じ表を AI に転記させると 26 項目のときも 2 項目のときもあったが、機械的な転記は常に 26 項目——表形式は絶対に AI に渡さない&lt;/font&gt;" vertex="1">
-          <mxGeometry height="170" width="280" x="30" y="588" as="geometry" />
+          <mxGeometry height="170" width="280" x="60" y="588" as="geometry" />
         </mxCell>
         <mxCell id="ic_pathA" parent="doclane" style="shape=mxgraph.ios7.icons.tools;html=1;strokeColor=#3E6B63;fillColor=none;strokeWidth=1.5;" value="" vertex="1">
-          <mxGeometry height="22" width="22" x="42" y="612" as="geometry" />
+          <mxGeometry height="22" width="22" x="72" y="612" as="geometry" />
         </mxCell>
         <mxCell id="pathB" parent="doclane" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#8A6A2E;strokeWidth=1.8;align=left;verticalAlign=middle;spacingLeft=34;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" value="&lt;b&gt;経路B・AI に読ませる&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10.5px&quot; color=#8A6A2E&gt;空でない非表形式のシート（図／文章系）はこちら&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;図なら画像も一緒に AI に渡す／表なら文字だけ渡して画像は渡さない&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9.5px&quot; color=#5B6169&gt;実測：画像を渡すとかえって悪化——12 項目が 1 項目に減った（AI が図を見て語ってしまい、行ごとに文字を読まなくなる）&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9.5px&quot; color=#5B6169&gt;5つを問う：何が書かれているか／どのシステムか／どんな識別子があるか／どんな質問に答えられるか／どこが読み取れないか&lt;/font&gt;" vertex="1">
-          <mxGeometry height="170" width="290" x="340" y="588" as="geometry" />
+          <mxGeometry height="170" width="290" x="370" y="588" as="geometry" />
         </mxCell>
         <mxCell id="ic_pathB" parent="doclane" style="shape=mxgraph.ios7.icons.looking_glass;html=1;strokeColor=#8A6A2E;fillColor=none;strokeWidth=1.5;" value="" vertex="1">
-          <mxGeometry height="22" width="22" x="352" y="612" as="geometry" />
+          <mxGeometry height="22" width="22" x="382" y="612" as="geometry" />
         </mxCell>
         <mxCell id="e_classify_pathA" edge="1" parent="doclane" source="d2_classify" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" target="pathA">
           <mxGeometry relative="1" as="geometry" />
@@ -209,8 +209,8 @@
         <mxCell id="e_li_srcstore" edge="1" parent="doclane" source="ledger_input" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0;exitY=0.8;entryX=0;entryY=0.5;" target="src_store">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="20" y="1077" />
-              <mxPoint x="20" y="1513" />
+              <mxPoint x="0" y="1077" />
+              <mxPoint x="0" y="1513" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -294,10 +294,10 @@
         <mxCell id="e_out1_summary" edge="1" parent="doclane" source="out1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.1;strokeColor=#8A8F96;endArrow=open;endFill=0;exitX=0;exitY=0.5;entryX=0;entryY=0.5;exitDx=0;exitDy=0;entryDx=0;entryDy=0;" target="summary_kb">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="42.06" y="916.06" />
-              <mxPoint x="42.06" y="948.06" />
-              <mxPoint x="39.71" y="948.06" />
-              <mxPoint x="39.71" y="1800.06" />
+              <mxPoint x="0" y="916.06" />
+              <mxPoint x="0" y="948.06" />
+              <mxPoint x="0" y="948.06" />
+              <mxPoint x="0" y="1800.06" />
             </Array>
           </mxGeometry>
         </mxCell>

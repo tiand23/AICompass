@@ -68,7 +68,7 @@
 
         
         <mxCell id="sA_title" value="A ・ 記憶層の仕組み" style="text;html=1;fontSize=18;fontStyle=1;fontColor=#1B2229;align=left;verticalAlign=middle;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="40" y="380" width="500" height="26" as="geometry" />
+          <mxGeometry x="40" y="380" width="320" height="26" as="geometry" />
         </mxCell>
 
         <mxCell id="sA_query" value="記憶ストアを検索&#10;user_id / project_id 単位" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1B2229;strokeWidth=1.2;fontSize=13;fontColor=#1B2229;fontFamily=Helvetica;" vertex="1" parent="1">
@@ -106,7 +106,7 @@
 
         
         <mxCell id="sB_title" value="B ・ 3 つのシナリオパイプライン" style="text;html=1;fontSize=18;fontStyle=1;fontColor=#1B2229;align=left;verticalAlign=middle;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="40" y="800" width="500" height="26" as="geometry" />
+          <mxGeometry x="40" y="800" width="320" height="26" as="geometry" />
         </mxCell>
 
         <mxCell id="lane1" value="① ナレッジベース QA（完全自律 ・ 読み取り専用）" style="swimlane;startSize=32;arcSize=2;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#2E6E7A;fontSize=14;fontStyle=1;verticalAlign=top;fontColor=#2E6E7A;strokeWidth=1.6;fontFamily=Helvetica;swimlaneFillColor=none;" vertex="1" parent="1">
@@ -329,9 +329,10 @@
         <mxCell id="x_0_to_l1" value="①の検索で使用" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;strokeWidth=1.3;strokeColor=#2E6E7A;fontColor=#2E6E7A;endArrow=open;endFill=0;labelBackgroundColor=#FFFFFF;fontSize=10.5;exitX=0.5;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="s0_doc3" target="lane1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="840" y="220" />
-              <mxPoint x="20" y="220" />
-              <mxPoint x="20" y="840" />
+              <mxPoint x="850" y="300" />
+              <mxPoint x="460" y="300" />
+              <mxPoint x="460" y="840" />
+              <mxPoint x="266" y="840" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -339,8 +340,7 @@
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1530" y="290" />
-              <mxPoint x="2100" y="290" />
-              <mxPoint x="2100" y="840" />
+              <mxPoint x="1874" y="290" />
             </Array>
           </mxGeometry>
         </mxCell>
