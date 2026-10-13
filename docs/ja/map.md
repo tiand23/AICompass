@@ -10,7 +10,7 @@
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [claude-models](/ja/topics/claude-models) | Anthropic Claude モデルライン | エージェント/コーディング用途の選定と移行 | 🔥 | 2026-10-07 |
+| [claude-models](/ja/topics/claude-models) | Anthropic Claude モデルライン | エージェント/コーディング用途の選定と移行 | 🔥 | 2026-10-09 |
 | [openai-models](/ja/topics/openai-models) | OpenAI GPT モデルラインと API プラットフォーム | 選定、価格変動、廃止リスク | 🔥 | 2026-10-06 |
 | [gemini-models](/ja/topics/gemini-models) | Google Gemini モデルライン | コスト重視ワークロードの高コスパ選定 | 💤 | 2026-08-17 |
 
@@ -43,17 +43,17 @@
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [deep-agents](/ja/topics/deep-agents) | 長期自律タスクエージェント（LangChain） | 多段階タスクの計画・回復・評価 | 🔥 | 2026-10-07 |
+| [deep-agents](/ja/topics/deep-agents) | 長期自律タスクエージェント（LangChain） | 多段階タスクの計画・回復・評価 | 🔥 | 2026-10-09 |
 | [agent-frameworks](/ja/topics/agent-frameworks) | フレームワーク版図：LangGraph/CrewAI/ADK/Agents SDK… | フレームワーク選定と長期的安全性 | 💤 | 2026-08-29 |
 | [agent-workflow](/ja/topics/agent-workflow) | ワークフローパラダイム：編成 vs 自律、HITL、永続実行 | エージェントを業務プロセスに確実に組み込む | 💤 | 2026-08-17 |
-| [agent-skills](/ja/topics/agent-skills) | 再利用可能な能力パッケージ（GitHub 熱度ランキング付き） | エージェント能力の配布と再利用 | 🔥 | 2026-10-08 |
+| [agent-skills](/ja/topics/agent-skills) | 再利用可能な能力パッケージ（GitHub 熱度ランキング付き） | エージェント能力の配布と再利用 | 🔥 | 2026-10-09 |
 | [voice-agents](/ja/topics/voice-agents) | 音声エージェント（カスケード/リアルタイム S2S、フレームワークと評価） | 音声インターフェースエージェントのリアルタイム工学と評価 | 💤 | 2026-08-21 |
 
 ### ランタイムとクラウド（ホスト型ランタイム ・ エージェントプラットフォーム ・ Foundry）
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [enterprise-ai-agents](/ja/topics/enterprise-ai-agents) | 企業向けエージェントプラットフォームとデリバリー | エージェントを企業システムへ確実に接続し運用する | 🔥 | 2026-10-02 |
+| [enterprise-ai-agents](/ja/topics/enterprise-ai-agents) | 企業向けエージェントプラットフォームとデリバリー | エージェントを企業システムへ確実に接続し運用する | 📈 | 2026-10-02 |
 | [cloud-agent-platforms](/ja/topics/cloud-agent-platforms) | 4 大クラウドのプラットフォーム版図（AgentCore/Foundry/GEAP/Managed Agents） | プラットフォーム選定とロックインの権衡 | 🔥 | 2026-10-06 |
 | [agent-workspaces](/ja/topics/agent-workspaces) | デスクトップ型エージェントワークスペース（Cowork/openwork/Codex アプリ） | 仕事を任せ成果物を受け取る対話形態；能力設定の可搬性 | 💤 | 2026-08-12 |
 | [agent-sandboxes](/ja/topics/agent-sandboxes) | Agent 実行サンドボックス基盤（E2B/Daytona/Cloudflare computer） | Agent に安全で隔離された再利用可能なコード実行環境を提供 | 📈 | 2026-09-23 |
@@ -62,7 +62,7 @@
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [mcp](/ja/topics/mcp) | ツール接続プロトコル（事実上の標準） | AI とツールを繋ぐ M×N グルーコード問題 | 📈 | 2026-09-29 |
+| [mcp](/ja/topics/mcp) | ツール接続プロトコル（事実上の標準） | AI とツールを繋ぐ M×N グルーコード問題 | 🔥 | 2026-10-09 |
 | [a2a](/ja/topics/a2a) | エージェント間連携プロトコル（Google 主導、50+ ベンダー） | ベンダー横断のエージェント発見とタスク委任 | 💤 | 2026-07-28 |
 
 *ほかに注目：AG-UI（蓄積中）。*
@@ -71,7 +71,7 @@
 
 | Topic | 何か | 解決する問題 | 状態 | 最終更新 |
 |---|---|---|---|---|
-| [inference-serving](/ja/topics/inference-serving) | GPU クラスタのスケジューリングと稼働率、サービングアーキテクチャ、推論コスト削減 | ハードウェア投資を、遊休/非効率なキューイングではなく実際の産出に変える | 💤 | 2026-08-25 |
+| [inference-serving](/ja/topics/inference-serving) | GPU クラスタのスケジューリングと稼働率、サービングアーキテクチャ、推論コスト削減 | ハードウェア投資を、遊休/非効率なキューイングではなく実際の産出に変える | 🔥 | 2026-10-12 |
 
 *（拡散モデルの 4-bit 推論は [diffusion-models](/ja/topics/diffusion-models)、エッジデプロイは [model-efficiency](/ja/topics/model-efficiency) を参照）*
 

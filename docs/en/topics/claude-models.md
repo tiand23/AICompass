@@ -37,6 +37,10 @@ Claude is one of the mainstream model choices for agent and coding workloads. Ev
 
 ## Timeline
 
+### [2026-10-09](/en/today/2026-10-09)
+
+Claude Managed Agents previews Dynamic Workflows (requires the `managed-agents-2026-04-01` beta header): for tasks involving many similar items (reviewing hundreds of documents, say), the agent itself can write a workflow program — scheduling multiple agents across phases, running them in parallel, and merging each phase's results; the workflow executes server-side as a background workflow run, tracked through `workflow_run.*` events. Enabled by setting `multiagent` to `{"type": "multiagent_20261001", "workflows": {"type": "enabled"}}`. A step in Managed Agents' evolution from "a single agent plus tools" toward "an agent that generates and hosts the execution of its own multi-agent orchestration program" — delegating the generation of the orchestration logic itself to the agent (see [deep-agents](/en/topics/deep-agents)).
+
 ### [2026-10-07](/en/today/2026-10-07)
 
 Claude Haiku 5.5 launches: 1M-token context window, 128K max output, adaptive thinking driven by the effort parameter, available via the Claude API, Amazon Bedrock, Claude Platform on AWS/Google Cloud, and Microsoft Foundry. Breaking changes migrating from Haiku 4.5: manually specifying a thinking budget (`budget_tokens`) now returns a 400 error, adaptive thinking is on by default and responses may start with a `thinking` block. All three Claude tiers (Opus/Sonnet/Haiku) complete their 5.5-generation refresh within one month. Same day: Sonnet 5.5's prompt-cache read price drops from $0.20 to $0.10/million tokens (0.05x base input, down from 0.1x); the Python/TypeScript SDKs add beta wrapper classes for the browser-use and computer-use tools; Max/Team subscriptions gain monthly API credits; Managed Agents add an `allowed_hosts` network allowlist and an anti-exfiltration URL provenance restriction — `web_fetch` now only fetches URLs that already appeared in the current session's user message text (see [agentic-safety](/en/topics/agentic-safety)).

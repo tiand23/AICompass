@@ -42,6 +42,10 @@ Deep Agents は LangChain が提唱するコンセプトとプロダクトの方
 
 ## Timeline
 
+### [2026-10-09](/ja/today/2026-10-09)
+
+Claude Managed Agents が Dynamic Workflows をプレビュー公開：同種の項目を大量に処理するタスク向けに、Agent 自身がワークフロープログラムを書けるようになった——複数の Agent を段階的にスケジューリングして並行作業させ、結果を統合する；ワークフローはサーバー側でバックグラウンドの workflow run として実行され、イベントストリームで追跡可能。ホスト型ランタイムが「ツールを持つ単一の Agent」から「自らマルチ Agent 編成プログラムを生成しホスト実行する Agent」へ進化する一歩——編成ロジックの生成自体を、実行環境だけでなく Agent 自身に委ねている（詳細は [claude-models](/ja/topics/claude-models)）。
+
 ### [2026-10-07](/ja/today/2026-10-07)
 
 LangSmith Managed Deep Agents v0.9 公開ベータ：Schedules SDK（チャットでタスクのスケジュールを作成/変更/一覧表示/削除——繰り返しタスクは prompt と cron ルールを紐づけ、一度限りのタスクは指定時刻に実行され元のスレッドに返信する）、実行単位の設定（同一デプロイが実行時コンテキストに応じてモデル/指示/skills/ツール/サンドボックスを選択）、設定可能な Slack 確認リアクションを追加。同日 LangChain が《Revamping Skills in Deep Agents》を公開し、企業の skill ライブラリが数千件規模になった際に生じる 3 つの問題（ツール/skill 開示の分離、明示的にリクエストした skill でも追加ロードが必要、長時間稼働スレッドが skill の更新を認識できない）を解決する Skills の刷新を実施——詳細は上記の核心コンセプトを参照。2 週間前の v0.8（新しい認証/記憶/チャネル）と 3 週間前の Connections に続き、ホスト型ランタイムの機能拡充が明らかに加速している（詳細は [cloud-agent-platforms](/ja/topics/cloud-agent-platforms)）。

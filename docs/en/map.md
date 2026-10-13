@@ -10,7 +10,7 @@
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [claude-models](/en/topics/claude-models) | Anthropic's Claude model line | Model selection and migration for agent/coding workloads | 🔥 | 2026-10-07 |
+| [claude-models](/en/topics/claude-models) | Anthropic's Claude model line | Model selection and migration for agent/coding workloads | 🔥 | 2026-10-09 |
 | [openai-models](/en/topics/openai-models) | OpenAI's GPT model line & API platform | Selection, price volatility and deprecation risk | 🔥 | 2026-10-06 |
 | [gemini-models](/en/topics/gemini-models) | Google's Gemini model line | Cost-effective selection for price-sensitive workloads | 💤 | 2026-08-17 |
 
@@ -43,17 +43,17 @@
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [deep-agents](/en/topics/deep-agents) | Long-horizon autonomous agents (LangChain) | Planning, recovery and evaluation of multi-step tasks | 🔥 | 2026-10-07 |
+| [deep-agents](/en/topics/deep-agents) | Long-horizon autonomous agents (LangChain) | Planning, recovery and evaluation of multi-step tasks | 🔥 | 2026-10-09 |
 | [agent-frameworks](/en/topics/agent-frameworks) | Framework landscape: LangGraph/CrewAI/ADK/Agents SDK… | Framework selection and long-term safety | 💤 | 2026-08-29 |
 | [agent-workflow](/en/topics/agent-workflow) | Workflow paradigms: orchestration vs autonomy, HITL, durable execution | Getting agents reliably into business processes | 💤 | 2026-08-17 |
-| [agent-skills](/en/topics/agent-skills) | Reusable capability packages (incl. GitHub heat rankings) | Distribution and reuse of agent capabilities | 🔥 | 2026-10-08 |
+| [agent-skills](/en/topics/agent-skills) | Reusable capability packages (incl. GitHub heat rankings) | Distribution and reuse of agent capabilities | 🔥 | 2026-10-09 |
 | [voice-agents](/en/topics/voice-agents) | Voice agents (cascaded/realtime S2S, frameworks & evaluation) | Realtime engineering and evaluation of voice-interface agents | 💤 | 2026-08-21 |
 
 ### Runtime & Cloud (Hosted Runtimes ・ Agent Platforms ・ Foundry)
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [enterprise-ai-agents](/en/topics/enterprise-ai-agents) | Enterprise agent platforms & delivery models | Reliably connecting agents to enterprise systems and operating them | 🔥 | 2026-10-02 |
+| [enterprise-ai-agents](/en/topics/enterprise-ai-agents) | Enterprise agent platforms & delivery models | Reliably connecting agents to enterprise systems and operating them | 📈 | 2026-10-02 |
 | [cloud-agent-platforms](/en/topics/cloud-agent-platforms) | The hyperscaler platform landscape (AgentCore/Foundry/GEAP/Managed Agents) | Platform selection and lock-in trade-offs | 🔥 | 2026-10-06 |
 | [agent-workspaces](/en/topics/agent-workspaces) | Desktop agent workspaces (Cowork/openwork/Codex app) | The assign-work-accept-results interaction form; portable capability config | 💤 | 2026-08-12 |
 | [agent-sandboxes](/en/topics/agent-sandboxes) | Agent execution sandbox infrastructure (E2B/Daytona/Cloudflare computer) | Safe, isolated, reusable code-execution environments for agents | 📈 | 2026-09-23 |
@@ -62,7 +62,7 @@
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [mcp](/en/topics/mcp) | Tool-integration protocol (de facto standard) | The M×N glue-code problem of connecting AI to tools | 📈 | 2026-09-29 |
+| [mcp](/en/topics/mcp) | Tool-integration protocol (de facto standard) | The M×N glue-code problem of connecting AI to tools | 🔥 | 2026-10-09 |
 | [a2a](/en/topics/a2a) | Agent collaboration protocol (Google-led, 50+ vendors) | Discovery and task delegation across vendors | 💤 | 2026-07-28 |
 
 *Also watching: AG-UI (accumulating).*
@@ -71,7 +71,7 @@
 
 | Topic | What it is | Problem it solves | Status | Last activity |
 |---|---|---|---|---|
-| [inference-serving](/en/topics/inference-serving) | GPU cluster scheduling & utilization, serving architecture, inference cost reduction | Turning hardware spend into actual output instead of idle/inefficient queuing | 💤 | 2026-08-25 |
+| [inference-serving](/en/topics/inference-serving) | GPU cluster scheduling & utilization, serving architecture, inference cost reduction | Turning hardware spend into actual output instead of idle/inefficient queuing | 🔥 | 2026-10-12 |
 
 *(For 4-bit diffusion inference, see [diffusion-models](/en/topics/diffusion-models); for edge deployment, see [model-efficiency](/en/topics/model-efficiency).)*
 

@@ -13,6 +13,7 @@ Skills は「エージェントに仕事を教える」ことをプロンプト�
 - **構造**：skill = メタデータ（名前、トリガー記述）+ 指示ドキュメント + 任意のリソース/スクリプト。エージェントがタスク関連性で自動ロード。
 - **MCP との分担**：MCP はエージェントに**ツールを繋ぐ**（能力へのインターフェース）、Skill は**知識と手順を積む**（能力の使い方）——競合ではなく補完。
 - **配布エコシステム**：GitHub が主チャネル、awesome 系リスト（ComposioHQ/awesome-claude-skills など）が入口。コミュニティランキングはスター・熱度・実測の時間節約を混合。
+- **ベンダー中立な skill パッケージマネージャ**：これまで各 skill リポジトリは個別に維持され、利用者は各自でインストール方法を探っていた；Vercel の `npx skills` は特定の Agent ベンダーから切り離された初の汎用インストール/管理ツール（`add`/`use`/`list`/`update`、75+ の Agent に対応）——JS パッケージにおける npm に近く、エコシステムが「リポジトリ配布」から「統一パッケージマネージャ」へ向かう兆し。
 - **供給側の階層**：標準を定める公式ベンダー（Anthropic——anthropics/skills は自ら維持する参照実装+仕様）→ ハイパースケーラー公式の製品ライン合集（google/skills、自社全製品をカバーする「ドキュメントの実行可能版」）→ 著名な独立エンジニアの個人経験萃取（Addy Osmani、Matt Pocock）→ 垂直領域の全工程知識パッケージ化（OpenMontage が動画制作の専門知識を 700+ の skill ファイルに封装）→ 匿名/コミュニティリポジトリ——階層ごとに信頼性と更新の同期性が異なり、選定時は出典の階層で評価する。
 
 ## エコシステム熱度（GitHub ランキング）
@@ -41,7 +42,8 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 | academic-research-skills | 新登場（2026-09-01 Trending 入り、累計約 4.4 万スター） | 学術研究全工程 skill スイート：調査→執筆→レビュー→修正→仕上げ、Codex ネイティブ版も提供 |
 | ponytail | 新登場（2026-09-03 Trending 入り、9 日間で約 12.2 万スターに到達、直近で最も増加速度が速い） | 強制的な「意思決定のはしご」で AI 生成コード量を圧縮、公式ベンチマークで平均 54% のコード出力削減 |
 | mattpocock/skills | 2026-10-08 時点で累計約 28.1 万スター（初登場の 08-07 時点の約 20.7 万からさらに上昇、skill エコシステム単体最高熱を維持） | 個人の `.agents` ディレクトリから精製した工学規律 skill |
-| rea | 新登場（2026-10-08 Trending 入り、日次 +7,744——直近の skill/Agent ツール系リポジトリの中で最速の増加速度） | アプリケーションやネイティブバイナリの挙動解析から低レベル検査までをカバーする、Agent ベースのリバースエンジニアリングツール |
+| rea | 2026-10-09 にさらに日次 +54,706（初登場の 10-08 時点は +7,744）、2 日間で累計約 18.6 万スター——直近の skill/Agent ツール系リポジトリの中で最速の増加速度 | Ghidra/IDA Pro 級の逆向工程ツールを Agent の背後に接続する MCP server + CLI、ネイティブバイナリ/Electron/.NET/APK/Web サイトを証拠付きで解析し再現手順を提示 |
+| vercel-labs/skills | 新登場（2026-10-09 Trending 入り、`npx skills`） | Vercel 公式のベンダー中立な skill パッケージマネージャ、Claude Code/OpenCode/Codex/Cursor など 75+ の Agent に対応 |
 | knowledge-work-plugins | 新登場（2026-10-08 Trending 入り、累計約 2.73 万スター） | ナレッジワーカー向けのオープンソースプラグインリポジトリ、主に Claude Cowork との併用を想定 |
 | superpowers | 2026-10-01 に再び Trending 入り（日次 +888） | Agentic skills フレームワーク + 開発方法論 |
 | OpenShell（NVIDIA） | 新登場（2026-10-01 Trending 入り、日次 +2,503——当日最も増加速度が速い） | Rust で書かれた自律 AI Agent 向けの「安全でプライベートな」ランタイム——大手ハードウェアベンダーが Agent 実行隔離インフラを自ら提供する事例 |
@@ -65,6 +67,10 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 - [Claude Code リポジトリのスターランキング](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-10-09](/ja/today/2026-10-09)
+
+`rea`（MCP 逆向工程ツール、10-08 に初登場）が 1 日でさらに +54,706 スター急増、2 日間で累計約 18.6 万に達し当日の Trending 首位に——Ghidra や IDA Pro などの専門ツールを Agent の背後に接続し、ソースコードなしに機能の実装原理を説明し証拠チェーン・確信度・再現手順を提示する、Claude Code/Codex/Cursor/Gemini CLI など主要コーディング Agent に対応。同日 Vercel が `vercel-labs/skills`（`npx skills`）を発表：`skills add/use/list/update` などのコマンド、Claude Code、OpenCode、Codex、Cursor など 75 以上の Agent に対応、公式 v1.1.1 で対話的な skill 発見機能（`npx skills find`）も追加——特定の Agent ベンダーから切り離された初の汎用 skill パッケージマネージャ（詳細は [mcp](/ja/topics/mcp) ・ [coding-agents](/ja/topics/coding-agents)）。
 
 ### [2026-10-08](/ja/today/2026-10-08)
 

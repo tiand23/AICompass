@@ -14,6 +14,7 @@ Skills turn "teaching an agent to do something" from prompt engineering into a d
 - **Division of labor vs MCP**: MCP gives an agent **tools** (the interface to a capability); a skill gives it **knowledge and procedure** (how to use capabilities) — complements, not competitors.
 - **Distribution ecosystem**: GitHub is the main channel; awesome-lists (e.g. ComposioHQ/awesome-claude-skills) are the entry points; community rankings blend stars, interaction heat, and documented time savings.
 - **Supplier tiers**: standards vendor (Anthropic — anthropics/skills is its own maintained reference implementation + spec) → hyperscaler official product-line collections (google/skills, covering the whole product line — "documentation's executable version") → distilled personal experience from well-known independent engineers (Addy Osmani, Matt Pocock) → full-pipeline domain-expertise packaging (OpenMontage packages video-production expertise into 700+ skill files) → anonymous/community repos — credibility and update-sync differ by tier; weigh selection by source tier.
+- **Vendor-neutral skill package managers**: skill repos used to be maintained independently, with users figuring out installation on their own; Vercel's `npx skills` is the first general-purpose install/management tool decoupled from any specific agent vendor (`add`/`use`/`list`/`update`, supporting 75+ agents) — much like npm is to JS packages, a signal of the ecosystem moving from "repo distribution" toward "a unified package manager."
 
 ## Ecosystem Heat (GitHub Rankings)
 
@@ -41,7 +42,8 @@ High-star representative repos at topic creation (2026-07):
 | academic-research-skills | New (hit Trending 2026-09-01, ~44k stars total) | Full academic-research-workflow skill suite: research → write → review → revise → finalize; companion Codex-native version available |
 | ponytail | New (hit Trending 2026-09-03, climbed to ~122k stars within 9 days, the fastest-growing skill repo recently) | Enforces a "decision ladder" to compress AI-generated code volume; official benchmark shows an average 54% reduction in code output |
 | mattpocock/skills | As of 2026-10-08, ~281k stars total (up from ~207k when first listed 08-07 — still leads the skill ecosystem's single hottest point) | Engineering discipline distilled from a personal `.agents` directory |
-| rea | New (hit Trending 2026-10-08, +7,744/day — the fastest riser among recent skill/agent-tool repos) | An agent-based reverse-engineering tool spanning behavioral analysis to low-level inspection of apps and native binaries |
+| rea | Spikes another +54,706/day on 2026-10-09 (first listed 10-08 at +7,744/day), ~186K stars total over two days — the fastest riser among recent skill/agent-tool repos | An MCP server + CLI wiring Ghidra/IDA Pro-class reverse-engineering tools behind an agent, analyzing native binaries/Electron/.NET/APKs/websites with evidence-backed explanations and recreation steps |
+| vercel-labs/skills | New (hit Trending 2026-10-09, `npx skills`) | Vercel's official vendor-neutral skill package manager, supporting Claude Code/OpenCode/Codex/Cursor and 75+ other agents |
 | knowledge-work-plugins | New (hit Trending 2026-10-08, ~27.3k stars total) | An open-source plugin repo for knowledge workers, mainly for use with Claude Cowork |
 | superpowers | Back on Trending 2026-10-01 (+888/day) | Agentic skills framework + development methodology |
 | OpenShell (NVIDIA) | New (hit Trending 2026-10-01, +2,503/day — the fastest riser that day) | A "safe, private" runtime for autonomous AI agents, written in Rust — a major hardware vendor shipping agent-execution-isolation infrastructure directly |
@@ -65,6 +67,10 @@ High-star representative repos at topic creation (2026-07):
 - [Claude Code repos star leaderboard](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-10-09](/en/today/2026-10-09)
+
+`rea` (the MCP reverse-engineering tool, first listed 10-08) spikes another +54,706 stars in a day, ~186K total over two days, topping the day's Trending — wiring professional tools like Ghidra and IDA Pro behind an agent, explaining how a feature works without source code and backing it with an evidence chain, confidence scores, and recreation steps, compatible with Claude Code/Codex/Cursor/Gemini CLI and other mainstream coding agents. Same day, Vercel ships `vercel-labs/skills` (`npx skills`): `skills add/use/list/update` and more, supporting Claude Code, OpenCode, Codex, Cursor, and 75+ other agents, with official v1.1.1 adding interactive skill discovery (`npx skills find`) — the first general-purpose skill package manager decoupled from any specific agent vendor (see [mcp](/en/topics/mcp) ・ [coding-agents](/en/topics/coding-agents)).
 
 ### [2026-10-08](/en/today/2026-10-08)
 

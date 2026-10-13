@@ -35,6 +35,10 @@ MCP（Model Context Protocol）：Anthropic 提出的开放协议，标准化 AI
 
 ## Timeline
 
+### [2026-10-09](/today/2026-10-09)
+
+`rea`（MCP server + CLI）单日暴涨 +54,706 star，两日内累计约 18.6 万——把 Ghidra、IDA Pro 等专业逆向工程工具通过 MCP 接到编码 Agent 背后，分析原生二进制/Electron/.NET/APK/网站，无需源码即可解释功能实现并给出证据链与复现步骤。是 MCP 把"专业工具链"而非仅"数据源/API"接入 Agent 的一个高热度样本（详见 [agent-skills](/topics/agent-skills)）。
+
 ### [2026-09-29](/today/2026-09-29)
 
 论文提出 ProvenanceGuard：消费带稳定工具 ID/来源 ID/原始输出的 MCP 调用记录，把答案拆解成原子论断，逐条路由到对应来源证据核查支持度，再比对"声称的来源"与"实际路由到的来源"是否一致，输出逐条判定与整体放行/拦截结论——第一个把"引用对不对源"系统化为独立核查维度的方案，MCP 普及会放大这个此前被忽视的盲区（详见 [agent-evaluation](/topics/agent-evaluation)）。

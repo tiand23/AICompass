@@ -35,6 +35,10 @@ Before MCP, every AI app × every tool needed its own glue code (the M×N proble
 
 ## Timeline
 
+### [2026-10-09](/en/today/2026-10-09)
+
+`rea` (an MCP server + CLI) spikes +54,706 stars in a day, ~186K total over two days — wiring professional reverse-engineering tools like Ghidra and IDA Pro behind a coding agent via MCP, analyzing native binaries/Electron/.NET/APKs/websites, explaining feature implementations without source code and backing it with an evidence chain and recreation steps. A high-heat example of MCP connecting a "professional toolchain," not just data sources/APIs, behind an agent (see [agent-skills](/en/topics/agent-skills)).
+
 ### [2026-09-29](/en/today/2026-09-29)
 
 A paper proposes ProvenanceGuard: consuming captured MCP traces with stable tool IDs, source IDs, and raw outputs, decomposing answers into atomic claims, routing each to its specific source evidence, checking support, and comparing the claimed attribution against the actually-routed source, returning per-claim verdicts plus an overall allow/block decision — the first approach to systematize "is the citation correct" as an independent verification dimension; this blind spot will grow as MCP agents spread (see [agent-evaluation](/en/topics/agent-evaluation)).

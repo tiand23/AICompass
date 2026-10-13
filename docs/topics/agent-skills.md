@@ -13,6 +13,7 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 - **结构**：skill = 元数据（名称、触发描述）+ 指令文档 + 可选资源/脚本，Agent 按任务相关性自动加载。
 - **与 MCP 的分工**：MCP 给 Agent **接工具**（能力的接口），Skill 给 Agent **装知识和流程**（能力的用法）——互补而非竞争。
 - **分发生态**：GitHub 为主渠道，awesome 类清单（如 ComposioHQ/awesome-claude-skills）是入口，社区排行混合 star、互动热度与实测省时数据。
+- **厂商中立的 skill 包管理器**：此前各家 skill 仓库各自维护、用户各自摸索安装方式；Vercel 发布的 `npx skills` 第一次给出一个不绑定具体 Agent 厂商的通用安装/管理工具（`add`/`use`/`list`/`update`，支持 75+ 种 Agent），类似 npm 之于 JS 包——skill 生态从"仓库分发"向"统一包管理器"演进的信号。
 - **供给方分层**：官方厂商（Anthropic 标准制定，anthropics/skills 是其亲自维护的参考实现+规范文档）→ 云厂商官方产品线合集（google/skills 覆盖自家全产品，"文档的可执行版本"）→ 知名独立工程师的个人经验萃取（Addy Osmani、Matt Pocock）→ 垂直领域全流程知识封装（OpenMontage 把视频制作专业经验做成 700+ skill 文件）→ 匿名/社区仓库——不同层的可信度与更新同步性不同，选型时按来源分层评估。
 
 ## 生态热度（GitHub 排行）
@@ -41,7 +42,8 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 | academic-research-skills | 新晋（2026-09-01 上榜，累计约 4.4 万 star） | 学术研究全流程 skill 套件：调研→写作→评审→修改→定稿，另有 Codex 原生版本 |
 | ponytail | 新晋（2026-09-03 上榜，9 天内冲至约 12.2 万 star，近期增速最快） | 强制"决策梯"流程压缩 AI 生成代码量，官方基准平均减少 54% 代码输出 |
 | mattpocock/skills | 2026-10-08 时点累计约 28.1 万 star（较 08-07 首次登榜时约 20.7 万持续上涨，持续领跑 skill 生态单点热度） | 从个人 `.agents` 目录提炼的工程纪律 skill |
-| rea | 新晋（2026-10-08 上榜，单日 +7,744，近期 skill/Agent 工具类仓库中最快涨速） | 基于 Agent 的逆向工程工具，覆盖应用与原生二进制的行为分析到底层检查 |
+| rea | 2026-10-09 单日再涨 +54,706（10-08 首次上榜时为 +7,744），两日内累计约 18.6 万 star，skill/Agent 工具类仓库近期最快涨速 | MCP server + CLI，把 Ghidra/IDA Pro 等逆向工程工具接到 Agent 背后，分析原生二进制/Electron/.NET/APK/网站并给出证据链与复现步骤 |
+| vercel-labs/skills | 新晋（2026-10-09 上榜，`npx skills`） | Vercel 官方发布的厂商中立 skill 包管理器，支持 Claude Code/OpenCode/Codex/Cursor 等 75+ Agent |
 | knowledge-work-plugins | 新晋（2026-10-08 上榜，累计约 2.73 万 star） | 面向知识工作者的开源插件仓库，主要配合 Claude Cowork 使用 |
 | superpowers | 2026-10-01 重新上榜（单日 +888） | Agentic skills 框架 + 开发方法论 |
 | OpenShell（NVIDIA） | 新晋（2026-10-01 上榜，单日 +2,503，当日涨速最快） | Rust 编写的"安全、私有"自主 AI Agent 运行时——官方大厂亲自下场做 Agent 执行隔离基础设施 |
@@ -65,6 +67,10 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 - [Claude Code 高星仓库排行](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-10-09](/today/2026-10-09)
+
+`rea`（MCP 逆向工程工具，10-08 首次登榜）单日再暴涨 +54,706 star，两日内累计约 18.6 万，登上当日 Trending 榜首——把 Ghidra、IDA Pro 等专业逆向工程工具接到 Agent 背后，无需源码即可解释某功能实现原理并给出证据链、置信度与复现步骤，兼容 Claude Code/Codex/Cursor/Gemini CLI 等主流编码 Agent。同日 Vercel 发布 `vercel-labs/skills`（`npx skills`）：`skills add/use/list/update` 等命令，支持 Claude Code、OpenCode、Codex、Cursor 等 75+ 种 Agent，官方 v1.1.1 带来交互式技能发现（`npx skills find`）——第一个与具体 Agent 厂商解耦的通用 skill 包管理器（详见 [mcp](/topics/mcp) ・ [coding-agents](/topics/coding-agents)）。
 
 ### [2026-10-08](/today/2026-10-08)
 

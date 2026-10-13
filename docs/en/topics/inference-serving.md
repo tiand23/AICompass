@@ -36,6 +36,10 @@ Dharma AI's research finds that enterprise-grade AI clusters commonly run at onl
 
 ## Timeline
 
+### [2026-10-12](/en/today/2026-10-12)
+
+Azure publishes a deep-dive into its custom Maia 300 chip architecture, describing it as a unified platform purpose-built for "cloud-scale agentic inference." Following OpenAI/Broadcom's published Jalapeño benchmarks (08-25), another major cloud vendor explicitly positions its custom inference silicon's design goal around agentic inference specifically, rather than general-purpose training/inference — the competitive narrative around custom silicon is sharpening from "general-purpose compute" toward "serving the specific patterns of agent workloads" (long context, multi-step tool calls, high-concurrency sessions).
+
 ### [2026-08-25](/en/today/2026-08-25)
 
 OpenAI and Broadcom publish first results for the custom inference chip Jalapeño: on the InferenceX benchmark (GPT-OSS 120B/DeepSeek R1 670B/Kimi K2.5 1T), it delivers 1.5-1.9x higher peak performance per watt and 1.7-3.6x lower end-to-end latency than NVIDIA Blackwell (GB200/GB300), reaching 2.1-4.1x for highly interactive workloads; small-volume deployment into OpenAI's own compute is planned by end of 2026, scaling up in 2027 — another frontier-model vendor building custom inference silicon, and the first to publish benchmarks directly against industry-standard hardware.

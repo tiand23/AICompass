@@ -42,6 +42,10 @@ Long-horizon autonomy is the current frontier of agent capability competition, a
 
 ## Timeline
 
+### [2026-10-09](/en/today/2026-10-09)
+
+Claude Managed Agents previews Dynamic Workflows: for tasks involving many similar items, the agent itself can write a workflow program — scheduling multiple agents across phases, running them in parallel, and merging results; the workflow executes server-side as a background workflow run, trackable via its event stream. A step in hosted runtimes evolving from "a single agent plus tools" toward "an agent that generates and hosts the execution of its own multi-agent orchestration program" — delegating the generation of orchestration logic itself to the agent, not just its execution environment (see [claude-models](/en/topics/claude-models)).
+
 ### [2026-10-07](/en/today/2026-10-07)
 
 LangSmith Managed Deep Agents v0.9 public beta: adds a Schedules SDK (create/modify/list/delete scheduled tasks via chat — recurring tasks bind a prompt to a cron rule, one-time tasks run at a given time and reply in the original thread), per-run configuration (one deployment choosing its model/instructions/skills/tools/sandbox based on runtime context), and configurable Slack acknowledgment reactions. Same day, LangChain publishes "Revamping Skills in Deep Agents," overhauling Skills to fix three problems that emerge once enterprise skill libraries scale to thousands (tool/skill disclosure decoupling, an extra round trip to load explicitly-requested skills, long-running threads blind to skill updates) — details above under Core Concepts. Following v0.8 (new auth/memory/channels) two weeks ago and Connections three weeks ago, hosted-runtime capability expansion is clearly accelerating (see [cloud-agent-platforms](/en/topics/cloud-agent-platforms)).

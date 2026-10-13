@@ -10,7 +10,7 @@
 
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
-| [claude-models](/topics/claude-models) | Anthropic Claude 模型线 | Agent/编码场景的模型选型与迁移 | 🔥 | 2026-10-07 |
+| [claude-models](/topics/claude-models) | Anthropic Claude 模型线 | Agent/编码场景的模型选型与迁移 | 🔥 | 2026-10-09 |
 | [openai-models](/topics/openai-models) | OpenAI GPT 模型线与 API 平台 | 选型、成本波动与产品弃用风险 | 🔥 | 2026-10-06 |
 | [gemini-models](/topics/gemini-models) | Google Gemini 模型线 | 成本敏感场景的高性价比选型 | 💤 | 2026-08-17 |
 
@@ -43,17 +43,17 @@
 
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
-| [deep-agents](/topics/deep-agents) | 长时程自主任务 Agent（LangChain） | 多步骤任务的规划、恢复与评估 | 🔥 | 2026-10-07 |
+| [deep-agents](/topics/deep-agents) | 长时程自主任务 Agent（LangChain） | 多步骤任务的规划、恢复与评估 | 🔥 | 2026-10-09 |
 | [agent-frameworks](/topics/agent-frameworks) | 框架版图：LangGraph/CrewAI/ADK/Agents SDK… | 框架选型与长期安全性 | 💤 | 2026-08-29 |
 | [agent-workflow](/topics/agent-workflow) | 工作流范式：编排 vs 自主、HITL、持久化执行 | 让 Agent 可靠地跑进业务流程 | 💤 | 2026-08-17 |
-| [agent-skills](/topics/agent-skills) | 可复用能力包生态（含 GitHub 热度排行） | Agent 能力的分发与复用 | 🔥 | 2026-10-08 |
+| [agent-skills](/topics/agent-skills) | 可复用能力包生态（含 GitHub 热度排行） | Agent 能力的分发与复用 | 🔥 | 2026-10-09 |
 | [voice-agents](/topics/voice-agents) | 语音 Agent（级联/实时 S2S、框架与评测） | 语音界面 Agent 的实时性工程与评测 | 💤 | 2026-08-21 |
 
 ### 运行时与云（托管运行时 ・ Agent 平台 ・ Foundry）
 
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
-| [enterprise-ai-agents](/topics/enterprise-ai-agents) | 企业 Agent 平台与交付模式 | Agent 如何可靠接入企业系统并被运维 | 🔥 | 2026-10-02 |
+| [enterprise-ai-agents](/topics/enterprise-ai-agents) | 企业 Agent 平台与交付模式 | Agent 如何可靠接入企业系统并被运维 | 📈 | 2026-10-02 |
 | [cloud-agent-platforms](/topics/cloud-agent-platforms) | 四大云托管 Agent 平台版图（AgentCore/Foundry/GEAP/Managed Agents） | 平台选型与锁定权衡 | 🔥 | 2026-10-06 |
 | [agent-workspaces](/topics/agent-workspaces) | 桌面 Agent 工作台（Cowork/openwork/Codex app） | 派任务收成果的交互形态；能力配置跨工具移植 | 💤 | 2026-08-12 |
 | [agent-sandboxes](/topics/agent-sandboxes) | Agent 执行沙箱基础设施（E2B/Daytona/Cloudflare computer） | 给 Agent 安全隔离、可复用的代码执行环境 | 📈 | 2026-09-23 |
@@ -62,7 +62,7 @@
 
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
-| [mcp](/topics/mcp) | 工具接入协议（事实标准） | AI 接工具的 M×N 胶水代码问题 | 📈 | 2026-09-29 |
+| [mcp](/topics/mcp) | 工具接入协议（事实标准） | AI 接工具的 M×N 胶水代码问题 | 🔥 | 2026-10-09 |
 | [a2a](/topics/a2a) | Agent 间协作协议（Google 主导，50+ 厂商） | 跨厂商 Agent 的发现与任务委托 | 💤 | 2026-07-28 |
 
 *另关注：AG-UI（待积累）。*
@@ -71,7 +71,7 @@
 
 | Topic | 是什么 | 解决什么问题 | 状态 | 最近动态 |
 |---|---|---|---|---|
-| [inference-serving](/topics/inference-serving) | GPU 集群调度与利用率、serving 架构、推理降本 | 把硬件投入转化为实际产出而非闲置/低效排队 | 💤 | 2026-08-25 |
+| [inference-serving](/topics/inference-serving) | GPU 集群调度与利用率、serving 架构、推理降本 | 把硬件投入转化为实际产出而非闲置/低效排队 | 🔥 | 2026-10-12 |
 
 *（扩散模型的 4-bit 推理参见 [diffusion-models](/topics/diffusion-models)；边缘部署参见 [model-efficiency](/topics/model-efficiency)）*
 

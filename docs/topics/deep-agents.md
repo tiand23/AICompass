@@ -42,6 +42,10 @@ Deep Agents 是 LangChain 提出的概念与产品方向：能执行长时程、
 
 ## Timeline
 
+### [2026-10-09](/today/2026-10-09)
+
+Claude Managed Agents 公测 Dynamic Workflows：面向"处理大量相似条目"的任务，Agent 本身可以编写一个工作流程序——分阶段调度多个 Agent 并行工作、合并结果，工作流在服务端作为后台 workflow run 执行并可通过事件流跟踪。是托管运行时从"单 Agent 配工具"向"Agent 自己生成并托管执行多 Agent 编排程序"演进的一步——把编排逻辑的生成也下放给了 Agent 本身，而不只是执行环境（详见 [claude-models](/topics/claude-models)）。
+
 ### [2026-10-07](/today/2026-10-07)
 
 LangSmith Managed Deep Agents v0.9 公测：新增 Schedules SDK（聊天创建/修改/查看/删除定时任务，周期任务绑定 prompt+cron，一次性任务指定时间运行并回复原线程）、按次运行配置（同一部署依据运行时上下文选择不同模型/指令/skills/工具/沙箱）、可配置的 Slack 确认反应。同日 LangChain 发文《Revamping Skills in Deep Agents》重构 Skills 机制，解决企业 skill 库规模涨到数千条后暴露的三个问题（工具披露与 skill 披露脱节、显式请求仍要多一轮加载、长时程线程感知不到 skill 更新），具体改动见上方核心概念。紧接两周前的 v0.8（认证/记忆/消息渠道）与三周前的 Connections，托管运行时能力扩充节奏明显加快（详见 [cloud-agent-platforms](/topics/cloud-agent-platforms)）。
