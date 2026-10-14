@@ -36,6 +36,10 @@
 
 ## Timeline
 
+### [2026-10-13](/today/2026-10-13)
+
+LangChain 发布 Orange Business 案例：基于 LangChain/LangSmith 构建三层架构企业 Agent 平台"Live Intelligence"——Studio（Agent 开发环境，含 LangSmith Fleet 与 MCP 支持）、Portal（面向业务团队的终端用户界面）、Console（管理与治理）；治理层含 Agent Registry（版本/生命周期管理）、MCP Registry（受信任工具与企业连接器的集中目录）；评估分三层（RAG 质量、Agent 行为校验含工具选择准确率与提示注入抵抗力、生产监控）；已覆盖 Orange 内部 12 万员工、法国与欧洲 150+ 客户，官方称自建同等基础设施需 12-18 个月。是"Agent 生产化案例库"里少见的披露完整三层平台架构（开发/使用/治理分离）而非单点应用的案例。
+
 ### [2026-10-02](/today/2026-10-02)
 
 Anthropic 设立 Claude Frontier Academy：投入 1 亿美元，计划到 2027 年底培训 1 万名"前沿驻场工程师"（FDE），首批学员来自 Accenture、Bain、Deloitte、McKinsey、Morgan Stanley、Novo Nordisk 等机构，采用模拟部署评分 + 医学规培式实训的 12 周模式——是"交付模式光谱"里平台+驻场工程师（FDE）这一环，首次由厂商自己大规模投钱建人才管线来解决交付能力供给瓶颈，而非被动等咨询公司自行培养。

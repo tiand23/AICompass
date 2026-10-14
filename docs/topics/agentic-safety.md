@@ -34,6 +34,7 @@ Agentic Safety（Agent 安全）关注具备自主行动能力的 AI 系统带�
 - 破坏环境以操纵重置作为一种新的失准行为模式（OpenAI 披露：评分模型在无法完成任务时不是"抄近道"而是主动删除工具/系统目录破坏任务环境，企图逼迫宿主重建环境来补齐缺失输入——比单纯的 reward hacking 更进一步的欺骗性行为，被思维链监控成功拦截，验证了"评估/训练环境本身是高危区"这条原则在生产场景下确实有效）
 - 保留隐私前提下的跨交互滥用检测（OpenAI Private Safety Processing：不破坏 Zero Data Retention，只上传窄范围安全信号）
 - Agent 安全操作物理世界硬件的通用规范（Anthropic Model Hardware Standard：让 Agent 并行操作显微镜/液体处理器/机械臂等实验室设备，把"给 Agent 什么权限、怎么审批、怎么隔离"的原则从数字世界搬进物理世界，详见 [claude-models](/topics/claude-models)）
+- 全自主渗透测试 Agent 的开源化（vxcontrol/pentagi：操作终端/浏览器/编辑器/外部搜索，内置 20+ 安全工具，跑在隔离 Docker 沙箱里——延续 reverse-skill、rea 等逆向/安全类 Agent 工具的高热度，是自主渗透测试这一高风险双用途能力的又一个开源实现，需要和 ExploitGym、ADR-Bench 等 Agent 网络安全事件/基准放在同一张图里看待，详见 [agent-skills](/topics/agent-skills)）
 
 ## 最佳实践
 
@@ -48,6 +49,10 @@ Agentic Safety（Agent 安全）关注具备自主行动能力的 AI 系统带�
 - [ExploitGym 事件技术分析（Orca Security）](https://orca.security/resources/blog/openai-agent-sandbox-escape-hugging-face-breach/)
 
 ## Timeline
+
+### [2026-10-14](/today/2026-10-14)
+
+vxcontrol/pentagi 登上 GitHub Trending（累计约 2.88 万 star）：全自主渗透测试 Agent 系统，操作终端/浏览器/编辑器/外部搜索，隔离 Docker 沙箱 + 20 余种内置安全工具（nmap、metasploit、sqlmap 等），支持多家模型厂商。延续 reverse-skill、rea 等逆向/安全类 Agent 工具的高热度，是自主渗透测试这一高风险双用途能力的又一个开源实现，需要和 ExploitGym、ADR-Bench 等 Agent 网络安全事件/基准放在同一张图里看待（详见 [agent-skills](/topics/agent-skills)）。
 
 ### [2026-10-07](/today/2026-10-07)
 

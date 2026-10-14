@@ -31,6 +31,10 @@ Gemini は Claude / GPT に並ぶ第三の主流選択肢。Flash 帯の「よ�
 
 ## Timeline
 
+### [2026-10-13](/ja/today/2026-10-13)
+
+Gemini 4 Argon が開発者・企業向けに GA（09-30 プレビュー）：入力/思考/出力で共有される 105 万トークンのコンテキストウィンドウ、開発者 API のデフォルト同期出力は 6.4 万トークン；DeepSWE v1.1 で 77.9%、Google 自社の比較表の 19 項目中 13 項目で GPT-6 Astra と Claude を上回る；価格は 100 万トークンあたり $2/$10（11 月 30 日まで、12 月 1 日から $4/$20）、Gemini API 有料ティア・AI Studio・Gemini プラットフォーム・Gemini app・検索の AI Mode で提供——GPT-6 Astra（09-03）、Claude Opus/Sonnet 5.5（09-22/09-28）に続き 1 か月半以内に旗艦モデルの世代交代を完了した 3 社目で、今回は自社基準で両社を項目ごとに上回るベンチマーク表を示している。
+
 ### [2026-08-17](/ja/today/2026-08-17)
 
 Google が Gemini API 側の Imagen 4 生成エンドポイント（standard/fast/ultra）を正式終了し、Gemini 3.1 Flash Image への移行を促す；Vertex AI 側は 3 月に既に非推奨化済み。`generate_images()` メソッドは完全に消滅——シームレスな置き換えではなく、呼び出し元は Gemini ネイティブ画像 API に合わせて書き直す必要がある（詳細は [diffusion-models](/ja/topics/diffusion-models)）。

@@ -31,6 +31,10 @@ Gemini is the third mainstream choice alongside Claude / GPT. The Flash tier's "
 
 ## Timeline
 
+### [2026-10-13](/en/today/2026-10-13)
+
+Gemini 4 Argon reaches GA for developers and enterprises (previewed 09-30): a shared 1.05M-token context window across input/thinking/output, with developer API output defaulting to 65,536 tokens synchronously; scores 77.9% on DeepSWE v1.1 and leads 13 of 19 rows in Google's own comparison table against GPT-6 Astra and Claude; priced at $2/$10 per million tokens (through November 30, rising to $4/$20 from December 1), available via the Gemini API paid tier, AI Studio, the Gemini platform, the Gemini app, and AI Mode in Search — following GPT-6 Astra (09-03) and Claude Opus/Sonnet 5.5 (09-22/09-28), the third major vendor to complete a flagship refresh within a month and a half, this time with a self-reported benchmark table showing it outscoring both rivals row by row.
+
 ### [2026-08-17](/en/today/2026-08-17)
 
 Google formally shuts down the Imagen 4 generation endpoints on the Gemini API side (standard/fast/ultra), pointing to Gemini 3.1 Flash Image; already deprecated on Vertex AI in March. The `generate_images()` method disappears entirely — not a seamless replacement; callers must rewrite against the Gemini-native image API (see [diffusion-models](/en/topics/diffusion-models)).

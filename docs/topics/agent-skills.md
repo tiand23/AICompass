@@ -13,6 +13,7 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 - **结构**：skill = 元数据（名称、触发描述）+ 指令文档 + 可选资源/脚本，Agent 按任务相关性自动加载。
 - **与 MCP 的分工**：MCP 给 Agent **接工具**（能力的接口），Skill 给 Agent **装知识和流程**（能力的用法）——互补而非竞争。
 - **分发生态**：GitHub 为主渠道，awesome 类清单（如 ComposioHQ/awesome-claude-skills）是入口，社区排行混合 star、互动热度与实测省时数据。
+- **"Skill"作为术语正跨消费级/企业办公场景扩散**：Google 在 Gemini app 与 Workspace 用"Skills"取代"Gems"作为自定义 AI 指令的新方式——与此前开发者侧的 google/skills（官方产品线 skill 合集）不同，这次是终端用户可见的产品功能层采纳同一术语；其机制（自定义指令模板）与 Claude/MCP 生态里"打包的指令+资源+脚本"式 Agent Skill 并不完全等同，是不同厂商在"Skill"这个词下的不同实现，选型/沟通时需要分清楚说的是哪一种。
 - **厂商中立的 skill 包管理器**：此前各家 skill 仓库各自维护、用户各自摸索安装方式；Vercel 发布的 `npx skills` 第一次给出一个不绑定具体 Agent 厂商的通用安装/管理工具（`add`/`use`/`list`/`update`，支持 75+ 种 Agent），类似 npm 之于 JS 包——skill 生态从"仓库分发"向"统一包管理器"演进的信号。
 - **供给方分层**：官方厂商（Anthropic 标准制定，anthropics/skills 是其亲自维护的参考实现+规范文档）→ 云厂商官方产品线合集（google/skills 覆盖自家全产品，"文档的可执行版本"）→ 知名独立工程师的个人经验萃取（Addy Osmani、Matt Pocock）→ 垂直领域全流程知识封装（OpenMontage 把视频制作专业经验做成 700+ skill 文件）→ 匿名/社区仓库——不同层的可信度与更新同步性不同，选型时按来源分层评估。
 
@@ -44,6 +45,9 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 | mattpocock/skills | 2026-10-08 时点累计约 28.1 万 star（较 08-07 首次登榜时约 20.7 万持续上涨，持续领跑 skill 生态单点热度） | 从个人 `.agents` 目录提炼的工程纪律 skill |
 | rea | 2026-10-09 单日再涨 +54,706（10-08 首次上榜时为 +7,744），两日内累计约 18.6 万 star，skill/Agent 工具类仓库近期最快涨速 | MCP server + CLI，把 Ghidra/IDA Pro 等逆向工程工具接到 Agent 背后，分析原生二进制/Electron/.NET/APK/网站并给出证据链与复现步骤 |
 | vercel-labs/skills | 新晋（2026-10-09 上榜，`npx skills`） | Vercel 官方发布的厂商中立 skill 包管理器，支持 Claude Code/OpenCode/Codex/Cursor 等 75+ Agent |
+| HKUDS/CLI-Anything | 新晋（2026-10-14 上榜，累计约 5.2 万 star） | 7 阶段自动化流水线，为任意 GUI 软件生成 Agent 原生命令行接口（REPL+JSON+SKILL.md），已统一收纳进 `skills/` 目录 |
+| vxcontrol/pentagi | 新晋（2026-10-14 上榜，累计约 2.88 万 star） | 全自主渗透测试 Agent 系统，隔离 Docker 沙箱 + 20 余种内置安全工具 |
+| ifixai-ai/iFixAi | 新晋（2026-10-14 上榜，累计约 2.37 万 star） | 120 秒内独立审计 Agent 是否真的完成了业务该做的事（而非只测技术能力），对标 EU AI Act/ISO 42001/NIST AI RMF/OWASP LLM Top 10 出合规分 |
 | knowledge-work-plugins | 新晋（2026-10-08 上榜，累计约 2.73 万 star） | 面向知识工作者的开源插件仓库，主要配合 Claude Cowork 使用 |
 | superpowers | 2026-10-01 重新上榜（单日 +888） | Agentic skills 框架 + 开发方法论 |
 | OpenShell（NVIDIA） | 新晋（2026-10-01 上榜，单日 +2,503，当日涨速最快） | Rust 编写的"安全、私有"自主 AI Agent 运行时——官方大厂亲自下场做 Agent 执行隔离基础设施 |
@@ -67,6 +71,14 @@ Skills 把"教会 Agent 做一件事"从 prompt 工程变成了可分发、可�
 - [Claude Code 高星仓库排行](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-10-14](/today/2026-10-14)
+
+三个方向不同的 Agent 工具同期登上 GitHub Trending：**HKUDS/CLI-Anything**（累计 5.2 万星）为任意开源 GUI 应用生成"Agent 原生"命令行接口（REPL+JSON+SKILL.md），让 Agent 不必靠截图识别界面即可操作图形软件，统一收纳进 `skills/` 目录、一条 `npx skills add` 即可安装；**ifixai-ai/iFixAi**（2.37 万星）120 秒内独立审计"Agent 是不是真的在做它该做的事"（而非只测技术能力），对标 EU AI Act/ISO 42001/NIST AI RMF/OWASP LLM Top 10；**vxcontrol/pentagi**（2.88 万星）全自主渗透测试 Agent 系统，隔离 Docker 沙箱 + 20 余种内置安全工具。三者分别补齐"Agent 操作 GUI 软件""审计 Agent 是否真的完成业务目标""自主攻防测试"这三个此前覆盖不足的能力面（详见 [mcp](/topics/mcp) ・ [agent-evaluation](/topics/agent-evaluation) ・ [agentic-safety](/topics/agentic-safety)）。
+
+### [2026-10-13](/today/2026-10-13)
+
+Google 在 Gemini app 与 Workspace 推出 Skills，取代 Gems：模块化、可复用地把定制指令应用到对话与工作流中，预计 11 月中旬全量完成，后续追加分享能力与 Google Drive 集成——"Skill"这一命名/心智模型从开发者工具向消费级/办公产品层扩散的信号，但其实现与 Claude/MCP 生态的 Agent Skill 并不等同（详见上方核心概念）。
 
 ### [2026-10-09](/today/2026-10-09)
 

@@ -37,6 +37,10 @@
 
 ## Timeline
 
+### [2026-10-13](/today/2026-10-13)
+
+LangSmith 发布 AI Search 公测（LangSmith Cloud，GCP 美国/欧盟/亚太区域免费）：用自然语言描述想找的"行为"而非关键词搜索 Agent 执行轨迹，专用快速判定模型读取 trace 并返回命中会话（如"用户是否不满""是否有 PII 泄露""Agent 是否声称完成任务但其实没有"），用 trajectories 对 trace 归一化压缩上下文提升查询速度——从"event 关键词搜索"升级到"语义行为搜索"的可观测性能力（详见 [agent-evaluation](/topics/agent-evaluation)）。
+
 ### [2026-10-06](/today/2026-10-06)
 
 Gemini Enterprise 新增 Antigravity 管理控制：企业管理员可集中管控 Boost（分层多 Agent 架构解决复杂算法/深度调试任务，已 GA）与 Teamwork（协调自主子 Agent 执行大规模长时程项目，预览阶段）两项功能的可用范围——Google 版"给企业 Agent 功能配治理开关"的落地。

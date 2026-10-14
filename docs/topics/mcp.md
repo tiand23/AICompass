@@ -35,6 +35,10 @@ MCP（Model Context Protocol）：Anthropic 提出的开放协议，标准化 AI
 
 ## Timeline
 
+### [2026-10-14](/today/2026-10-14)
+
+HKUDS/CLI-Anything 登上 GitHub Trending（累计约 5.2 万星）：7 阶段自动化流水线为任意开源 GUI 应用（GIMP、Blender、Inkscape、OBS Studio 等）生成一套带 REPL 模式、JSON 输出、`SKILL.md` 的"Agent 原生"命令行接口——让 Agent 直接下结构化命令、读确定性反馈，而不必靠截图识别界面操作软件；兼容 OpenClaw、Claude Code、Codex 等支持 SKILL 规范的 Agent，统一收纳进 `skills/` 目录。是"Agent 怎么操作为人设计的软件"这个长期痛点的另一条更确定性路线——用结构化 CLI 接口替代计算机使用（computer-use）式的截图+点击（详见 [agent-skills](/topics/agent-skills)）。
+
 ### [2026-10-09](/today/2026-10-09)
 
 `rea`（MCP server + CLI）单日暴涨 +54,706 star，两日内累计约 18.6 万——把 Ghidra、IDA Pro 等专业逆向工程工具通过 MCP 接到编码 Agent 背后，分析原生二进制/Electron/.NET/APK/网站，无需源码即可解释功能实现并给出证据链与复现步骤。是 MCP 把"专业工具链"而非仅"数据源/API"接入 Agent 的一个高热度样本（详见 [agent-skills](/topics/agent-skills)）。

@@ -44,6 +44,10 @@ Frontier models keep growing, but most production workloads (classification, emb
 
 ## Timeline
 
+### [2026-10-13](/en/today/2026-10-13)
+
+LiquidAI releases LFM2.5-24B-A2B, positioned as a fast, privacy-first on-device agent model — continuing the on-device specialization line from the d1 decision models (10-07), another instance of "a specialized small model covers a vertical capability, data never leaves the device" applied to general-purpose agent scenarios. Same day, LangChain publishes a ScaleDown constrained-decoding-model (CDM) integration with Deep Agents: narrow-task specialized models take over summarization/tool-result compression/structured extraction/classification in long-session context management, claimed 200x faster and 467x cheaper than frontier models — the "vertical scenarios don't need frontier intelligence" efficiency philosophy landing on this specific sub-problem (see [deep-agents](/en/topics/deep-agents)).
+
 ### [2026-10-07](/en/today/2026-10-07)
 
 LiquidAI open-sources d1-3B and the multimodal d1-omni-600M: edge decision models returning a deterministic answer in a single forward pass, d1-3B scoring 82.9 (beating the Decider 4B baseline), d1-omni-600M beating Decider 2B at a quarter of the parameters; resolving a query in under 10ms on a desktop GPU and under 50ms on edge devices like NVIDIA Jetson — a concrete edge-focused instance of the "decision-specialized model" route (see [agent-evaluation](/en/topics/agent-evaluation)).

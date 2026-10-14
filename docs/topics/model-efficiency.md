@@ -45,6 +45,10 @@
 
 ## Timeline
 
+### [2026-10-13](/today/2026-10-13)
+
+LiquidAI 发布 LFM2.5-24B-A2B，定位端侧快速、隐私优先的 Agent 模型——延续 d1 决策模型（10-07）的端侧专精路线，是"专用小模型覆盖垂直能力、数据不出设备"路线在通用 Agent 场景的又一样本。同日 LangChain 发布 ScaleDown 约束解码模型（CDM）与 Deep Agents 集成：用专精窄任务的小模型接管长会话摘要/工具结果压缩/结构化抽取/分类这几类结构性决策，官方称比前沿模型快 200 倍、便宜 467 倍——"垂直场景不需要前沿智能"效率哲学落地到"长会话上下文管理"这个具体子问题（详见 [deep-agents](/topics/deep-agents)）。
+
 ### [2026-10-07](/today/2026-10-07)
 
 LiquidAI 开源 d1-3B 与多模态 d1-omni-600M：单次前向传播输出确定性答案的端侧决策模型，d1-3B 综合得分 82.9 超过 Decider 4B 基线，d1-omni-600M 以四分之一参数量超过 Decider 2B；桌面 GPU 10 毫秒内、NVIDIA Jetson 等端侧设备 50 毫秒内完成单次查询——"决策专精模型"路线在端侧场景的具体样本（详见 [agent-evaluation](/topics/agent-evaluation)）。

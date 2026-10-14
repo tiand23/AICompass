@@ -37,6 +37,10 @@ The enterprise agent platform market entered consolidation in 2026 — the need 
 
 ## Timeline
 
+### [2026-10-13](/en/today/2026-10-13)
+
+LangSmith launches AI Search in public beta (free on LangSmith Cloud in GCP's US, EU, and APAC regions): describe the behavior you're looking for in natural language instead of keywords to search agent execution traces, with a fast decision model reading traces and returning matching sessions ("did the user get frustrated," "did PII leak," "did the agent claim it finished but didn't"), using trajectories to normalize traces for faster queries — upgrading observability from "keyword event search" to "semantic behavior search" (see [agent-evaluation](/en/topics/agent-evaluation)).
+
 ### [2026-10-06](/en/today/2026-10-06)
 
 Gemini Enterprise adds Antigravity admin controls: enterprise admins can now centrally manage access to Boost (a tiered multi-agent hierarchy for complex algorithmic/deep-debugging tasks, now GA) and Teamwork (coordinated autonomous subagents for large-scale, long-horizon projects, still in preview) — Google's version of adding governance switches to enterprise agent features.

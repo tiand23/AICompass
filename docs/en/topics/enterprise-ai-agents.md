@@ -36,6 +36,10 @@ This is the main battleground for generative AI in the enterprise. As model capa
 
 ## Timeline
 
+### [2026-10-13](/en/today/2026-10-13)
+
+LangChain publishes the Orange Business case study: a three-tier enterprise agent platform, "Live Intelligence," built on LangChain/LangSmith — Studio (agent development with LangSmith Fleet and MCP support), Portal (an end-user interface for business teams), Console (administration and governance); the governance layer includes an Agent Registry (version/lifecycle management) and an MCP Registry (a centralized catalog of trusted tools and enterprise connectors); evaluation runs in three layers (RAG quality, agent-behavior validation including tool-selection accuracy and prompt-injection resistance, production monitoring). Deployed across 120,000 Orange employees and 150+ customers across France and Europe; Orange says building comparable infrastructure internally would have taken 12-18 months. A rare case in the "agents-in-production case library" disclosing a complete three-tier platform architecture rather than a single point application.
+
 ### [2026-10-02](/en/today/2026-10-02)
 
 Anthropic launches Claude Frontier Academy: a $100M commitment to train 10,000 "Frontier Deployed Engineers" (FDEs) by end of 2027, with first cohorts from Accenture, Bain, Deloitte, McKinsey, Morgan Stanley, and Novo Nordisk, using a simulated-deployment-plus-graded-assessment and medical-residency-style practicum over 12 weeks — the first time a vendor has directly funded a large-scale talent pipeline for the platform-plus-embedded-engineer (FDE) point on the "delivery model spectrum," treating constrained delivery-engineer supply as a bottleneck to solve directly rather than waiting on consulting firms to train people on their own.

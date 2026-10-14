@@ -35,6 +35,10 @@ MCP 以前は、AI アプリ × ツールの組み合わせごとにグルーコ
 
 ## Timeline
 
+### [2026-10-14](/ja/today/2026-10-14)
+
+HKUDS/CLI-Anything が GitHub Trending 入り（累計 5.2 万スター）：7 段階の自動化パイプラインが、任意のオープンソース GUI アプリ（GIMP、Blender、Inkscape、OBS Studio など）向けに「Agent ネイティブ」な CLI（REPL モード、JSON 出力、`SKILL.md` ファイル）を生成——Agent がスクリーンショットから UI を認識する代わりに構造化コマンドを発行し確定的なフィードバックを読み取れるようにする；OpenClaw、Claude Code、Codex など SKILL 仕様に対応した Agent と互換性があり、`skills/` ディレクトリに統一される。「Agent が人間向けに作られたソフトウェアをどう操作するか」という長年の課題に対する、computer-use のスクリーンショット＋クリック方式に代わるもう一つの確定的な解法（詳細は [agent-skills](/ja/topics/agent-skills)）。
+
 ### [2026-10-09](/ja/today/2026-10-09)
 
 `rea`（MCP server + CLI）が 1 日で +54,706 スター急増、2 日間で累計約 18.6 万——Ghidra や IDA Pro などの専門的な逆向工程ツールを MCP 経由でコーディング Agent の背後に接続し、ネイティブバイナリ/Electron/.NET/APK/Web サイトを解析、ソースコードなしに機能の実装を説明し証拠チェーンと再現手順で裏付ける。MCP が「データソース/API」だけでなく「専門ツールチェーン」を Agent の背後に接続する高熱度の事例（詳細は [agent-skills](/ja/topics/agent-skills)）。

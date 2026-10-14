@@ -36,6 +36,10 @@ Dharma AI's research finds that enterprise-grade AI clusters commonly run at onl
 
 ## Timeline
 
+### [2026-10-13](/en/today/2026-10-13)
+
+Azure publishes a full infrastructure-stack disclosure: the custom chip Maia 300 delivers 40% more tokens per watt versus leading GPU systems and 7x the rack-scale throughput of Maia 200; the Cobalt 200 CPU improves performance 50%+ over Cobalt 100 and **cuts agent-scenario latency 33%**; on networking, Multipath Reliable Connection scales beyond 100,000 GPUs via a two-tier architecture, and the Optical Compute Interconnect Multi-Source Agreement (OCI MSA) ships as an open spec; on power, an industry shift to 800V DC and the Mt. Diablo high-voltage datacenter architecture; on security, the Tessera Integrated HSM is open-sourced (architecture, specs, protocols, firmware all public). The first time "agent-scenario latency" is put forward as a direct hardware-design metric — a broader version of the same disclosure wave following 10-12's Maia 300 deep-dive, reinforcing that custom-silicon competition keeps sharpening toward serving agent workloads.
+
 ### [2026-10-12](/en/today/2026-10-12)
 
 Azure publishes a deep-dive into its custom Maia 300 chip architecture, describing it as a unified platform purpose-built for "cloud-scale agentic inference." Following OpenAI/Broadcom's published Jalapeño benchmarks (08-25), another major cloud vendor explicitly positions its custom inference silicon's design goal around agentic inference specifically, rather than general-purpose training/inference — the competitive narrative around custom silicon is sharpening from "general-purpose compute" toward "serving the specific patterns of agent workloads" (long context, multi-step tool calls, high-concurrency sessions).

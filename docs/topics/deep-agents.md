@@ -42,6 +42,10 @@ Deep Agents 是 LangChain 提出的概念与产品方向：能执行长时程、
 
 ## Timeline
 
+### [2026-10-13](/today/2026-10-13)
+
+LangChain 发布 ScaleDown 与 Deep Agents 集成：用"约束解码模型"（CDM，专精窄任务的小模型）接管长会话上下文管理里该用前沿 LLM 做又慢又贵的结构性决策——`ScaledownSummarizationMiddleware` 替换内置摘要中间件压缩旧对话历史（成本比 GPT 系模型低 41 倍）、工具结果压缩中间件在 Agent 看到大型工具输出前先提取相关片段（压缩约 90% 上下文）、精确抽取结构化字段（订单号/邮箱等不改写直接拷贝）、分类打标签+置信度+理由（可用于检测行为漂移/路由）；官方称这类窄任务模型比前沿模型快 200 倍、便宜 467 倍。是"垂直场景不需要前沿智能"效率哲学在"长会话上下文管理"这个具体子问题上的专用化落地（详见 [model-efficiency](/topics/model-efficiency)）。
+
 ### [2026-10-09](/today/2026-10-09)
 
 Claude Managed Agents 公测 Dynamic Workflows：面向"处理大量相似条目"的任务，Agent 本身可以编写一个工作流程序——分阶段调度多个 Agent 并行工作、合并结果，工作流在服务端作为后台 workflow run 执行并可通过事件流跟踪。是托管运行时从"单 Agent 配工具"向"Agent 自己生成并托管执行多 Agent 编排程序"演进的一步——把编排逻辑的生成也下放给了 Agent 本身，而不只是执行环境（详见 [claude-models](/topics/claude-models)）。

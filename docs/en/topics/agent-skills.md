@@ -14,6 +14,7 @@ Skills turn "teaching an agent to do something" from prompt engineering into a d
 - **Division of labor vs MCP**: MCP gives an agent **tools** (the interface to a capability); a skill gives it **knowledge and procedure** (how to use capabilities) — complements, not competitors.
 - **Distribution ecosystem**: GitHub is the main channel; awesome-lists (e.g. ComposioHQ/awesome-claude-skills) are the entry points; community rankings blend stars, interaction heat, and documented time savings.
 - **Supplier tiers**: standards vendor (Anthropic — anthropics/skills is its own maintained reference implementation + spec) → hyperscaler official product-line collections (google/skills, covering the whole product line — "documentation's executable version") → distilled personal experience from well-known independent engineers (Addy Osmani, Matt Pocock) → full-pipeline domain-expertise packaging (OpenMontage packages video-production expertise into 700+ skill files) → anonymous/community repos — credibility and update-sync differ by tier; weigh selection by source tier.
+- **"Skill" as a term is spreading into consumer/office-productivity products**: Google uses "Skills" in the Gemini app and Workspace to replace "Gems" as the new way to apply custom AI instructions — distinct from the earlier developer-facing google/skills (an official collection for Google's own product line), this is the term being adopted at the end-user product-feature layer; the underlying mechanism (a custom-instruction template) isn't quite equivalent to the "packaged instructions + resources + scripts" Agent Skill of the Claude/MCP ecosystem — different vendors mean different things by "Skill," so it's worth being precise about which one is being discussed.
 - **Vendor-neutral skill package managers**: skill repos used to be maintained independently, with users figuring out installation on their own; Vercel's `npx skills` is the first general-purpose install/management tool decoupled from any specific agent vendor (`add`/`use`/`list`/`update`, supporting 75+ agents) — much like npm is to JS packages, a signal of the ecosystem moving from "repo distribution" toward "a unified package manager."
 
 ## Ecosystem Heat (GitHub Rankings)
@@ -44,6 +45,9 @@ High-star representative repos at topic creation (2026-07):
 | mattpocock/skills | As of 2026-10-08, ~281k stars total (up from ~207k when first listed 08-07 — still leads the skill ecosystem's single hottest point) | Engineering discipline distilled from a personal `.agents` directory |
 | rea | Spikes another +54,706/day on 2026-10-09 (first listed 10-08 at +7,744/day), ~186K stars total over two days — the fastest riser among recent skill/agent-tool repos | An MCP server + CLI wiring Ghidra/IDA Pro-class reverse-engineering tools behind an agent, analyzing native binaries/Electron/.NET/APKs/websites with evidence-backed explanations and recreation steps |
 | vercel-labs/skills | New (hit Trending 2026-10-09, `npx skills`) | Vercel's official vendor-neutral skill package manager, supporting Claude Code/OpenCode/Codex/Cursor and 75+ other agents |
+| HKUDS/CLI-Anything | New (hit Trending 2026-10-14, ~52k stars total) | A 7-phase automated pipeline generating an agent-native CLI (REPL+JSON+SKILL.md) for any GUI software, now unified under a `skills/` directory |
+| vxcontrol/pentagi | New (hit Trending 2026-10-14, ~28.8k stars total) | A fully autonomous penetration-testing agent system with an isolated Docker sandbox + 20+ built-in security tools |
+| ifixai-ai/iFixAi | New (hit Trending 2026-10-14, ~23.7k stars total) | Independently audits in under 120 seconds whether an agent is actually doing what it's supposed to (not just whether it's technically capable), scoring against the EU AI Act/ISO 42001/NIST AI RMF/OWASP LLM Top 10 |
 | knowledge-work-plugins | New (hit Trending 2026-10-08, ~27.3k stars total) | An open-source plugin repo for knowledge workers, mainly for use with Claude Cowork |
 | superpowers | Back on Trending 2026-10-01 (+888/day) | Agentic skills framework + development methodology |
 | OpenShell (NVIDIA) | New (hit Trending 2026-10-01, +2,503/day — the fastest riser that day) | A "safe, private" runtime for autonomous AI agents, written in Rust — a major hardware vendor shipping agent-execution-isolation infrastructure directly |
@@ -67,6 +71,14 @@ High-star representative repos at topic creation (2026-07):
 - [Claude Code repos star leaderboard](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-10-14](/en/today/2026-10-14)
+
+Three agent tools pointed in different directions hit GitHub Trending the same day: **HKUDS/CLI-Anything** (52k stars total) generates an "agent-native" CLI (REPL+JSON+SKILL.md) for any open-source GUI app, letting an agent issue structured commands instead of recognizing a UI from screenshots, now unified under a `skills/` directory and installable via `npx skills add`; **ifixai-ai/iFixAi** (23.7k stars total) independently audits in under 120 seconds whether an agent is actually doing what it's supposed to (not just whether it's technically capable), scoring against the EU AI Act/ISO 42001/NIST AI RMF/OWASP LLM Top 10; **vxcontrol/pentagi** (28.8k stars total) is a fully autonomous penetration-testing agent system with an isolated Docker sandbox and 20+ built-in security tools. The three fill three previously under-covered capability gaps — "agent operates GUI software," "audit whether an agent actually met the business goal," and "autonomous offensive security" (see [mcp](/en/topics/mcp) ・ [agent-evaluation](/en/topics/agent-evaluation) ・ [agentic-safety](/en/topics/agentic-safety)).
+
+### [2026-10-13](/en/today/2026-10-13)
+
+Google brings Skills to the Gemini app and Workspace, replacing Gems: a modular, reusable way to apply custom instructions to conversations and workflows, full rollout expected by mid-November, with sharing and Google Drive integration to follow — a signal of the "Skill" naming/mental model spreading from developer tooling into consumer/office products, though its implementation isn't equivalent to the Claude/MCP ecosystem's Agent Skill (see Core Concepts above).
 
 ### [2026-10-09](/en/today/2026-10-09)
 

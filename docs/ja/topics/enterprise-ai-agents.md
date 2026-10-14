@@ -36,6 +36,10 @@
 
 ## Timeline
 
+### [2026-10-13](/ja/today/2026-10-13)
+
+LangChain が Orange Business の事例を公開：LangChain/LangSmith を基盤に 3 層構成の企業向け Agent プラットフォーム「Live Intelligence」を構築——Studio（LangSmith Fleet と MCP 対応を含む Agent 開発）、Portal（業務チーム向けエンドユーザーインターフェース）、Console（管理とガバナンス）；ガバナンス層には Agent Registry（バージョン/ライフサイクル管理）と MCP Registry（信頼済みツールと企業コネクタの一元カタログ）を含む；評価は 3 層構成（RAG の品質、ツール選択の正確性とプロンプトインジェクション耐性を含む Agent の行動検証、本番環境の監視）。Orange 社内 12 万人の従業員と、フランス・欧州で 150 社超の顧客に展開済み、同等のインフラを自社構築するには 12〜18 か月を要したはずだと Orange は述べている。「Agent 本番活用事例集」の中でも単発のアプリケーションではなく完全な 3 層プラットフォームアーキテクチャを開示した珍しい事例。
+
 ### [2026-10-02](/ja/today/2026-10-02)
 
 Anthropic が Claude Frontier Academy を発表：2027 年末までに「Frontier Deployed Engineer（FDE）」を 1 万人育成するため 1 億ドルを投資、最初のコホートは Accenture、Bain、Deloitte、McKinsey、Morgan Stanley、Novo Nordisk から、模擬デプロイ＋採点評価と医療研修式の実践を組み合わせた 12 週間のプログラムで実施——「デリバリーモデルのスペクトラム」におけるプラットフォーム＋常駐エンジニア（FDE）という選択肢について、ベンダーが初めて大規模な人材育成パイプラインに直接資金を投じた事例であり、デリバリーエンジニアの供給制約をコンサルティング会社の自然な育成を待つのではなく、直接解決すべきボトルネックとして扱っている。

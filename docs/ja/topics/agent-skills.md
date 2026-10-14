@@ -13,6 +13,7 @@ Skills は「エージェントに仕事を教える」ことをプロンプト�
 - **構造**：skill = メタデータ（名前、トリガー記述）+ 指示ドキュメント + 任意のリソース/スクリプト。エージェントがタスク関連性で自動ロード。
 - **MCP との分担**：MCP はエージェントに**ツールを繋ぐ**（能力へのインターフェース）、Skill は**知識と手順を積む**（能力の使い方）——競合ではなく補完。
 - **配布エコシステム**：GitHub が主チャネル、awesome 系リスト（ComposioHQ/awesome-claude-skills など）が入口。コミュニティランキングはスター・熱度・実測の時間節約を混合。
+- **「Skill」という用語が消費者/オフィス向けプロダクトへ拡散**：Google は Gemini app と Workspace で「Skills」を使い「Gems」を置き換え、カスタム AI 指示の新しい方法とした——以前の開発者向け google/skills（Google 自社製品ライン向けの公式コレクション）とは異なり、今回はエンドユーザー向けのプロダクト機能層でこの用語が採用されている；その実装の仕組み（カスタム指示のテンプレート）は Claude/MCP エコシステムの「指示+リソース+スクリプトをパッケージ化した」Agent Skill とは完全には同じものではない——ベンダーによって「Skill」の意味が異なるため、どちらを指しているか明確にする必要がある。
 - **ベンダー中立な skill パッケージマネージャ**：これまで各 skill リポジトリは個別に維持され、利用者は各自でインストール方法を探っていた；Vercel の `npx skills` は特定の Agent ベンダーから切り離された初の汎用インストール/管理ツール（`add`/`use`/`list`/`update`、75+ の Agent に対応）——JS パッケージにおける npm に近く、エコシステムが「リポジトリ配布」から「統一パッケージマネージャ」へ向かう兆し。
 - **供給側の階層**：標準を定める公式ベンダー（Anthropic——anthropics/skills は自ら維持する参照実装+仕様）→ ハイパースケーラー公式の製品ライン合集（google/skills、自社全製品をカバーする「ドキュメントの実行可能版」）→ 著名な独立エンジニアの個人経験萃取（Addy Osmani、Matt Pocock）→ 垂直領域の全工程知識パッケージ化（OpenMontage が動画制作の専門知識を 700+ の skill ファイルに封装）→ 匿名/コミュニティリポジトリ——階層ごとに信頼性と更新の同期性が異なり、選定時は出典の階層で評価する。
 
@@ -44,6 +45,9 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 | mattpocock/skills | 2026-10-08 時点で累計約 28.1 万スター（初登場の 08-07 時点の約 20.7 万からさらに上昇、skill エコシステム単体最高熱を維持） | 個人の `.agents` ディレクトリから精製した工学規律 skill |
 | rea | 2026-10-09 にさらに日次 +54,706（初登場の 10-08 時点は +7,744）、2 日間で累計約 18.6 万スター——直近の skill/Agent ツール系リポジトリの中で最速の増加速度 | Ghidra/IDA Pro 級の逆向工程ツールを Agent の背後に接続する MCP server + CLI、ネイティブバイナリ/Electron/.NET/APK/Web サイトを証拠付きで解析し再現手順を提示 |
 | vercel-labs/skills | 新登場（2026-10-09 Trending 入り、`npx skills`） | Vercel 公式のベンダー中立な skill パッケージマネージャ、Claude Code/OpenCode/Codex/Cursor など 75+ の Agent に対応 |
+| HKUDS/CLI-Anything | 新登場（2026-10-14 Trending 入り、累計約 5.2 万スター） | 任意の GUI ソフトウェア向けに Agent ネイティブな CLI（REPL+JSON+SKILL.md）を生成する 7 段階自動化パイプライン、`skills/` ディレクトリに統一 |
+| vxcontrol/pentagi | 新登場（2026-10-14 Trending 入り、累計約 2.88 万スター） | 隔離 Docker サンドボックス + 20 以上の内蔵セキュリティツールを備えた全自主渗透テスト Agent システム |
+| ifixai-ai/iFixAi | 新登場（2026-10-14 Trending 入り、累計約 2.37 万スター） | 120 秒以内に Agent が実際に業務目標を達成しているか（技術的能力だけでなく）を独立監査、EU AI Act/ISO 42001/NIST AI RMF/OWASP LLM Top 10 に対するスコアを算出 |
 | knowledge-work-plugins | 新登場（2026-10-08 Trending 入り、累計約 2.73 万スター） | ナレッジワーカー向けのオープンソースプラグインリポジトリ、主に Claude Cowork との併用を想定 |
 | superpowers | 2026-10-01 に再び Trending 入り（日次 +888） | Agentic skills フレームワーク + 開発方法論 |
 | OpenShell（NVIDIA） | 新登場（2026-10-01 Trending 入り、日次 +2,503——当日最も増加速度が速い） | Rust で書かれた自律 AI Agent 向けの「安全でプライベートな」ランタイム——大手ハードウェアベンダーが Agent 実行隔離インフラを自ら提供する事例 |
@@ -67,6 +71,14 @@ Topic 作成時（2026-07）の高スター代表リポジトリ：
 - [Claude Code リポジトリのスターランキング](https://githublb.vercel.app/topic/claude-code)
 
 ## Timeline
+
+### [2026-10-14](/ja/today/2026-10-14)
+
+方向性の異なる 3 つの Agent ツールが同日に GitHub Trending 入り：**HKUDS/CLI-Anything**（累計 5.2 万スター）は任意のオープンソース GUI アプリ向けに「Agent ネイティブ」な CLI（REPL+JSON+SKILL.md）を生成し、Agent がスクリーンショットから UI を認識する代わりに構造化コマンドを発行できるようにする、`skills/` ディレクトリに統一され `npx skills add` でインストール可能；**ifixai-ai/iFixAi**（累計 2.37 万スター）は 120 秒以内に Agent が実際に業務目標を達成しているか（技術的能力だけでなく）を独立監査し、EU AI Act/ISO 42001/NIST AI RMF/OWASP LLM Top 10 に対するスコアを算出；**vxcontrol/pentagi**（累計 2.88 万スター）は隔離 Docker サンドボックスと 20 以上の内蔵セキュリティツールを備えた全自主渗透テスト Agent システム。3 つはそれぞれ「Agent が GUI ソフトウェアを操作する」「Agent が本当に業務目標を達成しているか監査する」「自律的な攻防テスト」という、これまで十分にカバーされていなかった能力の隙間を埋める（詳細は [mcp](/ja/topics/mcp) ・ [agent-evaluation](/ja/topics/agent-evaluation) ・ [agentic-safety](/ja/topics/agentic-safety)）。
+
+### [2026-10-13](/ja/today/2026-10-13)
+
+Google が Gemini app と Workspace に Skills を導入、Gems を置き換え：モジュール化され再利用可能な形でカスタム指示を対話やワークフローに適用、11 月中旬までに全展開完了予定、共有機能と Google Drive 連携が今後追加される——「Skill」という名称/メンタルモデルが開発者ツールから消費者/オフィス向けプロダクトへ広がっているシグナルだが、その実装は Claude/MCP エコシステムの Agent Skill とは同じものではない（詳細は上記コアコンセプト）。
 
 ### [2026-10-09](/ja/today/2026-10-09)
 

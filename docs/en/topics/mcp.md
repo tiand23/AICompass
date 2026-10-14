@@ -35,6 +35,10 @@ Before MCP, every AI app × every tool needed its own glue code (the M×N proble
 
 ## Timeline
 
+### [2026-10-14](/en/today/2026-10-14)
+
+HKUDS/CLI-Anything hits GitHub Trending (52K stars total): a 7-phase automated pipeline generates an "agent-native" CLI (REPL mode, JSON output, a `SKILL.md` file) for any open-source GUI app (GIMP, Blender, Inkscape, OBS Studio, etc.) — letting an agent issue structured commands and read deterministic feedback instead of recognizing a UI from screenshots; compatible with OpenClaw, Claude Code, Codex and other SKILL-spec agents, unified under a `skills/` directory. Another, more deterministic route for the long-standing problem of "how does an agent operate software built for humans," as an alternative to computer-use's screenshot-and-click approach (see [agent-skills](/en/topics/agent-skills)).
+
 ### [2026-10-09](/en/today/2026-10-09)
 
 `rea` (an MCP server + CLI) spikes +54,706 stars in a day, ~186K total over two days — wiring professional reverse-engineering tools like Ghidra and IDA Pro behind a coding agent via MCP, analyzing native binaries/Electron/.NET/APKs/websites, explaining feature implementations without source code and backing it with an evidence chain and recreation steps. A high-heat example of MCP connecting a "professional toolchain," not just data sources/APIs, behind an agent (see [agent-skills](/en/topics/agent-skills)).

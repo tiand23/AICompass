@@ -42,6 +42,10 @@ Long-horizon autonomy is the current frontier of agent capability competition, a
 
 ## Timeline
 
+### [2026-10-13](/en/today/2026-10-13)
+
+LangChain publishes a ScaleDown integration with Deep Agents: specialized "constrained decoding models" (CDMs) take over long-session context-management decisions that are slow and expensive to make with a frontier LLM — `ScaledownSummarizationMiddleware` replaces the built-in summarization middleware to condense older history (41x cheaper than GPT-class models); a tool-result compression middleware extracts relevant portions from large tool outputs before the agent sees them (~90% context reduction in demonstrated traces); an extraction mode copies structured values (order IDs, emails) exactly rather than paraphrasing; a classification mode labels text with confidence and reasoning, useful for detecting behavior drift or routing. ScaleDown says these narrow-task models run 200x faster and 467x cheaper than frontier models. A concrete specialization of the "vertical scenarios don't need frontier intelligence" efficiency philosophy applied to long-session context management (see [model-efficiency](/en/topics/model-efficiency)).
+
 ### [2026-10-09](/en/today/2026-10-09)
 
 Claude Managed Agents previews Dynamic Workflows: for tasks involving many similar items, the agent itself can write a workflow program — scheduling multiple agents across phases, running them in parallel, and merging results; the workflow executes server-side as a background workflow run, trackable via its event stream. A step in hosted runtimes evolving from "a single agent plus tools" toward "an agent that generates and hosts the execution of its own multi-agent orchestration program" — delegating the generation of orchestration logic itself to the agent, not just its execution environment (see [claude-models](/en/topics/claude-models)).
